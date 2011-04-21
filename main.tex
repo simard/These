@@ -1,0 +1,68 @@
+\documentclass[english]{mythesis}
+\usepackage{mydate}
+\usepackage{graphicx}
+\newcommand{\name}[1]{\bsc{#1}}
+\newcommand{\acro}[1]{\bsc{#1}}
+\newcommand{\LIMSI}{\acro{CNRS--LIMSI}}
+\title{Intéractions haptiques collaboratives pour la manipulation moléculaire}
+\author{Jean~\name{Simard}}
+\documenttype{Thèse en Informatique}
+\university{École Doctorale d'Informatique de Paris Sud}
+\date{\mydate[datestyle=long]{01}{12}{2011}}
+\jury{%
+	Martin & \name{DUPONT} & (rapporteur) & Directeur de recherche au \LIMSI \\
+	Martin & \name{DUPOND} & (examinateur) & Directeur de recherche au \LIMSI}
+	\addglobalbib[datatype=bibtex]{biblio.bib}
+\begin{document}
+	%\mydominibib[apalike]{biblio}
+	\frontmatter
+	\maketitle
+	\mytoc
+	\mylof
+	\mylot
+	\mainmatter
+	\chapter{État de l'art}
+	\myminitoc
+	\section{Le collaboratif}
+	\subsection{Test 1}
+	Une citation pour Feng \mycite{Xiong-2010}.
+
+	\subsection{Test 2}
+	Une citation pour Feng \mycite{Simard-2010a}.
+	%Une citation pour Feng \mycite{Simard-2010b}.
+	%Une citation pour Feng \mycite{Simard-2010c}.
+	%Une citation pour Feng \mycite{Simard-2011}.
+	\myminibiblio
+
+	\section{La manipulation moléculaire}
+	La citation de \mycite[author]{Simard-2010a,Simard-2010b}.
+	\begin{figure}[htp]
+		\centering
+		\includegraphics{images/feng}
+		\caption{Ma Feng}\label{fig-MaFeng}
+	\end{figure}
+	\myminibiblio
+
+	\chapter{Plate-forme}
+	\mycite{Xiong-2010}\mycite[author]{Simard-2011}\footnote{Une citation toute seule, vous pourrez remarquer !}.
+	\begin{table}[htp]
+		\centering
+		\caption{Table de merde}\label{tab-TableDeMerde}
+		\begin{tabular}{rr@{,}l}
+			\hline
+			Constante & Entier & Décimale \\
+			\hline
+			$\pi$ & 3 & 14159 \\
+			$e$ & 2 & 71828 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\myminibiblio
+
+	\chapter{Études sur le travail collaboratif}
+	\myminibiblio
+
+	\appendix
+
+	\chapter{Le matériel utilisé}
+\end{document}

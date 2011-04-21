@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mytoc}[2011/03/28]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@english \@englishfalse
+\DeclareOption{english}{\@englishtrue}
+\newif\if@francais \@francaisfalse
+\DeclareOption{francais}{\@francaistrue}
+% What is the section level for the table of contents
+\newif\if@chapter \@chapterfalse
+\DeclareOption{chapter}{\@chaptertrue}
+\newif\if@section \@sectionfalse
+\DeclareOption{section}{\@sectiontrue}
+% For the intermediate table of contents
+\newif\if@minitoc \@minitocfalse
+\DeclareOption{minitoc}{\@minitoctrue}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{mytoc}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+\if@minitoc
+	\PassOptionsToPackage{francais}{minitoc}
+	\if@francais
+		\PassOptionsToPackage{francais}{minitoc}
+	\fi
+	\if@english
+		\PassOptionsToPackage{english}{minitoc}
+	\fi
+\fi
+
+%% Packages to call
+\RequirePackage{tocbibind}
+\if@minitoc
+	\RequirePackage{minitoc}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\if@minitoc
+	\mtcsettitlefont{minitoc}{\large\bfseries\sffamily}
+	\AtBeginDocument{\dominitoc}
+\fi
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% Define the table of contents command,
+% and add the title in the table of contents
+\newcommand{\mytoc}{%
+	\tableofcontents%
+}
+% Define the list of figures command,
+% and add the title in the table of contents
+\newcommand{\mylof}{%
+	\listoffigures%
+}
+% Define the list of tables command,
+% and add the title in the table of contents
+\newcommand{\mylot}{%
+	\listoftables%
+}
+\if@minitoc
+	\newcommand{\myminitoc}{\minitoc}
+\fi
+
+% End of package
+\endinput
