@@ -55,6 +55,8 @@
 \RequirePackage{xcolor}
 % About links in the final PDF document
 \RequirePackage[dvips]{hyperref}
+% All about tabulars
+\RequirePackage[smarttab]{mytab}
 % All about the table of contents and other lists
 \RequirePackage[chapter,minitoc]{mytoc}
 % All about the bibliographies

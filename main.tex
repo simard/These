@@ -45,18 +45,19 @@
 
 	\chapter{Plate-forme}
 	\mycite{Xiong-2010}\mycite[author]{Simard-2011}\footnote{Une citation toute seule, vous pourrez remarquer !}.
-	\begin{table}[htp]
-		\centering
-		\caption{Table de merde}\label{tab-TableDeMerde}
-		\begin{tabular}{rr@{,}l}
-			\hline
+	Et une référence sur la table \ref{tab-TableDeMerde} !
+	\begin{mytable}
+		\mycaption[tab-TableDeMerde]{Table de merde}
+		\begin{mytabular}{rr@{,}l}
+			\mytoprule
 			Constante & Entier & Décimale \\
-			\hline
+			\mymiddlerule[\heavyrulewidth]
 			$\pi$ & 3 & 14159 \\
+			\mypartrule[\lightrulewidth](l{5em}){2-3}
 			$e$ & 2 & 71828 \\
-			\hline
-		\end{tabular}
-	\end{table}
+			\mybottomrule[\heavyrulewidth]
+		\end{mytabular}
+	\end{mytable}
 	\myminibiblio
 
 	\chapter{Études sur le travail collaboratif}
