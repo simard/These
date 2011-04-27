@@ -1,0 +1,156 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{myfloat}[2011/03/28]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To have smart tabulars with various line thin
+\newif\if@smarttab \@smarttabfalse
+\DeclareOption{smarttab}{\@smarttabtrue}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{myfloat}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+\PassOptionsToPackage{hypcap=true}{caption}
+\PassOptionsToPackage{hypcap=true}{subcaption}
+
+%% Packages to call
+% For insertion of images
+\RequirePackage{graphicx}
+% 'caption' package allow right link on floats environment for 'hyperref'
+\RequirePackage{caption}
+% 'subcaption' package allow sub figures and sub tables
+\RequirePackage{subcaption}
+% To make multicolumn and multirow tabulars
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+% 'array' improve the basic LaTeX tabulars
+\RequirePackage{array}
+\if@smarttab
+	% To make more coloured tabular
+	\RequirePackage{colortbl}
+	% For smart tables with more spaces
+	\RequirePackage{booktabs}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+% Change the default directory to find images
+\graphicspath{{images/}}
+% Define prefered order for images file format
+\DeclareGraphicsExtensions{.eps,.ps,.pdf,.png,.jpg,.jpeg}
+% Change the font of float captions
+\captionsetup{font={sf},labelfont={bf,sf}}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% Command to insert a image
+\newcommand{\myimage}[2][]{\includegraphics[#1]{#2}}
+% Rename 'figure' environment
+\newenvironment{myfigure}[1][htp]{%
+		\begin{figure}[#1]
+		\centering
+	}{%
+		\end{figure}
+	}
+% Rename 'figure*' environment
+\newenvironment{myfigure*}[1][htp]{%
+		\begin{figure*}[#1]
+		\centering
+	}{%
+		\end{figure*}
+	}
+% Define the 'subcaption' title for default use
+\def\my@subcaption{??\label{sub-}}
+% To define the caption in a 'mysubfigure'
+\newcommand{\mysubcaption}[2][sub-]{\gdef\my@subcaption{#2\label{#1}}}
+% Define the 'mysubfigure' environment
+\newlength{\myparboxlength}
+\newenvironment{mysubfigure}[1][0.4\textwidth]{%
+		\setlength{\myparboxlength}{#1}
+		\caption@withoptargs%
+		\begingroup\setbox\@tempboxa\hbox\bgroup%
+	}{%
+		\egroup%
+		\begingroup%
+		\captionsetup{subtype*}% set \caption@position
+		\caption@iftop{%
+			\endgroup%
+			\parbox[t]{\myparboxlength}{%
+				\captionsetup{subtype,position=t}%
+				\vbox{\caption\my@subcaption}%
+				\vbox{\subcaption@hrule}%
+				\csname caption@hj@c\endcsname%
+				\unhbox\@tempboxa%
+			}%
+		}{%
+			\endgroup
+			\parbox[b]{\myparboxlength}{%
+				\captionsetup{subtype,position=b}%
+				\csname caption@hj@c\endcsname%
+				\unhbox\@tempboxa%
+				\vbox{\subcaption@hrule}%
+				\vtop{\caption\my@subcaption}%
+			}%
+		}%
+		\endgroup%
+	}
+% Rename 'table' environment
+\newenvironment{mytable}[1][htp]{%
+		\begin{table}[#1]
+		\centering
+	}{%
+		\end{table}
+	}
+% Rename 'table*' environment
+\newenvironment{mytable*}[1][htp]{%
+		\begin{table*}[#1]
+		\centering
+	}{%
+		\end{table*}
+	}
+% Rename 'tabular' environment
+\newenvironment{mytabular}[1]{%
+		\begin{tabular}{#1}
+	}{%
+		\end{tabular}
+	}
+% Add an optional label argument for the caption
+\newcommand{\mycaption}[2][tab-none]{\caption{#2}\label{#1}}
+\if@smarttab
+	% Define top, middle and bottom rules for tabulars
+	\def\mytoprule{%
+		\noalign{\ifnum0=‘}\fi%
+		\@aboverulesep=\abovetopsep%
+		\global\@belowrulesep=\belowrulesep%global cos for use in the next noalign
+		\global\@thisruleclass=\@ne%
+		\@ifnextchar[{\@BTrule}{\@BTrule[\heavyrulewidth]}%
+	}
+	\def\mymiddlerule{%
+		\noalign{\ifnum0=‘}\fi%
+		\@aboverulesep=\aboverulesep%
+		\global\@belowrulesep=\belowrulesep%
+		\global\@thisruleclass=\@ne%
+		\@ifnextchar[{\@BTrule}{\@BTrule[\lightrulewidth]}%
+	}
+	\def\mybottomrule{%
+		\noalign{\ifnum0=‘}\fi%
+		\@aboverulesep=\aboverulesep%
+		\global\@belowrulesep=\belowbottomsep%
+		\global\@thisruleclass=\@ne%
+		\@ifnextchar[{\@BTrule}{\@BTrule[\heavyrulewidth]}%
+	}
+	% The part rule is to have horizontal line restricted to few columns
+	\def\mypartrule{\noalign{\ifnum0=‘}\fi
+		\@ifnextchar[{\@cmidrule}{\@cmidrule[\cmidrulewidth]}
+	}
+\fi
+
+% End of package
+\endinput

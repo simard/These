@@ -1,6 +1,7 @@
 \documentclass[english]{mythesis}
 \usepackage{mydate}
 \usepackage{graphicx}
+\usepackage{caption}
 \newcommand{\name}[1]{\bsc{#1}}
 \newcommand{\acro}[1]{\bsc{#1}}
 \newcommand{\LIMSI}{\acro{CNRS--LIMSI}}
@@ -36,11 +37,21 @@
 
 	\section{La manipulation moléculaire}
 	La citation de \mycite[author]{Simard-2010a,Simard-2010b}.
-	\begin{figure}[htp]
-		\centering
-		\includegraphics{images/feng}
-		\caption{Ma Feng}\label{fig-MaFeng}
-	\end{figure}
+	\begin{myfigure}
+		\begin{mysubfigure}[0.25\textwidth]
+			\myimage[width=0.25\textwidth]{feng}
+			\mysubcaption[fig-MaFenga]{Ma première Feng}
+		\end{mysubfigure}
+		\begin{mysubfigure}[0.25\textwidth]
+			\myimage[width=0.25\textwidth]{feng}
+			\mysubcaption[fig-MaFengb]{Ma seconde Feng}
+		\end{mysubfigure}
+		\begin{mysubfigure}[0.25\textwidth]
+			\myimage[width=0.25\textwidth]{feng}
+			\mysubcaption[fig-MaFengc]{Ma troisième Feng}
+		\end{mysubfigure}
+		\mycaption[fig-MaFeng]{Ma Feng}
+	\end{myfigure}
 	\myminibiblio
 
 	\chapter{Plate-forme}
@@ -48,14 +59,16 @@
 	Et une référence sur la table \ref{tab-TableDeMerde} !
 	\begin{mytable}
 		\mycaption[tab-TableDeMerde]{Table de merde}
-		\begin{mytabular}{rr@{,}l}
+		\begin{mytabular}{cr@{,}l}
 			\mytoprule
-			Constante & Entier & Décimale \\
+			Constante & {\small <entier>} & {\small <décimale>} \\
 			\mymiddlerule[\heavyrulewidth]
 			$\pi$ & 3 & 14159 \\
-			\mypartrule[\lightrulewidth](l{5em}){2-3}
+			\mymiddlerule
 			$e$ & 2 & 71828 \\
-			\mybottomrule[\heavyrulewidth]
+			\mymiddlerule
+			$\bar{h}$ & 6 & 62606896$\times 10^{-34}$ \\
+			\mybottomrule
 		\end{mytabular}
 	\end{mytable}
 	\myminibiblio
