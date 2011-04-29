@@ -16,17 +16,17 @@
 
 % Class name declaration
 \NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesClass{mythesis}[2011/03/28 mythesis]
+\ProvidesClass{mythesis}[2011/04/29 mythesis]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Declare package options %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Options about 'book' class
 % Language options
-\newif\if@english \@englishfalse
-\DeclareOption{english}{\@englishtrue}
-\newif\if@francais \@francaisfalse
-\DeclareOption{francais}{\@francaistrue}
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
 
 \ProcessOptions
 \PassOptionsToClass{fleqn}{book}
@@ -34,12 +34,13 @@
 \PassOptionsToClass{a4paper}{book}
 \LoadClassWithOptions{book}
 
-\PassOptionsToPackage{frenchb}{babel}
-\if@english
+\if@myenglish
 	\PassOptionsToPackage{english}{babel}
+	\PassOptionsToPackage{myenglish}{myref}
 \fi
-\if@francais
+\if@myfrancais
 	\PassOptionsToPackage{frenchb}{babel}
+	\PassOptionsToPackage{myfrancais}{myref}
 \fi
 
 %% Packages to call
@@ -61,6 +62,8 @@
 \RequirePackage[chapter,minitoc]{mytoc}
 % All about the bibliographies
 \RequirePackage[biblatex,backref,minibibsection]{mybib}
+% All about making references
+\RequirePackage[smartref]{myref}
 
 %%%%%%%%%%%%%%%%%%%%
 %% Configurations %%

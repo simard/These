@@ -1,11 +1,20 @@
-\documentclass[english]{mythesis}
+\documentclass[myfrancais]{mythesis}
 \usepackage{mydate}
 \usepackage{graphicx}
 \usepackage{caption}
-\newcommand{\name}[1]{\bsc{#1}}
-\newcommand{\acro}[1]{\bsc{#1}}
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\acro}[1]{\textsc{#1}}
 \newcommand{\LIMSI}{\acro{CNRS--LIMSI}}
-\title{Intéractions haptiques collaboratives pour la manipulation moléculaire}
+
+\hypersetup{%
+	pdftitle={Interactions haptiques collaboratives pour la manipulation moléculaire},%
+	pdfauthor={Jean SIMARD},%
+	pdfsubject={Mémoire de thèse en informatique},%
+	pdfdisplaydoctitle=true,%
+	pdflang={FR-fr}%
+}
+
+\title{Interactions haptiques collaboratives pour la manipulation moléculaire}
 \author{Jean~\name{Simard}}
 \documenttype{Thèse en Informatique}
 \university{École Doctorale d'Informatique de Paris Sud}
@@ -15,17 +24,31 @@
 	Martin & \name{DUPOND} & (examinateur) & Directeur de recherche au \LIMSI}
 	\addglobalbib[datatype=bibtex]{biblio.bib}
 \begin{document}
-	%\mydominibib[apalike]{biblio}
 	\frontmatter
 	\maketitle
 	\mytoc
 	\mylof
 	\mylot
 	\mainmatter
-	\chapter{État de l'art}
+	\part{Introduction}\label{par-test}
+	\chapter{État de l'art}\label{cha-state}
+	\mypartref{par-test}\par
+	\mypartref*{par-test}\par
+	\mypartref[refname={Part.},refsee=true]{par-test}\par
+	\mypartref[reffont={\bf},refsee=true]{par-test}\par
+	\mypartref[refsee=true]{par-test}\par
+	\mypartref*[refname={Part.}]{par-test}\par
+	\mypartref*[reffont={\bf}]{par-test}\par
+	\mypartref*{par-test}\par
+	\mypartref*[refsee=false]{par-test}\par
+	\myfigureref{fig-MaFenga}\par
+	\myfigureref*{fig-MaFenga}\par
+	\mytableref{tab-TableDeMerde}\par
+	\mytableref*{tab-TableDeMerde}\par
 	\myminitoc
 	\section{Le collaboratif}
 	\subsection{Test 1}
+	\mychapterref{cha-state}
 	Une citation pour Feng \mycite{Xiong-2010}.
 
 	\subsection{Test 2}
@@ -55,6 +78,7 @@
 	\myminibiblio
 
 	\chapter{Plate-forme}
+	\mychapterref{cha-state}
 	\mycite{Xiong-2010}\mycite[author]{Simard-2011}\footnote{Une citation toute seule, vous pourrez remarquer !}.
 	Et une référence sur la table \ref{tab-TableDeMerde} !
 	\begin{mytable}
