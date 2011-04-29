@@ -5,10 +5,10 @@
 %% Declare package options %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Language options
-\newif\if@english \@englishfalse
-\DeclareOption{english}{\@englishtrue}
-\newif\if@francais \@francaisfalse
-\DeclareOption{francais}{\@francaistrue}
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
 % In case of unknown options
 \DeclareOption*{%
 	\PackageWarning{mydate}{Unknown option `\CurrentOption'}%
@@ -17,19 +17,18 @@
 \ProcessOptions
 
 %% Options to pass to packages
-\PassOptionsToPackage{french}{datenumber}
-\if@francais
-	\PassOptionsToPackage{french}{datenumber}
+\if@myfrancais
+	\PassOptionsToPackage{french}{isodate}
 \fi
-\if@english
-	\PassOptionsToPackage{english}{datenumber}
+\if@myenglish
+	\PassOptionsToPackage{english}{isodate}
 \fi
 
 %% Packages to call
 \RequirePackage{xifthen}
 \RequirePackage{xkeyval}
 \RequirePackage{xspace}
-\RequirePackage{datenumber}
+\RequirePackage[iso,printdayon]{isodate}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -38,26 +37,21 @@
 % The styles should be one of the following value:
 % - resume -> 28/03/2011
 % - short -> 28th march 2011
-% - long -> monday, 28th march 2011
-\define@key[my]{date}{datestyle}[short]{\def\my@date@datestyle{#1}}
+% - long -> monday, 28th march 2011 (is not working with 'isodate' !)
+\define@choicekey[my]{date}{datestyle}[\mydate@uservalue\mydate@numin]{resume,short,long}[short]{\def\mydate@style{#1}}
 %% Define a key about the separator in a 'resume' style date
-\define@key[my]{date}{datesep}[-]{\def\my@date@datesep{#1}}
+\define@key[my]{date}{datesep}[-]{\def\mydate@sep{#1}}
 \setkeys[my]{date}{datesep={-}}
 %% Command \Date insere a date with different styles
-\newcommand{\mydate}[4][]{%
+\newcommand{\mydate}[2][]{%
 	\setkeys[my]{date}{#1}%
-	\ifthenelse{\equal{\my@date@datestyle}{resume}}%
-		{#2\my@date@datesep{}#3\my@date@datesep{}#4\xspace}%
-		{%
-			\setdatenumber{#4}{#3}{#2}%
-			\ifthenelse{\equal{\my@date@datestyle}{short}}%
-				{\datedate\xspace}%
-				{%
-					\ifthenelse{\equal{\my@date@datestyle}{long}}%
-					{\datedayname\ \datedate\xspace}%
-					{\PackageError{mydate}{Unknown option `\my@date@datestyle' for `datestyle' in `\\mydate'.}{You must use `resume', `short' or `long' option.}}%
-				}
-		}
+	\ifcase\mydate@numin\relax%
+		{\isodash{\mydate@sep}\isodate\printdate{#2}\xspace}%
+	\or%
+		{\origdate\printdayon\printdate{#2}\xspace}%
+	\or%
+		{\origdate\printdayon\printdate{#2}\xspace}%
+	\fi%
 	}
 % End of package
 \endinput
