@@ -1,0 +1,111 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mytodo}[2011/04/29]
+
+\RequirePackage{xkeyval}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
+\DeclareOptionX[my]<todo>{todosection}[chapter]{\def\mytodo@section{#1}}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{mytodo}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+
+%% Packages to call
+\RequirePackage{xifthen}
+% The 'suffix' package offers the '\WithSuffix' command to define starred commands
+\RequirePackage{suffix}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{light-red}{rgb}{1,0.5,0.5}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% Define some language commands
+\if@myenglish
+	\newcommand{\mytodo@lang@todosname}{List of \emph{Todos}}
+	\newcommand{\mytodo@lang@sectionname}{Section}
+	\newcommand{\mytodo@lang@todo}{Incomplete}
+\fi
+\if@myfrancais
+	\newcommand{\mytodo@lang@todosname}{Liste des \emph{À faire}}
+	\newcommand{\mytodo@lang@sectionname}{Section}
+	\newcommand{\mytodo@lang@todo}{Incomplet}
+\fi
+%% To define a list of "todos"
+% Define a command to draw a dotted line in the 'list of "todos"'
+\newcommand{\l@todo}{\@dottedtocline{1}{0.5em}{0.5em}}
+% To write the 'list of "todos"'
+\newcommand{\mylotodo}{\chapter*{\mytodo@lang@todosname}\@starttoc{tdo}}
+%% To define an inline incomplete part in the document
+% Define the current section number
+\newcommand{\mytodo@findcurrentsection}{%
+	\ifthenelse{\equal{\@arabic\c@subsubsection}{0}}%
+	{%
+		\ifthenelse{\equal{\@arabic\c@subsection}{0}}%
+			{%
+				\ifthenelse{\equal{\@arabic\c@section}{0}}%
+					{%
+						\def\mytodo@currentsection{\thechapter}%
+					}{%
+						\def\mytodo@currentsection{\thesection}%
+					}
+			}{%
+				\def\mytodo@currentsection{\thesubsection}%
+			}
+	}{%
+		\def\mytodo@currentsection{\thesubsubsection}%
+	}%
+}
+% An inline incomplete part command
+% First optional argument is what is displayed in the 'list of "todos"'.
+% Second mandatory argument is the note title
+% Third mandatory argument is the comments about the note which are displayed in margin
+\newcommand{\mytodo}[3][]{%
+	\mytodo@findcurrentsection%
+	\ifthenelse{\isempty{#1}}%
+		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#2}}%
+		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#1}}%
+		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#3}}%
+	\textbf{\textcolor{red}{#2}}%
+}
+%% To define an important incomplete part in the document
+% Define a rule
+\newcommand{\mytodo@rule}[2][black]{\par{\tiny\textcolor{#1}{\rule[1ex]{\textwidth}{#2}}}\par}
+% An important incomplete part environment
+% First optional argument is what is displayed in the 'list of "todos"'.
+% Second mandatory argument is the note title
+% Third mandatory argument is the comments about the note which are displayed in margin
+\newenvironment{myTodo}[3][]%
+	{%
+		\ifthenelse{\isempty{#1}}%
+			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#2}}}%
+			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#1}}}%
+		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#1}}%
+		\mytodo@rule[red]{2pt}%
+		\textbf{\textcolor{red}{\mytodo@lang@todo\ }}%
+		\ifthenelse{\NOT\equal{#2}{}}%
+			{\textbf{\textcolor{red}{--\ }\textcolor{light-red}{#2}}}%
+			{}%
+		\mytodo@rule{0.5pt}%
+		\textcolor{black!33}\bgroup
+	}{%
+		\egroup\par%
+		\mytodo@rule[red]{2pt}%
+		\par%
+	}
+
+% End of package
+\endinput
