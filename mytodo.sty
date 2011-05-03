@@ -61,10 +61,10 @@
 						\def\mytodo@currentsection{\thechapter}%
 					}{%
 						\def\mytodo@currentsection{\thesection}%
-					}
+					}%
 			}{%
 				\def\mytodo@currentsection{\thesubsection}%
-			}
+			}%
 	}{%
 		\def\mytodo@currentsection{\thesubsubsection}%
 	}%
@@ -75,11 +75,11 @@
 % Third mandatory argument is the comments about the note which are displayed in margin
 \newcommand{\mytodo}[3][]{%
 	\mytodo@findcurrentsection%
+	\textbf{\textcolor{red}{#2}}%
 	\ifthenelse{\isempty{#1}}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#2}}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#1}}%
 		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#3}}%
-	\textbf{\textcolor{red}{#2}}%
 }
 %% To define an important incomplete part in the document
 % Define a rule
