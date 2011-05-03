@@ -30,77 +30,17 @@
 	\mylof
 	\mylot
 	\mainmatter
-	\part{Introduction}\label{par-test}
-	\chapter{État de l'art}\label{cha-state}
-	\mypartref{par-test}\par
-	\mypartref*{par-test}\par
-	\mypartref[refname={Part.},refsee=true]{par-test}\par
-	\mypartref[reffont={\bf},refsee=true]{par-test}\par
-	\mypartref[refsee=true]{par-test}\par
-	\mypartref*[refname={Part.}]{par-test}\par
-	\mypartref*[reffont={\bf}]{par-test}\par
-	\mypartref*{par-test}\par
-	\mypartref*[refsee=false]{par-test}\par
-	\myfigureref{fig-MaFenga}\par
-	\myfigureref*{fig-MaFenga}\par
-	\mytableref{tab-TableDeMerde}\par
-	\mytableref*{tab-TableDeMerde}\par
-	\myminitoc
-	\section{Le collaboratif}
-	\subsection{Test 1}
-	\mychapterref{cha-state}
-	Une citation pour Feng \mycite{Xiong-2010}.
-
-	\subsection{Test 2}
-	Une citation pour Feng \mycite{Simard-2010a}.
-	%Une citation pour Feng \mycite{Simard-2010b}.
-	%Une citation pour Feng \mycite{Simard-2010c}.
-	%Une citation pour Feng \mycite{Simard-2011}.
-	\myminibiblio
-
-	\section{La manipulation moléculaire}
-	La citation de \mycite[author]{Simard-2010a,Simard-2010b}.
-	\begin{myfigure}
-		\begin{mysubfigure}[0.25\textwidth]
-			\myimage[width=0.25\textwidth]{feng}
-			\mysubcaption[fig-MaFenga]{Ma première Feng}
-		\end{mysubfigure}
-		\begin{mysubfigure}[0.25\textwidth]
-			\myimage[width=0.25\textwidth]{feng}
-			\mysubcaption[fig-MaFengb]{Ma seconde Feng}
-		\end{mysubfigure}
-		\begin{mysubfigure}[0.25\textwidth]
-			\myimage[width=0.25\textwidth]{feng}
-			\mysubcaption[fig-MaFengc]{Ma troisième Feng}
-		\end{mysubfigure}
-		\mycaption[fig-MaFeng]{Ma Feng}
-	\end{myfigure}
-	\myminibiblio
-
-	\chapter{Plate-forme}
-	\mychapterref{cha-state}
-	\mycite{Xiong-2010}\mycite[author]{Simard-2011}\footnote{Une citation toute seule, vous pourrez remarquer !}.
-	Et une référence sur la table \ref{tab-TableDeMerde} !
-	\begin{mytable}
-		\mycaption[tab-TableDeMerde]{Table de merde}
-		\begin{mytabular}{cr@{,}l}
-			\mytoprule
-			Constante & {\small <entier>} & {\small <décimale>} \\
-			\mymiddlerule[\heavyrulewidth]
-			$\pi$ & 3 & 14159 \\
-			\mymiddlerule
-			$e$ & 2 & 71828 \\
-			\mymiddlerule
-			$\bar{h}$ & 6 & 62606896$\times 10^{-34}$ \\
-			\mybottomrule
-		\end{mytabular}
-	\end{mytable}
-	\myminibiblio
-
-	\chapter{Études sur le travail collaboratif}
-	\myminibiblio
+	\part{Le sujet}
+	\chapter{Introduction}
+	\part{Étude du travail collaboratif}
+	\chapter{La recherche collaborative}
+	\chapter{La manipulation collaborative}
+	\chapter{Les dynamiques de groupe}
+	\part{Propositions pour le travail collaboratif}
+	\chapter{Travail collaboratif assisté par haptique}
+	\part{Synthèse}
+	\chapter{Conclusion et perspectives}
 
 	\appendix
-
-	\chapter{Le matériel utilisé}
+	\chapter{\acro{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
 \end{document}
