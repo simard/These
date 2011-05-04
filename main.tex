@@ -7,6 +7,19 @@
 \newcommand{\acro}[1]{\textsc{#1}}
 \newcommand{\mynum}[1]{\nombre{#1}}
 \newcommand{\LIMSI}{\acro{CNRS--LIMSI}\xspace}
+\newcommand{\myhyp}[1]{$\left(\mathcal{H}_#1\right)$\xspace}
+\newcommand{\mygroup}[1]{$\left(\mathcal{G}_#1\right)$\xspace}
+\newcommand{\myvar}[2]{$\left(\mathcal{V}_{\mathrm{#1}#2}\right)$\xspace}
+\newcommand{\mysubject}[1]{\textsc{p}\nombre{#1}}
+\newcommand{\myvari}[1]{\myvar{i}{#1}}
+\newcommand{\myvard}[1]{\myvar{d}{#1}}
+\newcommand{\myPDBbase}{\emph{Protein~DataBase}\xspace}
+\newcommand{\myPDBlink}[2]{\href{#1}{\textsc{\MakeLowercase{#2}}}}
+\newcommand{\myemph}[1]{\emph{#1}}
+\newcommand{\myThreeD}{\textsc{3d}\xspace}
+\newcommand{\myregistered}{\textsuperscript{\textregistered}}
+\newcommand{\mySpaceNavigator}{SpaceNavigator\myregistered\xspace}
+\newcommand{\mycf}{\textit{c.f.}\xspace}
 
 \hypersetup{%
 	pdftitle={Interactions haptiques collaboratives pour la manipulation moléculaire},%
@@ -58,6 +71,13 @@
 
 	\subsection{Variables}
 	\subsubsection{Variables indépendantes}
+	\paragraph{\myvari{1} Nombre de sujets}
+	La première variable indépendante est une variable intra-population, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
+	\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{monôme}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
+	Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
+	Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
+	\mynum{24}~monômes et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de monômes que de binômes.
+
 	\subsubsection{Variables dépendantes}
 	\subsection{Tâche}
 	\subsection{Procédure}
