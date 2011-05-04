@@ -1,6 +1,6 @@
 # Directories
 IMG=images
-TMP=temp
+BUILD=build
 
 # In-file and out-file
 ifeq ($(IN),)
@@ -14,15 +14,17 @@ endif
 TEX=latex
 BTEX=biber
 INDEX=makeindex
-GLOSS=makeglos
+GLOSS=xindy
+ACRO=xindy
 DVIPS=dvips
 PS2PDF=ps2pdf
 
 # Compilators options
-TEXOPT=-shell-escape -output-format=dvi -file-line-error -interaction nonstopmode -output-directory=$(TMP)
+TEXOPT=-shell-escape -output-format=dvi -file-line-error -interaction nonstopmode -output-directory=$(BUILD)
 BTEXOPT=
 INDEXOPT=
-GLOSSOPT=-m
+GLOSSOPT=--language french --codepage utf8 --input-markup xindy
+ACROOPT=--language french --codepage utf8 --input-markup xindy
 DVIPSOPT=-R0
 PS2PDFOPT=
 
@@ -32,10 +34,12 @@ EPS=$(PNG:.png=.eps)
 
 # Others
 UNAME=$(shell uname)
-AUX=$(wildcard $(TMP)/*.aux)
+AUX=$(wildcard $(BUILD)/*.aux)
 BBL=$(AUX:.aux=.bbl)
+GLS=$(AUX:.aux=.gls)
+ACR=$(AUX:.aux=.acr)
 
-.PHONY: final draft pdf ps dvi bibtex img clean proper
+.PHONY: final draft pdf ps dvi bibtex glossary acronym img clean proper
 
 all: draft
 
@@ -44,17 +48,19 @@ all: draft
 #   - valid table of contents
 final: clean img
 	@echo "----- FINAL -----"
-	$(MAKE) $(TMP)/$(OUT).dvi
+	$(MAKE) $(BUILD)/$(OUT).dvi
 	$(MAKE) bibtex
-	$(MAKE) -B $(TMP)/$(OUT).dvi
+	$(MAKE) glossary
+	$(MAKE) acronym
+	$(MAKE) -B $(BUILD)/$(OUT).dvi
 	$(MAKE) -B pdf
 
 # To create a draft version of the document.
 # It execute a faster compilation without images.
 # This is the default target, called by 'all'
-draft: $(TMP) img
-	@sed 's/^\(\\documentclass\[\)\(.*\)/\1draft,\2/g' $(IN).tex > $(TMP)/$(IN).tex
-	IN=$(TMP)/$(IN) $(MAKE) pdf
+draft: $(BUILD) img
+	@sed 's/^\(\\documentclass\[\)\(.*\)/\1draft,\2/g' $(IN).tex > $(BUILD)/$(IN).tex
+	IN=$(BUILD)/$(IN) $(MAKE) pdf
 
 # To create the PDF file
 pdf: $(OUT).pdf
@@ -69,43 +75,59 @@ dvi: $(OUT).dvi
 bibtex: $(BBL)
 	@echo "----- CREATING BBL FILES -----"
 
+# To create the the glossary
+glossary: $(GLS)
+	@echo "----- CREATING GLS FILES -----"
+
+# To create the the acronym glossary
+acronym: $(ACR)
+	@echo "----- CREATING ACR FILES -----"
+
 # To create all images at the desired format (i.e. EPS)
 img: $(EPS)
 	@echo "----- CONVERSION IMAGES PNG -> EPS -----"
 
 # Just take the created PDF file to copy it in the current directory
-$(OUT).pdf: $(TMP)/$(OUT).pdf
+$(OUT).pdf: $(BUILD)/$(OUT).pdf
 	cp $< $(OUT).pdf
 
 # Just take the created PS file to copy it in the current directory
-$(OUT).ps: $(TMP)/$(OUT).ps
+$(OUT).ps: $(BUILD)/$(OUT).ps
 	cp $< $(OUT).ps
 
 # Just take the created DVI file to copy it in the current directory
-$(OUT).dvi: $(TMP)/$(OUT).dvi
+$(OUT).dvi: $(BUILD)/$(OUT).dvi
 	cp $< $(OUT).dvi
 
 # Create the PDF file with the PS file
-$(TMP)/$(OUT).pdf: $(TMP)/$(OUT).ps
+$(BUILD)/$(OUT).pdf: $(BUILD)/$(OUT).ps
 	@echo "----- CONVERSION PS -> PDF -----"
 	$(PS2PDF) $(PS2PDFOPT) $< $@
 
 # Create the PS file with the DVI file
-$(TMP)/$(OUT).ps: $(TMP)/$(OUT).dvi
+$(BUILD)/$(OUT).ps: $(BUILD)/$(OUT).dvi
 	@echo "----- CONVERSION DVI -> PS -----"
 	$(DVIPS) $(DVIPSOPT) -o $@ $<
 
 # Create the DVI file with the TeX file
-# We need the $(TMP) directory
-$(TMP)/$(OUT).dvi: $(IN).tex $(TMP) img
+# We need the $(BUILD) directory
+$(BUILD)/$(OUT).dvi: $(IN).tex $(BUILD) img
 	@echo "----- CONVERSION TEX -> DVI -----"
 	$(TEX) $(TEXOPT) -jobname=$(OUT) $<
 
 # Create BBL files for bibliography with AUX files
-$(TMP)/%.bbl : $(TMP)/%.aux
+$(BUILD)/%.bbl : $(BUILD)/%.aux
 	-$(BTEX) $(BTEXOPT) `echo $< | sed 's/\.aux//g'`
 
-$(TMP):
+# Create GLS files for glossary with GLO files
+$(BUILD)/%.gls : $(BUILD)/%.glo
+	-$(GLOSS) $(GLOSSOPT) -M `echo $< | sed 's/\.glo//g'` -t `echo $< | sed 's/\.glo/\.glg/g'` -o $@ $<
+
+# Create ACR files for acronym glossary with ACN files
+$(BUILD)/%.acr : $(BUILD)/%.acn
+	-$(ACRO) $(ACROOPT) -M `echo $< | sed 's/\.acn//g'` -t `echo $< | sed 's/\.acn/\.alg/g'` -o $@ $<
+
+$(BUILD):
 	mkdir -p $@
 
 # Convert all images from PNG to EPS
@@ -117,11 +139,11 @@ $(IMG)/%.eps: $(IMG)/%.png
 $(IMG)/Makefile: $(IMG)
 	echo $(MKIMG) > $@
 
-# To clean the 'temp' directory
+# To clean the 'build' directory
 clean:
-	rm -Rf $(TMP)
+	rm -Rf $(BUILD)
 
-# To clean the 'temp' directory and suppress all created files
+# To clean the 'build' directory and suppress all created files
 proper: clean
 	rm -f $(IMG)/*.eps
 	rm -f $(OUT).dvi $(OUT).ps $(OUT).pdf

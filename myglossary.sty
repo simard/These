@@ -1,0 +1,91 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{myglossary}[2011/04/29]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
+% To have smart reference with 'varioref' package
+\newif\if@acronym \@acronymfalse
+\DeclareOption{acronym}{\@acronymtrue}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{myglossary}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+\if@acronym
+	% To add the acronym glossary
+	\PassOptionsToPackage{acronym=true}{glossaries}
+\fi
+
+%% Packages to call
+\RequirePackage{xifthen}
+% The 'suffix' package offers the '\WithSuffix' command to define starred commands
+\RequirePackage{suffix}
+% To obtain the '\AtEndPreamble' command
+\RequirePackage{etoolbox}
+% To improve the glossary
+\RequirePackage[toc=true,style=altlist,xindy]{glossaries}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\AtEndPreamble{\makeglossaries}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+%% Define the command to display the glossary at the end of document
+\newcommand{\myglossary}{\printglossaries}
+%% To create a new glossary entry
+% Following options are allowed:
+% - name: the name (text which will appeared in document)
+% - description: description of the word in the glossary
+% - plural: how it should be in plural context
+\newcommand{\mynewglos}[2]{\newglossaryentry{#1}{sort={#1},#2}}
+\if@acronym
+	%% To create a new acronym entry
+	% All options from '\mynewglos' are allowed and some others:
+	% - first: displayed text the first time in the document
+	% - firstplural: displayed text the first time in the document (plural context)
+	\newcommand{\mynewacro}[2]{\newglossaryentry{#1}{type=\acronymtype,sort={#1},#2}}
+\fi
+%% To insert a glossary item in the text
+% The optional argument can take the 'plural' value to displayed th plural
+% The starred versions are using a cap at the beginning.
+\newcommand\myglos[2][]{%
+	\def\myargs@one{#1}%
+	\ifthenelse{\equal{\myargs@one}{plural}}%
+		{\glspl{#2}}%
+		{\gls{#2}}%
+}
+\WithSuffix\newcommand\myglos*[2][]{%
+	\def\myargs@one{#1}%
+	\ifthenelse{\equal{\myargs@one}{plural}}%
+		{\Glspl{#2}}%
+		{\Gls{#2}}%
+}
+\if@acronym
+	\newcommand\myacro[2][]{%
+		\def\myargs@one{#1}%
+		\ifthenelse{\equal{\myargs@one}{plural}}%
+			{\glspl{#2}}%
+			{\gls{#2}}%
+	}
+	\WithSuffix\newcommand\myacro*[2][]{%
+		\def\myargs@one{#1}%
+		\ifthenelse{\equal{\myargs@one}{plural}}%
+			{\Glspl{#2}}%
+			{\Gls{#2}}%
+	}
+\fi
+
+% End of package
+\endinput

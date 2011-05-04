@@ -56,6 +56,8 @@
 \RequirePackage{xcolor}
 % About links in the final PDF document
 \RequirePackage[dvips]{hyperref}
+% To make a glossary
+\RequirePackage[acronym]{myglossary}
 % All about tabulars
 \RequirePackage[smarttab]{myfloat}
 % All about the table of contents and other lists

@@ -4,9 +4,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \newcommand{\name}[1]{\textsc{#1}}
-\newcommand{\acro}[1]{\textsc{#1}}
 \newcommand{\mynum}[1]{\nombre{#1}}
-\newcommand{\LIMSI}{\acro{CNRS--LIMSI}\xspace}
 \newcommand{\myhyp}[1]{$\left(\mathcal{H}_#1\right)$\xspace}
 \newcommand{\mygroup}[1]{$\left(\mathcal{G}_#1\right)$\xspace}
 \newcommand{\myvar}[2]{$\left(\mathcal{V}_{\mathrm{#1}#2}\right)$\xspace}
@@ -35,9 +33,28 @@
 \university{École Doctorale d'Informatique de Paris Sud}
 \date{\mydate[datestyle=long]{01/12/2011}}
 \jury{%
-	Martin & \name{DUPONT} & (rapporteur) & Directeur de recherche au \LIMSI \\
-	Martin & \name{DUPOND} & (examinateur) & Directeur de recherche au \LIMSI}
-	\addglobalbib[datatype=bibtex]{biblio.bib}
+	Martin & \name{DUPONT} & (rapporteur) & Directeur de recherche au \name{LIMSI} \\
+	Martin & \name{DUPOND} & (examinateur) & Directeur de recherche au \name{LIMSI}}
+
+\addglobalbib[datatype=bibtex]{biblio.bib}
+
+\mynewglos{glo-VariableIndependante}{%
+	name={variable indépendante},%
+	description={BlahBlahBlah},%
+	plural={variables indépendantes}%
+}
+\mynewacro{acr-LIMSI}{%
+	name={\textsc{cnrs--limsi}},%
+	description={BlahBlahBlah},%
+	first={Laboratoire pour l'Informatique, la Mécanique et les Sciences de l'Ingénieur (\textsc{cnrs--limsi})}%
+}
+\mynewacro{acr-CD}{%
+	name={\textsc{cd}},
+	description={Un Compact Disc permet de stocker de la musique par exemple},
+	first={Compact Disc (\textsc{cd})},
+	plural={\textsc{cd}s},
+	firstplural={Compacts Discs (\textsc{cd}s)}
+}
 \begin{document}
 	\frontmatter
 	\maketitle
@@ -57,7 +74,7 @@
 	\section{Méthode}
 	\subsection{Sujets}
 	\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une moyenne d'âge de $\mu = 27.8$ ($\sigma = 7.19$) ont participés à cette expérimentation.
-	Ils ont tous été recrutés au sein du laboratoire \LIMSI et sont chercheurs ou assistants de recherche dans les domaines suivants~:
+	Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
 	\begin{itemize}
 		\item linguistique et traitement automatique de la parole;
 		\item réalité virtuelle et système immersifs;
@@ -72,7 +89,7 @@
 	\subsection{Variables}
 	\subsubsection{Variables indépendantes}
 	\paragraph{\myvari{1} Nombre de sujets}
-	La première variable indépendante est une variable intra-population, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
+	La première \myglos{glo-VariableIndependante} est une variable intra-population, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
 	\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{monôme}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
 	Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
 	Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
@@ -89,6 +106,7 @@
 	\part{Synthèse}
 	\chapter{Conclusion et perspectives}
 
+	\myglossary
 	\appendix
-	\chapter{\acro{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
+	\chapter{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
 \end{document}
