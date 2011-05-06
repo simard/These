@@ -52,6 +52,10 @@ final: clean img
 	$(MAKE) bibtex
 	$(MAKE) glossary
 	$(MAKE) acronym
+	$(MAKE) $(BUILD)/$(OUT).dvi
+	$(MAKE) bibtex
+	$(MAKE) glossary
+	$(MAKE) acronym
 	$(MAKE) -B $(BUILD)/$(OUT).dvi
 	$(MAKE) -B pdf
 
