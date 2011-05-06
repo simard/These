@@ -60,202 +60,227 @@
 	\mylot
 	\mylotodo
 	\mainmatter
-	\part{Le sujet}
-	\chapter{Introduction}
-	\part{Étude du travail collaboratif}
-	\chapter{La recherche collaborative}
-	\section{Présentation}
-	\subsection{Objectifs}
-	\subsection{Hypothèses}
-	\section{Dispositif expérimental}
-	\section{Méthode}
-	\subsection{Sujets}
-	\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une moyenne d'âge de $\mu = 27.8$ ($\sigma = 7.19$) ont participés à cette expérimentation.
-	Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
-	\begin{itemize}
-		\item linguistique et traitement automatique de la parole;
-		\item réalité virtuelle et système immersifs;
-		\item audio-acoustique.
-	\end{itemize}
-	Ils ont tous le français comme langue principale.
-	Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni déficience audio.
+	\begin{mypart}{Le sujet}
+		\begin{mychapter}{Introduction}
+		\end{mychapter}
+	\end{mypart}
+	\begin{mypart}{Étude du travail collaboratif}
+		\begin{mychapter}{La recherche collaborative}
+			\begin{mysection}{Présentation}
+				\begin{mysubsection}{Objectifs}
+				\end{mysubsection}
+				\begin{mysubsection}{Hypothèses}
+				\end{mysubsection}
+			\end{mysection}
+			\begin{mysection}{Dispositif expérimental}
+			\end{mysection}
+			\begin{mysection}{Méthode}
+				\begin{mysubsection}{Sujets}
+					\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une moyenne d'âge de $\mu = 27.8$ ($\sigma = 7.19$) ont participés à cette expérimentation.
+					Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
+					\begin{itemize}
+						\item linguistique et traitement automatique de la parole;
+						\item réalité virtuelle et système immersifs;
+						\item audio-acoustique.
+					\end{itemize}
+					Ils ont tous le français comme langue principale.
+					Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni déficience audio.
+
+					Chaque participants est complètement naïf concernant les détails de l'expérimentation.
+					Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
+				\end{mysubsection}
+
+				\begin{mysubsection}{Variables}
+					\begin{mysubsubsection}{Variables indépendantes}
+						\begin{myparagraph}{\myvari{1} Nombre de sujets}
+							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
+							\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
+							Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
+							Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
+							\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de binômes.
+						\end{myparagraph}
+
+						\begin{myparagraph}{\myvari{2} Résidu recherché}
+							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
+							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
+							La première molécule est couramment nommée \TRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+							La seconde molécule nommée \Prion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+							\mynum{5}~\myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
+							\begin{description}
+								\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
+									Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
+								\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
+									On distingue \mynum{3}~formes différentes :
+									\begin{description}
+										\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
+										\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
+										\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
+									\end{description}
+								\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
+									Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
+									Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
+								\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
+									De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
+							\end{description}
+
+							\begin{mytable}
+								\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des résidus recherchés}
+								\setlength{\myheight}{10ex}
+								\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
+								\begin{mysubtable}
+									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \TRPCAGE}
+									\begin{mytabular}[0.49\textwidth]{^C-C}
+										\mytoprule
+										\myrowstyle{\bfseries}
+										Residu & Image \\
+										\mymiddlerule
+										\myresidue{1} & \mypatternpicture{pattern1} \\
+										\myresidue{2} & \mypatternpicture{pattern2} \\
+										\myresidue{3} & \mypatternpicture{pattern3} \\
+										\myresidue{4} & \mypatternpicture{pattern4} \\
+										\myresidue{5} & \mypatternpicture{pattern5} \\
+										\mybottomrule
+									\end{mytabular}
+								\end{mysubtable}
+								\begin{mysubtable}
+									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \Prion}
+									\begin{mytabular}[0.49\textwidth]{^C-C}
+										\mytoprule
+										\myrowstyle{\bfseries}
+										Residu & Image \\
+										\mymiddlerule
+										\myresidue{6}  & \mypatternpicture{pattern6}  \\
+										\myresidue{7}  & \mypatternpicture{pattern7}  \\
+										\myresidue{8}  & \mypatternpicture{pattern8}  \\
+										\myresidue{9}  & \mypatternpicture{pattern9}  \\
+										\myresidue{10} & \mypatternpicture{pattern10} \\
+										\mybottomrule
+									\end{mytabular}
+								\end{mysubtable}
+							\end{mytable}
 	
-	Chaque participants est complètement naïf concernant les détails de l'expérimentation.
-	Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
+							\begin{myfigure}
+								\newcommand{\schemafactor}{0.16}
+								\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
+								\psset{unit=\schemaunit}
+								\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
+								\begin{pspicture}(-3,-2.5)(3,2.5)
+									\rput(-1.75,0){%
+										\myimage[height=2\schemaunit]{exp1-trp-cage}}
+									\rput(1.25,0){%
+										\myimage[height=2\schemaunit]{exp1-prion}}
+									\rput(-2,-1.5){%
+										\myimage[height=\schemaunit]{exp1-pattern1}}
+									\rput(-2,1.5){%
+										\myimage[width=\schemaunit]{exp1-pattern3}}
+									\rput(0,1.5){%
+										\myimage[width=\schemaunit]{exp1-pattern2}}
+									\rput(0,-1.5){%
+										\myimage[width=\schemaunit]{exp1-pattern4}}
+									\rput(2,-1.5){%
+										\myimage[width=\schemaunit]{exp1-pattern5}}
+									\rput(2,1.5){%
+										\myimage[height=\schemaunit]{exp1-pattern6}}
 
-	\subsection{Variables}
-	\subsubsection{Variables indépendantes}
-	\paragraph{\myvari{1} Nombre de sujets}
-	La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
-	\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
-	Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
-	Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
-	\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de binômes.
+									\psset{framesize=1 1}
+									\fnode(-2,-1.5){P1}
+									\uput[-90](-2,-2){\myresidue{1}}
+									\fnode(-2,1.5){P38}
+									\uput[90](-2,2){\myresidue{3} et \myresidue{8}}
+									\fnode(0,1.5){P27}
+									\uput[90](0,2){\myresidue{2} et \myresidue{7}}
+									\fnode(0,-1.5){P49}
+									\uput[-90](0,-2){\myresidue{4} et \myresidue{9}}
+									\fnode(2,-1.5){P510}
+									\uput[-90](2,-2){\myresidue{5} et \myresidue{10}}
+									\fnode(2,1.5){P6}
+									\uput[90](2,2){\myresidue{6}}
 
-	\paragraph{\myvari{2} Résidu recherché}
-	La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
-	\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
-	La première molécule est couramment nommée \TRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-	La seconde molécule nommée \Prion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-	\mynum{5}~\myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
-	\begin{description}
-		\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
-			Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
-		\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
-			On distingue \mynum{3}~formes différentes :
-			\begin{description}
-				\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
-				\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
-				\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
-			\end{description}
-		\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-			Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
-			Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
-		\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
-			De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
-	\end{description}
+									\psset{linecolor=myred}
+									\cnode(-1.5,0.3){0.2}{TRPP1}
+									\cnode(-2,0.15){0.2}{TRPP38}
+									\cnode(-1.25,-0.1){0.2}{TRPP27}
+									\cnode(-2.2,-0.5){0.2}{TRPP49}
+									\cnode(-1.25,-0.65){0.2}{TRPP510}
+									\ncline{-}{P1}{TRPP1}
+									\ncline{-}{P38}{TRPP38}
+									\ncline{-}{P27}{TRPP27}
+									\ncline{-}{P49}{TRPP49}
+									\ncline{-}{P510}{TRPP510}
 
-	\begin{mytable}
-		\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des résidus recherchés}
-		\setlength{\myheight}{10ex}
-		\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
-		\begin{mysubtable}
-			\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \TRPCAGE}
-			\begin{mytabular}[0.49\textwidth]{^C-C}
-				\mytoprule
-				\myrowstyle{\bfseries}
-				Residu & Image \\
-				\mymiddlerule
-				\myresidue{1} & \mypatternpicture{pattern1} \\
-				\myresidue{2} & \mypatternpicture{pattern2} \\
-				\myresidue{3} & \mypatternpicture{pattern3} \\
-				\myresidue{4} & \mypatternpicture{pattern4} \\
-				\myresidue{5} & \mypatternpicture{pattern5} \\
-				\mybottomrule
-			\end{mytabular}
-		\end{mysubtable}
-		\begin{mysubtable}
-			\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \Prion}
-			\begin{mytabular}[0.49\textwidth]{^C-C}
-				\mytoprule
-				\myrowstyle{\bfseries}
-				Residu & Image \\
-				\mymiddlerule
-				\myresidue{6}  & \mypatternpicture{pattern6}  \\
-				\myresidue{7}  & \mypatternpicture{pattern7}  \\
-				\myresidue{8}  & \mypatternpicture{pattern8}  \\
-				\myresidue{9}  & \mypatternpicture{pattern9}  \\
-				\myresidue{10} & \mypatternpicture{pattern10} \\
-				\mybottomrule
-			\end{mytabular}
-		\end{mysubtable}
-	\end{mytable}
-	
-	\begin{myfigure}
-		\newcommand{\schemafactor}{0.16}
-		\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
-		\psset{unit=\schemaunit}
-		\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
-		\begin{pspicture}(-3,-2.5)(3,2.5)
-			\rput(-1.75,0){%
-				\myimage[height=2\schemaunit]{exp1-trp-cage}}
-			\rput(1.25,0){%
-				\myimage[height=2\schemaunit]{exp1-prion}}
-			\rput(-2,-1.5){%
-				\myimage[height=\schemaunit]{exp1-pattern1}}
-			\rput(-2,1.5){%
-				\myimage[width=\schemaunit]{exp1-pattern3}}
-			\rput(0,1.5){%
-				\myimage[width=\schemaunit]{exp1-pattern2}}
-			\rput(0,-1.5){%
-				\myimage[width=\schemaunit]{exp1-pattern4}}
-			\rput(2,-1.5){%
-				\myimage[width=\schemaunit]{exp1-pattern5}}
-			\rput(2,1.5){%
-				\myimage[height=\schemaunit]{exp1-pattern6}}
+									\psset{linecolor=myblue}
+									\cnode(-0.2,0.4){0.2}{PrionP38}
+									\cnode(2.8,0.6){0.2}{PrionP27}
+									\cnode(0.8,0.2){0.2}{PrionP49}
+									\cnode(1.7,-0.7){0.2}{PrionP510}
+									\cnode(1.4,0.0){0.2}{PrionP6}
+									\ncline{-}{P38}{PrionP38}
+									\ncline{-}{P27}{PrionP27}
+									\ncline{-}{P49}{PrionP49}
+									\ncline{-}{P510}{PrionP510}
+									\ncline{-}{P6}{PrionP6}
+								\end{pspicture}
+							\end{myfigure}
 
-			\psset{framesize=1 1}
-			\fnode(-2,-1.5){P1}
-			\uput[-90](-2,-2){\myresidue{1}}
-			\fnode(-2,1.5){P38}
-			\uput[90](-2,2){\myresidue{3} et \myresidue{8}}
-			\fnode(0,1.5){P27}
-			\uput[90](0,2){\myresidue{2} et \myresidue{7}}
-			\fnode(0,-1.5){P49}
-			\uput[-90](0,-2){\myresidue{4} et \myresidue{9}}
-			\fnode(2,-1.5){P510}
-			\uput[-90](2,-2){\myresidue{5} et \myresidue{10}}
-			\fnode(2,1.5){P6}
-			\uput[90](2,2){\myresidue{6}}
+							\begin{mytable}
+								\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus}
+								\begin{mytabular}{^C-L-L-L-L}
+									\mytoprule
+									\myrowstyle{\bfseries}
+									Residu & Position & Forme & Couleurs & Similarité \\
+									\mymiddlerule[\heavyrulewidth]
+									\myresidue{1}  & Interne & Cercle & 8~C, 1~N & Non \\
+									\mymiddlerule
+									\myresidue{2}  & Interne & Étoile & 1~C, 3~N & Non \\
+									\mymiddlerule
+									\myresidue{3}  & Interne & Cercle & 6~C, 1~O & Non \\
+									\mymiddlerule
+									\myresidue{4}  & Externe & Chaîne & 4~C      & Non \\
+									\mymiddlerule
+									\myresidue{5}  & Externe & Chaîne & 4~C, 1~N & Non \\
+									\mymiddlerule[\heavyrulewidth]
+									\myresidue{6}  & Interne & Chaîne & 2~C, 2~S & Non \\
+									\mymiddlerule
+									\myresidue{7}  & Externe & Étoile & 1~C, 3~N & Non \\
+									\mymiddlerule
+									\myresidue{8}  & Externe & Cercle & 6~C, 1~O & Non \\
+									\mymiddlerule
+									\myresidue{9}  & Interne & Chaîne & 4~C      & Oui \\
+									\mymiddlerule
+									\myresidue{10} & Interne & Chaîne & 4~C, 1~N & Oui \\
+									\mybottomrule
+								\end{mytabular}
+							\end{mytable}
+						\end{myparagraph}
+					\end{mysubsubsection}
 
-			\psset{linecolor=myred}
-			\cnode(-1.5,0.3){0.2}{TRPP1}
-			\cnode(-2,0.15){0.2}{TRPP38}
-			\cnode(-1.25,-0.1){0.2}{TRPP27}
-			\cnode(-2.2,-0.5){0.2}{TRPP49}
-			\cnode(-1.25,-0.65){0.2}{TRPP510}
-			\ncline{-}{P1}{TRPP1}
-			\ncline{-}{P38}{TRPP38}
-			\ncline{-}{P27}{TRPP27}
-			\ncline{-}{P49}{TRPP49}
-			\ncline{-}{P510}{TRPP510}
-
-			\psset{linecolor=myblue}
-			\cnode(-0.2,0.4){0.2}{PrionP38}
-			\cnode(2.8,0.6){0.2}{PrionP27}
-			\cnode(0.8,0.2){0.2}{PrionP49}
-			\cnode(1.7,-0.7){0.2}{PrionP510}
-			\cnode(1.4,0.0){0.2}{PrionP6}
-			\ncline{-}{P38}{PrionP38}
-			\ncline{-}{P27}{PrionP27}
-			\ncline{-}{P49}{PrionP49}
-			\ncline{-}{P510}{PrionP510}
-			\ncline{-}{P6}{PrionP6}
-		\end{pspicture}
-	\end{myfigure}
-
-	\begin{mytable}
-		\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus}
-		\begin{mytabular}{^C-L-L-L-L}
-			\mytoprule
-			\myrowstyle{\bfseries}
-			Residu & Position & Forme & Couleurs & Similarité \\
-			\mymiddlerule[\heavyrulewidth]
-			\myresidue{1}  & Interne & Cercle & 8~C, 1~N & Non \\
-			\mymiddlerule
-			\myresidue{2}  & Interne & Étoile & 1~C, 3~N & Non \\
-			\mymiddlerule
-			\myresidue{3}  & Interne & Cercle & 6~C, 1~O & Non \\
-			\mymiddlerule
-			\myresidue{4}  & Externe & Chaîne & 4~C      & Non \\
-			\mymiddlerule
-			\myresidue{5}  & Externe & Chaîne & 4~C, 1~N & Non \\
-			\mymiddlerule[\heavyrulewidth]
-			\myresidue{6}  & Interne & Chaîne & 2~C, 2~S & Non \\
-			\mymiddlerule
-			\myresidue{7}  & Externe & Étoile & 1~C, 3~N & Non \\
-			\mymiddlerule
-			\myresidue{8}  & Externe & Cercle & 6~C, 1~O & Non \\
-			\mymiddlerule
-			\myresidue{9}  & Interne & Chaîne & 4~C      & Oui \\
-			\mymiddlerule
-			\myresidue{10} & Interne & Chaîne & 4~C, 1~N & Oui \\
-			\mybottomrule
-		\end{mytabular}
-	\end{mytable}
-
-	\subsubsection{Variables dépendantes}
-	\subsection{Tâche}
-	\subsection{Procédure}
-	\section{Résultats}
-	\chapter{La manipulation collaborative}
-	\chapter{Les dynamiques de groupe}
-	\part{Propositions pour le travail collaboratif}
-	\chapter{Travail collaboratif assisté par haptique}
-	\part{Synthèse}
-	\chapter{Conclusion et perspectives}
+					\begin{mysubsubsection}{Variables dépendantes}
+					\end{mysubsubsection}
+				\end{mysubsection}
+				\begin{mysubsection}{Tâche}
+				\end{mysubsection}
+				\begin{mysubsection}{Procédure}
+				\end{mysubsection}
+			\end{mysection}
+			\begin{mysection}{Résultats}
+			\end{mysection}
+		\end{mychapter}
+		\begin{mychapter}{La manipulation collaborative}
+		\end{mychapter}
+		\begin{mychapter}{Les dynamiques de groupe}
+		\end{mychapter}
+	\end{mypart}
+	\begin{mypart}{Propositions pour le travail collaboratif}
+		\begin{mychapter}{Travail collaboratif assisté par haptique}
+		\end{mychapter}
+	\end{mypart}
+	\begin{mypart}{Synthèse}
+		\begin{mychapter}{Conclusion et perspectives}
+		\end{mychapter}
+	\end{mypart}
 
 	\myglossary
 	\appendix
-	\chapter{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
+	\begin{mychapter}{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
+	\end{mychapter}
 \end{document}

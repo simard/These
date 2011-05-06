@@ -70,6 +70,41 @@
 \if@minitoc
 	\newcommand{\myminitoc}{\minitoc}
 \fi
+\newenvironment{mypart}[2][par-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\part{\myargs@two}\label{\myargs@one}%%
+}{}
+\newenvironment{mychapter}[2][cha-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\chapter{\myargs@two}\label{\myargs@one}%
+}{}
+\newenvironment{mysection}[2][sec-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\section{\myargs@two}\label{\myargs@one}%
+}{}
+\newenvironment{mysubsection}[2][sse-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\subsection{\myargs@two}\label{\myargs@one}%
+}{}
+\newenvironment{mysubsubsection}[2][sss-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\subsubsection{\myargs@two}\label{\myargs@one}%
+}{}
+\newenvironment{myparagraph}[2][par-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\paragraph{\myargs@two}\label{\myargs@one}%
+}{}
+\newenvironment{mysubparagraph}[2][par-??]{%
+	\def\myargs@one{#1}%
+	\def\myargs@two{#2}%
+	\subparagraph{\myargs@two}\label{\myargs@one}%
+}{}
 
 % End of package
 \endinput
