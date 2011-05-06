@@ -52,6 +52,8 @@
 \RequirePackage{lmodern}
 % About language
 \RequirePackage{babel}
+% Only for number printing
+\RequirePackage{numprint}
 % About colors
 \RequirePackage{xcolor}
 % Redefine headers and footers
