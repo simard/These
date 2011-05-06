@@ -51,23 +51,7 @@
 
 \addglobalbib[datatype=bibtex]{biblio.bib}
 
-\mynewglos{glo-VariableIndependante}{%
-	name={variable indépendante},%
-	description={BlahBlahBlah},%
-	plural={variables indépendantes}%
-}
-\mynewacro{acr-LIMSI}{%
-	name={\textsc{cnrs--limsi}},%
-	description={BlahBlahBlah},%
-	first={Laboratoire pour l'Informatique, la Mécanique et les Sciences de l'Ingénieur (\textsc{cnrs--limsi})}%
-}
-\mynewacro{acr-CD}{%
-	name={\textsc{cd}},
-	description={Un Compact Disc permet de stocker de la musique par exemple},
-	first={Compact Disc (\textsc{cd})},
-	plural={\textsc{cd}s},
-	firstplural={Compacts Discs (\textsc{cd}s)}
-}
+\input{myglossary}
 \begin{document}
 	\frontmatter
 	\maketitle
@@ -102,22 +86,22 @@
 	\subsection{Variables}
 	\subsubsection{Variables indépendantes}
 	\paragraph{\myvari{1} Nombre de sujets}
-	La première \myglos{glo-VariableIndependante} est une variable intra-population, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
-	\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{monôme}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
+	La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
+	\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{binôme}) \fg.
 	Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
 	Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
-	\mynum{24}~monômes et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de monômes que de binômes.
+	\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de binômes.
 
 	\paragraph{\myvari{2} Résidu recherché}
-	La seconde \myglos{glo-VariableIndependante} est une variable intra-population.
-	\myvari{2} concerne les résidus recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
+	La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
+	\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
 	La première molécule est couramment nommée \TRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
 	La seconde molécule nommée \Prion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-	\mynum{5}~résidus sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
+	\mynum{5}~\myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
 	\begin{description}
-		\item[Position] La position du résidu peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
-			Un résidu en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un résidu en position interne qui sera plus complexe d'accès.
-		\item[Forme] La forme du résidu influe énormément sur la complexité de la recherche.
+		\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
+			Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
+		\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
 			On distingue \mynum{3}~formes différentes :
 			\begin{description}
 				\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
@@ -127,8 +111,8 @@
 		\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
 			Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
 			Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
-		\item[Similarité] Certains résidus à chercher sont très similaires à d'autres résidus également présents sur la molécule.
-			De par leur similarité, ils vont mobilier la recherche sur des résidus incorrects.
+		\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
+			De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
 	\end{description}
 
 	\begin{mytable}
