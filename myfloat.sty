@@ -36,6 +36,9 @@
 	% For smart tables with more spaces
 	\RequirePackage{booktabs}
 \fi
+% To allow vertical centering and other usefull stuff
+% Requires the 'array' package
+\RequirePackage{tabularx}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
@@ -48,10 +51,58 @@
 \captionsetup{font={sf},labelfont={bf,sf}}
 % Avoid to have float displayed before their reference on the '.tex' file when the [t] placement is specified
 \suppressfloats[t]
+% Redefine the 'X' column type to have vertically centering fields
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}}
+% A column type that must be only before the first column in order to have a effect on all column
+\newcolumntype{^}{>{\global\let\myfloat@rowstyle\relax}}
+% A column type that must be insert before each column except the first (used it with the '^' column type)
+\newcolumntype{-}{>{\myfloat@rowstyle}}
+% Define new column types for left, center and right aligned cells.
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
+% Define the style for the current row
+\newcommand{\myrowstyle}[1]{%
+	\gdef\myfloat@rowstyle{#1}%
+	#1\ignorespaces%
+}
+% Define the 'subcaption' title for default use
+\def\my@subcaption{??\label{sub-}}
+% To define the caption in a 'mysubfigure'
+\newcommand{\mysubcaption}[2][sub-]{\gdef\my@subcaption{#2\label{#1}}}
+% Define the 'mysubfigure' environment
+\newlength{\myparboxlength}
+\newenvironment{mysubfloat}[1][0.49\textwidth]{%
+		\setlength{\myparboxlength}{#1}
+		\caption@withoptargs%
+		\begingroup\setbox\@tempboxa\hbox\bgroup%
+	}{%
+		\egroup%
+		\begingroup%
+		\captionsetup{subtype*}% set \caption@position
+		\caption@iftop{%
+			\endgroup%
+			\parbox[t]{\myparboxlength}{%
+				\captionsetup{subtype,position=t}%
+				\vbox{\caption\my@subcaption}%
+				\csname caption@hj@c\endcsname%
+				\unhbox\@tempboxa%
+			}%
+		}{%
+			\endgroup
+			\parbox[b]{\myparboxlength}{%
+				\captionsetup{subtype,position=b}%
+				\csname caption@hj@c\endcsname%
+				\unhbox\@tempboxa%
+				\vtop{\caption\my@subcaption}%
+			}%
+		}%
+		\endgroup%
+	}
 % Command to insert a image
 \newcommand{\myimage}[2][]{\includegraphics[#1]{#2}}
 % Rename 'figure' environment
@@ -68,40 +119,12 @@
 	}{%
 		\end{figure*}
 	}
-% Define the 'subcaption' title for default use
-\def\my@subcaption{??\label{sub-}}
-% To define the caption in a 'mysubfigure'
-\newcommand{\mysubcaption}[2][sub-]{\gdef\my@subcaption{#2\label{#1}}}
-% Define the 'mysubfigure' environment
-\newlength{\myparboxlength}
-\newenvironment{mysubfigure}[1][0.4\textwidth]{%
-		\setlength{\myparboxlength}{#1}
-		\caption@withoptargs%
-		\begingroup\setbox\@tempboxa\hbox\bgroup%
+% Define a 'mysubfigure' environment (renamed from 'mysubfloat')
+\newenvironment{mysubfigure}%
+	{%
+		\begin{mysubfloat}%
 	}{%
-		\egroup%
-		\begingroup%
-		\captionsetup{subtype*}% set \caption@position
-		\caption@iftop{%
-			\endgroup%
-			\parbox[t]{\myparboxlength}{%
-				\captionsetup{subtype,position=t}%
-				\vbox{\caption\my@subcaption}%
-				\vbox{\subcaption@hrule}%
-				\csname caption@hj@c\endcsname%
-				\unhbox\@tempboxa%
-			}%
-		}{%
-			\endgroup
-			\parbox[b]{\myparboxlength}{%
-				\captionsetup{subtype,position=b}%
-				\csname caption@hj@c\endcsname%
-				\unhbox\@tempboxa%
-				\vbox{\subcaption@hrule}%
-				\vtop{\caption\my@subcaption}%
-			}%
-		}%
-		\endgroup%
+		\end{mysubfloat}%
 	}
 % Rename 'table' environment
 \newenvironment{mytable}[1][htp]{%
@@ -117,11 +140,18 @@
 	}{%
 		\end{table*}
 	}
-% Rename 'tabular' environment
-\newenvironment{mytabular}[1]{%
-		\begin{tabular}{#1}
+% Define a 'mysubtable' environment (renamed from 'mysubfloat')
+\newenvironment{mysubtable}%
+	{%
+		\begin{mysubfloat}%
 	}{%
-		\end{tabular}
+		\end{mysubfloat}%
+	}
+% Rename 'tabular' environment
+\newenvironment{mytabular}[2][\textwidth]{%
+		\tabularx{#1}{#2}%
+	}{%
+		\endtabularx%
 	}
 % Add an optional label argument for the caption
 \newcommand{\mycaption}[2][tab-none]{\caption{#2}\label{#1}}
