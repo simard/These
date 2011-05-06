@@ -3,6 +3,8 @@
 \usepackage{mytodo}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{pstricks}
+\usepackage{pstricks-add}
 \newcommand{\name}[1]{\textsc{#1}}
 \newcommand{\mynum}[1]{\nombre{#1}}
 \newcommand{\myhyp}[1]{$\left(\mathcal{H}_#1\right)$\xspace}
@@ -11,13 +13,24 @@
 \newcommand{\mysubject}[1]{\textsc{p}\nombre{#1}}
 \newcommand{\myvari}[1]{\myvar{i}{#1}}
 \newcommand{\myvard}[1]{\myvar{d}{#1}}
+\newcommand{\mypattern}[1]{$\left(\mathcal{M}_{#1}\right)$\xspace}
+\newcommand{\myPDB}{\textsc{pdb}\xspace}
 \newcommand{\myPDBbase}{\emph{Protein~DataBase}\xspace}
 \newcommand{\myPDBlink}[2]{\href{#1}{\textsc{\MakeLowercase{#2}}}}
+\newcommand{\TRPCAGE}{TRP-CAGE\xspace}
+\newcommand{\TRPZIPPER}{TRP-ZIPPER\xspace}
+\newcommand{\Prion}{Prion\xspace}
+\newcommand{\Ubiquitin}{Ubiquitin\xspace}
 \newcommand{\myemph}[1]{\emph{#1}}
 \newcommand{\myThreeD}{\textsc{3d}\xspace}
 \newcommand{\myregistered}{\textsuperscript{\textregistered}}
 \newcommand{\mySpaceNavigator}{SpaceNavigator\myregistered\xspace}
 \newcommand{\mycf}{\textit{c.f.}\xspace}
+\newcommand{\myetc}{\textit{etc.}\xspace}
+\newrgbcolor{myred}{0.7265625 0 0}
+\newrgbcolor{myblue}{0 0 0.7265625}
+\newlength{\mywidth}
+\newlength{\myheight}
 
 \hypersetup{%
 	pdftitle={Interactions haptiques collaboratives pour la manipulation moléculaire},%
@@ -94,6 +107,158 @@
 	Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
 	Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
 	\mynum{24}~monômes et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de monômes que de binômes.
+
+	\paragraph{\myvari{2} Motif recherché}
+	La seconde \myglos{glo-VariableIndependante} est une variable intra-population.
+	\myvari{2} concerne les motifs recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesMotifsRecherches}.
+	La première molécule est couramment nommée \TRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+	La seconde molécule nommée \Prion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+	\mynum{5}~motifs sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesMotifsSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesMotifs} :
+	\begin{description}
+		\item[Position] La position du motif peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
+			Un motif en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un motif en position interne qui sera plus complexe d'accès.
+		\item[Forme] La forme du motif influe énormément sur la complexité de la recherche.
+			On distingue \mynum{3}~formes différentes :
+			\begin{description}
+				\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
+				\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
+				\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
+			\end{description}
+		\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
+			Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
+			Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
+		\item[Similarité] Certains résidus à chercher sont très similaires à d'autres résidus également présents sur la molécule.
+			De par leur similarité, ils vont mobilier la recherche sur des résidus incorrects.
+	\end{description}
+
+	\begin{mytable}
+		\mycaption[tab-exp1-ListeDesMotifsRecherches]{Liste des motifs recherchés}
+		\setlength{\myheight}{10ex}
+		\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
+		\begin{mysubtable}
+			\mysubcaption[tab-exp1-ListeDesMotifsRecherches-MotifsSurLaMoleculeTRPCAGE]{Motifs sur la molécule \TRPCAGE}
+			\begin{mytabular}[0.49\textwidth]{^C-C}
+				\mytoprule
+				\myrowstyle{\bfseries}
+				Motif & Image \\
+				\mymiddlerule
+				\mypattern{1} & \mypatternpicture{pattern1} \\
+				\mypattern{2} & \mypatternpicture{pattern2} \\
+				\mypattern{3} & \mypatternpicture{pattern3} \\
+				\mypattern{4} & \mypatternpicture{pattern4} \\
+				\mypattern{5} & \mypatternpicture{pattern5} \\
+				\mybottomrule
+			\end{mytabular}
+		\end{mysubtable}
+		\begin{mysubtable}
+			\mysubcaption[tab-exp1-ListeDesMotifsRecherches-MotifsSurLaMoleculePrion]{Motifs sur la molécule \Prion}
+			\begin{mytabular}[0.49\textwidth]{^C-C}
+				\mytoprule
+				\myrowstyle{\bfseries}
+				Motif & Image \\
+				\mymiddlerule
+				\mypattern{6}  & \mypatternpicture{pattern6}  \\
+				\mypattern{7}  & \mypatternpicture{pattern7}  \\
+				\mypattern{8}  & \mypatternpicture{pattern8}  \\
+				\mypattern{9}  & \mypatternpicture{pattern9}  \\
+				\mypattern{10} & \mypatternpicture{pattern10} \\
+				\mybottomrule
+			\end{mytabular}
+		\end{mysubtable}
+	\end{mytable}
+	
+	\begin{myfigure}
+		\newcommand{\schemafactor}{0.16}
+		\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
+		\psset{unit=\schemaunit}
+		\mycaption[fig-exp1-RepartitionDesMotifsSurLesMolecules]{Répartition des motifs sur les molécules}
+		\begin{pspicture}(-3,-2.5)(3,2.5)
+			\rput(-1.75,0){%
+				\myimage[height=2\schemaunit]{exp1-trp-cage}}
+			\rput(1.25,0){%
+				\myimage[height=2\schemaunit]{exp1-prion}}
+			\rput(-2,-1.5){%
+				\myimage[height=\schemaunit]{exp1-pattern1}}
+			\rput(-2,1.5){%
+				\myimage[width=\schemaunit]{exp1-pattern3}}
+			\rput(0,1.5){%
+				\myimage[width=\schemaunit]{exp1-pattern2}}
+			\rput(0,-1.5){%
+				\myimage[width=\schemaunit]{exp1-pattern4}}
+			\rput(2,-1.5){%
+				\myimage[width=\schemaunit]{exp1-pattern5}}
+			\rput(2,1.5){%
+				\myimage[height=\schemaunit]{exp1-pattern6}}
+
+			\psset{framesize=1 1}
+			\fnode(-2,-1.5){P1}
+			\uput[-90](-2,-2){\mypattern{1}}
+			\fnode(-2,1.5){P38}
+			\uput[90](-2,2){\mypattern{3} et \mypattern{8}}
+			\fnode(0,1.5){P27}
+			\uput[90](0,2){\mypattern{2} et \mypattern{7}}
+			\fnode(0,-1.5){P49}
+			\uput[-90](0,-2){\mypattern{4} et \mypattern{9}}
+			\fnode(2,-1.5){P510}
+			\uput[-90](2,-2){\mypattern{5} et \mypattern{10}}
+			\fnode(2,1.5){P6}
+			\uput[90](2,2){\mypattern{6}}
+
+			\psset{linecolor=myred}
+			\cnode(-1.5,0.3){0.2}{TRPP1}
+			\cnode(-2,0.15){0.2}{TRPP38}
+			\cnode(-1.25,-0.1){0.2}{TRPP27}
+			\cnode(-2.2,-0.5){0.2}{TRPP49}
+			\cnode(-1.25,-0.65){0.2}{TRPP510}
+			\ncline{-}{P1}{TRPP1}
+			\ncline{-}{P38}{TRPP38}
+			\ncline{-}{P27}{TRPP27}
+			\ncline{-}{P49}{TRPP49}
+			\ncline{-}{P510}{TRPP510}
+
+			\psset{linecolor=myblue}
+			\cnode(-0.2,0.4){0.2}{PrionP38}
+			\cnode(2.8,0.6){0.2}{PrionP27}
+			\cnode(0.8,0.2){0.2}{PrionP49}
+			\cnode(1.7,-0.7){0.2}{PrionP510}
+			\cnode(1.4,0.0){0.2}{PrionP6}
+			\ncline{-}{P38}{PrionP38}
+			\ncline{-}{P27}{PrionP27}
+			\ncline{-}{P49}{PrionP49}
+			\ncline{-}{P510}{PrionP510}
+			\ncline{-}{P6}{PrionP6}
+		\end{pspicture}
+	\end{myfigure}
+
+	\begin{mytable}
+		\mycaption[tab-exp1-ParametresDeComplexiteDesMotifs]{Paramètres de complexité des motifs}
+		\begin{mytabular}{^C-L-L-L-L}
+			\mytoprule
+			\myrowstyle{\bfseries}
+			Motif & Position & Forme & Couleurs & Similarité \\
+			\mymiddlerule[\heavyrulewidth]
+			\mypattern{1}  & Interne & Cercle & 8~C, 1~N & Non \\
+			\mymiddlerule
+			\mypattern{2}  & Interne & Étoile & 1~C, 3~N & Non \\
+			\mymiddlerule
+			\mypattern{3}  & Interne & Cercle & 6~C, 1~O & Non \\
+			\mymiddlerule
+			\mypattern{4}  & Externe & Chaîne & 4~C      & Non \\
+			\mymiddlerule
+			\mypattern{5}  & Externe & Chaîne & 4~C, 1~N & Non \\
+			\mymiddlerule[\heavyrulewidth]
+			\mypattern{6}  & Interne & Chaîne & 2~C, 2~S & Non \\
+			\mymiddlerule
+			\mypattern{7}  & Externe & Étoile & 1~C, 3~N & Non \\
+			\mymiddlerule
+			\mypattern{8}  & Externe & Cercle & 6~C, 1~O & Non \\
+			\mymiddlerule
+			\mypattern{9}  & Interne & Chaîne & 4~C      & Oui \\
+			\mymiddlerule
+			\mypattern{10} & Interne & Chaîne & 4~C, 1~N & Oui \\
+			\mybottomrule
+		\end{mytabular}
+	\end{mytable}
 
 	\subsubsection{Variables dépendantes}
 	\subsection{Tâche}
