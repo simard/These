@@ -48,7 +48,7 @@
 % Define a command to draw a dotted line in the 'list of "todos"'
 \newcommand{\l@todo}{\@dottedtocline{1}{0.5em}{0.5em}}
 % To write the 'list of "todos"'
-\newcommand{\mylotodo}{\chapter*{\mytodo@lang@todosname}\@starttoc{tdo}}
+\newcommand{\mylotodo}{\chapter*{\mytodo@lang@todosname\markboth{\mytodo@lang@todosname}{}}\@starttoc{tdo}}
 %% To define an inline incomplete part in the document
 % Define the current section number
 \newcommand{\mytodo@findcurrentsection}{%

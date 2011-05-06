@@ -54,6 +54,8 @@
 \RequirePackage{babel}
 % About colors
 \RequirePackage{xcolor}
+% Redefine headers and footers
+\RequirePackage{myheadfoot}
 % About links in the final PDF document
 \RequirePackage[dvips]{hyperref}
 % To make a glossary

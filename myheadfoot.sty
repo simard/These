@@ -1,0 +1,35 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{myheadfoot}[2011/04/29]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{myheadfoot}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+
+%% Packages to call
+% The 'fancyhdr' can modify headers and footers
+\RequirePackage{fancyhdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\sffamily \nouppercase{\leftmark}}
+\fancyhead[RO]{\sffamily \nouppercase{\rightmark}}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+
+% End of package
+\endinput
