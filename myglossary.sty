@@ -58,32 +58,31 @@
 	\newcommand{\mynewacro}[2]{\newglossaryentry{#1}{type=\acronymtype,sort={#1},#2}}
 \fi
 %% To insert a glossary item in the text
-% The optional argument can take the 'plural' value to displayed th plural
-% The starred versions are using a cap at the beginning.
-\newcommand\myglos[2][]{%
-	\def\myargs@one{#1}%
-	\ifthenelse{\equal{\myargs@one}{plural}}%
-		{\glspl{#2}}%
-		{\gls{#2}}%
+% The starred versions display the plural
+\newcommand\myglos[1]{%
+	\gls{#1}%
 }
-\WithSuffix\newcommand\myglos*[2][]{%
-	\def\myargs@one{#1}%
-	\ifthenelse{\equal{\myargs@one}{plural}}%
-		{\Glspl{#2}}%
-		{\Gls{#2}}%
+\WithSuffix\newcommand\myglos*[1]{%
+	\glspl{#1}%
+}
+\newcommand\myGlos[1]{%
+	\Gls{#1}%
+}
+\WithSuffix\newcommand\myGlos*[1]{%
+	\Glspl{#1}%
 }
 \if@acronym
-	\newcommand\myacro[2][]{%
-		\def\myargs@one{#1}%
-		\ifthenelse{\equal{\myargs@one}{plural}}%
-			{\glspl{#2}}%
-			{\gls{#2}}%
+	\newcommand\myacro[1]{%
+		\gls{#1}%
 	}
-	\WithSuffix\newcommand\myacro*[2][]{%
-		\def\myargs@one{#1}%
-		\ifthenelse{\equal{\myargs@one}{plural}}%
-			{\Glspl{#2}}%
-			{\Gls{#2}}%
+	\WithSuffix\newcommand\myacro*[1]{%
+		\glspl{#1}%
+	}
+	\newcommand\myAcro[1]{%
+		\Gls{#1}%
+	}
+	\WithSuffix\newcommand\myAcro*[1]{%
+		\Glspl{#1}%
 	}
 \fi
 
