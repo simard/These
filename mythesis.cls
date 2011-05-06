@@ -85,7 +85,7 @@
 	pdfdisplaydoctitle=true,%
 	pdffitwindow=true,%
 	pdfstartview=FitH,%
-	linkcolor=blue,%
+	linkcolor=gray,%
 	citecolor=green,%
 	filecolor=magenta,%
 	urlcolor=red%
