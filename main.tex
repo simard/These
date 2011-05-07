@@ -164,48 +164,48 @@
 							\end{mytable}
 
 							\begin{myfigure}
-								\newcommand{\schemafactor}{0.16}
+								\newcommand{\schemafactor}{0.20}
 								\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
 								\psset{unit=\schemaunit}
 								\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
-								\begin{pspicture}(-3,-2.5)(3,2.5)
-									\rput(-1.75,0){%
-										\myimage[height=2\schemaunit]{exp1-trp-cage}}
-									\rput(1.25,0){%
-										\myimage[height=2\schemaunit]{exp1-prion}}
-									\rput(-2,-1.5){%
+								\begin{pspicture}(-2.5,-3)(2.5,3)
+									\rput(0,1.75){%
+										\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
+									\rput(0,-1.25){%
+										\myimage[height=2\schemaunit,angle=90]{exp1-prion}}
+									\rput(-1.5,2){%
 										\myimage[height=\schemaunit]{exp1-pattern1}}
-									\rput(-2,1.5){%
+									\rput(1.5,2){%
 										\myimage[width=\schemaunit]{exp1-pattern3}}
-									\rput(0,1.5){%
+									\rput(1.5,-0){%
 										\myimage[width=\schemaunit]{exp1-pattern2}}
-									\rput(0,-1.5){%
+									\rput(-1.5,-0){%
 										\myimage[width=\schemaunit]{exp1-pattern4}}
-									\rput(2,-1.5){%
+									\rput(-1.5,-2){%
 										\myimage[width=\schemaunit]{exp1-pattern5}}
-									\rput(2,1.5){%
+									\rput(1.5,-2){%
 										\myimage[height=\schemaunit]{exp1-pattern6}}
 
 									\psset{framesize=1 1}
-									\fnode(-2,-1.5){P1}
-									\uput[-90](-2,-2){\myresidue{1}}
-									\fnode(-2,1.5){P38}
-									\uput[90](-2,2){\myresidue{3} et \myresidue{8}}
-									\fnode(0,1.5){P27}
-									\uput[90](0,2){\myresidue{2} et \myresidue{7}}
-									\fnode(0,-1.5){P49}
-									\uput[-90](0,-2){\myresidue{4} et \myresidue{9}}
-									\fnode(2,-1.5){P510}
-									\uput[-90](2,-2){\myresidue{5} et \myresidue{10}}
-									\fnode(2,1.5){P6}
-									\uput[90](2,2){\myresidue{6}}
+									\fnode(-1.5,2){P1}
+									\uput[90](-1.5,2.5){\myresidue{1}}
+									\fnode(1.5,2){P38}
+									\uput[90](1.5,2.5){\myresidue{3} et \myresidue{8}}
+									\fnode(1.5,-0){P27}
+									\uput[90](1.5,0.5){\myresidue{2} et \myresidue{7}}
+									\fnode(-1.5,-0){P49}
+									\uput[90](-1.5,0.5){\myresidue{4} et \myresidue{9}}
+									\fnode(-1.5,-2){P510}
+									\uput[90](-1.5,-1.5){\myresidue{5} et \myresidue{10}}
+									\fnode(1.5,-2){P6}
+									\uput[90](1.5,-1.5){\myresidue{6}}
 
 									\psset{linecolor=myred}
-									\cnode(-1.5,0.3){0.2}{TRPP1}
-									\cnode(-2,0.15){0.2}{TRPP38}
-									\cnode(-1.25,-0.1){0.2}{TRPP27}
-									\cnode(-2.2,-0.5){0.2}{TRPP49}
-									\cnode(-1.25,-0.65){0.2}{TRPP510}
+									\cnode(0.3,1.5){0.2}{TRPP1}
+									\cnode(0.15,2){0.2}{TRPP38}
+									\cnode(-0.1,1.25){0.2}{TRPP27}
+									\cnode(-0.5,2.2){0.2}{TRPP49}
+									\cnode(-0.65,1.25){0.2}{TRPP510}
 									\ncline{-}{P1}{TRPP1}
 									\ncline{-}{P38}{TRPP38}
 									\ncline{-}{P27}{TRPP27}
@@ -213,11 +213,11 @@
 									\ncline{-}{P510}{TRPP510}
 
 									\psset{linecolor=myblue}
-									\cnode(-0.2,0.4){0.2}{PrionP38}
-									\cnode(2.8,0.6){0.2}{PrionP27}
-									\cnode(0.8,0.2){0.2}{PrionP49}
-									\cnode(1.7,-0.7){0.2}{PrionP510}
-									\cnode(1.4,0.0){0.2}{PrionP6}
+									\cnode(0.4,0.2){0.2}{PrionP38}
+									\cnode(0.6,-2.8){0.2}{PrionP27}
+									\cnode(0.2,-0.8){0.2}{PrionP49}
+									\cnode(-0.7,-1.7){0.2}{PrionP510}
+									\cnode(0.0,-1.4){0.2}{PrionP6}
 									\ncline{-}{P38}{PrionP38}
 									\ncline{-}{P27}{PrionP27}
 									\ncline{-}{P49}{PrionP49}
