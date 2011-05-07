@@ -28,7 +28,13 @@
 \newcommand{\mycf}{\textit{c.f.}\xspace}
 \newcommand{\myetc}{\textit{etc.}\xspace}
 \newrgbcolor{myred}{0.7265625 0 0}
+\newrgbcolor{mylightred}{0.9265625 0.500 0.500}
+\newrgbcolor{mydarkblue}{0 0 0.2265625}
 \newrgbcolor{myblue}{0 0 0.7265625}
+\newrgbcolor{mylightblue}{0.500 0.500 0.9265625}
+\newrgbcolor{mylightestblue}{0.7500 0.7500 0.9265625}
+\newrgbcolor{mygreen}{0 0.7265625 0}
+\newrgbcolor{mylightgreen}{0.500 0.9265625 0.500}
 \newlength{\mywidth}
 \newlength{\myheight}
 
@@ -89,7 +95,6 @@
 					Chaque participants est complètement naïf concernant les détails de l'expérimentation.
 					Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
 				\end{mysubsection}
-
 				\begin{mysubsection}{Variables}
 					\begin{mysubsubsection}{Variables indépendantes}
 						\begin{myparagraph}{\myvari{1} Nombre de sujets}
@@ -99,7 +104,6 @@
 							Pour les binômes, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
 							\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~binômes ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de binômes.
 						\end{myparagraph}
-
 						\begin{myparagraph}{\myvari{2} Résidu recherché}
 							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
 							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
@@ -132,7 +136,7 @@
 									\begin{mytabular}[0.49\textwidth]{^C-C}
 										\mytoprule
 										\myrowstyle{\bfseries}
-										Residu & Image \\
+										Résidu & Image \\
 										\mymiddlerule
 										\myresidue{1} & \mypatternpicture{pattern1} \\
 										\myresidue{2} & \mypatternpicture{pattern2} \\
@@ -147,7 +151,7 @@
 									\begin{mytabular}[0.49\textwidth]{^C-C}
 										\mytoprule
 										\myrowstyle{\bfseries}
-										Residu & Image \\
+										Résidu & Image \\
 										\mymiddlerule
 										\myresidue{6}  & \mypatternpicture{pattern6}  \\
 										\myresidue{7}  & \mypatternpicture{pattern7}  \\
@@ -158,7 +162,7 @@
 									\end{mytabular}
 								\end{mysubtable}
 							\end{mytable}
-	
+
 							\begin{myfigure}
 								\newcommand{\schemafactor}{0.16}
 								\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
@@ -227,7 +231,7 @@
 								\begin{mytabular}{^C-L-L-L-L}
 									\mytoprule
 									\myrowstyle{\bfseries}
-									Residu & Position & Forme & Couleurs & Similarité \\
+									Résidu & Position & Forme & Couleurs & Similarité \\
 									\mymiddlerule[\heavyrulewidth]
 									\myresidue{1}  & Interne & Cercle & 8~C, 1~N & Non \\
 									\mymiddlerule
@@ -253,8 +257,80 @@
 							\end{mytable}
 						\end{myparagraph}
 					\end{mysubsubsection}
-
 					\begin{mysubsubsection}{Variables dépendantes}
+						\begin{myparagraph}{\myvard{1} Le temps de complétion}
+							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
+							Ce temps est divisé en \mynum{2}~phases bien distinctes :
+							\begin{description}
+								\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
+									Cette recherche peut être simplement visuelle en orientant et en déplaçant la molécule mais elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles.
+								\item[La sélection] La phase de sélection débute dès l'instant où un des \mynum{2}~sujets a trouvé le \myglos{glo-Residu}.
+									Elle est constitué d'une phase de sélection puis d'une phase d'extraction.
+							\end{description}
+							Il n'y a pas de limite de temps pour réaliser la tâche.
+						\end{myparagraph}
+						\begin{myparagraph}{\myvard{2} La distance entre les espaces de travail}
+							Cette distance est la distance moyenne entre les \mynum{2}~\myglos*{glo-EffecteurTerminal} présents durant l'expérimentation.
+							Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
+							Elle est de l'ordre du centimètre.
+						\end{myparagraph}
+						\begin{myparagraph}{\myvard{3} Les communications orales}
+							L'enregistrement audio permet de mesurer la quantité de temps de parole pendant chaque tâche de l'expérimentation.
+							Ces mesures discrimine la phase de recherche de la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myfigureref{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+
+							\begin{myfigure}
+								\psset{unit=0.1\textwidth} % Fill entirely the page width
+								\begin{pspicture}(0,-1.75)(10,1.5)
+									\psset{linewidth=1pt,linecolor=black}%
+									\psframe(0,-0.5)(10,0.5)%
+									\psset{fillstyle=solid}%
+									\psframe[fillcolor=mylightblue](0,-0.5)(6,0.5)%
+									\psframe[fillcolor=mylightred](6,-0.5)(10,0.5)%
+									\psbrace[ref=lC,rot=-90,nodesepA=-3,nodesepB=-0.25](6,0.5)(0,0.5){%
+										\parbox{6\psxunit}{%
+											\centering\textcolor{myblue}{Temps de recherche}%
+										}%
+									}%
+									\psbrace[ref=lC,rot=-90,nodesepA=-2,nodesepB=-0.25](10,0.5)(6,0.5){%
+										\parbox{4\psxunit}{%
+											\centering\textcolor{myred}{Temps de sélection}%
+										}%
+									}%
+									\psframe[fillcolor=myblue](1,-0.5)(1.5,0.5)
+									\psframe[fillcolor=myblue](3,-0.5)(4.5,0.5)
+									\psframe[fillcolor=myblue](4.8,-0.5)(5,0.5)
+									\psframe[fillcolor=myred](6.5,-0.5)(7.5,0.5)
+									\psframe[fillcolor=myred](8,-0.5)(8.25,0.5)
+									\pnode(1.25,-0.5){verbal1}
+									\pnode(3.75,-0.5){verbal2}
+									\pnode(4.9,-0.5){verbal3}
+									\pnode(7,-0.5){verbal4}
+									\pnode(8.125,-0.5){verbal5}
+									\rput(5,-1.5){%
+										\Rnode{verbal}{%
+											\psframebox[linestyle=none]{\centering Communication verbale}%
+										}%
+									}%
+									\psset{linearc=0.1,angleA=-90}
+									\ncdiagg{<-}{verbal1}{verbal}
+									\ncdiagg{<-}{verbal2}{verbal}
+									\ncdiagg{<-}{verbal3}{verbal}
+									\ncdiagg{<-}{verbal4}{verbal}
+									\ncdiagg{<-}{verbal5}{verbal}
+								\end{pspicture}
+								\mycaption[fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale]{Schéma des phases de la communication verbale}
+							\end{myfigure}
+						\end{myparagraph}
+						\begin{myparagraph}{\myvard{4} L'affinité entre les sujets}
+							Le degré d'affinité -- concernant uniquement les binômes -- est compris entre \mynum{1} et \mynum{5} selon les critères suivants :
+							\begin{enumerate}
+								\item Les sujets ne se connaissent pas;
+								\item Les sujets travaillent dans la même entreprise, le même laboratoire;
+								\item Les sujets travaillent dans la même équipe;
+								\item Les sujets travaillent dans le même bureau;
+								\item Les sujets sont amis.
+							\end{enumerate}
+						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}{Tâche}
