@@ -5,3 +5,5 @@ set listchars=eol:$,tab:·\ ,trail:=,extends:>,precedes:<
 set list
 set foldmarker=\\begin,\\end
 set foldmethod=marker
+set spelllang=fr
+set spell
