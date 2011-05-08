@@ -1,0 +1,56 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mymacro}[2011/04/29]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{mymacro}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+
+%% Packages to call
+\RequirePackage{xspace}
+% Only for number printing
+\RequirePackage{numprint}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% A master command on '\emph'
+\newcommand{\myemph}[1]{\emph{#1}}
+% To write a name
+\newcommand{\myname}[1]{%
+	\if@myfrancais%
+		\textsc{#1}\xspace%
+	\else%
+		#1\xspace%
+	\fi%
+}
+% To print numbers (see 'numprint' package)
+\newcommand{\mynum}[1]{\nombre{#1}}
+\newcommand{\myregistered}{\textsuperscript{\textregistered}}
+
+% Latin citations
+% con fere
+\newcommand{\mycf}{\textit{c.f.}\xspace}
+% et alii
+\newcommand{\myetal}{\textit{et al.}\xspace}
+% et cetera
+\newcommand{\myetc}{\textit{etc.}\xspace}
+
+% End of package
+\endinput

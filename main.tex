@@ -3,30 +3,10 @@
 \usepackage{mytodo}
 \usepackage{mycolor}
 \usepackage{myps}
-\newcommand{\myname}[1]{\textsc{#1}}
-\newcommand{\mynum}[1]{\nombre{#1}}
-\newcommand{\myhyp}[1]{$\left(\mathcal{H}_#1\right)$\xspace}
-\newcommand{\mygroup}[1]{$\left(\mathcal{G}_#1\right)$\xspace}
-\newcommand{\myvar}[2]{$\left(\mathcal{V}_{\mathrm{#1}#2}\right)$\xspace}
-\newcommand{\mysubject}[1]{\textsc{p}\nombre{#1}}
-\newcommand{\myvari}[1]{\myvar{i}{#1}}
-\newcommand{\myvard}[1]{\myvar{d}{#1}}
-\newcommand{\myresidue}[1]{$\left(\mathcal{R}_{#1}\right)$\xspace}
-\newcommand{\myPDB}{\textsc{pdb}\xspace}
-\newcommand{\myPDBbase}{\emph{Protein~DataBase}\xspace}
-\newcommand{\myPDBlink}[2]{\href{#1}{\textsc{\MakeLowercase{#2}}}}
-\newcommand{\TRPCAGE}{TRP-CAGE\xspace}
-\newcommand{\TRPZIPPER}{TRP-ZIPPER\xspace}
-\newcommand{\Prion}{Prion\xspace}
-\newcommand{\Ubiquitin}{Ubiquitin\xspace}
-\newcommand{\myemph}[1]{\emph{#1}}
-\newcommand{\myThreeD}{\textsc{3d}\xspace}
-\newcommand{\myregistered}{\textsuperscript{\textregistered}}
-\newcommand{\mySpaceNavigator}{SpaceNavigator\myregistered\xspace}
-\newcommand{\mycf}{\textit{c.f.}\xspace}
-\newcommand{\myetc}{\textit{etc.}\xspace}
-\newlength{\mywidth}
-\newlength{\myheight}
+\usepackage{mymacro}
+
+\input{mymacro}
+\input{myglossary}
 
 \hypersetup{%
 	pdftitle={Interactions haptiques collaboratives pour la manipulation moléculaire},%
@@ -35,6 +15,7 @@
 	pdfdisplaydoctitle=true,%
 	pdflang={FR-fr}%
 }
+\addglobalbib[datatype=bibtex]{biblio.bib}
 
 \title{Interactions haptiques collaboratives pour la manipulation moléculaire}
 \author{Jean~\myname{Simard}}
@@ -45,9 +26,6 @@
 	Martin & \myname{DUPONT} & (rapporteur) & Directeur de recherche au \myacro-{acr-LIMSI} \\
 	Martin & \myname{DUPOND} & (examinateur) & Directeur de recherche au \myacro-{acr-LIMSI}}
 
-\addglobalbib[datatype=bibtex]{biblio.bib}
-
-\input{myglossary}
 \begin{document}
 	\frontmatter
 	\maketitle
@@ -97,8 +75,8 @@
 						\begin{myparagraph}{\myvari{2} Résidu recherché}
 							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
 							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
-							La première molécule est couramment nommée \TRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-							La seconde molécule nommée \Prion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+							La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+							La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
 							\mynum{5}~\myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
 							\begin{description}
 								\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
@@ -122,7 +100,7 @@
 								\setlength{\myheight}{10ex}
 								\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
 								\begin{mysubtable}
-									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \TRPCAGE}
+									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \myTRPCAGE}
 									\begin{mytabular}[0.49\textwidth]{^C-C}
 										\mytoprule
 										\myrowstyle{\bfseries}
@@ -137,7 +115,7 @@
 									\end{mytabular}
 								\end{mysubtable}
 								\begin{mysubtable}
-									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \Prion}
+									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \myPrion}
 									\begin{mytabular}[0.49\textwidth]{^C-C}
 										\mytoprule
 										\myrowstyle{\bfseries}
