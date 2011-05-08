@@ -35,22 +35,33 @@
 % To write a name
 \newcommand{\myname}[1]{%
 	\if@myfrancais%
-		\textsc{#1}\xspace%
+		\textsc{\makefirstuc{\MakeLowercase{#1}}}\xspace%
 	\else%
-		#1\xspace%
+		\MakeUppercase{#1}\xspace%
 	\fi%
 }
 % To print numbers (see 'numprint' package)
 \newcommand{\mynum}[1]{\nombre{#1}}
-\newcommand{\myregistered}{\textsuperscript{\textregistered}}
 
-% Latin citations
-% con fere
+%% Symboles
+% © : Copyright
+\newcommand{\mycopyright}{\copyright}
+% ® : Registered
+\newcommand{\myregistered}{\textsuperscript{\textregistered}}
+% ™ : Trade mark
+\newcommand{\mytrademark}{\texttrademark}
+
+%% Latin citations
+% confer : se référer à
 \newcommand{\mycf}{\textit{c.f.}\xspace}
-% et alii
+% exempli gratia : par l'exemple (littéralement par la grâce de l'exemple)
+\newcommand{\myeg}{\textit{e.g.}\xspace}
+% et alii : et les autres
 \newcommand{\myetal}{\textit{et al.}\xspace}
-% et cetera
+% et cetera desunt : et les autres choses manquent
 \newcommand{\myetc}{\textit{etc.}\xspace}
+% id est : c'est-à-dire
+\newcommand{\myie}{\textit{i.e.}\xspace}
 
 % End of package
 \endinput
