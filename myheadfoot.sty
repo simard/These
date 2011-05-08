@@ -14,18 +14,33 @@
 %% Options to pass to packages
 
 %% Packages to call
+% To know if the compilation is 'draft'
+\RequirePackage{ifdraft}
 % The 'fancyhdr' can modify headers and footers
 \RequirePackage{fancyhdr}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
+% Define the current page style
 \pagestyle{fancy}
+% Reset all headers
 \fancyhead{}
+% Put chapter on left of even pages
 \fancyhead[LE]{\sffamily \nouppercase{\leftmark}}
+% Put section on right of odd pages
 \fancyhead[RO]{\sffamily \nouppercase{\rightmark}}
+% Reset all footers
 \fancyfoot{}
+% Put the page number on center of each page
 \fancyfoot[C]{\thepage}
+% Do not compile headers and footers in draft mode
+\ifdraft%
+	{%
+		\pagestyle{empty}
+		\let\ps@plain\ps@empty
+	}{%
+	}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
