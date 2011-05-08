@@ -1,0 +1,52 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{myps}[2011/04/29]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{myps}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+
+%% Packages to call
+% To know if the compilation is 'draft'
+\RequirePackage{ifdraft}
+% General PSTricks
+\RequirePackage{pstricks}
+% Some additional commands for basic PSTricks
+\RequirePackage{pstricks-add}
+% To introduce 'blur' effect on figures
+\RequirePackage{pst-blur}
+% For histogram and more complex graphics
+\RequirePackage{pst-bar}
+% For geometrical figures
+\RequirePackage{pst-eucl}
+% Try to make 3D figures
+\RequirePackage{pst-3dplot}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% Define a master command for 'pspicture'
+% This command introduce a border frame for draft compilation
+\def\myps(#1,#2)(#3,#4){%
+	\pspicture(#1,#2)(#3,#4)%
+	\ifdraft%
+	{%
+		\psframe(#1,#2)(#3,#4)% To delimit the border of figure
+	}{%
+	}%
+}
+\def\endmyps{\endpspicture}
+
+% End of package
+\endinput

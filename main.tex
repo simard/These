@@ -1,10 +1,9 @@
 \documentclass[myfrancais]{mythesis}
 \usepackage{mydate}
 \usepackage{mytodo}
+\usepackage{myps}
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{pstricks}
-\usepackage{pstricks-add}
 \newcommand{\name}[1]{\textsc{#1}}
 \newcommand{\mynum}[1]{\nombre{#1}}
 \newcommand{\myhyp}[1]{$\left(\mathcal{H}_#1\right)$\xspace}
@@ -168,7 +167,7 @@
 								\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
 								\psset{unit=\schemaunit}
 								\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
-								\begin{pspicture}(-2.5,-3)(2.5,3)
+								\begin{myps}(-2.5,-3)(2.5,3)
 									\rput(0,1.75){%
 										\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
 									\rput(0,-1.25){%
@@ -223,7 +222,7 @@
 									\ncline{-}{P49}{PrionP49}
 									\ncline{-}{P510}{PrionP510}
 									\ncline{-}{P6}{PrionP6}
-								\end{pspicture}
+								\end{myps}
 							\end{myfigure}
 
 							\begin{mytable}
@@ -280,7 +279,7 @@
 
 							\begin{myfigure}
 								\psset{unit=0.1\textwidth} % Fill entirely the page width
-								\begin{pspicture}(0,-1.75)(10,1.5)
+								\begin{myps}(0,-1.75)(10,1.5)
 									\psset{linewidth=1pt,linecolor=black}%
 									\psframe(0,-0.5)(10,0.5)%
 									\psset{fillstyle=solid}%
@@ -317,7 +316,7 @@
 									\ncdiagg{<-}{verbal3}{verbal}
 									\ncdiagg{<-}{verbal4}{verbal}
 									\ncdiagg{<-}{verbal5}{verbal}
-								\end{pspicture}
+								\end{myps}
 								\mycaption[fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale]{Schéma des phases de la communication verbale}
 							\end{myfigure}
 						\end{myparagraph}
