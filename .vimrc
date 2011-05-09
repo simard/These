@@ -7,3 +7,4 @@ set foldmarker=\\begin,\\end
 set foldmethod=marker
 set spelllang=fr
 set spell
+highlight Folded term=standout ctermfg=Black ctermbg=DarkGray
