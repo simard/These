@@ -47,6 +47,18 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}{Dispositif expérimental}
+				Le \myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp1-SchemaDuDispositifExperimental}.
+				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
+				Le ou les sujets font face à l'écran avec à leur disposition :
+				\begin{itemize}
+					\item \mynum{1}~interface haptique de manipulation;
+					\item \mynum{2}~interfaces haptiques de déformation.
+				\end{itemize}
+
+				\begin{myfigure}
+					\myimage{exp1-schema}
+					\mycaption[fig-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+				\end{myfigure}
 			\end{mysection}
 			\begin{mysection}{Méthode}
 				\begin{mysubsection}{Sujets}
@@ -68,7 +80,7 @@
 						\begin{myparagraph}{\myvari{1} Nombre de sujets}
 							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
 							\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
-							Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~interfaces haptiques et une souris~\myThreeD (\mySpaceNavigator).
+							Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~outils haptiques de déformation et \mynum{1}~outil haptique de manipulation.
 							Pour les \myglos*{glo-Binome}, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
 							\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de \myglos*{glo-Binome}.
 						\end{myparagraph}
@@ -302,6 +314,15 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}{Tâche}
+					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
+					Les motifs à rechercher dans les structures moléculaires sont des \myglos*{glo-Residu} \mytableref*{tab-exp1-ListeDesResidusRecherches}.
+					Les sujets possèdent \mynum{2}~outils pour trouver ces motifs :
+					\begin{itemize}
+						\item ils peuvent explorer la molécule en la déplaçant ou en la tournant à l'aide de l'outil \mytool{grab};
+						\item ils peuvent déformer la molécule à l'aide de l'outil \mytool{tug}.
+					\end{itemize}
+
+					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélection puis l'extraire hors de la sphère virtuelle englobant la molécule.
 				\end{mysubsection}
 				\begin{mysubsection}{Procédure}
 				\end{mysubsection}
