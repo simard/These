@@ -90,19 +90,23 @@
 % Third mandatory argument is the comments about the note which are displayed in margin
 \newenvironment{myTodo}[3][]%
 	{%
+		\mytodo@findcurrentsection%
 		\ifthenelse{\isempty{#1}}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#2}}}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#1}}}%
-		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#1}}%
+		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#3}}%
 		\mytodo@rule[red]{2pt}%
 		\textbf{\textcolor{red}{\mytodo@lang@todo\ }}%
-		\ifthenelse{\NOT\equal{#2}{}}%
-			{\textbf{\textcolor{red}{--\ }\textcolor{light-red}{#2}}}%
+		\ifthenelse{\NOT\isempty{#2}}%
+			{%
+				\textbf{\textcolor{red}{--\ }\textcolor{light-red}{#2}}\par%
+				\textcolor{black!33}{#3}%
+			}%
 			{}%
 		\mytodo@rule{0.5pt}%
-		\textcolor{black!33}\bgroup
+		\begingroup\color{black!33}
 	}{%
-		\egroup\par%
+		\endgroup\par%
 		\mytodo@rule[red]{2pt}%
 		\par%
 	}
