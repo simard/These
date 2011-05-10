@@ -6,6 +6,7 @@
 \usepackage{mymacro}
 
 \input{mymacro}
+\input{mycolor}
 \input{myglossary}
 
 \hypersetup{%
@@ -207,31 +208,44 @@
 							\end{myfigure}
 
 							\begin{mytable}
-								\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus}
-								\begin{mytabular}{^C-L-L-L-L}
+								\newcommand{\myatom}[2]{%
+									{%
+										\bfseries%
+										\sffamily%
+										\textcolor{#2}{\MakeUppercase{#1}}%
+										\xspace%
+									}%
+								}
+								\newcommand{\mycarbon}{\myatom{C}{mycarboncolor}}
+								\newcommand{\mynytrogen}{\myatom{A}{mynytrogencolor}}
+								\newcommand{\myoxygen}{\myatom{O}{myoxygencolor}}
+								\newcommand{\mysulfur}{\myatom{S}{mysulfurcolor}}
+								\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
+								\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
+								\begin{mytabular}{^C-C-C-C-C}
 									\mytoprule
 									\myrowstyle{\bfseries}
 									Résidu & Position & Forme & Couleurs & Similarité \\
 									\mymiddlerule[\heavyrulewidth]
-									\myresidue{1}  & Interne & Cercle & 8~C, 1~N & Non \\
+									\myresidue{1}  & Interne & Cercle & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
 									\mymiddlerule
-									\myresidue{2}  & Interne & Étoile & 1~C, 3~N & Non \\
+									\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
 									\mymiddlerule
-									\myresidue{3}  & Interne & Cercle & 6~C, 1~O & Non \\
+									\myresidue{3}  & Interne & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
 									\mymiddlerule
-									\myresidue{4}  & Externe & Chaîne & 4~C      & Non \\
+									\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
 									\mymiddlerule
-									\myresidue{5}  & Externe & Chaîne & 4~C, 1~N & Non \\
+									\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
 									\mymiddlerule[\heavyrulewidth]
-									\myresidue{6}  & Interne & Chaîne & 2~C, 2~S & Non \\
+									\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
 									\mymiddlerule
-									\myresidue{7}  & Externe & Étoile & 1~C, 3~N & Non \\
+									\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
 									\mymiddlerule
-									\myresidue{8}  & Externe & Cercle & 6~C, 1~O & Non \\
+									\myresidue{8}  & Externe & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
 									\mymiddlerule
-									\myresidue{9}  & Interne & Chaîne & 4~C      & Oui \\
+									\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
 									\mymiddlerule
-									\myresidue{10} & Interne & Chaîne & 4~C, 1~N & Oui \\
+									\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
 									\mybottomrule
 								\end{mytabular}
 							\end{mytable}
