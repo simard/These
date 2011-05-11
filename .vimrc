@@ -59,5 +59,6 @@ function! MYfoldtext()
 endfunction
 set foldtext=MYfoldtext()
 set spelllang=fr
+set spellfile=.fr.utf-8.add
 set spell
 highlight Folded term=standout ctermfg=Black ctermbg=DarkGray
