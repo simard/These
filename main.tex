@@ -47,18 +47,36 @@
 				\begin{mysubsection}{Hypothèses}
 				\end{mysubsection}
 			\end{mysection}
-			\begin{mysection}{Dispositif expérimental}
-				L'\myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp1-SchemaDuDispositifExperimental}.
+			\begin{mysection}{Dispositif expérimental et matériel}
+				L'\myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp1-IllustrationDuDispositifExperimental}.
 				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
 				Le ou les sujets font face à l'écran avec à leur disposition :
 				\begin{itemize}
-					\item \mynum{1}~interface haptique de manipulation;
-					\item \mynum{2}~interfaces haptiques de déformation.
+					\item \mynum{1}~interface haptique de manipulation \mytool{grab};
+					\item \mynum{2}~interfaces haptiques de déformation \mytool{tug}.
 				\end{itemize}
 
+				Les sujets ont la possibilité de communiquer entre eux sans restriction.
+				Pour les \myglos*{glo-Monome}, le sujet peut utiliser chaque outil comme il le souhaite.
+				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer \mynum{1}~outil de déformation \mytool{tug}.
+				L'outil de manipulation \mytool{grab} sera attribuer à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
+				Le sujet désigné pour l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
+
+				Un micro de bureau est placé en face des deux sujets afin de capter toutes les communications orales.
+				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'entraînement.
+
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter à l'\myappendixref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
+
 				\begin{myfigure}
-					\myimage{exp1-schema}
-					\mycaption[fig-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{exp1-schema}
+						\mysubcaption[fig-exp1-IllustrationDuDispositifExperimental-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{mysubfigure}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{exp1-photo}
+						\mysubcaption[fig-exp1-IllustrationDuDispositifExperimental-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{mysubfigure}
+					\mycaption[fig-exp1-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
 				\end{myfigure}
 			\end{mysection}
 			\begin{mysection}{Méthode}
@@ -336,10 +354,10 @@
 						\item ils peuvent déformer la molécule à l'aide de l'outil \mytool{tug}.
 					\end{itemize}
 
-					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélection puis l'extraire hors de la sphère virtuelle englobant la molécule.
+					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
 				\end{mysubsection}
 				\begin{mysubsection}{Procédure}
-					Pour débuter cette expérimentation, les sujets sont confrontés à un cas d'exemple sur la molécule \myTRPZIPPER \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
+					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
 					Pendant la phase d'entraînement, les outils sont introduits et expliqués un par un.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 					Dans le cas des \myglos*{glo-Binome}, cette phase d'entraînement est également l'occasion de choisir qui, parmi les \mynum{2}~sujets, sera en charge de la manipulation de la molécule à l'aide de l'outil de manipulation \mytool{grab}.
@@ -414,6 +432,6 @@
 
 	\myglossary
 	\appendix
-	\begin{mychapter}{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
+	\begin{mychapter}[app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign]{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
 	\end{mychapter}
 \end{document}
