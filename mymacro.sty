@@ -33,11 +33,12 @@
 % A master command on '\emph'
 \newcommand{\myemph}[1]{\emph{#1}}
 % To write a name
-\newcommand{\myname}[1]{%
+% The optionnal argument is for prefix on names (like 'van der' in 'van der Walls')
+\newcommand{\myname}[2][]{%
 	\if@myfrancais%
-		\textsc{\makefirstuc{\MakeLowercase{#1}}}\xspace%
+		\textsc{\MakeLowercase{#1}\xspace\makefirstuc{\MakeLowercase{#2}}}\xspace%
 	\else%
-		\MakeUppercase{#1}\xspace%
+		\MakeLowercase{#1}\xspace\MakeUppercase{#2}\xspace%
 	\fi%
 }
 % To print numbers (see 'numprint' package)
