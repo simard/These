@@ -127,6 +127,9 @@
 % For reference on subsubsection.
 \newcommand\mysubsubsectionref[2][]{\mycustomsref{#1}{\myref@lang@subsubsectiontitle}{#2}}
 \WithSuffix\newcommand\mysubsubsectionref*[2][]{\mycustomsref*{#1}{\myref@lang@subsubsectiontitle}{#2}}
+% For reference on appendix
+\newcommand\myappendixref[2][]{\mycustomsref{#1}{\appendixname}{#2}}
+\WithSuffix\newcommand\myappendixref*[2][]{\mycustomsref*{#1}{\appendixname}{#2}}
 % For reference on figure.
 \newcommand\myfigureref[2][]{\mycustomsref{#1}{\figurename}{#2}}
 \WithSuffix\newcommand\myfigureref*[2][]{\mycustomsref*{#1}{\figurename}{#2}}
