@@ -43,6 +43,31 @@
 		\begin{mychapter}{La recherche collaborative}
 			\begin{mysection}{Présentation}
 				\begin{mysubsection}{Objectifs}
+					Le contexte de l'expérimentation est l'\myglos{glo-AmarrageMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
+					Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
+					Il est basé sur une décomposition en \mynum{3}~niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
+					\begin{description}
+						\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
+							L'objectif est de trouver la meilleure concordance entre les molécule en terme de position et d'orientation.
+						\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
+							L'amarrage de ces \mynum{2}~molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
+						\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
+							L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
+					\end{description}
+
+					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en sous-tâches :
+					\begin{description}
+						\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, hélices $\alpha$, feuillets $\beta$, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
+						\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
+						\item[Déformation] La tâche consiste à déformer la structure en manipulant la cible précédemment sélectionnée, que ce soit au niveau inter-moléculaire, intra-moléculaire ou atomique.
+							L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
+						\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
+							En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
+					\end{description}
+
+					Dans cette première expérimentation, nous proposons d'étudier les premières de ces \mynum{4}~sous-tâches : la \myemph{recherche} et la \myemph{sélection}.
+					Ces sous-tâches sont critiques car elles sont nécessaires et vont avoir un impact importants sur les sous-tâches suivantes.
+					Elles vont permettre d'identifier les difficultés liées à la complexité de l'environnement moléculaire (les zones critiques, les zones de flexibilité, \myetc).
 				\end{mysubsection}
 				\begin{mysubsection}{Hypothèses}
 				\end{mysubsection}
