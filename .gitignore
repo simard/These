@@ -1,3 +1,4 @@
 *.swp
+*.spl
 build
 images/*.eps
