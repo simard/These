@@ -87,6 +87,20 @@
 					Le travail en \myglos{glo-Binome} permettra de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
 				\end{mysubsection}
 				\begin{mysubsection}{Hypothèses}
+					\begin{myparagraph}{\myhypothesis{1} Amélioration des performances en \myglos{glo-Binome}}
+						La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} comparés aux \myglos*{glo-Monome}.
+						Cette amélioration se traduira principalement par une réalisation de la même tâche en un temps réduit.
+					\end{myparagraph}
+					\begin{myparagraph}{\myhypothesis{2} Stratégies variables en fonction des \myglos*{glo-Binome}}
+						Cette second hypothèse concerne uniquement les \myglos*{glo-Binome} et suppose que les stratégies adoptés seront différentes en fonction des \myglos*{glo-Binome}.
+						Cette différence sera liée aux différentes personnalités et aux différentes affinités au sein du \myglos{glo-Binome}.
+					\end{myparagraph}
+					\begin{myparagraph}{\myhypothesis{3} Les sujets préfèrent le travail en \myglos{glo-Binome}}
+						La troisième hypothèse est de l'ordre du qualitatif .
+						Elle s'intéresse aux conditions de travail en \myglos{glo-Binome}.
+						L'hypothèse est basée \myglos*{glo-Binome} sur l'effet stimulant de travailler à plusieurs mais aussi sur l'aspect humain de ne pas rester seul pour effectuer une tâche répétitive.
+						Il est cependant important que chaque sujet au sein du \myglos{glo-Binome} se considère utile à la réalisation de la tâche.
+					\end{myparagraph}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}{Dispositif expérimental et matériel}
@@ -410,49 +424,55 @@
 
 					Une fois le groupe passé dans sa première configuration, \myglos{glo-Monome} ou \myglos{glo-Binome} (voir \myvari{1}), l'opération est répétée pour les autres configurations.
 
-					\begin{myTodo}{Compléter les hypothèses}{Les hypothèses ne sont pas encore écrites !! Il va donc falloir les compléter dans le tableau.}
-						\begin{mytable}
-							\mycaption[tab-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
-							\newcommand{\mytitlecolumn}[2]{%
-								\multirow{#1}*{%
-									\begin{minipage}{6em}%
-										\raggedleft #2%
-									\end{minipage}%
-								}
+					\begin{mytable}
+						\mycaption[tab-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+						\newcommand{\mytitlecolumn}[2]{%
+							\multirow{#1}*{%
+								\begin{minipage}{6em}%
+									\raggedleft #2%
+								\end{minipage}%
 							}
-							\begin{mytabular}{>{\bfseries}p{7em}L}
-								\mytoprule
-								\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs \\
-								\mymiddlerule[\heavyrulewidth]
-								\mytitlecolumn{1}{Hypothèses}             &  \\
-								\mymiddlerule
-								\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets \\
+						}
+						\newlength{\firstcolumn}
+						\newlength{\secondcolumn}
+						\setlength{\firstcolumn}{7em}
+						\setlength{\secondcolumn}{\textwidth}
+						\addtolength{\secondcolumn}{-\firstcolumn}
+						\addtolength{\secondcolumn}{-4\tabcolsep}
+						\begin{mytabular}{>{\bfseries}p{\firstcolumn}p{\secondcolumn}}
+							\mytoprule
+							\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs \\
+							\mymiddlerule[\heavyrulewidth]
+							\mytitlecolumn{1}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglos{glo-Binome} \\
+																		& \myhypothesis{2} Stratégies variables en fonction des \myglos*{glo-Binome} \\
+																		& \myhypothesis{3} Les sujets préfèrent le travail en \myglos{glo-Binome} \\
+							\mymiddlerule
+							\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets \\
 																		& \myvari{2} Résidu à chercher \\
-								\mymiddlerule
-								\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de complétion \\
+							\mymiddlerule
+							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de complétion \\
 																		& \myvard{2} Distance entre les espaces de travail \\
 																		& \myvard{3} Communication orales \\
 																		& \myvard{4} Affinités entre les sujets \\
-								\mymiddlerule[\heavyrulewidth]
-								\multicolumn{2}{c}{%
-									\begin{tabular}{^C-C-C}
-										\myrowstyle{\bfseries}
-										Condition \mycondition{1} & Condition \mycondition{2} & Condition \mycondition{3} \\
-										\mymiddlerule
-										Sujet~$A$ & Sujet~$A$ & Sujet~$A$ et $B$ \\
-										\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
-										\mymiddlerule
-										Sujet~$B$ & Sujet~$A$ et $B$ & Sujet~$A$ \\
-										\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
-										\mymiddlerule
-										Sujet~$A$ et $B$ & Sujet~$B$ & Sujet~$B$ \\
-										\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
-									\end{tabular}
-								} \\
-								\mybottomrule
-							\end{mytabular}
-						\end{mytable}
-					\end{myTodo}
+							\mymiddlerule[\heavyrulewidth]
+							\multicolumn{2}{c}{%
+								\begin{tabular}{^C-C-C}
+									\myrowstyle{\bfseries}
+									Condition \mycondition{1} & Condition \mycondition{2} & Condition \mycondition{3} \\
+									\mymiddlerule
+									Sujet~$A$ & Sujet~$A$ & Sujet~$A$ et $B$ \\
+									\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
+									\mymiddlerule
+									Sujet~$B$ & Sujet~$A$ et $B$ & Sujet~$A$ \\
+									\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
+									\mymiddlerule
+									Sujet~$A$ et $B$ & Sujet~$B$ & Sujet~$B$ \\
+									\mynum{10}~résidus & \mynum{10}~résidus & \mynum{10}~résidus \\
+								\end{tabular}
+							} \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}{Résultats}
