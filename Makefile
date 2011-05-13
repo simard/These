@@ -115,7 +115,7 @@ $(BUILD)/$(OUT).ps: $(BUILD)/$(OUT).dvi
 
 # Create the DVI file with the TeX file
 # We need the $(BUILD) directory
-$(BUILD)/$(OUT).dvi: $(IN).tex $(BUILD) img
+$(BUILD)/$(OUT).dvi: $(IN).tex $(BUILD)
 	@echo "----- CONVERSION TEX -> DVI -----"
 	$(TEX) $(TEXOPT) -jobname=$(OUT) $<
 
