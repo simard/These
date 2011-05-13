@@ -45,12 +45,12 @@
 				\begin{mysubsection}{Objectifs}
 					Le contexte de l'expérimentation est l'\myglos{glo-AmarrageMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
 					Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
-					Il est basé sur une décomposition en \mynum{3}~niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
+					Il est basé sur une décomposition en trois niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
 					\begin{description}
 						\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
 							L'objectif est de trouver la meilleure concordance entre les molécule en terme de position et d'orientation.
 						\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
-							L'amarrage de ces \mynum{2}~molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
+							L'amarrage de ces deux molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
 						\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
 							L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
 					\end{description}
@@ -65,7 +65,7 @@
 							En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 					\end{description}
 
-					Dans cette première expérimentation, nous proposons d'étudier les premières de ces \mynum{4}~sous-tâches : la \myemph{recherche} et la \myemph{sélection}.
+					Dans cette première expérimentation, nous proposons d'étudier les premières de ces quatre sous-tâches : la \myemph{recherche} et la \myemph{sélection}.
 					Ces sous-tâches sont critiques car elles sont nécessaires et vont avoir un impact importants sur les sous-tâches suivantes.
 					Elles vont permettre d'identifier les difficultés liées à la complexité de l'environnement moléculaire (les zones critiques, les zones de flexibilité, \myetc).
 				\end{mysubsection}
@@ -77,13 +77,13 @@
 				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
 				Le ou les sujets font face à l'écran avec à leur disposition :
 				\begin{itemize}
-					\item \mynum{1}~interface haptique de manipulation \mytool{grab};
-					\item \mynum{2}~interfaces haptiques de déformation \mytool{tug}.
+					\item un interface haptique de manipulation \mytool{grab};
+					\item deux interfaces haptiques de déformation \mytool{tug}.
 				\end{itemize}
 
 				Les sujets ont la possibilité de communiquer entre eux sans restriction.
 				Pour les \myglos*{glo-Monome}, le sujet peut utiliser chaque outil comme il le souhaite.
-				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer \mynum{1}~outil de déformation \mytool{tug}.
+				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
 				L'outil de manipulation \mytool{grab} sera attribuer à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
 				Le sujet désigné pour l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
 
@@ -123,22 +123,22 @@
 					\begin{mysubsubsection}{Variables indépendantes}
 						\begin{myparagraph}{\myvari{1} Nombre de sujets}
 							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
-							\myvari{1} possède \mynum{2}~valeurs possibles: \og \mynum{1}~sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og \mynum{2}~sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
-							Le sujets seuls et les sujets en couples ont à leur disposition \mynum{2}~outils haptiques de déformation et \mynum{1}~outil haptique de manipulation.
+							\myvari{1} possède deux valeurs possibles: \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
+							Le sujets seuls et les sujets en couples ont à leur disposition deux outils haptiques de déformation et un outil haptique de manipulation.
 							Pour les \myglos*{glo-Binome}, seulement un des deux sujets est désigné pour l'utilisation exclusive de la souris~\myThreeD.
 							\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de \myglos*{glo-Binome}.
 						\end{myparagraph}
 						\begin{myparagraph}{\myvari{2} Résidu recherché}
 							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
-							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans \mynum{2}~molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
+							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
 							La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
 							La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-							\mynum{5}~\myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
+							Cinq \myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
 							\begin{description}
 								\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
 									Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
 								\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
-									On distingue \mynum{3}~formes différentes :
+									On distingue trois formes différentes :
 									\begin{description}
 										\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
 										\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
@@ -297,17 +297,17 @@
 					\begin{mysubsubsection}{Variables dépendantes}
 						\begin{myparagraph}{\myvard{1} Le temps de complétion}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
-							Ce temps est divisé en \mynum{2}~phases bien distinctes :
+							Ce temps est divisé en deux phases bien distinctes :
 							\begin{description}
 								\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
 									Cette recherche peut être simplement visuelle en orientant et en déplaçant la molécule mais elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles.
-								\item[La sélection] La phase de sélection débute dès l'instant où un des \mynum{2}~sujets a trouvé le \myglos{glo-Residu}.
+								\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a trouvé le \myglos{glo-Residu}.
 									Elle est constitué d'une phase de sélection puis d'une phase d'extraction.
 							\end{description}
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 						\end{myparagraph}
 						\begin{myparagraph}{\myvard{2} La distance entre les espaces de travail}
-							Cette distance est la distance moyenne entre les \mynum{2}~\myglos*{glo-EffecteurTerminal} présents durant l'expérimentation.
+							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'expérimentation.
 							Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
 							Elle est de l'ordre du centimètre.
 						\end{myparagraph}
@@ -373,7 +373,7 @@
 				\begin{mysubsection}{Tâche}
 					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
 					Les motifs à rechercher dans les structures moléculaires sont des \myglos*{glo-Residu} \mytableref*{tab-exp1-ListeDesResidusRecherches}.
-					Les sujets possèdent \mynum{2}~outils pour trouver ces motifs :
+					Les sujets possèdent deux outils pour trouver ces motifs :
 					\begin{itemize}
 						\item ils peuvent explorer la molécule en la déplaçant ou en la tournant à l'aide de l'outil \mytool{grab};
 						\item ils peuvent déformer la molécule à l'aide de l'outil \mytool{tug}.
@@ -385,11 +385,11 @@
 					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
 					Pendant la phase d'entraînement, les outils sont introduits et expliqués un par un.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
-					Dans le cas des \myglos*{glo-Binome}, cette phase d'entraînement est également l'occasion de choisir qui, parmi les \mynum{2}~sujets, sera en charge de la manipulation de la molécule à l'aide de l'outil de manipulation \mytool{grab}.
+					Dans le cas des \myglos*{glo-Binome}, cette phase d'entraînement est également l'occasion de choisir qui, parmi les deux sujets, sera en charge de la manipulation de la molécule à l'aide de l'outil de manipulation \mytool{grab}.
 
 					Au début de l'expérimentation, l'expérimentateur afficher sur l'écran annexe le motif à chercher.
 					Lorsque les sujets ont trouvé et extrait le motif, l'expérimentateur indique au système la fin de la première tâche.
-					Il affiche à présent le second motif et ainsi de suite pour les \mynum{10}~motifs.
+					Il affiche à présent le second motif et ainsi de suite pour les dix motifs.
 
 					Une fois le groupe passé dans sa première configuration, \myglos{glo-Monome} ou \myglos{glo-Binome} (voir \myvari{1}), l'opération est répétée pour les autres configurations.
 
