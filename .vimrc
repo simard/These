@@ -32,7 +32,8 @@ function! MYfoldtext()
 	for section_key in keys(s:sections)
 		if in_blocid ==# section_key
 			let out_blocname=s:sections[in_blocid]
-			let out_caption=substitute(in_line,'^\s*\\begin{[A-Za-z]*}\%({\(.*\)}\)\?\s*$','\1','g')
+			let out_caption=substitute(in_line,'^\s*\\begin{[A-Za-z]*}\%(\[.*\]\)\?\%({\(.*\)}\)\?\s*$','\1','g')
+			let out_label=substitute(in_line,'^\s*\\begin{[A-Za-z]*}\%(\[\(.*\)\]\)\?\%({.*}\)\?\s*$','\1','g')
 			if strlen(matchstr(out_caption,'}{')) != 0
 				let out_caption=substitute(out_caption,'}{.*$','','g')
 			end
@@ -53,6 +54,11 @@ function! MYfoldtext()
 	if strlen(out_caption) != 0
 		let out_line=out_line." - "
 		let out_line=out_line.out_caption
+	end
+	if strlen(out_label) != 0
+		let out_line=out_line." [["
+		let out_line=out_line.out_label
+		let out_line=out_line."]]"
 	end
 	let out_line=out_line." "
 	return out_line
