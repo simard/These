@@ -35,11 +35,11 @@
 	\mylot
 	\mylotodo
 	\mainmatter
-	\begin{mypart}{Le sujet}
-		\begin{mychapter}{Introduction}
-			\begin{section}{État de l'art}
-			\end{section}
-			\begin{mysection}{Contexte}
+	\begin{mypart}[prt-LeSujet]{Le sujet}
+		\begin{mychapter}[cha-Introduction]{Introduction}
+			\begin{mysection}[sec-EtatDeLArt]{État de l'art}
+			\end{mysection}
+			\begin{mysection}[sec-Contexte]{Contexte}
 				\begin{mysubsection}[sse-LAmarrageMoleculaire]{L'\myglos{glo-AmarrageMoleculaire}}
 					Le contexte de l'expérimentation est l'\myglos{glo-AmarrageMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
 					Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
@@ -67,10 +67,10 @@
 			\end{mysection}
 		\end{mychapter}
 	\end{mypart}
-	\begin{mypart}{Étude du travail collaboratif}
-		\begin{mychapter}{La recherche collaborative}
-			\begin{mysection}{Présentation}
-				\begin{mysubsection}{Objectifs}
+	\begin{mypart}[prt-EtudeDuTravailCollaboratif]{Étude du travail collaboratif}
+		\begin{mychapter}[cha-LaRechercheCollaborative]{La recherche collaborative}
+			\begin{mysection}[sec-exp1-Presentation]{Présentation}
+				\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
 					Dans cette première expérimentation, nous proposons d'étudier la première des quatre sous-tâches élémentaires \mysubsectionref*{sse-LAmarrageMoleculaire}: la \myemph{recherche}.
 					Cette sous-tâche est cruciale car elle a un impact important sur les sous-tâches suivantes.
 					Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers l'étude de cette sous-tâche.
@@ -86,7 +86,7 @@
 					C'est principalement l'évolution de ces stratégies au sein des \myglos*{glo-Binome} qui focalisera notre attention.
 					Le travail en \myglos{glo-Binome} permettra de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
 				\end{mysubsection}
-				\begin{mysubsection}{Hypothèses}
+				\begin{mysubsection}[sse-exp1-Hypotheses]{Hypothèses}
 					\begin{myparagraph}{\myhypothesis{1} Amélioration des performances en \myglos{glo-Binome}}
 						La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} comparés aux \myglos*{glo-Monome}.
 						Cette amélioration se traduira principalement par une réalisation de la même tâche en un temps réduit.
@@ -103,7 +103,7 @@
 					\end{myparagraph}
 				\end{mysubsection}
 			\end{mysection}
-			\begin{mysection}{Dispositif expérimental et matériel}
+			\begin{mysection}[sec-exp1-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
 				L'\myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp1-IllustrationDuDispositifExperimental}.
 				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
 				Le ou les sujets font face à l'écran avec à leur disposition :
@@ -135,8 +135,8 @@
 					\mycaption[fig-exp1-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
 				\end{myfigure}
 			\end{mysection}
-			\begin{mysection}{Méthode}
-				\begin{mysubsection}{Sujets}
+			\begin{mysection}[sec-exp1-Methode]{Méthode}
+				\begin{mysubsection}[sse-exp1-Sujets]{Sujets}
 					\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une moyenne d'âge de $\mu = 27.8$ ($\sigma = 7.19$) ont participés à cette expérimentation.
 					Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
 					\begin{itemize}
@@ -150,8 +150,8 @@
 					Chaque participants est complètement naïf concernant les détails de l'expérimentation.
 					Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
 				\end{mysubsection}
-				\begin{mysubsection}{Variables}
-					\begin{mysubsubsection}{Variables indépendantes}
+				\begin{mysubsection}[sec-exp1-Variables]{Variables}
+					\begin{mysubsubsection}[sss-exp1-VariablesIndependantes]{Variables indépendantes}
 						\begin{myparagraph}{\myvari{1} Nombre de sujets}
 							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets seront expérimentés dans toutes les conditions de cette variable.
 							\myvari{1} possède deux valeurs possibles: \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
@@ -325,7 +325,7 @@
 							\end{mytable}
 						\end{myparagraph}
 					\end{mysubsubsection}
-					\begin{mysubsubsection}{Variables dépendantes}
+					\begin{mysubsubsection}[sec-exp1-VariablesDependantes]{Variables dépendantes}
 						\begin{myparagraph}{\myvard{1} Le temps de complétion}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
 							Ce temps est divisé en deux phases bien distinctes :
@@ -401,7 +401,7 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
-				\begin{mysubsection}{Tâche}
+				\begin{mysubsection}[sse-exp1-Tache]{Tâche}
 					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
 					Les motifs à rechercher dans les structures moléculaires sont des \myglos*{glo-Residu} \mytableref*{tab-exp1-ListeDesResidusRecherches}.
 					Les sujets possèdent deux outils pour trouver ces motifs :
@@ -412,7 +412,7 @@
 
 					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
 				\end{mysubsection}
-				\begin{mysubsection}{Procédure}
+				\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
 					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
 					Pendant la phase d'entraînement, les outils sont introduits et expliqués un par un.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
@@ -475,20 +475,20 @@
 					\end{mytable}
 				\end{mysubsection}
 			\end{mysection}
-			\begin{mysection}{Résultats}
+			\begin{mysection}[sec-exp1-Resultats]{Résultats}
 			\end{mysection}
 		\end{mychapter}
-		\begin{mychapter}{La manipulation collaborative}
+		\begin{mychapter}[cha-LaManipulationCollaborative]{La manipulation collaborative}
 		\end{mychapter}
-		\begin{mychapter}{Les dynamiques de groupe}
-		\end{mychapter}
-	\end{mypart}
-	\begin{mypart}{Propositions pour le travail collaboratif}
-		\begin{mychapter}{Travail collaboratif assisté par haptique}
+		\begin{mychapter}[cha-LesDynamiquesDeGroupe]{Les dynamiques de groupe}
 		\end{mychapter}
 	\end{mypart}
-	\begin{mypart}{Synthèse}
-		\begin{mychapter}{Conclusion et perspectives}
+	\begin{mypart}[prt-PropositionsPourLeTravailCollaboratif]{Propositions pour le travail collaboratif}
+		\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
+		\end{mychapter}
+	\end{mypart}
+	\begin{mypart}[prt-Synthese]{Synthèse}
+		\begin{mychapter}[cha-ConclusionEtPerspectives]{Conclusion et perspectives}
 		\end{mychapter}
 	\end{mypart}
 
