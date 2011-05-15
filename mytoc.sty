@@ -36,22 +36,37 @@
 \fi
 
 %% Packages to call
+% Improve link for bibliographies and other titles
 \RequirePackage{tocbibind}
+% Improve the support for appendices
+\RequirePackage{appendix}
 \if@minitoc
+	% To make small table of contents at the beginning of each section
 	\RequirePackage{minitoc}
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
+% Add page number for appendices
+\appendicestocpagenum
 \if@minitoc
+	% Redefine the default style for minitoc
 	\mtcsettitlefont{minitoc}{\large\bfseries\sffamily}
+	% Necessary command to create minitoc (before the preamble)
 	\AtBeginDocument{\dominitoc}
 \fi
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
+% Define the appendix command
+\newcommand{\myappendix}{%
+	\appendixpage%
+	\cleardoublepage%
+	\appendix%
+	\addappheadtotoc%
+}
 % Define the table of contents command,
 % and add the title in the table of contents
 \newcommand{\mytoc}{%
@@ -79,6 +94,9 @@
 	\def\myargs@one{#1}%
 	\def\myargs@two{#2}%
 	\chapter{\myargs@two}\label{\myargs@one}%
+	\if@minitoc%
+		\myminitoc%
+	\fi%
 }{}
 \newenvironment{mysection}[2][sec-??]{%
 	\def\myargs@one{#1}%
