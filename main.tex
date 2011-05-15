@@ -433,13 +433,13 @@
 								\end{minipage}%
 							}
 						}
-						\newlength{\firstcolumn}
-						\newlength{\secondcolumn}
-						\setlength{\firstcolumn}{7em}
-						\setlength{\secondcolumn}{\textwidth}
-						\addtolength{\secondcolumn}{-\firstcolumn}
-						\addtolength{\secondcolumn}{-4\tabcolsep}
-						\begin{mytabular}{>{\bfseries}p{\firstcolumn}p{\secondcolumn}}
+						\newlength{\exponefirstcolumn}
+						\newlength{\exponesecondcolumn}
+						\setlength{\exponefirstcolumn}{7em}
+						\setlength{\exponesecondcolumn}{\textwidth}
+						\addtolength{\exponesecondcolumn}{-\exponefirstcolumn}
+						\addtolength{\exponesecondcolumn}{-4\tabcolsep}
+						\begin{mytabular}{>{\bfseries}p{\exponefirstcolumn}p{\exponesecondcolumn}}
 							\mytoprule
 							\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs \\
 							\mymiddlerule[\heavyrulewidth]
@@ -613,7 +613,7 @@
 								\item Quelle solution choisiriez-vous entre les trois configurations ?
 							\end{enumerate}
 
-							Pour les \myglos*{glo-Binome}, le questionnaire est le suivant.
+							Pour les \myglos*{glo-Binome}, le questionnaire est le suivant (les questions sont posées à chaque sujet du \myglos{glo-Binome}).
 							\begin{enumerate}
 								\item Vous êtes-vous senti efficace ?
 								\item Comment évalueriez-vous votre taux de communication\dots{}
@@ -634,6 +634,57 @@
 							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
 						\end{myparagraph}
 					\end{mysubsubsection}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp2-Procedure]{Procédure}
+					\begin{mytable}
+						\mycaption[tab-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+						\newcommand{\mytitlecolumn}[2]{%
+							\multirow{#1}*{%
+								\begin{minipage}{6em}%
+									\raggedleft #2%
+								\end{minipage}%
+							}
+						}
+						\newlength{\exptwofirstcolumn}
+						\newlength{\exptwosecondcolumn}
+						\setlength{\exptwofirstcolumn}{7em}
+						\setlength{\exptwosecondcolumn}{\textwidth}
+						\addtolength{\exptwosecondcolumn}{-\exptwofirstcolumn}
+						\addtolength{\exptwosecondcolumn}{-4\tabcolsep}
+						\begin{mytabular}{>{\bfseries}p{\exptwofirstcolumn}p{\exptwosecondcolumn}}
+							\mytoprule
+							\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule \\
+							\mymiddlerule[\heavyrulewidth]
+							\mytitlecolumn{1}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglos{glo-Binome} \\
+							                                          & \myhypothesis{2} \myGlos*{glo-Binome} plus performants sur les tâches complexes \\
+							                                          & \myhypothesis{3} Apprentissage plus performant en \myglos{glo-Binome} \\
+							\mymiddlerule
+							\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets \\
+							                                          & \myvari{2} Complexité de la tâche \\
+							                                          & \myvari{3} Niveau d'apprentissage \\
+							\mymiddlerule
+							\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de complétion \\
+							                                          & \myvard{2} Nombre de sélections \\
+							                                          & \myvard{3} Distance passive entre les espaces de travail \\
+							                                          & \myvard{4} Distance active entre les espaces de travail \\
+							                                          & \myvard{5} Réponses qualitatives \\
+							\mymiddlerule[\heavyrulewidth]
+							\multicolumn{2}{c}{%
+								\begin{tabular}{^C-C-C-C}
+									\myrowstyle{\bfseries}
+									Condition \mycondition{1} & Condition \mycondition{2} & Condition \mycondition{3} & Condition \mycondition{4} \\
+									\mymiddlerule
+									Bimanuel ($N=1$) & Bimanuel ($N=1$) & Collaboratif ($N=2$) & Collaboratif ($N=2$) \\
+									\mymiddlerule
+									\mytask{1a} & \mytask{1b} & \mytask{1a} & \mytask{1b} \\
+									\mytask{1b} & \mytask{1a} & \mytask{1b} & \mytask{1a} \\
+									\mytask{2a} & \mytask{2b} & \mytask{2a} & \mytask{2b} \\
+									\mytask{2b} & \mytask{2a} & \mytask{2b} & \mytask{2a} \\
+								\end{tabular}
+							} \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
