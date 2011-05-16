@@ -574,8 +574,6 @@
 						\begin{myparagraph}{\myvari{2} Complexité de la tâche}
 							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
 							Deux molécules de complexités différentes sont testées.
-							La première molécule est couramment nommée \myTRPZIPPER \mycite{Cochran-2001} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
-							La second molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y}.
 							Deux tâches de déformation sur chacune de molécules sont proposées : une déformation au niveau inter-moléculaire et une déformation au niveau intra-moléculaire.
 						\end{myparagraph}
 						\begin{myparagraph}{\myvari{3} Le niveau d'apprentissage}
@@ -635,6 +633,75 @@
 							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
 						\end{myparagraph}
 					\end{mysubsubsection}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp2-Tache]{Tâche}
+					La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
+					Deux niveaux différents de manipulation sont proposés :
+					\begin{itemize}
+						\item inter-moléculaire (à l'échelle d'un \myglos{glo-Residu});
+						\item intra-moléculaire (à l'échelle d'un atome).
+					\end{itemize}
+
+					Une tâche pour chacun de ces deux échelles de manipulation est proposé sur chacune des deux molécules.
+					La première molécule est couramment nommée \myTRPZIPPER \mycite{Cochran-2001} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
+					La second molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y}.
+					On peut donc distinguer quatre tâches différentes :
+					\begin{description}
+						\item[\mytask{1a}]
+							Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
+							Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule au sein de l'environnement virtuel et éviter d'éventuelles dérives hors du champ visuel.
+							L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement.
+							La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
+						\item[\mytask{1b}]
+							Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
+							Comme la tâche \mytask{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
+							L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement.
+							La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
+						\item[\mytask{2a}]
+							Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
+							Seulement trois \myglos*{glo-Residu} sont laissés libres tandis que tous les autres sont fixés.
+							Les contraintes physiques de cette tâche sont relativement faibles.
+							Cependant, la difficulté de cette tâche réside dans la recherche des \myglos*{glo-Residu} à déformer qui ne sont pas aisés à trouver.
+						\item[\mytask{2b}]
+							Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
+							Seulement six \myglos*{glo-Residu} sont laissés libres tandis que les autres sont fixés.
+							La déformation requise demande une grande dépense d'énergie.
+							En effet, la molécule proposée se trouve dans une sorte de puit de potentiel (un \myemph{minima} local) et l'objectif est d'atteindre un autre puit de potentiel (un autre \myemph{minima} local).
+							L'énergie nécessaire pour passer d'un puit à l'autre est relativement importante, à tel point qu'un seul outil de déformation n'est pas suffisant.
+							La manipulation synchrone de deux \myglos*{glo-Residu} est la seule solution pour atteindre l'objectif.
+					\end{description}
+
+					Un résumé de la complexité des quatre tâches est exposé dans le \mytableref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
+					\begin{description}
+						\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
+						\item[\myglos{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} non fixés sur la molécule;
+						\item[Cassure] Ce sont les cassures de la chaîne principale de la molécule; elles représentent les jonctions entre hélices $\alpha$ et/ou les feuillets $\beta$;
+						\item[Champ de force] Il représente la difficulté en terme de contrainte physique; il exprime l'énergie minimum nécessaire pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
+					\end{description}
+
+					\begin{mytable}
+						\mycaption[tab-exp2-ParametresDeComplexiteDesTaches]{Paramètres de complexité des tâches}
+						\begin{mytabular}{^>{\bfseries}p{9em}-C-C-C-C}
+							\mytoprule
+							\myrowstyle{\bfseries}
+							                          & \mytask{1a} & \mytask{1b} & \mytask{2a} & \mytask{2b} \\
+							\mymiddlerule[\heavyrulewidth]
+							Nombre d'atomes           & \mynum{218} & \mynum{304} & \mynum{218} & \mynum{304} \\
+							\mymiddlerule
+							\myglos{glo-Residu} libre & \mynum{11}  & \mynum{19}  & \mynum{3}   & \mynum{7}   \\
+							\mymiddlerule
+							Cassure                   & \mynum{1}   & \mynum{2}   & \mynum{0}   & \mynum{1}   \\
+							\mymiddlerule
+							Champ de force            & Moyen       & Moyen       & Faible      & Fort        \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
+
+					Des outils de déformation légérement différents sont proposés en fonction de la tâche à réaliser.
+					Pour les tâches de déformation au niveau inter-moléculaire, l'outil de déformation est l'outil \mytool{tug} : il permet de déformer d'un tenant l'intégralité d'un \myglos{glo-Residu}.
+					Pour les tâches de déformation au niveau intra-moléculaire, l'outil de déformation est l'outil \mytool{tug} : il permet d'appliquer une force sur un unique atome.
+					L'outil \mytool{tug} pour les \myglos*{glo-Residu} applique la même force à chaque atome du \myglos{glo-Residu}.
+					Il en résulte que l'outil \mytool{tug} pour les \myglos*{glo-Residu} permet de développer plus d'énergie.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-Procedure]{Procédure}
 					\begin{mytable}
