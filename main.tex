@@ -162,167 +162,6 @@
 						\begin{myparagraph}{\myvari{2} Résidu recherché}
 							La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
 							\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \mytableref*{tab-exp1-ListeDesResidusRecherches}.
-							La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-							La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-							Cinq \myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus} :
-							\begin{description}
-								\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
-									Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
-								\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
-									On distingue trois formes différentes :
-									\begin{description}
-										\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
-										\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
-										\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
-									\end{description}
-								\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-									Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
-									Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
-								\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
-									De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
-							\end{description}
-
-							\begin{mytable}
-								\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des résidus recherchés}
-								\setlength{\myheight}{10ex}
-								\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
-								\begin{mysubtable}
-									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \myTRPCAGE}
-									\begin{mytabular}[0.49\textwidth]{^C-C}
-										\mytoprule
-										\myrowstyle{\bfseries}
-										Résidu & Image \\
-										\mymiddlerule
-										\myresidue{1} & \mypatternpicture{pattern1} \\
-										\myresidue{2} & \mypatternpicture{pattern2} \\
-										\myresidue{3} & \mypatternpicture{pattern3} \\
-										\myresidue{4} & \mypatternpicture{pattern4} \\
-										\myresidue{5} & \mypatternpicture{pattern5} \\
-										\mybottomrule
-									\end{mytabular}
-								\end{mysubtable}
-								\begin{mysubtable}
-									\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \myPrion}
-									\begin{mytabular}[0.49\textwidth]{^C-C}
-										\mytoprule
-										\myrowstyle{\bfseries}
-										Résidu & Image \\
-										\mymiddlerule
-										\myresidue{6}  & \mypatternpicture{pattern6}  \\
-										\myresidue{7}  & \mypatternpicture{pattern7}  \\
-										\myresidue{8}  & \mypatternpicture{pattern8}  \\
-										\myresidue{9}  & \mypatternpicture{pattern9}  \\
-										\myresidue{10} & \mypatternpicture{pattern10} \\
-										\mybottomrule
-									\end{mytabular}
-								\end{mysubtable}
-							\end{mytable}
-
-							\begin{myfigure}
-								\newcommand{\schemafactor}{0.20}
-								\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
-								\psset{unit=\schemaunit}
-								\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
-								\begin{myps}(-2.5,-3)(2.5,3)
-									\rput(0,1.75){%
-										\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
-									\rput(0,-1.25){%
-										\myimage[height=2\schemaunit,angle=90]{exp1-prion}}
-									\rput(-1.5,2){%
-										\myimage[height=\schemaunit]{exp1-pattern1}}
-									\rput(1.5,2){%
-										\myimage[width=\schemaunit]{exp1-pattern3}}
-									\rput(1.5,-0){%
-										\myimage[width=\schemaunit]{exp1-pattern2}}
-									\rput(-1.5,-0){%
-										\myimage[width=\schemaunit]{exp1-pattern4}}
-									\rput(-1.5,-2){%
-										\myimage[width=\schemaunit]{exp1-pattern5}}
-									\rput(1.5,-2){%
-										\myimage[height=\schemaunit]{exp1-pattern6}}
-
-									\psset{framesize=1 1}
-									\fnode(-1.5,2){P1}
-									\uput[90](-1.5,2.5){\myresidue{1}}
-									\fnode(1.5,2){P38}
-									\uput[90](1.5,2.5){\myresidue{3} et \myresidue{8}}
-									\fnode(1.5,-0){P27}
-									\uput[90](1.5,0.5){\myresidue{2} et \myresidue{7}}
-									\fnode(-1.5,-0){P49}
-									\uput[90](-1.5,0.5){\myresidue{4} et \myresidue{9}}
-									\fnode(-1.5,-2){P510}
-									\uput[90](-1.5,-1.5){\myresidue{5} et \myresidue{10}}
-									\fnode(1.5,-2){P6}
-									\uput[90](1.5,-1.5){\myresidue{6}}
-
-									\psset{linecolor=myred}
-									\cnode(0.3,1.5){0.2}{TRPP1}
-									\cnode(0.15,2){0.2}{TRPP38}
-									\cnode(-0.1,1.25){0.2}{TRPP27}
-									\cnode(-0.5,2.2){0.2}{TRPP49}
-									\cnode(-0.65,1.25){0.2}{TRPP510}
-									\ncline{-}{P1}{TRPP1}
-									\ncline{-}{P38}{TRPP38}
-									\ncline{-}{P27}{TRPP27}
-									\ncline{-}{P49}{TRPP49}
-									\ncline{-}{P510}{TRPP510}
-
-									\psset{linecolor=myblue}
-									\cnode(0.4,0.2){0.2}{PrionP38}
-									\cnode(0.6,-2.8){0.2}{PrionP27}
-									\cnode(0.2,-0.8){0.2}{PrionP49}
-									\cnode(-0.7,-1.7){0.2}{PrionP510}
-									\cnode(0.0,-1.4){0.2}{PrionP6}
-									\ncline{-}{P38}{PrionP38}
-									\ncline{-}{P27}{PrionP27}
-									\ncline{-}{P49}{PrionP49}
-									\ncline{-}{P510}{PrionP510}
-									\ncline{-}{P6}{PrionP6}
-								\end{myps}
-							\end{myfigure}
-
-							\begin{mytable}
-								\newcommand{\myatom}[2]{%
-									{%
-										\bfseries%
-										\sffamily%
-										\textcolor{#2}{\MakeUppercase{#1}}%
-										\xspace%
-									}%
-								}
-								\newcommand{\mycarbon}{\myatom{C}{mycarboncolor}}
-								\newcommand{\mynytrogen}{\myatom{A}{mynytrogencolor}}
-								\newcommand{\myoxygen}{\myatom{O}{myoxygencolor}}
-								\newcommand{\mysulfur}{\myatom{S}{mysulfurcolor}}
-								\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
-								\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
-								\begin{mytabular}{^C-C-C-C-C}
-									\mytoprule
-									\myrowstyle{\bfseries}
-									Résidu & Position & Forme & Couleurs & Similarité \\
-									\mymiddlerule[\heavyrulewidth]
-									\myresidue{1}  & Interne & Cercle & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
-									\mymiddlerule
-									\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
-									\mymiddlerule
-									\myresidue{3}  & Interne & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
-									\mymiddlerule
-									\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
-									\mymiddlerule
-									\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
-									\mymiddlerule[\heavyrulewidth]
-									\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
-									\mymiddlerule
-									\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
-									\mymiddlerule
-									\myresidue{8}  & Externe & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
-									\mymiddlerule
-									\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
-									\mymiddlerule
-									\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
-									\mybottomrule
-								\end{mytabular}
-							\end{mytable}
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp1-VariablesDependantes]{Variables dépendantes}
@@ -403,14 +242,176 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Tache]{Tâche}
 					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
-					Les motifs à rechercher dans les structures moléculaires sont des \myglos*{glo-Residu} \mytableref*{tab-exp1-ListeDesResidusRecherches}.
-					Les sujets possèdent deux outils pour trouver ces motifs :
+					Les motifs à rechercher dans les structures moléculaires sont les \myglos*{glo-Residu} du \mytableref{tab-exp1-ListeDesResidusRecherches}.
+					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
+					Les sujets possèdent deux outils pour trouver, sélectionner puis extraire ces motifs :
 					\begin{itemize}
 						\item ils peuvent explorer la molécule en la déplaçant ou en la tournant à l'aide de l'outil \mytool{grab};
 						\item ils peuvent déformer la molécule à l'aide de l'outil \mytool{tug}.
 					\end{itemize}
 
-					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
+					\begin{mytable}
+						\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des résidus recherchés}
+						\setlength{\myheight}{10ex}
+						\newcommand{\mypatternpicture}[1]{\myimage[width=\myheight]{exp1-#1}}
+						\begin{mysubtable}
+							\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE]{Residus sur la molécule \myTRPCAGE}
+							\begin{mytabular}[0.49\textwidth]{^C-C}
+								\mytoprule
+								\myrowstyle{\bfseries}
+								Résidu & Image \\
+								\mymiddlerule
+								\myresidue{1} & \mypatternpicture{pattern1} \\
+								\myresidue{2} & \mypatternpicture{pattern2} \\
+								\myresidue{3} & \mypatternpicture{pattern3} \\
+								\myresidue{4} & \mypatternpicture{pattern4} \\
+								\myresidue{5} & \mypatternpicture{pattern5} \\
+								\mybottomrule
+							\end{mytabular}
+						\end{mysubtable}
+						\begin{mysubtable}
+							\mysubcaption[tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion]{Residus sur la molécule \myPrion}
+							\begin{mytabular}[0.49\textwidth]{^C-C}
+								\mytoprule
+								\myrowstyle{\bfseries}
+								Résidu & Image \\
+								\mymiddlerule
+								\myresidue{6}  & \mypatternpicture{pattern6}  \\
+								\myresidue{7}  & \mypatternpicture{pattern7}  \\
+								\myresidue{8}  & \mypatternpicture{pattern8}  \\
+								\myresidue{9}  & \mypatternpicture{pattern9}  \\
+								\myresidue{10} & \mypatternpicture{pattern10} \\
+								\mybottomrule
+							\end{mytabular}
+						\end{mysubtable}
+					\end{mytable}
+
+					La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+					La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+					Cinq \myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité.
+					Les critères de complexité, résumés dans le \mytableref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
+					\begin{description}
+						\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
+							Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
+						\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
+							On distingue trois formes différentes :
+							\begin{description}
+								\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
+								\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
+								\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
+							\end{description}
+						\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
+							Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
+							Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
+						\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
+							De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
+					\end{description}
+
+					\begin{myfigure}
+						\newcommand{\schemafactor}{0.20}
+						\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
+						\psset{unit=\schemaunit}
+						\mycaption[fig-exp1-RepartitionDesResidusSurLesMolecules]{Répartition des résidus sur les molécules}
+						\begin{myps}(-2.5,-3)(2.5,3)
+							\rput(0,1.75){%
+								\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
+							\rput(0,-1.25){%
+								\myimage[height=2\schemaunit,angle=90]{exp1-prion}}
+							\rput(-1.5,2){%
+								\myimage[height=\schemaunit]{exp1-pattern1}}
+							\rput(1.5,2){%
+								\myimage[width=\schemaunit]{exp1-pattern3}}
+							\rput(1.5,-0){%
+								\myimage[width=\schemaunit]{exp1-pattern2}}
+							\rput(-1.5,-0){%
+								\myimage[width=\schemaunit]{exp1-pattern4}}
+							\rput(-1.5,-2){%
+								\myimage[width=\schemaunit]{exp1-pattern5}}
+							\rput(1.5,-2){%
+								\myimage[height=\schemaunit]{exp1-pattern6}}
+
+							\psset{framesize=1 1}
+							\fnode(-1.5,2){P1}
+							\uput[90](-1.5,2.5){\myresidue{1}}
+							\fnode(1.5,2){P38}
+							\uput[90](1.5,2.5){\myresidue{3} et \myresidue{8}}
+							\fnode(1.5,-0){P27}
+							\uput[90](1.5,0.5){\myresidue{2} et \myresidue{7}}
+							\fnode(-1.5,-0){P49}
+							\uput[90](-1.5,0.5){\myresidue{4} et \myresidue{9}}
+							\fnode(-1.5,-2){P510}
+							\uput[90](-1.5,-1.5){\myresidue{5} et \myresidue{10}}
+							\fnode(1.5,-2){P6}
+							\uput[90](1.5,-1.5){\myresidue{6}}
+
+							\psset{linecolor=myred}
+							\cnode(0.3,1.5){0.2}{TRPP1}
+							\cnode(0.15,2){0.2}{TRPP38}
+							\cnode(-0.1,1.25){0.2}{TRPP27}
+							\cnode(-0.5,2.2){0.2}{TRPP49}
+							\cnode(-0.65,1.25){0.2}{TRPP510}
+							\ncline{-}{P1}{TRPP1}
+							\ncline{-}{P38}{TRPP38}
+							\ncline{-}{P27}{TRPP27}
+							\ncline{-}{P49}{TRPP49}
+							\ncline{-}{P510}{TRPP510}
+
+							\psset{linecolor=myblue}
+							\cnode(0.4,0.2){0.2}{PrionP38}
+							\cnode(0.6,-2.8){0.2}{PrionP27}
+							\cnode(0.2,-0.8){0.2}{PrionP49}
+							\cnode(-0.7,-1.7){0.2}{PrionP510}
+							\cnode(0.0,-1.4){0.2}{PrionP6}
+							\ncline{-}{P38}{PrionP38}
+							\ncline{-}{P27}{PrionP27}
+							\ncline{-}{P49}{PrionP49}
+							\ncline{-}{P510}{PrionP510}
+							\ncline{-}{P6}{PrionP6}
+						\end{myps}
+					\end{myfigure}
+
+					\begin{mytable}
+						\newcommand{\myatom}[2]{%
+							{%
+								\bfseries%
+								\sffamily%
+								\textcolor{#2}{\MakeUppercase{#1}}%
+								\xspace%
+							}%
+						}
+						\newcommand{\mycarbon}{\myatom{C}{mycarboncolor}}
+						\newcommand{\mynytrogen}{\myatom{A}{mynytrogencolor}}
+						\newcommand{\myoxygen}{\myatom{O}{myoxygencolor}}
+						\newcommand{\mysulfur}{\myatom{S}{mysulfurcolor}}
+						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
+						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des résidus -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
+						\begin{mytabular}{^C-C-C-C-C}
+							\mytoprule
+							\myrowstyle{\bfseries}
+							Résidu & Position & Forme & Couleurs & Similarité \\
+							\mymiddlerule[\heavyrulewidth]
+							\myresidue{1}  & Interne & Cercle & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{3}  & Interne & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\mymiddlerule
+							\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
+							\mymiddlerule
+							\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\mymiddlerule[\heavyrulewidth]
+							\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
+							\mymiddlerule
+							\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{8}  & Externe & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\mymiddlerule
+							\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
+							\mymiddlerule
+							\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
 					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
