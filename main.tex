@@ -495,8 +495,8 @@
 			\begin{mysection}[sec-exp1-Resultats]{Résultats}
 				\begin{myfigure}
 					\psset{xunit=0.1\textwidth,yunit=0.01cm}
-					\begin{myps}(0,0)(10,400)
-						\psaxes[Dy=50,ticks=y](0,0)(10,400)
+					\begin{myps}(0,-100)(10,400)
+						\myaxes(0,10){x-axis}(0,400)[50]{y-axis}
 						\readpsbardata[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}{files/exp1-time-residue.csv}
 						\psbarchart[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}
 					\end{myps}

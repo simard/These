@@ -17,6 +17,8 @@
 \RequirePackage{xifthen}
 % To know if the compilation is 'draft'
 \RequirePackage{ifdraft}
+% Make some calculations on floats
+\RequirePackage{fltpoint}
 % General PSTricks
 \RequirePackage{pstricks}
 % Some additional commands for basic PSTricks
@@ -33,6 +35,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
+% The '.' will be the separator for decimal in floats
+\fpDecimalSign{.}%
+% For use in '\myaxes'
+\newlength{\my@ps@xoffset}
+\newlength{\my@ps@yoffset}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -284,6 +291,58 @@
 		\fi
 	\end@SpecialObj%
 }%
+
+%\newcommand{\myaxes}[6][linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt]%
+% #1 (optional) are the options to the command '\psaxes' and '\psline' (for steps)
+% #2 is the width of the histogram
+% #3 is the legend for x axis
+% #4 is the height of the histogram
+% #5 is the legend for y axis
+% #6 is the sep on y axis
+\def\myaxes{%
+	\@ifnextchar[{\my@ps@axes@i}{\my@ps@axes@i[]}
+}
+\def\my@ps@axes@i[#1](#2,#3)#4(#5,#6){%
+	\@ifnextchar[%
+		{\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)}%
+		{%
+			\fpDiv{\my@ps@subdiv}{#6}{5}%
+			\fpRound{\my@ps@subdiv}{\my@ps@subdiv}{0}%
+			\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[\my@ps@subdiv]%
+		}%
+}
+\def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
+	\ifthenelse{\isempty{#1}}%
+		{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
+		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+	% Middle of the x-axis
+	\fpDiv{\my@ps@xmiddle}{#3}{2}%
+	% Size of the label
+	\setlength{\my@ps@xoffset}{1ex}%
+	% Label separations
+	\addtolength{\my@ps@xoffset}{2\pslabelsep}%
+	% Mid-size of the written text
+	\addtolength{\my@ps@xoffset}{0.5ex}%
+	% x-label
+	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){#4}%
+	% Middle of the y-axis
+	\fpDiv{\my@ps@ymiddle}{#6}{2}%
+	% Size of the label
+	\settowidth{\my@ps@yoffset}{#6}%
+	% Label separations
+	\addtolength{\my@ps@yoffset}{2\pslabelsep}%
+	% Mid-size of the written text
+	\addtolength{\my@ps@yoffset}{0.5ex}%
+	% y-label
+	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{#8}}%
+	\fpDiv{\temp}{#6}{#7}%
+	\fpRound{\iterations}{\temp}{0}%
+	\multido{\i=#7+#7}{\iterations}{%
+		\ifthenelse{\isempty{#1}}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\i)(#3,\i)}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\i)(#3,\i)}%
+	}%
+}
 
 % End of package
 \endinput
