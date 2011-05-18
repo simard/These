@@ -1,6 +1,7 @@
 # Directories
 IMG=images
 BUILD=build
+FILES=files
 
 # In-file and out-file
 ifeq ($(IN),)
@@ -18,6 +19,7 @@ GLOSS=xindy
 ACRO=xindy
 DVIPS=dvips
 PS2PDF=ps2pdf
+R=R
 
 # Compilators options
 TEXOPT=-shell-escape -output-format=dvi -file-line-error -interaction nonstopmode -output-directory=$(BUILD)
@@ -27,6 +29,7 @@ GLOSSOPT=--language french --codepage utf8 --input-markup xindy
 ACROOPT=--language french --codepage utf8 --input-markup xindy
 DVIPSOPT=-R0
 PS2PDFOPT=
+ROPT=--vanilla
 
 # About images
 PNG=$(wildcard $(IMG)/*.png)
@@ -38,15 +41,17 @@ AUX=$(wildcard $(BUILD)/*.aux)
 BBL=$(AUX:.aux=.bbl)
 GLS=$(AUX:.aux=.gls)
 ACR=$(AUX:.aux=.acr)
+STT=$(wildcard $(FILES)/*.r)
+CSV=$(STT:.r=.csv)
 
-.PHONY: final draft pdf ps dvi bibtex glossary acronym img clean proper
+.PHONY: final draft pdf ps dvi bibtex glossary acronym img stats clean proper
 
 all: draft
 
 # To create the final document with:
 #   - the images
 #   - valid table of contents
-final: clean img
+final: clean img stats
 	@echo "----- FINAL -----"
 	$(MAKE) $(BUILD)/$(OUT).dvi
 	$(MAKE) bibtex
@@ -62,7 +67,7 @@ final: clean img
 # To create a draft version of the document.
 # It execute a faster compilation without images.
 # This is the default target, called by 'all'
-draft: $(BUILD) img
+draft: $(BUILD) img stats
 	@sed 's/^\(\\documentclass\[\)\(.*\)/\1draft,\2/g' $(IN).tex > $(BUILD)/$(IN).tex
 	IN=$(BUILD)/$(IN) $(MAKE) pdf
 
@@ -90,6 +95,10 @@ acronym: $(ACR)
 # To create all images at the desired format (i.e. EPS)
 img: $(EPS)
 	@echo "----- CONVERSION IMAGES PNG -> EPS -----"
+
+# To generate results from the statistics (by R)
+stats: $(CSV)
+	@echo "----- GENERATE CSV files -----"
 
 # Just take the created PDF file to copy it in the current directory
 $(OUT).pdf: $(BUILD)/$(OUT).pdf
@@ -135,6 +144,7 @@ $(BUILD)/%.gls : $(BUILD)/%.glo
 $(BUILD)/%.acr : $(BUILD)/%.acn
 	-$(ACRO) $(ACROOPT) -M `echo $< | sed 's/\.acn//g'` -t `echo $< | sed 's/\.acn/\.alg/g'` -o $@ $<
 
+# Create the temporary directory to build the document
 $(BUILD):
 	mkdir -p $@
 
@@ -142,10 +152,13 @@ $(BUILD):
 $(IMG)/%.eps: $(IMG)/%.png
 	convert $< eps:->$@
 
-# Create the 'Makefile' file for the conversion of images from PNG to EPS 
-# format
+# Create the 'Makefile' file for the conversion of images from PNG to EPS format
 $(IMG)/Makefile: $(IMG)
 	echo $(MKIMG) > $@
+
+# Generate CSV files from R files
+$(FILES)/%.csv: $(FILES)/%.r
+	-$(R) $(ROPT) -f $<
 
 # To clean the 'build' directory
 clean:

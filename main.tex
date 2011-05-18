@@ -238,6 +238,27 @@
 								\item Les sujets sont amis.
 							\end{enumerate}
 						\end{myparagraph}
+						\begin{myparagraph}[par-exp1-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
+							Un questionnaire est proposé à tous les sujets.
+							Il est constitué de plusieurs questions (notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux).
+
+							Le questionnaire est le suivant (les questions sont posées à chaque sujet dans le cas du \myglos{glo-Binome}) :
+							\begin{enumerate}
+								\item Dans quelle configuration vous êtes-vous senti le plus efficace : \myemph{seul} ou \myemph{en collaboratif} ?
+								\item Vous êtes vous senti utile dans la configuration collaborative (par opposition à pénalisant) ?
+								\item Pensez-vous avoir une position de meneur dans la configuration collaborative ?
+								\item Comment évalueriez-vous votre taux de communication\dots{}
+									\begin{itemize}
+										\item verbale ?
+										\item gestuelle ?
+										\item virtuelle ?
+									\end{itemize}
+							\end{enumerate}
+
+							Concernant la communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
+							La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer, désigner ou pour tout autre explication à son partenaire.
+							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
+						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Tache]{Tâche}
@@ -472,6 +493,15 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Resultats]{Résultats}
+				\begin{myfigure}
+					\psset{xunit=0.1\textwidth,yunit=0.01cm}
+					\begin{myps}(0,0)(10,400)
+						\psaxes[Dy=50,ticks=y](0,0)(10,400)
+						\readpsbardata[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}{files/exp1-time-residue.csv}
+						\psbarchart[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}
+					\end{myps}
+					\mycaption{Test}
+				\end{myfigure}
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[cha-LaManipulationCollaborative]{La manipulation collaborative}
@@ -596,10 +626,10 @@
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
 							Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
-							Il est constitué de plusieurs questions (notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux \mycite{Likert-1932}).
+							Il est constitué de plusieurs questions (notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux).
 							Un questionnaire différent est adressé aux \myglos*{glo-Monome} et aux \myglos*{glo-Binome}.
 
-							Pour les \myglos*{glo-Monome}, le questionnaire est le suivant.
+							Pour les \myglos*{glo-Monome}, le questionnaire est le suivant :
 							\begin{enumerate}
 								\item Vous êtes-vous senti efficace ?
 								\item Pensez-vous que vous auriez été plus à l'aise seul avec un seul outil de déformation ?
@@ -607,7 +637,7 @@
 								\item Quelle solution choisiriez-vous entre les trois configurations ?
 							\end{enumerate}
 
-							Pour les \myglos*{glo-Binome}, le questionnaire est le suivant (les questions sont posées à chaque sujet du \myglos{glo-Binome}).
+							Pour les \myglos*{glo-Binome}, le questionnaire est le suivant (les questions sont posées à chaque sujet du \myglos{glo-Binome}) :
 							\begin{enumerate}
 								\item Vous êtes-vous senti efficace ?
 								\item Comment évalueriez-vous votre taux de communication\dots{}

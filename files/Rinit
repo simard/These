@@ -1,0 +1,20 @@
+#!/usr/bin/env Rscript
+library(lawstat)
+
+smart_mean <- function(x) {
+	if(is.numeric(x))
+		mean(x, na.rm=T)
+	else
+		x[1]
+}
+
+get_outname <- function(in_args) {
+	nb_indexes = length(in_args)
+	range_indexes = 1:nb_indexes
+	initial.options = rbind(range_indexes, in_args)
+	find_index = initial.options[1, initial.options[2,] == "-f"]
+	script_filename = initial.options[2, as.numeric(find_index[[1]])+1]
+	script_filename = basename(script_filename[[1]])
+	script_filename = gsub("\\.r",".csv",script_filename)
+	script_filename
+}

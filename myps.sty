@@ -14,6 +14,7 @@
 %% Options to pass to packages
 
 %% Packages to call
+\RequirePackage{xifthen}
 % To know if the compilation is 'draft'
 \RequirePackage{ifdraft}
 % General PSTricks
@@ -47,6 +48,242 @@
 	}%
 }
 \def\endmyps{\endpspicture}
+
+% Create an additionnal 'chartstyle'
+% cluster, stack, block, boxplot
+\def\psset@@chartstyle#1#2\@nil#3{%
+	\def\my@ps@chartstyle{#1#2}%
+	\ifthenelse{\equal{\my@ps@chartstyle}{cluster}}%
+		{\let#3\z@}%
+		{%
+			\ifthenelse{\equal{\my@ps@chartstyle}{stack}}%
+				{\let#3\@one}%
+				{%
+					\ifthenelse{\equal{\my@ps@chartstyle}{block}}%
+						{\let#3\tw@}%
+						{%
+							\ifthenelse{\equal{\my@ps@chartstyle}{boxplot}}%
+								{\let#3\thr@@}%
+								{\@pstrickserr{Bad argument: `#1#2'}\@ehpa}%
+						}%
+				}%
+		}%
+}%
+
+% Redefine the bar chart to have boxplot
+\def\psbarchart@ii#1{%
+	\begin@SpecialObj%
+
+		% Save contents of \pst@code and load start-of-path code
+		% into \pst@tempc
+		\let\pst@tempb\pst@code%
+		\def\pst@code{}%
+		\solid@star%
+		\let\pst@tempc\pst@code%
+
+		% Load end-of-path code into \pst@tempd and restore original
+		% contents of \pst@code
+		\begin@barstyle%
+		\expandafter\@setbarstyle\@barstylelist,\@nil\ignorespaces%
+		\end@barstyle%
+		\let\pst@code\pst@tempb%
+
+		% Draw bar chart
+		\pst@checknum\psk@barcolsep\pst@tempa%
+		\pst@checknum\psk@barsep\pst@tempb%
+		\ifx\psk@orientation\z@             % vertical
+			\pst@dima=\psxunit%
+			\pst@dimb=\psyunit%
+			\def\pst@tempc{true}%
+		\else\ifx\psk@orientation\p@        % horizontal
+			\pst@dima=\psyunit%
+			\pst@dimb=\psxunit%
+			\def\pst@tempc{false}%
+		\else
+			\@pstrickserr{Bad orientation specification}\@ehpa
+		\fi\fi
+		\ifcase\psk@chartstyle% chartstyle=cluster
+			\addto@pscode{%
+				\pst@tempd%
+				/BARDATA #1 def
+				/nbars BARDATA length def
+				/ncols BARDATA 0 get length def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					DATAVECTOR {
+						/ybar2 exch \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xbar1 colcount colwidth mul xoffset add def
+						/xbar2 xbar1 barwidth add def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+					} forall
+					/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+					/barcount barcount 1 add def
+				} forall
+			}%
+		\or%  chartstyle=stack
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					/xbar1 colcount colwidth mul bXoffset add def
+					/xbar2 xbar1 barwidth add def
+					/count 0 def
+					DATAVECTOR {
+						count 0 eq {
+							/ybar2 exch \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul ybar1 add def
+						}{
+							/ybar2 exch \psbar@mul mul \pst@number\pst@dimb mul ybar1 add def
+						} ifelse
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+							closepath
+						} if
+						/ybar1 ybar2 def
+						/barcount barcount 1 add def
+						/count count 1 add def
+					} forall
+					/barcount 0 def
+					/ybar1 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\or% chartstyle=block
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/nbars BARDATA 0 get length 2 idiv def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					0 1 nbars 1 sub {
+						dup
+						/ybar1 exch 2 mul DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/ybar2 exch 2 mul 1 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xbar1 colcount colwidth mul xoffset add def
+						/xbar2 xbar1 barwidth add def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/barcount barcount 1 add def
+					} for
+					/barcount 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\or% chartstyle=plotbox
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/nbars BARDATA 0 get length 5 idiv def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					0 1 nbars 1 sub {
+						dup
+						dup
+						dup
+						dup
+						/fdecile exch 5 mul DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/fquartile exch 5 mul 1 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/mediane exch 5 mul 2 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/lquartile exch 5 mul 3 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/ldecile exch 5 mul 4 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xoffset1 colcount colwidth mul xoffset add def
+						/xoffset2 xoffset1 barwidth add def
+						/xbar1 xoffset1 def
+						/xbar2 xoffset2 def
+						/ybar1 fdecile def
+						/ybar2 fdecile def
+						newpath
+						barstyles barcount get cvx exec
+						/ybar1 ldecile def
+						/ybar2 ldecile def
+						newpath
+						barstyles barcount get cvx exec
+						/xbar1 xoffset1 xoffset2 add 2 div def
+						/xbar2 xbar1 def
+						/ybar1 fdecile def
+						/ybar2 ldecile def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/xbar1 xoffset1 def
+						/xbar2 xoffset2 def
+						/ybar1 fquartile def
+						/ybar2 lquartile def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/ybar1 mediane def
+						/ybar2 mediane def
+						newpath
+						barstyles barcount get cvx exec
+						/barcount barcount 1 add def
+					} for
+					/barcount 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\else%
+			\@pstrickserr{Unknown chart style.}\@ehpa%
+		\fi%
+		\ifx\psk@orientation\z@%
+			\pstbar@xlabels%
+		\else
+			\pstbar@ylabels%
+		\fi
+	\end@SpecialObj%
+}%
 
 % End of package
 \endinput
