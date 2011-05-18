@@ -60,6 +60,8 @@
 \RequirePackage{myheadfoot}
 % About links in the final PDF document
 \RequirePackage[dvips]{hyperref}
+% Improve the bookmarks in the PDF
+\RequirePackage[dvips]{bookmark}
 % To make a glossary
 \RequirePackage[acronym]{myglossary}
 % All about tabulars

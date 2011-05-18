@@ -111,7 +111,11 @@ $(BUILD)/$(OUT).pdf: $(BUILD)/$(OUT).ps
 # Create the PS file with the DVI file
 $(BUILD)/$(OUT).ps: $(BUILD)/$(OUT).dvi
 	@echo "----- CONVERSION DVI -> PS -----"
+	# This link is needed for the 'bookmark' package which is not able to find 
+	# files in subdirectories
+	ln -s $(BUILD)/$(OUT).out.ps $(OUT).out.ps
 	$(DVIPS) $(DVIPSOPT) -o $@ $<
+	rm $(OUT).out.ps
 
 # Create the DVI file with the TeX file
 # We need the $(BUILD) directory
