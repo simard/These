@@ -519,6 +519,23 @@
 					\end{myps}
 					\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu]{Temps de recherche et de sélection comparés par résidu}
 				\end{myfigure}
+				\begin{myfigure}
+					\psset{xunit=0.075\textwidth,yunit=0.2cm}
+					\begin{myps}(-1.25,-5)(12,21)
+						\myaxes(0,12){résidus}(0,20)[4]{distance~(mm)}
+						\mybarplot[barstyle=fourth-barstyle]{exp1-diff-groups1.csv}
+						\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups2.csv}
+						\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups3.csv}
+						\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
+						\psline(0,12)(12,12)
+						\psline(0,6)(12,6)
+						\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
+						\uput[180](12,3){\pscharpath{\LARGE\bf\sffamily Espace proche}}
+						\uput[180](12,9){\pscharpath{\LARGE\bf\sffamily Espace voisin}}
+						\uput[180](12,15){\pscharpath{\LARGE\bf\sffamily Espace distant}}
+					\end{myps}
+					\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinome]{Distance moyenne entre les sujets pour chaque binôme}
+				\end{myfigure}
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[cha-LaManipulationCollaborative]{La manipulation collaborative}
