@@ -391,6 +391,15 @@
 		}%
 	}%
 }
+% Create a barplot
+\newcommand\mybarplot[2][]{%
+	\ifthenelse{\isempty{#1}}%
+		{\readpsbardata[header=true]{\data}{files/#2}}%
+		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
+	\ifthenelse{\isempty{#1}}%
+	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0]{\data}}%
+	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0,#1]{\data}}%
+}
 % Create a boxplot
 \newcommand\myboxplot[2][]{%
 	\ifthenelse{\isempty{#1}}%
