@@ -18,3 +18,6 @@ get_outname <- function(in_args) {
 	script_filename = gsub("\\.r",".csv",script_filename)
 	script_filename
 }
+
+exp1_dat = read.table("exp1.csv", h=T)
+
