@@ -43,6 +43,12 @@
 % For use in '\myaxes'
 \newlength{\my@ps@xoffset}
 \newlength{\my@ps@yoffset}
+% Create default style for graphics (limited to 4 styles)
+\newpsbarstyle{first-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightestblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{second-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{third-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{fourth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mydarkblue,linestyle=none,linewidth=0.0pt}
+\psset{barstyle={first-barstyle,second-barstyle,third-barstyle,fourth-barstyle}}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -386,11 +392,6 @@
 	}%
 }
 % Create a boxplot
-\newpsbarstyle{first-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightestblue,linestyle=none,linewidth=0.0pt}
-\newpsbarstyle{second-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightblue,linestyle=none,linewidth=0.0pt}
-\newpsbarstyle{third-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue,linestyle=none,linewidth=0.0pt}
-\newpsbarstyle{fourth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mydarkblue,linestyle=none,linewidth=0.0pt}
-\psset{barstyle={first-barstyle,second-barstyle,third-barstyle,fourth-barstyle}}
 \newcommand\myboxplot[2][]{%
 	\ifthenelse{\isempty{#1}}%
 		{\readpsbardata[header=true]{\data}{files/#2}}%
