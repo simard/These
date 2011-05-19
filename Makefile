@@ -43,6 +43,7 @@ GLS=$(AUX:.aux=.gls)
 ACR=$(AUX:.aux=.acr)
 STT=$(wildcard $(FILES)/*.r)
 CSV=$(STT:.r=.csv)
+DATABASE=$(wildcard $(FILES)/exp[0-9].csv)
 
 .PHONY: final draft pdf ps dvi bibtex glossary acronym img stats clean proper
 
@@ -157,7 +158,7 @@ $(IMG)/Makefile: $(IMG)
 	echo $(MKIMG) > $@
 
 # Generate CSV files from R files
-$(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit
+$(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit $(DATABASE)
 	-$(R) $(ROPT) -f $<
 
 # To clean the 'build' directory
