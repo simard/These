@@ -1,4 +1,4 @@
-Name	Molecule	Pattern	PattOrder	Group	Order	Affinity	Time	Moygx	Moygy	Moygz	Moydx	Moydy	Moydz	MoyDiff	TrueDiff	Audio	TotalAudio	PourcAudio	TpsSearch	TpsTotalSearch	PourcSearch	TpsSync	TpsTotalSync	PourcSync
+Name	Molecule	Pattern	PattOrder	Group	Order	Affinity	Time	Moygx	Moygy	Moygz	Moydx	Moydy	Moydz	MoyDiff	TrueDiff	TimeSpeech	TimeAudio	RatioSpeech	TimeSearchSpeech	TimeSearchAudio	RatioSearchSpeech	TimeSelectionSpeech	TimeSelectionAudio	RatioSelectionSpeech
 Aurelien	trp-cage	1	6	monome	3	NA	25.21	NA	NA	NA	0.048982	-0.237650	0.162654	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Aurelien	trp-cage	2	3	monome	3	NA	30.35	NA	NA	NA	0.390017	-0.455657	-0.047899	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Aurelien	trp-cage	3	2	monome	3	NA	30.66	NA	NA	NA	0.198534	-0.387304	-0.001226	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
