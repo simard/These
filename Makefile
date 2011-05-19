@@ -157,7 +157,7 @@ $(IMG)/Makefile: $(IMG)
 	echo $(MKIMG) > $@
 
 # Generate CSV files from R files
-$(FILES)/%.csv: $(FILES)/%.r
+$(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit
 	-$(R) $(ROPT) -f $<
 
 # To clean the 'build' directory
