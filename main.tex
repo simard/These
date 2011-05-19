@@ -510,6 +510,15 @@
 					\end{myps}
 					\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion comparés (monôme ou binôme) par résidu}
 				\end{myfigure}
+				\begin{myfigure}
+					\psset{xunit=0.0889\textwidth,yunit=0.0069cm}
+					\begin{myps}(-1.25,-150)(10,475)
+						\myaxes(0,10){résidus}(0,400)[100]{time~(s)}
+						\myboxplot{exp1-timeaudio-residue-searchselection.csv}
+						\mylegend{\myleg{Recherche}{mylightestblue}\myand\myleg{Sélection}{mylightblue}}
+					\end{myps}
+					\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu]{Temps de recherche et de sélection comparés par résidu}
+				\end{myfigure}
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[cha-LaManipulationCollaborative]{La manipulation collaborative}
