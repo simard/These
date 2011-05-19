@@ -385,6 +385,20 @@
 		}%
 	}%
 }
+% Create a boxplot
+\newpsbarstyle{first-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightestblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{second-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mylightblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{third-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{fourth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=mydarkblue,linestyle=none,linewidth=0.0pt}
+\psset{barstyle={first-barstyle,second-barstyle,third-barstyle,fourth-barstyle}}
+\newcommand\myboxplot[2][]{%
+	\ifthenelse{\isempty{#1}}%
+		{\readpsbardata[header=true]{\data}{files/#2}}%
+		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
+	\ifthenelse{\isempty{#1}}%
+	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}}%
+	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0,#1]{\data}}%
+}
 
 % End of package
 \endinput
