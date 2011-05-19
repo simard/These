@@ -20,4 +20,5 @@ get_outname <- function(in_args) {
 }
 
 exp1_dat = read.table("exp1.csv", h=T)
-
+# David was not counter-balanced in binome
+exp1_dat = exp1_dat[exp1_dat$Name != "David", ]
