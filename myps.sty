@@ -312,6 +312,12 @@
 		}%
 }
 \def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
+	% For legend
+	\gdef\my@ps@legendminx{#2}%
+	\gdef\my@ps@legendmaxx{#3}%
+	\gdef\my@ps@legendminy{#5}%
+	\gdef\my@ps@legendmaxy{#6}%
+	\gdef\my@ps@legend{\myand{}}%
 	\ifthenelse{\isempty{#1}}%
 		{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
 		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
@@ -341,6 +347,26 @@
 		\ifthenelse{\isempty{#1}}%
 			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\i)(#3,\i)}%
 			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\i)(#3,\i)}%
+	}%
+}
+
+% To separate each element of legend
+\def\myand{\hspace{\stretch{1}}\xspace}
+% To define one element of the legend
+\def\myleg#1#2{%
+	\psframebox*[fillcolor=#2,framearc=0.25,framesep=1pt]{\textcolor{#2}{x}}
+	\xspace%
+	#1%
+}
+% Print the legend
+\def\mylegend#1{%
+	\uput{0pt}[45](0,\my@ps@legendmaxy){%
+		\parbox{\my@ps@legendmaxx\psxunit}{%
+			\centering%
+			% No '%' at end of line !!! This is important to take into accound the last '\myand'
+			\myand#1\myand
+			\vspace{\pslabelsep}
+		}%
 	}%
 }
 
