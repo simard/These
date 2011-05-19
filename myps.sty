@@ -15,6 +15,7 @@
 
 %% Packages to call
 \RequirePackage{xifthen}
+\RequirePackage{xkeyval}
 % To know if the compilation is 'draft'
 \RequirePackage{ifdraft}
 % Make some calculations on floats
@@ -37,6 +38,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 % The '.' will be the separator for decimal in floats
 \fpDecimalSign{.}%
+\newlength{\myps@whiskerwidth}
+\newlength{\myps@medianwidth}
 % For use in '\myaxes'
 \newlength{\my@ps@xoffset}
 \newlength{\my@ps@yoffset}
@@ -44,6 +47,12 @@
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
+% To define the width of whiskers lines for boxplot
+\define@key[psset]{pst-bar}{pswhiskerwidth}[0.5pt]{\setlength\myps@whiskerwidth{#1}}
+\setkeys[psset]{pst-bar}{pswhiskerwidth=0.5pt}
+% To define the width of median line for boxplot
+\define@key[psset]{pst-bar}{psmedianwidth}[1pt]{\setlength\myps@medianwidth{#1}}
+\setkeys[psset]{pst-bar}{psmedianwidth=1pt}
 % Define a master command for 'pspicture'
 % This command introduce a border frame for draft compilation
 \def\myps(#1,#2)(#3,#4){%
@@ -244,23 +253,29 @@
 						/xoffset barwidth barsep add barcount mul bXoffset add def
 						/xoffset1 colcount colwidth mul xoffset add def
 						/xoffset2 xoffset1 barwidth add def
-						/xbar1 xoffset1 def
-						/xbar2 xoffset2 def
-						/ybar1 fdecile def
-						/ybar2 fdecile def
+						/xcenter xoffset1 xoffset2 add 2 div def
+						/xmidoffset1 xcenter xoffset1 sub 2 div xoffset1 add def
+						/xmidoffset2 xoffset2 xcenter sub 2 div xcenter add def
+						\pst@number{\myps@whiskerwidth} setlinewidth
 						newpath
-						barstyles barcount get cvx exec
-						/ybar1 ldecile def
-						/ybar2 ldecile def
+						xmidoffset1 fdecile moveto
+						xmidoffset2 fdecile lineto
+						stroke
 						newpath
-						barstyles barcount get cvx exec
-						/xbar1 xoffset1 xoffset2 add 2 div def
-						/xbar2 xbar1 def
-						/ybar1 fdecile def
-						/ybar2 ldecile def
-						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+						xmidoffset1 ldecile moveto
+						xmidoffset2 ldecile lineto
+						stroke
+						fdecile fquartile ne {  % if fdecile == fquartile, don't stroke a path
 							newpath
-							barstyles barcount get cvx exec
+							xcenter fdecile moveto
+							xcenter fquartile lineto
+							stroke
+						} if
+						ldecile lquartile ne {  % if ldecile == lquartile, don't stroke a path
+							newpath
+							xcenter ldecile moveto
+							xcenter lquartile lineto
+							stroke
 						} if
 						/xbar1 xoffset1 def
 						/xbar2 xoffset2 def
@@ -270,10 +285,11 @@
 							newpath
 							barstyles barcount get cvx exec
 						} if
-						/ybar1 mediane def
-						/ybar2 mediane def
+						\pst@number{\myps@medianwidth} setlinewidth
 						newpath
-						barstyles barcount get cvx exec
+						xoffset1 mediane moveto
+						xoffset2 mediane lineto
+						stroke
 						/barcount barcount 1 add def
 					} for
 					/barcount 0 def
