@@ -494,13 +494,21 @@
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Resultats]{Résultats}
 				\begin{myfigure}
-					\psset{xunit=0.1\textwidth,yunit=0.01cm}
-					\begin{myps}(0,-100)(10,400)
-						\myaxes(0,10){x-axis}(0,400)[50]{y-axis}
-						\readpsbardata[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}{files/exp1-time-residue.csv}
-						\psbarchart[header=true,chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}
+					\psset{xunit=0.0889\textwidth,yunit=0.005cm}
+					\begin{myps}(-1.25,-200)(10,625)
+						\myaxes(0,10){résidus}(0,600)[100]{time~(s)}
+						\myboxplot{exp1-time-residue.csv}
 					\end{myps}
-					\mycaption{Test}
+					\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion par résidu}
+				\end{myfigure}
+				\begin{myfigure}
+					\psset{xunit=0.0889\textwidth,yunit=0.005cm}
+					\begin{myps}(-1.25,-200)(10,700)
+						\myaxes(0,10){résidus}(0,600)[100]{time~(s)}
+						\myboxplot{exp1-time-residue-group.csv}
+						\mylegend{\myleg{Mônome}{mylightestblue}\myand\myleg{Binôme}{mylightblue}}
+					\end{myps}
+					\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion comparés (monôme ou binôme) par résidu}
 				\end{myfigure}
 			\end{mysection}
 		\end{mychapter}
