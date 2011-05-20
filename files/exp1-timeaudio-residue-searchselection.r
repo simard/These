@@ -14,8 +14,7 @@ write.table(bp_sch$stats,
 			dec = ".",
 			row.names = FALSE,
 			col.names = titles)
-bp_sel = boxplot(exp1_dat$time.search.audio~exp1_dat$pattern.number, range=2, plot=FALSE)
-titles = c("\\myresidue{1}","\\myresidue{2}","\\myresidue{3}","\\myresidue{4}","\\myresidue{5}","\\myresidue{6}","\\myresidue{7}","\\myresidue{8}","\\myresidue{9}","\\myresidue{10}")
+bp_sel = boxplot(exp1_dat$time.selection.audio~exp1_dat$pattern.number, range=2, plot=FALSE)
 names(bp_sel$stats) = titles
 write.table(bp_sel$stats,
 			file = out_file,
