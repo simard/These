@@ -507,7 +507,7 @@
 						\begin{myps}(-1.25,-125)(10,475)
 							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{time~(s)}
 							\myboxplot{exp1-time-residue-group.csv}
-							\mylegend{\myleg{\myGlosnl{glo-Monome}}{mylightestblue}\myand\myleg{\myGlosnl{glo-Binome}}{mylightblue}}
+							\mylegend{\myleg{\myGlosnl{glo-Monome}}{myblue}\myand\myleg{\myGlosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
 					\end{myfigure}
@@ -516,7 +516,7 @@
 						\begin{myps}(-1.25,-150)(10,475)
 							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{time~(s)}
 							\myboxplot{exp1-timeaudio-residue-searchselection.csv}
-							\mylegend{\myleg{Recherche}{mylightestblue}\myand\myleg{Sélection}{mylightblue}}
+							\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu]{Temps de recherche et de sélection comparés par \myglosnl{glo-Residu}}
 					\end{myfigure}
@@ -524,9 +524,9 @@
 						\psset{xunit=0.075\textwidth,yunit=0.2cm}
 						\begin{myps}(-1.25,-5)(12,21)
 							\myaxes(0,12){groupes}(0,20)[4]{distance~(mm)}
-							\mybarplot[barstyle=fourth-barstyle]{exp1-diff-groups1.csv}
-							\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups2.csv}
-							\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups3.csv}
+							\mybarplot[barstyle=first-barstyle]{exp1-diff-groups1.csv}
+							\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
+							\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
 							\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
 							\psline(0,12)(12,12)
 							\psline(0,6)(12,6)
