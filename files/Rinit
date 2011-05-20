@@ -1,24 +1,42 @@
 #!/usr/bin/env Rscript
 library(lawstat)
 
-smart_mean <- function(x) {
+smart.mean <- function(x) {
 	if(is.numeric(x))
 		mean(x, na.rm=T)
 	else
 		x[1]
 }
 
-get_outname <- function(in_args) {
-	nb_indexes = length(in_args)
-	range_indexes = 1:nb_indexes
-	initial.options = rbind(range_indexes, in_args)
-	find_index = initial.options[1, initial.options[2,] == "-f"]
-	script_filename = initial.options[2, as.numeric(find_index[[1]])+1]
-	script_filename = basename(script_filename[[1]])
-	script_filename = gsub("\\.r",".csv",script_filename)
-	script_filename
+get.outname <- function(in.args) {
+	nb.indexes = length(in.args)
+	range.indexes = 1:nb.indexes
+	initial.options = rbind(range.indexes, in.args)
+	find.index = initial.options[1, initial.options[2,] == "-f"]
+	script.filename = initial.options[2, as.numeric(find.index[[1]])+1]
+	script.filename = basename(script.filename[[1]])
+	script.filename = gsub("\\.r",".csv",script.filename)
+	script.filename
+}
+set.df <- function(string, df) {
+	df = round(df, digits = 1)
+	gsub("<df>", as.character(df), string)
 }
 
-exp1_dat = read.table("exp1.csv", h=T)
+set.chi <- function(string, chi) {
+	chi = round(chi, digits = 1)
+	gsub("<chi>", as.character(chi), string)
+}
+
+set.p <- function(string, p) {
+	if(p < 0.001) {
+		gsub("= <p>", "\\\\ll 0.05", string)
+	} else {
+		p = round(p, digits = 3)
+		gsub("<p>", as.character(p), string);
+	}
+}
+
+dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
-exp1_dat = exp1_dat[exp1_dat$id != "David", ]
+dat.exp1 = dat.exp1[dat.exp1$id != "David", ]

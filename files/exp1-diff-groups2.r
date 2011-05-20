@@ -1,20 +1,20 @@
 #!/usr/bin/env Rscript
 setwd("./files/")
 source("Rinit")
-out_file = get_outname(commandArgs())
+out.file.barplot = get.outname(commandArgs())
 
-exp1_dat_bin = exp1_dat[exp1_dat$group.config == "binome" & (exp1_dat$pattern.number == 6 | exp1_dat$pattern.number == 9), ]
-exp1_dat_bin = aggregate(
-			   exp1_dat_bin,
-			   by = list(id = exp1_dat_bin$id),
-			   FUN = smart_mean)
-exp1_dat_bin = exp1_dat_bin[order(exp1_dat_bin$mean.diff, decreasing=TRUE), ]
-values = t(exp1_dat_bin$mean.diff)
+dat.exp1.binome = dat.exp1[dat.exp1$group.config == "binome" & (dat.exp1$pattern.number == 6 | dat.exp1$pattern.number == 9), ]
+dat.exp1.binome = aggregate(
+			   dat.exp1.binome,
+			   by = list(id = dat.exp1.binome$id),
+			   FUN = smart.mean)
+dat.exp1.binome = dat.exp1.binome[order(dat.exp1.binome$mean.diff, decreasing=TRUE), ]
+values = t(dat.exp1.binome$mean.diff)
 # Convert in millimeters
 values = 10*values
 values[values>12 | values<6] = 0
 write.table(values,
-			file = out_file,
+			file = out.file.barplot,
 			quote = FALSE,
 			sep = ",",
 			eol = "\n",

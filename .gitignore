@@ -3,3 +3,4 @@
 build
 images/*.eps
 files/*.csv
+files/*.tex
