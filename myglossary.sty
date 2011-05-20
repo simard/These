@@ -62,79 +62,25 @@
 % - '-' to be sure to have the shorter one (not the first, useful for acronyms)
 % - '+' to be sure to have the longer one (the first, useful for acronyms)
 % - '*' to have the plural form
-\newcommand\myglos[1]{%
-	\gls{#1}%
+\def\mycustomglos#1#2{
+	% With hyperlink
+	\expandafter\def\csname my#1\endcsname##1{\protect\csname #2\endcsname{##1}}
+	\WithSuffix\expandafter\def\csname my#1\endcsname-##1{\protect\csname #2text\endcsname{##1}}
+	\WithSuffix\expandafter\def\csname my#1\endcsname+##1{\protect\csname #2first\endcsname{##1}}
+	\WithSuffix\expandafter\def\csname my#1\endcsname*##1{\protect\csname #2pl\endcsname{##1}}
+	% With no hyperlink
+	\expandafter\def\csname my#1nl\endcsname##1{\protect\csname #2\endcsname*{##1}}
+	\WithSuffix\expandafter\def\csname my#1nl\endcsname-##1{\protect\csname #2text\endcsname*{##1}}
+	\WithSuffix\expandafter\def\csname my#1nl\endcsname+##1{\protect\csname #2first\endcsname*{##1}}
+	\WithSuffix\expandafter\def\csname my#1nl\endcsname*##1{\protect\csname #2pl\endcsname*{##1}}
 }
-\WithSuffix\newcommand\myglos-[1]{%
-	\glstext{#1}%
-}
-\WithSuffix\newcommand\myglos+[1]{%
-	\glsfirst{#1}%
-}
-\WithSuffix\newcommand\myglos*[1]{%
-	\glspl{#1}%
-}
-\newcommand\myGlos[1]{%
-	\Gls{#1}%
-}
-\WithSuffix\newcommand\myGlos-[1]{%
-	\Glstext{#1}%
-}
-\WithSuffix\newcommand\myGlos+[1]{%
-	\Glsfirst{#1}%
-}
-\WithSuffix\newcommand\myGlos*[1]{%
-	\Glspl{#1}%
-}
-\newcommand\myGLOS[1]{%
-	\GLS{#1}%
-}
-\WithSuffix\newcommand\myGLOS-[1]{%
-	\GLStext{#1}%
-}
-\WithSuffix\newcommand\myGLOS+[1]{%
-	\GLSfirst{#1}%
-}
-\WithSuffix\newcommand\myGLOS*[1]{%
-	\GLSpl{#1}%
-}
+\mycustomglos{glos}{gls}
+\mycustomglos{Glos}{Gls}
+\mycustomglos{GLOS}{GLS}
 \if@acronym
-	\newcommand\myacro[1]{%
-		\gls{#1}%
-	}
-	\WithSuffix\newcommand\myacro-[1]{%
-		\glstext{#1}%
-	}
-	\WithSuffix\newcommand\myacro+[1]{%
-		\glsfirst{#1}%
-	}
-	\WithSuffix\newcommand\myacro*[1]{%
-		\glspl{#1}%
-	}
-	\newcommand\myAcro[1]{%
-		\Gls{#1}%
-	}
-	\WithSuffix\newcommand\myAcro-[1]{%
-		\Glstext{#1}%
-	}
-	\WithSuffix\newcommand\myAcro+[1]{%
-		\Glsfirst{#1}%
-	}
-	\WithSuffix\newcommand\myAcro*[1]{%
-		\Glspl{#1}%
-	}
-	\newcommand\myACRO[1]{%
-		\GLS{#1}%
-	}
-	\WithSuffix\newcommand\myACRO-[1]{%
-		\GLStext{#1}%
-	}
-	\WithSuffix\newcommand\myACRO+[1]{%
-		\GLSfirst{#1}%
-	}
-	\WithSuffix\newcommand\myACRO*[1]{%
-		\GLSpl{#1}%
-	}
+	\mycustomglos{acro}{gls}
+	\mycustomglos{Acro}{Gls}
+	\mycustomglos{ACRO}{GLS}
 \fi
 
 % End of package
