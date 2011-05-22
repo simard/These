@@ -28,7 +28,7 @@ pat9 = dat.exp1[dat.exp1$pattern.number == 9,]$time.completion
 pat10 = dat.exp1[dat.exp1$pattern.number == 10,]$time.completion
 pat = cbind(pat1, pat2, pat3, pat4, pat5, pat6, pat7, pat8, pat9, pat10)
 friedman = friedman.test(pat)
-wilcox = pairwise.wilcox.test(dat.exp1$time.completion, dat.exp1$pattern.number, p.adj="bonferroni", exact=FALSE, pair=TRUE)
+wilcox = pairwise.wilcox.test(dat.exp1$time.completion, dat.exp1$pattern.number, p.adj="holm", exact=FALSE, pair=TRUE)
 out.anova = "$\\chi^2(<df>) = <chi>$, $p = <p>$"
 out.anova = set.df(out.anova, friedman$parameter)
 out.anova = set.chi(out.anova, friedman$statistic)
