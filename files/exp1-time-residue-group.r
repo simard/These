@@ -33,10 +33,7 @@ grp1 = dat.exp1[dat.exp1$group.config == "monome",]$time.completion
 grp2 = dat.exp1[dat.exp1$group.config == "binome",]$time.completion
 grp = cbind(grp1, grp2)
 friedman = friedman.test(grp)
-out.anova = "$\\chi^2(<df>) = <chi>$, $p = <p>$"
-out.anova = set.df(out.anova, friedman$parameter)
-out.anova = set.chi(out.anova, friedman$statistic)
-out.anova = set.p(out.anova, friedman$p.value)
+out.anova = friedman2tex(friedman)
 out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
 write(
 	  out.anova,
@@ -51,10 +48,7 @@ grp1 = dat[dat$group.config == "monome",]$time.completion
 grp2 = dat[dat$group.config == "binome",]$time.completion
 grp = cbind(grp1, grp2)
 friedman = friedman.test(grp)
-out.anova = "$\\chi^2(<df>) = <chi>$, $p = <p>$"
-out.anova = set.df(out.anova, friedman$parameter)
-out.anova = set.chi(out.anova, friedman$statistic)
-out.anova = set.p(out.anova, friedman$p.value)
+out.anova = friedman2tex(friedman)
 out.file.anova = gsub(".csv", "-anova-restricted.tex", out.file.boxplot)
 write(
 	  out.anova,
