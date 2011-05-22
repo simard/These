@@ -192,19 +192,19 @@
 		{\usebibmacro{postnote}}
 	\newcommand{\mycite}[2][]{%
 		\ifthenelse{\equal{#1}{author}}%
-			{\my@myciteauthor{#2}}%
-			{\my@mycite{#2}}
+			{\my@myciteauthor{#2}\xspace}%
+			{\my@mycite{#2}\xspace}
 	}
 \else
 	\if@natbib
 		\newcommand{\mycite}[2][]{%
 			\ifthenelse{\equal{#1}{author}}%
-				{\citet{#2}}%
-				{\citep{#2}}
+				{\citet{#2}\xspace}%
+				{\citep{#2}\xspace}%
 		}
 	\else
 		\newcommand{\mycite}[2][]{%
-			\cite{#2}
+			\cite{#2}\xspace%
 		}
 	\fi
 \fi
