@@ -25,3 +25,38 @@ write.table(bp.binome$stats,
 			row.names = FALSE,
 			col.names = FALSE,
 			append=TRUE)
+shap = shapiro.test(dat.exp1$time.completion)
+# Levene test does not work, why? Do not know!
+#lev = levene.test(dat.exp1$time.completion, dat.exp1$group.config)
+bar = bartlett.test(dat.exp1$time.completion, dat.exp1$group.config)
+grp1 = dat.exp1[dat.exp1$group.config == "monome",]$time.completion
+grp2 = dat.exp1[dat.exp1$group.config == "binome",]$time.completion
+grp = cbind(grp1, grp2)
+friedman = friedman.test(grp)
+out.anova = "$\\chi^2(<df>) = <chi>$, $p = <p>$"
+out.anova = set.df(out.anova, friedman$parameter)
+out.anova = set.chi(out.anova, friedman$statistic)
+out.anova = set.p(out.anova, friedman$p.value)
+out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
+dat = dat.exp1[dat.exp1$pattern.number == 6 | dat.exp1$pattern.number == 9 | dat.exp1$pattern.number == 10,]
+shap = shapiro.test(dat$time.completion)
+# Levene test does not work, why? Do not know!
+#lev = levene.test(dat$time.completion, dat$group.config)
+bar = bartlett.test(dat$time.completion, dat$group.config)
+grp1 = dat[dat$group.config == "monome",]$time.completion
+grp2 = dat[dat$group.config == "binome",]$time.completion
+grp = cbind(grp1, grp2)
+friedman = friedman.test(grp)
+out.anova = "$\\chi^2(<df>) = <chi>$, $p = <p>$"
+out.anova = set.df(out.anova, friedman$parameter)
+out.anova = set.chi(out.anova, friedman$statistic)
+out.anova = set.p(out.anova, friedman$p.value)
+out.file.anova = gsub(".csv", "-anova-restricted.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
