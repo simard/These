@@ -71,16 +71,22 @@
 % and add the title in the table of contents
 \newcommand{\mytoc}{%
 	\tableofcontents%
+	% To make compatibility between 'minitoc' and 'tocbibind'
+	\mtcaddchapter%
 }
 % Define the list of figures command,
 % and add the title in the table of contents
 \newcommand{\mylof}{%
 	\listoffigures%
+	% To make compatibility between 'minitoc' and 'tocbibind'
+	\mtcaddchapter%
 }
 % Define the list of tables command,
 % and add the title in the table of contents
 \newcommand{\mylot}{%
 	\listoftables%
+	% To make compatibility between 'minitoc' and 'tocbibind'
+	\mtcaddchapter%
 }
 \if@minitoc
 	\newcommand{\myminitoc}{\minitoc}
