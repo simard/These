@@ -518,12 +518,13 @@
 							\myboxplot{exp1-time-residue-group.csv}
 							\mylegend{\myleg{\myGlosnl{glo-Monome}}{myblue}\myand\myleg{\myGlosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
+						\mycaption[fig-exp1-TempsDeCompletionComparesMonomeOuBinomeParResidu]{Temps de complétion comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
-					La \myfigureref{fig-exp1-TempsDeCompletionParResidu} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
+					La \myfigureref{fig-exp1-TempsDeCompletionComparesMonomeOuBinomeParResidu} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
 					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
 					Cependant, en se limitant au groupe de trois \myglos*{glo-Residu} les plus longs à achever (\myresidue{6}, \myresidue{9} et \myresidue{10}), on montre un effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
+
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.0069cm}
 						\begin{myps}(-1.25,-150)(10,475)
@@ -533,6 +534,13 @@
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu]{Temps de recherche et de sélection comparés par \myglosnl{glo-Residu}}
 					\end{myfigure}
+
+					La \myfigureref{fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu} présente les temps de recherche et de sélection par \myglos{glo-Residu} \myvari{2}.
+					L'analyse montre un effet significatif des \myglos*{glo-Residu} sur le temps de recherche (\myanova{exp1-timeaudio-residue-searchselection-anova-search.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} génèrent un temps de recherche significativement supérieur à tous les autres.
+					L'analyse montre également un effet significatif des \myglos*{glo-Residu} sur le temps de sélection (\myanova{exp1-timeaudio-residue-searchselection-anova-selection.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} génère un temps de sélection significativement supérieur à tous les autres.
+
 					\begin{myfigure}
 						\psset{xunit=0.075\textwidth,yunit=0.2cm}
 						\begin{myps}(-1.25,-5)(12,21)
