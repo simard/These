@@ -48,6 +48,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
+% Redefine names depending on language
+\if@myfrancais
+	\renewcommand{\appendixpagename}{Annexes}
+	\renewcommand{\appendixtocname}{Annexes}
+\fi
 % Add page number for appendices
 \appendicestocpagenum
 \if@minitoc

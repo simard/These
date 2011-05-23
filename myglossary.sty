@@ -20,6 +20,14 @@
 \ProcessOptions
 
 %% Options to pass to packages
+\if@myenglish
+	\PassOptionsToPackage{english}{translator}
+	\PassOptionsToPackage{xindy={language=english,codepage=utf8}}{glossaries}
+\fi
+\if@myfrancais
+	\PassOptionsToPackage{french}{translator}
+	\PassOptionsToPackage{xindy={language=french,codepage=utf8}}{glossaries}
+\fi
 \if@acronym
 	% To add the acronym glossary
 	\PassOptionsToPackage{acronym=true}{glossaries}
@@ -31,8 +39,10 @@
 \RequirePackage{suffix}
 % To obtain the '\AtEndPreamble' command
 \RequirePackage{etoolbox}
+% To translate titles in 'glossaries' package
+\RequirePackage{translator}
 % To improve the glossary
-\RequirePackage[toc=true,style=altlist,xindy]{glossaries}
+\RequirePackage[toc=true,style=altlist]{glossaries}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
