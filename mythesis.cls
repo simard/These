@@ -197,6 +197,9 @@
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
+% Automatic include of mini-bibliographies
+\let\oldendmychapter\endmychapter
+\def\endmychapter{\cleardoublepage\myminibiblio\oldendmychapter}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fin de la redéfinition des différentes parties %%
