@@ -927,6 +927,87 @@
 					\end{myparagraph}
 				\end{mysubsection}
 			\end{mysection}
+			\begin{mysection}[sec-exp4-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
+				L'\myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp4-IllustrationDuDispositifExperimental}.
+				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
+				Les \mytodo{3 ou 4}{Quelle configuration choisissons nous ?} sujets font face à l'écran avec à leur disposition :
+				\begin{itemize}
+					\item une interface haptique de manipulation de la molécule;
+					\item une interface haptique pour la coordination des différents acteurs;
+					\item deux interfaces haptiques de déformation \mytool{tug}.
+				\end{itemize}
+
+				\begin{myTodo}{Images à compléter}{Il va falloir créer la scène Blender correspondante et faire des photos du dispositif expérimental}
+					\begin{myfigure}
+						\begin{mysubfigure}
+							%\myimage[width=0.49\textwidth]{exp4-schema}
+							\mysubcaption[fig-exp4-IllustrationDuDispositifExperimental-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+						\end{mysubfigure}
+						\begin{mysubfigure}
+							%\myimage[width=0.49\textwidth]{exp4-photo}
+							\mysubcaption[fig-exp4-IllustrationDuDispositifExperimental-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+						\end{mysubfigure}
+						\mycaption[fig-exp4-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
+					\end{myfigure}
+				\end{myTodo}
+
+				\begin{myTodo}{Deux configurations possibles}{Les deux configurations font intervenir trois ou quatre sujets; il faut enlever un des 2 paragraphes}
+					\begin{myparagraph}{Configuration à trois sujets}
+						Les sujets effectueront l'expérimentation par groupe de trois utilisateurs.
+						Ils ont la possibilité de communiquer entre eux sans restriction.
+						Un des sujets aura le rôle du \myemph{coordinateur} avec des outils haptiques différents des deux autres sujets qui auront des rôles d'\myemph{opérateurs}.
+
+						Le \myemph{coordinateur} pourra déplacer et orienter la molécule à l'aide de deux outils:
+						\begin{itemize}
+							\item un outil haptique attaché virtuellement à la molécule permettant de déplacer la molécule;
+							\item un \mySpaceNavigator permettant d'orienter la molécule.
+						\end{itemize}
+						De plus, le \myemph{coordinateur} aura à sa disposition un outil de désignation complexe permettant de :
+						\begin{itemize}
+							\item afficher ou masquer les \myglos*{glo-Residu} en fonction de leur intérêt pour la tâche en cours de réalisation;
+							\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
+						\end{itemize}
+					\end{myparagraph}
+					\begin{myparagraph}{Configuration à trois sujets}
+						Les sujets effectueront l'expérimentation par groupe de quatre utilisateurs.
+						Ils ont la possibilité de communiquer entre eux sans restriction.
+
+						Un des sujets aura la gestion du déplacement de la molécule et du point de vue de l'application; il sera le \myemph{manipulateur}.
+						Un deuxième sujet aura le rôle du \myemph{coordinateur}.
+						Enfin, les deux derniers sujets seront les \myemph{opérateurs}.
+
+						Le \myemph{manipulateur} aura à sa disposition deux outils.
+						Le premier outil est une interface haptique, attachée virtuellement à la molécule permettant de déplacer la molécule.
+						Le second outil est un \mySpaceNavigator permettant d'orienter la molécule.
+
+						Le \myemph{coordinateur} aura à sa disposition un outil de désignation complexe permettant de :
+						\begin{itemize}
+							\item afficher ou masquer les \myglos*{glo-Residu} en fonction de leur intérêt pour la tâche en cours de réalisation;
+							\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
+						\end{itemize}
+					\end{myparagraph}
+				\end{myTodo}
+
+				Les \myemph{opérateurs} auront chacun à leur disposition un outil haptique permettant de :
+				\begin{itemize}
+					\item déplacer les atomes de la molécule afin de la déformer;
+					\item désigner un \myglos{glo-Residu} nécessitant une manipulation par l'autre \myemph{opérateur}.
+				\end{itemize}
+
+				Une caméra vidéo de marque \mySony (\textsc{hdr-sr11e}) sera installée afin de filmer l'expérimentation.
+				L'écran de vidéo-projection ainsi que les sujets (de dos) sont dans le plan de la vidéo.
+
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
+
+				Pour les \myglos*{glo-Monome}, le sujet peut utiliser chaque outil comme il le souhaite.
+				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
+				L'outil de manipulation \mytool{grab} sera attribuer à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
+				Le sujet désigné pour l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
+
+				Un micro de bureau est placé en face des deux sujets afin de capter toutes les communications orales.
+				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'entraînement.
+
+			\end{mysection}
 		\end{mychapter}
 	\end{mypart}
 	\begin{mypart}[prt-Synthese]{Synthèse}
