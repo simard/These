@@ -10,7 +10,9 @@
 \DeclareOption{myenglish}{\@myenglishtrue}
 \newif\if@myfrancais \@myfrancaisfalse
 \DeclareOption{myfrancais}{\@myfrancaistrue}
-\DeclareOptionX[my]<todo>{todosection}[chapter]{\def\mytodo@section{#1}}
+% Detect if the draft option is enabled
+\newif\if@draft \@draftfalse
+\DeclareOption{draft}{\@drafttrue}
 % In case of unknown options
 \DeclareOption*{%
 	\PackageWarning{mytodo}{Unknown option `\CurrentOption'}%
@@ -24,11 +26,19 @@
 \RequirePackage{xifthen}
 % The 'suffix' package offers the '\WithSuffix' command to define starred commands
 \RequirePackage{suffix}
+% For additionnal colors
+\RequirePackage{mycolor}
+% To produce a left bar in margin
+\RequirePackage[dvips,outerbars,traceoff,xcolor]{changebar}
+% To fix a known bug in LaTeX margins
+\RequirePackage{mparhack}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{light-red}{rgb}{1,0.5,0.5}
+\cbcolor{myred}
+\setlength{\changebarwidth}{1pt}
+\setlength{\changebarsep}{4pt}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -75,11 +85,19 @@
 % Third mandatory argument is the comments about the note which are displayed in margin
 \newcommand{\mytodo}[3][]{%
 	\mytodo@findcurrentsection%
-	\textbf{\textcolor{red}{#2}}%
+	\marginpar{\scriptsize\textcolor{myred!70}{#2}\par\textcolor{black}{#3}}%
+	\if@draft%
+	\else%
+		\cbstart%
+	\fi%
+	\textbf{\textcolor{myred!70}{#2}}%
+	\if@draft%
+	\else%
+		\cbend%
+	\fi%
 	\ifthenelse{\isempty{#1}}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#2}}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#1}}%
-		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#3}}%
 }
 %% To define an important incomplete part in the document
 % Define a rule
@@ -91,23 +109,21 @@
 \newenvironment{myTodo}[3][]%
 	{%
 		\mytodo@findcurrentsection%
+		\marginpar{\scriptsize\textcolor{myred!70}{#2}\par\textcolor{black}{#3}}%
 		\ifthenelse{\isempty{#1}}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#2}}}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#1}}}%
-		\marginpar{\scriptsize\textcolor{red}{#2}\par\textcolor{black}{#3}}%
-		\mytodo@rule[red]{2pt}%
-		\textbf{\textcolor{red}{\mytodo@lang@todo\ }}%
-		\ifthenelse{\NOT\isempty{#2}}%
-			{%
-				\textbf{\textcolor{red}{--\ }\textcolor{light-red}{#2}}\par%
-				\textcolor{black!33}{#3}%
-			}%
-			{}%
-		\mytodo@rule{0.5pt}%
-		\begingroup\color{black!33}
+		\if@draft%
+		\else%
+			\cbstart%
+		\fi%
+		\begingroup\color{black!33}%
 	}{%
 		\endgroup\par%
-		\mytodo@rule[red]{2pt}%
+		\if@draft%
+		\else%
+			\cbend%
+		\fi%
 		\par%
 	}
 
