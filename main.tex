@@ -310,7 +310,7 @@
 					La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
 					La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
 					Cinq \myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité.
-					Les critères de complexité, résumés dans le \mytableref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
+					Les critères de complexité, résumés dans la \mytableref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
 					\begin{description}
 						\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
 							Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
@@ -439,7 +439,7 @@
 					Pendant la phase d'entraînement, les outils sont introduits et expliqués un par un.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 
-					Un résumé du protocole expérimental est exprimé dans le \mytableref{tab-exp1-SyntheseDeLaProcedureExperimentale}.
+					Un résumé du protocole expérimental est exprimé dans la \mytableref{tab-exp1-SyntheseDeLaProcedureExperimentale}.
 
 					\begin{mytable}
 						\mycaption[tab-exp1-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -776,6 +776,13 @@
 							\end{myps}
 							\mycaption[fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible]{Affichage de la molécule à déformer et de la molécule cible}
 						\end{myfigure}
+
+						Afin de pouvoir évaluer la déformation effectuée, des scores sont affichés en temps-réel \myfigureref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
+						Le premier score est le score \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque pair d'atomes \myequationref*{equ-RMSD}.
+						\begin{equation}\label{equ-RMSD}
+							\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
+						\end{equation}
+						où $N$~est le nombre total d'atomes et~$c_i$, $m_i$~sont respectivement l'atome~$i$ de la molécule à comparer et de la molécule modèle.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp2-LaDescriptionDesTaches]{La description des tâches}
 						Une tâche pour chacun de ces deux échelles de manipulation est proposé sur chacune des deux molécules.
@@ -807,7 +814,7 @@
 								La manipulation synchrone de deux \myglos*{glo-Residu} est la seule solution pour atteindre l'objectif.
 						\end{description}
 
-						Un résumé de la complexité des quatre tâches est exposé dans le \mytableref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
+						Un résumé de la complexité des quatre tâches est exposé dans la \mytableref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
 						\begin{description}
 							\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
 							\item[\myglosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} non fixés sur la molécule;
@@ -847,7 +854,7 @@
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 					Dans le cas des \myglos*{glo-Binome}, cette phase d'entraînement est également l'occasion de choisir qui, parmi les deux sujets, sera en charge de la manipulation de la molécule à l'aide de l'outil de manipulation \mytool{grab}.
 
-					Un résumé du protocole expérimental est exprimé dans le \mytableref{tab-exp2-SyntheseDeLaProcedureExperimentale}.
+					Un résumé du protocole expérimental est exprimé dans la \mytableref{tab-exp2-SyntheseDeLaProcedureExperimentale}.
 
 					\begin{mytable}
 						\mycaption[tab-exp2-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -950,7 +957,6 @@
 						\mycaption[fig-exp4-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
 					\end{myfigure}
 				\end{myTodo}
-
 				\begin{myTodo}{Deux configurations possibles}{Les deux configurations font intervenir trois ou quatre sujets; il faut enlever un des 2 paragraphes}
 					\begin{myparagraph}{Configuration à trois sujets}
 						Les sujets effectueront l'expérimentation par groupe de trois utilisateurs.
@@ -968,7 +974,7 @@
 							\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
 						\end{itemize}
 					\end{myparagraph}
-					\begin{myparagraph}{Configuration à trois sujets}
+					\begin{myparagraph}{Configuration à quatre sujets}
 						Les sujets effectueront l'expérimentation par groupe de quatre utilisateurs.
 						Ils ont la possibilité de communiquer entre eux sans restriction.
 
@@ -1078,8 +1084,68 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
+				\begin{mysubsection}[sse-exp4-Tache]{Tâche}
+					La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des complexes de molécules : c'est une tâche d'\myglos{glo-AmarrageMoleculaire} simplifié.
+
+					\begin{mysubsubsection}[sss-exp4-DescriptionDeLaTache]{Description de la tâche}
+						La tâche proposée est la déformation d'un complexe de molécules afin d'obtenir le meilleur score énergétique possible.
+						L'intégralité des atomes de la molécule à déformer est affiché de façon discrète en transparence.
+						De plus, un \myemph{ruban} de cette molécule est affiché.
+
+						Afin de réaliser la tâche, différentes mesures sont disponibles en temps-réel pour les sujets.
+						La première de ces mesures est le score \myacro{acr-RMSD} qui est décrit dans la \mysubsubsectionref{sss-exp2-DescriptionDeLaTache}.
+						La seconde mesure est l'énergie totale du système, valeur calculée par \myacro{acr-NAMD}.
+
+						Le premier complexe de molécules proposé, couramment nommé \myNusE \mycite{Burmann-2010}, a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KVQ}{2KVQ}.
+						Il est constitué de deux molécules \textsc{NusE} et \textsc{NusG} possédant respectivement \mynum{1294}~atomes et \mynum{929}~atomes.
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-exp4-LesOutilsDisponibles]{Les outils disponibles}
+						\begin{myTodo}{Deux configurations possibles}{Les deux configurations font intervenir trois ou quatre sujets; il faut enlever un des 2 paragraphes}
+							\begin{myparagraph}{Configuration à trois sujets}
+								Les sujets effectueront l'expérimentation par groupe de trois utilisateurs.
+								Ils ont la possibilité de communiquer entre eux sans restriction.
+								Un des sujets aura le rôle du \myemph{coordinateur} avec des outils haptiques différents des deux autres sujets qui auront des rôles d'\myemph{opérateurs}.
+
+								Le \myemph{coordinateur} pourra déplacer et orienter la molécule à l'aide de deux outils:
+								\begin{itemize}
+									\item un outil haptique attaché virtuellement à la molécule permettant de déplacer la molécule;
+									\item un \mySpaceNavigator permettant d'orienter la molécule.
+								\end{itemize}
+								De plus, le \myemph{coordinateur} aura à sa disposition un outil de désignation complexe permettant de :
+								\begin{itemize}
+									\item afficher ou masquer les \myglos*{glo-Residu} en fonction de leur intérêt pour la tâche en cours de réalisation;
+									\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
+								\end{itemize}
+							\end{myparagraph}
+							\begin{myparagraph}{Configuration à quatre sujets}
+								Les sujets effectueront l'expérimentation par groupe de quatre utilisateurs.
+								Ils ont la possibilité de communiquer entre eux sans restriction.
+
+								Un des sujets aura la gestion du déplacement de la molécule et du point de vue de l'application; il sera le \myemph{manipulateur}.
+								Un deuxième sujet aura le rôle du \myemph{coordinateur}.
+								Enfin, les deux derniers sujets seront les \myemph{opérateurs}.
+
+								Le \myemph{manipulateur} aura à sa disposition deux outils.
+								Le premier outil est une interface haptique, attachée virtuellement à la molécule permettant de déplacer la molécule.
+								Le second outil est un \mySpaceNavigator permettant d'orienter la molécule.
+
+								Le \myemph{coordinateur} aura à sa disposition un outil de désignation complexe permettant de :
+								\begin{itemize}
+									\item afficher ou masquer les \myglos*{glo-Residu} en fonction de leur intérêt pour la tâche en cours de réalisation;
+									\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
+								\end{itemize}
+							\end{myparagraph}
+						\end{myTodo}
+
+						Les \myemph{opérateurs} auront chacun à leur disposition un outil haptique permettant de :
+						\begin{itemize}
+							\item déplacer les atomes de la molécule afin de la déformer;
+							\item désigner un \myglos{glo-Residu} nécessitant une manipulation par l'autre \myemph{opérateur}.
+						\end{itemize}
+					\end{mysubsubsection}
+				\end{mysubsection}
 				\begin{mysubsection}[sse-exp4-Procedure]{Procédure}
-					Un résumé du protocole expérimental est exprimé dans le \mytableref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
+					Un résumé du protocole expérimental est exprimé dans la \mytableref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
 
 					\begin{mytable}
 						\mycaption[tab-exp4-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
