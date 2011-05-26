@@ -110,35 +110,37 @@
 }
 % The starred version of '\mycustomsref' to activate the 'refsee' flag.
 \WithSuffix\newcommand\mycustomsref*[3]{\mycustomsref{refsee=true,#1}{#2}{#3}}
+% Command to create all necessary commands about a particular type of reference
+% For example,
+% \mycreatecustomsref{section}{Section}{Super-section}
+% will create commands '\mysectionref, '\mysectionref*, '\mySectionref' and '\mySectionref*'
+% All of these new commands will prefix the reference with 'Super-section'.
+\def\mycreatecustomsref#1#2#3{
+	\expandafter\newcommand\csname my#1ref\endcsname[2][]{\mycustomsref{##1}{\MakeLowercase{#3}}{##2}}
+	\WithSuffix\expandafter\newcommand\csname my#1ref\endcsname*[2][]{\mycustomsref*{##1}{\MakeLowercase{#3}}{##2}}
+	\expandafter\newcommand\csname my#2ref\endcsname[2][]{\mycustomsref{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}
+	\WithSuffix\expandafter\newcommand\csname my#2ref\endcsname*[2][]{\mycustomsref*{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}
+}
 %% About specialized command for references.
 %% The starred versions are activating the 'refsee' flag.
 % For reference on part.
-\newcommand\mypartref[2][]{\mycustomsref{#1}{\partname}{#2}}
-\WithSuffix\newcommand\mypartref*[2][]{\mycustomsref*{#1}{\partname}{#2}}
+\mycreatecustomsref{part}{Part}{\partname}
 % For reference on chapter.
-\newcommand\mychapterref[2][]{\mycustomsref{#1}{\chaptername}{#2}}
-\WithSuffix\newcommand\mychapterref*[2][]{\mycustomsref*{#1}{\chaptername}{#2}}
+\mycreatecustomsref{chapter}{Chapter}{\chaptername}
 % For reference on section.
-\newcommand\mysectionref[2][]{\mycustomsref{#1}{\myref@lang@sectiontitle}{#2}}
-\WithSuffix\newcommand\mysectionref*[2][]{\mycustomsref*{#1}{\myref@lang@sectiontitle}{#2}}
+\mycreatecustomsref{section}{Section}{\myref@lang@sectiontitle}
 % For reference on subsection.
-\newcommand\mysubsectionref[2][]{\mycustomsref{#1}{\myref@lang@subsectiontitle}{#2}}
-\WithSuffix\newcommand\mysubsectionref*[2][]{\mycustomsref*{#1}{\myref@lang@subsectiontitle}{#2}}
+\mycreatecustomsref{subsection}{Subsection}{\myref@lang@subsectiontitle}
 % For reference on subsubsection.
-\newcommand\mysubsubsectionref[2][]{\mycustomsref{#1}{\myref@lang@subsubsectiontitle}{#2}}
-\WithSuffix\newcommand\mysubsubsectionref*[2][]{\mycustomsref*{#1}{\myref@lang@subsubsectiontitle}{#2}}
+\mycreatecustomsref{subsubsection}{Subsubsection}{\myref@lang@subsubsectiontitle}
 % For reference on appendix.
-\newcommand\myappendixref[2][]{\mycustomsref{#1}{\appendixname}{#2}}
-\WithSuffix\newcommand\myappendixref*[2][]{\mycustomsref*{#1}{\appendixname}{#2}}
+\mycreatecustomsref{appendix}{Appendix}{\appendixname}
 % For reference on figure.
-\newcommand\myfigureref[2][]{\mycustomsref{#1}{\figurename}{#2}}
-\WithSuffix\newcommand\myfigureref*[2][]{\mycustomsref*{#1}{\figurename}{#2}}
+\mycreatecustomsref{figure}{Figure}{\figurename}
 % For reference on table.
-\newcommand\mytableref[2][]{\mycustomsref{#1}{\tablename}{#2}}
-\WithSuffix\newcommand\mytableref*[2][]{\mycustomsref*{#1}{\tablename}{#2}}
+\mycreatecustomsref{table}{Table}{\tablename}
 % For reference on equation
-\newcommand\myequationref[2][]{\mycustomsref{#1}{\myref@lang@equationname}{#2}}
-\WithSuffix\newcommand\myequationref*[2][]{\mycustomsref*{#1}{\myref@lang@equationname}{#2}}
+\mycreatecustomsref{equation}{Equation}{\myref@lang@equationname}
 
 % End of package
 \endinput
