@@ -46,20 +46,20 @@
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
-\newcommand{\myref@lang@figuretitle}{\figurename}
-\newcommand{\myref@lang@tabletitle}{\tablename}
 % Define some language commands
 \if@myenglish
 	\newcommand{\myref@lang@see}{see}
 	\newcommand{\myref@lang@sectiontitle}{Section}
 	\newcommand{\myref@lang@subsectiontitle}{Section}
 	\newcommand{\myref@lang@subsubsectiontitle}{Section}
+	\newcommand{\myref@lang@equationname}{Equation}
 \fi
 \if@myfrancais
 	\newcommand{\myref@lang@see}{voir}
 	\newcommand{\myref@lang@sectiontitle}{Section}
 	\newcommand{\myref@lang@subsectiontitle}{Section}
 	\newcommand{\myref@lang@subsubsectiontitle}{Section}
+	\newcommand{\myref@lang@equationname}{Équation}
 \fi
 %% To define the reference name
 % The word(s) to put before the number of the reference (like 'section' or 'figure' for example).
@@ -136,6 +136,9 @@
 % For reference on table.
 \newcommand\mytableref[2][]{\mycustomsref{#1}{\tablename}{#2}}
 \WithSuffix\newcommand\mytableref*[2][]{\mycustomsref*{#1}{\tablename}{#2}}
+% For reference on equation
+\newcommand\myequationref[2][]{\mycustomsref{#1}{\myref@lang@equationname}{#2}}
+\WithSuffix\newcommand\myequationref*[2][]{\mycustomsref*{#1}{\myref@lang@equationname}{#2}}
 
 % End of package
 \endinput
