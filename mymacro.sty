@@ -35,10 +35,21 @@
 % To write a name
 % The optionnal argument is for prefix on names (like 'van der' in 'van der Walls')
 \newcommand{\myname}[2][]{%
+	\def\my@arg@one{#1}%
 	\if@myfrancais%
-		\textsc{\MakeLowercase{#1}\xspace\makefirstuc{\MakeLowercase{#2}}}\xspace%
+		\textsc{%
+			\ifx\my@arg@one\@empty%
+			\else%
+				\MakeLowercase{#1}\xspace%
+			\fi%
+			\makefirstuc{\MakeLowercase{#2}}\xspace%
+		}%
 	\else%
-		\MakeLowercase{#1}\xspace\MakeUppercase{#2}\xspace%
+	\ifx\my@arg@one\@empty%
+	\else%
+		\MakeLowercase{#1}\xspace%
+	\fi%
+	\MakeUppercase{#2}\xspace%
 	\fi%
 }
 % To print numbers (see 'numprint' package)
