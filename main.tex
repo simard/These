@@ -392,19 +392,6 @@
 					\end{myfigure}
 
 					\begin{mytable}
-						\newcommand{\myatom}[2]{%
-							{%
-								\bfseries%
-								\sffamily%
-								\textcolor{#2}{\MakeUppercase{#1}}%
-								\xspace%
-							}%
-						}
-						\newcommand{\mycarbon}{\myatom{C}{mycarboncolor}}
-						\newcommand{\mynytrogen}{\myatom{A}{mynytrogencolor}}
-						\newcommand{\myoxygen}{\myatom{O}{myoxygencolor}}
-						\newcommand{\mysulfur}{\myatom{S}{mysulfurcolor}}
-						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
 						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
 						\begin{mytabular}{^C-C-C-C-C}
 							\mytoprule
@@ -509,7 +496,7 @@
 
 					La \myfigureref{fig-exp1-TempsDeCompletionParResidu} présente le temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2}.
 					L'analyse montre qu'il y a un effet significatif des \myglos*{glo-Residu} \myvari{2} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-anova.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de complétion significativement plus important que les autres \myglos*{glo-Residu}.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de complétion significativement plus longs que les autres \myglos*{glo-Residu}.
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.008cm}
@@ -536,10 +523,56 @@
 					\end{myfigure}
 
 					La \myfigureref{fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu} présente les temps de recherche et de sélection par \myglos{glo-Residu} \myvari{2}.
-					L'analyse montre un effet significatif des \myglos*{glo-Residu} sur le temps de recherche (\myanova{exp1-timeaudio-residue-searchselection-anova-search.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} génèrent un temps de recherche significativement supérieur à tous les autres.
-					L'analyse montre également un effet significatif des \myglos*{glo-Residu} sur le temps de sélection (\myanova{exp1-timeaudio-residue-searchselection-anova-selection.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} génère un temps de sélection significativement supérieur à tous les autres.
+					L'analyse montre un effet significatif des \myglos*{glo-Residu} \myvari{2} sur les temps de recherche (\myanova{exp1-timeaudio-residue-searchselection-anova-search.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} obtiennent des temps de recherche significativement plus longs que les autres \myglos*{glo-Residu}.
+					L'analyse montre également un effet significatif des \myglos*{glo-Residu} \myvari{2} sur les temps de sélection (\myanova{exp1-timeaudio-residue-searchselection-anova-selection.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} obtient un temps de sélection significativement plus long que les autres \myglos*{glo-Residu}.
+
+					La molécule \myTRPCAGE présente un nombre total de \myglos*{glo-Residu} relativement limité à examiner.
+					Les sujets construisent rapidement une carte mentale de la molécule \myTRPCAGE afin de trouver rapidement les \myglos*{glo-Residu} recherchés.
+					De plus, les contraintes physiques de la molécule rend le \myTRPCAGE plus aisé à déformer.
+					Cela facilite la recherche des \myglos*{glo-Residu} qui sont en position interne à la molécule.
+					Tous ces facteurs rendent les tâches de recherche sur les \myglos*{glo-Residu} peu complexes sur la molécule \myTRPCAGE.
+
+					La molécule \myPrion possède un nombre de \myglos*{glo-Residu} beaucoup plus important.
+					La construction complète d'une carte mentale est très complexe, d'autant plus que les sujets ne sont confrontés à la molécule que dix fois (cinq fois en \myglos{glo-Monome} et cinq fois en \myglos{glo-Binome}).
+					Les sujets adoptent différentes stratégies suivant les \myglos*{glo-Residu}.
+					Tout d'abord, ils débutent par une recherche exploratoire qui permet de découvrir tous les \myglos*{glo-Residu}  en position externe à la molécule (\myresidue{7} et \myresidue{8}).
+					Ensuite, lorsque cette première phase d'exploration ne permet pas d'achever la tâche de recherche, les sujets déforment la molécule afin d'accéder aux \myglos*{glo-Residu} en position interne (\myresidue{6}, \myresidue{9} et \myresidue{10}).
+
+					Le travail en \myglos{glo-Binome} n'améliore pas les performances sur la tâche par rapport au travail en \myglos{glo-Monome} bien que la \mypvalue soit seulement très légérement au-dessus de \mynum{0.05}.
+					Cependant, une évaluation de l'ensemble des \myglos*{glo-Residu} proposés a permis d'identifier des tâches de complexités variables : les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} apparaissent comme significativement plus complexes que les autres \myglos*{glo-Residu}.
+					Sur ce groupe de \myglos*{glo-Residu}, les \myglos*{glo-Binome} obtiennent une amélioration significative des performances par rapport aux \myglos*{glo-Monome}.
+
+					Comme développé dans la procédure expérimentale, le temps de complétion de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myfigureref*{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+					Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} se distinguent par un temps de recherche significativement plus important que les autres \myglos*{glo-Residu}.
+					En effet, ce sont les deux \myglos*{glo-Residu} qui possèdent des similarités avec d'autres \myglos*{glo-Residu} également présents dans la molécule (possédant un atome en moins ou en plus par rapport au \myglos{glo-Residu} recherché).
+					À cause de ces similarités, l'œil des sujets est continuellement attiré vers ces \myglos*{glo-Residu} similaires et une perte de temps significative se fait ressentir dans la phase de recherche.
+
+					En contre-partie, le \myglos{glo-Residu} \myresidue{6} se distingue par un temps de sélection significativement plus important que les autres \myglos*{glo-Residu}.
+					Ce \myglos{glo-Residu} possède deux atomes de \myatom{Soufre} de couleur jaune ce qui les rends très distinguables malgré le nombre importants d'atomes de la molécules.
+					Le temps de recherche s'en trouve extrêmement réduit.
+					Cependant, le seul \myglos{glo-Residu} disponible se positionnant au centre de la molécule, la sélection nécessite de \myemph{déplier} en grande partie la molécule afin de pouvoir le sélectionner.
+
+					L'analyse met en évidence trois configurations concernant l'allocation du temps pour achever la tâche :
+					\begin{description}
+						\item[Différence entre recherche et sélection]
+							Cette configuration ne montre aucune différence entre le temps de recherche et le temps de sélection.
+							Ces \myglos*{glo-Residu} sont ceux qui ne présentent pas de réelle complexité (la molécule \myTRPCAGE et les \myglos*{glo-Residu} \myresidue{7} et \myresidue{8} de la molécule \myPrion) et sur lesquels, le travail collaboratif n'améliore pas les performances.
+						\item[Prédominance de la recherche]
+							Cette configuration alloue un temps relativement important à la recherche de l'objectif.
+							Une fois le \myglos{glo-Residu} identifié, les sujets peuvent accéder et sélectionner rapidement l'objectif.
+							Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} sont concernés.
+							Le travail collaboratif améliore les performances grâce au caractère très parallélisable de la phase de recherche.
+						\item[Prédominance de la sélection]
+							Cette configuration alloue un temps relativement important à la sélection de l'objectif.
+							Le \myglos{glo-Residu} est rapidement localisé mais il est difficile d'y accéder directement.
+							Une phase de déformation est nécessaire pour le sélectionner.
+							Le \myglos{glo-Residu} \myresidue{6} est concerné.
+							Le travail collaboratif améliore les performances grâce à la multiplication des ressources allouées pour la déformation.
+					\end{description}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp1-StrategiesDeTravail]{Stratégies de travail}
 
 					\begin{myfigure}
 						\psset{xunit=0.075\textwidth,yunit=0.2cm}

@@ -1,6 +1,16 @@
 % AAA
 \newcommand{\myanova}[1]{\input{files/#1}}
+\newcommand{\myatom}[2][]{%
+	{%
+		\ifthenelse{\isempty{#1}}%
+			{\makefirstuc{\textsf{#2}}}%
+			{\textcolor{#1}{\makefirstuc{\textsf{#2}}}}%
+		\xspace%
+	}%
+}
+\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
 % CCC
+\newcommand{\mycarbon}{\myatom[mycarboncolor]{C}}
 \newcommand{\mycondition}[1]{$\left(\mathcal{C}_{#1}\right)$\xspace}
 % FFF
 \newcommand{\myform}[1]{\textbf{\sffamily\MakeUppercase{#1}}}
@@ -9,18 +19,23 @@
 % HHH
 \newcommand{\myhypothesis}[1]{$\left(\mathcal{H}_{#1}\right)$\xspace}
 % NNN
+\newcommand{\mynytrogen}{\myatom[mynytrogencolor]{A}}
 \newcommand{\myNusE}{\textsc{NusE:NusG}\xspace}
+% OOO
+\newcommand{\myoxygen}{\myatom[myoxygencolor]{O}}
 % PPP
 \newcommand{\myPDB}{\textsc{pdb}\xspace}
 \newcommand{\myPDBbase}{\emph{Protein~DataBase}\xspace}
 \newcommand{\myPDBlink}[2]{\href{#1}{\textsc{\MakeLowercase{#2}}}}
 \newcommand{\myPrion}{Prion\xspace}
+\newcommand{\mypvalue}{$p$-value\xspace}
 % RRR
 \newcommand{\myresidue}[1]{$\left(\mathcal{R}_{#1}\right)$\xspace}
 % SSS
 \newcommand{\mySony}{\textsc{sony}\myregistered\xspace}
 \newcommand{\mySpaceNavigator}{SpaceNavigator\myregistered\xspace}
 \newcommand{\mysubject}[1]{\textsc{p}\nombre{#1}}
+\newcommand{\mysulfur}{\myatom[mysulfurcolor]{S}}
 % TTT
 \newcommand{\mytask}[1]{Tâche~\textsc{#1}}
 \newcommand{\myThreeD}{\textsc{3d}\xspace}

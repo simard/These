@@ -35,17 +35,17 @@
 % To write a name
 % The optionnal argument is for prefix on names (like 'van der' in 'van der Walls')
 \newcommand{\myname}[2][]{%
-	\def\my@arg@one{#1}%
+	\def\my@args@one{#1}%
 	\if@myfrancais%
 		\textsc{%
-			\ifx\my@arg@one\@empty%
+			\ifx\my@args@one\@empty%
 			\else%
 				\MakeLowercase{#1}\xspace%
 			\fi%
 			\makefirstuc{\MakeLowercase{#2}}\xspace%
 		}%
 	\else%
-	\ifx\my@arg@one\@empty%
+	\ifx\my@args@one\@empty%
 	\else%
 		\MakeLowercase{#1}\xspace%
 	\fi%
