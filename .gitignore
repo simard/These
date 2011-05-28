@@ -4,3 +4,4 @@ build
 images/*.eps
 files/*.csv
 files/*.tex
+.DS_Store
