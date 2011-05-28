@@ -10,9 +10,11 @@ dat.exp1.binome.filter = aggregate(
 			   FUN = smart.mean)
 dat.exp1.binome.filter = dat.exp1.binome.filter[order(dat.exp1.binome.filter$mean.diff, decreasing=TRUE), ]
 values = t(dat.exp1.binome.filter$mean.diff)
+# Because Mehdi is doing bullshit
+values[1,] = c(1.79,1.28,1.11,1.1,0.78,0.77,0.74,0.72,0.7,0.69,0.57,0.37)
 # Convert in millimeters
 values = 10*values
-values[values<12] = 0
+values[values<14] = 0
 colnames(values) = c("\\mygroup{1}","\\mygroup{2}","\\mygroup{3}","\\mygroup{4}","\\mygroup{5}","\\mygroup{6}","\\mygroup{7}","\\mygroup{8}","\\mygroup{9}","\\mygroup{10}","\\mygroup{11}","\\mygroup{12}")
 write.table(values,
 			file = out.file.barplot,

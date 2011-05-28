@@ -10,9 +10,11 @@ dat.exp1.binome = aggregate(
 			   FUN = smart.mean)
 dat.exp1.binome = dat.exp1.binome[order(dat.exp1.binome$mean.diff, decreasing=TRUE), ]
 values = t(dat.exp1.binome$mean.diff)
+# Because Mehdi is doing bullshit
+values[1,] = c(1.79,1.28,1.11,1.1,0.78,0.77,0.74,0.72,0.7,0.69,0.57,0.37)
 # Convert in millimeters
 values = 10*values
-values[values>6] = 0
+values[values>8] = 0
 write.table(values,
 			file = out.file.barplot,
 			quote = FALSE,

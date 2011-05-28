@@ -573,32 +573,126 @@
 					\end{description}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-StrategiesDeTravail]{Stratégies de travail}
+					Dans cette section, les données concernent exclusivement les \myglos*{glo-Binome}.
+					Elles sont utilisées afin d'étudier les différentes stratégies adoptées.
 
 					\begin{myfigure}
-						\psset{xunit=0.075\textwidth,yunit=0.2cm}
-						\begin{myps}(-1.25,-5)(12,21)
+						\psset{xunit=0.074\textwidth,yunit=0.15cm}
+						\begin{myps}(-1.5,-6)(12,21)
 							\myaxes(0,12){groupes}(0,20)[4]{distance~(mm)}
-							\mybarplot[barstyle=first-barstyle]{exp1-diff-groups1.csv}
-							\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
+							% Once header are readed, they are defined for other barplot
+							% That's why barplots without headers are in first position
 							\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
+							\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
+							\mybarplot[barstyle=first-barstyle]{exp1-diff-groups1.csv}
 							\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
-							\psline(0,12)(12,12)
-							\psline(0,6)(12,6)
+							\psline(0,14)(12,14)
+							\psline(0,8)(12,8)
 							\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
-							\uput[180](12,3){\pscharpath{\LARGE\bf\sffamily Espace proche}}
-							\uput[180](12,9){\pscharpath{\LARGE\bf\sffamily Espace voisin}}
-							\uput[180](12,15){\pscharpath{\LARGE\bf\sffamily Espace distant}}
+							\uput[180](12,5){\pscharpath{\LARGE\bf\sffamily Champ proche}}
+							\uput[180](12,11){\pscharpath{\LARGE\bf\sffamily Champ voisin}}
+							\uput[180](12,17){\pscharpath{\LARGE\bf\sffamily Champ distant}}
 						\end{myps}
-						\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinome]{Distance moyenne entre les sujets pour chaque \myglosnl{glo-Binome}}
+						\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix]{Distance moyenne entre les sujets pour chaque \myglosnl{glo-Binome} sur les \myglosnl*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10}}
 					\end{myfigure}
+
 					\begin{myfigure}
-						\psset{xunit=0.075\textwidth,yunit=0.5cm}
-						\begin{myps}(-1.25,-1.75)(12,5.25)
-							\myaxes(0,12){groupes}(0,5)[1]{affinité}
+						\psset{xunit=0.074\textwidth,yunit=0.5cm}
+						\begin{myps}(-1.5,-1.75)(12,5.25)
+							\myaxes(0,12){groupes}(0,5)[1]{affinité~(\mynum{1}--\mynum{5})}
 							\mybarplot{exp1-affinity-groups.csv}
 						\end{myps}
-						\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinome]{Distance moyenne entre les sujets pour chaque \myglosnl{glo-Binome}}
+						\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
+
+					\begin{myfigure}
+						\psset{xunit=0.074\textwidth,yunit=0.0075cm}
+						\begin{myps}(-1.5,-125)(12,325)
+							\myaxes(0,12){groupes}(0,300)[50]{time~(s)}
+							\mybarplot{exp1-time-groups.csv}
+						\end{myps}
+						\mycaption[fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome]{Temps de complétion entre les sujets pour chaque \myglosnl{glo-Binome}}
+					\end{myfigure}
+
+					\begin{myfigure}
+						\psset{xunit=0.074\textwidth,yunit=0.04cm}
+						\begin{myps}(-1.5,-22)(12,75)
+							\myaxes(0,12){groupes}(0,70)[10]{time~(s)}
+							\mybarplot{exp1-timeaudio-groups.csv}
+						\end{myps}
+						\mycaption[fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome]{Temps de communication verbale entre les sujets pour chaque \myglosnl{glo-Binome}}
+					\end{myfigure}
+
+					\begin{myfigure}
+						\psset{xunit=0.074\textwidth,yunit=0.03cm}
+						\begin{myps}(-1.5,-30)(12,120)
+							\myaxes(0,12){groupes}(0,100)[25]{time~(\%)}
+							\mybarplot{exp1-timeaudio-groups-searchselection.csv}
+							\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection des sujets pour chaque \myglosnl{glo-Binome}}
+					\end{myfigure}
+
+					\begin{myfigure}
+						\psset{xunit=0.074\textwidth,yunit=1cm}
+						\begin{myps}(-1.5,-1)(12,3.5)
+							\myaxes(0,12){groupes}(0,3)[1]{force~(N)}
+							\mybarplot{exp1-force-groups-meandiff.csv}
+							\mylegend{\myleg{Force moyenne}{myblue}\myand\myleg{Différence de force}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome]{Force moyenne et différence de force entre les sujets pour chaque \myglosnl{glo-Binome}}
+					\end{myfigure}
+
+					La \myfigureref{fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix} présente la distance moyenne entre les espaces de travail \myvard{2} de chaque \myglos{glo-Binome}.
+					Les \myglos*{glo-Binome} peuvent être classés en trois groupes : \myemph{espace distant}, \myemph{espace voisin} et \myemph{espace proche}.
+					La \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} présente les affinités \myvard{4} de chaque \myglos{glo-Binome}.
+					La \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Binome}.
+					La \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} présente les temps de communication verbale \myvard{3} de chaque \myglos{glo-Binome}.
+
+					La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} présente les pourcentage de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome}.
+					Le pourcentage représente le rapport du temps de communication verbale durant la phase recherche ou de sélection sur le temps total de la phase de recherche ou de sélection.
+
+					La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} représente la force moyenne et la différence de force entre les sujets.
+					La force moyenne est la moyenne des forces moyennes des deux sujets.
+					La différence de force est la différence des forces moyennes des deux sujets.
+
+					Les distances moyennes entre les espaces de travail, données dans le référentiel du monde réel, sont comprises entre \mynum[mm]{3} et \mynum[mm]{18}.
+					Ces distances mènent à trois différents types de stratégies :
+					\begin{description}
+						\item[Champ proche] pour les distances inférieures à \mynum[mm]{8};
+						\item[Champ voisin] pour les distances comprises entre \mynum[mm]{8} et \mynum[mm]{14};
+						\item[Champ distant] pour les distances supérieures à \mynum[mm]{14}.
+					\end{description}
+					\begin{mysubsubsection}[sss-exp1-ChampProche]{Champ proche}
+						Les interactions en champs proches inférieure à \mynum[mm]{8} correspondent dans l'environnement virtuel à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\AA\ désigne l'\AA ngström qui est une distance telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
+						\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie.
+						Cela signifie que ce sont des \myglos*{glo-Binome} qui travaillent en collaboration étroite.
+
+						Sur la \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration étroite ont de fortes affinités ($\mu = 4$).
+						Le groupe comprend des collègues proches et des amis.
+						D'après la \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de complétion de la tâche relativement moyen comparés aux autres stratégies de travail.
+						Cela se traduit également par une communication relativement moyenne comme affiché sur la \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
+
+						En observant plus précisement les temps de communication verbale sur la \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}, les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer dans la phase de recherche que dans la phase de sélection.
+						Ces résultats tendent à prouver les difficultés du travail en champ proche liées aux nombreux conflits durant la phase de recherche.
+
+						La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre des disparités entre les \myglos*{glo-Binome} concernant la force moyenne.
+						Des observations durant l'expérimentation ont permis de déterminer deux stratégies différentes :
+						\begin{description}
+							\item[Contrôle redondant] pendant lequel les deux sujets effectuent la même action pour obtenir un meilleur contrôle sur les structures manipulées;
+							\item[Guidage gestuel] où un des deux sujets indique à son partenaire la déformation à effectuer ou la position à atteindre.
+						\end{description}
+						Ces deux stratégies impliquent une communication étroite entre les sujets afin de coordonner au mieux les actions.
+
+						Cependant, les différences importantes dans les forces appliquées \myfigureref*{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} ou l'analyse des communications verbales montre des conflits importants au sein des \myglos*{glo-Binome}.
+						En effet, la grande complexité des tâches considérées couplé à une mauvaise perception de l'environnement et de son partenaire mène à une mauvaise coordination et à des inter-référencements inexacts.
+						Les communications verbales révèlent de nombreuses incompréhension dans l'inter-référencement (\og Pas dans cette direction \fg, \og Pas ici mais ici \fg, \og C'est juste derrière \fg, \myetc).
+						Ces conflits et incompréhensions limite les performances du \myglos{glo-Binome}.
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-exp1-ChampVoisin]{Champ voisin}
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-exp1-ChampDistant]{Champ distant}
+					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
