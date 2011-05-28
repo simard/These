@@ -1,6 +1,17 @@
 #!/usr/bin/env Rscript
 library(lawstat)
 
+standard.deviation <- function(x) {
+	sqrt(var(x, na.rm = TRUE))
+}
+
+global.summary <- function(x) {
+	m = mean(x, na.rm = TRUE)
+	v = var(x, na.rm = TRUE)
+	s = standard.deviation(x)
+	data.frame(mean=m, variance=v, standard.deviation=s)
+}
+
 smart.mean <- function(x) {
 	if(is.numeric(x))
 		mean(x, na.rm=T)
@@ -37,6 +48,16 @@ set.p <- function(string, p) {
 	}
 }
 
+set.mu <- function(string, mu) {
+	mu = round(mu, digits=1)
+	gsub("<mu>", as.character(mu), string)
+}
+
+set.sigma <- function(string, sigma) {
+	sigma = round(sigma, digits=1)
+	gsub("<sigma>", as.character(sigma), string)
+}
+
 friedman2tex <- function(friedman) {
 	string = "$\\chi^2 = <chi>$, $\\mathrm{df} = <df>$, $p = <p>$%"
 	string = set.df(string, friedman$parameter)
@@ -50,6 +71,13 @@ kruskal2tex <- function(kruskal) {
 	string = set.df(string, kruskal$parameter)
 	string = set.chi(string, kruskal$statistic)
 	string = set.p(string, kruskal$p.value)
+	string
+}
+
+summary2tex <- function(summary) {
+	string = "$\\mu = <mu>$, $\\sigma = <sigma>$%"
+	string = set.mu(string, summary$mean)
+	string = set.sigma(string, summary$standard.deviation)
 	string
 }
 
