@@ -71,41 +71,46 @@
 		\begin{mychapter}[cha-LaRechercheCollaborative]{La recherche collaborative}
 			\begin{mysection}[sec-exp1-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
-					Dans cette première expérimentation, nous proposons d'étudier la première des quatre sous-tâches élémentaires \mysubsectionref*{sse-LAmarrageMoleculaire}: la \myemph{recherche}.
-					Cette sous-tâche est cruciale car elle a un impact important sur les sous-tâches suivantes.
-					Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers l'étude de cette sous-tâche.
+					Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre sous-tâches élémentaires \mysubsectionref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
+					Ces sous-tâches sont cruciales car elles ont un impact important sur les sous-tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
+					Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers cette étude.
 
 					Cette première expérimentation a pour objectif principal de comparer un \myglos{glo-Monome} et un \myglos{glo-Binome}.
-					Deux facteurs seront étudier lors de cette comparaison.
+					Plusieurs facteurs seront étudiés lors de cette comparaison.
 
 					Le premier facteur concerne les performances.
-					Les performances représente à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
+					Les performances représentent à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
 					Un \myglos{glo-Binome} sera-t-il plus performant qu'un \myglos{glo-Monome} ?
 
 					Le second facteur concerne les méthodes et les stratégies de travail.
 					C'est principalement l'évolution de ces stratégies au sein des \myglos*{glo-Binome} qui focalisera notre attention.
 					Le travail en \myglos{glo-Binome} permettra de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
+
+					Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
+					Pour cela, l'évaluation sera principalement confiée aux sujets qui noteront la plate-forme.
+					L'objectif est ici de vérifier la pertinence de la plate-forme mais aussi d'en améliorer les points faibles.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Hypotheses]{Hypothèses}
 					\begin{myparagraph}[par-exp1-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
-						La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} comparés aux \myglos*{glo-Monome}.
-						Cette amélioration se traduira principalement par une réalisation de la même tâche en un temps réduit.
+						La première hypothèse est une amélioration des performances des \myglos*{glo-Binome} face aux performances des \myglos*{glo-Monome}.
+						L'évaluation des performances sera principalement le temps de réalisation de la tâche.
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp1-StrategiesVariablesEnFonctionDesBinomes]{\myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome}}
-						Cette second hypothèse concerne uniquement les \myglos*{glo-Binome} et suppose que les stratégies adoptés seront différentes en fonction des \myglos*{glo-Binome}.
+						Cette second hypothèse concerne uniquement les \myglos*{glo-Binome} et suppose que les stratégies adoptées seront différentes en fonction des \myglos*{glo-Binome}.
 						Cette différence sera liée aux différentes personnalités et aux différentes affinités au sein du \myglos{glo-Binome}.
+						L'identification des différentes stratégies permettra des les évaluer et de trouver celles qui donnent les meilleurs résultats.
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp1-LesSujetsPreferentLeTravailEnBinome]{\myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}}
 						La troisième hypothèse est de l'ordre du qualitatif.
 						Elle s'intéresse aux conditions de travail en \myglos{glo-Binome}.
-						L'hypothèse est basée \myglos*{glo-Binome} sur l'effet stimulant de travailler à plusieurs mais aussi sur l'aspect humain de ne pas rester seul pour effectuer une tâche répétitive.
+						L'hypothèse est basée sur l'effet stimulant de travailler à plusieurs mais aussi sur l'intérêt de la collaboration sur des tâches répétitives.
 						Il est cependant important que chaque sujet au sein du \myglos{glo-Binome} se considère utile à la réalisation de la tâche.
 					\end{myparagraph}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp1-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
 				L'\myacro{acr-EVC} utilisé est illustré sur la \myfigureref{fig-exp1-IllustrationDuDispositifExperimental}.
-				L'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
+				L'\myacro{acr-EVC} propose une visualisation partagée sur grand écran (vue publique à tous les utilisateurs) à l'aide d'un vidéoprojecteur.
 				Le ou les sujets font face à l'écran avec à leur disposition :
 				\begin{itemize}
 					\item un interface haptique de manipulation \mytool{grab};
@@ -125,19 +130,20 @@
 				\end{myfigure}
 
 				Les sujets ont la possibilité de communiquer entre eux sans restriction.
-				Pour les \myglos*{glo-Monome}, le sujet peut utiliser chaque outil comme il le souhaite.
+				Pour les \myglos*{glo-Monome}, le sujet a à sa disposition un outil de manipulation \myemph{grab} et un outil de déformation \myemph{tug} qu'il peut utiliser librement.
 				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
-				L'outil de manipulation \mytool{grab} sera attribuer à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
-				Le sujet désigné pour l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
+				L'outil de manipulation \mytool{grab} est attribué à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
+				Le sujet choisi pour gérer l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
 
-				Un micro de bureau est placé en face des deux sujets afin de capter toutes les communications orales.
-				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'apprentissage.
+				Un micro de bureau est placé en face des sujets afin de capter toutes les communications orales.
+				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'apprentissage jusqu'à la fin de l'expérimentation.
+				Un découpage par tâche est réalisé en post-traitement.
 
 				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp1-Sujets]{Sujets}
-					\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une moyenne d'âge de $\mu = 27.8$ ($\sigma = 7.19$) ont participés à cette expérimentation.
+					\mynum{24}~sujets (\mynum{4}~femmes et \mynum{20}~hommes) avec une distribution d'âge de \mysummary{exp1-age.tex} ont participé à cette expérimentation.
 					Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
 					\begin{itemize}
 						\item linguistique et traitement automatique de la parole;
@@ -145,7 +151,8 @@
 						\item audio-acoustique.
 					\end{itemize}
 					Ils ont tous le français comme langue principale.
-					Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+					Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant), de déficience audio ou de déficience moteur du haut du corps.
+					Les sujets ne sont pas rémunérés pour l'expérimentation.
 
 					Chaque participant est complètement naïf concernant les détails de l'expérimentation.
 					Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
@@ -153,10 +160,8 @@
 				\begin{mysubsection}[sec-exp1-Variables]{Variables}
 					\begin{mysubsubsection}[sss-exp1-VariablesIndependantes]{Variables indépendantes}
 						\begin{myparagraph}[par-exp1-NombreDeSujets]{\myvari{1} Nombre de sujets}
-							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}, c'est-à-dire que tous les sujets sont expérimentés dans toutes les modalités de cette variable.
-							\myvari{1} possède deux valeurs possibles: \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
-							Le sujets seuls et les sujets en couples ont à leur disposition deux outils haptiques de déformation et un outil haptique de manipulation.
-							Pour les \myglos*{glo-Binome}, seulement un des deux sujets est désigné pour l'utilisation exclusive de l'outil de manipulation.
+							La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraPopulation}.
+							\myvari{1} possède deux valeurs possibles: \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
 							\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de \myglos*{glo-Binome}.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
@@ -167,32 +172,34 @@
 					\begin{mysubsubsection}[sec-exp1-VariablesDependantes]{Variables dépendantes}
 						\begin{myparagraph}[par-exp1-LeTempsDeCompletion]{\myvard{1} Le temps de complétion}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
+							Il n'y a pas de limite de temps pour réaliser la tâche.
 							Ce temps est divisé en deux phases bien distinctes :
 							\begin{description}
 								\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
-									Cette recherche peut être simplement visuelle en orientant et en déplaçant la molécule mais elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles.
-								\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a trouvé le \myglos{glo-Residu}.
-									Elle est constitué d'une phase de sélection puis d'une phase d'extraction.
+									Cette recherche peut être visuelle en orientant et en déplaçant la molécule.
+									Elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles du centre de la molécule.
+								\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a identifié visuellement le \myglos{glo-Residu}.
+									Elle est constituée d'une phase de sélection puis d'une phase d'extraction.
 							\end{description}
-							Il n'y a pas de limite de temps pour réaliser la tâche.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-LaDistanceEntreLesEspacesDeTravail]{\myvard{2} La distance entre les espaces de travail}
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'expérimentation.
-							Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
-							Elle est de l'ordre du centimètre.
+							Elle est mesurée dans le monde réel mais peut être convertie dans l'environnement virtuel (à l'échelle de la molécule).
+							Cette distance est de l'ordre du centimètre.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-LesCommunicationsVerbales]{\myvard{3} Les communications verbales}
-							L'enregistrement audio permet de mesurer la quantité de temps de parole pendant chaque tâche de l'expérimentation.
-							Ces mesures discrimine la phase de recherche de la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myfigureref{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+							L'enregistrement audio permet de mesurer la quantité de temps de parole pour chaque tâche de l'expérimentation.
+							Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myfigureref{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
 
 							\begin{myfigure}
 								\psset{unit=0.1\textwidth} % Fill entirely the page width
 								\begin{myps}(0,-1.75)(10,1.5)
 									\psset{linewidth=1pt,linecolor=black}%
-									\psframe(0,-0.5)(10,0.5)%
+									%\psframe(0,-0.5)(10,0.5)%
 									\psset{fillstyle=solid}%
 									\psframe[fillcolor=mylightblue](0,-0.5)(6,0.5)%
-									\psframe[fillcolor=mylightred](6,-0.5)(10,0.5)%
+									\pspolygon[fillcolor=mylightred](6,-0.5)(6,0.5)(9,0.5)(10,0)(9,-0.5)%
+									\uput{16pt}[180](10,0){\LARGE\sl\textcolor{white!33}{temps}}
 									\psbrace[ref=lC,rot=-90,nodesepA=-3,nodesepB=-0.25](6,0.5)(0,0.5){%
 										\parbox{6\psxunit}{%
 											\centering\textcolor{myblue}{Temps de recherche}%
@@ -233,9 +240,9 @@
 							\begin{enumerate}
 								\item Les sujets ne se connaissent pas;
 								\item Les sujets travaillent dans la même entreprise, le même laboratoire;
-								\item Les sujets travaillent dans la même équipe;
-								\item Les sujets travaillent dans le même bureau;
-								\item Les sujets sont amis.
+								\item Les sujets travaillent dans la même équipe, sur les mêmes projets;
+								\item Les sujets travaillent dans ensemble, sont dans le même bureau;
+								\item Les sujets sont amis proches.
 							\end{enumerate}
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
@@ -244,26 +251,31 @@
 
 							Le questionnaire est le suivant (les questions sont posées à chaque sujet dans le cas du \myglos{glo-Binome}) :
 							\begin{enumerate}
-								\item Dans quelle configuration vous êtes-vous senti le plus efficace : \myemph{seul} ou \myemph{en collaboratif} ?
-								\item Vous êtes vous senti utile dans la configuration collaborative (par opposition à pénalisant) ?
+								\item Dans quelle configuration vous êtes-vous senti le plus efficace : \myemph{seul} ou \myemph{en collaboratif} (choisissez \mynum{1} pour \myemph{seul} et \mynum{5} pour \myemph{en collaboratif}) ?
+								\item Avez-vous eu le sentiment de travailler en collaboration (par opposition au travail seul) ?
 								\item Pensez-vous avoir une position de meneur dans la configuration collaborative ?
+								\item Vous êtes vous senti utile dans la configuration collaborative (par opposition à pénalisant) ?
 								\item Comment évalueriez-vous votre taux de communication\dots{}
 									\begin{itemize}
 										\item verbale ?
 										\item gestuelle ?
 										\item virtuelle ?
 									\end{itemize}
+								\item Avez-vous trouvé les différents effets visuels intuitifs ?
+								\item Avez-vous trouvé les différents effets visuels confortables ?
+								\item Avez-vous trouvé les interactions intuitives ?
+								\item Avez-vous trouvé les interactions confortables ?
 							\end{enumerate}
 
 							Concernant la communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
-							La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer, désigner ou pour tout autre explication à son partenaire.
+							La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer ou pour désigner par exemple.
 							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
 						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Tache]{Tâche}
 					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
-					Les motifs à rechercher dans les structures moléculaires sont les \myglos*{glo-Residu} du \mytableref{tab-exp1-ListeDesResidusRecherches}.
+					Les motifs à rechercher dans les structures moléculaires sont les \myglos*{glo-Residu} de la \mytableref{tab-exp1-ListeDesResidusRecherches}.
 					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
 					Les sujets possèdent deux outils pour trouver, sélectionner puis extraire ces motifs :
 					\begin{itemize}
@@ -307,25 +319,26 @@
 						\end{mysubtable}
 					\end{mytable}
 
-					La première molécule est couramment nommée \myTRPCAGE \mycite{Neidigh-2002} et a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+					La première molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur \myPDBbase\footnote{\url{http://www.pdb.org/}}.
 					La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-					Cinq \myglos*{glo-Residu} sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité.
-					Les critères de complexité, résumés dans la \mytableref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
+					Cinq \myglos*{glo-Residu} à chercher sont présents sur chaque molécule \myfigureref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité.
+					Les critères de complexité, résumés pour chaque \myglos{glo-Residu} dans la \mytableref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
 					\begin{description}
-						\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule, en position \myemph{externe} ou à l'intérieur, au milieu de l'amas d'atome (position \myemph{interne}).
+						\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule (position \myemph{externe}) ou à l'intérieur, au milieu de l'amas d'atomes que constitue la molécule (position \myemph{interne}).
 							Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
 						\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
 							On distingue trois formes différentes :
 							\begin{description}
-								\item[Chaîne] Un enchaînement d'atomes seuls les atomes d'hydrogène sont de part et d'autres de cet enchaînement.
-								\item[Cercle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
-								\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone).
+								\item[Chaîne] Une chaîne d'atomes (la plupart du temps carbonés) avec des atomes d'hydrogène de part et d'autres.
+								\item[Cycle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
+								\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (un atome de carbone pour la plupart du temps).
 							\end{description}
 						\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-							Les atomes qui sont rares seront donc rapidement trouvés grâce à leur couleur différente.
-							Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur nombre important.
+							Les atomes rares seront donc rapidement trouvés grâce à leur couleur différente.
+							Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur fréquence importante.
 						\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
-							De par leur similarité, ils vont mobilier la recherche sur des \myglos*{glo-Residu} incorrects.
+							Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
+							De par leur similarité, ils vont mobiliser les capacités de recherche des sujets sur des \myglos*{glo-Residu} ressemblants mais incorrects.
 					\end{description}
 
 					\begin{myfigure}
@@ -392,17 +405,18 @@
 					\end{myfigure}
 
 					\begin{mytable}
+						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
 						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
 						\begin{mytabular}{^C-C-C-C-C}
 							\mytoprule
 							\myrowstyle{\bfseries}
 							\myGlosnl{glo-Residu} & Position & Forme & Couleurs & Similarité \\
 							\mymiddlerule[\heavyrulewidth]
-							\myresidue{1}  & Interne & Cercle & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\myresidue{1}  & Interne & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
 							\mymiddlerule
 							\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
 							\mymiddlerule
-							\myresidue{3}  & Interne & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\myresidue{3}  & Interne & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
 							\mymiddlerule
 							\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
 							\mymiddlerule
@@ -412,7 +426,7 @@
 							\mymiddlerule
 							\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
 							\mymiddlerule
-							\myresidue{8}  & Externe & Cercle & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\myresidue{8}  & Externe & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
 							\mymiddlerule
 							\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
 							\mymiddlerule
@@ -422,9 +436,26 @@
 					\end{mytable}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
-					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Christen-2009} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
 					Pendant la phase d'apprentissage, les outils sont introduits et expliqués un par un.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
+
+					Dès que la phase d'apprentissage est terminée, l'enregistrement audio démarre.
+					Un premier \myglos{glo-Residu} est affiché et les sujets peuvent débuter la recherche.
+					Lorsque le \myglos{glo-Residu} a été trouvé, sélectionné puis extrait, le système s'arrête.
+					Un second \myglos{glo-Residu} est affiché et ainsi de suite pour les dix \myglos*{glo-Residu}.
+
+					L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre différent pour chaque \myglos{glo-Monome} ou \myglos{glo-Binome}.
+					Les sujets sont tenus d'effectuer l'ensemble des dux \myglos*{glo-Residu} deux fois, en \myglos{glo-Monome} et en \myglos{glo-Binome}.
+					Les configurations \myglos{glo-Monome} et \myglos{glo-Binome} sont également alternées suivant les groupes selon les trois combinaisons possibles suivantes :
+					\begin{enumerate}
+						\item Le sujet $\mathcal{A}$, puis le sujet $\mathcal{B}$, puis le \myglos{glo-Binome} $\mathcal{AB}$;
+						\item Le sujet $\mathcal{A}$, puis le \myglos{glo-Binome} $\mathcal{AB}$, puis le sujet $\mathcal{B}$;
+						\item Le \myglos{glo-Binome} $\mathcal{AB}$, puis le sujet $\mathcal{A}$, puis le sujet $\mathcal{B}$.
+					\end{enumerate}
+
+					Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}, ils sont soumis au questionnaire.
+					Chaque sujet est tenu de répondre au questionnaire seul, sans communiquer avec les autres sujets.
 
 					Un résumé du protocole expérimental est exprimé dans la \mytableref{tab-exp1-SyntheseDeLaProcedureExperimentale}.
 
@@ -462,16 +493,16 @@
 							\multicolumn{2}{c}{%
 								\begin{tabular}{^C-C-C}
 									\myrowstyle{\bfseries}
-									Condition \mycondition{1}         & Condition \mycondition{2}         & Condition \mycondition{3}         \\
+									Condition \mycondition{1}            & Condition \mycondition{2}            & Condition \mycondition{3}            \\
 									\mymiddlerule
-									Sujet~$A$                         & Sujet~$A$                         & Sujet~$A$ et $B$                  \\
-									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+									Sujet~$\mathcal{A}$                  & Sujet~$\mathcal{A}$                  & \myGlosnl{glo-Binome}~$\mathcal{AB}$ \\
+									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
 									\mymiddlerule
-									Sujet~$B$                         & Sujet~$A$ et $B$                  & Sujet~$A$                         \\
-									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+									Sujet~$\mathcal{B}$                  & \myGlosnl{glo-Binome}~$\mathcal{AB}$ & Sujet~$\mathcal{A}$                  \\
+									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
 									\mymiddlerule
-									Sujet~$A$ et $B$                  & Sujet~$B$                         & Sujet~$B$                         \\
-									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+									\myGlosnl{glo-Binome}~$\mathcal{AB}$ & Sujet~$\mathcal{B}$                  & Sujet~$\mathcal{B}$                  \\
+									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
 								\end{tabular}
 							} \\
 							\mybottomrule
@@ -480,10 +511,10 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Resultats]{Résultats}
-				Cette section va présenter tous les résultats de cette première étude concernant la recherche lors d'une tâche complexe de collaboration.
-				Les données, confrontées à un test de \mycite[author]{Shapiro-1965}, ne décrivent pas une loi normale.
+				Cette section va présenter tous les résultats de cette première étude concernant la recherche et la sélection sur une tâche complexe de collaboration.
+				Les données, confrontées à un test de \mycite[author]{Shapiro-1965}, ne sont pas distribuées selon une loi normale.
 				Cependant, un test de \mycite[author]{Brown-1974} permet de confirmer l'\myglos{glo-Homoscedasticite}.
-				L'analyse de la variance est alors pratiquée à l'aide d'un test de \mycite[author]{Friedman-1940}, adapté pour les \myglos{glo-VariableIntraPopulation} non-paramètriques.
+				L'analyse de la variance est alors pratiquée à l'aide d'un test de \mycite[author]{Friedman-1940}, adapté pour les \myglos*{glo-VariableIntraPopulation} non-paramètriques.
 				\begin{mysubsection}[sse-exp1-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.008cm}
@@ -510,7 +541,7 @@
 
 					La \myfigureref{fig-exp1-TempsDeCompletionComparesMonomeOuBinomeParResidu} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
 					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
-					Cependant, en se limitant au groupe de trois \myglos*{glo-Residu} les plus longs à achever (\myresidue{6}, \myresidue{9} et \myresidue{10}), on montre un effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
+					Cependant, en se limitant au groupe de trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, on montre un effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.0069cm}
@@ -528,11 +559,11 @@
 					L'analyse montre également un effet significatif des \myglos*{glo-Residu} \myvari{2} sur les temps de sélection (\myanova{exp1-timeaudio-residue-searchselection-anova-selection.tex}).
 					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} obtient un temps de sélection significativement plus long que les autres \myglos*{glo-Residu}.
 
-					La molécule \myTRPCAGE présente un nombre total de \myglos*{glo-Residu} relativement limité à examiner.
-					Les sujets construisent rapidement une carte mentale de la molécule \myTRPCAGE afin de trouver rapidement les \myglos*{glo-Residu} recherchés.
-					De plus, les contraintes physiques de la molécule rend le \myTRPCAGE plus aisé à déformer.
-					Cela facilite la recherche des \myglos*{glo-Residu} qui sont en position interne à la molécule.
-					Tous ces facteurs rendent les tâches de recherche sur les \myglos*{glo-Residu} peu complexes sur la molécule \myTRPCAGE.
+					La molécule \myTRPCAGE présente un nombre de \myglos*{glo-Residu} à examiner relativement limité.
+					Les sujets construisent rapidement une carte mentale de la molécule afin de trouver rapidement les \myglos*{glo-Residu} recherchés.
+					De plus, les faibles contraintes physiques de la molécule la rende facile à déformer.
+					Cela facilite la recherche des \myglos*{glo-Residu} qui sont en position interne à la molécule et qui nécessite une déformation.
+					Tous ces facteurs rendent les tâches de recherche et de sélection peu complexes sur la molécule \myTRPCAGE.
 
 					La molécule \myPrion possède un nombre de \myglos*{glo-Residu} beaucoup plus important.
 					La construction complète d'une carte mentale est très complexe, d'autant plus que les sujets ne sont confrontés à la molécule que dix fois (cinq fois en \myglos{glo-Monome} et cinq fois en \myglos{glo-Binome}).
@@ -540,24 +571,25 @@
 					Tout d'abord, ils débutent par une recherche exploratoire qui permet de découvrir tous les \myglos*{glo-Residu}  en position externe à la molécule (\myresidue{7} et \myresidue{8}).
 					Ensuite, lorsque cette première phase d'exploration ne permet pas d'achever la tâche de recherche, les sujets déforment la molécule afin d'accéder aux \myglos*{glo-Residu} en position interne (\myresidue{6}, \myresidue{9} et \myresidue{10}).
 
-					Le travail en \myglos{glo-Binome} n'améliore pas les performances sur la tâche par rapport au travail en \myglos{glo-Monome} bien que la \mypvalue soit seulement très légérement au-dessus de \mynum{0.05}.
+					Le travail en \myglos{glo-Binome} n'améliore pas les performances sur la tâche par rapport au travail en \myglos{glo-Monome} bien que la \mypvalue soit seulement très légèrement au-dessus du seuil.
 					Cependant, une évaluation de l'ensemble des \myglos*{glo-Residu} proposés a permis d'identifier des tâches de complexités variables : les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} apparaissent comme significativement plus complexes que les autres \myglos*{glo-Residu}.
-					Sur ce groupe de \myglos*{glo-Residu}, les \myglos*{glo-Binome} obtiennent une amélioration significative des performances par rapport aux \myglos*{glo-Monome}.
+					Sur ce groupe de \myglos*{glo-Residu}, les \myglos*{glo-Binome} obtiennent une amélioration significative des performances par rapport aux \myglos*{glo-Monome} ce qui confirme notre hypothèse \myhypothesis{1} sur les tâches complexes.
 
 					Comme développé dans la procédure expérimentale, le temps de complétion de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myfigureref*{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
 					Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} se distinguent par un temps de recherche significativement plus important que les autres \myglos*{glo-Residu}.
-					En effet, ce sont les deux \myglos*{glo-Residu} qui possèdent des similarités avec d'autres \myglos*{glo-Residu} également présents dans la molécule (possédant un atome en moins ou en plus par rapport au \myglos{glo-Residu} recherché).
+					En effet, ce sont les deux \myglos*{glo-Residu} qui possèdent des similarités avec d'autres \myglos*{glo-Residu} également présents dans la molécule \mytableref*{tab-exp1-ParametresDeComplexiteDesResidus}.
 					À cause de ces similarités, l'œil des sujets est continuellement attiré vers ces \myglos*{glo-Residu} similaires et une perte de temps significative se fait ressentir dans la phase de recherche.
 
 					En contre-partie, le \myglos{glo-Residu} \myresidue{6} se distingue par un temps de sélection significativement plus important que les autres \myglos*{glo-Residu}.
 					Ce \myglos{glo-Residu} possède deux atomes de \myatom{Soufre} de couleur jaune ce qui les rends très distinguables malgré le nombre importants d'atomes de la molécules.
 					Le temps de recherche s'en trouve extrêmement réduit.
-					Cependant, le seul \myglos{glo-Residu} disponible se positionnant au centre de la molécule, la sélection nécessite de \myemph{déplier} en grande partie la molécule afin de pouvoir le sélectionner.
+					Cependant, ce \myglos{glo-Residu} est positionné au centre de la molécule.
+					La sélection nécessite de \myemph{déplier} en grande partie la molécule afin de pouvoir l'atteindre et le sélectionner.
 
 					L'analyse met en évidence trois configurations concernant l'allocation du temps pour achever la tâche :
 					\begin{description}
-						\item[Différence entre recherche et sélection]
-							Cette configuration ne montre aucune différence entre le temps de recherche et le temps de sélection.
+						\item[Recherche et sélection]
+							Cette configuration se constitue d'un temps identique alloué à la recherche et à la sélection.
 							Ces \myglos*{glo-Residu} sont ceux qui ne présentent pas de réelle complexité (la molécule \myTRPCAGE et les \myglos*{glo-Residu} \myresidue{7} et \myresidue{8} de la molécule \myPrion) et sur lesquels, le travail collaboratif n'améliore pas les performances.
 						\item[Prédominance de la recherche]
 							Cette configuration alloue un temps relativement important à la recherche de l'objectif.
@@ -596,6 +628,9 @@
 						\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix]{Distance moyenne entre les sujets pour chaque \myglosnl{glo-Binome} sur les \myglosnl*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10}}
 					\end{myfigure}
 
+					La \myfigureref{fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix} présente la distance moyenne entre les espaces de travail \myvard{2} de chaque \myglos{glo-Binome}.
+					Les \myglos*{glo-Binome} peuvent être classés en trois groupes : \myemph{espace distant}, \myemph{espace voisin} et \myemph{espace proche}.
+
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.5cm}
 						\begin{myps}(-1.5,-1.75)(12,5.25)
@@ -604,6 +639,9 @@
 						\end{myps}
 						\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
+
+					La \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} présente les affinités \myvard{4} de chaque \myglos{glo-Binome}.
+					Les notes, comprises entre un et cinq, montre que les \myglos*{glo-Binome} choisis ont des affinités relativement variées.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.0075cm}
@@ -614,6 +652,10 @@
 						\mycaption[fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome]{Temps de complétion entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
+					La \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Binome}.
+					Le temps de complétion de \mygroup{1} est particulièrement important (plus d'une fois et demi les autres groupes les plus longs).
+					À l'opposé, on note que \mygroup{2}, \mygroup{3} et \mygroup{4} obtiennent des temps extrêmement bas.
+
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.04cm}
 						\begin{myps}(-1.5,-22)(12,75)
@@ -622,6 +664,10 @@
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome]{Temps de communication verbale entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
+
+					La \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} présente les temps de communication verbale \myvard{3} de chaque \myglos{glo-Binome}.
+					\mygroup{2}, \mygroup{3} et \mygroup{4} ont des temps de communication verbale inférieurs à \mynum[s]{20}.
+					À l'opposé, \mygroup{1}, \mygroup{5} et \mygroup{11} ont des temps de communication verbale qui approche les \mynum[s]{60}.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.03cm}
@@ -633,6 +679,12 @@
 						\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection des sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
+					La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} présente les pourcentages de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome}.
+					Le pourcentage représente le rapport du temps de communication verbale durant la phase recherche ou de sélection rapporté respectivement au temps total de la phase de recherche ou de sélection.
+					Les \myglos*{glo-Binome} \mygroup{1} à \mygroup{4} ainsi que \mygroup{9} communiquent plus durant la phase de sélection.
+					Les \myglos*{glo-Binome} \mygroup{5} à \mygroup{8} et \mygroup{10} à \mygroup{12} communiquent plus durant la phase de recherche.
+					Notons également que \mygroup{1} communique assez peu par rapport aux autres \myglos*{glo-Binome}.
+
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=1cm}
 						\begin{myps}(-1.5,-1)(12,3.5)
@@ -643,18 +695,11 @@
 						\mycaption[fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome]{Force moyenne et différence de force entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
-					La \myfigureref{fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix} présente la distance moyenne entre les espaces de travail \myvard{2} de chaque \myglos{glo-Binome}.
-					Les \myglos*{glo-Binome} peuvent être classés en trois groupes : \myemph{espace distant}, \myemph{espace voisin} et \myemph{espace proche}.
-					La \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} présente les affinités \myvard{4} de chaque \myglos{glo-Binome}.
-					La \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Binome}.
-					La \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} présente les temps de communication verbale \myvard{3} de chaque \myglos{glo-Binome}.
-
-					La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} présente les pourcentage de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome}.
-					Le pourcentage représente le rapport du temps de communication verbale durant la phase recherche ou de sélection sur le temps total de la phase de recherche ou de sélection.
-
 					La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} représente la force moyenne et la différence de force entre les sujets.
 					La force moyenne est la moyenne des forces moyennes des deux sujets.
 					La différence de force est la différence des forces moyennes des deux sujets.
+					\mygroup{9} et \mygroup{11} apporte un effort moyen très important par rapport aux autres \myglos*{glo-Binome}.
+					\mygroup{2}, \mygroup{3} et \mygroup{4} apporte un effort moyen important également tout en ayant une différence de force quasiment nulle entre les deux membres du \myglos{glo-Binome}.
 
 					Les distances moyennes entre les espaces de travail, données dans le référentiel du monde réel, sont comprises entre \mynum[mm]{3} et \mynum[mm]{18}.
 					Ces distances mènent à trois différents types de stratégies :
@@ -663,35 +708,38 @@
 						\item[Champ voisin] pour les distances comprises entre \mynum[mm]{8} et \mynum[mm]{14};
 						\item[Champ distant] pour les distances supérieures à \mynum[mm]{14}.
 					\end{description}
+
+					Ces différentes stratégies, qui confirme notre hypothèse \myhypothesis{2}, sont caractérisées de façon précise dans les sections suivantes.
+
 					\begin{mysubsubsection}[sss-exp1-ChampProche]{Champ proche}
-						Les interactions en champs proches inférieure à \mynum[mm]{8} correspondent, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\AA\ désigne l'\AA ngström qui est une distance telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
+						Les interactions en champs proches, inférieure à \mynum[mm]{8}, correspondent, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\AA\ désigne l'\AA ngström qui est une unité de mesure telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
 						\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{5}, \mygroup{6}, \mygroup{7}, \mygroup{8}, \mygroup{9}, \mygroup{10}, \mygroup{11} et \mygroup{12}).
-						Cela signifie que ce sont des \myglos*{glo-Binome} qui travaillent en collaboration étroite.
+						Ces \myglos*{glo-Binome} travaillent en collaboration étroite.
 
 						Sur la \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration étroite ont de fortes affinités ($\mu = 4$) : ce sont des collègues proches ou des amis.
-						D'après la \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de complétion de la tâche relativement moyen comparés aux autres stratégies de travail.
+						D'après la \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de complétion de la tâche relativement moyens comparés aux autres stratégies de travail.
 						Cela se traduit également par une communication relativement moyenne comme affiché sur la \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
 
-						En observant plus précisément les temps de communication verbale sur la \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}, les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer dans la phase de recherche que dans la phase de sélection.
+						En observant plus précisément les temps de communication verbale sur la \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}, les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer dans la phase de recherche que dans la phase de sélection (excepté pour \mygroup{9}).
 						Ces résultats tendent à prouver les difficultés du travail en champ proche liées aux nombreux conflits durant la phase de recherche.
 
 						La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre des disparités entre les \myglos*{glo-Binome} concernant la force moyenne.
 						Des observations durant l'expérimentation ont permis de déterminer deux stratégies différentes :
 						\begin{description}
-							\item[Contrôle redondant] pendant lequel les deux sujets effectuent la même action pour obtenir un meilleur contrôle sur les structures manipulées;
+							\item[Contrôle redondant] où les deux sujets effectuent la même action pour obtenir un meilleur contrôle sur les structures manipulées;
 							\item[Guidage gestuel] où un des deux sujets indique à son partenaire la déformation à effectuer ou la position à atteindre.
 						\end{description}
 						Ces deux stratégies impliquent une communication étroite entre les sujets afin de coordonner au mieux les actions.
 
 						Cependant, les différences importantes de forces appliquées \myfigureref*{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} ou l'analyse des communications verbales montre des conflits importants au sein des \myglos*{glo-Binome}.
-						En effet, la grande complexité des tâches considérées couplé à une mauvaise perception de l'environnement et de son partenaire mène à une mauvaise coordination et à des inter-référencements inexacts.
+						En effet, la grande complexité des tâches considérées couplé à une mauvaise conscience de l'environnement et de son partenaire mène à une mauvaise coordination et à des inter-référencements inexacts.
 						Les communications verbales révèlent de nombreuses incompréhension dans l'inter-référencement (\og Pas dans cette direction \fg, \og Pas ici mais ici \fg, \og C'est juste derrière \fg, \myetc).
-						Ces conflits et incompréhensions limite les performances du \myglos{glo-Binome}.
+						Ces conflits et incompréhensions limitent les performances du \myglos{glo-Binome}.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp1-ChampVoisin]{Champ voisin}
-						Les interactions en champ voisin comprises entre \mynum[mm]{8} et \mynum[mm]{14} correspondent, dans l'environnement virtuel, à des distances de l'ordre de \myglos*{glo-Residu} voisins (entre \mynum[\AA]{10} et \mynum[\AA]{20}).
+						Les interactions en champ voisin, comprises entre \mynum[mm]{8} et \mynum[mm]{14}, correspondent, dans l'environnement virtuel, à des distances de l'ordre de \myglos*{glo-Residu} voisins (entre \mynum[\AA]{10} et \mynum[\AA]{20}).
 						\mynum{3}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{2}, \mygroup{3} et \mygroup{4}).
-						Ces \myglos*{glo-Binome} travaillent en collaboration relativement étroite dans les \myglos*{glo-Residu} voisins.
+						Ces \myglos*{glo-Binome} travaillent en collaboration relativement étroite sur des \myglos*{glo-Residu} voisins.
 						Les \myglos*{glo-Residu} voisins sont dépendants physiquement ou structurellement comme indiqué sur la \myfigureref{fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus}.
 
 						\begin{myfigure}
@@ -718,74 +766,87 @@
 						Sur la \myfigureref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration moyennement couplées ont des affinités moyennes ($\mu = 3$) : ce sont des collègues.
 						D'après la \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de complétion de la tâche.
 						De plus, la \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre une communication verbale assez limitée.
-						La manipulation en champ voisin permet d'être continuellement conscients des actions du partenaire ce qui évite les communications verbales.
-						Cependant, les sujets manipulent des \myglos*{glo-Residu} différents ce qui évite les conflits d'interactions qui interviennent en champ proche.
+						La manipulation en champ voisin permet d'être continuellement conscient des actions du partenaire ce qui évite les communications verbales.
+						Cependant, les sujets manipulent des \myglos*{glo-Residu} différents ce qui limite les conflits d'interactions qui interviennent en champ proche.
 
 						La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montre que la stratégie complémentaire de travail en champ voisin est plus performante dans la phase de recherche.
 
 						La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} illustre une bonne répartition des efforts entre les deux membres du \myglos{glo-Binome}.
-						En effet, la force moyenne est assez élevée par rapport à la plupart des autres \myglos*{glo-Binome} ce qui montre qu'aucun des deux sujets n'est moins actif (ce qui entraînerait une force moyenne peu élevée).
-						La différence de force moyenne quasi-nulle entre les deux sujets confirme cette constatation.
+						En effet, la force moyenne est assez élevée par rapport à la plupart des autres \myglos*{glo-Binome} ce qui montre qu'aucun des deux sujets n'est moins actif (ce qui entraînerait une force moyenne moins élevée).
+						La différence des forces moyennes quasi-nulle entre les deux sujets confirme ce résultat.
 						Ceci peut s'expliquer par une bonne coordination pendant laquelle les deux membres du \myglos{glo-Binome} vont effectuer des actions complémentaires mais de même intensité.
 						La stratégie adoptée peut être définie de la façon suivante :
 						\begin{description}
 							\item[Manipulation complémentaire] où les deux sujets sont attentifs aux actions de leur partenaire afin d'avoir un meilleur contrôle du processus de déformation par une synchronisation améliorée.
 						\end{description}
-						L'analyse des communication verbales concerne beaucoup des points de synchronisation (\og Maintenant, prends ça \fg, \og peux-tu m'aider ici ? \fg, \og Bien ! \fg, \myetc).
-						Les performances des \myglos*{glo-Binome} travaillant en champ voisin sont relativement élevées bien que quelques conflits similaires à ceux rencontrés en champs proches soient présents mais en nombre plus limité.
+						L'analyse des communication verbales concerne beaucoup les phases de synchronisation (\og Maintenant, prends ça \fg, \og peux-tu m'aider ici ? \fg, \og Bien ! \fg, \myetc).
+						Les performances des \myglos*{glo-Binome} travaillant en champ voisin sont relativement élevées bien que quelques conflits similaires à ceux rencontrés en champs proches soient présents bien que plus limités en nombre.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp1-ChampDistant]{Champ distant}
-						Les interactions en champ voisin supérieures à \mynum[mm]{14} correspondent, dans l'environnement virtuel, à des \myglos*{glo-Residu} sans interaction physique (supérieur à \mynum[\AA]{20}).
-						\mynum{1}~\myglos*{glo-Binome} sur \mynum{12} est concerné par cette catégorie (\myglos{glo-Binome} \mygroup{1}).
-						Ce \myglos*{glo-Binome} travaille de façon faiblement couplée.
+						Les interactions en champ voisin, supérieures à \mynum[mm]{14}, correspondent, dans l'environnement virtuel, à des \myglos*{glo-Residu} sans interaction physique (supérieur à \mynum[\AA]{20}).
+						\mynum{1}~\myglos{glo-Binome} sur \mynum{12} est concerné par cette catégorie (\myglos{glo-Binome} \mygroup{1}).
+						Ce \myglos{glo-Binome} travaille de façon faiblement couplée.
 						En effet, les membres de ce \myglos{glo-Binome} travaillent de façon complétement indépendante, en limitant au maximum le nombre d'interactions.
 
 						Les affinités des membres de ce \myglos{glo-Binome} sont très faibles \myfigureref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} : les membres ne se connaissent presque pas.
 						De plus, le \myglos{glo-Binome} obtient de très mauvaises performances en ce qui concerne le temps de complétion de la tâche comme le montre la \myfigureref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}.
 						La \myfigureref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre que le temps de communication verbale est assez important.
 						Cependant, le temps de complétion étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myfigureref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}.
-						En effet, les membres du \myglos{glo-Binome} travaillant à distance, leurs interactions sont peu nombreuses ce qui implique peu de communication verbale.
-						La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montre également que ce \myglos{glo-Binome} est plus performant sur les phases de recherche que sur les phases de sélection.
+						En effet, les membres du \myglos{glo-Binome} travaillant à distance, leurs interactions sont peu nombreuses ce qui implique peu de gestion de conflits et donc peu de communication verbale.
+						La \myfigureref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
+						En effet, les phases de sélection ont tendance à force la collaboration étroite et favorise ainsi les conflits.
 
 						La \myfigureref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} illustre un effort moyen moins élevé que les \myglos*{glo-Binome} manipulant en champ voisin.
 						De plus, on constate une forte disparité entre les deux membres du \myglos{glo-Binome}.
-						Ces observations montre une faible collaboration.
+						Ces observations montre encore une fois la faible collaboration.
 
-						Chaque sujet manipulant en champs distants a chacun sa propre stratégie et son propre espace de travail.
-						Les interactions sont limités au maximum.
+						Chaque sujet manipulant en champ distant défini chacun sa propre stratégie et son propre espace de travail.
+						Les interactions sont limitées au maximum.
 						Cette configuration réduit considérablement les conflits d'interaction ainsi que la communication.
 						Cependant, elle nuit beaucoup aux performances du groupe dans son ensemble.
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-ResultatsQualitatifs]{Résultats qualitatifs}
+					Les résultats qualitatifs sont constitués de deux parties.
+					La première permet de déterminer les impressions des sujets concernant la collaboration, les rôles et efficacité de chacun durant la tâche.
+					La seconde partie a pour but d'évaluer la plate-forme.
+					Toutes les notes sont comprises entre un et cinq (échelle de \mycite[author]{Likert-1932} à cinq niveaux).
 					\begin{mysubsubsection}[sss-exp1-EvaluationDeLaCollaboration]{Évaluation de la collaboration}
 						Les résultats du questionnaire montre qu'une majorité des sujets de cette expérimentation ont préféré et apprécié la réalisation de la tâche en configuration collaborative (\mysummary{exp1-evaluation-group.tex}).
 						De plus, le sentiment d'effectuer une tâche en collaboration est fort.
+						L'hypothèse \myhypothesis{3} est confirmée par les sujets qui préférent la configuration collaborative à la configuration seule.
+						Ceci valide à la fois la pertinence de la plate-forme mais également la pertinence des travaux de recherche sur le travail collaboratif.
+
 						Durant ce travail collaboratif, chaque sujet considère qu'il a effectivement contribué à la réalisation de la tâche (\mysummary{exp1-evaluation-help.tex}).
-						Cependant, les sujets ne considèrent pas que la réalisation de la tâche a provoqué la création d'une configuration avec un meneur et un suiveur (\mysummary{exp1-evaluation-leader.tex}).
+						Cependant, les sujets ne considèrent qu'ils se soient imposés en meneur ou en suiveur (\mysummary{exp1-evaluation-leader.tex}).
 						En effet, des questions supplémentaires ont permis de mettre en évidence que chaque sujet a tendance à surestimer le rôle du partenaire ($\approx$~\mynum[\%]{70}).
 
-						Il est important de conserver cette impression que le partenaire est plus performant.
-						En effet, cette configuration mène à une confiance mutuelle sur la qualité du travail effectué par le partenaire, point nécessaire à toute collaboration.
-						Tout sujet n'ayant aucun estime pour le partenaire passerait son temps à vérifier le travail effectué et entraînerait une perte significative des performances générales du groupe.
+						L'estime du partenaire est important dans le travail collaboratif.
+						En effet, la collaboration mène à une confiance mutuelle concernant la qualité du travail effectué par le partenaire, nécessaire à toute collaboration.
+						Tout sujet n'ayant aucune estime pour le partenaire passerait son temps à vérifier le travail déjà effectué par le partenaire et entraînerait une perte significative des performances générales du groupe.
 						De plus, chaque sujet se considère utile pour la réalisation de la tâche.
 						Le cas contraire aurait pour effet qu'un des participants s'isole de lui-même, soustrayant ainsi son potentiel de l'action collaborative.
 
+
 						Concernant la communication, les participants estiment que le principal canal de communication a été verbal (\mysummary{exp1-evaluation-verbal.tex}) et, dans une proportion plus faible mais tout de même importante, virtuel (\mysummary{exp1-evaluation-virtual.tex}).
-						En ce qui concerne la communication gestuelle, ils la considèrent comme inexistante (\mysummary{exp1-evaluation-gestural.tex}).
+						En ce qui concerne la communication gestuelle, ils la considèrent comme quasiment inexistante (\mysummary{exp1-evaluation-gestural.tex}).
 
 						La communication gestuelle n'est pas ou peu utilisée pour plusieurs raisons.
 						La principale raison est la difficulté de communiquer par geste lorsque les mains sont occupées à la manipulation.
-						Deuxièmement, les sujets ont rapidement opté pour le canal virtuel qui est plus précis dans les tâches de désignation qui constituent la plupart des besoins de communication.
+						Deuxièmement, les sujets ont rapidement adopté le canal virtuel qui est plus précis dans les tâches de désignation qui constituent la plupart des besoins de communication.
 						La communication verbale reste le canal principal de communication : c'est le canal le plus naturel pour communiquer.
 						Cependant, il vient aussi en soutien du canal virtuel.
-						En effet, aucun outil visuel ou haptique n'a été fourni pour effectuer des tâches de désignation et le seul canal virtuel serait incapable de remplir seul cette mission.
+						En effet, aucun outil visuel ou haptique n'a été fourni pour effectuer des tâches de désignation et le canal virtuel seul serait incapable de remplir seul cette mission.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp1-EvaluationDuSysteme]{Évaluation du système}
 						L'évaluation du système en terme d'intuitivité comme en terme de confort est relativement satisfaisante.
 						En effet, en ce qui concerne l'intuitivité des graphismes et effets visuels, les participants les trouve accessibles (\mysummary{exp1-platform-visual-intuitive.tex}).
-						Il est en va de même en ce qui concerne l'intuitivité des interactions haptiques du système (\mysummary{exp1-platform-interaction-intuitive.tex}).
+						Il est en va de même en ce qui concerne l'intuitivité des interactions avec le système (\mysummary{exp1-platform-interaction-intuitive.tex}).
 						Pour le confort, le visuel (\mysummary{exp1-platform-visual-confortable.tex}) et les interactions (\mysummary{exp1-platform-interaction-confortable.tex}) jouissent d'une évaluation similaire.
+
+						Là encore, les sujets valident l'hypothèse \myhypothesis{3}.
+						La plate-forme est relativement bien évaluée.
+						Il semble cependant nécessaire d'apporter encore des améliorations afin de répondre au mieux aux attentes des utilisateurs.
 
 						Ces résultats sont cependant à nuancer.
 						Les écart-types sont relativement élevés ce qui veut dire qu'il y a de fortes disparités dans ces notations entre les différents sujets : certains sujets se sont déclarés plutôt insatisfaits concernant le confort (visuel : \mynum{2}, interaction : \mynum{2}).
@@ -797,40 +858,39 @@
 			\begin{mysection}[sec-exp1-Synthese]{Synthèse}
 				\begin{mysubsection}[sse-exp1-ResumeDesResultats]{Résumé des résultats}
 					Dans ce chapitre, nous avons observé et comparé les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} pendant une tâche de recherche et de sélection sur une simulation moléculaire en temps-réel.
-					L'objectif était de montrer l'intérêt du travail collaboratif pour améliorer les performances et d'identifier les différentes stratégies de travail.
+					L'objectif était de montrer l'intérêt du travail collaboratif dans l'amélioration des performances et d'identifier les différentes stratégies de travail.
 					De plus, il fallait valider la pertinence du système mis en place.
 
 					La collaboration a prouvé son intérêt, notamment sur les tâches les plus complexes.
 					La complexité d'une tâche est relativement difficile à établir.
-					Le nombre d'atomes (et donc le nombre de \myglos*{glo-Residu}) joue un rôle important dans cette complexité : l'environnement virtuel en devient surchargé et difficile à appréhender.
-					Un autre facteur de complexité est l'amplitude des contraintes physiques pour parvenir à l'objectif.
+					Le nombre d'atomes (et donc le nombre de \myglos*{glo-Residu}) joue un rôle important dans cette complexité : l'environnement virtuel devient surchargé et difficile à appréhender.
+					Un autre facteur de complexité est l'amplitude des contraintes physiques qui interviennent dans la molécule.
 
 					En observant et en analysant les différentes stratégies de travail, il ressort que le travail en champ proche comme le travail en champ distant ne sont pas des stratégies très performantes.
-					En effet, en champ proche, le nombre de conflits augmente significativement; en champ distant, tout l'intérêt du travail collaboratif est perdu.
-					Le travail en champ voisin constitue un juste milieu qui souffre cependant, encore, de quelques problèmes de conflits.
+					En effet, le nombre de conflits en champ proche augmente significativement; en champ distant, tout l'intérêt du travail collaboratif est perdu.
+					Le travail en champ voisin constitue un juste milieu performant.
 
-					Enfin, la collaboration est bénéfique aux partenaires.
-					Il paraît nécessaire d'avoir de bonnes relations avec ces partenaires afin d'apporter à la fois, une communication saine et un respect mutuel du travail effectué.
-					Cependant, les résultats montre de façon évidente que tout déséquilibre dans le groupe mène à des performances dégradées.
+					Enfin, il paraît nécessaire d'avoir de bonnes relations avec ces partenaires afin d'apporter à la fois, une communication saine et un respect mutuel du travail effectué.
+					Cependant, les résultats montrent de façon évidente que tout déséquilibre dans le groupe mène à des performances dégradées.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Perspectives]{Perspectives}
 					Basés sur les résultats précédents, certaines perspectives assez évidentes s'imposent et ont guidé les expérimentations qui suivent.
 					Tout d'abord, il semble nécessaire de proposer des tâches suffisamment complexes pour pouvoir étudier plus en détail le travail collaboratif.
-					Ceci se traduit soit par la proposition de tâche à fortes zones de contraintes \mychapterref*{cha-LaManipulationCollaborative} ou la manipulation de molécules de taille importante \mychapterref*{cha-LesDynamiquesDeGroupe}.
+					Ceci se traduit soit par des tâches à fortes zones de contraintes \mychapterref*{cha-LaManipulationCollaborative} ou par la manipulation de molécules de taille importante \mychapterref*{cha-LesDynamiquesDeGroupe}.
 
 					Les différentes stratégies observées ont permis de mettre en évidence l'intérêt du travail en champ voisin.
-					Les propositions d'outils visuo-haptiques tiennent compte de ce paramètre : ils encouragent le travail rapproché en fournissant des assistance au travail en champ voisin tout en maintenant une distance minimum afin de limiter les conflits liés au travail en champ proche.
+					Les propositions d'outils visuo-haptiques devront tenir compte de ce paramètre : ils devront encouragert le travail rapproché en fournissant une assistance en champ voisin tout en maintenant une distance minimum afin de limiter les conflits liés au travail en champ proche.
 
-					L'évaluation qualitative par questionnaire apport également de nombreuses réponses intéressantes.
-					Tout d'abord, les sujets ont mis un point important en avant : le canal de communication virtuel est important.
+					L'évaluation qualitative par questionnaire apporte également de nombreuses réponses intéressantes.
+					Tout d'abord, les sujets ont mis en avant un élément primordial de la communication : le canal virtuel est important.
 					À l'aide d'observations durant les phases expérimentales, ce canal de communication est principalement exploité pour des actions de désignation.
 					Fournir des outils spécifiquement conçus pour la désignation devient une nécessité.
 
 					Enfin, ces évaluations qualitatives ont permis de valider l'\myacro{acr-EVC} proposé.
-					Des améliorations sont cependant nécessaires en ce qui concerne le visuel et les interactions.
-					De nombreux sujets ont par exemple demandé une mise en surbrillance du \myglos{glo-Residu} survolé sans restreindre cette mise en surbrillance à l'action de sélection.
+					Des améliorations sont cependant nécessaires en ce qui concerne le rendu visuel et les interactions.
+					De nombreux sujets ont par exemple demandé une mise en surbrillance du \myglos{glo-Residu} survolé.
 					Une assistance haptique pour la sélection est également une des améliorations possibles.
-					Ces améliorations ne sont pas implémentées dans les deux études suivantes pour ne pas alourdir les outils et ainsi biaiser l'étude.
+					Ces améliorations ne sont pas implémentées dans les deux expérimentations suivantes pour ne pas alourdir les outils et ainsi ne pas biaiser l'étude.
 					Cependant, ils sont implémentés pour la dernière expérimentation \mychapterref*{cha-TravailCollaboratifAssisteParHaptique}.
 				\end{mysubsection}
 			\end{mysection}
@@ -1224,7 +1284,7 @@
 					\end{myfigure}
 				\end{myTodo}
 				\begin{myTodo}{Deux configurations possibles}{Les deux configurations font intervenir trois ou quatre sujets; il faut enlever un des 2 paragraphes}
-					\begin{myparagraph}{Configuration à trois sujets}
+					\begin{myparagraph}[par-exp4-ConfigurationATroisSujets]{Configuration à trois sujets}
 						Les sujets effectueront l'expérimentation par groupe de trois utilisateurs.
 						Ils ont la possibilité de communiquer entre eux sans restriction.
 						Un des sujets aura le rôle du \myemph{coordinateur} avec des outils haptiques différents des deux autres sujets qui auront des rôles d'\myemph{opérateurs}.
@@ -1240,7 +1300,7 @@
 							\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
 						\end{itemize}
 					\end{myparagraph}
-					\begin{myparagraph}{Configuration à quatre sujets}
+					\begin{myparagraph}[par-exp4-ConfigurationAQuatreSujets]{Configuration à quatre sujets}
 						Les sujets effectueront l'expérimentation par groupe de quatre utilisateurs.
 						Ils ont la possibilité de communiquer entre eux sans restriction.
 
@@ -1367,7 +1427,7 @@
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp4-LesOutilsDisponibles]{Les outils disponibles}
 						\begin{myTodo}{Deux configurations possibles}{Les deux configurations font intervenir trois ou quatre sujets; il faut enlever un des 2 paragraphes}
-							\begin{myparagraph}{Configuration à trois sujets}
+							\begin{myparagraph}[par-exp4-ConfigurationATroisSujets]{Configuration à trois sujets}
 								Les sujets effectueront l'expérimentation par groupe de trois utilisateurs.
 								Ils ont la possibilité de communiquer entre eux sans restriction.
 								Un des sujets aura le rôle du \myemph{coordinateur} avec des outils haptiques différents des deux autres sujets qui auront des rôles d'\myemph{opérateurs}.
@@ -1383,7 +1443,7 @@
 									\item désigner un \myglos{glo-Residu} nécessitant une manipulation par les \myemph{opérateurs}.
 								\end{itemize}
 							\end{myparagraph}
-							\begin{myparagraph}{Configuration à quatre sujets}
+							\begin{myparagraph}[par-exp4-ConfigurationAQuatreSujets]{Configuration à quatre sujets}
 								Les sujets effectueront l'expérimentation par groupe de quatre utilisateurs.
 								Ils ont la possibilité de communiquer entre eux sans restriction.
 
