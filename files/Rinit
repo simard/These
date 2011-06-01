@@ -12,6 +12,14 @@ global.summary <- function(x) {
 	data.frame(mean=m, variance=v, standard.deviation=s)
 }
 
+boxplot.filter <- function(values, patterns) {
+	temp = values
+	for(val in patterns) {
+		temp = replace(temp, temp==val, NA)
+	}
+	temp
+}
+
 smart.mean <- function(x) {
 	if(is.numeric(x))
 		mean(x, na.rm=T)

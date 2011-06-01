@@ -3,7 +3,7 @@ setwd("./files/")
 source("Rinit")
 out.file.barplot = get.outname(commandArgs())
 
-dat.exp1.binome = dat.exp1[dat.exp1$group.config == "binome" & (dat.exp1$pattern.number == 6 | dat.exp1$pattern.number == 9), ]
+dat.exp1.binome = dat.exp1[dat.exp1$group.config == "binome" & (dat.exp1$pattern.number == 6 | dat.exp1$pattern.number == 9 | dat.exp1$pattern.number == 10), ]
 dat.exp1.binome.filter = aggregate(
 			   dat.exp1.binome,
 			   by = list(id = dat.exp1.binome$id),
@@ -24,8 +24,11 @@ write.table(values,
 			dec = ".",
 			row.names = FALSE,
 			col.names = TRUE)
+bp = boxplot(dat.exp1$mean.diff~dat.exp1$pattern.number, plot=FALSE)
+dat.exp1$mean.diff = boxplot.filter(dat.exp1$mean.diff, bp$out)
 shapiro = shapiro.test(dat.exp1$mean.diff)
-bartlett = bartlett.test(dat.exp1$mean.diff, dat.exp1$pattern.number)
+dat.exp1.levene = na.omit(data.frame(mean.diff=dat.exp1$mean.diff, pattern.number=dat.exp1$pattern.number))
+levene = levene.test(dat.exp1.levene$mean.diff, dat.exp1.levene$pattern.number)
 grp1 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[1]],]$mean.diff
 grp2 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[2]],]$mean.diff
 grp3 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[3]],]$mean.diff
@@ -39,5 +42,5 @@ grp10 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[10]],]$mean.diff
 grp11 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[11]],]$mean.diff
 grp12 = dat.exp1[dat.exp1$id == dat.exp1.binome.filter$id[[12]],]$mean.diff
 grp = cbind(grp1, grp2, grp3, grp4, grp5, grp6, grp7, grp8, grp9, grp10)
-friedman = friedman.test(pat)
-wilcox = pairwise.wilcox.test(dat.exp1.binome.filter$mean.diff, dat.exp1.binome.filter$id, p.adj="holm", exact=FALSE, pair=TRUE)
+friedman = friedman.test(grp)
+wilcox = pairwise.wilcox.test(dat.exp1.binome.filter$mean.diff, dat.exp1.binome.filter$id, p.adj="holm", exact=TRUE, pair=TRUE)

@@ -3,7 +3,8 @@ setwd("./files/")
 source("Rinit")
 out.file.boxplot = get.outname(commandArgs())
 
-bp = boxplot(dat.exp1$time.completion~dat.exp1$pattern.number, range=2, plot=FALSE)
+bp = boxplot(dat.exp1$time.completion~dat.exp1$pattern.number, plot=FALSE)
+dat.exp1$time.completion = boxplot.filter(dat.exp1$time.completion, bp$out)
 colnames(bp$stats) = c("\\myresidue{1}","\\myresidue{2}","\\myresidue{3}","\\myresidue{4}","\\myresidue{5}","\\myresidue{6}","\\myresidue{7}","\\myresidue{8}","\\myresidue{9}","\\myresidue{10}")
 write.table(bp$stats,
 			file = out.file.boxplot,
@@ -14,8 +15,9 @@ write.table(bp$stats,
 			row.names = FALSE,
 			col.names = TRUE)
 
-shap = shapiro.test(dat.exp1$time.completion)
-lev = levene.test(dat.exp1$time.completion,dat.exp1$pattern.number)
+shapiro = shapiro.test(dat.exp1$time.completion)
+dat.exp1.levene = na.omit(data.frame(time.completion=dat.exp1$time.completion, pattern.number=dat.exp1$pattern.number))
+levene = levene.test(dat.exp1.levene$time.completion,dat.exp1.levene$pattern.number)
 pat1 = dat.exp1[dat.exp1$pattern.number == 1,]$time.completion
 pat2 = dat.exp1[dat.exp1$pattern.number == 2,]$time.completion
 pat3 = dat.exp1[dat.exp1$pattern.number == 3,]$time.completion
@@ -28,7 +30,7 @@ pat9 = dat.exp1[dat.exp1$pattern.number == 9,]$time.completion
 pat10 = dat.exp1[dat.exp1$pattern.number == 10,]$time.completion
 pat = cbind(pat1, pat2, pat3, pat4, pat5, pat6, pat7, pat8, pat9, pat10)
 friedman = friedman.test(pat)
-wilcox = pairwise.wilcox.test(dat.exp1$time.completion, dat.exp1$pattern.number, p.adj="holm", exact=FALSE, pair=TRUE)
+wilcox = pairwise.wilcox.test(dat.exp1$time.completion, dat.exp1$pattern.number, p.adj="holm", exact=TRUE, pair=TRUE)
 out.anova = friedman2tex(friedman)
 out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
 write(
