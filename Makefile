@@ -159,7 +159,7 @@ $(IMG)/Makefile: $(IMG)
 
 # Generate CSV files from R files
 $(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit $(DATABASE)
-	-$(R) $(ROPT) -f $<
+	$(R) $(ROPT) -f $<
 
 # To clean the 'build' directory
 clean:
