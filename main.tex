@@ -35,8 +35,8 @@
 	\mylot
 	\mylotodo
 	\mainmatter
-	\begin{mypart}[prt-LeSujet]{Le sujet}
-		\begin{mychapter}[cha-Introduction]{Introduction}
+	\begin{mypart}[prt-Introduction]{Introduction}
+		\begin{mychapter}[cha-LeSujet]{Le sujet}
 			\begin{mysection}[sec-EtatDeLArt]{État de l'art}
 			\end{mysection}
 			\begin{mysection}[sec-Contexte]{Contexte}
@@ -63,6 +63,40 @@
 							En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 					\end{description}
 
+				\end{mysubsection}
+			\end{mysection}
+		\end{mychapter}
+		\begin{mychapter}[app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules]{\myShaddock\ -- Système collaboratif pour la manipulation de molécules}
+			\begin{mysection}[sec-SimulationMoleculaireEnTempsReel]{Simulation moléculaire en temps-réel}
+				\begin{mysubsection}[sse-simulation-LesBesoins]{Les besoins}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-simulation-LesOutilsExistants]{Les outils existants}
+					\begin{mysubsubsection}[sss-simulation-VMD]{\myacronl+{acr-VMD}}
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-simulation-NAMD]{\myacronl+{acr-NAMD}}
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-simulation-IMD]{\myacronl+{acr-IMD}}
+					\end{mysubsubsection}
+				\end{mysubsection}
+			\end{mysection}
+			\begin{mysection}[sec-InteractionAvecLaSimulationMoleculaire]{Interaction avec la simulation moléculaire}
+				\begin{mysubsection}[sse-interaction-LesBesoins]{Les besoins}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-interaction-InteractionParInterfaceHaptique]{Interaction par interface haptique}
+					\begin{mysubsubsection}[sss-interaction-OmniEtOpenHaptics]{\myOmni et \myOpenHaptics}
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-interaction-VRPN]{\myacronl+{acr-VRPN}}
+					\end{mysubsubsection}
+				\end{mysubsection}
+			\end{mysection}
+			\begin{mysection}[sec-NouveauxOutilsPourLInteraction]{Nouveaux outils pour l'interaction}
+				\begin{mysubsection}[sse-AmeliorationDeLaSelection]{Amélioration de la sélection}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-DeformationParGroupeDAtomes]{Déformation par groupe d'atomes}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-OutilDeDesignation]{Outil de désignation}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-AppelHaptique]{Appel haptique}
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
@@ -139,7 +173,7 @@
 				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'apprentissage jusqu'à la fin de l'expérimentation.
 				Un découpage par tâche est réalisé en post-traitement.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp1-Sujets]{Sujets}
@@ -961,7 +995,7 @@
 				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
 				L'outil de manipulation (la souris \myThreeD) est laissé libre d'utilisation pour chacun des deux sujets.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp2-Sujets]{Sujets}
@@ -1288,7 +1322,7 @@
 				Une caméra vidéo de marque \mySony (\textsc{hdr-sr11e}) sera installée afin de filmer l'expérimentation.
 				L'écran de vidéo-projection ainsi que les sujets (de dos) sont dans le plan de la vidéo.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \mychapterref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 
 			\end{mysection}
 			\begin{mysection}[sec-exp4-Methode]{Méthode}
@@ -1488,7 +1522,5 @@
 	\end{mypart}
 
 	\myglossary
-	\myappendix
-	\begin{mychapter}[app-ShaddockCollaborativeVirtualEnvironmentForMolecularDesign]{\textsc{Shaddock} -- Collaborative Virtual Environment for Molecular Design}
-	\end{mychapter}
+	%\myappendix
 \end{document}
