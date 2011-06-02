@@ -49,7 +49,12 @@
 \RequirePackage[utf8]{inputenc}
 % About fonts
 \RequirePackage[T1]{fontenc}
+% Latin modern fonts offers more choices
+% WARNING: there is not bold small caps font
 \RequirePackage{lmodern}
+% Add bold fonts for TT and small-caps for Computer Modern
+% WARNING: Not compatible with Latin Modern ('lmodern' package)
+\RequirePackage{bold-extra}
 % About language
 \RequirePackage{babel}
 % Only for number printing
@@ -76,6 +81,8 @@
 %%%%%%%%%%%%%%%%%%%%
 %% Configurations %%
 %%%%%%%%%%%%%%%%%%%%
+% Substitute Computer Modern to Latin Modern for bold small caps
+\DeclareFontSubstitution{T1}{cmr}{bx}{sc}
 %%% hyperref %%%
 % Configuration of hyperref package
 \hypersetup{%
