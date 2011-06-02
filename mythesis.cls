@@ -205,8 +205,8 @@
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 % Automatic include of mini-bibliographies
-\let\oldendmychapter\endmychapter
-\def\endmychapter{\cleardoublepage\myminibiblio\oldendmychapter}
+\let\oldendmysection\endmysection
+\def\endmysection{\myminibiblio\oldendmysection}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fin de la redéfinition des différentes parties %%
