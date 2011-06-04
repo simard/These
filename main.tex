@@ -76,7 +76,57 @@
 						Parmi les plus populaires, on peut citer \myPyMOL \mycite{PyMOL-2010}, \myacro{acr-VMD} \mycite{Humphrey-1996}, \myChimera \mycite{Pettersen-2004}, \myRasmol \mycite{Sayle-1995} sans compter les nombreux dérivés permettant un affichage en ligne tel que \myJmol \mycite{Jmol-2006} par exemple pour ne citer que le plus connu.
 						\myPyMOL et \myacro{acr-VMD} se distinguent particulièrement par leurs fonctionnalités et leur large utilisation dans le milieu spécialisé.
 
-						\myPyMOL est probablement le logiciel de visualisation
+						\myPyMOL est probablement le logiciel de visualisation le plus utilisé par les experts du domaine car c'est le plus complet pour fournir des rendus graphiques élaborés de molécules.
+						Cependant, \myPyMOL n'est pas adapté à l'affichage de simulation et à la manipulation interactive, point nécessaire dans le cadre de notre étude et de nos expérimentations.
+						\myacro{acr-VMD} possède également une large gamme de rendus graphiques possible.
+						Contrairement à \myPyMOL, \myacro{acr-VMD} est adapté pour le rendu en temps-réel de simulation ainsi que pour la manipulation.
+						Les fonctionnalités de \myacro{acr-VMD} sont nombreuses et seulement certaines on été utilisés dans le cadre des expérimentations qui vont suivre.
+
+						\begin{myparagraph}[par-simulation-LesRendusGraphiques]{Les rendus graphiques}
+							La possibilité d'avoir accès à des rendus graphiques divers et complets est primordiale pour la visualisation moléculaire.
+							La complexité des molécules, le nombre important d'atomes, les nombreuses meta-informations, la structure particulière nécessite d'avoir à sa disposition des moyens évolués et variés pour afficher une molécule.
+							Quatre représentations différentes \myfigureref*{fig-simulation-IllustrationsDesRepresentationsDeMoleculesSurVMD} ont été utilisées sur la plate-forme \myShaddock :
+							\begin{description}
+								\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphère en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est importants mais on peut modifier la taille des sphères et des cylindres \myfigureref*{fig-simulation-CPK};
+								\item[\myLicorice] représente tous les liens entre les atomes par des cylindres, sans représenter les atomes; la taille des cylindres peut être modifiée \myfigureref*{fig-simulation-Licorice};
+								\item[\myNewRibbon] produit une courbe spline sur les éléments $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban avec une orientation \myfigureref*{fig-simulation-NewRibbon};
+								\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils d'affichage ainsi que les paramètres de la ligne en pointillés (couleur, largeur, \myetc) sont modifiables \myfigureref*{fig-simulation-HBonds}.
+							\end{description}
+
+							\begin{myfigure}
+								\begin{mysubfigure}
+									\myimage[width=0.49\textwidth]{simulation-CPK}
+									\mysubcaption[fig-simulation-CPK]{\myCPK}
+								\end{mysubfigure}
+								\begin{mysubfigure}
+									\myimage[width=0.49\textwidth]{simulation-Licorice}
+									\mysubcaption[fig-simulation-Licorice]{\myLicorice}
+								\end{mysubfigure}
+								\begin{mysubfigure}
+									\myimage[width=0.49\textwidth]{simulation-NewRibbon}
+									\mysubcaption[fig-simulation-NewRibbon]{\myNewRibbon}
+								\end{mysubfigure}
+								\begin{mysubfigure}
+									\myimage[width=0.49\textwidth]{simulation-HBonds}
+									\mysubcaption[fig-simulation-HBonds]{\myHBonds}
+								\end{mysubfigure}
+								\mycaption[fig-simulation-IllustrationsDesRepresentationsDeMoleculesSurVMD]{Illustration des représentations de molécules sur \myacronl{acr-VMD}}
+							\end{myfigure}
+
+							Chacune de ces représentations visuelles peut être affectée à tout ou partie de la molécule comme \og le \myglos{glo-Residu} \mynum{13} \fg, \og seulement les atomes de carbone \fg, \og tous les \myglos*{glo-Residu} entre \mynum{1} et \mynum{16} sauf les atomes d'hydrogène \fg, \myetc
+							De plus, pour chacune des représentations précédentes, différentes colorations sont possibles :
+							\begin{description}
+								\item[Couleur fixe] donne une couleur unie prédéfinie;
+								\item[Couleur des atomes] donne une couleur différente à chaque atome selon un code couleur standard (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc);
+								\item[Couleur des \myglosnl*{glo-Residu}] donne une couleur différente pour chaque atome selon une palette de couleurs prédéfinie par \myacro{acr-VMD};
+								\item[Transparence] rend transparent les objets tout en conservant la teinte colorée;
+								\item[\textit{GoodSell}] accentuant les contours des objets sous le principe du \myemph{cell shading}.
+							\end{description}
+						\end{myparagraph}
+						\begin{myparagraph}[par-simulation-LesOutilsDeManipulation]{Les outils de manipulation}
+						\end{myparagraph}
+						\begin{myparagraph}[par-simulation-LaGenerationAutomatiqueDeFichierDeSimulation]{La génération automatique de fichier de simulation}
+						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-simulation-NAMD]{\myacronl+{acr-NAMD}}
 					\end{mysubsubsection}
