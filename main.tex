@@ -142,9 +142,12 @@
 							\end{description}
 
 							Cependant, de nombreux outils supplémentaires ont été développés au-fur-et-à-mesure des besoins identifiés durant les expérimentations.
-							Ces nouveaux outils sont détaillés dans la \mysection{sec-NouveauxOutilsPourLInteraction}.
+							Ces nouveaux outils sont détaillés dans la \mysectionref{sec-NouveauxOutilsPourLInteraction}.
 						\end{myparagraph}
 						\begin{myparagraph}[par-simulation-LaGenerationAutomatiqueDeFichierDeSimulation]{La génération automatique de fichier de simulation}
+							La simulation nécessite différents fichiers d'information et notamment, l'ensemble des liaisons entre atomes, des angles simples, des angles dihédrals et des angles de torsion.
+							Ce fichier peut être obtenu à partir d'un fichier de description de molécule (fichiers \myPDB).
+							\myacro{acr-VMD} permet de générer ce fichier nécessaire à la simulation (fichier \myPSF) par l'intermédiaire d'une extension: \myemph{Automatic \textsc{psf} builder}.
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-simulation-NAMD]{\myacronl+{acr-NAMD}}
