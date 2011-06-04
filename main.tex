@@ -159,6 +159,15 @@
 						C'est pourquoi le logiciel \myacro{acr-NAMD} a été retenu pour notre plate-forme.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-simulation-IMD]{\myacronl+{acr-IMD}}
+						Les logiciels de simulation ne sont pas développés afin d'effectuer des simulations interactives en temps-réel.
+						Cependant, le \myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations interactives en temps-réel \mycite{Stadler-1997}.
+						Une extension au sein du logiciel \myacro{acr-VMD} permet de le connecter facilement avec \myacro{acr-NAMD}.
+
+						Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
+						En effet, \myMDDriver \mycite{Delalande-2009} est un petit logiciel permettant d'utiliser le protocole \myacro{acr-IMD} avec l'autre logiciel de simulation \myGromacs.
+						Il se présente sous forme d'interface permettant de choisir le logiciel de simulation ainsi que le logiciel de visualisation.
+						Il permet également de connecter plusieurs logiciels de visualisation à une même simulation.
+						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme mais c'est une amélioration technique qui sera effectuée dans des prochaines versions de la plate-forme.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
