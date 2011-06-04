@@ -77,7 +77,7 @@
 						\myPyMOL et \myacro{acr-VMD} se distinguent particulièrement par leurs fonctionnalités et leur large utilisation dans le milieu spécialisé.
 
 						\myPyMOL est probablement le logiciel de visualisation le plus utilisé par les experts du domaine car c'est le plus complet pour fournir des rendus graphiques élaborés de molécules.
-						Cependant, \myPyMOL n'est pas adapté à l'affichage de simulation et à la manipulation interactive, point nécessaire dans le cadre de notre étude et de nos expérimentations.
+						Cependant, \myPyMOL n'est pas adapté à l'affichage de simulation temps-réel et à la manipulation interactive, point nécessaire dans le cadre de notre étude et de nos expérimentations.
 						\myacro{acr-VMD} possède également une large gamme de rendus graphiques possible.
 						Contrairement à \myPyMOL, \myacro{acr-VMD} est adapté pour le rendu en temps-réel de simulation ainsi que pour la manipulation.
 						Les fonctionnalités de \myacro{acr-VMD} sont nombreuses et seulement certaines on été utilisés dans le cadre des expérimentations qui vont suivre.
@@ -167,7 +167,7 @@
 						En effet, \myMDDriver \mycite{Delalande-2009} est un petit logiciel permettant d'utiliser le protocole \myacro{acr-IMD} avec l'autre logiciel de simulation \myGromacs.
 						Il se présente sous forme d'interface permettant de choisir le logiciel de simulation ainsi que le logiciel de visualisation.
 						Il permet également de connecter plusieurs logiciels de visualisation à une même simulation.
-						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme mais c'est une amélioration technique qui sera effectuée dans des prochaines versions de la plate-forme.
+						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme mais c'est une amélioration technique qui sera effectuée dans les prochaines versions de la plate-forme.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
@@ -176,6 +176,19 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-interaction-InteractionParInterfaceHaptique]{Interaction par interface haptique}
 					\begin{mysubsubsection}[sss-interaction-OmniEtOpenHaptics]{\myOmni et \myOpenHaptics}
+						Une plate-forme de simulation interactive en temps-réel nécessite des outils d'interaction.
+						Parmi les périphériques d'interaction existants, il faut choisir un périphérique permettant au minimum six \myacro*{acr-DDL} en entrée et au minimu trois \myacro*{acr-DDL} en retour haptique.
+						En effet, l'outil \mytool{grab} nécessite six \myacro*{acr-DDL} en entrée et l'outil \mytool{tug} nécessite trois \myacro*{acr-DDL} en entrée et en retour haptique.
+						L'interface \myOmni \myfigureref*{fig-simulation-InterfaceOmniSixDDLTroisDDL} de l'entreprise \mySensAble répond aux attentes de la plate-forme.
+
+						\begin{myfigure}
+							\myimage{simulation-omni}
+							\mycaption[fig-simulation-InterfaceOmniSixDDLTroisDDL]{Interface \myOmni 6~\myacronl-{acr-DDL}/3~\myacronl-{acr-DDL}}
+						\end{myfigure}
+
+						À l'origine, les interfaces haptiques de \mySensAble était programmable à l'aide de l'\myacro{acr-API} \myGhost \mycite{SensAble-2002}.
+						Le travail de \mycite[author]{Itkowitz-2005} a permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
+						C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur la plate-forme.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-interaction-VRPN]{\myacronl+{acr-VRPN}}
 					\end{mysubsubsection}
