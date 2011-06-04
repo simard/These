@@ -191,6 +191,19 @@
 						C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur la plate-forme.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-interaction-VRPN]{\myacronl+{acr-VRPN}}
+						\myacro{acr-VMD} offre un moyen simple et relativement universel de connecter un périphérique.
+						En effet, il gère le connexions par l'intermédiaire de \myacro{acr-VRPN} \mycite{Taylor-II-2001}.
+						\myacro{acr-VRPN} fonctionne sous la forme d'une architecture client/serveur.
+						\myacro{acr-VMD} est l'application cliente.
+						L'interface haptique est connectée physiquement à un autre ordinateur (le même ordinateur le cas échéant) et un serveur \myacro{acr-VRPN} communique avec cette interface.
+						C'est seulement par l'intermédiaire de \myacro{acr-VRPN} et à travers le réseau \myemph{Ethernet} que \myacro{acr-VMD} va percevoir les mouvements de l'interface haptique et lui envoyer des efforts à fournir.
+						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu $v10.04$) a demandé quelques modifications dans le code.
+						Ces modifications sont à présent disponible dans les dernières versions de \myacro{acr-VRPN}.
+
+						L'avantage de cette architecture est la possibilité d'ajouter autant de serveurs et donc autant d'interfaces haptiques que voulu.
+						Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complique la logistique.
+						On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéo-projectuer provoquait des conditions d'expérimentation rapidement désagréables.
+						C'est pourquoi, aucune des expérimentations proposées ne durait plus de \mynum[mn]{30}.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
