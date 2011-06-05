@@ -59,6 +59,8 @@
 \RequirePackage{babel}
 % Only for number printing
 \RequirePackage{numprint}
+% To improve the 'enumerate', 'itemize' and 'description' environment
+\RequirePackage{enumitem}
 % About colors
 \RequirePackage{xcolor}
 % Redefine headers and footers
