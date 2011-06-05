@@ -55,7 +55,7 @@
 
 					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en sous-tâches :
 					\begin{description}
-						\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, hélices $\alpha$, feuillets $\beta$, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
+						\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 						\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
 						\item[Déformation] La tâche consiste à déformer la structure en manipulant la cible précédemment sélectionnée, que ce soit au niveau inter-moléculaire, intra-moléculaire ou atomique.
 							L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
@@ -237,6 +237,26 @@
 					\end{myfigure}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-DeformationParGroupeDAtomes]{Déformation par groupe d'atomes}
+					L'outil \mytool{tug} permet de déformer la molécule en appliquant un effort à l'atome sélectionné.
+					Cependant, la déformation par l'intermédiaire d'un seul atome possède deux désavantages.
+
+					Tout d'abord, la déformation d'une molécule atome par atome est un processus très fastidieux.
+					Il serait plus efficace de déplacer un groupe d'atomes en une seule fois.
+
+					De plus, l'application d'un effort sur un atome provoque l'étirement de la molécule.
+					Au repos, la molécule est dans état relativement stable.
+					Étirer un atome perturbe cet état de stabilité.
+					Pourtant, certains atomes sont fortement liés et les séparer n'est pas désirable.
+					Il serait donc préférable de déplacer tous ces atomes en une seule manipulation.
+
+					C'est pourquoi un outil permettant d'appliquer un effort à un groupe d'atomes permettrait de déplacer un bloc d'atomes tout en conservant plus de stabilité.
+					Les groupes d'atomes dignes d'intérêt sont les \myglos*{glo-Residu} (une vingtaine d'atomes), les \myhelice* ou \myfeuillet* (une vingtaine de \myglos*{glo-Residu}) et les molécules.
+					Cependant, \myacro{acr-VMD} ne permet de regrouper les atomes selon les \myhelice* ou \myfeuillet*.
+
+					La fonctionnalité de l'outil \mytool{tug} a donc été étendue aux \myglos*{glo-Residu} et aux molécules.
+					Appliquer le même effort à l'ensemble des atomes de la molécule produit un effort total très important.
+					Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop importantes et produisent des incohérences dans la simulation voire même un arrêt de la simulation.
+					Il est donc nécessaire de diviser l'intensité des forces proportionnellement au nombre d'atomes sélectionnés.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-OutilDeDesignation]{Outil de désignation}
 				\end{mysubsection}
@@ -1322,7 +1342,7 @@
 						\begin{description}
 							\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
 							\item[\myglosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} non fixés sur la molécule;
-							\item[Cassure] Ce sont les cassures de la chaîne principale de la molécule; elles représentent les jonctions entre hélices $\alpha$ et/ou les feuillets $\beta$;
+							\item[Cassure] Ce sont les cassures de la chaîne principale de la molécule; elles représentent les jonctions entre \myhelice* et/ou les \myfeuillet*;
 							\item[Champ de force] Il représente la difficulté en terme de contrainte physique; il exprime l'énergie minimum nécessaire pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
 						\end{description}
 
