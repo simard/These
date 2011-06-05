@@ -107,9 +107,9 @@
 	\setkeys[my]{ref}{#1}%
 	\ifmy@ref@refsee%
 		\if@smartref%
-			(\myref@seename\ {\myref@font\vref*{#2}})%
+			(\myref@seename\xspace{\myref@font\vref{#2}})%
 		\else%
-			(\myref@seename\ {\myref@font\myref@name}~\ref{#2})%
+			(\myref@seename\xspace{\myref@font\myref@name}~\ref{#2})%
 		\fi%
 	\else%
 		\if@smartref%
