@@ -42,6 +42,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
 %%%%%%%%%%%%%%%%%%%%%%%
+\labelformat{part}{\myref@lang@partname~#1}
+\labelformat{chapter}{\myref@lang@chaptername~#1}
+\labelformat{section}{\myref@lang@sectionname~#1}
+\labelformat{subsection}{\myref@lang@subsectionname~#1}
+\labelformat{subsubsection}{\myref@lang@subsubsectionname~#1}
+\labelformat{figure}{\myref@lang@figurename~#1}
+\labelformat{table}{\myref@lang@tablename~#1}
+\labelformat{equation}{\myref@lang@equationname~#1}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -49,17 +57,25 @@
 % Define some language commands
 \if@myenglish
 	\newcommand{\myref@lang@see}{see}
-	\newcommand{\myref@lang@sectiontitle}{Section}
-	\newcommand{\myref@lang@subsectiontitle}{Section}
-	\newcommand{\myref@lang@subsubsectiontitle}{Section}
-	\newcommand{\myref@lang@equationname}{Equation}
+	\newcommand{\myref@lang@partname}{part}
+	\newcommand{\myref@lang@chaptername}{\MakeLowercase{\chaptername}}
+	\newcommand{\myref@lang@sectionname}{section}
+	\newcommand{\myref@lang@subsectionname}{section}
+	\newcommand{\myref@lang@subsubsectionname}{section}
+	\newcommand{\myref@lang@figurename}{\MakeLowercase{\figurename}}
+	\newcommand{\myref@lang@tablename}{\MakeLowercase{\tablename}}
+	\newcommand{\myref@lang@equationname}{equation}
 \fi
 \if@myfrancais
 	\newcommand{\myref@lang@see}{voir}
-	\newcommand{\myref@lang@sectiontitle}{Section}
-	\newcommand{\myref@lang@subsectiontitle}{Section}
-	\newcommand{\myref@lang@subsubsectiontitle}{Section}
-	\newcommand{\myref@lang@equationname}{Équation}
+	\newcommand{\myref@lang@partname}{partie}
+	\newcommand{\myref@lang@chaptername}{\MakeLowercase{\chaptername}}
+	\newcommand{\myref@lang@sectionname}{section}
+	\newcommand{\myref@lang@subsectionname}{section}
+	\newcommand{\myref@lang@subsubsectionname}{section}
+	\newcommand{\myref@lang@figurename}{\MakeLowercase{\figurename}}
+	\newcommand{\myref@lang@tablename}{\MakeLowercase{\tablename}}
+	\newcommand{\myref@lang@equationname}{équation}
 \fi
 %% To define the reference name
 % The word(s) to put before the number of the reference (like 'section' or 'figure' for example).
@@ -84,13 +100,13 @@
 	\setkeys[my]{ref}{#1}%
 	\ifmy@ref@refsee%
 		\if@smartref%
-			(\myref@seename\ {\myref@font\myref@name}~\vref{#2})%
+			(\myref@seename\ {\myref@font\vref{#2}})%
 		\else%
 			(\myref@seename\ {\myref@font\myref@name}~\ref{#2})%
 		\fi%
 	\else%
 		\if@smartref%
-			{\myref@font\myref@name}~\vref{#2}%
+			{\myref@font\vref{#2}}%
 		\else%
 			{\myref@font\myref@name}~\ref{#2}%
 		\fi%
@@ -124,21 +140,19 @@
 %% About specialized command for references.
 %% The starred versions are activating the 'refsee' flag.
 % For reference on part.
-\mycreatecustomsref{part}{Part}{\partname}
+\mycreatecustomsref{part}{Part}{\myref@lang@partname}
 % For reference on chapter.
 \mycreatecustomsref{chapter}{Chapter}{\chaptername}
 % For reference on section.
-\mycreatecustomsref{section}{Section}{\myref@lang@sectiontitle}
+\mycreatecustomsref{section}{Section}{\myref@lang@sectionname}
 % For reference on subsection.
-\mycreatecustomsref{subsection}{Subsection}{\myref@lang@subsectiontitle}
+\mycreatecustomsref{subsection}{Subsection}{\myref@lang@subsectionname}
 % For reference on subsubsection.
-\mycreatecustomsref{subsubsection}{Subsubsection}{\myref@lang@subsubsectiontitle}
-% For reference on appendix.
-\mycreatecustomsref{appendix}{Appendix}{\appendixname}
+\mycreatecustomsref{subsubsection}{Subsubsection}{\myref@lang@subsubsectionname}
 % For reference on figure.
-\mycreatecustomsref{figure}{Figure}{\figurename}
+\mycreatecustomsref{figure}{Figure}{\myref@lang@figurename}
 % For reference on table.
-\mycreatecustomsref{table}{Table}{\tablename}
+\mycreatecustomsref{table}{Table}{\myref@lang@tablename}
 % For reference on equation
 \mycreatecustomsref{equation}{Equation}{\myref@lang@equationname}
 
