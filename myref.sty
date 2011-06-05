@@ -52,6 +52,9 @@
 \labelformat{table}{\myref@lang@tablename~#1}
 \labelformat{subtable}{\myref@lang@tablename~\thetable#1}
 \labelformat{equation}{\myref@lang@equationname~#1}
+\labelformat{enumi}{\myref@lang@enumeratename~#1}
+\labelformat{enumii}{\myref@lang@enumeratename~#1}
+\labelformat{enumiii}{\myref@lang@enumeratename~#1}
 
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
@@ -67,6 +70,7 @@
 	\newcommand{\myref@lang@figurename}{\MakeLowercase{\figurename}}
 	\newcommand{\myref@lang@tablename}{\MakeLowercase{\tablename}}
 	\newcommand{\myref@lang@equationname}{equation}
+	\newcommand{\myref@lang@enumeratename}{step}
 \fi
 \if@myfrancais
 	\newcommand{\myref@lang@see}{voir}
@@ -78,6 +82,7 @@
 	\newcommand{\myref@lang@figurename}{\MakeLowercase{\figurename}}
 	\newcommand{\myref@lang@tablename}{\MakeLowercase{\tablename}}
 	\newcommand{\myref@lang@equationname}{équation}
+	\newcommand{\myref@lang@enumeratename}{étape}
 \fi
 %% To define the reference name
 % The word(s) to put before the number of the reference (like 'section' or 'figure' for example).
@@ -102,22 +107,22 @@
 	\setkeys[my]{ref}{#1}%
 	\ifmy@ref@refsee%
 		\if@smartref%
-			(\myref@seename\ {\myref@font\vref{#2}})%
+			(\myref@seename\ {\myref@font\vref*{#2}})%
 		\else%
 			(\myref@seename\ {\myref@font\myref@name}~\ref{#2})%
 		\fi%
 	\else%
 		\if@smartref%
-			{\myref@font\vref{#2}}%
+			{\myref@font\vref*{#2}}%
 		\else%
 			{\myref@font\myref@name}~\ref{#2}%
 		\fi%
 	\fi%
 	% Reinitialized all key values
 	\setkeys[my]{ref}{refname={},refsee={false},refseename=\myref@lang@see,reffont={\myref@default@font}}%
-	}
+}
 % The starred version of '\myref' activate the 'refsee'.
-\WithSuffix\newcommand\myref*[2][]{\myref[#1]{#2}}
+\WithSuffix\newcommand\myref*[2][refsee=true]{\myref[#1,refsee=true]{#2}}
 % Intermediate command to test the presence of optional arguments
 \newcommand{\mycustomsref}[3]{%
 	\ifx#1\@empty%
@@ -133,11 +138,11 @@
 % \mycreatecustomsref{section}{Section}{Super-section}
 % will create commands '\mysectionref, '\mysectionref*, '\mySectionref' and '\mySectionref*'
 % All of these new commands will prefix the reference with 'Super-section'.
-\def\mycreatecustomsref#1#2#3{
-	\expandafter\newcommand\csname my#1ref\endcsname[2][]{\mycustomsref{##1}{\MakeLowercase{#3}}{##2}}
-	\WithSuffix\expandafter\newcommand\csname my#1ref\endcsname*[2][]{\mycustomsref*{##1}{\MakeLowercase{#3}}{##2}}
-	\expandafter\newcommand\csname my#2ref\endcsname[2][]{\mycustomsref{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}
-	\WithSuffix\expandafter\newcommand\csname my#2ref\endcsname*[2][]{\mycustomsref*{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}
+\def\mycreatecustomsref#1#2#3{%
+	\expandafter\newcommand\csname my#1ref\endcsname[2][]{\mycustomsref{##1}{\MakeLowercase{#3}}{##2}}%
+	\WithSuffix\expandafter\newcommand\csname my#1ref\endcsname*[2][]{\mycustomsref*{##1}{\MakeLowercase{#3}}{##2}}%
+	\expandafter\newcommand\csname my#2ref\endcsname[2][]{\mycustomsref{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}%
+	\WithSuffix\expandafter\newcommand\csname my#2ref\endcsname*[2][]{\mycustomsref*{##1}{\expandafter\makefirstuc\expandafter{#3}}{##2}}%
 }
 %% About specialized command for references.
 %% The starred versions are activating the 'refsee' flag.
@@ -157,6 +162,8 @@
 \mycreatecustomsref{table}{Table}{\myref@lang@tablename}
 % For reference on equation
 \mycreatecustomsref{equation}{Equation}{\myref@lang@equationname}
+% For reference on enumerate
+\mycreatecustomsref{enumerate}{Enumerate}{\myref@lang@enumeratename}
 
 % End of package
 \endinput
