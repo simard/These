@@ -258,9 +258,56 @@
 					Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop importantes et produisent des incohérences dans la simulation voire même un arrêt de la simulation.
 					Il est donc nécessaire de diviser l'intensité des forces proportionnellement au nombre d'atomes sélectionnés.
 				\end{mysubsection}
-				\begin{mysubsection}[sse-OutilDeDesignation]{Outil de désignation}
-				\end{mysubsection}
-				\begin{mysubsection}[sse-AppelHaptique]{Appel haptique}
+				\begin{mysubsection}[sse-OutilDeDesignationEtAttraction]{Outil de désignation et attraction}
+					Un aspect récurrent constaté durant les expérimentations est la nécessité de désigner un élément de la molécule.
+					Parfois les utilisateurs éprouvent le besoin de désigner mais la plupart du temps, ce sont les enregistrement audio qui ont permis d'identifier ce besoin.
+
+					L'outil de désignation a été conçu avec un processus en quatre étapes:
+					\begin{enumerate}[label={\alph*.},ref={\alph*}]
+						\item Recherche d'une cible \myfigureref*{fig-designation-RechercheDUneCible};\label{enu-designation-RechercheDUneCible}
+						\item Désignation d'une cible \myfigureref*{fig-designation-DesignationDUneCible};\label{enu-designation-DesignationDUneCible}
+						\item Acceptation d'une cible \myfigureref*{fig-designation-AcceptationDUneCible};\label{enu-designation-AcceptationDUneCible}
+						\item Sélection d'une cible \myfigureref*{fig-designation-SelectionDUneCible}.\label{enu-designation-SelectionDUneCible}
+					\end{enumerate}
+
+					\begin{myfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{designation-normal}
+							\mysubcaption[fig-designation-RechercheDUneCible]{Recherche d'une cible}
+						\end{mysubfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{designation-called}
+							\mysubcaption[fig-designation-DesignationDUneCible]{Cible désigné}
+						\end{mysubfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{designation-accepted}
+							\mysubcaption[fig-designation-AcceptationDUneCible]{Cible acceptée}
+						\end{mysubfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{designation-selected}
+							\mysubcaption[fig-designation-SelectionDUneCible]{Cible sélectionnée}
+						\end{mysubfigure}
+						\mycaption[fig-designation-LesQuatreEtapesDeLaDesignation]{Les quatre étapes de la désignation}
+					\end{myfigure}
+
+					L'\myenumerateref{enu-designation-RechercheDUneCible} consiste pour un utilisateur~\myuser{A} à rechercher une cible à désigner.
+					Cette recherche sera réalisée selon différents critères comme par exemple, la nécessité d'obtenir de l'aide d'un utilisateur \myuser{B}.
+
+					L'\myenumerateref{enu-designation-DesignationDUneCible} permet à l'utilisateur~\myuser{A} de désigner la cible identifiée.
+					La cible est alors mise en surbrillance de façon à être vue des autres utilisateurs.
+
+					L'\myenumerateref{enu-designation-AcceptationDUneCible} fait intervenir l'utilisateur~\myuser{B}.
+					L'utilisateur~\myuser{B} peut accepter ou non cette désignation.
+					S'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté.
+
+					L'\myenumerateref{enu-designation-SelectionDUneCible} est la dernière étape.
+					L'utilisateur~\myuser{B} ayant accepté doit maintenant sélectionner la cible pour achever le processus de désignation.
+					
+					En supplément, des aides haptiques ont été ajoutés lors de la dernière expérimentation \mychapterref*{cha-TravailCollaboratifAssisteParHaptique}.
+					Ce sont ces aides haptiques qui sont testées.
+					Pour l'\myenumerateref{enu-designation-DesignationDUneCible}, des vibrations sont générées sur tous les utilisateurs concernés par la désignation.
+					De plus, dès l'instant qu'un utilisateur a accepté la désignation \myenumerateref*{enu-designation-AcceptationDUneCible}, il est guidé vers la cible.
+					La vibration chez tous les autres utilisateurs est arrêtée.
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
@@ -647,9 +694,9 @@
 					Les sujets sont tenus d'effectuer l'ensemble des dux \myglos*{glo-Residu} deux fois, en \myglos{glo-Monome} et en \myglos{glo-Binome}.
 					Les configurations \myglos{glo-Monome} et \myglos{glo-Binome} sont également alternées suivant les groupes selon les trois combinaisons possibles suivantes :
 					\begin{enumerate}
-						\item Le sujet $\mathcal{A}$, puis le sujet $\mathcal{B}$, puis le \myglos{glo-Binome} $\mathcal{AB}$;
-						\item Le sujet $\mathcal{A}$, puis le \myglos{glo-Binome} $\mathcal{AB}$, puis le sujet $\mathcal{B}$;
-						\item Le \myglos{glo-Binome} $\mathcal{AB}$, puis le sujet $\mathcal{A}$, puis le sujet $\mathcal{B}$.
+						\item Le sujet \myuser{A}, puis le sujet \myuser{B}, puis le \myglos{glo-Binome} \myuser{AB};
+						\item Le sujet \myuser{A}, puis le \myglos{glo-Binome} \myuser{AB}, puis le sujet \myuser{B};
+						\item Le \myglos{glo-Binome} \myuser{AB}, puis le sujet \myuser{A}, puis le sujet \myuser{B}.
 					\end{enumerate}
 
 					Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}, ils sont soumis au questionnaire.
@@ -691,16 +738,16 @@
 							\multicolumn{2}{c}{%
 								\begin{tabular}{^C-C-C}
 									\myrowstyle{\bfseries}
-									Condition \mycondition{1}            & Condition \mycondition{2}            & Condition \mycondition{3}            \\
+									Condition \mycondition{1}         & Condition \mycondition{2}         & Condition \mycondition{3}         \\
 									\mymiddlerule
-									Sujet~$\mathcal{A}$                  & Sujet~$\mathcal{A}$                  & \myGlosnl{glo-Binome}~$\mathcal{AB}$ \\
-									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
+									Sujet~\myuser{A}                  & Sujet~\myuser{A}                  & \myGlosnl{glo-Binome}~\myuser{AB} \\
+									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
 									\mymiddlerule
-									Sujet~$\mathcal{B}$                  & \myGlosnl{glo-Binome}~$\mathcal{AB}$ & Sujet~$\mathcal{A}$                  \\
-									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
+									Sujet~\myuser{B}                  & \myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{A}                  \\
+									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
 									\mymiddlerule
-									\myGlosnl{glo-Binome}~$\mathcal{AB}$ & Sujet~$\mathcal{B}$                  & Sujet~$\mathcal{B}$                  \\
-									\mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    & \mynum{10}~\myglosnl*{glo-Residu}    \\
+									\myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{B}                  & Sujet~\myuser{B}                  \\
+									\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
 								\end{tabular}
 							} \\
 							\mybottomrule
