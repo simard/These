@@ -212,6 +212,29 @@
 				Le développement de ces nouveaux outils a nécessité une modification du programme \myacro{acr-VMD} par l'extension du nombre d'outils disponible.
 				Quatre fonctionnalités ont été ajoutées et sont présentées dans les sections suivantes.
 				\begin{mysubsection}[sse-AmeliorationDeLaSelection]{Amélioration de la sélection}
+					Durant le processus de recherche et de sélection, les utilisateurs ont souvent évoqué le besoin de connaître en continu leur position et de savoir à priori l'élément qui va être sélectionné.
+					Pour que les utilisateurs connaissent à chaque instant l'élément qui peut être sélectionné, une information visuelle met en surbrillance l'élément pointé à chaque instant.
+					La mise en surbrillance est effectué par l'intermédiaire d'un agrandissement en transparence de l'élément pointé.
+					La couleur de cette mise en surbrillance est de la même couleur que le curseur de l'utilisateur.
+
+					Cependant, lorsque seul un atome est mis en surbrillance, il peut être difficile de l'apercevoir à cause de l'affichage chargé dû au grand nombre d'atomes.
+					C'est pourquoi, l'ensemble du \myglos{glo-Residu} auquel appartient l'atome pointé est également mis en surbrillance.
+					Seul l'atome pointé est agrandi.
+
+					Enfin, lorsque les utilisateurs sélectionnent l'élément, la surbrillance passera de la transparence à de l'opacité.
+					Une illustration des effets visuels relatifs au pointage et à la sélection est affiché sur la \myfigureref{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
+
+					\begin{myfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{selection-improvement-pointed}
+							\mysubcaption[fig-selection-improvement-ElementPointe]{Élément pointé}
+						\end{mysubfigure}
+						\begin{mysubfigure}
+							\myimage[width=0.49\textwidth]{selection-improvement-targeted}
+							\mysubcaption[fig-selection-improvement-ElementSelectionne]{Élément sélectionné}
+						\end{mysubfigure}
+						\mycaption[fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes]{Différence visuelle entre les éléments pointés et sélectionnés}
+					\end{myfigure}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-DeformationParGroupeDAtomes]{Déformation par groupe d'atomes}
 				\end{mysubsection}
