@@ -198,7 +198,7 @@
 						L'interface haptique est connectée physiquement à un autre ordinateur (le même ordinateur le cas échéant) et un serveur \myacro{acr-VRPN} communique avec cette interface.
 						C'est seulement par l'intermédiaire de \myacro{acr-VRPN} et à travers le réseau \myemph{Ethernet} que \myacro{acr-VMD} va percevoir les mouvements de l'interface haptique et lui envoyer des efforts à fournir.
 						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu $v10.04$) a demandé quelques modifications dans le code.
-						Ces modifications sont à présent disponible dans les dernières versions de \myacro{acr-VRPN}.
+						Ces modifications sont à présent disponibles dans les dernières versions de \myacro{acr-VRPN}.
 
 						L'avantage de cette architecture est la possibilité d'ajouter autant de serveurs et donc autant d'interfaces haptiques que voulu.
 						Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complique la logistique.
@@ -208,6 +208,9 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-NouveauxOutilsPourLInteraction]{Nouveaux outils pour l'interaction}
+				Durant les différentes études présentées dans la \mypartref{prt-EtudeDuTravailCollaboratif}, les analyses et les remarques d'utilisateurs ont permis d'améliorer les outils d'interaction et d'en proposer des nouveaux.
+				Le développement de ces nouveaux outils a nécessité une modification du programme \myacro{acr-VMD} par l'extension du nombre d'outils disponible.
+				Quatre fonctionnalités ont été ajoutées et sont présentées dans les sections suivantes.
 				\begin{mysubsection}[sse-AmeliorationDeLaSelection]{Amélioration de la sélection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-DeformationParGroupeDAtomes]{Déformation par groupe d'atomes}
@@ -1239,7 +1242,7 @@
 								\cnode(2.3,1.6){0.8}{ghost-residue}
 								\psset{linecolor=mygray}
 								\cnode(2.0,6.6){0.8}{fixed-residue}
-								\psset{linewidth=1pt,linecolor=myred,linearc=.025,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
+								\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
 								\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
 								\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
 								\psset{linecolor=myblue,nodesepB=0pt}
@@ -1256,7 +1259,7 @@
 						\end{myfigure}
 
 						Afin de pouvoir évaluer la déformation effectuée, des scores sont affichés en temps-réel \myfigureref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
-						Le premier score est le score \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque pair d'atomes \myequationref*{equ-RMSD}.
+						Le premier score est le score \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes \myequationref*{equ-RMSD}.
 						\begin{equation}\label{equ-RMSD}
 							\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
 						\end{equation}
