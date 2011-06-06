@@ -67,6 +67,26 @@
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules]{\myShaddock\ -- Système collaboratif pour la manipulation de molécules}
+			\begin{mysection}[sec-PlateFormesCollaborativesExistantes]{Plates-formes collaboratives existantes}
+				\begin{mysubsection}[sse-ArchitectureDuSysteme]{Architecture du système}
+					Deux types d'architecture sont possibles pour les \myacro{acr-EVC} : pair-à-pair ou client/serveur.
+					Parmi les architectures pair-à-pair, on peut citer les travaux récents sur l'haptique de \mycite[author]{Iglesias-2008} sur les assemblages collaboratifs ou \mycite[author]{Kim-2004} sur le déplacement collaboratif d'une boîte.
+					
+					Pour les architectures client/serveur, \mycite[author]{Norman-2010} s'intéresse particulièrement aux influences du réseau sur les interactions visuo-haptiques.
+					\mycite[author]{Huang-2010} propose un système haptique client/serveur pour la manipulation d'un jeu de construction par blocs.
+
+					\mycite[author]{Marsh-2006} propose une comparaison de ces deux types d'architecture et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
+					Cependant, elle est adaptée pour les environnements statiques ou faiblement dynamiques.
+					En effet, des latences ou des erreurs de transmission sur le réseau vont introduire des erreurs de synchronisation.
+					Avec des erreurs de synchronisation, les environnements fortement dynamiques vont diverger rapidement et provoquer des incohérences pour tous les acteurs.
+					L'architecture client/serveur, bien que moins performante, permettra de conserver une cohérence pour tous les acteurs.
+
+					Dans le cadre d'une architecture client/serveur, les simulation seront effectuées sur un serveur et les données de simulation seront transmises à tous les acteurs de l'\myacro{acr-EVC}.
+					Ainsi, chaque utilisateur pourra bénéficier d'une visualisation particulière et d'outils d'interaction personnels.
+
+					La plate-forme \myShaddock présentée ici est une architecture client/serveur.
+				\end{mysubsection}
+			\end{mysection}
 			\begin{mysection}[sec-SimulationMoleculaireEnTempsReel]{Simulation moléculaire en temps-réel}
 				Tout d'abord, la plate-forme \myShaddock doit permettre de manipuler des molécules.
 				Nous commencerons par identifier les besoins dans la \myref{sse-simulation-LesBesoins} puis par exposer les outils utilisés dans la \myref{sse-simulation-LesOutilsExistants}.
