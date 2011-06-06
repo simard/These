@@ -71,6 +71,17 @@
 				Tout d'abord, la plate-forme \myShaddock doit permettre de manipuler des molécules.
 				Nous commencerons par identifier les besoins dans la \myref{sse-simulation-LesBesoins} puis par exposer les outils utilisés dans la \myref{sse-simulation-LesOutilsExistants}.
 				\begin{mysubsection}[sse-simulation-LesBesoins]{Les besoins}
+					\myShaddock doit permettre d'effectuer de la manipulation de molécules en temps-réel.
+					Il faut donc commencer par avoir la possibilité de visualiser les molécules.
+					La visualisation est un processus complexe qui nécessite des rendus très variés et complet.
+					Cette tâche sera effectuée par le logiciel \myacro{acr-VMD} \myref*{sss-simulation-VMD}.
+
+					Ensuite, \myShaddock doit simuler un environnement moléculaire de façon physique.
+					On fera appel à un logiciel de simulation pour ce besoin.
+					Il faut que ce logiciel puisse interagir avec \myacro{acr-VMD} et \myacro{acr-NAMD} est le parfait candidat \myref*{sss-simulation-NAMD}.
+
+					Cependant, \myacro{acr-NAMD} n'est pas conçu pour effectuer des simulations en temps-réel.
+					La solution à ce problème vient avec \myacro{acr-IMD} développé par le \myacro{acr-ITAP} et présenté en \myref{sss-simulation-IMD}.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-simulation-LesOutilsExistants]{Les outils existants}
 					\begin{mysubsubsection}[sss-simulation-VMD]{\myacronl+{acr-VMD}}
@@ -159,6 +170,12 @@
 						De plus, les petites molécules que nous utiliserons lors de nos simulations ne nécessitent pas des performances exceptionnelles.
 						Enfin, \myacro{acr-NAMD} peut être aisément connecté à \myacro{acr-VMD} dans le cadre d'une simulation interactive \myref*{sss-simulation-IMD} contrairement à \myGromacs.
 						C'est pourquoi le logiciel \myacro{acr-NAMD} a été retenu pour notre plate-forme.
+
+						Une des fonctionnalités de \myacro{acr-NAMD} utilisée est la possibilité de \myemph{fixer} des atomes.
+						En effet, la fixation d'atomes permet d'avoir certains atomes de la molécules qui ne sont soumis à aucune force de la simulation.
+						Bien évidemment, c'est un choix qui perturbe la simulation physique mais c'est un moindre mal.
+						De plus, cette fonctionnalité est nécessaire pour avoir un point d'ancrage de la molécule dans l'environnement virtuel.
+						Sans ce point d'ancrage, la molécule pourrait dériver et sortir de l'espace de travail des utilisateurs.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-simulation-IMD]{\myacronl+{acr-IMD}}
 						Les logiciels de simulation ne sont pas développés afin d'effectuer des simulations interactives en temps-réel.
