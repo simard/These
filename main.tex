@@ -68,6 +68,11 @@
 		\end{mychapter}
 		\begin{mychapter}[app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules]{\myShaddock\ -- Système collaboratif pour la manipulation de molécules}
 			\begin{mysection}[sec-PlateFormesCollaborativesExistantes]{Plates-formes collaboratives existantes}
+				Le travail collaboratif est un centre d'intérêt qui se développe de plus en plus vite.
+				\myShaddock est le nom de la plate-forme développée dans le cadre de cette thèse.
+				Les choix d'architectures sont exposés dans cette section.
+				La \myref{sse-ArchitectureDuSysteme} tranchera sur la question de l'architecture pair-à-pair comparée à l'architecture client/serveur.
+				Ensuite, la gestion d'une vue partagée est abordée dans la \myref{sse-VuePartagee}.
 				\begin{mysubsection}[sse-ArchitectureDuSysteme]{Architecture du système}
 					Deux types d'architecture sont possibles pour les \myacro{acr-EVC} : pair-à-pair ou client/serveur.
 					Parmi les architectures pair-à-pair, on peut citer les travaux récents sur l'haptique de \mycite[author]{Iglesias-2008} sur les assemblages collaboratifs ou \mycite[author]{Kim-2004} sur le déplacement collaboratif d'une boîte.
@@ -188,7 +193,7 @@
 							Une souris \myThreeD permet de translater et d'orienter la scène.
 							La souris \myThreeD \mySpaceNavigator est utilisée dans le cadre de certaines de nos études.
 
-							Enfin, des outils spécifiques sont disponibles par l'intermédiaire d'une connexion à travers le logiciel \myacro{acr-VRPN} \myref*{sss-interaction-VRPN}.
+							Enfin, des outils spécifiques sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-interaction-VRPN}.
 							Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans le cas de notre étude).
 							Les outils disponibles dans \myacro{acr-VMD} qui ont été utilisés dans la première expérimentation \myref*{cha-LaRechercheCollaborative} sont :
 							\begin{description}
@@ -337,9 +342,9 @@
 					L'outil de désignation a été conçu avec un processus en quatre étapes:
 					\begin{enumerate}[label={\alph*.},ref={\alph*}]
 						\item Recherche d'une cible \myref*{fig-designation-RechercheDUneCible};\label{enu-designation-RechercheDUneCible}
-						\item Désignation d'une cible \myref*{fig-designation-DesignationDUneCible};\label{enu-designation-DesignationDUneCible}
-						\item Acceptation d'une cible \myref*{fig-designation-AcceptationDUneCible};\label{enu-designation-AcceptationDUneCible}
-						\item Sélection d'une cible \myref*{fig-designation-SelectionDUneCible}.\label{enu-designation-SelectionDUneCible}
+						\item Désignation d'une cible \myref*{fig-designation-CibleDesignee};\label{enu-designation-DesignationDUneCible}
+						\item Acceptation d'une cible \myref*{fig-designation-CibleAcceptee};\label{enu-designation-AcceptationDUneCible}
+						\item Sélection d'une cible \myref*{fig-designation-CibleSelectionnee}.\label{enu-designation-SelectionDUneCible}
 					\end{enumerate}
 
 					\begin{myfigure}
@@ -349,15 +354,15 @@
 						\end{mysubfigure}
 						\begin{mysubfigure}
 							\myimage[width=0.49\textwidth]{designation-called}
-							\mysubcaption[fig-designation-DesignationDUneCible]{Cible désigné}
+							\mysubcaption[fig-designation-CibleDesignee]{Cible désignée}
 						\end{mysubfigure}
 						\begin{mysubfigure}
 							\myimage[width=0.49\textwidth]{designation-accepted}
-							\mysubcaption[fig-designation-AcceptationDUneCible]{Cible acceptée}
+							\mysubcaption[fig-designation-CibleAcceptee]{Cible acceptée}
 						\end{mysubfigure}
 						\begin{mysubfigure}
 							\myimage[width=0.49\textwidth]{designation-selected}
-							\mysubcaption[fig-designation-SelectionDUneCible]{Cible sélectionnée}
+							\mysubcaption[fig-designation-CibleSelectionnee]{Cible sélectionnée}
 						\end{mysubfigure}
 						\mycaption[fig-designation-LesQuatreEtapesDeLaDesignation]{Les quatre étapes de la désignation}
 					\end{myfigure}
