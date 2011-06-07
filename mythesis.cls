@@ -90,17 +90,30 @@
 %%% hyperref %%%
 % Configuration of hyperref package
 \hypersetup{%
-	pdfnewwindow=true,%
-	colorlinks=true,%
+	bookmarksopen=true,%
+	bookmarksopenlevel=0,%
+	bookmarksnumbered=true,%
 	breaklinks=true,%
-	pdfhighlight=/P,%
+	citecolor=green,%
+	colorlinks=true,%
+	filecolor=magenta,%
+	hypertexnames=true,%
+	linkcolor=gray,%
+	naturalnames=true,%
+	nesting=false,% Does not compile with 'true'
+	pageanchor=true,%
+	pdfnewwindow=true,%
 	pdfcenterwindow=true,%
 	pdfdisplaydoctitle=true,%
 	pdffitwindow=true,%
-	pdfstartview=FitH,%
-	linkcolor=gray,%
-	citecolor=green,%
-	filecolor=magenta,%
+	pdfhighlight=/I,%
+	pdfnonfullscreenpagemode=UseOutlines,%
+	pdfpagelabels=true,%
+	pdfpagelayout=OneColumn,%
+	pdfpagemode=UseOutlines,%
+	pdfstartview={FitH},%
+	%pdfview={FitB},% Should not be used to have correct links
+	unicode=true,%
 	urlcolor=red%
 }%
 %%% biblatex %%%
