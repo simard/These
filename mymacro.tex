@@ -3,7 +3,7 @@
 \newcommand{\myanova}[1]{\input{files/#1}}
 \newcommand{\myatom}[2][]{%
 	{%
-		\ifthenelse{\isempty{#1}}%
+		\ifstrempty{#1}%
 			{\makefirstuc{\textsf{#2}}}%
 			{\textcolor{#1}{\makefirstuc{\textsf{#2}}}}%
 		\xspace%
