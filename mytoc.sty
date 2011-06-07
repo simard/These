@@ -67,14 +67,17 @@
 %%%%%%%%%%%%%%%%%%
 % Define the appendix command
 \newcommand{\myappendix}{%
+	\phantomsection%
 	\appendixpage%
 	\cleardoublepage%
+	\phantomsection%
 	\appendix%
 	\addappheadtotoc%
 }
 % Define the table of contents command,
 % and add the title in the table of contents
 \newcommand{\mytoc}{%
+	\phantomsection%
 	\tableofcontents%
 	% To make compatibility between 'minitoc' and 'tocbibind'
 	\mtcaddchapter%
@@ -82,6 +85,7 @@
 % Define the list of figures command,
 % and add the title in the table of contents
 \newcommand{\mylof}{%
+	\phantomsection%
 	\listoffigures%
 	% To make compatibility between 'minitoc' and 'tocbibind'
 	\mtcaddchapter%
@@ -89,49 +93,57 @@
 % Define the list of tables command,
 % and add the title in the table of contents
 \newcommand{\mylot}{%
+	\phantomsection%
 	\listoftables%
 	% To make compatibility between 'minitoc' and 'tocbibind'
 	\mtcaddchapter%
 }
 \if@minitoc
-	\newcommand{\myminitoc}{\minitoc}
+	\newcommand{\myminitoc}{\phantomsection\minitoc}
 \fi
-\newenvironment{mypart}[2][par-??]{%
+\newenvironment{mypart}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\part{\my@args@two}\label{\my@args@one}%%
 }{}
-\newenvironment{mychapter}[2][cha-??]{%
+\newenvironment{mychapter}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\chapter{\my@args@two}\label{\my@args@one}%
 	\if@minitoc%
 		\myminitoc%
 	\fi%
 }{}
-\newenvironment{mysection}[2][sec-??]{%
+\newenvironment{mysection}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\section{\my@args@two}\label{\my@args@one}%
 }{}
-\newenvironment{mysubsection}[2][sse-??]{%
+\newenvironment{mysubsection}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\subsection{\my@args@two}\label{\my@args@one}%
 }{}
-\newenvironment{mysubsubsection}[2][sss-??]{%
+\newenvironment{mysubsubsection}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\subsubsection{\my@args@two}\label{\my@args@one}%
 }{}
-\newenvironment{myparagraph}[2][par-??]{%
+\newenvironment{myparagraph}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\paragraph{\my@args@two}\label{\my@args@one}%
 }{}
-\newenvironment{mysubparagraph}[2][par-??]{%
+\newenvironment{mysubparagraph}[2][]{%
 	\def\my@args@one{#1}%
 	\def\my@args@two{#2}%
+	\phantomsection%
 	\subparagraph{\my@args@two}\label{\my@args@one}%
 }{}
 
