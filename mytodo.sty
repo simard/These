@@ -23,7 +23,7 @@
 %% Options to pass to packages
 
 %% Packages to call
-\RequirePackage{xifthen}
+\RequirePackage{etoolbox}
 % The 'suffix' package offers the '\WithSuffix' command to define starred commands
 \RequirePackage{suffix}
 % For additionnal colors
@@ -62,11 +62,11 @@
 %% To define an inline incomplete part in the document
 % Define the current section number
 \newcommand{\mytodo@findcurrentsection}{%
-	\ifthenelse{\equal{\@arabic\c@subsubsection}{0}}%
+	\ifstrequal{\@arabic\c@subsubsection}{0}%
 	{%
-		\ifthenelse{\equal{\@arabic\c@subsection}{0}}%
+		\ifstrequal{\@arabic\c@subsection}{0}%
 			{%
-				\ifthenelse{\equal{\@arabic\c@section}{0}}%
+				\ifstrequal{\@arabic\c@section}{0}%
 					{%
 						\def\mytodo@currentsection{\thechapter}%
 					}{%
@@ -95,7 +95,7 @@
 	\else%
 		\cbend%
 	\fi%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#2}}%
 		{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~#1}}%
 }
@@ -110,7 +110,7 @@
 	{%
 		\mytodo@findcurrentsection%
 		\marginpar{\scriptsize\textcolor{myred!70}{#2}\par\textcolor{black}{#3}}%
-		\ifthenelse{\isempty{#1}}%
+		\ifstrempty{#1}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#2}}}%
 			{\addcontentsline{tdo}{todo}{\protect\parbox{7em}{\hspace{\stretch{1}}\bf\scriptsize(\mytodo@lang@sectionname\xspace\mytodo@currentsection)}~\textbf{#1}}}%
 		\if@draft%

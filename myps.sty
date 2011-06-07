@@ -14,7 +14,7 @@
 %% Options to pass to packages
 
 %% Packages to call
-\RequirePackage{xifthen}
+\RequirePackage{etoolbox}
 \RequirePackage{xkeyval}
 % To know if the compilation is 'draft'
 \RequirePackage{ifdraft}
@@ -342,7 +342,7 @@
 	\gdef\my@ps@legendminy{#5}%
 	\gdef\my@ps@legendmaxy{#6}%
 	\gdef\my@ps@legend{\myand{}}%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 		{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
 		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
 	% Middle of the x-axis
@@ -368,7 +368,7 @@
 	\fpDiv{\temp}{#6}{#7}%
 	\fpRound{\iterations}{\temp}{0}%
 	\multido{\i=#7+#7}{\iterations}{%
-		\ifthenelse{\isempty{#1}}%
+		\ifstrempty{#1}%
 			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\i)(#3,\i)}%
 			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\i)(#3,\i)}%
 	}%
@@ -395,19 +395,19 @@
 }
 % Create a barplot
 \newcommand\mybarplot[2][]{%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 		{\readpsbardata[header=true]{\data}{files/#2}}%
 		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0]{\data}}%
 	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0,#1]{\data}}%
 }
 % Create a boxplot
 \newcommand\myboxplot[2][]{%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 		{\readpsbardata[header=true]{\data}{files/#2}}%
 		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
-	\ifthenelse{\isempty{#1}}%
+	\ifstrempty{#1}%
 	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}}%
 	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0,#1]{\data}}%
 }
