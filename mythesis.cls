@@ -90,9 +90,6 @@
 %%% hyperref %%%
 % Configuration of hyperref package
 \hypersetup{%
-	bookmarksopen=true,%
-	bookmarksopenlevel=0,%
-	bookmarksnumbered=true,%
 	breaklinks=true,%
 	citecolor=green,%
 	colorlinks=true,%
@@ -116,6 +113,14 @@
 	unicode=true,%
 	urlcolor=red%
 }%
+% Configuration of bookmark package
+\bookmarksetup{%
+	open=true,%
+	openlevel=0,%
+	numbered=true,%
+	page=1,%
+	view={FitH}
+}
 %%% biblatex %%%
 % To avoid a semi-colon for 'In Proceeedings...' (instead of 'In: Preoceedings...').
 \renewcommand{\intitlepunct}{\space}
