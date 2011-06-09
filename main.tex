@@ -53,7 +53,7 @@
 							L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
 					\end{description}
 
-					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en sous-tâches :
+					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en sous-tâches \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
 					\begin{description}
 						\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 						\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
@@ -62,7 +62,29 @@
 						\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
 							En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 					\end{description}
-
+					\begin{myfigure}
+						\psset{xunit=0.2\textwidth}
+						\def\mycirclenum(#1,#2)#3{%
+							\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
+						}
+						\begin{myps}(-2.5,-0.5)(2.5,5)
+							\mynode(0,4)[Search]{Recherche}
+							\mycirclenum(0,4){1}
+							\mynode(0,3)[Selection]{Sélection}
+							\mycirclenum(0,3){2}
+							\mynode(0,2)[Deformation]{Déformation}
+							\mycirclenum(0,2){3}
+							\mynode(0,1)[Evaluation]{Évaluation}
+							\mycirclenum(0,1){4}
+							\mynode[fillstyle=solid,fillcolor=myblue!25](0,0)[Objective]{Objectif atteint}
+							\ncline{->}{Search}{Selection}
+							\ncline{->}{Selection}{Deformation}
+							\ncline{->}{Deformation}{Evaluation}
+							\ncline{->}{Evaluation}{Objective}
+							\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05,armA=0.2]{->}{Evaluation}{Search}
+						\end{myps}
+						\mycaption[fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
+					\end{myfigure}
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
@@ -77,34 +99,28 @@
 				Ensuite, la gestion d'une vue partagée est abordée dans la \myref{sse-VuePartagee}.
 				\begin{myfigure}
 					\psset{unit=0.05\textwidth}
-					\def\mynode(#1,#2)[#3]#4{%
-						\rput(#1,#2){\rnode{#3}{\psframebox[shadow=true,shadowcolor=myblue,blur=true,framearc=0.25]{#4}}}%
-					}
-					\def\mymultiline#1{%
-						\begin{tabular}{c}%
-							#1
-						\end{tabular}
+					\def\myVRPNclient{%
+						\mymultiline{
+							Client \\
+							\myacronl-{acr-VRPN} \\
+						}%
 					}
 					\def\myVRPNclient{%
-						\begin{tabular}{c}%
+						\mymultiline{
 							Client \\
 							\myacronl-{acr-VRPN} \\
-						\end{tabular}%
+						}%
 					}
-					\def\myVRPNclient{\mymultiline{%
-							Client \\
-							\myacronl-{acr-VRPN} \\
-						}
-					}
-					\def\myVRPNserveur#1{\mymultiline{%
+					\def\myVRPNserveur#1{%
+						\mymultiline{
 							Serveur \\
 							\myacronl-{acr-VRPN}$_{#1}$ \\
-						}
+						}%
 					}
 					\def\myvmdnode(#1,#2){%
 						\rput(#1,#2){%
 							\rnode{VMD}{%
-								\psframebox[framesep=0pt,shadow=true,shadowcolor=myblue,blur=true,framearc=0.25]{%
+								\psframebox[style=nodestyle,framesep=0pt]{%
 									\begin{tabular}{c|c}%
 										\multicolumn{2}{c}{\psframebox*[linecolor=white]{\Large\myacronl-{acr-VMD}}} \\[2ex]
 											\hline
@@ -277,7 +293,7 @@
 
 							Enfin, des outils spécifiques sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-interaction-VRPN}.
 							Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans notre cas).
-							Les outils disponibles par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-LaRechercheCollaborative} et sont :
+							Les outils disponibles par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-LaRechercheCollaborativeDeResidusEnSimulationMoleculaire} et sont :
 							\begin{description}
 								\item[\mytool{grab}] qui permet de sélectionner une molécule dans son intégralité et de la déplacer dans la scène;
 								\item[\mytool{tug}] qui permet de sélectionner un atome de la molécule et de lui appliquer une force (qui sera transmise à la simulation).
@@ -473,7 +489,9 @@
 		\end{mychapter}
 	\end{mypart}
 	\begin{mypart}[prt-EtudeDuTravailCollaboratif]{Étude du travail collaboratif}
-		\begin{mychapter}[cha-LaRechercheCollaborative]{La recherche collaborative}
+		\begin{mychapter}[cha-LaRechercheCollaborativeDeResidusEnSimulationMoleculaire]{La recherche collaborative de \myglosnl*{glo-Residu} en simulation moléculaire}
+			\begin{mysection}[sec-exp1-Introduction]{Introduction}
+			\end{mysection}
 			\begin{mysection}[sec-exp1-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
 					Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre sous-tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
@@ -1305,7 +1323,7 @@
 				\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
 					Après avoir traité la sous-tâche élémentaire de \myemph{recherche}, la seconde expérimentation traitera des sous-tâches élémentaires de \myemph{sélection} et de \myemph{déformation} \myref*{sse-LAmarrageMoleculaire}.
 					Ces sous-tâches introduisent des actions qui nécessitent une grande synchronisation et permet de stimuler les collaborations étroites.
-					La précédente expérimentation \myref*{cha-LaRechercheCollaborative} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
+					La précédente expérimentation \myref*{cha-LaRechercheCollaborativeDeResidusEnSimulationMoleculaire} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
 					Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
 					L'expérimentation va de nouveau comparer un \myglos{glo-Monome} et un \myglos{glo-Binome}.

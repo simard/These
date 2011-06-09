@@ -1,3 +1,4 @@
+\makeatletter
 % AAA
 \newcommand{\myAlanine}{Alanine\xspace}
 \newcommand{\myanova}[1]{\input{files/#1}}
@@ -37,6 +38,12 @@
 \newcommand{\myMDDriver}{\textsc{MDDriver}\xspace}
 % NNN
 \newcommand{\myNewRibbon}{\textit{NewRibbon}\xspace}
+\def\mynode{%
+	\@ifnextchar[{\mynode@i}{\mynode@i[style=nodestyle]}%
+}
+\def\mynode@i[#1](#2,#3)[#4]#5{%
+	\rput(#2,#3){\rnode{#4}{\psframebox[style=nodestyle,#1]{#5}}}%
+}
 \newcommand{\mynytrogen}{\myatom[mynytrogencolor]{A}}
 \newcommand{\myNusE}{\textsc{NusE:NusG}\xspace}
 % OOO
@@ -80,3 +87,7 @@
 % Needed lengths
 \newlength{\mywidth}
 \newlength{\myheight}
+
+% PSTricks style
+\newpsstyle{nodestyle}{framearc=0.25,shadow=true,shadowcolor=myblue,blur=true}
+\makeatother
