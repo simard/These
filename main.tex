@@ -71,16 +71,82 @@
 				\myShaddock est le nom de l'\myacro{acr-EVC} développé dans le cadre de cette thèse.
 				Les \myacro*{acr-EVC} existants sont nombreux mais aucun ne convient à nos besoins.
 				Plusieurs choix d'architectures ont été nécessaires et sont exposés dans cette section.
+				Une vue schématique de la plate-forme \myShaddock est détaillée sur la \myref{fig-SchemaDeLaPlateFormeShaddock}.
+				Les différents éléments de ce schéma seront expliqués dans les sections qui vont suivre.
 				La \myref{sse-ArchitectureDuSysteme} tranchera sur la question de l'architecture pair-à-pair comparée à l'architecture client/serveur.
 				Ensuite, la gestion d'une vue partagée est abordée dans la \myref{sse-VuePartagee}.
+				\begin{myfigure}
+					\psset{unit=0.05\textwidth}
+					\def\mynode(#1,#2)[#3]#4{%
+						\rput(#1,#2){\rnode{#3}{\psframebox[shadow=true,shadowcolor=myblue,blur=true,framearc=0.25]{#4}}}%
+					}
+					\def\mymultiline#1{%
+						\begin{tabular}{c}%
+							#1
+						\end{tabular}
+					}
+					\def\myVRPNclient{%
+						\begin{tabular}{c}%
+							Client \\
+							\myacronl-{acr-VRPN} \\
+						\end{tabular}%
+					}
+					\def\myVRPNclient{\mymultiline{%
+							Client \\
+							\myacronl-{acr-VRPN} \\
+						}
+					}
+					\def\myVRPNserveur#1{\mymultiline{%
+							Serveur \\
+							\myacronl-{acr-VRPN}$_{#1}$ \\
+						}
+					}
+					\def\myvmdnode(#1,#2){%
+						\rput(#1,#2){%
+							\rnode{VMD}{%
+								\psframebox[framesep=0pt,shadow=true,shadowcolor=myblue,blur=true,framearc=0.25]{%
+									\begin{tabular}{c|c}%
+										\multicolumn{2}{c}{\psframebox*[linecolor=white]{\Large\myacronl-{acr-VMD}}} \\[2ex]
+											\hline
+											\psframebox*[linecolor=white]{\myacronl-{acr-IMD}} & \myVRPNclient \\
+										\end{tabular}%
+									}%
+								}%
+							}%
+						}
+						\begin{myps}(-10,-5)(10,5)
+							\rput(-8,4){\textit{Simulation}}
+							\psline[linewidth=0.1pt,linestyle=dashed,linecolor=black!33](-4,5)(-4,-5)
+							\rput(0,4){\textit{Visualisation}}
+							\psline[linewidth=0.1pt,linestyle=dashed,linecolor=black!33](4,5)(4,-5)
+							\rput(8,4){\textit{Interaction}}
+							\psset{arrowsize=1.5pt 3,arrowlength=2}
+							\myvmdnode(0,0)
+							\mynode(-8,0)[NAMD]{\Large\myacronl-{acr-NAMD}}
+							\mynode(8,2)[VRPN1]{\myVRPNserveur{1}}
+							\mynode(8,0)[VRPN2]{\myVRPNserveur{2}}
+							\mynode(8,-3)[VRPNn]{\myVRPNserveur{n}}
+							\rput(8,-1.5){\LARGE$\vdots$}
+							\nccurve[offsetA=10pt,angleA=180,angleB=0]{<->}{VMD}{NAMD}
+							\psset{labelsep=3pt,nrot=:D}
+							\nbput{\scriptsize Données de}
+							\naput{\scriptsize simulation}
+							\pnode(-4,0){VMD-NAMD-link}
+							\psset{angleA=0,angleB=180,offsetA=-10pt,ncurvA=1}
+							\nccurve{<->}{VMD}{VRPN1}
+							\nccurve{<->}{VMD}{VRPN2}
+							\nccurve{<->}{VMD}{VRPNn}
+						\end{myps}
+						\mycaption[fig-SchemaDeLaPlateFormeShaddock]{Schéma de la plate-forme \myShaddock}
+					\end{myfigure}
 				\begin{mysubsection}[sse-ArchitectureDuSysteme]{Architecture du système}
-					Deux types d'architectures sont possibles pour les \myacro*{acr-EVC} : pair-à-pair ou client/serveur.
+					Deux types d'architectures sont possibles pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair.
 					Parmi les architectures pair-à-pair, \mycite[author]{Iglesias-2008} propose une tâche d'assemblage collaboratif assisté par l'haptique.
 					\mycite[author]{Kim-2004} étudie le déplacement collaboratif d'une boîte également assisté par l'haptique.
 					Aucune des deux plate-formes proposées ne souffre d'instabilités notables dans le rendu haptique.
 					Dans les \myacro*{acr-EVC}, l'architecture pair-à-pair permet un rendu haptique relativement stable puisque chaque nœud du système gère sa propre simulation et n'est pas lié au latence voire au coupure du réseau.
 					
-					Cependant, des architectures client/serveur propose également des interactions haptiques.
+					Cependant, des travaux proposent également des architectures client/serveur avec des interactions haptiques.
 					\mycite[author]{Huang-2010} propose une interaction haptique client/serveur pour la manipulation d'un jeu de construction par blocs.
 					\mycite[author]{Norman-2010} s'intéresse particulièrement aux influences du réseau sur les interactions visuo-haptiques.
 					L'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système.
