@@ -67,6 +67,12 @@
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
+% To have a multi-line cell in the tabular
+\newcommand\mymultiline[2][c]{%
+	\begin{tabular}{#1}%
+		#2%
+	\end{tabular}%
+}
 % Define the style for the current row
 \newcommand{\myrowstyle}[1]{%
 	\gdef\myfloat@rowstyle{#1}%
