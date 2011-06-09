@@ -30,9 +30,9 @@
 
 \ProcessOptions
 \PassOptionsToClass{fleqn}{book}
-\PassOptionsToClass{10pt}{book}
+\PassOptionsToClass{12pt}{book}
 \PassOptionsToClass{a4paper}{book}
-\LoadClassWithOptions{book}
+\LoadClass{book}
 
 \if@myenglish
 	\PassOptionsToPackage{english}{babel}
