@@ -40,16 +40,16 @@
 		\textsc{%
 			\ifx\my@args@one\@empty%
 			\else%
-				\MakeLowercase{#1}\xspace%
+				\MakeLowercase{#1}%
 			\fi%
-			\makefirstuc{\MakeLowercase{#2}}\xspace%
+			\makefirstuc{\MakeLowercase{#2}}%
 		}%
 	\else%
 	\ifx\my@args@one\@empty%
 	\else%
-		\MakeLowercase{#1}\xspace%
+		\MakeLowercase{#1}%
 	\fi%
-	\MakeUppercase{#2}\xspace%
+	\MakeUppercase{#2}%
 	\fi%
 }
 % To print numbers (see 'numprint' package)
