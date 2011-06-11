@@ -52,19 +52,19 @@
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
 %% Define the command to display the glossary at the end of document
-\newcommand{\myglossary}{\printglossaries}
+\newrobustcmd\myglossary{\printglossaries}
 %% To create a new glossary entry
 % Following options are allowed:
 % - name: the name (text which will appeared in document)
 % - description: description of the word in the glossary
 % - plural: how it should be in plural context
-\newcommand{\mynewglos}[2]{\newglossaryentry{#1}{sort={#1},#2}}
+\newrobustcmd\mynewglos[2]{\newglossaryentry{#1}{sort={#1},#2}}
 \if@acronym
 	%% To create a new acronym entry
 	% All options from '\mynewglos' are allowed and some others:
 	% - first: displayed text the first time in the document
 	% - firstplural: displayed text the first time in the document (plural context)
-	\newcommand{\mynewacro}[2]{\newglossaryentry{#1}{type=\acronymtype,sort={#1},#2}}
+	\newrobustcmd\mynewacro[2]{\newglossaryentry{#1}{type=\acronymtype,sort={#1},#2}}
 \fi
 %% To insert a glossary item in the text
 % Three different suffix are allowed:
@@ -73,15 +73,15 @@
 % - '*' to have the plural form
 \def\mycustomglos#1#2{
 	% With hyperlink
-	\expandafter\def\csname my#1\endcsname##1{\protect\csname #2\endcsname{##1}}
-	\WithSuffix\expandafter\def\csname my#1\endcsname-##1{\protect\csname #2text\endcsname{##1}}
-	\WithSuffix\expandafter\def\csname my#1\endcsname+##1{\protect\csname #2first\endcsname{##1}}
-	\WithSuffix\expandafter\def\csname my#1\endcsname*##1{\protect\csname #2pl\endcsname{##1}}
+	\expandafter\newrobustcmd\csname my#1\endcsname[1]{\protect\csname #2\endcsname{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1\endcsname-[1]{\protect\csname #2text\endcsname{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1\endcsname+[1]{\protect\csname #2first\endcsname{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1\endcsname*[1]{\protect\csname #2pl\endcsname{##1}}
 	% With no hyperlink
-	\expandafter\def\csname my#1nl\endcsname##1{\protect\csname #2\endcsname*{##1}}
-	\WithSuffix\expandafter\def\csname my#1nl\endcsname-##1{\protect\csname #2text\endcsname*{##1}}
-	\WithSuffix\expandafter\def\csname my#1nl\endcsname+##1{\protect\csname #2first\endcsname*{##1}}
-	\WithSuffix\expandafter\def\csname my#1nl\endcsname*##1{\protect\csname #2pl\endcsname*{##1}}
+	\expandafter\newrobustcmd\csname my#1nl\endcsname[1]{\protect\csname #2\endcsname{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname-[1]{\protect\csname #2text\endcsname*{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname+[1]{\protect\csname #2first\endcsname*{##1}}
+	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname*[1]{\protect\csname #2pl\endcsname*{##1}}
 }
 \mycustomglos{glos}{gls}
 \mycustomglos{Glos}{Gls}
