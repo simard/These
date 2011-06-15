@@ -101,50 +101,44 @@
 \if@minitoc
 	\newcommand{\myminitoc}{\phantomsection\minitoc}
 \fi
+
 \newenvironment{mypart}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\part{\my@args@two}\label{\my@args@one}%%
+	\part{#2}%
+	\label{#1}%
 }{}
 \newenvironment{mychapter}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\chapter{\my@args@two}\label{\my@args@one}%
+	\chapter{#2}%
+	\label{#1}%
 	\if@minitoc%
 		\myminitoc%
 	\fi%
 }{}
 \newenvironment{mysection}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\section{\my@args@two}\label{\my@args@one}%
+	\section{#2}%
+	\label{#1}%
 }{}
 \newenvironment{mysubsection}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\subsection{\my@args@two}\label{\my@args@one}%
+	\subsection{#2}%
+	\label{#1}%
 }{}
 \newenvironment{mysubsubsection}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\subsubsection{\my@args@two}\label{\my@args@one}%
+	\subsubsection{#2}%
+	\label{#1}%
 }{}
 \newenvironment{myparagraph}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\paragraph{\my@args@two}\label{\my@args@one}%
+	\paragraph{#2}%
+	\label{#1}%
 }{}
 \newenvironment{mysubparagraph}[2][]{%
-	\def\my@args@one{#1}%
-	\def\my@args@two{#2}%
 	\phantomsection%
-	\subparagraph{\my@args@two}\label{\my@args@one}%
+	\subparagraph{#2}%
+	\label{#1}%
 }{}
 
 % End of package
