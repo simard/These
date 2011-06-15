@@ -62,26 +62,27 @@
 						\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
 							En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 					\end{description}
+
 					\begin{myfigure}
 						\psset{xunit=0.2\textwidth}
 						\def\mycirclenum(#1,#2)#3{%
 							\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
 						}
-						\begin{myps}(-2.5,-0.5)(2.5,5)
+						\begin{myps}(-2.5,-1)(2.5,5)
 							\mynode(0,4)[Search]{Recherche}
 							\mycirclenum(0,4){1}
 							\mynode(0,3)[Selection]{Sélection}
 							\mycirclenum(0,3){2}
-							\mynode(0,2)[Deformation]{Déformation}
+							\mynode(0,2)[Manipulation]{Manipulation}
 							\mycirclenum(0,2){3}
 							\mynode(0,1)[Evaluation]{Évaluation}
 							\mycirclenum(0,1){4}
-							\mynode[fillstyle=solid,fillcolor=myblue!25](0,0)[Objective]{Objectif atteint}
+							\mynode[fillstyle=solid,fillcolor=myblue!25](0,-0.5)[Objective]{Objectif atteint}
 							\ncline{->}{Search}{Selection}
-							\ncline{->}{Selection}{Deformation}
-							\ncline{->}{Deformation}{Evaluation}
+							\ncline{->}{Selection}{Manipulation}
+							\ncline{->}{Manipulation}{Evaluation}
 							\ncline{->}{Evaluation}{Objective}
-							\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05,armA=0.2]{->}{Evaluation}{Search}
+							\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Search}
 						\end{myps}
 						\mycaption[fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
 					\end{myfigure}

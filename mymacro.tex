@@ -42,7 +42,7 @@
 	\@ifnextchar[{\mynode@i}{\mynode@i[style=nodestyle]}%
 }
 \def\mynode@i[#1](#2,#3)[#4]#5{%
-	\rput(#2,#3){\rnode{#4}{\psframebox[style=nodestyle,#1]{#5}}}%
+	\rput(#2,#3){\Rnode{#4}{\psframebox[style=nodestyle,#1]{\vphantom{pÉ}#5}}}%
 }
 \newcommand{\mynytrogen}{\myatom[mynytrogencolor]{A}}
 \newcommand{\myNusE}{\textsc{NusE:NusG}\xspace}
