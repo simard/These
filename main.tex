@@ -100,11 +100,8 @@
 				Ensuite, la gestion d'une vue partagée est abordée dans la \myref{sse-VuePartagee}.
 				\begin{myfigure}
 					\psset{unit=0.05\textwidth}
-					\def\myVRPNclient{%
-						\mymultiline{
-							Client \\
-							\myacronl-{acr-VRPN} \\
-						}%
+					\def\mycomputer#1{%
+						\textcolor{black!33}{\scriptsize Ordinateur~#1}%
 					}
 					\def\myVRPNclient{%
 						\mymultiline{
@@ -112,10 +109,22 @@
 							\myacronl-{acr-VRPN} \\
 						}%
 					}
-					\def\myVRPNserveur#1{%
+					\def\myVRPNclient{%
 						\mymultiline{
-							Serveur \\
-							\myacronl-{acr-VRPN}$_{#1}$ \\
+							Client \\
+							\myacronl-{acr-VRPN} \\
+						}%
+					}
+					\def\myVRPNserver#1{%
+						\mymultiline[r]{
+							\mycomputer{#1} \\[-1ex]
+							Serveur \myacronl-{acr-VRPN}
+						}%
+					}
+					\def\myNAMDserver#1{%
+						\mymultiline[r]{
+							\mycomputer{#1} \\[-1ex]
+							Serveur \myacronl-{acr-NAMD}
 						}%
 					}
 					\def\myvmdnode(#1,#2){%
@@ -123,36 +132,33 @@
 							\rnode{VMD}{%
 								\psframebox[style=nodestyle,framesep=0pt]{%
 									\begin{tabular}{c|c}%
-										\multicolumn{2}{c}{\psframebox*[linecolor=white]{\Large\myacronl-{acr-VMD}}} \\[2ex]
+										\multicolumn{2}{r}{\mycomputer{0}} \\[-0.5ex]
+										\multicolumn{2}{c}{\psframebox*[linecolor=white]{\Large\myacronl-{acr-VMD}}} \\
 											\hline
-											\psframebox*[linecolor=white]{\myacronl-{acr-IMD}} & \myVRPNclient \\
+											\myVRPNclient & \psframebox*[linecolor=white]{\myacronl-{acr-IMD}} \\
 										\end{tabular}%
 									}%
 								}%
 							}%
 						}
 						\begin{myps}(-10,-5)(10,5)
-							\rput(-8,4){\textit{Simulation}}
+							\rput(-7.5,4){\textit{Interaction}}
 							\psline[linewidth=0.1pt,linestyle=dashed,linecolor=black!33](-4,5)(-4,-5)
 							\rput(0,4){\textit{Visualisation}}
 							\psline[linewidth=0.1pt,linestyle=dashed,linecolor=black!33](4,5)(4,-5)
-							\rput(8,4){\textit{Interaction}}
-							\psset{arrowsize=1.5pt 3,arrowlength=2}
+							\rput(7.5,4){\textit{Simulation}}
 							\myvmdnode(0,0)
-							\mynode(-8,0)[NAMD]{\Large\myacronl-{acr-NAMD}}
-							\mynode(8,2)[VRPN1]{\myVRPNserveur{1}}
-							\mynode(8,0)[VRPN2]{\myVRPNserveur{2}}
-							\mynode(8,-3)[VRPNn]{\myVRPNserveur{n}}
-							\rput(8,-1.5){\LARGE$\vdots$}
-							\nccurve[offsetA=10pt,angleA=180,angleB=0]{<->}{VMD}{NAMD}
-							\psset{labelsep=3pt,nrot=:D}
-							\nbput{\scriptsize Données de}
-							\naput{\scriptsize simulation}
-							\pnode(-4,0){VMD-NAMD-link}
-							\psset{angleA=0,angleB=180,offsetA=-10pt,ncurvA=1}
-							\nccurve{<->}{VMD}{VRPN1}
-							\nccurve{<->}{VMD}{VRPN2}
-							\nccurve{<->}{VMD}{VRPNn}
+							\mynode(7.5,0)[NAMD]{\myNAMDserver{n+1}}
+							\mynode(-7.5,2)[VRPN1]{\myVRPNserver{1}}
+							\mynode(-7.5,0)[VRPN2]{\myVRPNserver{2}}
+							\mynode(-7.5,-3)[VRPNn]{\myVRPNserver{n}}
+							\rput(-7.5,-1.5){\LARGE$\vdots$}
+							\psset{arm=15pt,linearc=.5}
+							\ncdiag[offsetA=-10pt,angleA=0,angleB=180]{<->}{VMD}{NAMD}
+							\psset{angleA=180,angleB=0,offsetA=10pt,ncurvA=1}
+							\ncdiag{<->}{VMD}{VRPN1}
+							\ncdiag{<->}{VMD}{VRPN2}
+							\ncdiag{<->}{VMD}{VRPNn}
 						\end{myps}
 						\mycaption[fig-SchemaDeLaPlateFormeShaddock]{Schéma de la plate-forme \myShaddock}
 					\end{myfigure}
@@ -490,8 +496,24 @@
 		\end{mychapter}
 	\end{mypart}
 	\begin{mypart}[prt-EtudeDuTravailCollaboratif]{Étude du travail collaboratif}
-		\begin{mychapter}[cha-LaRechercheCollaborativeDeResidusEnSimulationMoleculaire]{La recherche collaborative de \myglosnl*{glo-Residu} en simulation moléculaire}
+		\begin{mychapter}[cha-LaRechercheCollaborativeDeResidusEnSimulationMoleculaire]{La recherche collaborative de résidus en simulation moléculaire}
 			\begin{mysection}[sec-exp1-Introduction]{Introduction}
+				La majeure partie de la thèse est l'étude du travail collaboratif en environnement virtuel complexe.
+				L'environnement virtuel complexe choisi est la manipulation moléculaire qui se découpe en quatre tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+				Nous nous proposons d'étudier ces quatre tâches élémentaires indépendamment les unes des autres.
+				La première de ces expérimentations s'intéresse particulièrement au deux premières tâches élémentaires : la \myemph{sélection} et la \myemph{recherche}.
+				La seconde et la troisième expérimentation permettront d'étudier plus particulièrement les tâches élémentaires de \myemph{manipulation} et d'\myemph{évaluation}.
+
+				La thèse porte sur le travail collaboratif.
+				Cette première étude met en collaboration deux individus sur une tâche de recherche.
+				La seconde étude utilisera des \myglos*{glo-Binome} dans une tâche de manipulation.
+				Finalement, la collaboration de groupe sera abordée au niveau de la troisième et dernière étude sur le travail collaboratif.
+
+				L'expérimentation est présentée en plusieurs parties.
+				Nous commencerons par présenter les objectifs et les hypothèses de cette première expérimentation dans la \myref{sec-exp1-Presentation}.
+				Le dispositif expérimental est présenté dans la \myref{sec-exp1-DispositifExperimentalEtMateriel}.
+				La \myref{sec-exp1-Methode} expose la tâche réalisée ainsi que les différentes variables de l'expérimentations.
+				Enfin, les résultats sont analysés dans la \myref{sec-exp1-Resultats} puis une synthèse de cette expérimentation est exposée dans la \myref{sec-exp1-Synthese}.
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
