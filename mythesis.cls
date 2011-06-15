@@ -42,6 +42,7 @@
 	\PassOptionsToPackage{frenchb}{babel}
 	\PassOptionsToPackage{myfrancais}{myref}
 \fi
+\PassOptionsToPackage{sorting=nyt,hyperref=auto,abbreviate=false,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,block=space,maxcitenames=2,maxbibnames=99}{biblatex}
 
 %% Packages to call
 % About characters encoding
@@ -76,7 +77,7 @@
 % All about the table of contents and other lists
 \RequirePackage[chapter,minitoc]{mytoc}
 % All about the bibliographies
-\RequirePackage[biblatex,backref,minibibsection]{mybib}
+\RequirePackage[biblatex,backref,minibib,bibprintlevel=chapter,bibsectionlevel=chapter,bibsegmentlevel=section]{mybib}
 % All about making references
 \RequirePackage[smartref]{myref}
 
@@ -122,10 +123,29 @@
 	view={FitH}
 }
 %%% biblatex %%%
-% To avoid a semi-colon for 'In Proceeedings...' (instead of 'In: Preoceedings...').
+% To avoid a semi-colon for 'In Proceeedings...' (instead of 'In: Proceedings...').
 \renewcommand{\intitlepunct}{\space}
 % To separate each entry in the bibliography with a vertical space
 \setlength{\bibparsep}{1ex plus 0.5ex minus 0.2ex}
+% Define the 'bibintoc' heading of 'biblatex'
+\defbibheading{bibintoc}[\bibname]{%
+	\section*{#1}%
+	\addcontentsline{toc}{section}{#1}%
+	\markboth{#1}{#1}
+}
+% Define the 'subbibintoc' heading of 'biblatex'
+\defbibheading{subbibintoc}[\nameref{refsegment:\therefsegment}]{%
+	\subsection*{#1}%
+	\addcontentsline{toc}{subsection}{#1}%
+	\markboth{#1}{#1}
+}
+% Automatic bibliography at the end of each chapter
+\let\mybib@old@endmychapter\endmychapter
+\gdef\endmychapter{%
+	\clearpage
+	\printbibliography[heading=bibintoc]%
+	\mybib@old@endmychapter%
+}
 
 %% Declare all options
 \newcommand{\subtitle}[1]{\def\@subtitle{#1}}
@@ -225,11 +245,6 @@
 %% Redéfinition de la mise en page des paragraphes
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
-
-% Automatic include of mini-bibliographies
-\let\oldendmysection\endmysection
-\def\endmysection{\myminibiblio\oldendmysection}
-\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fin de la redéfinition des différentes parties %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
