@@ -6,62 +6,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % For the intermediate bibliographies
 \newif\if@minibib \@minibibfalse
-\DeclareOption{minibib}{\@minibibtrue}
-% What is the section level for the bibliographies
-\newif\if@minibibchapter \@minibibchapterfalse
-\DeclareOption{minibibchapter}{\@minibibchaptertrue\@minibibtrue}
-\newif\if@minibibsection \@minibibsectionfalse
-\DeclareOption{minibibsection}{\@minibibsectiontrue\@minibibtrue}
+\DeclareOptionX[my]{minibib}{\@minibibtrue}
+% What is the section level to print the bibliographies
+\xdef\mybib@bibprintlevel{none}
+\DeclareOptionX[my]{bibprintlevel}[none]{\xdef\mybib@bibprintlevel{#1}}
+% What is the level of the 'section' subbibliography
+\xdef\mybib@bibsectionlevel{none}
+\DeclareOptionX[my]{bibsectionlevel}[none]{\xdef\mybib@bibsectionlevel{#1}\@minibibtrue}
+% What is the level of the 'segment' subbibliography
+\xdef\mybib@bibsegmentlevel{none}
+\DeclareOptionX[my]{bibsegmentlevel}[none]{\xdef\mybib@bibsegmentlevel{#1}\@minibibtrue}
 % For more powerful command about bibliography citations
 \newif\if@natbib \@natbibfalse
-\DeclareOption{natbib}{\@natbibtrue}
-% Define the section level of titles
-\newif\if@minibibchaptertitle \@minibibchaptertitlefalse
-\DeclareOption{minibibchaptertitle}{\@minibibchaptertitletrue}
-\newif\if@minibibsectiontitle \@minibibsectiontitlefalse
-\DeclareOption{minibibsectiontitle}{\@minibibsectiontitletrue}
+\DeclareOptionX[my]{natbib}{\@natbibtrue}
 % To have back references (page number) in the bibliographies
 \newif\if@backref \@backreffalse
-\DeclareOption{backref}{\@backreftrue}
+\DeclareOptionX[my]{backref}{\@backreftrue}
 % Use the 'biblatex' package
 \newif\if@biblatex \@biblatexfalse
-\DeclareOption{biblatex}{\@biblatextrue}
+\DeclareOptionX[my]{biblatex}{\@biblatextrue}
 % In case of unknown options
-\DeclareOption*{%
+\DeclareOptionX*{%
 	\PackageWarning{mybib}{Unknown option `\CurrentOption'}%
 }
 
-\ProcessOptions
+\ProcessOptionsX[my]
 
 %% Options to pass to packages
 \if@minibib
 	\if@biblatex
-		\if@minibibchapter
-			\PassOptionsToPackage{refsection=chapter,refsegment=section}{biblatex}
-		\fi
-		\if@minibibsection
-			\PassOptionsToPackage{refsection=chapter,refsegment=section}{biblatex}
-		\fi
+		\ifstrempty{\mybib@bibsectionlevel}%
+		{}{%
+			\PassOptionsToPackage{refsection=\mybib@bibsectionlevel}{biblatex}
+		}
+		\ifstrempty{\mybib@bibsegmentlevel}%
+		{}{%
+			\PassOptionsToPackage{refsegment=\mybib@bibsegmentlevel}{biblatex}
+		}
 	\else
 		\PassOptionsToPackage{globalcitecopy}{bibunits}
-		\if@minibibchapter
-			\if@minibibchaptertitle
-				\PassOptionsToPackage{sectionbib}{bibunits}
-			\else
-				\PassOptionsToPackage{subsectionbib}{bibunits}
-			\fi
-		\fi
-		\if@minibibsection
-			\if@minibibsectiontitle
-				\PassOptionsToPackage{subsectionbib}{bibunits}
-			\else
-				\PassOptionsToPackage{sectionbib}{bibunits}
-			\fi
-		\fi
+		\ifstrequal{\mybib@bibsectionlevel}{chapter}{%
+				\passoptionstopackage{sectionbib}{bibunits}
+			}{%
+				\passoptionstopackage{subsectionbib}{bibunits}
+			}
+		\ifstrequal{\mybib@bibsectionlevel}{section}{%
+				\passoptionstopackage{subsectionbib}{bibunits}
+			}{%
+				\passoptionstopackage{sectionbib}{bibunits}
+			}
 	\fi
 \fi
 \if@natbib
-	\PassOptionsToPackage{backref}{biblatex}
+	\PassOptionsToPackage{natbib}{biblatex}
 \fi
 \if@backref
 	\if@biblatex
@@ -76,7 +73,7 @@
 % The biblatex is the best package to make bibliographies
 \if@biblatex
 	\RequirePackage{csquotes}
-	\RequirePackage[sorting=nyt,hyperref=auto,abbreviate=false,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,block=space,maxcitenames=2,maxbibnames=99]{biblatex}
+	\RequirePackage{biblatex}
 \else
 	% To generate entry in table of content for bibliographies (and other)
 	\RequirePackage{tocbibind}
