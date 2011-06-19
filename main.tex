@@ -679,23 +679,22 @@
 									Cette recherche peut être visuelle en orientant et en déplaçant la molécule.
 									Elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles du centre de la molécule.
 								\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a identifié visuellement le \myglos{glo-Residu}.
-									Elle est constituée d'une phase de sélection puis d'une phase d'extraction.
+									Elle est constituée d'une phase de sélection puis d'une phase d'extraction hors de la molécule.
 							\end{description}
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-LaDistanceEntreLesEspacesDeTravail]{\myvard{2} La distance entre les espaces de travail}
-							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'expérimentation.
+							Cette mesure est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} correspondant aux outils \mytool{tug}.
 							Elle est mesurée dans le monde réel mais peut être convertie dans l'environnement virtuel (à l'échelle de la molécule).
-							Cette distance est de l'ordre du centimètre.
+							L'ordre de grandeur de cette mesure est le centimètre.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-LesCommunicationsVerbales]{\myvard{3} Les communications verbales}
-							L'enregistrement audio permet de mesurer la quantité de temps de parole pour chaque tâche de l'expérimentation.
-							Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+							L'enregistrement des communications verbales permet de mesurer la quantité de temps de parole de chaque sujets pour chaque étape de l'expérimentation.
+							Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
 
 							\begin{myfigure}
 								\psset{unit=0.1\textwidth} % Fill entirely the page width
 								\begin{myps}(0,-1.75)(10,1.5)
 									\psset{linewidth=1pt,linecolor=black}%
-									%\psframe(0,-0.5)(10,0.5)%
 									\psset{fillstyle=solid}%
 									\psframe[fillcolor=mylightblue](0,-0.5)(6,0.5)%
 									\pspolygon[fillcolor=mylightred](6,-0.5)(6,0.5)(9,0.5)(10,0)(9,-0.5)%
@@ -732,7 +731,7 @@
 									\ncdiagg{<-}{verbal4}{verbal}
 									\ncdiagg{<-}{verbal5}{verbal}
 								\end{myps}
-								\mycaption[fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale]{Schéma des phases de la communication verbale}
+								\mycaption[fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu]{Étapes de la communication verbale pour la recherche d'un \myglosnl{glo-Residu}}
 							\end{myfigure}
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-LAffiniteEntreLesSujets]{\myvard{4} L'affinité entre les sujets}
@@ -741,35 +740,14 @@
 								\item Les sujets ne se connaissent pas;
 								\item Les sujets travaillent dans la même entreprise, le même laboratoire;
 								\item Les sujets travaillent dans la même équipe, sur les mêmes projets;
-								\item Les sujets travaillent dans ensemble, sont dans le même bureau;
+								\item Les sujets travaillent ensemble, sont dans le même bureau;
 								\item Les sujets sont amis proches.
 							\end{enumerate}
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp1-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
 							Un questionnaire est proposé à tous les sujets.
-							Il est constitué de plusieurs questions (notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux).
-
-							Le questionnaire est le suivant (les questions sont posées à chaque sujet dans le cas du \myglos{glo-Binome}) :
-							\begin{enumerate}
-								\item Dans quelle configuration vous êtes-vous senti le plus efficace : \myemph{seul} ou \myemph{en collaboratif} (choisissez \mynum{1} pour \myemph{seul} et \mynum{5} pour \myemph{en collaboratif}) ?
-								\item Avez-vous eu le sentiment de travailler en collaboration (par opposition au travail seul) ?
-								\item Pensez-vous avoir une position de meneur dans la configuration collaborative ?
-								\item Vous êtes vous senti utile dans la configuration collaborative (par opposition à pénalisant) ?
-								\item Comment évalueriez-vous votre taux de communication\dots{}
-									\begin{itemize}
-										\item verbale ?
-										\item gestuelle ?
-										\item virtuelle ?
-									\end{itemize}
-								\item Avez-vous trouvé les différents effets visuels intuitifs ?
-								\item Avez-vous trouvé les différents effets visuels confortables ?
-								\item Avez-vous trouvé les interactions intuitives ?
-								\item Avez-vous trouvé les interactions confortables ?
-							\end{enumerate}
-
-							Concernant la communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
-							La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer ou pour désigner par exemple.
-							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
+							Il est constitué de trois ou quatre parties respectivement destinés aux \myglos*{glo-Monome} et \myglos*{glo-Binome}.
+							Le questionnaire fourni aux sujets est disponible dans la \myref{sec-Questionnaires-PremiereExperimentation}.
 						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
@@ -1075,7 +1053,7 @@
 					Cependant, une évaluation de l'ensemble des \myglos*{glo-Residu} proposés a permis d'identifier des tâches de complexités variables : les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} apparaissent comme significativement plus complexes que les autres \myglos*{glo-Residu}.
 					Sur ce groupe de \myglos*{glo-Residu}, les \myglos*{glo-Binome} obtiennent une amélioration significative des performances par rapport aux \myglos*{glo-Monome} ce qui confirme notre hypothèse \myhypothesis{1} sur les tâches complexes.
 
-					Comme développé dans la procédure expérimentale, le temps de réalisation de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myref*{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+					Comme développé dans la procédure expérimentale, le temps de réalisation de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myref*{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
 					Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} se distinguent par un temps de recherche significativement plus important que les autres \myglos*{glo-Residu}.
 					En effet, ce sont les deux \myglos*{glo-Residu} qui possèdent des similarités avec d'autres \myglos*{glo-Residu} également présents dans la molécule \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
 					À cause de ces similarités, l'œil des sujets est continuellement attiré vers ces \myglos*{glo-Residu} similaires et une perte de temps significative se fait ressentir dans la phase de recherche.
@@ -1988,5 +1966,9 @@
 	\end{mypart}
 
 	\myglossary
-	%\myappendix
+	\myappendix
+	\begin{mychapter}[cha-Questionnaires]{Questionnaires}
+		\begin{mysection}[sec-Questionnaires-PremiereExperimentation]{Première expérimentation}
+		\end{mysection}
+	\end{mychapter}
 \end{document}
