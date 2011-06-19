@@ -670,7 +670,7 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp1-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp1-LeTempsDeCompletion]{\myvard{1} Le temps de complétion}
+						\begin{myparagraph}[par-exp1-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 							Ce temps est divisé en deux phases bien distinctes :
@@ -985,7 +985,7 @@
 							\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                  \\
 							                                          & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
 							\mymiddlerule
-							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de complétion                                               \\
+							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
 							                                          & \myvard{2} Distance entre les espaces de travail                             \\
 							                                          & \myvard{3} Communication verbales                                            \\
 							                                          & \myvard{4} Affinités entre les sujets                                        \\
@@ -1022,12 +1022,12 @@
 							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{time~(s)}
 							\myboxplot{exp1-time-residue.csv}
 						\end{myps}
-						\mycaption[fig-exp1-TempsDeCompletionParResidu]{Temps de complétion par \myglosnl{glo-Residu}}
+						\mycaption[fig-exp1-TempsDeRealisationParResidu]{Temps de réalisation par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
-					La \myref{fig-exp1-TempsDeCompletionParResidu} présente le temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2}.
-					L'analyse montre qu'il y a un effet significatif des \myglos*{glo-Residu} \myvari{2} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-anova.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de complétion significativement plus longs que les autres \myglos*{glo-Residu}.
+					La \myref{fig-exp1-TempsDeRealisationParResidu} présente le temps de réalisation \myvard{1} de chaque \myglos{glo-Residu} \myvari{2}.
+					L'analyse montre qu'il y a un effet significatif des \myglos*{glo-Residu} \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-anova.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de réalisation significativement plus longs que les autres \myglos*{glo-Residu}.
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.008cm}
@@ -1036,12 +1036,12 @@
 							\myboxplot{exp1-time-residue-group.csv}
 							\mylegend{\myleg{\myGlosnl{glo-Monome}}{myblue}\myand\myleg{\myGlosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp1-TempsDeCompletionComparesMonomeOuBinomeParResidu]{Temps de complétion comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
+						\mycaption[fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu]{Temps de réalisation comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
-					La \myref{fig-exp1-TempsDeCompletionComparesMonomeOuBinomeParResidu} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
-					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
-					Cependant, en se limitant au groupe de trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, on montre un effet significatif du nombre de participants \myvari{1} sur le temps de complétion \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
+					La \myref{fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
+					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
+					Cependant, en se limitant au groupe de trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, on montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.0069cm}
@@ -1075,7 +1075,7 @@
 					Cependant, une évaluation de l'ensemble des \myglos*{glo-Residu} proposés a permis d'identifier des tâches de complexités variables : les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} apparaissent comme significativement plus complexes que les autres \myglos*{glo-Residu}.
 					Sur ce groupe de \myglos*{glo-Residu}, les \myglos*{glo-Binome} obtiennent une amélioration significative des performances par rapport aux \myglos*{glo-Monome} ce qui confirme notre hypothèse \myhypothesis{1} sur les tâches complexes.
 
-					Comme développé dans la procédure expérimentale, le temps de complétion de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myref*{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
+					Comme développé dans la procédure expérimentale, le temps de réalisation de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myref*{fig-exp1-SchemaDesPhasesDeLaCommunicationVerbale}.
 					Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} se distinguent par un temps de recherche significativement plus important que les autres \myglos*{glo-Residu}.
 					En effet, ce sont les deux \myglos*{glo-Residu} qui possèdent des similarités avec d'autres \myglos*{glo-Residu} également présents dans la molécule \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
 					À cause de ces similarités, l'œil des sujets est continuellement attiré vers ces \myglos*{glo-Residu} similaires et une perte de temps significative se fait ressentir dans la phase de recherche.
@@ -1149,11 +1149,11 @@
 							\myaxes(0,12){groupes}(0,300)[50]{time~(s)}
 							\mybarplot{exp1-time-groups.csv}
 						\end{myps}
-						\mycaption[fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome]{Temps de complétion entre les sujets pour chaque \myglosnl{glo-Binome}}
+						\mycaption[fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome]{Temps de réalisation entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
-					La \myref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome} présente les temps de complétion \myvard{1} de chaque \myglos{glo-Binome}.
-					Le temps de complétion de \mygroup{1} est particulièrement important (plus d'une fois et demi les autres groupes les plus longs).
+					La \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Binome}.
+					Le temps de réalisation de \mygroup{1} est particulièrement important (plus d'une fois et demi les autres groupes les plus longs).
 					À l'opposé, on note que \mygroup{2}, \mygroup{3} et \mygroup{4} obtiennent des temps extrêmement bas.
 
 					\begin{myfigure}
@@ -1217,7 +1217,7 @@
 						Ces \myglos*{glo-Binome} travaillent en collaboration étroite.
 
 						Sur la \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration étroite ont de fortes affinités ($\mu = 4$) : ce sont des collègues proches ou des amis.
-						D'après la \myref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de complétion de la tâche relativement moyens comparés aux autres stratégies de travail.
+						D'après la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de réalisation de la tâche relativement moyens comparés aux autres stratégies de travail.
 						Cela se traduit également par une communication relativement moyenne comme affiché sur la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
 
 						En observant plus précisément les temps de communication verbale sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}, les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer dans la phase de recherche que dans la phase de sélection (excepté pour \mygroup{9}).
@@ -1264,7 +1264,7 @@
 						\end{myfigure}
 
 						Sur la \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration moyennement couplées ont des affinités moyennes ($\mu = 3$) : ce sont des collègues.
-						D'après la \myref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de complétion de la tâche.
+						D'après la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de réalisation de la tâche.
 						De plus, la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre une communication verbale assez limitée.
 						La manipulation en champ voisin permet d'être continuellement conscient des actions du partenaire ce qui évite les communications verbales.
 						Cependant, les sujets manipulent des \myglos*{glo-Residu} différents ce qui limite les conflits d'interactions qui interviennent en champ proche.
@@ -1289,9 +1289,9 @@
 						En effet, les membres de ce \myglos{glo-Binome} travaillent de façon complétement indépendante, en limitant au maximum le nombre d'interactions.
 
 						Les affinités des membres de ce \myglos{glo-Binome} sont très faibles \myref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} : les membres ne se connaissent presque pas.
-						De plus, le \myglos{glo-Binome} obtient de très mauvaises performances en ce qui concerne le temps de complétion de la tâche comme le montre la \myref{fig-exp1-TempsDeCompletionEntreLesSujetsPourChaqueBinome}.
+						De plus, le \myglos{glo-Binome} obtient de très mauvaises performances en ce qui concerne le temps de réalisation de la tâche comme le montre la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}.
 						La \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre que le temps de communication verbale est assez important.
-						Cependant, le temps de complétion étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}.
+						Cependant, le temps de réalisation étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}.
 						En effet, les membres du \myglos{glo-Binome} travaillant à distance, leurs interactions sont peu nombreuses ce qui implique peu de gestion de conflits et donc peu de communication verbale.
 						La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
 						En effet, les phases de sélection ont tendance à force la collaboration étroite et favorise ainsi les conflits.
@@ -1498,7 +1498,7 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp2-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp2-LeTempsDeCompletion]{\myvard{1} Le temps de complétion}
+						\begin{myparagraph}[par-exp2-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 						\end{myparagraph}
@@ -1709,7 +1709,7 @@
 							                                          & \myvari{2} Complexité de la tâche                                                 \\
 							                                          & \myvari{3} Niveau d'apprentissage                                                 \\
 							\mymiddlerule
-							\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de complétion                                                    \\
+							\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
 							                                          & \myvard{2} Nombre de sélections                                                   \\
 							                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
 							                                          & \myvard{4} Distance active entre les espaces de travail                           \\
@@ -1756,7 +1756,7 @@
 				\begin{mysubsection}[sse-exp4-Hypotheses]{Hypothèses}
 					\begin{myparagraph}[par-exp4-AmeliorationDesPerformancesAvecLAssistanceHaptique]{\myhypothesis{1} Amélioration des performances avec l'assistance haptique}
 						La première hypothèse est une amélioration des performances liée à l'utilisation des assistances haptiques proposées à travers des outils.
-						Le temps de complétion de la tâche et la qualité de la solution proposée par les sujets seront les \myglos*{glo-VariableDependante} principales pour observer cette amélioration des performances.
+						Le temps de réalisation de la tâche et la qualité de la solution proposée par les sujets seront les \myglos*{glo-VariableDependante} principales pour observer cette amélioration des performances.
 					\end{myparagraph}
 				\end{mysubsection}
 			\end{mysection}
@@ -1816,7 +1816,7 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp4-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp4-LeTempsDeCompletion]{\myvard{1} Le temps de complétion}
+						\begin{myparagraph}[par-exp4-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 						\end{myparagraph}
@@ -1960,7 +1960,7 @@
 							\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Présence de l'assistance                                       \\
 							                                          & \myvari{2} Complexe de molécules à assembler                              \\
 							\mymiddlerule
-							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de complétion                                            \\
+							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                           \\
 							                                          & \myvard{2} Nombre de sélections                                           \\
 							                                          & \myvard{3} Communications verbales et gestuelles                          \\
 							                                          & \myvard{4} Évaluation qualitative du système                              \\
