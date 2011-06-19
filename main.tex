@@ -89,7 +89,7 @@
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
-		\begin{mychapter}[app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules]{\myShaddock\ -- Système collaboratif de manipulation de molécules}
+		\begin{mychapter}[cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules]{\myShaddock\ -- Système collaboratif de manipulation de molécules}
 			\begin{mysection}[sec-PlateFormesCollaborativesExistantes]{Plates-formes collaboratives existantes}
 				\myShaddock est le nom de l'\myacro{acr-EVC} développé dans le cadre de cette thèse.
 				Les \myacro*{acr-EVC} existants sont nombreux mais aucun ne convient à nos besoins.
@@ -570,37 +570,73 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp1-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-				L'\myacro{acr-EVC} utilisé est illustré sur la \myref{fig-exp1-IllustrationDuDispositifExperimental}.
-				L'\myacro{acr-EVC} propose une visualisation partagée sur grand écran (vue publique à tous les utilisateurs) à l'aide d'un vidéoprojecteur.
-				Le ou les sujets font face à l'écran avec à leur disposition :
-				\begin{itemize}
-					\item un interface haptique de manipulation \mytool{grab};
-					\item deux interfaces haptiques de déformation \mytool{tug}.
-				\end{itemize}
+				Dans cette section est exposé l'ensemble du dispositif expérimental utilisé lors de l'expérience.
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+				Nous commencerons par présenter le matériel nécessaire dans la \myref{sse-exp1-DispositifTechnique}.
+				Ensuite, nous détaillerons la disposition de chaque élément dans le dispositif expérimental dans la \myref{sse-exp1-DispositionDesElements}.
+				Enfin, nous terminerons par les visualisations proposées et les interactions possibles des sujets sur le dispositif expérimental dans la \myref{sse-exp1-VisualisationEtInteraction}.
+				\begin{mysubsection}[sse-exp1-DispositifTechnique]{Dispositif technique}
+					La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
+					\begin{itemize}
+						\item \mynum{1}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
+						\item \mynum{2}~ordinateurs de faible puissance;
+						\item \mynum{3}~interfaces haptiques \myOmni;
+						\item \mynum{1}~vidéoprojecteur \mytodo{\No de série}{Compléter le numéro de série};
+						\item \mynum{1}~grand écran de vidéoprojection;
+						\item \mynum{1}~écran \myLCD \mynum[pouces]{17};
+						\item \mynum{1}~microphone de bureau.
+					\end{itemize}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp1-DispositionDesElements]{Disposition des éléments}
+					Durant la phase expérimentale, les sujets sont placés en face de l'écran de vidéoprojection avec le vidéoprojecteur derrière eux.
+					La visualisation du grand écran est accessible à tous les utilisateurs : c'est une vue \myemph{partagée}.
+					Dans le cas d'un \myglos{glo-Binome}, les sujets sont placés à côté l'un de l'autre.
+					Il n'y a aucun obstacle entre eux afin de ne pas gêner les éventuelles communications (verbales ou gestuelles).
+					De plus, les sujets auront face à eux un écran \myLCD.
 
-				\begin{myfigure}
-					\begin{mysubfigure}
-						\myimage[width=0.49\textwidth]{exp1-schema}
-						\mysubcaption[fig-exp1-IllustrationDuDispositifExperimental-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{mysubfigure}
-					\begin{mysubfigure}
-						\myimage[width=0.49\textwidth]{exp1-photo}
-						\mysubcaption[fig-exp1-IllustrationDuDispositifExperimental-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-					\end{mysubfigure}
-					\mycaption[fig-exp1-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
-				\end{myfigure}
+					Face aux sujets se trouvent trois interfaces haptiques.
+					L'interface du milieu est l'outil de manipulation \mytool{grab}.
+					Les deux interfaces sur les côtés sont des outils de manipulation \mytool{tug} \myref*{par-simulation-LesOutilsDeManipulation}.
 
-				Les sujets ont la possibilité de communiquer entre eux sans restriction.
-				Pour les \myglos*{glo-Monome}, le sujet a à sa disposition un outil de manipulation \myemph{grab} et un outil de déformation \myemph{tug} qu'il peut utiliser librement.
-				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
-				L'outil de manipulation \mytool{grab} est attribué à un seul des deux sujets après une négociation au sein du \myglos{glo-Binome}.
-				Le sujet choisi pour gérer l'outil de manipulation \mytool{grab} le sera pour toute la durée de l'expérimentation.
+					L'expérimentateur est placé derrière les sujets afin de ne pas gêner le champ visuel.
+					Il dispose d'un écran permettant de lancer et de stopper les scénarios.
+					La surveillance du bon déroulement de l'expérimentation est effectuée depuis ce poste.
 
-				Un micro de bureau est placé en face des sujets afin de capter toutes les communications orales.
-				L'enregistrement, réalisé à l'aide du logiciel Audacity, débute à la fin de la phase d'apprentissage jusqu'à la fin de l'expérimentation.
-				Un découpage par tâche est réalisé en post-traitement.
+					Finalement, le microphone est placé sur la table face aux sujets afin d'enregistrer tous les échanges verbaux.
+					Les enregistrements sont effectués à l'aide du logiciel \myAudacity.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+					La \myref{fig-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
+					La \myref{fig-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+					\begin{myfigure}
+						\myimage{exp1-schema}
+						\mycaption[fig-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp1-photo}
+						\mycaption[fig-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp1-VisualisationEtInteraction]{Visualisation et interactions}
+					La vue complète de la molécule est projetée sur le grand écran.
+					Les rendus graphiques utilisés sur \myacro{acr-VMD} pour afficher la molécule sont les rendus suivants \myref*{par-simulation-LesRendusGraphiques} :
+					\begin{itemize}
+						\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
+						\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
+						\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
+					\end{itemize}
+
+					L'écran \myLCD est utilisé pour afficher les \myglos*{glo-Residu} à chercher dans la molécule \myref*{sse-exp1-Tache}.
+					Un simple rendu \myCPK est utilisé comme on peut le voir sur la \myref{tab-exp1-ListeDesResidusRecherches}.
+
+					Parmi les trois interfaces haptiques \myOmni, l'outil \mytool{grab}, placé au centre est accessible depuis chacune des deux chaises à disposition.
+					Dans le cas d'un \myglos{glo-Binome}, un seul des deux sujets utilisera l'outil durant tout la durée de l'expérimentation.
+					Cependant, le choix du sujet qui utilisera cet outil est déterminé par négociation au sein du \myglos{glo-Binome}.
+
+					Concernant les deux outils \mytool{tug}, ils sont répartis entre les deux sujets dans le cas d'un \myglos{glo-Binome}.
+					Cependant, seulement un outil \mytool{tug} est laissé à disposition dans le cas d'un \myglos{glo-Monome}.
+					Les sujets peuvent se placer sur la chaise (droite ou gauche) qu'ils souhaitent et ainsi se mettre dans les meilleures conditions concernant leur main dominante.
+				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp1-Sujets]{Sujets}
@@ -1422,7 +1458,7 @@
 				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
 				L'outil de manipulation (la souris \myThreeD) est laissé libre d'utilisation pour chacun des deux sujets.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp2-Sujets]{Sujets}
@@ -1749,7 +1785,7 @@
 				Une caméra vidéo de marque \mySony (\textsc{hdr-sr11e}) sera installée afin de filmer l'expérimentation.
 				L'écran de vidéo-projection ainsi que les sujets (de dos) sont dans le plan de la vidéo.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{app-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 
 			\end{mysection}
 			\begin{mysection}[sec-exp4-Methode]{Méthode}
