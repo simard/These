@@ -2,6 +2,7 @@
 *.spl
 build
 images/*.eps
+images/*.ps
 files/*.csv
 files/*.tex
 .DS_Store
