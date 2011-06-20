@@ -1,0 +1,47 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mypdf}[2011/06/19]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@myenglish \@myenglishfalse
+\DeclareOptionX[my]{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOptionX[my]{myfrancais}{\@myfrancaistrue}
+% In case of unknown options
+\DeclareOptionX*{%
+	\PackageWarning{mypdf}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsX[my]
+
+%% Options to pass to packages
+
+%% Packages to call
+\RequirePackage{etoolbox}
+\RequirePackage{xkeyval}
+\RequirePackage{multido}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+\gdef\mypdf@firstpage{1}%
+\gdef\mypdf@lastpage{1}%
+\numgdef\mypdf@numpages{0}%
+\def\mypdf@definepages[#1-#2]{%
+	\gdef\mypdf@firstpage{#1}%
+	\gdef\mypdf@lastpage{#2}%
+	\numgdef\mypdf@numpages{\mypdf@lastpage-\mypdf@firstpage+1}%
+}
+\define@key[my]{pdf}{pdfpages}[1-1]{\mypdf@definepages[#1]}
+\setkeys[my]{pdf}{pdfpages={1-1}}
+\newrobustcmd\myinsertpdf[2][pdfpages={1-1}]{%
+	\setkeys[my]{pdf}{#1}%
+	\multido{\i=\mypdf@firstpage+1}{\mypdf@numpages}{%
+		\clearpage%
+		\includegraphics[width=\textwidth]{images/#2-\i}
+	}%
+}
+% End of package
+\endinput
