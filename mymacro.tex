@@ -1,4 +1,16 @@
 \makeatletter
+% Modifu the bibliography style
+\newcounter{mymaxcitenames}
+\AtBeginDocument{%
+	\setcounter{mymaxcitenames}{\value{maxnames}}%
+}
+\renewbibmacro{begentry}{%
+	\printtext[brackets]{%
+		\defcounter{maxnames}{\value{mymaxcitenames}}%
+		\printnames{labelname}~\usebibmacro{cite:labelyear+extrayear}%
+	}%
+	\newline%
+}
 % AAA
 \newcommand{\myAlanine}{Alanine\xspace}
 \newcommand{\myanova}[1]{\input{files/#1}}
