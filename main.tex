@@ -4,6 +4,7 @@
 \usepackage{mycolor}
 \usepackage{myps}
 \usepackage{mymacro}
+\usepackage{mypdf}
 
 \input{mymacro}
 \input{mycolor}
@@ -1969,6 +1970,11 @@
 	\myappendix
 	\begin{mychapter}[cha-Questionnaires]{Questionnaires}
 		\begin{mysection}[sec-Questionnaires-PremiereExperimentation]{Première expérimentation}
+			Le questionnaire proposé durant cette expérimentation est constitué de deux parties.
+			La deuxième partie est exclusivement réservée aux \myglos*{glo-Binome} et n'était pas proposée au \myglos*{glo-Monome}.
+			Ce questionnaire contient \mynum[pages]{5} (\mynum[pages]{3} pour les \myglos*{glo-Monome}).
+			Les questions sont évaluées selon une échelle de \mycite[author]{Likert-1932} à cinq niveaux.
+			\myinsertpdf[pdfpages={1-5}]{exp1-questionnary}
 		\end{mysection}
 	\end{mychapter}
 \end{document}
