@@ -19,6 +19,7 @@ GLOSS=xindy
 ACRO=xindy
 DVIPS=dvips
 PS2PDF=ps2pdf
+IMGCONVERT=convert
 R=R
 
 # Compilators options
@@ -27,13 +28,14 @@ BTEXOPT=
 INDEXOPT=
 GLOSSOPT=--language french --codepage utf8 --input-markup xindy
 ACROOPT=--language french --codepage utf8 --input-markup xindy
-DVIPSOPT=-R0
+DVIPSOPT=-R0 -t a4 -Ppdf
 PS2PDFOPT=
 ROPT=--vanilla
 
 # About images
 PNG=$(wildcard $(IMG)/*.png)
-EPS=$(PNG:.png=.eps)
+PDF=$(wildcard $(IMG)/*.pdf)
+EPS=$(PNG:.png=.eps) $(PDF:.pdf=.eps)
 
 # Others
 UNAME=$(shell uname)
@@ -151,11 +153,13 @@ $(BUILD):
 
 # Convert all images from PNG to EPS
 $(IMG)/%.eps: $(IMG)/%.png
-	convert $< eps:->$@
+	$(IMGCONVERT) $< eps:->$@
 
-# Create the 'Makefile' file for the conversion of images from PNG to EPS format
-$(IMG)/Makefile: $(IMG)
-	echo $(MKIMG) > $@
+# Convert all documents from PDF to EPS
+$(IMG)/%.eps: $(IMG)/%.pdf
+	touch $@
+	pdf2ps $< `echo $< | sed 's/\.pdf/\.ps/g'`
+	export pdf_num=`pdf2dsc $< /dev/stdout | grep "%%Pages" | sed 's/^[^0-9]*\([0-9]*\)[^0-9]*$$/\1/g'`; for num in `seq 1 $$pdf_num`; do psselect -p$$num `echo $< | sed 's/\.pdf/\.ps/g'` `echo $< | sed "s/\.pdf/-"$$num"\.ps/g"`; ps2eps `echo $< | sed "s/\.pdf/-"$$num"\.ps/g"` `echo $< | sed "s/\.pdf/-"$$num"\.eps/g"`done
 
 # Generate CSV files from R files
 $(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit $(DATABASE)
@@ -167,5 +171,5 @@ clean:
 
 # To clean the 'build' directory and suppress all created files
 proper: clean
-	rm -f $(IMG)/*.eps
+	rm -f $(IMG)/*.eps $(IMG)/*.ps
 	rm -f $(OUT).dvi $(OUT).ps $(OUT).pdf
