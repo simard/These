@@ -753,14 +753,24 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Tache]{Tâche}
-					La tâche proposée est la recherche et la sélection dans un \myacro{acr-EVC} sur des molécules complexes.
-					Les motifs à rechercher dans les structures moléculaires sont les \myglos*{glo-Residu} de la \myref{tab-exp1-ListeDesResidusRecherches}.
-					Une fois le \myglos{glo-Residu} trouvé, les sujets doivent le sélectionner puis l'extraire hors de la sphère virtuelle englobant la molécule.
-					Les sujets possèdent deux outils pour trouver, sélectionner puis extraire ces motifs :
-					\begin{itemize}
-						\item ils peuvent explorer la molécule en la déplaçant ou en la tournant à l'aide de l'outil \mytool{grab};
-						\item ils peuvent déformer la molécule à l'aide de l'outil \mytool{tug}.
-					\end{itemize}
+					La tâche proposée consiste à trouver puis à extraire des \myglos*{glo-Residu} d'une molécule.
+					Les \myglos*{glo-Residu} sont des groupes d'atomes.
+					Tous les \myglos*{glo-Residu} à rechercher sont affichés dans la \myref{tab-exp1-ListeDesResidusRecherches}.
+					Trois molécules sont proposées dans le cadre de cette expérimentation :
+					\begin{description}
+						\item[\myTRPZIPPER]
+							La molécule \myTRPZIPPER \mycite{Christen-2009} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+							Cette molécule contient 218~atomes dont 12~\myglos*{glo-Residu}.
+							Elle est peu complexe et va seulement être utilisée pour un entraînement et un apprentissage des outils de manipulation.
+						\item[\myTRPCAGE]
+							La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnotemark[\value{footnote}].
+							Cette molécule contient 304~atomes dont 20~\myglos*{glo-Residu}.
+							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de 5~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE}.
+						\item[\myPrion]
+							La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
+							Cette molécule contient 1779~atomes dont 112~\myglos*{glo-Residu}.
+							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de 5~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion}.
+					\end{description}
 
 					\begin{mytable}
 						\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des \myglosnl*{glo-Residu} recherchés}
@@ -798,28 +808,57 @@
 						\end{mysubtable}
 					\end{mytable}
 
-					La première molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-					La seconde molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-					Cinq \myglos*{glo-Residu} à chercher sont présents sur chaque molécule \myref*{fig-exp1-RepartitionDesResidusSurLesMolecules} et chacun présente différents niveaux de complexité.
+					La \myref{fig-exp1-RepartitionDesResidusSurLesMolecules} montre la répartition des \myglos*{glo-Residu} sur les deux molécules.
+					Chaque \myglos{glo-Residu} possède ses propres spécificités (position, couleurs\myetc).
 					Les critères de complexité, résumés pour chaque \myglos{glo-Residu} dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
 					\begin{description}
-						\item[Position] La position du \myglos{glo-Residu} peut se trouver sur le pourtour de la molécule (position \myemph{externe}) ou à l'intérieur, au milieu de l'amas d'atomes que constitue la molécule (position \myemph{interne}).
+						\item[Position] Le \myglos{glo-Residu} peut se trouver soit à la périphérie de la molécule (position \myemph{externe}) ou au centre de la molécule (position \myemph{interne}).
 							Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
-						\item[Forme] La forme du \myglos{glo-Residu} influe énormément sur la complexité de la recherche.
+						\item[Forme] La forme du \myglos{glo-Residu} est un motif graphique plus ou moins complexe à identifier.
 							On distingue trois formes différentes :
 							\begin{description}
-								\item[Chaîne] Une chaîne d'atomes (la plupart du temps carbonés) avec des atomes d'hydrogène de part et d'autres.
-								\item[Cycle] Une chaîne d'atomes de carbone ou d'azote qui boucle sur elle-même.
+								\item[Chaîne] Une chaîne d'atomes (la plupart du temps carbonés) avec des atomes d'hydrogène de chaque côté.
+								\item[Cycle] Une chaîne fermée d'atomes de carbone ou d'azote.
 								\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (un atome de carbone pour la plupart du temps).
 							\end{description}
 						\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-							Les atomes rares seront donc rapidement trouvés grâce à leur couleur différente.
-							Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur fréquence importante.
+							Les atomes rares seront donc rapidement identifiés grâce à leur couleur singulière.
+							Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur fréquence d'apparition.
 						\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
 							Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
-							De par leur similarité, ils vont mobiliser les capacités de recherche des sujets sur des \myglos*{glo-Residu} ressemblants mais incorrects.
+							À cause de cette similarité, les sujets vont mobiliser une partie du temps à identifier des \myglos*{glo-Residu} incorrects.
 					\end{description}
 
+					\begin{mytable}
+						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
+						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
+						\begin{mytabular}{^C-C-C-C-C}
+							\mytoprule
+							\myrowstyle{\bfseries}
+							\myGlosnl{glo-Residu} & Position & Forme & Couleurs & Similarité \\
+							\mymiddlerule[\heavyrulewidth]
+							\myresidue{1}  & Interne & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{3}  & Interne & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\mymiddlerule
+							\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
+							\mymiddlerule
+							\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\mymiddlerule[\heavyrulewidth]
+							\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
+							\mymiddlerule
+							\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\mymiddlerule
+							\myresidue{8}  & Externe & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\mymiddlerule
+							\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
+							\mymiddlerule
+							\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
 					\begin{myfigure}
 						\newcommand{\schemafactor}{0.20}
 						\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
@@ -828,8 +867,12 @@
 						\begin{myps}(-2.5,-3)(2.5,3)
 							\rput(0,1.75){%
 								\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
+							\rput(0,2.75){%
+								\textcolor{black!25}{\Huge\bfseries\myTRPCAGE}}
 							\rput(0,-1.25){%
 								\myimage[height=2\schemaunit,angle=90]{exp1-prion}}
+							\rput(0,0){%
+								\textcolor{black!25}{\Huge\bfseries\myPrion}}
 							\rput(-1.5,2){%
 								\myimage[height=\schemaunit]{exp1-pattern1}}
 							\rput(1.5,2){%
@@ -883,36 +926,12 @@
 						\end{myps}
 					\end{myfigure}
 
-					\begin{mytable}
-						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
-						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
-						\begin{mytabular}{^C-C-C-C-C}
-							\mytoprule
-							\myrowstyle{\bfseries}
-							\myGlosnl{glo-Residu} & Position & Forme & Couleurs & Similarité \\
-							\mymiddlerule[\heavyrulewidth]
-							\myresidue{1}  & Interne & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
-							\mymiddlerule
-							\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
-							\mymiddlerule
-							\myresidue{3}  & Interne & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
-							\mymiddlerule
-							\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
-							\mymiddlerule
-							\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
-							\mymiddlerule[\heavyrulewidth]
-							\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
-							\mymiddlerule
-							\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
-							\mymiddlerule
-							\myresidue{8}  & Externe & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
-							\mymiddlerule
-							\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
-							\mymiddlerule
-							\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
-							\mybottomrule
-						\end{mytabular}
-					\end{mytable}
+					La tâche proposée nécessite deux étapes.
+					Selon \mycite[author]{Bowman-1999}, on distingue tout d'abord l'étape de recherche de l'objectif.
+					Pour explorer la molécule afin d'identifier l'objectif, les sujets disposent de l'outil \mytool{grab}.
+					Lorsque l'objectif recherché est identifié, les sujets entrent dans une seconde étape de sélection.
+					Pour effectuer ces étape de sélection, les sujets disposent de l'outil \mytool{tug}.
+					Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{par-simulation-LesOutilsDeManipulation}.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
 					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Christen-2009} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
