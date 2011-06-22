@@ -760,16 +760,16 @@
 					\begin{description}
 						\item[\myTRPZIPPER]
 							La molécule \myTRPZIPPER \mycite{Christen-2009} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-							Cette molécule contient 218~atomes dont 12~\myglos*{glo-Residu}.
+							Cette molécule contient \mynum{218}~atomes dont \mynum{12}~\myglos*{glo-Residu}.
 							Elle est peu complexe et va seulement être utilisée pour un entraînement et un apprentissage des outils de manipulation.
 						\item[\myTRPCAGE]
 							La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient 304~atomes dont 20~\myglos*{glo-Residu}.
-							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de 5~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE}.
+							Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
+							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de \mynum{5}~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE}.
 						\item[\myPrion]
 							La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient 1779~atomes dont 112~\myglos*{glo-Residu}.
-							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de 5~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion}.
+							Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
+							C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de \mynum{5}~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion}.
 					\end{description}
 
 					\begin{mytable}
@@ -867,7 +867,7 @@
 						\begin{myps}(-2.5,-3)(2.5,3)
 							\rput(0,1.75){%
 								\myimage[height=2\schemaunit,angle=90]{exp1-trp-cage}}
-							\rput(0,2.75){%
+							\rput(0,2.9){%
 								\textcolor{black!25}{\Huge\bfseries\myTRPCAGE}}
 							\rput(0,-1.25){%
 								\myimage[height=2\schemaunit,angle=90]{exp1-prion}}
@@ -934,26 +934,27 @@
 					Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{par-simulation-LesOutilsDeManipulation}.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
-					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myTRPZIPPER \mycite{Christen-2009} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-					Pendant la phase d'apprentissage, les outils sont introduits et expliqués un par un.
-					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
+					L'expérimentation débute par une étape d'apprentissage avec la molécule \myTRPZIPPER.
+					L'apprentissage est destiné à familiariser les sujets avec la plate-forme, les outils de manipulation et la tâche à réaliser.
+					Cette phase dure maximum \mynum[mn]{5}.
+					L'expérimentateur est disponible pour répondre aux questions des sujets.
 
-					Dès que la phase d'apprentissage est terminée, l'enregistrement audio démarre.
-					Un premier \myglos{glo-Residu} est affiché et les sujets peuvent débuter la recherche.
-					Lorsque le \myglos{glo-Residu} a été trouvé, sélectionné puis extrait, le système s'arrête.
-					Un second \myglos{glo-Residu} est affiché et ainsi de suite pour les dix \myglos*{glo-Residu}.
+					Une fois l'étape d'apprentissage terminée, les sujets sont soumis successivement au \mynum{10}~\myglos*{glo-Residu}.
+					Lorsque un \myglos{glo-Residu} est trouvé, sélectionné puis extrait, l'application est arrêtée.
+					Un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \myglos*{glo-Residu} à chercher.
+					L'enregistrement audio est démarré à la fin de l'étape d'apprentissage.
 
-					L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre différent pour chaque \myglos{glo-Monome} ou \myglos{glo-Binome}.
-					Les sujets sont tenus d'effectuer l'ensemble des dux \myglos*{glo-Residu} deux fois, en \myglos{glo-Monome} et en \myglos{glo-Binome}.
-					Les configurations \myglos{glo-Monome} et \myglos{glo-Binome} sont également alternées suivant les groupes selon les trois combinaisons possibles suivantes :
+					L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre aléatoire afin d'éviter un biais lié à l'apprentissage de la plate-forme et de la tâche.
+					Les sujets doivent trouver et extraire dix \myglos*{glo-Residu} en \myglos{glo-Monome} et dix \myglos{glo-Residu} en \myglos{glo-Binome}.
+					Toujours pour éviter un biais lié à l'apprentissage, les sujets sont soumis aux tâches en \myglos{glo-Monome} et en \myglos{glo-Binome} de façon alternée selon les trois combinaisons suivantes :
 					\begin{enumerate}
-						\item Le sujet \myuser{A}, puis le sujet \myuser{B}, puis le \myglos{glo-Binome} \myuser{AB};
-						\item Le sujet \myuser{A}, puis le \myglos{glo-Binome} \myuser{AB}, puis le sujet \myuser{B};
-						\item Le \myglos{glo-Binome} \myuser{AB}, puis le sujet \myuser{A}, puis le sujet \myuser{B}.
+						\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}, puis le \myglos{glo-Binome} \myuser{AB};
+						\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{B};
+						\item Le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}.
 					\end{enumerate}
 
-					Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}, ils sont soumis au questionnaire.
-					Chaque sujet est tenu de répondre au questionnaire seul, sans communiquer avec les autres sujets.
+					Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}), ils sont soumis au remplissage du questionnaire.
+					Chaque sujet répond au questionnaire seul, sans communiquer avec son partenaire.
 
 					Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp1-SyntheseDeLaProcedureExperimentale}.
 
