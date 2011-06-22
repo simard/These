@@ -78,7 +78,7 @@
 	\WithSuffix\expandafter\newrobustcmd\csname my#1\endcsname+[1]{\protect\csname #2first\endcsname{##1}}
 	\WithSuffix\expandafter\newrobustcmd\csname my#1\endcsname*[1]{\protect\csname #2pl\endcsname{##1}}
 	% With no hyperlink
-	\expandafter\newrobustcmd\csname my#1nl\endcsname[1]{\protect\csname #2\endcsname{##1}}
+	\expandafter\newrobustcmd\csname my#1nl\endcsname[1]{\protect\csname #2\endcsname*{##1}}
 	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname-[1]{\protect\csname #2text\endcsname*{##1}}
 	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname+[1]{\protect\csname #2first\endcsname*{##1}}
 	\WithSuffix\expandafter\newrobustcmd\csname my#1nl\endcsname*[1]{\protect\csname #2pl\endcsname*{##1}}
