@@ -84,8 +84,6 @@
 %%%%%%%%%%%%%%%%%%%%
 %% Configurations %%
 %%%%%%%%%%%%%%%%%%%%
-% To have 'sans serif' fonts for references in the text
-\setkeys[my]{ref}{refdefaultfont={\sffamily}}
 % Substitute Computer Modern to Latin Modern for bold small caps
 \DeclareFontSubstitution{T1}{cmr}{bx}{sc}
 %%% hyperref %%%
