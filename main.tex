@@ -500,7 +500,8 @@
 		\begin{mychapter}[cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire]{Recherche collaborative de résidus en simulation moléculaire}
 			\begin{mysection}[sec-exp1-Introduction]{Introduction}
 				La majeure partie de la thèse est l'étude du travail collaboratif en environnement virtuel complexe.
-				L'environnement virtuel complexe choisi est la manipulation moléculaire qui se découpe en quatre tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+				L'environnement virtuel complexe choisi est la simulation moléculaire.
+				Nous nous intéresserons à la déformation moléculaire qui se découpe en quatre tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 				Nous nous proposons d'étudier ces quatre tâches élémentaires indépendamment les unes des autres.
 				La première de ces expérimentations s'intéresse particulièrement au deux premières tâches élémentaires : la \myemph{sélection} et la \myemph{recherche}.
 				La seconde et la troisième expérimentation permettront d'étudier plus particulièrement les tâches élémentaires de \myemph{manipulation} et d'\myemph{évaluation}.
@@ -512,7 +513,7 @@
 				L'expérimentation est présentée en plusieurs parties.
 				Nous commencerons par présenter les objectifs et les hypothèses de cette première expérimentation dans la \myref{sec-exp1-Presentation}.
 				Le dispositif expérimental est présenté dans la \myref{sec-exp1-DispositifExperimentalEtMateriel}.
-				La \myref{sec-exp1-Methode} expose la tâche réalisée ainsi que les différentes variables de l'expérimentations.
+				La \myref{sec-exp1-Methode} expose la tâche réalisée ainsi que les différentes variables de l'expérimentation.
 				Enfin, les résultats sont analysés dans la \myref{sec-exp1-Resultats} puis une synthèse de cette expérimentation est exposée dans la \myref{sec-exp1-Synthese}.
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Presentation]{Présentation}
@@ -816,6 +817,8 @@
 					Chaque \myglos{glo-Residu} possède ses propres spécificités (position, couleurs\myetc).
 					Les critères de complexité, résumés pour chaque \myglos{glo-Residu} dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
 					\begin{description}
+						\item[Nombre de \myglosnl*{glo-Residu}] Le nombre total de \myglos*{glo-Residu} présents dans la molécule.
+							Un nombre important des \myglos*{glo-Residu} surcharge visuellement l'environnement virtuel et augmente le nombre de cibles potentielles.
 						\item[Position] Le \myglos{glo-Residu} peut se trouver soit à la périphérie de la molécule (position \myemph{externe}) ou au centre de la molécule (position \myemph{interne}).
 							Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
 						\item[Forme] La forme du \myglos{glo-Residu} est un motif graphique plus ou moins complexe à identifier.
@@ -836,30 +839,30 @@
 					\begin{mytable}
 						\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
 						\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
-						\begin{mytabular}{^C-C-C-C-C}
+						\begin{mytabular}{^C-C-C-C-C-C}
 							\mytoprule
 							\myrowstyle{\bfseries}
-							\myGlosnl{glo-Residu} & Position & Forme & Couleurs & Similarité \\
+							\myGlosnl{glo-Residu} & Nombre de \myglosnl*{glo-Residu} & Position & Forme  & Couleurs                                   & Similarité \\
 							\mymiddlerule[\heavyrulewidth]
-							\myresidue{1}  & Interne & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\myresidue{1}         & \mynum{20}                       & Interne  & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non        \\
 							\mymiddlerule
-							\myresidue{2}  & Interne & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\myresidue{2}         & \mynum{20}                       & Interne  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non        \\
 							\mymiddlerule
-							\myresidue{3}  & Interne & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\myresidue{3}         & \mynum{20}                       & Interne  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non        \\
 							\mymiddlerule
-							\myresidue{4}  & Externe & Chaîne & \mynum{4}~\mycarbon                        & Non \\
+							\myresidue{4}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon                        & Non        \\
 							\mymiddlerule
-							\myresidue{5}  & Externe & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non \\
+							\myresidue{5}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non        \\
 							\mymiddlerule[\heavyrulewidth]
-							\myresidue{6}  & Interne & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non \\
+							\myresidue{6}         & \mynum{112}                      & Interne  & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non        \\
 							\mymiddlerule
-							\myresidue{7}  & Externe & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non \\
+							\myresidue{7}         & \mynum{112}                      & Externe  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non        \\
 							\mymiddlerule
-							\myresidue{8}  & Externe & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non \\
+							\myresidue{8}         & \mynum{112}                      & Externe  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non        \\
 							\mymiddlerule
-							\myresidue{9}  & Interne & Chaîne & \mynum{4}~\mycarbon                        & Oui \\
+							\myresidue{9}         & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon                        & Oui        \\
 							\mymiddlerule
-							\myresidue{10} & Interne & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui \\
+							\myresidue{10}        & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui        \\
 							\mybottomrule
 						\end{mytabular}
 					\end{mytable}
@@ -1285,7 +1288,7 @@
 
 						Sur la \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration moyennement couplées ont des affinités moyennes ($\mu = 3$) : ce sont des collègues de bureau ou d'équipe ne travaillant pas forcément sur les mêmes projets.
 						La \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome} montre que les \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de réalisation de la tâche.
-						De plus, la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre une communication verbale faible.
+						De plus, la communication verbale est faible comme le montre la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
 						La manipulation en champ voisin permet d'être continuellement conscient des actions du partenaire ce qui évite les communications verbales.
 						Cependant, les sujets manipulent des \myglos*{glo-Residu} différents ce qui limite les conflits d'interactions qui interviennent en champ proche.
 
@@ -1429,6 +1432,26 @@
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[cha-LaManipulationCollaborative]{La manipulation collaborative}
+			\begin{mysection}[sec-exp2-Introduction]{Introduction}
+				Dans le précédent chapitre, nous avons effectué une première étude du travail collaboratif sur une tâche de recherche et de sélection.
+				Cette étude montre la pertinence d'un travail en \myglos{glo-Binome} pour la \myemph{recherche} et la \myemph{sélection} de \myglos*{glo-Residu} dans un environnement complexe.
+				En effet, les \myglos*{glo-Binome} sont plus performants sur des tâches très complexes et gardent des performances équivalentes aux \myglos*{glo-Monome} sur des tâches de complexité faible.
+				Cette première expérimentation nous permet d'identifier certains points importants nécessaires pour nos prochaines études.
+
+				Tout d'abord, nous allons focaliser nos études sur des tâches de complexité importante.
+				La caractérisation de la complexité d'une tâche dépend en grande partie de la nature de la tâche elle-même (par exemple, la forme ou la couleur d'un \myglos{glo-Residu}.
+				Cependant, le nombre total d'atomes (et donc de \myglos*{glo-Residu}) présents dans la molécule est un facteur de complexité qui ne dépendra pas ou peu de la nature de la tâche.
+				Ce facteur pourra être utilisé pour proposer des tâches complexes.
+
+				Les deux premières tâches élémentaires du processus de déformation moléculaire \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} ont été étudiées dans cette première études.
+				Cette seconde étude se rapproche d'un processus complet de déformation moléculaire puisqu'elle se focalisera sur la tâche élémentaire de \myemph{manipulation}.
+
+				Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-Presentation}.
+				Ensuite, le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-DispositifExperimentalEtMateriel}.
+				La \myref{sec-exp2-Methode} expose les différents détails concernant la tâche proposée et les variables étudiées.
+				Les résultats seront analysés dans la \myref{sec-exp2-Resultats}.
+				Enfin, la \myref{sec-exp2-Synthese} effectue une synthèse de cette seconde étude et propose des perspectives pour les expérimentations qui vont suivre.
+			\end{mysection}
 			\begin{mysection}[sec-exp2-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
 					Après avoir traité la sous-tâche élémentaire de \myemph{recherche}, la seconde expérimentation traitera des sous-tâches élémentaires de \myemph{sélection} et de \myemph{déformation} \myref*{sse-LAmarrageMoleculaire}.
@@ -1765,6 +1788,10 @@
 						\end{mytabular}
 					\end{mytable}
 				\end{mysubsection}
+			\end{mysection}
+			\begin{mysection}[sec-exp2-Resultats]{Résultats}
+			\end{mysection}
+			\begin{mysection}[sec-exp2-Synthese]{Synthèse}
 			\end{mysection}
 		\end{mychapter}
 		\begin{mychapter}[cha-LesDynamiquesDeGroupe]{Les dynamiques de groupe}
