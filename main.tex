@@ -54,7 +54,7 @@
 							L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
 					\end{description}
 
-					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en sous-tâches \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
+					Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
 					\begin{description}
 						\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 						\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
@@ -518,8 +518,8 @@
 			\end{mysection}
 			\begin{mysection}[sec-exp1-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
-					Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre sous-tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
-					Ces sous-tâches sont cruciales car elles ont un impact important sur les sous-tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
+					Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
+					Ces tâches sont cruciales car elles ont un impact important sur les tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
 					Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers cette étude.
 
 					La recherche en environnement virtuel est une tâche élémentaire relativement peu explorée en biologie moléculaire.
@@ -1454,26 +1454,42 @@
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Presentation]{Présentation}
 				\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
-					Après avoir traité la sous-tâche élémentaire de \myemph{recherche}, la seconde expérimentation traitera des sous-tâches élémentaires de \myemph{sélection} et de \myemph{déformation} \myref*{sse-LAmarrageMoleculaire}.
-					Ces sous-tâches introduisent des actions qui nécessitent une grande synchronisation et permet de stimuler les collaborations étroites.
+					Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+					Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
 					La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
 					Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
-					L'expérimentation va de nouveau comparer un \myglos{glo-Monome} et un \myglos{glo-Binome}.
-					La manipulation \myglos*{glo-Bimanuel} est opposée à la manipulation collaborative afin de tester les performances de synchronisation.
-					En effet, la synchronisation d'un seul sujet utilisant ces deux mains face à deux sujets utilisant chacun une seule de leur main.
-					Trois facteurs seront étudier lors de cette comparaison.
+					L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
+					\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
+					Les objets concernés sont plutôt simples comme des sphères.
+					Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
+					Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
+					Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
 
-					Le premier facteur concerne les performances.
-					Les performances représente à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
-					Un \myglos{glo-Binome} en configuration collaborative sera-t-il plus performant qu'un \myglos{glo-Monome} en configuration \myglos*{glo-Bimanuel} ?
+					Les processus de déformation collaboratifs sont également peu étudiés.
+					La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
+					\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
+					L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
+					Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
+					Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
+					Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
 
-					Le second facteur observé sera la complexité de la tâche proposée.
-					Le lien entre la complexité de la tâche et la configuration (collaborative ou \myglos*{glo-Bimanuel}) est étudié en fonction des performances.
+					On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
+					\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
+					Son projet repose sur la manipulation de corps rigides.
+					Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
+					La manipulation s'effectue alors sur un objet malléable.
+					Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
 
-					Le troisième facteur concerne l'apprentissage.
-					En effet, quelque soit l'application et l'expérimentation proposée à des sujets, un phénomène d'apprentissage peut être observé.
-					Cette expérimentation compare l'évolution de l'apprentissage entre les configurations collaboratives et \myglos*{glo-Bimanuel}.
+					L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
+					L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
+					L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
+
+					De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
+					Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
+
+					Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
+					En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-Hypotheses]{Hypothèses}
 					\begin{myparagraph}[par-exp2-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
