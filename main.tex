@@ -583,7 +583,7 @@
 						\item \mynum{1}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
 						\item \mynum{2}~ordinateurs de faible puissance;
 						\item \mynum{3}~interfaces haptiques \myOmni;
-						\item \mynum{1}~vidéoprojecteur \mytodo{\No de série}{Compléter le numéro de série};
+						\item \mynum{1}~vidéoprojecteur \myCasioXJ;
 						\item \mynum{1}~grand écran de vidéoprojection;
 						\item \mynum{1}~écran \myLCD \mynum[pouces]{17};
 						\item \mynum{1}~microphone de bureau.
@@ -591,14 +591,14 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp1-DispositionDesElements]{Disposition des éléments}
 					Durant la phase expérimentale, les sujets sont placés en face de l'écran de vidéoprojection avec le vidéoprojecteur derrière eux.
-					La visualisation du grand écran est accessible à tous les utilisateurs : c'est une vue \myemph{partagée}.
+					La visualisation du grand écran est accessible à tous les sujets : c'est une vue \myemph{partagée}.
 					Dans le cas d'un \myglos{glo-Binome}, les sujets sont placés à côté l'un de l'autre.
 					Il n'y a aucun obstacle entre eux afin de ne pas gêner les éventuelles communications (verbales ou gestuelles).
 					De plus, les sujets auront face à eux un écran \myLCD.
 
 					Face aux sujets se trouvent trois interfaces haptiques.
 					L'interface du milieu est l'outil de manipulation \mytool{grab}.
-					Les deux interfaces sur les côtés sont des outils de manipulation \mytool{tug} \myref*{par-simulation-LesOutilsDeManipulation}.
+					Les deux interfaces sur les côtés sont des outils de déformation \mytool{tug} \myref*{par-simulation-LesOutilsDeManipulation}.
 
 					L'expérimentateur est placé derrière les sujets afin de ne pas gêner le champ visuel.
 					Il dispose d'un écran permettant de lancer et de stopper les scénarios.
@@ -1510,32 +1510,92 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-				L'\myacro{acr-EVC} utilisé est illustré sur la \myref{fig-exp2-IllustrationDuDispositifExperimental}.
-				Comme pour la première expérimentation \myref*{sec-exp1-DispositifExperimentalEtMateriel}, l'\myacro{acr-EVC} propose une visualisation partagée (vue publique) à l'aide d'un vidéoprojecteur sur un grand écran.
-				Le ou les sujets font face à l'écran avec à leur disposition :
-				\begin{itemize}
-					\item un interface de manipulation de type souris \myThreeD;
-					\item deux interfaces haptiques de déformation \mytool{tug}.
-				\end{itemize}
+				Cette seconde expérimentation se base sur un dispositif expérimental relativement similaire à celui de la première expérimentation.
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+				Dans un premier temps, une liste du matériel utilisé est présenté dans la \myref{sse-exp2-DispositifTechnique} puis la disposition de chacun de ces éléments dans la \myref{sse-exp2-DispositionDesElements}.
+				Puis, dans un second temps, les aspects logiciels seront détaillés dans la \myref{sse-exp2-VisualisationEtInteractions}.
+				\begin{mysubsection}[sse-exp2-DispositifTechnique]{Dispositif technique}
+					La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
+					\begin{itemize}
+						\item \mynum{1}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
+						\item \mynum{2}~ordinateurs de faible puissance;
+						\item \mynum{2}~interfaces haptiques \myOmni;
+						\item \mynum{1}~souris \myThreeD \mySpaceNavigator;
+						\item \mynum{1}~vidéoprojecteur \myCasioXJ;
+						\item \mynum{1}~grand écran de vidéoprojection.
+					\end{itemize}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp2-DispositionDesElements]{Disposition des éléments}
+					Cette nouvelle étude propose une disposition relativement similaire à la première expérimentation \myref*{sse-exp1-DispositionDesElements}.
+					Les sujets sont face à un écran de vidéoprojection, le vidéoprojecteur se trouvant derrière eux.
+					La vue partagée permet à tous les sujets de voir le grand écran et de communiquer librement.
 
-				\begin{myfigure}
-					\begin{mysubfigure}
-						\myimage[width=0.49\textwidth]{exp2-schema}
-						\mysubcaption[fig-exp2-IllustrationDuDispositifExperimental-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{mysubfigure}
-					\begin{mysubfigure}
-						\myimage[width=0.49\textwidth]{exp2-photo}
-						\mysubcaption[fig-exp2-IllustrationDuDispositifExperimental-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-					\end{mysubfigure}
-					\mycaption[fig-exp2-IllustrationDuDispositifExperimental]{Illustration du dispositif expérimental}
-				\end{myfigure}
+					Deux interfaces haptiques se trouvent faces aux sujets : ce sont deux outils de déformation \mytool{tug} \myref*{par-simulation-LesOutilsDeManipulation}.
+					Le sujet d'un \myglos{glo-Monome} aura accès aux deux interfaces en manipulation \myglos*{glo-Bimanuel}.
+					Dans le cas d'un \myglos{glo-Binome}, chaque sujet aura un outil à sa disposition.
+					De plus, le \mySpaceNavigator est placé entre les deux interfaces haptiques afin d'être accessibles à tous les sujets.
 
-				Les sujets ont la possibilité de communiquer entre eux sans restriction.
-				Pour les \myglos*{glo-Monome}, le sujet peut utiliser chaque outil comme il le souhaite.
-				Pour les \myglos*{glo-Binome}, chaque sujet se voit attribuer un outil de déformation \mytool{tug}.
-				L'outil de manipulation (la souris \myThreeD) est laissé libre d'utilisation pour chacun des deux sujets.
+					L'expérimentateur dirige les opérations depuis un poste de travail placé derrière les sujets.
+					C'est lui qui lance et stoppe les différents scénarios proposés.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+					La \myref{fig-exp2-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
+					La \myref{fig-exp2-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+					\begin{myfigure}
+						\myimage{exp2-schema}
+						\mysubcaption[fig-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp2-photo}
+						\mysubcaption[fig-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp2-VisualisationEtInteractions]{Visualisation et interactions}
+					Chaque molécule proposée est projetée dans son intégralité sur l'écran de vidéoprojection avec les rendus graphiques suivants \myref*{par-simulation-LesRendusGraphiques} :
+					\begin{itemize}
+						\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
+						\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
+						\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
+					\end{itemize}
+					De plus, un affichage de l'état stable de la molécule est affiché par un rendu \myNewRibbon transparent.
+					Pour les besoins de la simulation, certains \myglos*{glo-Residu} sont fixes et sont alors représentés avec la couleur grise.
+					Enfin, les \myglos*{glo-Residu} sélectionné sont affichés avec un rendu \myCPK en transparence et de la couleur du curseur concerné.
+					La \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} illustre l'ensemble des rendus graphiques précédemment décrits.
+
+					\begin{myfigure}
+						\psset{unit=0.08\textwidth}
+						\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
+						\begin{myps}(0,0)(11,8.5)
+							\rput[bl](1,0){\myimage{exp2-trp-zipper}}
+							\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
+							\myexptwolabel(1,5.5)[ghost-label]{myred}{Molécule cible}
+							\myexptwolabel(7.1,7.3)[deformed-residue-label]{myblue}{\myGlosnl{glo-Residu} sélectionné}
+							\myexptwolabel(1,3)[ghost-residue-label]{myblue}{\myGlosnl{glo-Residu} cible}
+							\myexptwolabel(4.0,8.15)[fixed-residue-label]{mygray}{\myGlosnl{glo-Residu} fixe}
+							\pnode(7.4,3.6){deformed}
+							\pnode(1.8,4){ghost}
+							\psset{linecolor=myblue}
+							\cnode(6.2,5.2){1.0}{deformed-residue}
+							\cnode(2.3,1.5){0.8}{ghost-residue}
+							\psset{linecolor=mygray}
+							\cnode(2.0,7){0.8}{fixed-residue}
+							\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
+							\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
+							\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
+							\psset{linecolor=myblue,nodesepB=0pt}
+							\ncdiagg[angleA=-90,offsetA=0.5]{c->}{deformed-residue-label}{deformed-residue}
+							\ncdiagg[angleA=-90,offsetA=-0.5]{c->}{ghost-residue-label}{ghost-residue}
+							\ncdiagg[angleA=180,linecolor=mygray]{c->}{fixed-residue-label}{fixed-residue}
+							\ncline[linewidth=10pt,linecolor=myblue,arrowsize=2pt 2,nodesepA=4pt]{C->}{deformed-residue}{ghost-residue}
+						\end{myps}
+						\mycaption[fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
+					\end{myfigure}
+
+					Les outils \mytool{tug} vont permettre aux sujets de déformer la molécule.
+					Les \myglos*{glo-Monome} se placent devant les deux interfaces haptiques de façon à pouvoir manipuler en configuration \myglos*{glo-Bimanuel}.
+					Dans le cas d'un \myglos{glo-Binome}, chaque sujet est installé face à un outil.
+					Le \mySpaceNavigator est laissé libre d'utilisation pour les sujets quelque soit le nombre de sujets.
+				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp2-Sujets]{Sujets}
