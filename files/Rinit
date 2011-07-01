@@ -92,3 +92,22 @@ summary2tex <- function(summary) {
 dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
 dat.exp1 = dat.exp1[dat.exp1$id != "David", ]
+
+dat.exp2 = read.table("exp2.csv", h=T)
+# Prion was the training molecule
+dat.exp2 = dat.exp2[dat.exp2$molecule != "prion", ]
+# Alanine was removed from the final data
+dat.exp2 = dat.exp2[dat.exp2$molecule != "alanine", ]
+# GUÉNIAT Florimond and WU Han did not achieved the total experimentation
+dat.exp2 = dat.exp2[dat.exp2$id != "FlorimondHan", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Florimond", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Han", ]
+# FLORENT Charly and DEBOIN Sybil did not achieved the total experimentation
+dat.exp2 = dat.exp2[dat.exp2$id != "CharlySybil", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Charly", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Sybil", ]
+# JIBOUDAUD Benjamin and DUBOIS Mathieu did not achieved the total 
+# experimentation
+dat.exp2 = dat.exp2[dat.exp2$id != "BenjaminMathieu", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Benjamin", ]
+dat.exp2 = dat.exp2[dat.exp2$id != "Mathieu", ]
