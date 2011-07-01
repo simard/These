@@ -1630,13 +1630,13 @@
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp2-VariablesDependantes]{Variables dépendantes}
 						\begin{myparagraph}[par-exp2-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
-							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
-							Il n'y a pas de limite de temps pour réaliser la tâche.
+							C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+							Le temps est limité à \mynum[mn]{10}.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-LeNombreDeSelections]{\myvard{2} Le nombre de sélections}
 							\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
-							Une sélection est comptabilisée lorsque un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
-							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal}.
+							Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
+							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-LaDistancePassiveEntreLesEspacesDeTravail]{\myvard{3} La distance passive entre les espaces de travail}
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'ensemble de l'expérimentation.
@@ -1645,39 +1645,12 @@
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-LaDistanceActiveEntreLesEspacesDeTravail]{\myvard{4} La distance active entre les espaces de travail}
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
+							C'est une distance physique du monde réel de l'ordre du centimètre.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
 							Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
-							Il est constitué de plusieurs questions (notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux).
-							Un questionnaire différent est adressé aux \myglos*{glo-Monome} et aux \myglos*{glo-Binome}.
-
-							Pour les \myglos*{glo-Monome}, le questionnaire est le suivant :
-							\begin{enumerate}
-								\item Vous êtes-vous senti efficace ?
-								\item Pensez-vous que vous auriez été plus à l'aise seul avec un seul outil de déformation ?
-								\item Pensez-vous que vous auriez été plus à l'aise avec un partenaire ?
-								\item Quelle solution choisiriez-vous entre les trois configurations ?
-							\end{enumerate}
-
-							Pour les \myglos*{glo-Binome}, le questionnaire est le suivant (les questions sont posées à chaque sujet du \myglos{glo-Binome}) :
-							\begin{enumerate}
-								\item Vous êtes-vous senti efficace ?
-								\item Comment évalueriez-vous votre taux de communication\dots{}
-									\begin{itemize}
-										\item verbale ?
-										\item gestuelle ?
-										\item virtuelle ?
-									\end{itemize}
-								\item Vous sentez-vous utile dans le groupe (par opposition à pénalisant) ?
-								\item Pensez-vous avoir une position de meneur dans le groupe ?
-								\item Pensez-vous que vous auriez été plus à l'aise seul avec votre outil de déformation ?
-								\item Pensez-vous que vous auriez été plus à l'aise seul avec deux outils de déformation ?
-								\item Quelle solution choisiriez-vous entre les trois configurations ?
-							\end{enumerate}
-
-							Concernant la communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
-							La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer, désigner ou pour tout autre explication à son partenaire.
-							Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
+							Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
+							Le questionnaire soumis aux sujets est disponible dans la \myref{sec-Questionnaires-SecondeExperimentation}.
 						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
@@ -2131,6 +2104,42 @@
 			Ce questionnaire contient \mynum[pages]{5} (\mynum[pages]{3} pour les \myglos*{glo-Monome}).
 			Les questions sont évaluées selon une échelle de \mycite[author]{Likert-1932} à cinq niveaux.
 			\myinsertpdf[pdfpages={1-5}]{exp1-questionnary}
+		\end{mysection}
+		\begin{mysection}[sec-Questionnaires-SecondeExperimentation]{Seconde expérimentation}
+			Le questionnaire proposé durant la seconde expérimentation est décliné en deux versions : une version pour les \myglos*{glo-Monome} et une version pour les \myglos*{glo-Binome}.
+			Le questionnaire est soumis aux sujets oralement par l'expérimentateur et les réponses sont directement reportées dans une tableau.
+			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
+			\begin{mysubsection}[sec-Questionnaires-SecondeExperimentation-QuestionnairePourLesMonomes]{Questionnaire pour les \myglosnl*{glo-Monome}}
+				Pour les \myglos*{glo-Monome}, le questionnaire est le suivant :
+				\begin{enumerate}
+					\item Vous êtes-vous senti efficace ?
+					\item Pensez-vous que vous auriez été plus à l'aise seul avec un seul outil de déformation ?
+					\item Pensez-vous que vous auriez été plus à l'aise avec un partenaire ?
+					\item Quelle solution choisiriez-vous entre les trois configurations ?
+				\end{enumerate}
+			\end{mysubsection}
+			\begin{mysubsection}[sec-Questionnaires-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les \myglosnl*{glo-Binome}}
+				Chaque sujet dans un \myglos{glo-Binome} est interrogé séparement pour éviter que les réponses de l'un influence les réponses de l'autre.
+				Pour les \myglos*{glo-Binome}, le questionnaire est le suivant :
+				\begin{enumerate}
+					\item Vous êtes-vous senti efficace ?
+					\item Comment évalueriez-vous votre taux de communication\dots{}
+						\begin{itemize}
+							\item verbale ?
+							\item gestuelle ?
+							\item virtuelle ?
+						\end{itemize}
+					\item Vous sentez-vous utile dans le groupe (par opposition à pénalisant) ?
+					\item Pensez-vous avoir une position de meneur dans le groupe ?
+					\item Pensez-vous que vous auriez été plus à l'aise seul avec votre outil de déformation ?
+					\item Pensez-vous que vous auriez été plus à l'aise seul avec deux outils de déformation ?
+					\item Quelle solution choisiriez-vous entre les trois configurations ?
+				\end{enumerate}
+
+				Concernant les taux de communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
+				La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer, désigner ou pour tout autre explication à son partenaire.
+				Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
+			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
 \end{document}
