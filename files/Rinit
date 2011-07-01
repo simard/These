@@ -114,7 +114,7 @@ set.male <- function(string, m) {
 }
 
 subjectssummary2tex <- function(summary) {
-	string = "\\mynum{<s>}~sujet<splural> (\\mynum{<f>}~femme<fplural> et \\mynum{<m>}~homme<mplural>)%"
+	string = "\\mynum[sujet<splural>]{<s>} (\\mynum[femme<fplural>]{<f>} et \\mynum[homme<mplural>]{<m>})%"
 	string = set.subjects(string, summary["f"][[1]]+summary["m"][[1]])
 	string = set.female(string, summary["f"][[1]])
 	string = set.male(string, summary["m"][[1]])
