@@ -89,6 +89,38 @@ summary2tex <- function(summary) {
 	string
 }
 
+set.subjects <- function(string, s) {
+	string = gsub("<s>", as.character(s), string)
+	if(s > 1)
+		gsub("<splural>", "s", string)
+	else
+		gsub("<splural>", "", string)
+}
+
+set.female <- function(string, f) {
+	string = gsub("<f>", as.character(f), string)
+	if(f > 1)
+		gsub("<fplural>", "s", string)
+	else
+		gsub("<fplural>", "", string)
+}
+
+set.male <- function(string, m) {
+	string = gsub("<m>", as.character(m), string)
+	if(m > 1)
+		gsub("<mplural>", "s", string)
+	else
+		gsub("<mplural>", "", string)
+}
+
+subjectssummary2tex <- function(summary) {
+	string = "\\mynum{<s>}~sujet<splural> (\\mynum{<f>}~femme<fplural> et \\mynum{<m>}~homme<mplural>)%"
+	string = set.subjects(string, summary["f"][[1]]+summary["m"][[1]])
+	string = set.female(string, summary["f"][[1]])
+	string = set.male(string, summary["m"][[1]])
+	string
+}
+
 dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
 dat.exp1 = dat.exp1[dat.exp1$id != "David", ]
