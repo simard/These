@@ -4,7 +4,7 @@ source("Rinit")
 out.file.barplot = get.outname(commandArgs())
 
 ## This file is total bullshit from Mehdi
-dat.exp1.binome = dat.exp1[dat.exp1$group.config == "binome", ]
+dat.exp1.binome = dat.exp1[dat.exp1$group.number == 2, ]
 dat.exp1.binome = aggregate(
 			   dat.exp1.binome,
 			   by = list(id = dat.exp1.binome$id),

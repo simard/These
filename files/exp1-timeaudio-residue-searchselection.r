@@ -3,7 +3,7 @@ setwd("./files/")
 source("Rinit")
 out.file.boxplot = get.outname(commandArgs())
 
-dat.exp1 = dat.exp1[dat.exp1$group.config == "binome",]
+dat.exp1 = dat.exp1[dat.exp1$group.number == 2,]
 bp.audio.search = boxplot(dat.exp1$time.search.audio~dat.exp1$pattern.number, plot=FALSE)
 dat.exp1$time.search.audio = boxplot.filter(dat.exp1$time.search.audio, bp.audio.search$out)
 colnames(bp.audio.search$stats) = c("\\myresidue{1}","\\myresidue{2}","\\myresidue{3}","\\myresidue{4}","\\myresidue{5}","\\myresidue{6}","\\myresidue{7}","\\myresidue{8}","\\myresidue{9}","\\myresidue{10}")

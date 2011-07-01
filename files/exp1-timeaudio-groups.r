@@ -3,7 +3,7 @@ setwd("./files/")
 source("Rinit")
 out.file.barplot = get.outname(commandArgs())
 
-dat.exp1.binome = dat.exp1[dat.exp1$group.config == "binome", ]
+dat.exp1.binome = dat.exp1[dat.exp1$group.number == 2, ]
 dat.exp1.binome = aggregate(
 			   dat.exp1.binome,
 			   by = list(id = dat.exp1.binome$id),
