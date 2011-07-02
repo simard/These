@@ -946,8 +946,8 @@
 					Cette phase dure maximum \mynum[mn]{5}.
 					L'expérimentateur est disponible pour répondre aux questions des sujets.
 
-					Une fois l'étape d'apprentissage terminée, les sujets sont soumis successivement au \mynum{10}~\myglos*{glo-Residu}.
-					Lorsque un \myglos{glo-Residu} est trouvé, sélectionné puis extrait, l'application est arrêtée.
+					Lorsque l'étape d'apprentissage est terminée, les sujets sont soumis successivement au \mynum{10}~\myglos*{glo-Residu}.
+					Lorsqu'un \myglos{glo-Residu} est trouvé, sélectionné puis extrait, l'application est arrêtée.
 					Un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \myglos*{glo-Residu} à chercher.
 					L'enregistrement audio est démarré à la fin de l'étape d'apprentissage.
 
@@ -1709,22 +1709,22 @@
 
 						Les paragraphes suivants décrivent les quatre scénarios :
 						\begin{description}
-							\item[\mytask{1a}]
+							\item[\myscenario{1a}]
 								Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
 								Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule au sein de l'environnement virtuel et éviter d'éventuelles dérives hors du champ visuel.
 								L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement.
 								La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
-							\item[\mytask{1b}]
+							\item[\myscenario{1b}]
 								Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
-								Comme la tâche \mytask{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
+								Comme la tâche \myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
 								L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement.
 								La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
-							\item[\mytask{2a}]
+							\item[\myscenario{2a}]
 								Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
 								Seulement trois \myglos*{glo-Residu} sont laissés libres tandis que tous les autres sont fixés.
 								Les contraintes physiques de cette tâche sont relativement faibles.
 								Cependant, la difficulté de cette tâche réside dans la recherche des \myglos*{glo-Residu} à déformer qui ne sont pas aisés à trouver.
-							\item[\mytask{2b}]
+							\item[\myscenario{2b}]
 								Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
 								Seulement six \myglos*{glo-Residu} sont laissés libres tandis que les autres sont fixés.
 								La déformation requise demande une grande dépense d'énergie.
@@ -1746,15 +1746,15 @@
 							\begin{mytabular}{^>{\bfseries}p{9em}-C-C-C-C}
 								\mytoprule
 								\myrowstyle{\bfseries}
-								& \mytask{1a} & \mytask{1b} & \mytask{2a} & \mytask{2b} \\
+								                            & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
 								\mymiddlerule[\heavyrulewidth]
-								Nombre d'atomes           & \mynum{218} & \mynum{304} & \mynum{218} & \mynum{304} \\
+								Nombre d'atomes             & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
 								\mymiddlerule
-								\myGlosnl{glo-Residu} libre & \mynum{11}  & \mynum{19}  & \mynum{3}   & \mynum{7}   \\
+								\myGlosnl{glo-Residu} libre & \mynum{11}      & \mynum{19}      & \mynum{3}       & \mynum{7}       \\
 								\mymiddlerule
-								Cassure                   & \mynum{1}   & \mynum{2}   & \mynum{0}   & \mynum{1}   \\
+								Cassure                     & \mynum{1}       & \mynum{2}       & \mynum{0}       & \mynum{1}       \\
 								\mymiddlerule
-								Champ de force            & Moyen       & Moyen       & Faible      & Fort        \\
+								Champ de force              & Moyen           & Moyen           & Faible          & Fort            \\
 								\mybottomrule
 							\end{mytabular}
 						\end{mytable}
@@ -1768,10 +1768,20 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-Procedure]{Procédure}
-					Pour débuter cette expérimentation, les sujets sont confrontés à un exemple sur la molécule \myPrion \mycite{Cochran-2001} ayant pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
-					Pendant la phase d'apprentissage, les outils sont introduits et expliqués un par un.
+					L'expérimentation débute par une étape d'entraînement avec la molécule \myPrion.
+					Pendant cette phase, les outils sont introduits et expliqués un par un.
+					Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
-					Dans le cas des \myglos*{glo-Binome}, cette phase d'apprentissage est également l'occasion de choisir qui, parmi les deux sujets, sera en charge de la manipulation de la molécule à l'aide de l'outil de manipulation \mytool{grab}.
+
+					Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au \myscenario{1a} et au \myscenario{1b}.
+					Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
+					L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+
+					Dès que le \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés au \myscenario{2a} et au \myscenario{2b} également de façon alternée.
+					De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+
+					Tous les sujets sont confrontés aux quatre scénarios trois fois avec un jour d'intervalle entre chaque confrontation.
+					L'objectif de cette multiple confrontation est l'étude de l'apprentissage.
 
 					Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale}.
 
@@ -1811,14 +1821,14 @@
 							\multicolumn{2}{c}{%
 								\begin{tabular}{^C-C-C-C}
 									\myrowstyle{\bfseries}
-									Condition \mycondition{1}       & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4} \\
+									Condition \mycondition{1}           & Condition \mycondition{2}           & Condition \mycondition{3}     & Condition \mycondition{4} \\
 									\mymiddlerule
-									\myGlosnl{glo-Bimanuel} ($N=1$) & \myGlosnl{glo-Bimanuel} ($N=1$) & Collaboratif ($N=2$)      & Collaboratif ($N=2$)      \\
+									\myGlosnl{glo-Bimanuel} ($N=1$)     & \myGlosnl{glo-Bimanuel} ($N=1$)     & Collaboratif ($N=2$)          & Collaboratif ($N=2$)      \\
 									\mymiddlerule
-									\mytask{1a}                     & \mytask{1b}                     & \mytask{1a}               & \mytask{1b}               \\
-									\mytask{1b}                     & \mytask{1a}                     & \mytask{1b}               & \mytask{1a}               \\
-									\mytask{2a}                     & \mytask{2b}                     & \mytask{2a}               & \mytask{2b}               \\
-									\mytask{2b}                     & \mytask{2a}                     & \mytask{2b}               & \mytask{2a}               \\
+									\myscenario{1a}                     & \myscenario{1b}                     & \myscenario{1a}               & \myscenario{1b}           \\
+									\myscenario{1b}                     & \myscenario{1a}                     & \myscenario{1b}               & \myscenario{1a}           \\
+									\myscenario{2a}                     & \myscenario{2b}                     & \myscenario{2a}               & \myscenario{2b}           \\
+									\myscenario{2b}                     & \myscenario{2a}                     & \myscenario{2b}               & \myscenario{2a}           \\
 								\end{tabular}
 							} \\
 							\mybottomrule
