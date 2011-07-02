@@ -1709,22 +1709,22 @@
 
 						Les paragraphes suivants décrivent les quatre scénarios :
 						\begin{description}
-							\item[\myscenario{1a}]
+							\item[Scénario~\myscenario{1a}]
 								Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
 								Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule au sein de l'environnement virtuel et éviter d'éventuelles dérives hors du champ visuel.
 								L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement.
 								La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
-							\item[\myscenario{1b}]
+							\item[Scénario~\myscenario{1b}]
 								Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
-								Comme la tâche \myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
+								Comme le scénario~\myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
 								L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement.
 								La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
-							\item[\myscenario{2a}]
+							\item[Scénario~\myscenario{2a}]
 								Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
 								Seulement trois \myglos*{glo-Residu} sont laissés libres tandis que tous les autres sont fixés.
 								Les contraintes physiques de cette tâche sont relativement faibles.
 								Cependant, la difficulté de cette tâche réside dans la recherche des \myglos*{glo-Residu} à déformer qui ne sont pas aisés à trouver.
-							\item[\myscenario{2b}]
+							\item[Scénario~\myscenario{2b}]
 								Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
 								Seulement six \myglos*{glo-Residu} sont laissés libres tandis que les autres sont fixés.
 								La déformation requise demande une grande dépense d'énergie.
@@ -1746,7 +1746,7 @@
 							\begin{mytabular}{^>{\bfseries}p{9em}-C-C-C-C}
 								\mytoprule
 								\myrowstyle{\bfseries}
-								                            & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
+								Scénario                    & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
 								\mymiddlerule[\heavyrulewidth]
 								Nombre d'atomes             & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
 								\mymiddlerule
@@ -1773,11 +1773,11 @@
 					Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 
-					Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au \myscenario{1a} et au \myscenario{1b}.
+					Lorsque la phase d'entraînement est terminée, les sujets sont confrontées aux scénarios \myscenario{1a} et \myscenario{1b}.
 					Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
 					L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
 
-					Dès que le \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés au \myscenario{2a} et au \myscenario{2b} également de façon alternée.
+					Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
 					De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
 
 					Tous les sujets sont confrontés aux quatre scénarios trois fois avec un jour d'intervalle entre chaque confrontation.
@@ -1825,10 +1825,10 @@
 									\mymiddlerule
 									\myGlosnl{glo-Bimanuel} ($N=1$)     & \myGlosnl{glo-Bimanuel} ($N=1$)     & Collaboratif ($N=2$)          & Collaboratif ($N=2$)      \\
 									\mymiddlerule
-									\myscenario{1a}                     & \myscenario{1b}                     & \myscenario{1a}               & \myscenario{1b}           \\
-									\myscenario{1b}                     & \myscenario{1a}                     & \myscenario{1b}               & \myscenario{1a}           \\
-									\myscenario{2a}                     & \myscenario{2b}                     & \myscenario{2a}               & \myscenario{2b}           \\
-									\myscenario{2b}                     & \myscenario{2a}                     & \myscenario{2b}               & \myscenario{2a}           \\
+									Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}      & Scénario~\myscenario{1b}  \\
+									Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}      & Scénario~\myscenario{1a}  \\
+									Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}      & Scénario~\myscenario{2b}  \\
+									Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}      & Scénario~\myscenario{2a}  \\
 								\end{tabular}
 							} \\
 							\mybottomrule
