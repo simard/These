@@ -1846,6 +1846,17 @@
 					\item test de \mycite[author]{Kruskal-1952} pour les \myglos*{glo-VariableInterSujets} non-paramètriques.
 				\end{itemize}
 				\begin{mysubsection}[sse-exp2-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=0.02cm}
+						\begin{myps}(-0.45,-50)(2,210)
+							\myaxes(0,2){nombre de sujets}(0,200)[50]{temps~(s)}
+							\myboxplot{exp2-time-group.csv}
+						\end{myps}
+						\mycaption[fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets]{Temps de réalisation en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-group-anova.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
 				\end{mysubsection}
