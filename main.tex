@@ -1919,6 +1919,20 @@
 						\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
 						\begin{myps}(-0.5,-75)(4,290)
 							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+							\myboxplot{exp2-time-task.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
+					\end{myfigure}
+
+					La \myref{fig-exp2-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2}.
+					L'analyse montre un effet significatif des scénarios \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-task-anova.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de trier les scénarios en deux classes de complexité : $\left\{\myscenario{1a}, \myscenario{2a}\right\}$ et $\left\{\myscenario{1b}, \myscenario{2b}\right\}$.
+
+					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
+						\begin{myps}(-0.5,-75)(4,290)
+							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
 							\myboxplot{exp2-time-task-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
