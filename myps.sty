@@ -354,7 +354,7 @@
 	% Mid-size of the written text
 	\addtolength{\my@ps@xoffset}{0.5ex}%
 	% x-label
-	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){#4}%
+	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){\textit{#4}}%
 	% Middle of the y-axis
 	\fpDiv{\my@ps@ymiddle}{#6}{2}%
 	% Size of the label
@@ -364,7 +364,7 @@
 	% Mid-size of the written text
 	\addtolength{\my@ps@yoffset}{0.5ex}%
 	% y-label
-	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{#8}}%
+	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
 	\fpDiv{\temp}{#6}{#7}%
 	\fpRound{\iterations}{\temp}{0}%
 	\multido{\i=#7+#7}{\iterations}{%
