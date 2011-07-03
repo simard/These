@@ -68,3 +68,22 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat.exp2.monome.dominant = data.frame(
+									  total.selection.number=dat.exp2.monome$total.leader.selection.number,
+									  group.number=dat.exp2.monome$group.number
+									  )
+dat.exp2.binome.dominant = data.frame(
+									  total.selection.number=c(dat.exp2.binome$total.leader.selection.number, dat.exp2.binome$total.slave.selection.number),
+									  group.number=rep(dat.exp2.binome$group.number,2)
+									  )
+dat.exp2.dominant = rbind(dat.exp2.monome.dominant, dat.exp2.binome.dominant)
+shapiro = shapiro.test(dat.exp2.dominant$total.selection.number)
+dat.exp2.dominant.levene = na.omit(data.frame(total.selection.number=dat.exp2.dominant$total.selection.number, group.number=dat.exp2.dominant$group.number))
+levene = levene.test(dat.exp2.dominant.levene$total.selection.number, dat.exp2.dominant.levene$group.number)
+kruskal = kruskal.test(dat.exp2.dominant$total.selection.number ~ dat.exp2.dominant$group.number)
+out.anova = kruskal2tex(kruskal)
+out.file.anova = gsub(".csv", "-anova-dominant.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
