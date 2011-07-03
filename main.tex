@@ -1875,6 +1875,21 @@
 					On peut également observer l'évolution entre distance passive et active.
 					L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}).
 					Par contre, l'analyse ne montre pas d'effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Binome} (\myanova{exp2-diff-activepassive-group-anova-binome.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=0.075cm}
+						\begin{myps}(-0.45,-15)(2,58)
+							\myaxes(0,2){nombre de sujets}(0,50)[10]{nombre de sélections~(nb)}
+							\myboxplot{exp2-numsel-group-dominant.csv}
+							\mylegend{\myleg{main dominante}{myblue}\myand\myleg{main dominée}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Nombre de sélection de la main dominante et dominée en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente le nombre de sélections de la main dominante et dominée \myvard{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					On constate un déséquilibre entre la main dominante et dominée des \myglos*{glo-Monome}.
+					Les \myglos*{glo-Binome} n'utilisent que leur main dominante ce qui explique l'absence de valeur pour la main dominée.
+					En cumulant le nombre total de sélections (main dominante et main dominée) pour les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, on montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
 				\end{mysubsection}
