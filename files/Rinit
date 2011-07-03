@@ -67,7 +67,7 @@ set.sigma <- function(string, sigma) {
 }
 
 friedman2tex <- function(friedman) {
-	string = "$\\chi^2 = <chi>$, $\\mathrm{df} = <df>$, $p = <p>$%"
+	string = "$\\chi^2 = <chi>$, $df = <df>$, $p = <p>$%"
 	string = set.df(string, friedman$parameter)
 	string = set.chi(string, friedman$statistic)
 	string = set.p(string, friedman$p.value)
@@ -75,7 +75,7 @@ friedman2tex <- function(friedman) {
 }
 
 kruskal2tex <- function(kruskal) {
-	string = "$\\chi^2 = <chi>$, $\\mathrm{df} = <df>$, $p = <p>$%"
+	string = "$\\chi^2 = <chi>$, $df = <df>$, $p = <p>$%"
 	string = set.df(string, kruskal$parameter)
 	string = set.chi(string, kruskal$statistic)
 	string = set.p(string, kruskal$p.value)
