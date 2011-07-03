@@ -1647,7 +1647,11 @@
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
 							C'est une distance physique du monde réel de l'ordre du centimètre.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{5} Réponses qualitatives}
+						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{5} Vitesse moyenne}
+							Cette variable est une mesure de la vitesse moyenne de chaque \myglos*{glo-EffecteurTerminal}.
+							Elle est calculée par intégration numérique des positions successives en fonction du temps.
+						\end{myparagraph}
+						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
 							Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
 							Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
 							Le questionnaire soumis aux sujets est disponible dans la \myref{sec-Questionnaires-SecondeExperimentation}.
@@ -1816,7 +1820,8 @@
 							                                          & \myvard{2} Nombre de sélections                                                   \\
 							                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
 							                                          & \myvard{4} Distance active entre les espaces de travail                           \\
-							                                          & \myvard{5} Réponses qualitatives                                                  \\
+							                                          & \myvard{5} Vitesse moyenne                                                        \\
+							                                          & \myvard{6} Réponses qualitatives                                                  \\
 							\mymiddlerule[\heavyrulewidth]
 							\multicolumn{2}{c}{%
 								\begin{tabular}{^C-C-C-C}
@@ -1893,6 +1898,21 @@
 
 					Il faut noter que le nombre de sélections pour la main dominante des \myglos*{glo-Binome} comptabilise les sélections des deux sujets présents contrairement aux \myglos*{glo-Monome} : ceci explique le nombre plus élevé de sélections en \myglos*{glo-Binome}.
 					Cependant, si on compare le nombre moyen de sélections par sujet (pour sa main dominante), on montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections de la main dominante \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=2.5cm}
+						\begin{myps}(-0.45,-0.5)(2,1.75)
+							\myaxes(0,2){nombre de sujets}(0,1.5)[0.5]{speed~(mm/s)}
+							\myboxplot{exp2-speed-group-dominant.csv}
+							\mylegend{\myleg{main dominante}{myblue}\myand\myleg{main dominée}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Vitesse moyenne de la main dominante et dominée en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}).
+					On observe un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}).
+					On observe également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
 				\end{mysubsection}
