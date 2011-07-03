@@ -1915,6 +1915,20 @@
 					On observe également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
+					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
+						\begin{myps}(-0.5,-75)(4,290)
+							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+							\myboxplot{exp2-time-task-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					Les analyses suivantes regroupent les scénarios par classe de complexité : \myscenario{1a} avec \myscenario{2a} et \myscenario{1b} avec \myscenario{2b}.
+					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-time-task-group-anova-trpzipper.tex}).
+					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
 				\end{mysubsection}
