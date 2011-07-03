@@ -43,6 +43,7 @@
 % For use in '\myaxes'
 \newlength{\my@ps@xoffset}
 \newlength{\my@ps@yoffset}
+\newlength{\my@ps@temp@xoffset}
 % Create default style for graphics (limited to 4 styles)
 \newpsbarstyle{first-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue,linestyle=none,linewidth=0.0pt}
 \newpsbarstyle{second-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!70,linestyle=none,linewidth=0.0pt}
@@ -347,30 +348,33 @@
 		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
 	% Middle of the x-axis
 	\fpDiv{\my@ps@xmiddle}{#3}{2}%
-	% Size of the label
-	\setlength{\my@ps@xoffset}{1ex}%
+	% Set to the height of the x axis label
+	\settoheight{\my@ps@xoffset}{#3}%
+	\settodepth{\my@ps@temp@xoffset}{#3}
+	\addtolength{\my@ps@xoffset}{\my@ps@temp@xoffset}
 	% Label separations
 	\addtolength{\my@ps@xoffset}{2\pslabelsep}%
-	% Mid-size of the written text
+	% Additional space
 	\addtolength{\my@ps@xoffset}{0.5ex}%
 	% x-label
 	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){\textit{#4}}%
 	% Middle of the y-axis
 	\fpDiv{\my@ps@ymiddle}{#6}{2}%
-	% Size of the label
-	\settowidth{\my@ps@yoffset}{#6}%
-	% Label separations
+	% Set to the width of the wider number of y axis
+	\settowidth{\my@ps@yoffset}{#6}
+	% Add label separations
 	\addtolength{\my@ps@yoffset}{2\pslabelsep}%
-	% Mid-size of the written text
+	% Additional space
 	\addtolength{\my@ps@yoffset}{0.5ex}%
 	% y-label
 	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
 	\fpDiv{\temp}{#6}{#7}%
 	\fpRound{\iterations}{\temp}{0}%
-	\multido{\i=#7+#7}{\iterations}{%
+	\multido{\i=1+1}{\iterations}{%
+		\fpMul{\ylineoffset}{\i}{#7}
 		\ifstrempty{#1}%
-			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\i)(#3,\i)}%
-			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\i)(#3,\i)}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
 	}%
 }
 
