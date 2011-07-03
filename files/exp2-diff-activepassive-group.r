@@ -33,8 +33,11 @@ dat.diff.passive = data.frame(mean.diff=dat.exp2$mean.diff.passive, group.number
 shapiro = shapiro.test(dat.diff.passive$mean.diff)
 dat.diff.passive.levene = na.omit(data.frame(mean.diff=dat.diff.passive$mean.diff, group.number=dat.diff.passive$group.number))
 levene = levene.test(dat.diff.passive.levene$mean.diff, dat.diff.passive.levene$group.number)
-kruskal = kruskal.test(dat.diff.passive$mean.diff~dat.diff.passive$group.number)
-out.anova.passive = kruskal2tex(kruskal)
+grp1 = dat.diff.passive[dat.diff.passive$group.number == 1, ]$mean.diff
+grp2 = dat.diff.passive[dat.diff.passive$group.number == 2, ]$mean.diff
+grp = cbind(grp1, grp2)
+friedman = friedman.test(grp)
+out.anova.passive = friedman2tex(friedman)
 out.file.anova.passive = gsub(".csv", "-anova-passive.tex", out.file.boxplot)
 write(
 	  out.anova.passive,
@@ -44,8 +47,11 @@ dat.diff.active = data.frame(mean.diff=dat.exp2$mean.diff.active, group.number=d
 shapiro = shapiro.test(dat.diff.active$mean.diff)
 dat.diff.active.levene = na.omit(data.frame(mean.diff=dat.diff.active$mean.diff, group.number=dat.diff.active$group.number))
 levene = levene.test(dat.diff.active.levene$mean.diff, dat.diff.active.levene$group.number)
-kruskal = kruskal.test(dat.diff.active$mean.diff~dat.diff.active$group.number)
-out.anova.active = kruskal2tex(kruskal)
+grp1 = dat.diff.active[dat.diff.active$group.number == 1, ]$mean.diff
+grp2 = dat.diff.active[dat.diff.active$group.number == 2, ]$mean.diff
+grp = cbind(grp1, grp2)
+friedman = friedman.test(grp)
+out.anova.active = friedman2tex(friedman)
 out.file.anova.active = gsub(".csv", "-anova-active.tex", out.file.boxplot)
 write(
 	  out.anova.active,
