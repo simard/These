@@ -1857,6 +1857,24 @@
 
 					La \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
 					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-group-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=1.25cm}
+						\begin{myps}(-0.45,-0.8)(2,3.5)
+							\myaxes(0,2){distance}(0,3)[1]{distance~(mm)}
+							\myboxplot{exp2-diff-activepassive-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets} présente la distance passive \myvard{3} et active \myvard{4} entre les \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} (\myanova{exp2-diff-activepassive-group-anova-passive.tex}).
+					De la même façon, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}).
+
+					On peut également observer l'évolution entre distance passive et active.
+					L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}).
+					Par contre, l'analyse ne montre pas d'effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Binome} (\myanova{exp2-diff-activepassive-group-anova-binome.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
 				\end{mysubsection}
