@@ -26,7 +26,7 @@ write.table(bp.binome$stats,
 			col.names = FALSE,
 			append=TRUE)
 bp = boxplot(dat.exp1$time.completion~dat.exp1$group.number, plot=FALSE)
-dat.exp1$time.completion = boxplot.filter(dat.exp1$time.completion, bp$out)
+#dat.exp1$time.completion = boxplot.filter(dat.exp1$time.completion, bp$out)
 shapiro = shapiro.test(dat.exp1$time.completion)
 dat.exp1.levene = na.omit(data.frame(time.completion=dat.exp1$time.completion, group.number=dat.exp1$group.number))
 levene = levene.test(dat.exp1.levene$time.completion, dat.exp1.levene$group.number)

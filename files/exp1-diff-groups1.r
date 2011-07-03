@@ -25,7 +25,7 @@ write.table(values,
 			row.names = FALSE,
 			col.names = TRUE)
 bp = boxplot(dat.exp1$mean.diff~dat.exp1$pattern.number, plot=FALSE)
-dat.exp1$mean.diff = boxplot.filter(dat.exp1$mean.diff, bp$out)
+#dat.exp1$mean.diff = boxplot.filter(dat.exp1$mean.diff, bp$out)
 shapiro = shapiro.test(dat.exp1$mean.diff)
 dat.exp1.levene = na.omit(data.frame(mean.diff=dat.exp1$mean.diff, pattern.number=dat.exp1$pattern.number))
 levene = levene.test(dat.exp1.levene$mean.diff, dat.exp1.levene$pattern.number)

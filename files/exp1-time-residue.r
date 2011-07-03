@@ -4,7 +4,7 @@ source("Rinit")
 out.file.boxplot = get.outname(commandArgs())
 
 bp = boxplot(dat.exp1$time.completion~dat.exp1$pattern.number, plot=FALSE)
-dat.exp1$time.completion = boxplot.filter(dat.exp1$time.completion, bp$out)
+#dat.exp1$time.completion = boxplot.filter(dat.exp1$time.completion, bp$out)
 colnames(bp$stats) = c("\\myresidue{1}","\\myresidue{2}","\\myresidue{3}","\\myresidue{4}","\\myresidue{5}","\\myresidue{6}","\\myresidue{7}","\\myresidue{8}","\\myresidue{9}","\\myresidue{10}")
 write.table(bp$stats,
 			file = out.file.boxplot,
