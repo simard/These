@@ -2023,6 +2023,19 @@
 						\psset{xunit=0.272108844\textwidth,yunit=0.0125cm}
 						\begin{myps}(-0.45,-90)(3,250)
 							\myaxes(0,3){nombre de sujets}(0,200)[50]{temps~(s)}
+							\myboxplot{exp2-time-try.csv}
+						\end{myps}
+						\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssai]{Temps de réalisation de chaque essai}
+					\end{myfigure}
+
+					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssai} présente le temps de réalisation \myvard{1} des différents essais \myvari{3}.
+					On montre un effet significatif de l'ordre de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le second essai ainsi qu'entre le second essai et le troisième.
+
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=0.0125cm}
+						\begin{myps}(-0.45,-90)(3,250)
+							\myaxes(0,3){nombre de sujets}(0,200)[50]{temps~(s)}
 							\myboxplot{exp2-time-try-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
