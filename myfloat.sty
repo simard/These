@@ -85,28 +85,28 @@
 % Define the 'mysubfigure' environment
 \newlength{\myparboxlength}
 \newenvironment{mysubfloat}[1][0.49\textwidth]{%
-		\setlength{\myparboxlength}{#1}
+		\setlength{\myparboxlength}{#1}%
 		\caption@withoptargs%
 		\begingroup\setbox\@tempboxa\hbox\bgroup%
 	}{%
 		\egroup%
 		\begingroup%
-		\captionsetup{subtype*}% set \caption@position
+		%\captionsetup{subtype*}% set \caption@position
 		\caption@iftop{%
 			\endgroup%
 			\parbox[t]{\myparboxlength}{%
-				\captionsetup{subtype,position=t}%
+				\captionsetup{subtype,position=b}%
 				\vbox{\caption\my@subcaption}%
 				\csname caption@hj@c\endcsname%
 				\unhbox\@tempboxa%
 			}%
 		}{%
-			\endgroup
+			\endgroup%
 			\parbox[b]{\myparboxlength}{%
-				\captionsetup{subtype,position=b}%
+				\captionsetup{subtype,position=t}%
 				\csname caption@hj@c\endcsname%
 				\unhbox\@tempboxa%
-				\vtop{\caption\my@subcaption}%
+				\vbox{\caption\my@subcaption}%
 			}%
 		}%
 		\endgroup%
