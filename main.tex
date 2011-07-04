@@ -1979,6 +1979,20 @@
 					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
 
 					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=0.04cm}
+						\begin{myps}(-0.5,-30)(4,115)
+							\myaxes(0,4){scénario}(0,100)[25]{nombre de sélection~(nb)}
+							\myboxplot{exp2-numsel-task-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque scénario en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-numsel-task-group-anova-trpzipper.tex}).
+					Cependant, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-numsel-task-group-anova-trpcage.tex}).
+
+					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
 						\begin{mysubfigure}[\textwidth]
 							\begin{myps}(-0.5,-0.9)(4,3)
