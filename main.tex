@@ -1148,7 +1148,7 @@
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.5cm}
 						\begin{myps}(-1.5,-2)(12,5.5)
-							\myaxes(0,12){groupes}(0,5)[1]{affinité~( \mynum{1}--\mynum{5})}
+							\myaxes(0,12){groupes}(0,5)[1]{affinité~(\mynum{1}--\mynum{5})}
 							\mybarplot{exp1-affinity-groups.csv}
 						\end{myps}
 						\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque \myglosnl{glo-Binome}}
@@ -1975,9 +1975,33 @@
 					\end{myfigure}
 
 					La \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-					Les analyses suivantes regroupent les scénarios par classe de complexité : \myscenario{1a} avec \myscenario{2a} et \myscenario{1b} avec \myscenario{2b}.
-					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-time-task-group-anova-trpzipper.tex}).
+					En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-time-task-group-anova-trpzipper.tex}).
 					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=1.5cm}
+						\begin{mysubfigure}[\textwidth]
+							\begin{myps}(-0.5,-0.75)(4,3)
+								\myaxes(0,4){scénario}(0,2.5)[0.5]{temps~(s)}
+								\myboxplot{exp2-passive-task-group.csv}
+								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+							\end{myps}
+							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive]{Distance passive}
+						\end{mysubfigure}
+						\begin{mysubfigure}[\textwidth]
+							\begin{myps}(-0.5,-0.75)(4,3)
+								\myaxes(0,4){scénario}(0,2.5)[0.5]{temps~(s)}
+								\myboxplot{exp2-active-task-group.csv}
+								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+							\end{myps}
+							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistanceActive]{Distance active}
+						\end{mysubfigure}
+						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque scénario en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives et actives \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
+					Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}).
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
 				\end{mysubsection}
