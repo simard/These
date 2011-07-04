@@ -122,6 +122,13 @@ subjectssummary2tex <- function(summary) {
 	string
 }
 
+mean2tex <- function(m) {
+	string = "\\mynum{<m>}%"
+	m = round(m, digits=1)
+	string = gsub("<m>", as.character(m), string)
+	string
+}
+
 dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
 dat.exp1 = dat.exp1[dat.exp1$id != "David", ]
