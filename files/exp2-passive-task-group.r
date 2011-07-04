@@ -9,29 +9,29 @@ dat.exp2.trpzipper.atom = dat.exp2.trpzipper[dat.exp2.trpzipper$molecule.scale =
 dat.exp2.trpcage = dat.exp2[dat.exp2$molecule == "trp-cage", ]
 dat.exp2.trpcage.residue = dat.exp2.trpcage[dat.exp2.trpcage$molecule.scale == "residue", ]
 dat.exp2.trpcage.atom = dat.exp2.trpcage[dat.exp2.trpcage$molecule.scale == "atom", ]
-dat.time.trpzipper.residue = data.frame(
+dat.passive.trpzipper.residue = data.frame(
 										mean.diff.passive = dat.exp2.trpzipper.residue$mean.diff.passive,
 										group.number = dat.exp2.trpzipper.residue$group.number,
 										task = rep("1A",length(dat.exp2.trpzipper.residue$group.number))
 										)
-dat.time.trpcage.residue = data.frame(
+dat.passive.trpcage.residue = data.frame(
 										mean.diff.passive = dat.exp2.trpcage.residue$mean.diff.passive,
 										group.number = dat.exp2.trpcage.residue$group.number,
 										task = rep("1B",length(dat.exp2.trpcage.residue$group.number))
 										)
-dat.time.trpzipper.atom = data.frame(
+dat.passive.trpzipper.atom = data.frame(
 										mean.diff.passive = dat.exp2.trpzipper.atom$mean.diff.passive,
 										group.number = dat.exp2.trpzipper.atom$group.number,
 										task = rep("2A",length(dat.exp2.trpzipper.atom$group.number))
 										)
-dat.time.trpcage.atom = data.frame(
+dat.passive.trpcage.atom = data.frame(
 										mean.diff.passive = dat.exp2.trpcage.atom$mean.diff.passive,
 										group.number = dat.exp2.trpcage.atom$group.number,
 										task = rep("2B",length(dat.exp2.trpcage.atom$group.number))
 										)
-dat.time = rbind(dat.time.trpzipper.residue, dat.time.trpcage.residue, dat.time.trpzipper.atom, dat.time.trpcage.atom)
-dat.time.monome = dat.time[dat.time$group.number == 1, ]
-bp.monome = boxplot(dat.time.monome$mean.diff.passive~dat.time.monome$task, plot=FALSE)
+dat.passive = rbind(dat.passive.trpzipper.residue, dat.passive.trpcage.residue, dat.passive.trpzipper.atom, dat.passive.trpcage.atom)
+dat.passive.monome = dat.passive[dat.passive$group.number == 1, ]
+bp.monome = boxplot(dat.passive.monome$mean.diff.passive~dat.passive.monome$task, plot=FALSE)
 colnames(bp.monome$stats) = c("\\myscenario{1a}","\\myscenario{1b}","\\myscenario{2a}","\\myscenario{2b}")
 write.table(bp.monome$stats,
 			file = out.file.boxplot,
@@ -41,8 +41,8 @@ write.table(bp.monome$stats,
 			dec = ".",
 			row.names = FALSE,
 			col.names = TRUE)
-dat.time.binome = dat.time[dat.time$group.number == 2, ]
-bp.binome = boxplot(dat.time.binome$mean.diff.passive~dat.time.binome$task, plot=FALSE)
+dat.passive.binome = dat.passive[dat.passive$group.number == 2, ]
+bp.binome = boxplot(dat.passive.binome$mean.diff.passive~dat.passive.binome$task, plot=FALSE)
 write.table(bp.binome$stats,
 			file = out.file.boxplot,
 			quote = FALSE,
@@ -53,29 +53,21 @@ write.table(bp.binome$stats,
 			col.names = FALSE,
 			append = TRUE)
 
-dat.time.trpzipper = dat.exp2.trpzipper
-shapiro = shapiro.test(dat.time.trpzipper$mean.diff.passive)
-levene = levene.test(dat.time.trpzipper$mean.diff.passive, dat.time.trpzipper$group.number)
-kruskal = kruskal.test(dat.time.trpzipper$mean.diff.passive~dat.time.trpzipper$group.number)
-grp1 = dat.time.trpzipper[dat.time.trpzipper$group.number == 1, ]$mean.diff.passive
-grp2 = dat.time.trpzipper[dat.time.trpzipper$group.number == 2, ]$mean.diff.passive
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+dat.passive.trpzipper = dat.exp2.trpzipper
+shapiro = shapiro.test(dat.passive.trpzipper$mean.diff.passive)
+levene = levene.test(dat.passive.trpzipper$mean.diff.passive, dat.passive.trpzipper$group.number)
+kruskal = kruskal.test(dat.passive.trpzipper$mean.diff.passive~dat.passive.trpzipper$group.number)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpzipper.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
 	  )
-dat.time.trpcage = dat.exp2.trpcage
-shapiro = shapiro.test(dat.time.trpcage$mean.diff.passive)
-levene = levene.test(dat.time.trpcage$mean.diff.passive, dat.time.trpcage$group.number)
-kruskal = kruskal.test(dat.time.trpcage$mean.diff.passive~dat.time.trpcage$group.number)
-grp1 = dat.time.trpcage[dat.time.trpcage$group.number == 1, ]$mean.diff.passive
-grp2 = dat.time.trpcage[dat.time.trpcage$group.number == 2, ]$mean.diff.passive
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+dat.passive.trpcage = dat.exp2.trpcage
+shapiro = shapiro.test(dat.passive.trpcage$mean.diff.passive)
+levene = levene.test(dat.passive.trpcage$mean.diff.passive, dat.passive.trpcage$group.number)
+kruskal = kruskal.test(dat.passive.trpcage$mean.diff.passive~dat.passive.trpcage$group.number)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpcage.tex", out.file.boxplot)
 write(
 	  out.anova,

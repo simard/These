@@ -57,11 +57,7 @@ dat.time.trpzipper = dat.exp2.trpzipper
 shapiro = shapiro.test(dat.time.trpzipper$time.completion)
 levene = levene.test(dat.time.trpzipper$time.completion, dat.time.trpzipper$group.number)
 kruskal = kruskal.test(dat.time.trpzipper$time.completion~dat.time.trpzipper$group.number)
-grp1 = dat.time.trpzipper[dat.time.trpzipper$group.number == 1, ]$time.completion
-grp2 = dat.time.trpzipper[dat.time.trpzipper$group.number == 2, ]$time.completion
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpzipper.tex", out.file.boxplot)
 write(
 	  out.anova,
@@ -71,11 +67,7 @@ dat.time.trpcage = dat.exp2.trpcage
 shapiro = shapiro.test(dat.time.trpcage$time.completion)
 levene = levene.test(dat.time.trpcage$time.completion, dat.time.trpcage$group.number)
 kruskal = kruskal.test(dat.time.trpcage$time.completion~dat.time.trpcage$group.number)
-grp1 = dat.time.trpcage[dat.time.trpcage$group.number == 1, ]$time.completion
-grp2 = dat.time.trpcage[dat.time.trpcage$group.number == 2, ]$time.completion
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpcage.tex", out.file.boxplot)
 write(
 	  out.anova,

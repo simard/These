@@ -9,29 +9,29 @@ dat.exp2.trpzipper.atom = dat.exp2.trpzipper[dat.exp2.trpzipper$molecule.scale =
 dat.exp2.trpcage = dat.exp2[dat.exp2$molecule == "trp-cage", ]
 dat.exp2.trpcage.residue = dat.exp2.trpcage[dat.exp2.trpcage$molecule.scale == "residue", ]
 dat.exp2.trpcage.atom = dat.exp2.trpcage[dat.exp2.trpcage$molecule.scale == "atom", ]
-dat.time.trpzipper.residue = data.frame(
+dat.speed.trpzipper.residue = data.frame(
 										mean.speed = dat.exp2.trpzipper.residue$mean.speed,
 										group.number = dat.exp2.trpzipper.residue$group.number,
 										task = rep("1A",length(dat.exp2.trpzipper.residue$group.number))
 										)
-dat.time.trpcage.residue = data.frame(
+dat.speed.trpcage.residue = data.frame(
 										mean.speed = dat.exp2.trpcage.residue$mean.speed,
 										group.number = dat.exp2.trpcage.residue$group.number,
 										task = rep("1B",length(dat.exp2.trpcage.residue$group.number))
 										)
-dat.time.trpzipper.atom = data.frame(
+dat.speed.trpzipper.atom = data.frame(
 										mean.speed = dat.exp2.trpzipper.atom$mean.speed,
 										group.number = dat.exp2.trpzipper.atom$group.number,
 										task = rep("2A",length(dat.exp2.trpzipper.atom$group.number))
 										)
-dat.time.trpcage.atom = data.frame(
+dat.speed.trpcage.atom = data.frame(
 										mean.speed = dat.exp2.trpcage.atom$mean.speed,
 										group.number = dat.exp2.trpcage.atom$group.number,
 										task = rep("2B",length(dat.exp2.trpcage.atom$group.number))
 										)
-dat.time = rbind(dat.time.trpzipper.residue, dat.time.trpcage.residue, dat.time.trpzipper.atom, dat.time.trpcage.atom)
-dat.time.monome = dat.time[dat.time$group.number == 1, ]
-bp.monome = boxplot(dat.time.monome$mean.speed~dat.time.monome$task, plot=FALSE)
+dat.speed = rbind(dat.speed.trpzipper.residue, dat.speed.trpcage.residue, dat.speed.trpzipper.atom, dat.speed.trpcage.atom)
+dat.speed.monome = dat.speed[dat.speed$group.number == 1, ]
+bp.monome = boxplot(dat.speed.monome$mean.speed~dat.speed.monome$task, plot=FALSE)
 colnames(bp.monome$stats) = c("\\myscenario{1a}","\\myscenario{1b}","\\myscenario{2a}","\\myscenario{2b}")
 write.table(bp.monome$stats,
 			file = out.file.boxplot,
@@ -41,8 +41,8 @@ write.table(bp.monome$stats,
 			dec = ".",
 			row.names = FALSE,
 			col.names = TRUE)
-dat.time.binome = dat.time[dat.time$group.number == 2, ]
-bp.binome = boxplot(dat.time.binome$mean.speed~dat.time.binome$task, plot=FALSE)
+dat.speed.binome = dat.speed[dat.speed$group.number == 2, ]
+bp.binome = boxplot(dat.speed.binome$mean.speed~dat.speed.binome$task, plot=FALSE)
 write.table(bp.binome$stats,
 			file = out.file.boxplot,
 			quote = FALSE,
@@ -53,29 +53,21 @@ write.table(bp.binome$stats,
 			col.names = FALSE,
 			append = TRUE)
 
-dat.time.trpzipper = dat.exp2.trpzipper
-shapiro = shapiro.test(dat.time.trpzipper$mean.speed)
-levene = levene.test(dat.time.trpzipper$mean.speed, dat.time.trpzipper$group.number)
-kruskal = kruskal.test(dat.time.trpzipper$mean.speed~dat.time.trpzipper$group.number)
-grp1 = dat.time.trpzipper[dat.time.trpzipper$group.number == 1, ]$mean.speed
-grp2 = dat.time.trpzipper[dat.time.trpzipper$group.number == 2, ]$mean.speed
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+dat.speed.trpzipper = dat.exp2.trpzipper
+shapiro = shapiro.test(dat.speed.trpzipper$mean.speed)
+levene = levene.test(dat.speed.trpzipper$mean.speed, dat.speed.trpzipper$group.number)
+kruskal = kruskal.test(dat.speed.trpzipper$mean.speed~dat.speed.trpzipper$group.number)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpzipper.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
 	  )
-dat.time.trpcage = dat.exp2.trpcage
-shapiro = shapiro.test(dat.time.trpcage$mean.speed)
-levene = levene.test(dat.time.trpcage$mean.speed, dat.time.trpcage$group.number)
-kruskal = kruskal.test(dat.time.trpcage$mean.speed~dat.time.trpcage$group.number)
-grp1 = dat.time.trpcage[dat.time.trpcage$group.number == 1, ]$mean.speed
-grp2 = dat.time.trpcage[dat.time.trpcage$group.number == 2, ]$mean.speed
-grp = cbind(grp1, grp2)
-friedman = friedman.test(grp)
-out.anova = friedman2tex(friedman)
+dat.speed.trpcage = dat.exp2.trpcage
+shapiro = shapiro.test(dat.speed.trpcage$mean.speed)
+levene = levene.test(dat.speed.trpcage$mean.speed, dat.speed.trpcage$group.number)
+kruskal = kruskal.test(dat.speed.trpcage$mean.speed~dat.speed.trpcage$group.number)
+out.anova = kruskal2tex(kruskal)
 out.file.anova = gsub(".csv", "-anova-trpcage.tex", out.file.boxplot)
 write(
 	  out.anova,
