@@ -53,7 +53,7 @@
 	\fi%
 }
 % To print numbers (see 'numprint' package)
-\newcommand{\mynum}[2][]{\numprint[#1]{#2}}
+\newcommand{\mynum}[2][]{\ifstrempty{#1}{\numprint{#2}}{\numprint[#1]{#2}}}
 
 %% Symboles
 % © : Copyright
