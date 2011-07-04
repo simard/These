@@ -2019,6 +2019,18 @@
 
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
+					\begin{myfigure}
+						\psset{xunit=0.272108844\textwidth,yunit=0.0125cm}
+						\begin{myps}(-0.45,-90)(3,250)
+							\myaxes(0,3){nombre de sujets}(0,200)[50]{temps~(s)}
+							\myboxplot{exp2-time-try-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le second essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Synthese]{Synthèse}
