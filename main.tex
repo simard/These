@@ -1965,8 +1965,8 @@
 					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de trier les scénarios en deux classes de complexité : $\left\{\myscenario{1a}, \myscenario{2a}\right\}$ et $\left\{\myscenario{1b}, \myscenario{2b}\right\}$.
 
 					\begin{myfigure}
-						\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
-						\begin{myps}(-0.5,-75)(4,290)
+						\psset{xunit=0.222222222\textwidth,yunit=0.0125cm}
+						\begin{myps}(-0.5,-90)(4,300)
 							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
 							\myboxplot{exp2-time-task-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
@@ -1979,18 +1979,18 @@
 					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
 
 					\begin{myfigure}
-						\psset{xunit=0.222222222\textwidth,yunit=1.5cm}
+						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
 						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.75)(4,3)
-								\myaxes(0,4){scénario}(0,2.5)[0.5]{temps~(s)}
+							\begin{myps}(-0.5,-0.9)(4,3)
+								\myaxes(0,4){scénario}(0,2.5)[0.5]{distance~(mm)}
 								\myboxplot{exp2-passive-task-group.csv}
 								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 							\end{myps}
 							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive]{Distance passive}
 						\end{mysubfigure}
 						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.75)(4,3)
-								\myaxes(0,4){scénario}(0,2.5)[0.5]{temps~(s)}
+							\begin{myps}(-0.5,-0.9)(4,3)
+								\myaxes(0,4){scénario}(0,2.5)[0.5]{distance~(mm)}
 								\myboxplot{exp2-active-task-group.csv}
 								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 							\end{myps}
@@ -1999,9 +1999,24 @@
 						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque scénario en fonction du nombre de sujets}
 					\end{myfigure}
 
-					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives et actives \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-					En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
-					Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}).
+					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives \myvard{3} et actives \myvard{4} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
+					Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
+						\begin{myps}(-0.5,-0.9)(4,3)
+							\myaxes(0,4){scénario}(0,2.5)[0.5]{vitesse~(mm/s)}
+							\myboxplot{exp2-speed-task-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets]{Vitesse moyenne sur chaque scénario en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-speed-task-group-anova-trpzipper.tex}).
+					De même, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-speed-task-group-anova-trpcage.tex}).
+
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
 				\end{mysubsection}
