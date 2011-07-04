@@ -87,3 +87,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.mean = mean2tex(mean(dat.exp2.monome.cumulative$total.selection.number))
+out.file.mean = gsub(".csv", "-mean-monome.tex", out.file.boxplot)
+write(
+	  out.mean,
+	  file = out.file.mean
+	  )
+out.mean = mean2tex(mean(dat.exp2.binome.cumulative$total.selection.number))
+out.file.mean = gsub(".csv", "-mean-binome.tex", out.file.boxplot)
+write(
+	  out.mean,
+	  file = out.file.mean
+	  )

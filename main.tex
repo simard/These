@@ -1853,7 +1853,7 @@
 				\begin{mysubsection}[sse-exp2-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=0.02cm}
-						\begin{myps}(-0.45,-50)(2,210)
+						\begin{myps}(-0.45,-55)(2,210)
 							\myaxes(0,2){nombre de sujets}(0,200)[50]{temps~(s)}
 							\myboxplot{exp2-time-group.csv}
 						\end{myps}
@@ -1913,6 +1913,35 @@
 					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}).
 					On observe un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}).
 					On observe également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
+
+					Le premier résultat sur la \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} nous permet de confirmer notre hypothèse \myhypothesis{1} : les \myglos*{glo-Binome} sont plus performants que les \myglos*{glo-Monome}.
+					Cependant, la suite de l'analyse va permettre de mettre en avant les paramètres précis pour lesquels il y a un gain de performances ainsi que les scénarios les plus favorables.
+
+					Pour commencer, l'observation des distances moyennes entre les \myglos*{glo-EffecteurTerminal} nous permet d'observer un désequilibre de performances entre  les \myglos*{glo-Monome} et les \myglos*{glo-Binome} \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
+					En effet, lorsqu'on mesure cette distance de façon continue sur toute l'expérimentation, on constate une distance moyenne plus importante chez les \myglos*{glo-Monome}.
+					Cependant, la mesure de cette distance seulement dans le cas où les deux \myglos*{glo-EffecteurTerminal} sont effectivement actifs nous montre que ce sont les \myglos*{glo-Binome} qui couvre le plus grand espace de travail.
+					En effet, les \myglos*{glo-Monome} sont en manipulation \myglos*{glo-Bimanuel} ce qui est une configuration complexe sur le plan cognitif.
+					Le sujet doit alors être capable de gérer deux \myglos*{glo-EffecteurTerminal} à chaque instant.
+					La difficulté de cette configuration a mené la plupart des sujets à utiliser seulement un \myglos{glo-EffecteurTerminal} en laissant le second sur le côté afin que le curseur ne gêne pas à l'écran.
+					Ceci a pour effet d'augmenter la distance moyenne bien que le second \myglos{glo-EffecteurTerminal} ne soit pas utilisé.
+
+					La distance active permet d'éviter ce biais de mesure.
+					Cette mesure ne concerne alors que les \myglos*{glo-Monome} capables d'effectuer la tâche en utilisant leurs deux mains.
+					On constate alors que les \myglos*{glo-Binome} sont capables de couvrir un plus grand espace de travail.
+					En effet, les \myglos*{glo-Monome} ne sont pas capables de couvrir un espace aussi grand car ils ne peuvent focaliser visuellement que sur une zone de travail à la fois.
+					Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se retrouvent dans cette zone limitée dans l'espace.
+
+					La \myref{fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} confirme ce déséquilibre.
+					En effet, on constate un plus grand nombre total de sélections pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-group-dominant-mean-binome.tex}~sélections) que pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-group-dominant-mean-monome.tex}~sélections).
+					Là encore, le sujet effectuant la tâche en \myglos{glo-Monome} n'est pas capable d'exploiter pleinement les deux outils en sa possession : la charge cognitive est trop importante.
+					Cependant, les analyses statistiques montre que l'outil utilisé par la main dominante obtient un taux d'utilisation identique en \myglos{glo-Monome} ou en \myglos{glo-Binome}.
+					Le sujet en \myglos{glo-Monome} n'est pas capable d'exploiter pleinement les possibilités des deux outils en configuration \myglos*{glo-Bimanuel}.
+					Par opposition, les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} répartissent correctement la charge de travail entre les deux outils.
+
+					On constate que la configuration \myglos*{glo-Bimanuel} a également un effet néfaste sur l'utilisation de l'outil associé à la main dominante.
+					En effet, l'analyse montre une différence significative entre la vitesse moyenne de la main dominante des \myglos*{glo-Monome} et des \myglos*{glo-Binome}.
+					La configuration \myglos*{glo-Bimanuel} provoque une séquentialité dans les actions du sujet : il manipule avec un outil, puis avec l'autre mais rarement les deux en même temps.
+					Cette séquentialité a pour effet des pauses alternatives entre les outils ce qui explique cette vitesse moyenne plus basse.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
 					\begin{myfigure}
