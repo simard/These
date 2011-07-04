@@ -49,7 +49,8 @@ set.chi <- function(string, chi) {
 
 set.p <- function(string, p) {
 	if(p < 0.001) {
-		gsub("= <p>", "\\\\ll 0.05", string)
+		string = gsub("p = ", "p \\\\ll ", string)
+		gsub("<p>", "0.05", string)
 	} else {
 		p = round(p, digits = 3)
 		gsub("<p>", as.character(p), string);
@@ -67,7 +68,7 @@ set.sigma <- function(string, sigma) {
 }
 
 friedman2tex <- function(friedman) {
-	string = "$\\chi^2 = <chi>$, $df = <df>$, $p = <p>$%"
+	string = "$\\chi^2 = \\mynum{<chi>}$, $df = \\mynum{<df>}$, $p = \\mynum{<p>}$%"
 	string = set.df(string, friedman$parameter)
 	string = set.chi(string, friedman$statistic)
 	string = set.p(string, friedman$p.value)
@@ -75,7 +76,7 @@ friedman2tex <- function(friedman) {
 }
 
 kruskal2tex <- function(kruskal) {
-	string = "$\\chi^2 = <chi>$, $df = <df>$, $p = <p>$%"
+	string = "$\\chi^2 = \\mynum{<chi>}$, $df = \\mynum{<df>}$, $p = \\mynum{<p>}$%"
 	string = set.df(string, kruskal$parameter)
 	string = set.chi(string, kruskal$statistic)
 	string = set.p(string, kruskal$p.value)
@@ -83,7 +84,7 @@ kruskal2tex <- function(kruskal) {
 }
 
 summary2tex <- function(summary) {
-	string = "$\\mu = <mu>$, $\\sigma = <sigma>$%"
+	string = "$\\mu = \\mynum{<mu>}$, $\\sigma = \\mynum{<sigma>}$%"
 	string = set.mu(string, summary$mean)
 	string = set.sigma(string, summary$standard.deviation)
 	string
