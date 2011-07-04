@@ -2034,9 +2034,9 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
 					\begin{myfigure}
-						\psset{xunit=0.272108844\textwidth,yunit=0.0125cm}
+						\psset{xunit=0.285714286\textwidth,yunit=0.0125cm}
 						\begin{myps}(-0.45,-90)(3,250)
-							\myaxes(0,3){nombre de sujets}(0,200)[50]{temps~(s)}
+							\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
 							\myboxplot{exp2-time-try.csv}
 						\end{myps}
 						\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssai]{Temps de réalisation de chaque essai}
@@ -2047,9 +2047,9 @@
 					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le second essai ainsi qu'entre le second essai et le troisième.
 
 					\begin{myfigure}
-						\psset{xunit=0.272108844\textwidth,yunit=0.0125cm}
+						\psset{xunit=0.285714286\textwidth,yunit=0.0125cm}
 						\begin{myps}(-0.45,-90)(3,250)
-							\myaxes(0,3){nombre de sujets}(0,200)[50]{temps~(s)}
+							\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
 							\myboxplot{exp2-time-try-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
@@ -2058,6 +2058,20 @@
 
 					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
 					On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le second essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.285714286\textwidth,yunit=0.04cm}
+						\begin{myps}(-0.5,-30)(4,115)
+							\myaxes(0,3){essai}(0,100)[25]{nombre de sélections~(nb)}
+							\myboxplot{exp2-numsel-try-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque essai en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le premier essai (\myanova{exp2-numsel-try-group-anova-try1.tex}) ou le troisième essai (\myanova{exp2-numsel-try-group-anova-try3.tex}).
+					Cependant, on montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le le second essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Synthese]{Synthèse}
