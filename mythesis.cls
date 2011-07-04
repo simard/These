@@ -120,6 +120,12 @@
 	page=1,%
 	view={FitH}
 }
+% To have a dot instead of a comma in numbers for French document
+% In scientific documents, dot is better than comma
+\if@myfrancais
+	\npdecimalsign{.}
+\fi
+
 %%% biblatex %%%
 % To avoid a semi-colon for 'In Proceeedings...' (instead of 'In: Proceedings...').
 \renewcommand{\intitlepunct}{\space}
