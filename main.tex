@@ -2043,7 +2043,7 @@
 					\end{myfigure}
 
 					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssai} présente le temps de réalisation \myvard{1} des différents essais \myvari{3}.
-					On montre un effet significatif de l'ordre de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
+					On montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
 					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le second essai ainsi qu'entre le second essai et le troisième.
 
 					\begin{myfigure}
@@ -2071,33 +2071,25 @@
 
 					La \myref{fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
 					On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le premier essai (\myanova{exp2-numsel-try-group-anova-try1.tex}) ou le troisième essai (\myanova{exp2-numsel-try-group-anova-try3.tex}).
-					Cependant, on montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le le second essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
+					Cependant, on montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le second essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
-						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.9)(3,3)
-								\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
-								\myboxplot{exp2-passive-try-group.csv}
-								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-							\end{myps}
-							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets-DistancePassive]{Distance passive}
-						\end{mysubfigure}
-						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.9)(3,3)
-								\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
-								\myboxplot{exp2-active-try-group.csv}
-								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-							\end{myps}
-							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets-DistanceActive]{Distance active}
-						\end{mysubfigure}
-						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque essai en fonction du nombre de sujets}
+						\begin{myps}(-0.5,-0.9)(3,3)
+							\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
+							\myboxplot{exp2-active-try-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-DistanceActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets]{Distance active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque essai en fonction du nombre de sujets}
 					\end{myfigure}
 
-					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets} présente les distances passives \myvard{3} et actives \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour le premier essai (\myanova{exp2-passive-try-group-anova-try1.tex}) mais pas pour le second essai (\myanova{exp2-passive-try-group-anova-try2.tex}) ni le troisième essai (\myanova{exp2-passive-try-group-anova-try3.tex}).
-					En ce qui concerne la distance active, 
-					l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) et pour le second essai (\myanova{exp2-active-try-group-anova-try2.tex}) mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
+					La \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets} présente la distance active \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					La distance passive a été ignorée étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) et pour le second essai (\myanova{exp2-active-try-group-anova-try2.tex}) mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
+
+					De plus, on montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Binome} (\myanova{exp2-active-try-group-anova-binome.tex}).
+					Cependant, on montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-active-try-group-anova-monome.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le troisième essai.
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
@@ -2111,6 +2103,9 @@
 
 					La \myref{fig-exp2-VitesseMoyenneSurChaqueEssaiEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
 					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour le premier essai (\myanova{exp2-speed-try-group-anova-try1.tex}), le second essai (\myanova{exp2-speed-try-group-anova-try2.tex}) et le troisième essai (\myanova{exp2-speed-try-group-anova-try3.tex}).
+
+					De plus, on montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-speed-try-group-anova-monome.tex}) et les \myglos*{glo-Binome} (\myanova{exp2-speed-try-group-anova-binome.tex}).
+					Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre dans chaque cas (\myglos{glo-Monome} et \myglos{glo-Binome}) une augmentation significative après le premier essai.
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Synthese]{Synthèse}

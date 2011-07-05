@@ -56,3 +56,32 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+
+shapiro = shapiro.test(dat.active.monome$mean.diff.active)
+levene = levene.test(dat.active.monome$mean.diff.active, dat.active.monome$group.try)
+grp1 = dat.active.monome[ dat.active.monome$group.try == 1, ]$mean.diff.active
+grp2 = dat.active.monome[ dat.active.monome$group.try == 2, ]$mean.diff.active
+grp3 = dat.active.monome[ dat.active.monome$group.try == 3, ]$mean.diff.active
+grp = cbind(grp1, grp2, grp3)
+friedman = friedman.test(grp)
+wilcox = pairwise.wilcox.test( dat.active.monome$mean.diff.active, dat.active.monome$group.try, p.adj="holm", exact=FALSE, pair=FALSE)
+out.anova = friedman2tex(friedman)
+out.file.anova = gsub(".csv", "-anova-monome.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
+
+shapiro = shapiro.test(dat.active.binome$mean.diff.active)
+levene = levene.test(dat.active.binome$mean.diff.active, dat.active.binome$group.try)
+grp1 = dat.active.binome[ dat.active.binome$group.try == 1, ]$mean.diff.active
+grp2 = dat.active.binome[ dat.active.binome$group.try == 2, ]$mean.diff.active
+grp3 = dat.active.binome[ dat.active.binome$group.try == 3, ]$mean.diff.active
+grp = cbind(grp1, grp2, grp3)
+friedman = friedman.test(grp)
+out.anova = friedman2tex(friedman)
+out.file.anova = gsub(".csv", "-anova-binome.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )

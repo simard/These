@@ -56,3 +56,33 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+
+shapiro = shapiro.test(dat.speed.monome$mean.speed)
+levene = levene.test(dat.speed.monome$mean.speed, dat.speed.monome$group.try)
+grp1 = dat.speed.monome[ dat.speed.monome$group.try == 1, ]$mean.speed
+grp2 = dat.speed.monome[ dat.speed.monome$group.try == 2, ]$mean.speed
+grp3 = dat.speed.monome[ dat.speed.monome$group.try == 3, ]$mean.speed
+grp = cbind(grp1, grp2, grp3)
+friedman = friedman.test(grp)
+wilcox = pairwise.wilcox.test( dat.speed.monome$mean.speed, dat.speed.monome$group.try, p.adj="holm", exact=FALSE, pair=FALSE)
+out.anova = friedman2tex(friedman)
+out.file.anova = gsub(".csv", "-anova-monome.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
+
+shapiro = shapiro.test(dat.speed.binome$mean.speed)
+levene = levene.test(dat.speed.binome$mean.speed, dat.speed.binome$group.try)
+grp1 = dat.speed.binome[ dat.speed.binome$group.try == 1, ]$mean.speed
+grp2 = dat.speed.binome[ dat.speed.binome$group.try == 2, ]$mean.speed
+grp3 = dat.speed.binome[ dat.speed.binome$group.try == 3, ]$mean.speed
+grp = cbind(grp1, grp2, grp3)
+friedman = friedman.test(grp)
+wilcox = pairwise.wilcox.test( dat.speed.binome$mean.speed, dat.speed.binome$group.try, p.adj="holm", exact=FALSE, pair=FALSE)
+out.anova = friedman2tex(friedman)
+out.file.anova = gsub(".csv", "-anova-binome.tex", out.file.boxplot)
+write(
+	  out.anova,
+	  file = out.file.anova
+	  )
