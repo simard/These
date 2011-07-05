@@ -2077,7 +2077,7 @@
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
 						\begin{mysubfigure}[\textwidth]
 							\begin{myps}(-0.5,-0.9)(3,3)
-								\myaxes(0,3){scénario}(0,2.5)[0.5]{distance~(mm)}
+								\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
 								\myboxplot{exp2-passive-try-group.csv}
 								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 							\end{myps}
@@ -2085,7 +2085,7 @@
 						\end{mysubfigure}
 						\begin{mysubfigure}[\textwidth]
 							\begin{myps}(-0.5,-0.9)(3,3)
-								\myaxes(0,3){scénario}(0,2.5)[0.5]{distance~(mm)}
+								\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
 								\myboxplot{exp2-active-try-group.csv}
 								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 							\end{myps}
@@ -2098,6 +2098,19 @@
 					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour le premier essai (\myanova{exp2-passive-try-group-anova-try1.tex}) mais pas pour le second essai (\myanova{exp2-passive-try-group-anova-try2.tex}) ni le troisième essai (\myanova{exp2-passive-try-group-anova-try3.tex}).
 					En ce qui concerne la distance active, 
 					l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) et pour le second essai (\myanova{exp2-active-try-group-anova-try2.tex}) mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
+						\begin{myps}(-0.5,-0.9)(3,3)
+							\myaxes(0,3){essai}(0,2.5)[0.5]{vitesse~(mm/s)}
+							\myboxplot{exp2-speed-try-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp2-VitesseMoyenneSurChaqueEssaiEnFonctionDuNombreDeSujets]{Vitesse moyenne sur chaque essai en fonction du nombre de sujets}
+					\end{myfigure}
+
+					La \myref{fig-exp2-VitesseMoyenneSurChaqueEssaiEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour le premier essai (\myanova{exp2-speed-try-group-anova-try1.tex}), le second essai (\myanova{exp2-speed-try-group-anova-try2.tex}) et le troisième essai (\myanova{exp2-speed-try-group-anova-try3.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp2-Synthese]{Synthèse}
