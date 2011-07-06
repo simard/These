@@ -129,6 +129,13 @@ mean2tex <- function(m) {
 	string
 }
 
+ratio2tex <- function(ratio) {
+	string = "\\mynum[\\%]{<ratio>}%"
+	ratio = round(100 * ratio, digits=1)
+	string = gsub("<ratio>", as.character(ratio), string)
+	string
+}
+
 dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
 dat.exp1 = dat.exp1[dat.exp1$id != "David", ]
