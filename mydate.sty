@@ -33,6 +33,50 @@
 %%%%%%%%%%%%%%%%%%
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
+%% About testing if something is a number
+\newcommand\ifnumber[1]{%
+	\begingroup
+	\edef\temp{#1}%
+	\expandafter\ifstrempty\expandafter{\temp}
+		{\endgroup\@secondoftwo}
+		{\expandafter\ifnumber@i\temp\@nnil}%
+}
+\def\ifnumber@i#1#2\@nnil{%
+	\if-#1%
+		\ifstrempty{#2}
+			{\def\temp{X}}
+			{\def\temp{#2}}%
+	\else
+		\def\temp{#1#2}%
+	\fi
+	\afterassignment\ifnumhelper
+		\count@0\temp\relax\@nnil
+	\endgroup
+}
+\def\numrelax{\relax}%
+\def\ifnumhelper#1\@nnil{%
+	\def\temp{#1}%
+	\ifx\temp\numrelax
+		\aftergroup\@firstoftwo
+	\else
+		\aftergroup\@secondoftwo
+	\fi
+}
+%% Print a century either if it is a number or the letters in roman
+\newcounter{mycenturycounter}
+\newcommand\mycentury[1]{
+	\ifnumber{#1}%
+		{%
+			\setcounter{mycenturycounter}{#1}%
+			\textsc{\roman{mycenturycounter}}%
+			\ifnumequal{#1}{1}{\ier}{\ieme}\xspace%
+		}{%
+			\textsc{\MakeLowercase{#1}}%
+			\ifstrequal{#1}{i}{\ier}{%
+				\ifstrequal{#1}{I}{\ier}{\ieme}%
+			}\xspace%
+		}
+}
 %% Define a key about the style
 % The styles should be one of the following value:
 % - resume -> 28/03/2011
