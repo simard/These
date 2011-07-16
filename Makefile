@@ -90,7 +90,7 @@ review: clean img stats
 # It execute a faster compilation without images.
 # This is the default target, called by 'all'
 draft: $(BUILD) img stats
-	@sed 's/^\(\\documentclass\[\)\(.*\)/\1draft,\2/g' $(IN).tex > $(BUILD)/$(IN).tex
+	@sed 's/^\(\\documentclass\[\)\(.*\)/\1draft,myreview,\2/g' $(IN).tex > $(BUILD)/$(IN).tex
 	IN=$(BUILD)/$(IN) $(MAKE) pdf
 
 # To create the PDF file
