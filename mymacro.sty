@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1999/01/01]
-\ProvidesPackage{mymacro}[2011/04/29]
+\ProvidesPackage{mymacro}[2011/03/28]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Declare package options %%
@@ -20,6 +20,7 @@
 
 %% Packages to call
 \RequirePackage{etoolbox}
+\RequirePackage{xkeyval}
 \RequirePackage{xspace}
 % Only for number printing
 \RequirePackage{numprint}
@@ -34,24 +35,25 @@
 % A master command on '\emph'
 \newcommand{\myemph}[1]{\emph{#1}}
 % To write a name
-% The optionnal argument is for prefix on names (like 'van der' in 'van der Walls')
+% The optional argument is for prefix on names (like 'van der' in 'van der Walls')
 \newcommand{\myname}[2][]{%
-	\def\my@args@one{#1}%
-	\if@myfrancais%
+	\if@myfrancais
 		\textsc{%
-			\ifx\my@args@one\@empty%
-			\else%
-				\MakeLowercase{#1}%
-			\fi%
+			\ifstrempty{#1}%
+				{%
+				}{%
+					\MakeLowercase{#1}%
+				}%
 			\makefirstuc{\MakeLowercase{#2}}%
 		}%
-	\else%
-	\ifx\my@args@one\@empty%
-	\else%
-		\MakeLowercase{#1}%
-	\fi%
-	\MakeUppercase{#2}%
-	\fi%
+	\else
+		\ifstrempty{#1}%
+			{%
+			}{%
+				\MakeLowercase{#1}%
+			}%
+		\MakeUppercase{#2}%
+	\fi
 }
 % To print numbers (see 'numprint' package)
 \newcommand{\mynum}[2][]{\ifstrempty{#1}{\numprint{#2}}{\numprint[#1]{#2}}}
