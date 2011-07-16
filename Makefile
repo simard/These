@@ -65,6 +65,7 @@ final: clean img stats
 	$(MAKE) glossary
 	$(MAKE) acronym
 	$(MAKE) -B $(BUILD)/$(OUT).dvi
+	$(MAKE) -B $(BUILD)/$(OUT).dvi
 	$(MAKE) -B pdf
 
 # To create a draft version of the document.
