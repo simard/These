@@ -65,8 +65,26 @@ final: clean img stats
 	$(MAKE) glossary
 	$(MAKE) acronym
 	$(MAKE) -B $(BUILD)/$(OUT).dvi
-	$(MAKE) -B $(BUILD)/$(OUT).dvi
 	$(MAKE) -B pdf
+
+# To create the review document with:
+#   - the images
+#   - valid table of contents
+#   - numbered lines
+review: clean img stats
+	@echo "----- REVIEW-----"
+	$(MAKE) $(BUILD)/$(OUT).dvi
+	$(MAKE) bibtex
+	$(MAKE) glossary
+	$(MAKE) acronym
+	@sed 's/^\(\\documentclass\[\)\(.*\)/\1myreview,\2/g' $(IN).tex > $(BUILD)/$(IN).tex
+	IN=$(BUILD)/$(IN) $(MAKE) $(BUILD)/$(OUT).dvi
+	IN=$(BUILD)/$(IN) $(MAKE) bibtex
+	IN=$(BUILD)/$(IN) $(MAKE) glossary
+	IN=$(BUILD)/$(IN) $(MAKE) acronym
+	IN=$(BUILD)/$(IN) $(MAKE) -B $(BUILD)/$(OUT).dvi
+	IN=$(BUILD)/$(IN) $(MAKE) -B $(BUILD)/$(OUT).dvi
+	IN=$(BUILD)/$(IN) $(MAKE) -B pdf
 
 # To create a draft version of the document.
 # It execute a faster compilation without images.
