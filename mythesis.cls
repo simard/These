@@ -27,6 +27,8 @@
 \DeclareOption{myenglish}{\@myenglishtrue}
 \newif\if@myfrancais \@myfrancaisfalse
 \DeclareOption{myfrancais}{\@myfrancaistrue}
+\newif\if@myreview \@myreviewfalse
+\DeclareOption{myreview}{\@myreviewtrue}
 
 \ProcessOptions
 \PassOptionsToClass{fleqn}{book}
@@ -64,6 +66,10 @@
 \RequirePackage{enumitem}
 % About colors
 \RequirePackage{xcolor}
+% About numbering the lines
+\if@myreview
+	\RequirePackage{lineno}
+\fi
 % Redefine headers and footers
 \RequirePackage{myheadfoot}
 % About links in the final PDF document
@@ -86,6 +92,14 @@
 %%%%%%%%%%%%%%%%%%%%
 % Substitute Computer Modern to Latin Modern for bold small caps
 \DeclareFontSubstitution{T1}{cmr}{bx}{sc}
+% About numbering the lines
+\if@myreview
+	\modulolinenumbers[5]
+	\AfterEndPreamble{%
+		\pagewiselinenumbers%
+		\realpagewiselinenumbers%
+	}
+\fi
 %%% hyperref %%%
 % Configuration of hyperref package
 \hypersetup{%
