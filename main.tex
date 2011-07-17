@@ -619,7 +619,7 @@
 						\mycaption[fig-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsection}
-				\begin{mysubsection}[sse-exp1-VisualisationEtInteraction]{Visualisation et interactions}
+				\begin{mysubsection}[sse-exp1-VisualisationEtInteraction]{Visualisation et interaction}
 					La vue complète de la molécule est projetée sur le grand écran.
 					Les rendus graphiques utilisés sur \myacro{acr-VMD} pour afficher la molécule sont les rendus suivants \myref*{par-simulation-LesRendusGraphiques} :
 					\begin{itemize}
@@ -1518,7 +1518,7 @@
 				Cette seconde expérimentation se base sur un dispositif expérimental relativement similaire à celui de la première expérimentation.
 				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
 				Dans un premier temps, une liste du matériel utilisé est présenté dans la \myref{sse-exp2-DispositifTechnique} puis la disposition de chacun de ces éléments dans la \myref{sse-exp2-DispositionDesElements}.
-				Puis, dans un second temps, les aspects logiciels seront détaillés dans la \myref{sse-exp2-VisualisationEtInteractions}.
+				Puis, dans un second temps, les aspects logiciels seront détaillés dans la \myref{sse-exp2-VisualisationEtInteraction}.
 				\begin{mysubsection}[sse-exp2-DispositifTechnique]{Dispositif technique}
 					La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
 					\begin{itemize}
@@ -1548,14 +1548,14 @@
 
 					\begin{myfigure}
 						\myimage{exp2-schema}
-						\mysubcaption[fig-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+						\mycaption[fig-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
 					\end{myfigure}
 					\begin{myfigure}
 						\myimage{exp2-photo}
-						\mysubcaption[fig-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+						\mycaption[fig-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsection}
-				\begin{mysubsection}[sse-exp2-VisualisationEtInteractions]{Visualisation et interactions}
+				\begin{mysubsection}[sse-exp2-VisualisationEtInteraction]{Visualisation et interaction}
 					Chaque molécule proposée est projetée dans son intégralité sur l'écran de vidéoprojection avec les rendus graphiques suivants \myref*{par-simulation-LesRendusGraphiques} :
 					\begin{itemize}
 						\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
@@ -2348,6 +2348,67 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockSystemeCollaboratifPourLaManipulationDeMolecules}.
+				La troisième expérimentation propose un dispositif expérimental quasiment identique à celui de la seconde expérimentation.
+				La première distinction concerne le nombre d'outils à disposition étant donné le nombre de sujets plus important.
+				Deuxièmement, il n'y a pas d'outil de manipulation de la molécule.
+				Cet outil posait déjà quelques problèmes de partage en \myglos{glo-Binome}.
+				Nous avons préféré ne pas confronter les \myglos*{glo-Quadrinome} à cet outil générateur de conflits.
+
+				Le matériel utilisé est listé dans la \myref{sse-exp3-DispositifTechnique}.
+				La disposition de l'ensemble des éléments est détaillé dans la \myref{sse-exp3-DispositionDesElements}.
+				Enfin, les aspects de visualisation et d'interaction au niveau logiciel seront expliqués dans la \myref{sse-exp3-VisualisationEtInteraction}.
+				\begin{mysubsection}[sse-exp3-DispositifTechnique]{Dispositif technique}
+					La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
+					\begin{itemize}
+						\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
+						\item \mynum{2}~ordinateurs de faible puissance;
+						\item \mynum{4}~interfaces haptiques \myOmni;
+						\item \mynum{1}~vidéoprojecteur \myCasioXJ;
+						\item \mynum{1}~grand écran de vidéoprojection.
+					\end{itemize}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp3-DispositionDesElements]{Disposition des éléments}
+					Cette nouvelle étude propose une disposition identique à la seconde expérimentation \myref*{sse-exp2-DispositionDesElements}.
+					Les sujets sont face à un écran de vidéoprojection, le vidéoprojecteur se trouvant derrière eux.
+					La vue partagée permet à tous les sujets de voir le grand écran et de communiquer librement.
+
+					Quatre interfaces haptiques se trouvent faces aux sujets : ce sont deux outils de déformation \mytool{tug} \myref*{par-simulation-LesOutilsDeManipulation}.
+					Les sujets en \myglos{glo-Binome} auront chacun accès à deux interfaces de déformation en manipulation \myglos*{glo-Bimanuel}.
+					Dans le cas d'un \myglos{glo-Quadrinome}, chaque sujet aura un outil de déformation à sa disposition.
+					Les sujets n'ont pas la possibilité de modifier le point de vue de la scène.
+
+					L'expérimentateur dirige les opérations depuis un poste de travail placé derrière les sujets.
+					C'est lui qui lance et stoppe les différents scénarios proposés.
+
+					La \myref{fig-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
+					La \myref{fig-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+					\begin{myfigure}
+						\myimage{exp3-schema}
+						\mycaption[fig-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp3-photo}
+						\mycaption[fig-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsection}
+				\begin{mysubsection}[sse-exp3-VisualisationEtInteraction]{Visualisation et interaction}
+					Chaque molécule proposée est projetée dans son intégralité sur l'écran de vidéoprojection avec les rendus graphiques suivants \myref*{par-simulation-LesRendusGraphiques} :
+					\begin{itemize}
+						\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
+						\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
+						\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
+					\end{itemize}
+					De plus, un affichage de l'état stable de la molécule est affiché par un rendu \myNewRibbon transparent.
+					Pour les besoins de la simulation, certains \myglos*{glo-Residu} sont fixes et sont alors représentés avec la couleur grise.
+					Enfin, les \myglos*{glo-Residu} sélectionnés sont affichés avec un rendu \myCPK en transparence et de la couleur du curseur concerné.
+					La \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} dans la \myref{sse-exp2-VisualisationEtInteraction} illustre l'ensemble des rendus graphiques précédemment décrits.
+
+					Les outils \mytool{tug} vont permettre aux sujets de déformer la molécule.
+					Les \myglos*{glo-Binome} se placent devant les deux interfaces haptiques de façon à pouvoir manipuler en configuration \myglos*{glo-Bimanuel}.
+					Dans le cas d'un \myglos{glo-Quadrinome}, chaque sujet est installé face à un outil.
+				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Methode]{Méthode}
 				\begin{mysubsection}[sse-exp3-Sujets]{Sujets}
