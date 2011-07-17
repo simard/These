@@ -2445,6 +2445,32 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp3-VariablesDependantes]{Variables dépendantes}
+						\begin{myparagraph}[par-exp3-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
+							C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+							Le temps est limité à \mynum[mn]{10}.
+						\end{myparagraph}
+						\begin{myparagraph}[par-exp3-LeNombreDeSelections]{\myvard{2} La fréquence des sélections}
+							\myvard{2} représente la fréquence des sélections réalisées durant chaque tâche à réaliser.
+							Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}.
+							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
+							La fréquence est mesurée puisqu'elle ne dépend pas du temps total de réalisation de la tâche.
+						\end{myparagraph}
+						\begin{myparagraph}[par-exp3-VitesseMoyenne]{\myvard{3} Vitesse moyenne}
+							Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
+							Elle est calculée par intégration numérique des positions successives en fonction du temps.
+						\end{myparagraph}
+						\begin{myparagraph}[par-exp3-LaForceMoyenneAppliqueeParLesSujets]{\myvard{4} La force moyenne appliquée par les sujets}
+							Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
+							Une valeur moyenne de cette force est calculée pour être analysée.
+						\end{myparagraph}
+						\begin{myparagraph}[par-exp3-LesCommunicationsVerbales]{\myvard{5} Les communications verbales}
+							L'enregistrement des communications verbales permet de mesurer le nombre d'interventions de chacun des sujets.
+							Deux catégories d'interventions sont identifiées :
+							\begin{description}
+								\item[Les observations] destinées à renseigner les autres sujets d'un état actuel de l'environnement, d'une information nécessaire ou bien d'une intention d'action;
+								\item[Les ordres] sont donnés aux autres sujets afin qu'ils réalisent une action déterminée.
+							\end{description}
+						\end{myparagraph}
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp3-Tache]{Tâche}
