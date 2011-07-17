@@ -1653,7 +1653,7 @@
 							C'est une distance physique du monde réel de l'ordre du centimètre.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-VitesseMoyenne]{\myvard{5} Vitesse moyenne}
-							Cette variable est une mesure de la vitesse moyenne de chaque \myglos*{glo-EffecteurTerminal}.
+							Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
 							Elle est calculée par intégration numérique des positions successives en fonction du temps.
 						\end{myparagraph}
 						\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
@@ -2474,6 +2474,57 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp3-Tache]{Tâche}
+					La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
+
+					\begin{mysubsubsection}[sss-exp3-DescriptionDeLaTache]{Description de la tâche}
+						La tâche proposée est la déformation d'une molécule.
+						L'objectif est de la rendre conforme à un modèle.
+						L'intégralité des atomes de la molécule à déformer est affiché.
+						Trois molécules sont utilisées dans le cadre de cette expérimentation :
+						\begin{description}
+							\item[\myTRPCAGE]
+								La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
+								Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
+								Elle est seulement utilisée pour un entraînement et un apprentissage des outils de manipulation.
+							\item[\myPrion]
+								La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
+								Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
+							\item[\myUbiquitin]
+								La molécule nommée \myUbiquitin \mycite{Vijay-Kumar-1987} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1UBQ}{1UBQ} sur la \myPDBbase\footnotemark[\value{footnote}].
+								Cette molécule contient \mynum{1231}~atomes dont \mynum{76}~\myglos*{glo-Residu}.
+						\end{description}
+
+						Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
+						De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
+						On pourra trouver la description de ces éléments dans la \myref{sss-exp2-DescriptionDeLaTache}.
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-exp3-DescriptionDesScenarios]{Description des scénarios}
+						Deux scénarios sont proposés : un sur chacune des deux molécules \myPrion et \myUbiquitin.
+						Les paragraphes suivants décrivent les deux scénarios :
+						\begin{description}
+							\item[Scénario~\myscenario{1}]
+								Cette tâche concerne la déformation de la molécule \myPrion.
+								La déformation de cette molécule nécessite de replacer correctement une chaîne de \mynum{16}~\myglos*{glo-Residu}.
+								Cette chaîne se trouve ne périphérie de la molécule.
+								Elle n'est donc pas soumise à de fortes contraintes physiques.
+								Cette tâche est aisément divisible en sous-tâches; dans ce cas, les sujets peuvent se placer sur la chaîne de manière à la séparer en parties égales.
+								Ce scénario propose une collaboration faiblement couplée.
+							\item[Scénario~\myscenario{2}]
+								Cette tâche concerne la déformation de la molécule \myUbiquitin.
+								La déformation de cette molécule nécessite de replacer correctement une chaîne de \mynum{19}~\myglos*{glo-Residu}.
+								Cette chaîne se trouve au centre de la molécule.
+								Elle est soumise à de fortes contraintes physiques, notamment au centre de la chaîne.
+								Il très difficile d'avoir un contrôle sur la déformation du centre de la chaîne.
+								Cette tâche doit être réalisée avec une coordination de l'ensemble des sujets.
+								Ce scénario propose une collaboration étroite.
+						\end{description}
+					\end{mysubsubsection}
+					\begin{mysubsubsection}[sss-exp3-LesOutilsDisponibles]{Les outils disponibles}
+						Des outils de déformation atomique, identiques à la seconde expérimentation \myref*{sss-exp2-LesOutilsDisponibles}, sont proposés pour la réalisation de la tâche.
+						Il est à noter que les sujets n'ont pas la possibilité de modifier le point de vue de la molécule.
+						Bien que l'intégralité des scénarios soient réalisables sans modifier le point de vue, cette contrainte peut s'avérer être un handicap dans certains cas.
+						Cependant, nous avons fait le choix d'enlever cet outil de manipulation afin d'éviter les conflits, notamment au sein des \myglos*{glo-Quadrinome}.
+					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp3-Procedure]{Procédure}
 				\end{mysubsection}
