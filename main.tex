@@ -672,7 +672,7 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-exp1-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp1-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
+						\begin{myparagraph}[par-exp1-TempsDeRealisation]{\myvard{1} Temps de réalisation}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 							Ce temps est divisé en deux phases bien distinctes :
@@ -689,7 +689,7 @@
 							Elle est mesurée dans le monde réel mais peut être convertie dans l'environnement virtuel (à l'échelle de la molécule).
 							L'ordre de grandeur de cette mesure est le centimètre.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp1-LesCommunicationsVerbales]{\myvard{3} Les communications verbales}
+						\begin{myparagraph}[par-exp1-CommunicationsVerbales]{\myvard{3} Communications verbales}
 							L'enregistrement des communications verbales permet de mesurer la quantité de temps de parole de chaque sujets pour chaque étape de l'expérimentation.
 							Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
 
@@ -736,7 +736,7 @@
 								\mycaption[fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu]{Étapes de la communication verbale pour la recherche d'un \myglosnl{glo-Residu}}
 							\end{myfigure}
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp1-LAffiniteEntreLesSujets]{\myvard{4} L'affinité entre les sujets}
+						\begin{myparagraph}[par-exp1-AffiniteEntreLesSujets]{\myvard{4} Affinité entre les sujets}
 							Le degré d'affinité -- concernant uniquement les \myglos*{glo-Binome} -- est compris entre \mynum{1} et \mynum{5} selon les critères suivants :
 							\begin{enumerate}
 								\item Les sujets ne se connaissent pas;
@@ -746,7 +746,7 @@
 								\item Les sujets sont amis proches.
 							\end{enumerate}
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp1-LaForceMoyenneAppliqueeParLesSujets]{\myvard{5} La force moyenne appliquée par les sujets}
+						\begin{myparagraph}[par-exp1-ForceMoyenneAppliqueeParLesSujets]{\myvard{5} Force moyenne appliquée par les sujets}
 							Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
 							Une valeur moyenne de cette force est calculée pour être analysée.
 						\end{myparagraph}
@@ -991,11 +991,11 @@
 							\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                  \\
 							                                          & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
 							\mymiddlerule
-							\mytitlecolumn{4}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
+							\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
 							                                          & \myvard{2} Distance entre les espaces de travail                             \\
 							                                          & \myvard{3} Communication verbales                                            \\
 							                                          & \myvard{4} Affinités entre les sujets                                        \\
-							                                          & \myvard{5} La force moyenne appliquée par le sujet                           \\
+							                                          & \myvard{5} Force moyenne appliquée par le sujet                              \\
 							                                          & \myvard{6} Réponses qualitatives                                             \\
 							\mymiddlerule[\heavyrulewidth]
 							\multicolumn{2}{c}{%
@@ -1634,21 +1634,21 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp2-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp2-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
+						\begin{myparagraph}[par-exp2-TempsDeRealisation]{\myvard{1} Temps de réalisation}
 							C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 							Le temps est limité à \mynum[mn]{10}.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp2-LeNombreDeSelections]{\myvard{2} Le nombre de sélections}
+						\begin{myparagraph}[par-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
 							\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
 							Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
 							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp2-LaDistancePassiveEntreLesEspacesDeTravail]{\myvard{3} La distance passive entre les espaces de travail}
+						\begin{myparagraph}[par-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'ensemble de l'expérimentation.
 							Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
 							Elle est de l'ordre du centimètre.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp2-LaDistanceActiveEntreLesEspacesDeTravail]{\myvard{4} La distance active entre les espaces de travail}
+						\begin{myparagraph}[par-exp2-DistanceActiveEntreLesEspacesDeTravail]{\myvard{4} Distance active entre les espaces de travail}
 							Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
 							C'est une distance physique du monde réel de l'ordre du centimètre.
 						\end{myparagraph}
@@ -1813,7 +1813,7 @@
 							\mytoprule
 							\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule                                                        \\
 							\mymiddlerule[\heavyrulewidth]
-							\mytitlecolumn{3}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}           \\
+							\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}           \\
 							                                          & \myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes \\
 							                                          & \myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}           \\
 							                                          & \myhypothesis{4} Les sujets préfèrent le travail en collaboration                 \\
@@ -1822,7 +1822,7 @@
 							                                          & \myvari{2} Complexité de la tâche                                                 \\
 							                                          & \myvari{3} Niveau d'apprentissage                                                 \\
 							\mymiddlerule
-							\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
+							\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
 							                                          & \myvard{2} Nombre de sélections                                                   \\
 							                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
 							                                          & \myvard{4} Distance active entre les espaces de travail                           \\
@@ -1832,14 +1832,14 @@
 							\multicolumn{2}{c}{%
 								\begin{tabular}{^C-C-C-C}
 									\myrowstyle{\bfseries}
-									Condition \mycondition{1}           & Condition \mycondition{2}           & Condition \mycondition{3}     & Condition \mycondition{4} \\
+									Condition \mycondition{1}       & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4} \\
 									\mymiddlerule
-									\myGlosnl{glo-Bimanuel} ($N=1$)     & \myGlosnl{glo-Bimanuel} ($N=1$)     & Collaboratif ($N=2$)          & Collaboratif ($N=2$)      \\
+									\myGlosnl{glo-Bimanuel} ($N=1$) & \myGlosnl{glo-Bimanuel} ($N=1$) & Collaboratif ($N=2$)      & Collaboratif ($N=2$)      \\
 									\mymiddlerule
-									Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}      & Scénario~\myscenario{1b}  \\
-									Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}      & Scénario~\myscenario{1a}  \\
-									Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}      & Scénario~\myscenario{2b}  \\
-									Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}      & Scénario~\myscenario{2a}  \\
+									Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}  & Scénario~\myscenario{1b}  \\
+									Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}  & Scénario~\myscenario{1a}  \\
+									Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}  & Scénario~\myscenario{2b}  \\
+									Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}  & Scénario~\myscenario{2a}  \\
 								\end{tabular}
 							} \\
 							\mybottomrule
@@ -2445,11 +2445,11 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp3-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp3-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
+						\begin{myparagraph}[par-exp3-TempsDeRealisation]{\myvard{1} Temps de réalisation}
 							C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 							Le temps est limité à \mynum[mn]{10}.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp3-LeNombreDeSelections]{\myvard{2} La fréquence des sélections}
+						\begin{myparagraph}[par-exp3-FrequenceDeSelections]{\myvard{2} Fréquence des sélections}
 							\myvard{2} représente la fréquence des sélections réalisées durant chaque tâche à réaliser.
 							Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}.
 							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
@@ -2459,11 +2459,11 @@
 							Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
 							Elle est calculée par intégration numérique des positions successives en fonction du temps.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp3-LaForceMoyenneAppliqueeParLesSujets]{\myvard{4} La force moyenne appliquée par les sujets}
+						\begin{myparagraph}[par-exp3-ForceMoyenneAppliqueeParLesSujets]{\myvard{4} Force moyenne appliquée par les sujets}
 							Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
 							Une valeur moyenne de cette force est calculée pour être analysée.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp3-LesCommunicationsVerbales]{\myvard{5} Les communications verbales}
+						\begin{myparagraph}[par-exp3-CommunicationsVerbales]{\myvard{5} Communications verbales}
 							L'enregistrement des communications verbales permet de mesurer le nombre d'interventions de chacun des sujets.
 							Deux catégories d'interventions sont identifiées :
 							\begin{description}
@@ -2527,6 +2527,57 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp3-Procedure]{Procédure}
+					Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
+
+					\begin{mytable}
+						\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+						\newcommand{\mytitlecolumn}[2]{%
+							\multirow{#1}*{%
+								\begin{minipage}{6em}%
+									\raggedleft #2%
+								\end{minipage}%
+							}
+						}
+						\newlength{\expthreefirstcolumn}
+						\newlength{\expthreesecondcolumn}
+						\setlength{\expthreefirstcolumn}{7em}
+						\setlength{\expthreesecondcolumn}{\textwidth}
+						\addtolength{\expthreesecondcolumn}{-\expthreefirstcolumn}
+						\addtolength{\expthreesecondcolumn}{-4\tabcolsep}
+						\begin{mytabular}{>{\bfseries}p{\expthreefirstcolumn}p{\expthreesecondcolumn}}
+							\mytoprule
+							\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule en groupe                                        \\
+							\mymiddlerule[\heavyrulewidth]
+							\mytitlecolumn{2}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome} \\
+							                                          & \myhypothesis{2} Le remue-méninges structure le \myglosnl{glo-Quadrinome}   \\
+							\mymiddlerule
+							\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                 \\
+							                                          & \myvari{2} Complexité de la tâche                                           \\
+							                                          & \myvari{3} Temps alloué pour le remue-méninges                              \\
+							\mymiddlerule
+							\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                             \\
+							                                          & \myvard{2} Fréquence des sélections                                         \\
+							                                          & \myvard{3} Vitesse moyenne                                                  \\
+							                                          & \myvard{4} Force moyenne appliquée par les sujets                           \\
+							                                          & \myvard{5} Communications verbales                                          \\
+							\mymiddlerule[\heavyrulewidth]
+							\multicolumn{2}{c}{%
+								\begin{tabular}{^C-C-C-C}
+									\myrowstyle{\bfseries}
+									Condition \mycondition{1}           & Condition \mycondition{2}           & Condition \mycondition{3}         & Condition \mycondition{4}         \\
+									\mymiddlerule
+									\myGlosnl{glo-Bimanuel} ($N=2$)     & \myGlosnl{glo-Bimanuel} ($N=2$)     & \myGlosnl{glo-Monomanuel} ($N=4$) & \myGlosnl{glo-Monomanuel} ($N=4$) \\
+									Pas de remue-méninges               & \mynum[mn]{1} de remue-méninges     & Pas de remue-méninges             & \mynum[mn]{1} de remue-méninges   \\
+									\mymiddlerule
+									Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}          & Scénario~\myscenario{1b}          \\
+									Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}          & Scénario~\myscenario{1a}          \\
+									Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}          & Scénario~\myscenario{2b}          \\
+									Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}          & Scénario~\myscenario{2a}          \\
+								\end{tabular}
+							} \\
+							\mybottomrule
+						\end{mytabular}
+					\end{mytable}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Resultats]{Résultats}
@@ -2618,16 +2669,16 @@
 						\end{myparagraph}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sec-exp4-VariablesDependantes]{Variables dépendantes}
-						\begin{myparagraph}[par-exp4-LeTempsDeRealisation]{\myvard{1} Le temps de réalisation}
+						\begin{myparagraph}[par-exp4-TempsDeRealisation]{\myvard{1} Temps de réalisation}
 							Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 							Il n'y a pas de limite de temps pour réaliser la tâche.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp4-LeNombreDeSelections]{\myvard{2} Le nombre de sélections}
+						\begin{myparagraph}[par-exp4-NombreDeSelections]{\myvard{2} Nombre de sélections}
 							\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
 							Une sélection est comptabilisée lorsque un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
 							Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal}.
 						\end{myparagraph}
-						\begin{myparagraph}[par-exp4-LesCommunicationsVerbalesEtGestuelles]{\myvard{3} Les communications verbales et gestuelles}
+						\begin{myparagraph}[par-exp4-CommunicationsVerbalesEtGestuelles]{\myvard{3} Communications verbales et gestuelles}
 							L'enregistrement vidéo permet de mesurer la quantité de temps de parole pendant chaque tâche de l'expérimentation.
 							Elle permet également d'observer les phases de communication gestuelle.
 							Les communications gestuelles sont les mouvements physiques des sujets destinés à donner une information à un ou plusieurs autres sujets.
