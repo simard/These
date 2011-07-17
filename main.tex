@@ -2424,6 +2424,8 @@
 					\end{itemize}
 					Ils ont tous le français comme langue principale.
 					Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+					Tous les participants de cette expérimentation ont été choisi à cause de leur précédente expérience sur la plate-forme : l'objectif est d'avoir des participants connaissant déjà les outils et les tâches à réaliser.
+					Ceci doit permettre d'observer des effets de groupes en limitant les effets de l'apprentissage.
 
 					Chaque participant est complètement naïf concernant les détails de l'expérimentation.
 					Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
@@ -2530,6 +2532,21 @@
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp3-Procedure]{Procédure}
+					L'expérimentation débute par une étape d'entraînement avec la molécule \myTRPCAGE.
+					Pendant cette phase, les outils sont introduits et expliqués un par un.
+					Les sujets ayant déjà eu une expérience sur la plate-forme, cette phase est un raffraîchissement.
+					Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
+					Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
+
+					Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au scénario \myscenario{1}.
+					Puis dans un second temps, le scénario \myscenario{2} leur est proposé.
+					L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+					L'ordre de ces deux scénarios est toujours le même, les tâches étant différentes, aucun confrontation ne sera effectuée dans la partie analyse.
+
+					Tous les sujets sont confrontés aux deux scénarios deux fois.
+					Une première fois en \myglos{glo-Binome} et une seconde fois en \myglos{glo-Quadrinome}.
+					L'ordre de passage en \myglos{glo-Binome} et en \myglos{glo-Quadrinome} est alterné selon les groupes afin d'éviter les biais d'apprentissage.
+
 					Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 
 					\begin{mytable}
@@ -2568,17 +2585,15 @@
 								\small%
 								\begin{tabular}{^C-C-C-C}
 									\myrowstyle{\bfseries}
-									Condition \mycondition{1}           & Condition \mycondition{2}           & Condition \mycondition{3}         & Condition \mycondition{4}         \\
+									Condition \mycondition{1} & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4}       \\
 									\mymiddlerule
-									\mynum{2}~sujets                    & \mynum{2}~sujets                    & \mynum{4}~sujets                  & \mynum{4}~sujets                  \\
-									\myGlosnl{glo-Bimanuel}             & \myGlosnl{glo-Bimanuel}             & \myGlosnl{glo-Monomanuel}         & \myGlosnl{glo-Monomanuel}         \\
+									\mynum{2}~sujets          & \mynum{2}~sujets                & \mynum{4}~sujets          & \mynum{4}~sujets                \\
+									\myGlosnl{glo-Bimanuel}   & \myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Monomanuel} & \myGlosnl{glo-Monomanuel}       \\
 									\mymiddlerule
-									Pas de remue-méninges               & \mynum[mn]{1} de remue-méninges     & Pas de remue-méninges             & \mynum[mn]{1} de remue-méninges   \\
+									Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges & Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges \\
 									\mymiddlerule
-									Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}          & Scénario~\myscenario{1b}          \\
-									Scénario~\myscenario{1b}            & Scénario~\myscenario{1a}            & Scénario~\myscenario{1b}          & Scénario~\myscenario{1a}          \\
-									Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}          & Scénario~\myscenario{2b}          \\
-									Scénario~\myscenario{2b}            & Scénario~\myscenario{2a}            & Scénario~\myscenario{2b}          & Scénario~\myscenario{2a}          \\
+									Scénario~\myscenario{1}   & Scénario~\myscenario{1}         & Scénario~\myscenario{1}   & Scénario~\myscenario{1}         \\
+									Scénario~\myscenario{2}   & Scénario~\myscenario{2}         & Scénario~\myscenario{2}   & Scénario~\myscenario{2}         \\
 								\end{tabular}
 							} \\
 							\mybottomrule
