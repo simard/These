@@ -2714,6 +2714,19 @@
 					Ces deux phénomènes s'équilibrent pour donner des performances similaires entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
 					Afin d'améliorer les performances d'un \myglos{glo-Quadrinome}, il faudrait faciliter les résolutions de conflits.
 				\end{mysubsection}
+				\begin{mysubsection}[sse-exp3-AvantageDuRemueMeningesPourLesQuadrinomes]{Avantage du remue-méninges pour les \myglosnl*{glo-Quadrinome}}
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
+						\begin{myps}(-0.425,-220)(2,640)
+							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+							\myboxplot{exp3-time-brainstorm.csv}
+						\end{myps}
+						\mycaption[fig-exp3-TempsDeRealisationAvecOuSansRemueMeninges]{Temps de réalisation avec ou sans remue-méninges}
+					\end{myfigure}
+
+					La \myref{fig-exp3-TempsDeRealisationAvecOuSansRemueMeninges} présente le temps de réalisation \myvard{1} en fonction des groupes avec ou sans remue-méninges \myvari{3}.
+					L'analyse montre un effet significatif du remue-méninges \myvari{3} sur les scénarios \myvari{2} (\myanova{exp3-time-brainstorm-anova.tex}).
+				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
 				\begin{mysubsection}[sse-exp3-ResumeDesResultats]{Résumé des résultats}
