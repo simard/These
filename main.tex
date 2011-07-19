@@ -2651,6 +2651,20 @@
 					La \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants} présente la fréquence de sélection \myvard{2} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la molécule \myPrion (\myanova{exp3-freqsel-molecule-group-anova-prion-group.tex}).
 					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la molécule \myUbiquitin (\myanova{exp3-freqsel-molecule-group-anova-ubiquitin-group.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.43956044\textwidth,yunit=0.1cm}
+						\begin{myps}(-0.25,-11)(2,36)
+							\myaxes(0,2){scénario}(0,30)[5]{échanges verbaux~(nb)}
+							\myboxplot{exp3-talk-molecule-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants]{Nombre d'échanges verbaux sur les scénarios en fonction du nombre de participants}
+					\end{myfigure}
+
+					La \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} présente le nombre d'échanges verbaux \myvard{5} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la molécule \myPrion (\myanova{exp3-talk-molecule-group-anova-prion-group.tex}).
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la molécule \myUbiquitin (\myanova{exp3-talk-molecule-group-anova-ubiquitin-group.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
