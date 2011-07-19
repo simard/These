@@ -34,7 +34,7 @@ grp2 = dat.prion[ dat.prion$group.number == 4, ]$time.completion
 grp = cbind(grp1, grp2)
 friedman = friedman.test(grp)
 out.anova = friedman2tex(friedman)
-out.file.anova = gsub(".csv", "-anova-prion-group.tex", out.file.boxplot)
+out.file.anova = gsub(".csv", "-anova-prion.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
@@ -48,7 +48,7 @@ grp2 = dat.ubiquitin[ dat.ubiquitin$group.number == 4, ]$time.completion
 grp = cbind(grp1, grp2)
 friedman = friedman.test(grp)
 out.anova = friedman2tex(friedman)
-out.file.anova = gsub(".csv", "-anova-ubiquitin-group.tex", out.file.boxplot)
+out.file.anova = gsub(".csv", "-anova-ubiquitin.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
