@@ -2726,6 +2726,20 @@
 
 					La \myref{fig-exp3-TempsDeRealisationAvecOuSansRemueMeninges} présente le temps de réalisation \myvard{1} en fonction des groupes avec ou sans remue-méninges \myvari{3}.
 					L'analyse montre un effet significatif du remue-méninges \myvari{3} sur les scénarios \myvari{2} (\myanova{exp3-time-brainstorm-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+						\begin{myps}(-0.25,-220)(2,720)
+							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+							\myboxplot{exp3-time-brainstorm-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansRemueMeninges]{Temps de réalisation des scénarios en fonction des groupes avec ou sans remue-méninges}
+					\end{myfigure}
+
+					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansRemueMeninges} présente le temps de réalisation \myvard{1} pour les groupes avec ou sans remue-méninges \myvari{3} en fonction du nombre de sujets \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif du remue-méninges \myvari{3} sur les \myglos*{glo-Binome} (\myanova{exp3-time-brainstorm-group-anova-binome.tex}).
+					Cependant, l'analyse montre un effet significatif du remue-méninges \myvari{3} sur les \myglos*{glo-Quadrinome} (\myanova{exp3-time-brainstorm-group-anova-quadrinome.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
