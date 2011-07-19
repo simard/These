@@ -21,7 +21,7 @@ grp2 = dat.exp3[ dat.exp3$molecule == "ubiquitin", ]$time.completion
 grp = cbind(grp1, grp2)
 friedman = friedman.test(grp)
 out.anova = friedman2tex(friedman)
-out.file.anova = gsub(".csv", "-anova-molecule.tex", out.file.boxplot)
+out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
