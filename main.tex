@@ -2613,6 +2613,18 @@
 			\begin{mysection}[sec-exp3-Resultats]{Résultats}
 				\begin{mysubsection}[sse-exp3-EvolutionDesPerformances]{Évolution des performances}
 					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
+						\begin{myps}(-0.425,-220)(2,640)
+							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+							\myboxplot{exp3-time-task.csv}
+						\end{myps}
+						\mycaption[fig-exp3-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
+					\end{myfigure}
+
+					La \myref{fig-exp3-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} de chaque scénario \myvari{2}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur les scénarios \myvari{2} (\myanova{exp3-time-task-anova-molecule.tex}).
+
+					\begin{myfigure}
 						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
 						\begin{myps}(-0.25,-220)(2,720)
 							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
