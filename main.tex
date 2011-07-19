@@ -2611,6 +2611,21 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Resultats]{Résultats}
+				\begin{mysubsection}[sse-exp3-EvolutionDesPerformances]{Évolution des performances}
+					\begin{myfigure}
+						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+						\begin{myps}(-0.25,-220)(2,720)
+							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+							\myboxplot{exp3-time-task-group.csv}
+							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
+						\end{myps}
+						\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants]{Temps de réalisation des scénarios en fonction du nombre de participants}
+					\end{myfigure}
+
+					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} présente le temps de réalisation \myvard{1} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la molécule \myPrion (\myanova{exp3-time-task-group-anova-prion-group.tex}).
+					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la molécule \myUbiquitin (\myanova{exp3-time-task-group-anova-ubiquitin-group.tex}).
+				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
 				\begin{mysubsection}[sse-exp3-ResumeDesResultats]{Résumé des résultats}
