@@ -2854,6 +2854,34 @@
 
 					La \myref{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{3} en fonction des sujets du groupe \mygroup{1}.
 					On observe que le sujet \mysubject{1} donne beaucoup plus d'ordres que la moyenne (augmentation de \myanalysis{exp3-g1-speed-subject-analysis.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.007017544\textwidth,yunit=1cm}
+						\begin{mysubfigure}[\textwidth]
+							\begin{myps}(-12.5,-1.15)(130,5.25)
+								\myaxes[labels=all,ticks=all,Dx=25](0,125){temps~{(s)}}(0,5)[1]{force~(N)}
+								\psscalebox{2.75 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S1.csv}}
+							\end{myps}
+							\mysubcaption[fig-exp3-ProfilDeForceSurG1-ProfilDeForceDeS1]{Profil de force de \mysubject{1}}
+						\end{mysubfigure}
+						\begin{mysubfigure}[\textwidth]
+							\begin{myps}(-12.5,-1.15)(130,5.25)
+								\myaxes[labels=all,ticks=all,Dx=25](0,125){temps~{(s)}}(0,5)[1]{force~(N)}
+								\psscalebox{2.75 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S2.csv}}
+								\pnode(49.341,2){begin}
+								\pnode(86.291,2){end}
+								\ncline[linecolor=myblue,linewidth=1pt]{<->}{begin}{end}
+								\ncput*{\textcolor{myblue}{\small selection}}
+							\end{myps}
+							\mysubcaption[fig-exp3-ProfilDeForceSurG1-ProfilDeForceDeS2]{Profil de force de \mysubject{2}}
+						\end{mysubfigure}
+						\mycaption[fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion]{Profil de force du groupe \mygroup{1} sur la molécule \myPrion}
+					\end{myfigure}
+
+					La \myref{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion} présente les profils de force \myvard{4} des sujets \mysubject{1} et \mysubject{2} du groupe \mygroup{1}.
+					On constate un profil très chaotique pour le sujet \mysubject{1}.
+					Par opposition, le profil du sujet \mysubject{2} est très peu chaotique.
+					De plus, les efforts maximaux produits par le sujet \mysubject{2} sont plus importants que ceux du \mysubject{1}.
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
