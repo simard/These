@@ -2842,6 +2842,18 @@
 
 					La \myref{fig-exp3-NombreDOrdresDonnesParChacunDesSujetsDeG1} présente le nombre d'ordres donnés \myvard{5} en fonction des sujets du groupe \mygroup{1}.
 					On observe que le sujet \mysubject{1} donne beaucoup plus d'ordres que la moyenne (augmentation de \myanalysis{exp3-g1-talk-subject-analysis.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.222222222\textwidth,yunit=3cm}
+						\begin{myps}(-0.5,-0.4)(4,1.1)
+							\myaxes(0,4){sujets de \mygroup{1}}(0,1.00)[0.25]{vitesse~(mm/s)}
+							\mybarplot{exp3-g1-speed-subject.csv}
+						\end{myps}
+						\mycaption[fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1]{Vitesse moyenne des \myglosnl*{glo-EffecteurTerminal} pour chacun des sujets de \mygroup{1}}
+					\end{myfigure}
+
+					La \myref{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{3} en fonction des sujets du groupe \mygroup{1}.
+					On observe que le sujet \mysubject{1} donne beaucoup plus d'ordres que la moyenne (augmentation de \myanalysis{exp3-g1-speed-subject-analysis.tex}).
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-Synthese]{Synthèse}
