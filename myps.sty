@@ -68,7 +68,7 @@
 	\pspicture(#1,#2)(#3,#4)%
 	\ifdraft%
 	{%
-		\psframe(#1,#2)(#3,#4)% To delimit the border of figure
+		\psframe[linewidth=1pt,linecolor=myred,linestyle=solid,framearc=0,fillstyle=none,shadow=false](#1,#2)(#3,#4)% To delimit the border of figure
 	}{%
 	}%
 }
