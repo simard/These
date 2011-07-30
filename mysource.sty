@@ -1,0 +1,138 @@
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{mysource}[2011/04/28]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare package options %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language options
+\newif\if@myenglish \@myenglishfalse
+\DeclareOption{myenglish}{\@myenglishtrue}
+\newif\if@myfrancais \@myfrancaisfalse
+\DeclareOption{myfrancais}{\@myfrancaistrue}
+% In case of unknown options
+\DeclareOption*{%
+	\PackageWarning{mysource}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptions
+
+%% Options to pass to packages
+
+%% Packages to call
+% To make references on source code
+\RequirePackage{myref}
+% For insertion of code in the document
+\RequirePackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% New configuration %%
+%%%%%%%%%%%%%%%%%%%%%%%
+% Set words depending of the language
+\if@myenglish
+	\def\lang@listofcodesname{Sources codes}
+	\def\lang@code{source\xspace}
+	\def\lang@Code{Source\xspace}
+\fi
+\if@francais
+	\def\lang@listofcodesname{Codes sources}
+	\def\lang@code{source\xspace}
+	\def\lang@Code{Source\xspace}
+\fi
+\renewcommand{\lstlistingname}{\lang@Code}
+% Options for 'listings' (default for C language)
+\lstset{%
+	language={[ANSI]C},%
+	% Numerotation of the each line on the left in tiny size
+	numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt,%
+	% A tabulation is equal to 2 spaces
+	tabsize=2,%
+	% Vertical spaces around the caption
+	abovecaptionskip=\medskipamount,belowcaptionskip=\medskipamount,%
+	% Style definitions
+	basicstyle=\ttfamily,%
+	keywordstyle=\color[rgb]{0.25,0.5,0.5}\bfseries,%
+	stringstyle=\color{red},%
+	identifierstyle=,%
+	commentstyle=\color[rgb]{0,0.5,0}\ttfamily,%
+	showstringspaces=false,%
+	% Define a frame around each part of code
+	frameround=tttt,%
+	% Break each too long line with an Carriage Return character
+	prebreak=\unichar{8629}%
+}
+\labelformat{mysource}{\mysource@lang@code~#1}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% To include a source code with an extern file (which must be in the 'files' subdirectory)
+\newcommand{\mysourcefile}[4][]{%
+	\def\@Un{#1}\def\@Deux{#2}\def\@Trois{#3}\def\@Quatre{#4}%
+	\lstset{%
+		frame=single,%
+		breaklines=true%
+	}%
+	\textcolor{black}{\textnormal{%
+			\ifx\@Un\@empty%
+			\lstinputlisting[caption=#3,label=#4]{files/#2}%
+			\else%
+			\lstinputlisting[caption=#3,label=#4,#1]{files/#2}%
+			\fi}}%
+	\addcontentsline{tcs}{code}{\thelstlisting\hspace{1em}#3}%
+}
+% To include source code (in-line version)
+\newcommand{\mysource}[1][]{%
+	\lstset{%
+		frame=none,%
+		backgroundcolor=\color{white},%
+		breaklines=false%
+	}%
+	\leavevmode\bgroup% \hbox\bgroup --> \bgroup
+	\def\lst@boxpos{b}%
+	\lsthk@PreSet\lstset{flexiblecolumns,#1}%
+	\lsthk@TextStyle%
+	\@ifnextchar\bgroup{\afterassignment\lst@InlineG \let\@let@token}%
+	\lstinline@%
+}
+% To include source code (paragraph version)
+% This is a numbered version so it will appear in the table of codes
+\lstnewenvironment{mySource}[4][]{%
+	\def\@Un{#1}%
+	\lstset{%
+		frame=single,%
+		breaklines=true%
+	}%
+	\ifx\@Un\@empty%
+	\lstset{caption={#2},label=#3}%
+	\else%
+	\lstset{#1,caption={#2},label=#3}%
+	\fi%
+	\textcolor{black}\bgroup\textnormal\bgroup%
+	\lst@TestEOLChar{#4}\csname\@lst @SetFirstNumber\endcsname%
+}{%
+	\csname\@lst @SaveFirstNumber\endcsname%
+	\egroup\egroup%
+	\addcontentsline{tcs}{code}{\thelstlisting\hspace{1em}#2}%
+}
+% To include source code (paragraph version)
+% This is a non-numbered version so it will appear in the table of codes
+\lstnewenvironment{mySource*}[1][]{%
+	\def\@Un{#1}%
+	\lstset{%
+		frame=single,%
+		breaklines=true%
+	}%
+	\ifx\@Un\@empty%
+	\lstset{numbers=none}%
+	\else%
+	\lstset{numbers=none,#1}%
+	\fi%
+	\textcolor{black}\bgroup\textnormal\bgroup%
+	\lst@TestEOLChar{#1}\csname\@lst @SetFirstNumber\endcsname%
+}{%
+	\csname\@lst @SaveFirstNumber\endcsname%
+	\egroup\egroup%
+}
+
+% End of package
+\endinput
