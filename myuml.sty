@@ -1,0 +1,16 @@
+%% $Id: myuml.sty 298 2010-03-13 08:46:53Z herbert $
+%
+\RequirePackage{myuml}
+\ProvidesPackage{myuml}[2010/02/11 v. 0.14 package wrapper for 
+  myuml.tex (hv)]
+\input{myuml.tex}
+\ProvidesFile{myuml.tex}
+  [\filedate\space v\fileversion\space `PSTricks-myuml' (hv)]
+\IfFileExists{myuml.pro}{%
+  \ProvidesFile{myuml.pro}
+    [2009/03/17 v. 0.22,  PostScript prologue file (hv)]
+    \@addtofilelist{myuml.pro}}{}%
+\InputIfFileExists{myuml.cfg}{%
+    \PackageInfo{myuml}{Local config file myuml.cfg used}
+}{}
+\endinput
