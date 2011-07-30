@@ -1,0 +1,439 @@
+%% $Id: myps.tex 345 2011-07-29 19:00:00Z simard $
+%%
+%%
+%% This is file `myps.tex',
+%%
+%% IMPORTANT NOTICE:
+%%
+%% Package `myps.tex'
+%%
+%% Jean SIMARD <juste.lapin@gmail.com>
+%%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+%%
+%% DESCRIPTION:
+%%   `myps' is a PSTricks package for additionals to the standard
+%%         pstricks package
+%%
+\csname PSTricksMyPSLoaded\endcsname
+\let\PSTricksMyPSLoaded\endinput
+%
+% Requires some packages
+\RequirePackage{etoolbox}
+\RequirePackage{ifdraft}
+\RequirePackage{fltpoint}
+\RequirePackage{mycolor}
+\ifx\PSTricksLoaded\endinput\else \RequirePackage{pstricks} \fi
+\ifx\PSTricksAddLoaded\endinput\else \RequirePackage{pstricks-add} \fi
+\ifx\PSTplotLoaded\endinput\else  \RequirePackage{pst-plot} \fi
+\ifx\PSTnodesLoaded\endinput\else \RequirePackage{pst-node} \fi
+\ifx\PSTthreeDLoaded\endinput\else\RequirePackage{pst-3d}   \fi
+\ifx\MultidoLoaded\endinput\else  \RequirePackage{multido}  \fi
+\ifx\PSTXKeyLoaded\endinput\else  \RequirePackage{pst-xkey} \fi
+\ifx\PSTmathLoaded\endinput\else  \RequirePackage{pst-math} \fi
+\ifx\PSTTextPathLoaded\endinput\else  \RequirePackage{pst-text} \fi
+\ifx\PSTBarLoaded\endinput\else  \RequirePackage{pst-bar} \fi
+\ifx\PSTBlurLoaded\endinput\else  \RequirePackage{pst-blur} \fi
+%
+\def\fileversion{0.1}
+\def\filedate{2011/07/29}
+\message{`myps' v\fileversion, \filedate\space (dr,hv)}
+%
+\edef\PstAtCode{\the\catcode`\@} \catcode`\@=11\relax
+\SpecialCoor
+\pst@addfams{myps}
+%
+%% prologue for postcript
+%\pstheader{myps.pro}%
+%
+% To define the width of whiskers lines for boxplot
+\newdimen\myps@whiskerwidth
+\define@key[psset]{myps}{pswhiskerwidth}[0.5pt]{\pssetlength\myps@whiskerwidth{#1}}
+\psset[myps]{pswhiskerwidth=0.5pt}
+% To define the width of median line for boxplot
+\newdimen\myps@medianwidth
+\define@key[psset]{myps}{psmedianwidth}[1pt]{\pssetlength\myps@medianwidth{#1}}
+\psset[myps]{psmedianwidth=1pt}
+% The '.' will be the separator for decimal in floats
+\fpDecimalSign{.}%
+% For use in '\myaxes'
+\newlength{\my@ps@xoffset}
+\newlength{\my@ps@yoffset}
+\newlength{\my@ps@temp@xoffset}
+% Create default style for graphics (limited to 4 styles)
+\newpsbarstyle{first-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{second-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!70,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{third-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!45,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{fourth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!25,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{fifth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!10,linestyle=none,linewidth=0.0pt}
+\newpsbarstyle{sixth-barstyle}{framearc=0.25,fillstyle=solid,fillcolor=myblue!0,linestyle=none,linewidth=0.0pt}
+\psset{barstyle={first-barstyle,second-barstyle,third-barstyle,fourth-barstyle,fifth-barstyle,sixth-barstyle}}
+
+%%%%%%%%%%%%%%%%%%
+%% New commands %%
+%%%%%%%%%%%%%%%%%%
+% Define a master command for 'pspicture'
+% This command introduce a border frame for draft compilation
+\def\myps(#1,#2)(#3,#4){%
+	\pspicture(#1,#2)(#3,#4)%
+	\ifdraft%
+	{%
+		% To delimit the border of figure
+		%\psframe[shadow=false,framearc=0,fillstyle=none,linestyle=solid,linewidth=1pt,linecolor=myred](#1,#2)(#3,#4)
+		\psframe[shadow=false,framearc=0,fillstyle=none,linestyle=solid,linewidth=1pt,linecolor=myred](#1,#2)(#3,#4)
+	}{%
+	}%
+}
+\def\endmyps{\endpspicture}
+
+% Create an additionnal 'chartstyle'
+% cluster, stack, block, boxplot
+\def\psset@@chartstyle#1#2\@nil#3{%
+	\def\my@ps@chartstyle{#1#2}%
+	\ifthenelse{\equal{\my@ps@chartstyle}{cluster}}%
+		{\let#3\z@}%
+		{%
+			\ifthenelse{\equal{\my@ps@chartstyle}{stack}}%
+				{\let#3\@one}%
+				{%
+					\ifthenelse{\equal{\my@ps@chartstyle}{block}}%
+						{\let#3\tw@}%
+						{%
+							\ifthenelse{\equal{\my@ps@chartstyle}{boxplot}}%
+								{\let#3\thr@@}%
+								{\@pstrickserr{Bad argument: `#1#2'}\@ehpa}%
+						}%
+				}%
+		}%
+}%
+
+% Redefine the bar chart to have boxplot
+\def\psbarchart@ii#1{%
+	\begin@SpecialObj%
+
+		% Save contents of \pst@code and load start-of-path code
+		% into \pst@tempc
+		\let\pst@tempb\pst@code%
+		\def\pst@code{}%
+		\solid@star%
+		\let\pst@tempc\pst@code%
+
+		% Load end-of-path code into \pst@tempd and restore original
+		% contents of \pst@code
+		\begin@barstyle%
+		\expandafter\@setbarstyle\@barstylelist,\@nil\ignorespaces%
+		\end@barstyle%
+		\let\pst@code\pst@tempb%
+
+		% Draw bar chart
+		\pst@checknum\psk@barcolsep\pst@tempa%
+		\pst@checknum\psk@barsep\pst@tempb%
+		\ifx\psk@orientation\z@             % vertical
+			\pst@dima=\psxunit%
+			\pst@dimb=\psyunit%
+			\def\pst@tempc{true}%
+		\else\ifx\psk@orientation\p@        % horizontal
+			\pst@dima=\psyunit%
+			\pst@dimb=\psxunit%
+			\def\pst@tempc{false}%
+		\else
+			\@pstrickserr{Bad orientation specification}\@ehpa
+		\fi\fi
+		\ifcase\psk@chartstyle% chartstyle=cluster
+			\addto@pscode{%
+				\pst@tempd%
+				/BARDATA #1 def
+				/nbars BARDATA length def
+				/ncols BARDATA 0 get length def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					DATAVECTOR {
+						/ybar2 exch \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xbar1 colcount colwidth mul xoffset add def
+						/xbar2 xbar1 barwidth add def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+					} forall
+					/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+					/barcount barcount 1 add def
+				} forall
+			}%
+		\or%  chartstyle=stack
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					/xbar1 colcount colwidth mul bXoffset add def
+					/xbar2 xbar1 barwidth add def
+					/count 0 def
+					DATAVECTOR {
+						count 0 eq {
+							/ybar2 exch \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul ybar1 add def
+						}{
+							/ybar2 exch \psbar@mul mul \pst@number\pst@dimb mul ybar1 add def
+						} ifelse
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+							closepath
+						} if
+						/ybar1 ybar2 def
+						/barcount barcount 1 add def
+						/count count 1 add def
+					} forall
+					/barcount 0 def
+					/ybar1 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\or% chartstyle=block
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/nbars BARDATA 0 get length 2 idiv def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					0 1 nbars 1 sub {
+						dup
+						/ybar1 exch 2 mul DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/ybar2 exch 2 mul 1 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xbar1 colcount colwidth mul xoffset add def
+						/xbar2 xbar1 barwidth add def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						/barcount barcount 1 add def
+					} for
+					/barcount 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\or% chartstyle=plotbox
+			\addto@pscode{%
+				\pst@tempd%
+				tx@BarDict begin
+				/BARDATA #1 transpose def
+				/ncols BARDATA length def
+				/nbars BARDATA 0 get length 5 idiv def
+				/colwidth \pst@number\pst@dima def
+				/barcolsep \pst@tempa \pst@number\pst@dima mul def
+				/barsep \pst@tempb \pst@number\pst@dima mul def
+				/barwidth colwidth barcolsep sub nbars 1 sub barsep mul sub nbars div def
+				/bXoffset 0.5 barcolsep mul def
+				/colcount \pst@tempc\space {0}{ncols 1 sub} ifelse def
+				/barcount 0 def
+				/ybar1 0 def
+				BARDATA {
+					/DATAVECTOR exch def
+					0 1 nbars 1 sub {
+						dup
+						dup
+						dup
+						dup
+						/fdecile exch 5 mul DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/fquartile exch 5 mul 1 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/mediane exch 5 mul 2 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/lquartile exch 5 mul 3 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/ldecile exch 5 mul 4 add DATAVECTOR exch get \psbar@psop \psbar@mul mul \pst@number\pst@dimb mul def
+						/xoffset barwidth barsep add barcount mul bXoffset add def
+						/xoffset1 colcount colwidth mul xoffset add def
+						/xoffset2 xoffset1 barwidth add def
+						/xcenter xoffset1 xoffset2 add 2 div def
+						/xmidoffset1 xcenter xoffset1 sub 2 div xoffset1 add def
+						/xmidoffset2 xoffset2 xcenter sub 2 div xcenter add def
+						\pst@number{\myps@whiskerwidth} setlinewidth
+						newpath
+						xmidoffset1 fdecile moveto
+						xmidoffset2 fdecile lineto
+						stroke
+						newpath
+						xmidoffset1 ldecile moveto
+						xmidoffset2 ldecile lineto
+						stroke
+						fdecile fquartile ne {  % if fdecile == fquartile, don't stroke a path
+							newpath
+							xcenter fdecile moveto
+							xcenter fquartile lineto
+							stroke
+						} if
+						ldecile lquartile ne {  % if ldecile == lquartile, don't stroke a path
+							newpath
+							xcenter ldecile moveto
+							xcenter lquartile lineto
+							stroke
+						} if
+						/xbar1 xoffset1 def
+						/xbar2 xoffset2 def
+						/ybar1 fquartile def
+						/ybar2 lquartile def
+						ybar1 ybar2 ne {  % if ybar1 == ybar2, don't stroke a path
+							newpath
+							barstyles barcount get cvx exec
+						} if
+						\pst@number{\myps@medianwidth} setlinewidth
+						newpath
+						xoffset1 mediane moveto
+						xoffset2 mediane lineto
+						stroke
+						/barcount barcount 1 add def
+					} for
+					/barcount 0 def
+					/colcount \pst@tempc\space {colcount 1 add}{colcount 1 sub} ifelse def
+				} forall
+				end
+			}%
+		\else%
+			\@pstrickserr{Unknown chart style.}\@ehpa%
+		\fi%
+		\ifx\psk@orientation\z@%
+			\pstbar@xlabels%
+		\else
+			\pstbar@ylabels%
+		\fi
+	\end@SpecialObj%
+}%
+
+%\newcommand{\myaxes}[6][linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt]%
+% #1 (optional) are the options to the command '\psaxes' and '\psline' (for steps)
+% #2 is the width of the histogram
+% #3 is the legend for x axis
+% #4 is the height of the histogram
+% #5 is the legend for y axis
+% #6 is the sep on y axis
+\def\myaxes{%
+	\@ifnextchar[{\my@ps@axes@i}{\my@ps@axes@i[]}
+}
+\def\my@ps@axes@i[#1](#2,#3)#4(#5,#6){%
+	\@ifnextchar[%
+		{\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)}%
+		{%
+			\fpDiv{\my@ps@subdiv}{#6}{5}%
+			\fpRound{\my@ps@subdiv}{\my@ps@subdiv}{0}%
+			\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[\my@ps@subdiv]%
+		}%
+}
+\def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
+	% For legend
+	\gdef\my@ps@legendminx{#2}%
+	\gdef\my@ps@legendmaxx{#3}%
+	\gdef\my@ps@legendminy{#5}%
+	\gdef\my@ps@legendmaxy{#6}%
+	\gdef\my@ps@legend{\myand{}}%
+	\ifstrempty{#1}%
+		{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
+		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+	% Middle of the x-axis
+	\fpDiv{\my@ps@xmiddle}{#3}{2}%
+	% Set to the height of the x axis label
+	\settoheight{\my@ps@xoffset}{#3}%
+	\settodepth{\my@ps@temp@xoffset}{#3}
+	\addtolength{\my@ps@xoffset}{\my@ps@temp@xoffset}
+	% Label separations
+	\addtolength{\my@ps@xoffset}{2\pslabelsep}%
+	% Additional space
+	\addtolength{\my@ps@xoffset}{0.5ex}%
+	% x-label
+	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){\textit{#4}}%
+	% Middle of the y-axis
+	\fpDiv{\my@ps@ymiddle}{#6}{2}%
+	% Set to the width of the wider number of y axis
+	\settowidth{\my@ps@yoffset}{#6}
+	% Add label separations
+	\addtolength{\my@ps@yoffset}{2\pslabelsep}%
+	% Additional space
+	\addtolength{\my@ps@yoffset}{0.5ex}%
+	% y-label
+	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
+	\fpDiv{\temp}{#6}{#7}%
+	\fpRound{\iterations}{\temp}{0}%
+	\multido{\i=1+1}{\iterations}{%
+		\fpMul{\ylineoffset}{\i}{#7}
+		\ifstrempty{#1}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
+			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
+	}%
+}
+
+% To separate each element of legend
+\def\myand{\hspace{\stretch{1}}\xspace}
+% To define one element of the legend
+\def\myleg#1#2{%
+	\psframebox*[fillcolor=#2,framearc=0.25,framesep=1pt]{\textcolor{#2}{x}}
+	\xspace%
+	#1%
+}
+% Print the legend
+\def\mylegend#1{%
+	\uput{0pt}[45](0,\my@ps@legendmaxy){%
+		\parbox{\my@ps@legendmaxx\psxunit}{%
+			\centering%
+			% No '%' at end of line !!! This is important to take into accound the last '\myand'
+			\myand#1\myand
+			\vspace{\pslabelsep}
+		}%
+	}%
+}
+% Create a barplot
+\newcommand\mybarplot[2][]{%
+	\ifstrempty{#1}%
+		{\readpsbardata[header=true]{\data}{files/#2}}%
+		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
+	\ifstrempty{#1}%
+	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0]{\data}}%
+	{\psbarchart[chartstyle=cluster,barcolsep=0.16,barsep=0,#1]{\data}}%
+}
+% Create a boxplot
+\newcommand\myboxplot[2][]{%
+	\ifstrempty{#1}%
+		{\readpsbardata[header=true]{\data}{files/#2}}%
+		{\readpsbardata[header=true,#1]{\data}{files/#2}}%
+	\ifstrempty{#1}%
+	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0]{\data}}%
+	{\psbarchart[chartstyle=boxplot,barcolsep=0.16,barsep=0,#1]{\data}}%
+}
+%
+\resetOptions
+%
+\catcode`\@=\PstAtCode\relax
+%
+%% END: myps.tex
+\endinput
+
