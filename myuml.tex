@@ -71,7 +71,7 @@
 			\begin{psmatrix}[rowsep=0.25]%
 				\begin{psmatrix}[rowsep=0]%
 					#4 \\%
-					\textcolor{black!30}{\small$\ll$#3$\gg$} \\%
+					\textcolor{black!30}{\small$\ll$ #3 $\gg$} \\%
 				\end{psmatrix}\\%
 				#5%
 			\end{psmatrix}%
@@ -87,14 +87,21 @@
 	\fpRegSet{unit}{\pst@number\psunit}%
 	\fpRegSet{xunit}{\pst@number\psxunit}%
 	\fpRegSet{yunit}{\pst@number\psyunit}%
-	\fpRegSet{linewidth}{\pst@number\pslinewidth}%
-	\fpRegDiv{linewidth}{unit}%
-	\fpRegSet{framesep}{\pst@number\psframesep}%
-	\fpRegDiv{framesep}{unit}%
+	\fpRegSet{xlinewidth}{\pst@number\pslinewidth}%
+	\fpRegDiv{xlinewidth}{xunit}%
+	\fpRegSet{ylinewidth}{\pst@number\pslinewidth}%
+	\fpRegDiv{ylinewidth}{yunit}%
+	\fpRegSet{xframesep}{\pst@number\psframesep}%
+	\fpRegDiv{xframesep}{xunit}%
+	\fpRegSet{yframesep}{\pst@number\psframesep}%
+	\fpRegDiv{yframesep}{yunit}%
 	\fpRegSet{mid}{2}%
-	\fpRegSet{midlinewidth}{0}%
-	\fpRegAdd{midlinewidth}{linewidth}%
-	\fpRegDiv{midlinewidth}{mid}%
+	\fpRegSet{xmidlinewidth}{0}%
+	\fpRegAdd{xmidlinewidth}{xlinewidth}%
+	\fpRegDiv{xmidlinewidth}{mid}%
+	\fpRegSet{ymidlinewidth}{0}%
+	\fpRegAdd{ymidlinewidth}{ylinewidth}%
+	\fpRegDiv{ymidlinewidth}{mid}%
 	\def\my@current@textbox{%
 		\my@current@text%
 	}%
@@ -124,20 +131,20 @@
 	\fpRegDiv{nodey}{yunit}%
 	\fpRegSet{minx}{0}%
 	\fpRegSub{minx}{midwidth}%
-	\fpRegSub{minx}{framesep}%
-	\fpRegSub{minx}{midlinewidth}%
+	\fpRegSub{minx}{xframesep}%
+	\fpRegSub{minx}{xmidlinewidth}%
 	\fpRegSet{maxx}{0}%
 	\fpRegAdd{maxx}{midwidth}%
-	\fpRegAdd{maxx}{framesep}%
-	\fpRegAdd{maxx}{midlinewidth}%
+	\fpRegAdd{maxx}{xframesep}%
+	\fpRegAdd{maxx}{xmidlinewidth}%
 	\fpRegSet{miny}{0}%
 	\fpRegSub{miny}{midheight}%
-	\fpRegSub{miny}{framesep}%
-	\fpRegSub{miny}{midlinewidth}%
+	\fpRegSub{miny}{yframesep}%
+	\fpRegSub{miny}{ymidlinewidth}%
 	\fpRegSet{maxy}{0}%
 	\fpRegAdd{maxy}{midheight}%
-	\fpRegAdd{maxy}{framesep}%
-	\fpRegAdd{maxy}{midlinewidth}%
+	\fpRegAdd{maxy}{yframesep}%
+	\fpRegAdd{maxy}{ymidlinewidth}%
 	\fpRegSet{sminx}{0}%
 	\fpRegAdd{sminx}{minx}%
 	\fpRegAdd{sminx}{nodex}%
@@ -160,20 +167,22 @@
 	\fpRegGet{smaxy}{\my@current@shadow@maxy}%
 	\fpRegSet{psminx}{0}%
 	\fpRegAdd{psminx}{minx}%
-	\fpRegSub{psminx}{midlinewidth}%
+	\fpRegSub{psminx}{xmidlinewidth}%
 	\fpRegSet{psmaxx}{0}%
 	\fpRegAdd{psmaxx}{smaxx}%
-	\fpRegAdd{psmaxx}{midlinewidth}%
+	\fpRegAdd{psmaxx}{xmidlinewidth}%
 	\fpRegSet{psminy}{0}%
 	\fpRegAdd{psminy}{miny}%
-	\fpRegSub{psminy}{midlinewidth}%
+	\fpRegSub{psminy}{ymidlinewidth}%
 	\fpRegSet{psmaxy}{0}%
 	\fpRegAdd{psmaxy}{smaxy}%
-	\fpRegAdd{psmaxy}{midlinewidth}%
+	\fpRegAdd{psmaxy}{ymidlinewidth}%
 	\fpRegGet{psminx}{\my@current@pspicture@minx}%
 	\fpRegGet{psminy}{\my@current@pspicture@miny}%
 	\fpRegGet{psmaxx}{\my@current@pspicture@maxx}%
 	\fpRegGet{psmaxy}{\my@current@pspicture@maxy}%
+	\let\my@old@psxunit\psxunit%
+	\let\my@old@psyunit\psyunit%
 	\begin{pspicture}(\my@current@pspicture@minx,\my@current@pspicture@miny)(\my@current@pspicture@maxx,\my@current@pspicture@maxy)%
 		\rput[c](0,0){%
 			\pspolygon[fillstyle=solid,shadow=false](\my@current@box@minx,\my@current@box@maxy)(\my@current@shadow@minx,\my@current@shadow@maxy)(\my@current@shadow@maxx,\my@current@shadow@maxy)(\my@current@shadow@maxx,\my@current@shadow@miny)(\my@current@box@maxx,\my@current@box@miny)(\my@current@box@minx,\my@current@box@miny)%
@@ -232,7 +241,7 @@
 		\def\my@current@text{%
 			\begin{psmatrix}[rowsep=0.25]%
 				\begin{psmatrix}[rowsep=0]%
-					\textcolor{black!30}{\small$\ll$#3$\gg$} \\%
+					\textcolor{black!30}{\small$\ll$ #3 $\gg$} \\%
 					#4 \\%
 				\end{psmatrix}\\%
 				#5%
@@ -249,27 +258,34 @@
 	\fpRegSet{unit}{\pst@number\psunit}%
 	\fpRegSet{xunit}{\pst@number\psxunit}%
 	\fpRegSet{yunit}{\pst@number\psyunit}%
-	\fpRegSet{linewidth}{\pst@number\pslinewidth}%
-	\fpRegDiv{linewidth}{unit}%
-	\fpRegSet{framesep}{\pst@number\psframesep}%
-	\fpRegDiv{framesep}{unit}%
+	\fpRegSet{xlinewidth}{\pst@number\pslinewidth}%
+	\fpRegDiv{xlinewidth}{xunit}%
+	\fpRegSet{ylinewidth}{\pst@number\pslinewidth}%
+	\fpRegDiv{ylinewidth}{yunit}%
+	\fpRegSet{xframesep}{\pst@number\psframesep}%
+	\fpRegDiv{xframesep}{xunit}%
+	\fpRegSet{yframesep}{\pst@number\psframesep}%
+	\fpRegDiv{yframesep}{yunit}%
 	\fpRegSet{mid}{2}%
-	\fpRegSet{midlinewidth}{0}%
-	\fpRegAdd{midlinewidth}{linewidth}%
-	\fpRegDiv{midlinewidth}{mid}%
+	\fpRegSet{xmidlinewidth}{0}%
+	\fpRegAdd{xmidlinewidth}{xlinewidth}%
+	\fpRegDiv{xmidlinewidth}{mid}%
+	\fpRegSet{ymidlinewidth}{0}%
+	\fpRegAdd{ymidlinewidth}{ylinewidth}%
+	\fpRegDiv{ymidlinewidth}{mid}%
 	\fpRegSet{portwidth}{0}%
-	\fpRegAdd{portwidth}{framesep}%
+	\fpRegAdd{portwidth}{xframesep}%
 	\fpRegMul{portwidth}{mid}%
 	\fpRegMul{portwidth}{mid}%
 	\fpRegSet{midportwidth}{0}%
 	\fpRegAdd{midportwidth}{portwidth}%
 	\fpRegDiv{midportwidth}{mid}%
 	\fpRegSet{portheight}{0}%
-	\fpRegAdd{portheight}{framesep}%
+	\fpRegAdd{portheight}{yframesep}%
 	\fpRegSet{portsep}{0}%
-	\fpRegAdd{portsep}{framesep}%
+	\fpRegAdd{portsep}{yframesep}%
 	\fpRegDiv{portsep}{mid}%
-	\setbox\my@current@box=\hbox{\my@current@text}%
+	\setbox\my@current@box=\expandafter\hbox{\my@current@text}%
 	\deflength{\my@textsep}{\myportwidth/2}%
 	\deflength{\my@mintextheight}{\myportheight+\myportsep+\myportheight-\ht\my@current@box}%
 	\def\my@current@textbox{%
@@ -280,7 +296,7 @@
 		\vphantom{\rule[-\my@mintextheight]{1mm}{\my@mintextheight}}%
 		\my@current@text%
 	}%
-	\setbox\my@current@box=\hbox{\my@current@textbox}%
+	\setbox\my@current@box=\expandafter\hbox{\my@current@textbox}%
 	\fpRegSet{wd}{\pst@number\wd\my@current@box}%
 	\fpRegSet{dp}{\pst@number\dp\my@current@box}%
 	\fpRegSet{ht}{\pst@number\ht\my@current@box}%
@@ -302,19 +318,19 @@
 	\fpRegDiv{midheight}{mid}%
 	\fpRegSet{psminx}{0}%
 	\fpRegSub{psminx}{midwidth}%
-	\fpRegSub{psminx}{framesep}%
-	\fpRegSub{psminx}{linewidth}%
+	\fpRegSub{psminx}{xframesep}%
+	\fpRegSub{psminx}{xlinewidth}%
 	\fpRegSet{psmaxx}{0}%
 	\fpRegSub{psmaxx}{psminx}%
 	\ifstrempty{#5}%
 	{%
 		\fpRegSub{psminx}{midportwidth}%
-		\fpRegSub{psminx}{midlinewidth}%
+		\fpRegSub{psminx}{xmidlinewidth}%
 	}{}%
 	\fpRegSet{psminy}{0}%
 	\fpRegSub{psminy}{midheight}%
-	\fpRegSub{psminy}{framesep}%
-	\fpRegSub{psminy}{linewidth}%
+	\fpRegSub{psminy}{yframesep}%
+	\fpRegSub{psminy}{ylinewidth}%
 	\fpRegSet{psmaxy}{0}%
 	\fpRegSub{psmaxy}{psminy}%
 	\fpRegGet{psminx}{\my@current@pspicture@minx}%
@@ -335,15 +351,15 @@
 			{%
 				\fpRegSet{minx}{0}%
 				\fpRegAdd{minx}{psminx}%
-				\fpRegAdd{minx}{midlinewidth}%
+				\fpRegAdd{minx}{xmidlinewidth}%
 				\fpRegSet{maxx}{0}%
 				\fpRegAdd{maxx}{minx}%
 				\fpRegAdd{maxx}{portwidth}%
 				\fpRegSet{maxy}{0}%
 				\fpRegAdd{maxy}{psmaxy}%
-				\fpRegSub{maxy}{linewidth}%
-				\fpRegSub{maxy}{framesep}%
-				\fpRegSub{maxy}{midlinewidth}%
+				\fpRegSub{maxy}{ylinewidth}%
+				\fpRegSub{maxy}{yframesep}%
+				\fpRegSub{maxy}{ymidlinewidth}%
 				\fpRegSet{miny}{0}%
 				\fpRegAdd{miny}{maxy}%
 				\fpRegSub{miny}{portheight}%
@@ -364,12 +380,12 @@
 			}{%
 				\uput{\psframesep}[-135](\my@current@pspicture@maxx,\my@current@pspicture@maxy){%
 					\fpRegSet{componentsize}{10}%
-					\fpRegDiv{componentsize}{unit}%
-					\fpRegAdd{componentsize}{framesep}%
-					\fpRegAdd{componentsize}{framesep}%
-					\fpRegAdd{componentsize}{linewidth}%
+					\fpRegDiv{componentsize}{xunit}%
+					\fpRegAdd{componentsize}{xframesep}%
+					\fpRegAdd{componentsize}{xframesep}%
+					\fpRegAdd{componentsize}{xlinewidth}%
 					\fpRegSet{scale}{0}%
-					\fpRegAdd{scale}{framesep}%
+					\fpRegAdd{scale}{xframesep}%
 					\fpRegDiv{scale}{componentsize}%
 					\fpRegMul{scale}{mid}%
 					\fpRegGet{scale}{\myumlcomponent@scale}%
