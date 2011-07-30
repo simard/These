@@ -6,6 +6,7 @@
 \usepackage{myuml}
 \usepackage{mymacro}
 \usepackage{mypdf}
+\usepackage{mysource}
 
 \input{mymacro}
 \input{mycolor}
@@ -101,21 +102,21 @@
 				Les différents éléments de ce schéma seront expliqués dans les sections qui vont suivre.
 				La \myref{sse-ArchitectureDuSysteme} tranchera sur la question de l'architecture pair-à-pair comparée à l'architecture client/serveur.
 				Ensuite, la gestion d'une vue partagée est abordée dans la \myref{sse-VuePartagee}.
+
 				\begin{myfigure}
-					\psset{xunit=0.068965517\textwidth,yunit=0.041304348\textheight}
+					\psset{xunit=0.1\textwidth,yunit=0.0475\textheight}
 					\psset{framearc=.1,shadow=true,blur=true}
-					\begin{myps}(-8,-11)(6.5,12)
-						\psset{xunit=0.041304348\textheight,yunit=0.068965517\textwidth}
+					\begin{myps}(-5,-10)(5,10)
 						\rotateleft{%
 							\rput(0,0){%
-								\myumlnode*<PCUtilisateur>[Linux et CUDA]{Client : PC utilisateur}{%
-									\myumlcomponent<VMD>[application]{VMD}%
+								\myumlnode*<PCUtilisateur>[\myLinux et \myacronl-{acr-CUDA}]{Client : \myPC utilisateur}{%
+									\myumlcomponent<VMD>[application]{\myacronl-{acr-VMD}}%
 								}%
 							}
-							\rput(-8,0){%
-								\myumlnode*<ServeurNAMD>[Linux et CUDA]{Serveur : Serveur NAMD}{%
+							\rput(-5,0){%
+								\myumlnode*<ServeurNAMD>[\myLinux et \myacronl-{acr-CUDA}]{Serveur : Serveur \myacronl-{acr-NAMD}}{%
 									\begin{psmatrix}[rowsep=1]%
-										\myumlcomponent<NAMD>[executable]{\texttt{namd2}} \\%
+										\myumlcomponent<NAMD>[executable]{{\mysource{namd2}}} \\%
 										\myumlcomponent<FichierSimulation>[fichier]{%
 											\\[-1ex]%
 												\begin{psmatrix}[rowsep=0]%
@@ -125,22 +126,22 @@
 										\end{psmatrix}%
 									}%
 								}
-								\rput(8,4){%
-									\myumlnode*<ServeurVRPN1>[Linux, Mac OS ou Windows]{Serveur~1 : Serveur VRPN}{%
-										\myumlcomponent<VRPN1>[executable]{\texttt{vrpnserver}}%
+								\rput(5,4){%
+									\myumlnode*<ServeurVRPN1>[\myLinux, \myMacOS ou \myWindows]{Serveur~\mynum{1} : Serveur \myacronl-{acr-VRPN}}{%
+										\myumlcomponent<VRPN1>[executable]{{\mysource{vrpn_server}}}%
 									}%
 								}
-								\rput(8,1){%
-									\myumlnode<PHANToM1>[PHANToM Omni]{Interface~1 : Interface haptique}%
+								\rput(5,1){%
+									\myumlnode<PHANToM1>[\myOmni]{Interface~1 : Interface haptique}%
 								}
-								\rput(8,-0.5){\Huge$\vdots$}
-								\rput(8,-3){%
-									\myumlnode*<ServeurVRPNn>[Linux, Mac OS ou Windows]{Serveur~$n$ : Serveur VRPN}{%
-										\myumlcomponent<VRPNn>[executable]{\texttt{vrpnserver}}%
+								\rput(5,-0.5){\Huge$\vdots$}
+								\rput(5,-3){%
+									\myumlnode*<ServeurVRPNn>[\myLinux, \myMacOS ou \myWindows]{Serveur~$n$ : Serveur \myacronl-{acr-VRPN}}{%
+										\myumlcomponent<VRPNn>[executable]{{\mysource{vrpn_server}}}%
 									}%
 								}
-								\rput(8,-6){%
-									\myumlnode<PHANToMn>[PHANToM Omni]{Interface~$n$ : Interface haptique}%
+								\rput(5,-6){%
+									\myumlnode<PHANToMn>[\myOmni]{Interface~$n$ : Interface haptique}%
 								}
 								\rput(0,-5){%
 									\myumlnode<VideoProjecteur>{Affichage : Vidéoprojecteur}
@@ -152,31 +153,31 @@
 								\myumlrealization[angleA=-90,angleB=90]{VRPNn}{PHANToMn}[nccurve]%
 								\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
 								\nbput[npos=0.666667]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'affichage\end{psmatrix}}
-								\ncput*[framesep=1pt,nrot=:D,npos=0.333333]{\textcolor{black!30}{\scriptsize VGA}}
-								\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.333333]{NAMD}{VMD}[nccurve]
-								\naput[npos=0.333333]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ de simulation\end{psmatrix}}
-								\ncput*[framesep=1pt,nrot=:U,npos=0.6]{\textcolor{black!30}{\scriptsize TCP/IP}}
-								\myumlinterface[angleA=180,angleB=0,ncurvA=1,offsetA=8pt,ArrowInsidePos=0.4]{VRPN1}{VMD}[nccurve]
+								\ncput*[framesep=1pt,nrot=:D,npos=0.333333]{\textcolor{black!30}{\scriptsize \myVGA}}
+								\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
+								\naput[npos=0.25]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ de simulation\end{psmatrix}}
+								\ncput*[framesep=1pt,nrot=:U,npos=0.55]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+								\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
 								\nbput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
-								\ncput*[framesep=1pt,nrot=:D,npos=0.666667]{\textcolor{black!30}{\scriptsize TCP/IP}}
-								\myumlinterface[angleA=180,angleB=0,ncurvA=1,offsetA=8pt,ArrowInsidePos=0.4]{VRPNn}{VMD}[nccurve]
+								\ncput*[framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+								\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPNn}{VMD}[nccurve]
 								\naput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
-								\ncput*[framesep=1pt,nrot=:D,npos=0.666667]{\textcolor{black!30}{\scriptsize TCP/IP}}
+								\ncput*[framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
 							}
 						\end{myps}
-						\mycaption[fig-DiagrammeUMLDeDeploiementDeLaPlateFormeShaddock]{Diagramme \myacronl{acr-UML} de déploiement de la plate-forme \myShaddock}
+						\mycaption[fig-DiagrammeUMLDeDeploiementDeLaPlateFormeShaddock]{Diagramme \myacronl-{acr-UML} de déploiement de la plate-forme \myShaddock}
 					\end{myfigure}
 					\begin{myfigure}
 						\psset{unit=0.05\textwidth}
 						\begin{myps}(-10,-5)(10,4)
 							\rput(0,0){%
-								\myumlcomponent*[framesep=10pt,framearc=0,shadow=false]<VMD>[application]{VMD}{%
+								\myumlcomponent*[framesep=10pt,framearc=0,shadow=false]<VMD>[application]{\myacronl-{acr-VMD}}{%
 									\psset{framesep=5pt,framearc=.1,shadow=true,blur=true}%
 									\psframebox[linestyle=none,fillstyle=none,shadow=false]{%
 										\begin{psmatrix}[rowsep=1]%
-											\myumlcomponent<IMD>[extension]{IMD}%
+											\myumlcomponent<IMD>[extension]{\myacronl-{acr-IMD}}%
 											\hspace{5em}%
-											\myumlcomponent<VRPNclient>[fonction]{Client VRPN} \\%
+											\myumlcomponent<VRPNclient>[fonction]{Client \myacronl-{acr-VRPN}} \\%
 											\myumlcomponent<Renderer>[fonction]{Moteur de rendus}%
 										\end{psmatrix}%
 									}%
@@ -193,7 +194,7 @@
 							\myumlinterface[angleA=-90,angleB=-90,outAngleB=90,offsetA=8pt,ArrowInside={}]{Renderer}{VMD}[nccurve]
 							\ncput[npos=1]{\uput[-90](0,0){\tiny\begin{psmatrix}[rowsep=0]Affichage\\ de la scène\end{psmatrix}}}
 						\end{myps}
-						\mycaption[fig-DiagrammeUMLDeComposantDuNoeudVMD]{Diagramme \myacronl{acr-UML} de composant du nœud \myacronl{acr-VMD}}
+						\mycaption[fig-DiagrammeUMLDeComposantDuNoeudVMD]{Diagramme \myacronl-{acr-UML} de composant du nœud \myacronl-{acr-VMD}}
 					\end{myfigure}
 				\begin{mysubsection}[sse-ArchitectureDuSysteme]{Architecture du système}
 					Deux types d'architectures sont possibles pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair.
