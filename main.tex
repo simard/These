@@ -211,10 +211,20 @@
 			\end{mysection}
 			\begin{mysection}[sec-Shaddock-ArchitectureMaterielleEtLogicielle]{Architecture matérielle et logicielle}
 				\begin{mysubsection}[sse-Shaddock-LInterfaceHaptique]{L'interface haptique}
-					Une plate-forme de simulation interactive en temps-réel nécessite des outils d'interaction.
-					Parmi les périphériques d'interaction existants, il faut choisir un périphérique permettant au minimum six \myacro*{acr-DDL} en entrée et au minimum trois \myacro*{acr-DDL} en retour haptique.
-					En effet, l'outil \mytool{grab} nécessite six \myacro*{acr-DDL} en entrée et l'outil \mytool{tug} nécessite trois \myacro*{acr-DDL} en entrée et trois \myacro*{acr-DDL} en retour haptique.
-					L'interface \myOmni \mycite{Massie-1994} de l'entreprise \mySensAble répond aux attentes de la plate-forme \myShaddock \myref*{fig-simulation-InterfaceOmniSixDDLTroisDDL}.
+					Une plate-forme de manipulation interactive en temps-réel nécessite des outils d'interaction.
+					De plus, le but final de cette thèse est d'apporter des outils d'assistance haptique pour le travail collaboratif.
+					Les types d'interfaces haptiques disponibles sur le marché sont relativement nombreuses et variées.
+					Cependant, certaines contraintes nous ont permis de choisir le \myOmni.
+
+					Tout d'abord, nous cherchons à pouvoir effectuer de la manipulation dans un environnement en \myThreeD; il faut choisir une interface permettant au minimum six \myacro*{acr-DDL} en entrée et au minimum trois \myacro*{acr-DDL} en retour haptique.
+					En effet, un outil permettant de manipuler une molécule en translation et en rotation nécessite six \myacro*{acr-DDL} en entrée.
+					Cependant, il est également nécessaire que le périphérique possède trois \myacro*{acr-DDL} en retour haptique au minimum afin de pouvoir générer des outils d'assistance haptique.
+
+					De nombreuses interfaces répondent au critères donnés comme le \myPremium de chez \mySensAble ou le \myVirtuose de chez \myHaption.
+					Cependant, deux critères supplémentaires nous ont permis de choisir.
+					Tout d'abord, nous souhaitons fournir des outils accessibles à des biologistes : il est préférable d'avoir un outil de taille modérée qui puisse se poser sur un bureau et se substituer à une souris.
+					Deuxièmement, le \myOmni fournit actuellement le meilleur rapport qualité/prix du marché en fonction de nos contraintes.
+					C'est donc l'interface \myOmni \mycite{Massie-1994} de l'entreprise \mySensAble qui répond le mieux à nos attentes pour la plate-forme \myShaddock \myref*{fig-simulation-InterfaceOmniSixDDLTroisDDL}.
 
 					\begin{myfigure}
 						\myimage{simulation-omni}
@@ -224,70 +234,94 @@
 					À l'origine, les interfaces haptiques de \mySensAble était programmable à l'aide de l'\myacro{acr-API} \myGhost \mycite{SensAble-2002}.
 					Le travail de \mycite[author]{Itkowitz-2005} a permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
 					C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur \myShaddock.
+					Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un serveur spécifique qui s'occupera de cette communication avec l'interface.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-ConfigurationDeTravailCollaboratif]{Configuration de travail collaboratif}
-					Dans un \myacro{acr-EVC}, un point important est la disponibilité de la vue.
-					Elle peut être soit privée pour chaque utilisateur, soit partagée par tous les utilisateurs.
+					Nous avons vu dans le \myref{cha-LeSujet} que les conditions de travail collaboratif peuvent être de plusieurs types.
+					L'\myacro{acr-EVC} proposé doit permettre de répondre à chacune de nos attentes et deux critères sont primordiaux.
+					
+					Premièrement, tout travail collaboratif peut s'effectuer de manière asynchrone ou synchrone.
+					Notre objectif est de plonger les utilisateurs dans un contexte de manipulation en collaboration en temps-réel : nous nous plaçons donc dans le contexte d'un travail collaboratif synchrone.
+
+					Deuxièmement, le travail collaboratif peut s'effectuer de manière distante ou de manière colocalisée.
+					Ici, nous ne cherchons pas à éloigner les utilisateurs les uns des autres mais à les rapprocher pour tirer le meilleur parti d'une collaboration proche.
+					C'est donc une collaboration colocalisée qui caractérisera la plate-forme \myShaddock.
 
 					L'un des premiers travaux sur la collaboration haptique est fourni par \mycite[author]{Basdogan-2000} dans lequel deux utilisateurs placés dans deux pièces différentes doivent effectuer une tâche nécessitant de la synchronisation.
+					C'est effectivement une collaboration synchrone où les deux manipulateurs ne se voient pas.
+					Bien qu'une amélioration significative soit relevée avec l'utilisation de l'haptique, l'étude souligne les lacunes du paradigme d'interaction entre les deux utilisateurs.
+					Les utilisateurs souffrent probablement d'un manque de communication due à leur séparation physique.
+
 					\mycite[author]{Oliveira-2002} propose un \myacro{acr-EVC} intégrant chaque utilisateur comme un avatar dans l'environnement virtuel.
 					Dans les deux cas, chaque utilisateur n'a conscience des autres utilisateurs que par l'intermédiaire de l'\myacro{acr-EVC}.
-					La communication est alors restreinte aux modalités autorisées (strictement haptique et partiellement visuelle dans ces deux cas).
-					L'impossibilité de communiquer oralement peut devenir un frein dans la collaboration.
+					La communication est alors restreinte aux modalités autorisées (haptique et visuelle).
+					L'impossibilité de communiquer oralement ou d'avoir un contact visuel peut devenir un frein dans la collaboration : le sentiment de présence est incomplet.
 
 					Être conscient des faits et gestes des autres utilisateurs dans un \myacro{acr-EVC} a prouvé son efficacité.
 					\mycite[author]{Sallnas-2010} a beaucoup travaillé sur l'apport de l'haptique sur la conscience périphérique.
 					Elle montre à plusieurs reprises l'intérêt d'être conscients des faits et gestes des autres utilisateurs ainsi que de l'état de l'environnement.
-					\mycite[author]{Casera-2006} privilégie une vue publique à tous les utilisateurs pour améliorer la conscience périphérique.
+					\mycite[author]{Casera-2006} privilégie une vue publique à tous les utilisateurs et améliore ainsi la conscience périphérique dans une tâche collaborative.
 					Enfin, \mycite[author]{Tang-2006} a exploré la collaboration sur une table tactile : tous les utilisateurs évoluent autour de la même table tactile et possède donc une conscience accrue des faits et gestes de chacun.
+					Il montre là aussi une amélioration des performances.
 
-					\myShaddock doit permettre la collaboration sur des tâches complexes.
-					L'objectif est d'obtenir une collaboration la plus complète possible afin d'exploiter au maximum le potentiel de chaque utilisateur présent.
-					C'est pourquoi \myShaddock propose une vue publique permettant à tous les utilisateurs de se trouver au même endroit pour effectuer les tâches demandées.
-					Ils ont ainsi la possibilité de communiquer librement.
-					La vue publique est assurée par un vidéoprojecteur projetant la vue sur un grand écran en face des utilisateurs.
-					Les utilisateurs sont disposés de front face à l'écran.
+					Il paraît nécessaire de ne pas séparer physiquement les utilisateurs les uns des autres.
+					Il faut que chaque utilisateur puisse avoir un contact visuel et auditif de chacun de ses collègues : le sentiment de présence doit être total.
+					La plate-forme \myShaddock place donc tous les utilisateurs dans la même pièce pour le travail collaboratif.
+					Ils ont chacun un ou plusieurs outils (haptique ou non) à leur disposition.
+
+					Cependant, le sentiment de présence n'est pas seulement lié au contact avec les autres utilisateurs.
+					Le contact avec l'environnement virtuel est également trèès important.
+					En effet, un environnement virtuel qui n'est pas le même pour deux utilisateurs différents peut mener à des incompréhensions lors de phase de communication.
+					Les utilisateurs sont donc confrontés au même environnement virtuel par l'intermédiaire d'une simulation unique ainsi que d'une vue partagée.
+					L'ensemble des utilisateurs fait face à un écran de vidéoprojection où est affiché la simulation moléculaire.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-UneArchitectureClientServeur]{Une architecture client/serveur}
-					Deux types d'architectures sont possibles pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair.
-					Parmi les architectures pair-à-pair, \mycite[author]{Iglesias-2008} propose une tâche d'assemblage collaboratif assisté par l'haptique.
-					\mycite[author]{Kim-2004} étudie le déplacement collaboratif d'une boîte également assisté par l'haptique.
-					Aucune des deux plate-formes proposées ne souffre d'instabilités notables dans le rendu haptique.
-					Dans les \myacro*{acr-EVC}, l'architecture pair-à-pair permet un rendu haptique relativement stable puisque chaque nœud du système gère sa propre simulation et n'est pas lié au latence voire au coupure du réseau.
+					Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{En anglais, \myemph{peer-to-peer} parfois abrégé en \textsc{p2p}.}.
+					Parmi les études notables, \mycite[author]{Iglesias-2008} propose une tâche d'assemblage collaboratif assisté par l'haptique.
+					Une des problématiques soulevée est la difficulté de maintenir un environnement virtuel cohérent et fidèle pour tous les utilisateurs.
+					Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectué par un processus qui distribue les informations aux différents clients.
+					D'ailleurs, ce papier fournit un bon état de l'art des différents type d'architectures en soulignant les avantages et inconvénients de chacune.
+
+					En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisation sur le réseau plus rapides : elles nécessitent moins de communication.
+					Cependant, elles sont reconnues pour générer des retours haptiques instables.
+					D'ailleurs, \mycite[author]{Kim-2004} qui étudie le déplacement collaboratif d'une boîte assisté par l'haptique signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
+					Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptés pour des application collaboratives utilisant l'haptique.
 					
-					Cependant, des travaux proposent également des architectures client/serveur avec des interactions haptiques.
-					\mycite[author]{Huang-2010} propose une interaction haptique client/serveur pour la manipulation d'un jeu de construction par blocs.
+					D'autres travaux proposent des architectures client/serveur utilisant les interactions haptiques.
+					\mycite[author]{Huang-2010} propose la manipulation d'un jeu de construction par blocs.
+					La simulation est centralisée sur un serveur et les interaction haptiques sont produites par l'intermédiaire de clients.
+					Il ne souligne aucune instabilité dans les interactions haptiques.
 					\mycite[author]{Norman-2010} s'intéresse particulièrement aux influences du réseau sur les interactions visuo-haptiques.
-					L'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système.
-					En effet, seul le serveur effectue la simulation et ensuite distribue les données de simulation aux différentes nœuds.
+					Il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
 
 					\mycite[author]{Marsh-2006} propose une comparaison de ces deux types d'architectures et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
-					En effet, l'architecture pair-à-pair permet un lien direct entre tous les nœuds du système.
-					Dans le cas d'une architecture client/serveur, le serveur sert toujours d'intermédiaire ce qui augmente le nombre de rebonds des paquets réseaux.
+					Cependant, l'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système (et donc entre les utilisateurs).
+					Cependant, ce type d'architecture nécessite deux fois plus de paquet sur le réseau qu'une architecture pair-à-pair.
+					Par opposition, l'architecture de type pair-à-pair ne permet pas d'obtenir un rendu haptique stable alors que l'achitecture de type client/serveur le permet.
 
-					Cependant, les systèmes pair-à-pair sont adaptés pour les environnements virtuels statiques ou faiblement dynamiques.
-					En effet, des latences ou des coupures du réseau introduisent des erreurs de synchronisation entre les simulations ayant pour conséquence une divergence des résultats de simulation entre les différents nœuds.
-					L'architecture client/serveur, bien que moins performante en terme de latence, permettra de conserver une cohérence de la simulation.
-					La simulation est effectuée sur un serveur et les données de simulation sont transmises à tous les nœuds de l'\myacro{acr-EVC}.
-					Ce type d'architecture est très adapté pour les environnements virtuels dynamiques.
-
-					Étant donné les besoins en simulation, la plate-forme \myShaddock est une architecture client/serveur.
+					Dans notre cas, tous les utilisateurs se trouvent confrontés à la même simulation de façon colocalisée.
+					Le problème de la simulation est donc inexistant puisqu'un seul et unique affichage est dispensé à tous les utilisateurs.
+					Cependant, l'utilisation d'outils haptiques nous oriente vers une architecture de type client/serveur.
+					De plus, la proximité des utilisateurs durant l'expérimentation nous permet d'utiliser le réseau interne du laboratoire avec une bande passante suffisante pour compenser l'inefficacité de l'architecture client/serveur en terme de débit.
+					La plate-forme \myShaddock se distinge donc sous la forme d'une architecture de type client/serveur.
 
 					\begin{mysubsubsection}[sss-interaction-VRPN]{\myacronl+{acr-VRPN}}
-						Afin de gérer ces connexions client/serveur, nous allons utiliser le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
+						Afin de gérer ces connexions client/serveur, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
 
-						\myacro{acr-VMD} offre un moyen simple et relativement universel de connecter un périphérique.
-						En effet, il gère les connexions de périphériques par l'intermédiaire de \myacro{acr-VRPN} \mycite{Taylor-II-2001}.
-						\myacro{acr-VRPN} fonctionne sous la forme d'une architecture client/serveur où \myacro{acr-VMD} est l'application cliente.
-						L'interface haptique est connectée physiquement à un ordinateur et un serveur \myacro{acr-VRPN} communique avec cette interface.
-						C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau \myemph{Ethernet} que le client (\myacro{acr-VMD} dans notre cas) va envoyer et recevoir les informations à l'interface haptique.
-						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu $v10.04$) a demandé quelques modifications dans le code.
+						\myacro{acr-VRPN} offre un moyen simple et relativement universel de connecter un périphérique.
+						En effet, il gère les connexions de périphériques sous la forme d'un serveur pour chaque périphérique.
+						Ensuite, l'application cliente doit envoyer et recevoir les informations nécessaires à la communication avec chacun des périphériques.
+
+						Dans notre cas, l'interface haptique est connectée physiquement à un ordinateur et un serveur \myacro{acr-VRPN} régit cette interface.
+						C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau que le client (\myacro{acr-VMD} dans notre cas) va envoyer et recevoir les informations à l'interface haptique.
+
+						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu $v10.04$) a nécessité quelques modifications dans le code.
 						Ces modifications ont été soumises au développeur de \myacro{acr-VRPN} qui les a intégrées dans les dernières versions.
 
 						L'avantage de cette architecture est la possibilité d'ajouter autant de serveurs et donc autant d'interfaces haptiques que nécessaire.
 						Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complique une logistique complexe.
-						On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéoprojecteur provoque des conditions d'expérimentation rapidement désagréables.
-						C'est pourquoi aucune des expérimentations proposées ne durait plus de \mynum[mn]{30} ou, le cas échéant, une pause est effectuée au bout de \mynum[mn]{30} afin d'aérer la salle d'expérimentation.
+						On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéoprojecteur provoque des conditions d'expérimentation qui peuvent être désagréables.
+						C'est pourquoi aucune des expérimentations proposées ne dure plus de \mynum[mn]{30} ou, le cas échéant, une pause est effectuée au bout de \mynum[mn]{30} afin d'aérer la salle d'expérimentation.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
