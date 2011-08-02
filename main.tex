@@ -333,13 +333,12 @@
 
 				Ensuite, \myShaddock simule un environnement moléculaire.
 				Un logiciel de simulation est nécessaire pour réaliser cette tâche.
-				Il faut que ce logiciel puisse interagir avec le logiciel de simulation.
+				Il faut que ce logiciel puisse interagir avec le logiciel de visualisation.
 				De plus, il est nécessaire de pouvoir paramétrer finement la simulation.
-				Le logiciel de simulation est présenté dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
-
-				Cependant, les logiciels de simulations ne sont pas conçus pour effectuer des simulations en temps-réel.
+				Le logiciel de simulation choisi est présenté dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
+				Cependant, les logiciels de simulation ne sont pas conçus pour effectuer des simulations en temps-réel.
 				Pour proposer une interaction aux utilisateurs, il est nécessaire d'avoir accès à une simulation en temps-réel.
-				Un module présenté dans la \myref{sse-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel} permet de connecter le logiciel de visualisation avec le logiciel de simulation afin d'obtenir une simulation en temps-réel.
+				Un module présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel} permet de faire communiquer le logiciel de visualisation avec le logiciel de simulation afin d'obtenir une simulation en temps-réel.
 
 				\begin{mysubsection}[sse-Shaddock-LogicielDeVisualisationMoleculaire]{Logiciel de visualisation moléculaire}
 					Les outils de visualisation moléculaire disponibles sont relativement nombreux.
@@ -415,17 +414,17 @@
 					Ces atomes interviennent dans le calcul des forces de la simulation mais eux-mêmes ne sont pas soumis aux forces de l'environnement.
 					Cette fonctionnalité est nécessaire pour simuler un point d'ancrage de la molécule dans l'environnement virtuel.
 					Sans ce point d'ancrage, la molécule pourrait dériver et sortir de l'espace de travail des utilisateurs sans possibilité de récupération.
-				\end{mysubsection}
-				\begin{mysubsection}[sse-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel]{Plate-forme de simulation moléculaire en temps-réel}
-					Les logiciels de simulation ne sont pas développés pour des simulations interactives en temps-réel.
-					Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations interactives en temps-réel \mycite{Stadler-1997}.
-					L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation de \myacro{acr-NAMD}.
 
-					Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
-					En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec l'autre logiciel de simulation \myGromacs.
-					Il se présente sous la forme d'une interface permettant de choisir le logiciel de simulation ainsi que le logiciel de visualisation.
-					Il permet également de connecter plusieurs logiciels de visualisation à une même simulation.
-					Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme mais c'est une amélioration technique qui sera effectuée dans les prochaines versions de la plate-forme.
+					\begin{mysubsubsection}[sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel]{Plate-forme de simulation moléculaire en temps-réel}
+						Les logiciels de simulation ne sont pas développés pour des simulations interactives en temps-réel.
+						Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations interactives en temps-réel \mycite{Stadler-1997}.
+						L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation offerte par \myacro{acr-NAMD}.
+
+						Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
+						En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre logiciel de simulation comme \myGromacs.
+						C'est une interface capable de gérer différents logiciels de visualisation et de simulation.
+						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme : c'est une des perspectives.
+					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-Shaddock-LesOutilsDInteraction]{Les outils d'interaction}
@@ -448,7 +447,7 @@
 					\end{description}
 
 					Cependant, de nombreux outils supplémentaires ont été développés au-fur-et-à-mesure des besoins identifiés durant les expérimentations.
-					Ces nouveaux outils sont détaillés dans la \myref{sec-NouveauxOutilsPourLInteraction}.
+					Ces nouveaux outils sont détaillés dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-LesNouveauxOutilsDInteraction]{Les nouveaux outils d'interaction}
 					Durant les différentes études présentées dans la \myref{prt-EtudeDuTravailCollaboratif}, les analyses et les remarques d'utilisateurs ont permis d'améliorer les outils d'interaction et d'en proposer de nouveaux.
@@ -1289,7 +1288,6 @@
 						\item[Interaction en champ distant] pour les distances supérieures à \mynum[mm]{14}.
 					\end{description}
 					Les mesures de distances sont données dans le référentiel du monde réel.
-
 					\begin{mysubsubsection}[sss-exp1-InteractionEnChampProche]{Interaction en champ proche}
 						Les interactions en champs proches, inférieure à \mynum[mm]{8}, correspondent, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\og \AA \fg désigne l'\myangstrom qui est une unité de mesure telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
 						\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{5}, \mygroup{6}, \mygroup{7}, \mygroup{8}, \mygroup{9}, \mygroup{10}, \mygroup{11} et \mygroup{12}).
@@ -1729,7 +1727,6 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp2-Tache]{Tâche}
 					La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
-
 					\begin{mysubsubsection}[sss-exp2-DescriptionDeLaTache]{Description de la tâche}
 						La tâche proposée est la déformation d'une molécule.
 						L'objectif est de la rendre conforme à un modèle.
@@ -2399,7 +2396,6 @@
 				C'est pourquoi nous testons une période de réflexion préalable au début de la tâche.
 				Cette période devrait permettre l'émergence des \myglos*{glo-Meneur} et des \myglos*{glo-Suiveur}.
 				Elle devrait également permettre une communication entre les utilisateurs pour la mise en place d'une stratégie.
-
 				\begin{mysubsection}[sse-exp3-Hypotheses]{Hypothèses}
 					Lors de cette nouvelle étude, nous souhaitons observer les dynamiques de groupe.
 					Nos hypothèses concerneront principalement l'évolution des groupes durant la réalisation de la tâche.
@@ -2889,7 +2885,6 @@
 					Cette section va définir les caractéristiques d'un \myglos{glo-Meneur}.
 					Nous utiliserons les données d'un groupe représentatif pour alimenter notre propos.
 					Cependant, étant donné le peu de données d'un seul groupe, aucune analyse de la variance ne sera présentée.
-
 					\begin{mysubsubsection}[sss-exp3-DefinitionDUnMeneur-DonneesEtStatistiques]{Données et statistiques}
 						\begin{myfigure}
 							\psset{xunit=0.227272727\textwidth,yunit=0.25cm}
@@ -3150,7 +3145,6 @@
 				\end{mysubsection}
 				\begin{mysubsection}[sse-exp4-Tache]{Tâche}
 					La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des complexes de molécules : c'est une tâche d'\myglos{glo-AmarrageMoleculaire} simplifié.
-
 					\begin{mysubsubsection}[sss-exp4-DescriptionDeLaTache]{Description de la tâche}
 						La tâche proposée est la déformation d'un complexe de molécules afin d'obtenir le meilleur score énergétique possible.
 						L'intégralité des atomes de la molécule à déformer est affiché de façon discrète en transparence.
