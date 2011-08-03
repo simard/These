@@ -92,24 +92,24 @@
 				\end{mysubsection}
 			\end{mysection}
 		\end{mychapter}
-		\begin{mychapter}[cha-ShaddockPlateFormeCollaborativeDeManipulationMoleculaire]{\myShaddock\ -- Plate-forme collaborative de manipulation moléculaire}
+		\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Manipulation collaborative de molécules}
 			\begin{mysection}[sec-Shaddock-Introduction]{Introduction}
-				Le \myref{cha-LeSujet} nous a permis d'identifier les problématiques de recherche.
+				Le \myref{cha-LeSujet} nous a permis d'identifier des problématiques de recherche.
 				C'est autour de ces problématiques que la plate-forme \myShaddock a été élaborée.
 
-				Nous commencerons par présenter les choix de matériel et d'architecture logicielle \myref*{sec-Shaddock-ArchitectureMaterielleEtLogicielle}.
+				Nous commencerons par présenter les choix de matériels et d'architecture logicielle \myref*{sec-Shaddock-ArchitectureMaterielleEtLogicielle}.
 				Certaines propriétés particulières sont nécessaires pour le choix de l'interface haptique permettant la manipulation interactive; elles seront détaillées dans la \myref{sse-Shaddock-LInterfaceHaptique}.
-				L'ensemble des éléments de la plate-forme sont organisés selon un architecture client/serveur; les raisons de ce choix sont expliqués dans la \myref{sse-Shaddock-UneArchitectureClientServeur}.
+				L'ensemble des éléments de la plate-forme sont organisés selon un architecture client/serveur; les raisons de ce choix sont expliquées dans la \myref{sse-Shaddock-UneArchitectureClientServeur}.
 
-				Ensuite, la plate-forme de simulation moléculaire en temps-réel sera présentée \myref*{sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation}.
-				Tout d'abord, un logiciel de visualisation complet est nécessaire pour obtenir des affichages détaillés et complexes de molécules; le logiciel sera présenté dans la \myref{sse-Shaddock-LogicielDeVisualisationMoleculaire}.
+				Ensuite, la plate-forme de simulation moléculaire en temps-réel est présentée \myref*{sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation}.
+				Tout d'abord, un logiciel de visualisation complet est nécessaire pour obtenir des affichages détaillés et complexes de molécules; le logiciel est présenté dans la \myref{sse-Shaddock-LogicielDeVisualisationMoleculaire}.
 				Puis un logiciel de simulation est utilisé afin d'obtenir un comportement physique réaliste de la molécule; les différentes solutions existantes ainsi que le logiciel retenu sont présentés dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
-				Enfin, un module spécifique permet d'obtenir des simulations moléculaires en temps-réel et est présenté dans la \myref{sse-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel}.
+				Enfin, un module spécifique permettant d'obtenir des simulations moléculaires en temps-réel est présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel}.
 
-				Le logiciel de visualisation moléculaire utilisé propose déjà des moyens d'interaction avec les molécules.
+				Le logiciel de visualisation moléculaire utilisé propose des premiers outils d'interaction avec les molécules.
 				Ces outils sont présentés dans la \myref{sse-Shaddock-LesOutilsExistants}.
 				Cependant, les outils existants n'ont pas été suffisants dans certains cas.
-				Ce plus, notre étude du travail collaboratif a mené à la proposition de nouveaux outils haptiques présentés dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
+				De plus, notre étude du travail collaboratif a mené à la proposition de nouveaux outils haptiques présentés dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
 
 				Les différents éléments de cette plate-forme sont résumés dans deux diagrammes \myacro{acr-UML}.
 				Un diagramme de déploiement \myacro{acr-UML} de la plate-forme \myShaddock est présenté sur la \myref{fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateFormeShaddock}.
@@ -212,18 +212,21 @@
 			\begin{mysection}[sec-Shaddock-ArchitectureMaterielleEtLogicielle]{Architecture matérielle et logicielle}
 				\begin{mysubsection}[sse-Shaddock-LInterfaceHaptique]{L'interface haptique}
 					Une plate-forme de manipulation interactive en temps-réel nécessite des outils d'interaction.
-					De plus, le but final de cette thèse est d'apporter des outils d'assistance haptique pour le travail collaboratif.
+					De plus, le but final de cette thèse est d'apporter des solutions d'assistance haptique pour le travail collaboratif.
 					Les types d'interfaces haptiques disponibles sur le marché sont relativement nombreuses et variées.
-					Cependant, certaines contraintes nous ont permis de choisir le \myOmni.
+					Cependant, plusieurs contraintes nous ont permis de choisir le \myOmni et le \myDesktop.
 
 					Tout d'abord, nous cherchons à pouvoir effectuer de la manipulation dans un environnement en \myThreeD; il faut choisir une interface permettant au minimum six \myacro*{acr-DDL} en entrée et au minimum trois \myacro*{acr-DDL} en retour haptique.
 					En effet, un outil permettant de manipuler une molécule en translation et en rotation nécessite six \myacro*{acr-DDL} en entrée.
-					Cependant, il est également nécessaire que le périphérique possède trois \myacro*{acr-DDL} en retour haptique au minimum afin de pouvoir générer des outils d'assistance haptique.
+					Cependant, il est également nécessaire que le périphérique possède au minimum trois \myacro*{acr-DDL} en retour haptique (en translation) afin de créer des solutions d'assistance haptique.
+					Évidemment, trois \myacro*{acr-DDL} supplémentaires en retour haptique (pour la rotation) pourraient permettre des solutions d'assistance plus spécifiques mais les interfaces haptiques proposant six \myacro*{acr-DDL} sont rares et relativement chères.
 
 					De nombreuses interfaces répondent au critères donnés comme le \myPremium de chez \mySensAble ou le \myVirtuose de chez \myHaption.
 					Cependant, deux critères supplémentaires nous ont permis de choisir.
 					Tout d'abord, nous souhaitons fournir des outils accessibles à des biologistes : il est préférable d'avoir un outil de taille modérée qui puisse se poser sur un bureau et se substituer à une souris.
 					Deuxièmement, le \myOmni fournit actuellement le meilleur rapport qualité/prix du marché en fonction de nos contraintes.
+					En effet, dans le cadre du travail collaboratif, plusieurs interfaces haptiques sont nécessaires.
+					De plus, le prix modéré peut amener les biologistes à adopter les outils sans avoir à investir de gros budgets; ceci peut également faciliter l'intégration de ces solutions dans les laboratoires de biologistes.
 					C'est donc l'interface \myOmni \mycite{Massie-1994} de l'entreprise \mySensAble qui répond le mieux à nos attentes pour la plate-forme \myShaddock \myref*{fig-simulation-InterfaceOmniSixDDLTroisDDL}.
 
 					\begin{myfigure}
@@ -234,110 +237,119 @@
 					À l'origine, les interfaces haptiques de \mySensAble était programmable à l'aide de l'\myacro{acr-API} \myGhost \mycite{SensAble-2002}.
 					Le travail de \mycite[author]{Itkowitz-2005} a permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
 					C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur \myShaddock.
-					Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un serveur spécifique qui s'occupera de cette communication avec l'interface.
+					Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un logiciel spécifique qui s'occupera de cette communication avec l'interface.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-ConfigurationDeTravailCollaboratif]{Configuration de travail collaboratif}
-					Nous avons vu dans le \myref{cha-LeSujet} que les conditions de travail collaboratif peuvent être de plusieurs types.
-					L'\myacro{acr-EVC} proposé doit permettre de répondre à chacune de nos attentes et deux critères sont primordiaux.
-					
-					Premièrement, tout travail collaboratif peut s'effectuer de manière asynchrone ou synchrone.
-					Notre objectif est de plonger les utilisateurs dans un contexte de manipulation en collaboration en temps-réel : nous nous plaçons donc dans le contexte d'un travail collaboratif synchrone.
+					Le \myref{cha-LeSujet} a permis de lister les principaux critères qui caractérisent une plate-forme pour le travail collaboratif.
+					Le travail peut être synchrone ou asynchrone et il peut être distant ou colocalisé \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
 
-					Deuxièmement, le travail collaboratif peut s'effectuer de manière distante ou de manière colocalisée.
-					Ici, nous ne cherchons pas à éloigner les utilisateurs les uns des autres mais à les rapprocher pour tirer le meilleur parti d'une collaboration proche.
-					C'est donc une collaboration colocalisée qui caractérisera la plate-forme \myShaddock.
+					\begin{myfigure}
+						\psset{unit=0.083333333\textwidth}
+						\begin{myps}(-1,-1)(8,4)
+							\myaxes[ticks=none,labels=none,arrows={->}](0,8){distance}(0,4){temps}
+							\psclip{%
+								\pscustom[linestyle=none]{%
+									\pszigzag[coilwidth=0.5cm,coilheight=5,linearc=.5]{-}(0,2)(8,2)
+									\lineto(0,2)
+									\lineto(8,2)
+								}
+								\pscustom[linestyle=none]{%
+									\pszigzag[coilwidth=0.5cm,coilheight=5,linearc=.5]{-}(4,0)(4,4)
+									\lineto(0,-4)
+									\lineto(4,-4)
+								}
+							}
+							\psframe*[linecolor=myblue!30](0,0)(8,4)
+							\endpsclip
+							\pszigzag[coilwidth=0.5cm,coilheight=5,linestyle=dashed,linearc=.5,linewidth=.5pt]{-}(0,2)(8,2)
+							\pszigzag[coilwidth=0.5cm,coilheight=5,linestyle=dashed,linearc=.5,linewidth=.5pt]{-}(4,0)(4,4)
+							\rput(2,1){\begin{tabular}{c}Collaboration\\face-à-face\end{tabular}}
+							\rput(2,3){\begin{tabular}{c}Collaboration\\asynchrone\end{tabular}}
+							\rput(6,1){\begin{tabular}{c}Collaboration\\synchrone\\distribuée\end{tabular}}
+							\rput(6,3){\begin{tabular}{c}Collaboration\\asynchrone\\distribuée\end{tabular}}
+							\uput[-90](2,0){\small colocalisé}
+							\uput[-90](6,0){\small distant}
+							\uput[180](0,1){\rotateleft{\small synchrone}}
+							\uput[180](0,3){\rotateleft{\small asynchrone}}
+						\end{myps}
+						\mycaption[fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis]{Classification des tâches collaboratives selon \mycite[author]{Ellis-1991}}
+					\end{myfigure}
 
-					L'un des premiers travaux sur la collaboration haptique est fourni par \mycite[author]{Basdogan-2000} dans lequel deux utilisateurs placés dans deux pièces différentes doivent effectuer une tâche nécessitant de la synchronisation.
-					C'est effectivement une collaboration synchrone où les deux manipulateurs ne se voient pas.
-					Bien qu'une amélioration significative soit relevée avec l'utilisation de l'haptique, l'étude souligne les lacunes du paradigme d'interaction entre les deux utilisateurs.
-					Les utilisateurs souffrent probablement d'un manque de communication due à leur séparation physique.
+					Nous avons vu l'importance d'une bonne conscience périphérique des autres utilisateurs dans les travaux de \mycite[author]{Casera-2006} ou \mycite[author]{Tang-2006} et plus particulièrement dans l'étude proposée par \mycite[author]{Sallnas-2010} : elle montre l'amélioration des performances lorsque la conscience périphérique est augmentée.
+					Les solutions de collaboration distantes doivent recréer cette conscience en transmettant les informations audio ou même visuelle.
+					Pour conserver une bonne conscience périphérique, il est préférable de ne pas numériser les communications mais de conserver leur aspect réel : il faut une collaboration synchrone colocalisée ou collaboration face-à-face selon \mycite[author]{Ellis-1991} \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
 
-					\mycite[author]{Oliveira-2002} propose un \myacro{acr-EVC} intégrant chaque utilisateur comme un avatar dans l'environnement virtuel.
-					Dans les deux cas, chaque utilisateur n'a conscience des autres utilisateurs que par l'intermédiaire de l'\myacro{acr-EVC}.
-					La communication est alors restreinte aux modalités autorisées (haptique et visuelle).
-					L'impossibilité de communiquer oralement ou d'avoir un contact visuel peut devenir un frein dans la collaboration : le sentiment de présence est incomplet.
-
-					Être conscient des faits et gestes des autres utilisateurs dans un \myacro{acr-EVC} a prouvé son efficacité.
-					\mycite[author]{Sallnas-2010} a beaucoup travaillé sur l'apport de l'haptique sur la conscience périphérique.
-					Elle montre à plusieurs reprises l'intérêt d'être conscients des faits et gestes des autres utilisateurs ainsi que de l'état de l'environnement.
-					\mycite[author]{Casera-2006} privilégie une vue publique à tous les utilisateurs et améliore ainsi la conscience périphérique dans une tâche collaborative.
-					Enfin, \mycite[author]{Tang-2006} a exploré la collaboration sur une table tactile : tous les utilisateurs évoluent autour de la même table tactile et possède donc une conscience accrue des faits et gestes de chacun.
-					Il montre là aussi une amélioration des performances.
-
-					Il paraît nécessaire de ne pas séparer physiquement les utilisateurs les uns des autres.
-					Il faut que chaque utilisateur puisse avoir un contact visuel et auditif de chacun de ses collègues : le sentiment de présence doit être total.
-					La plate-forme \myShaddock place donc tous les utilisateurs dans la même pièce pour le travail collaboratif.
-					Ils ont chacun un ou plusieurs outils (haptique ou non) à leur disposition.
-
-					Cependant, le sentiment de présence n'est pas seulement lié au contact avec les autres utilisateurs.
-					Le contact avec l'environnement virtuel est également trèès important.
-					En effet, un environnement virtuel qui n'est pas le même pour deux utilisateurs différents peut mener à des incompréhensions lors de phase de communication.
-					Les utilisateurs sont donc confrontés au même environnement virtuel par l'intermédiaire d'une simulation unique ainsi que d'une vue partagée.
-					L'ensemble des utilisateurs fait face à un écran de vidéoprojection où est affiché la simulation moléculaire.
+					De plus, la conscience périphérique ne se limite pas seulement à la conscience physique des autres utilisateurs.
+					En effet, les collaborateurs agissent sur l'environnement ce qui permet de leur donner une existence virtuelle par l'intermédiaire des modifications de la scène.
+					Ceci participe également à la conscience périphérique.
+					Afin d'obtenir la meilleure conscience périphérique concernant l'environnement virtuel, les utilisateurs doivent partager le même environnement virtuel.
+					C'est pour cette raison que la plate-forme \myShaddock propose une visualisation vidéoprojetée sur un grand écran.
+					De cette façon, la vue est partagée par l'ensemble des utilisateurs.
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-UneArchitectureClientServeur]{Une architecture client/serveur}
 					Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{En anglais, \myemph{peer-to-peer} parfois abrégé en \textsc{p2p}.}.
 					Parmi les études notables, \mycite[author]{Iglesias-2008} propose une tâche d'assemblage collaboratif assisté par l'haptique.
 					Une des problématiques soulevée est la difficulté de maintenir un environnement virtuel cohérent et fidèle pour tous les utilisateurs.
-					Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectué par un processus qui distribue les informations aux différents clients.
+					Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectuée par un processus qui distribue les informations aux différents clients.
 					D'ailleurs, ce papier fournit un bon état de l'art des différents type d'architectures en soulignant les avantages et inconvénients de chacune.
 
-					En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisation sur le réseau plus rapides : elles nécessitent moins de communication.
-					Cependant, elles sont reconnues pour générer des retours haptiques instables.
-					D'ailleurs, \mycite[author]{Kim-2004} qui étudie le déplacement collaboratif d'une boîte assisté par l'haptique signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
-					Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptés pour des application collaboratives utilisant l'haptique.
+					En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisation sur le réseau plus rapides : elles nécessitent moins de paquet réseau pour la communication.
+					Cependant, ce type d'architecture génère des retours haptiques instables.
+					D'ailleurs, \mycite[author]{Kim-2004} qui étudie le déplacement collaboratif d'une boîte virtuelle assisté par l'haptique signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
+					Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptées pour des application collaboratives utilisant l'haptique.
 					
 					D'autres travaux proposent des architectures client/serveur utilisant les interactions haptiques.
 					\mycite[author]{Huang-2010} propose la manipulation d'un jeu de construction par blocs.
 					La simulation est centralisée sur un serveur et les interaction haptiques sont produites par l'intermédiaire de clients.
 					Il ne souligne aucune instabilité dans les interactions haptiques.
 					\mycite[author]{Norman-2010} s'intéresse particulièrement aux influences du réseau sur les interactions visuo-haptiques.
-					Il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
+					L'architecture client/serveur est la plus adaptée pour la gestion de simulation.
+					Cependant, il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
 
 					\mycite[author]{Marsh-2006} propose une comparaison de ces deux types d'architectures et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
 					Cependant, l'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système (et donc entre les utilisateurs).
-					Cependant, ce type d'architecture nécessite deux fois plus de paquet sur le réseau qu'une architecture pair-à-pair.
+					Cependant, ce type d'architecture nécessite deux fois plus de paquets sur le réseau qu'une architecture pair-à-pair.
 					Par opposition, l'architecture de type pair-à-pair ne permet pas d'obtenir un rendu haptique stable alors que l'achitecture de type client/serveur le permet.
 
 					Dans notre cas, tous les utilisateurs se trouvent confrontés à la même simulation de façon colocalisée.
-					Le problème de la simulation est donc inexistant puisqu'un seul et unique affichage est dispensé à tous les utilisateurs.
-					Cependant, l'utilisation d'outils haptiques nous oriente vers une architecture de type client/serveur.
-					De plus, la proximité des utilisateurs durant l'expérimentation nous permet d'utiliser le réseau interne du laboratoire avec une bande passante suffisante pour compenser l'inefficacité de l'architecture client/serveur en terme de débit.
+					L'affichage étant partagé, c'est l'architecture client/serveur qui est utilisée sur la plate-forme \myShaddock.
+					Cependant, nous venons de voir que l'architecture client/serveur n'est pas optimale en terme de performances sur le réseau.
+					Heureusement, la proximité des utilisateurs durant l'expérimentation nous permet d'utiliser le réseau interne du laboratoire avec une bande passante suffisante pour compenser l'inefficacité de l'architecture client/serveur en terme de débit.
 					La plate-forme \myShaddock se distinge donc sous la forme d'une architecture de type client/serveur.
+					\begin{mysubsubsection}[sss-Shaddock-ServeurDePeripheriques]{Serveur de périphériques}
+						Afin de gérer ces connexions client/serveur pour les interfaces haptiques, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
+						La connexion avec le moteur de simulation est gérée par un autre module qui sera détaillé plus tard dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel}.
 
-					\begin{mysubsubsection}[sss-interaction-VRPN]{\myacronl+{acr-VRPN}}
-						Afin de gérer ces connexions client/serveur, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
+						\myacro{acr-VRPN} offre un moyen simple et relativement universel de connecter des périphériques principalement utilisés en réalité virtuelle.
+						En effet, il fournit un serveur pour chaque périphérique.
+						Ensuite, l'application cliente peut envoyer et recevoir les informations nécessaires à la communication avec chacun des périphériques.
 
-						\myacro{acr-VRPN} offre un moyen simple et relativement universel de connecter un périphérique.
-						En effet, il gère les connexions de périphériques sous la forme d'un serveur pour chaque périphérique.
-						Ensuite, l'application cliente doit envoyer et recevoir les informations nécessaires à la communication avec chacun des périphériques.
+						Dans notre cas, l'interface haptique est connectée physiquement à un ordinateur et un serveur \myacro{acr-VRPN} commande cette interface.
+						C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau que le client (\myacro{acr-VMD} dans notre cas) va accéder aux informations de l'interface haptique.
 
-						Dans notre cas, l'interface haptique est connectée physiquement à un ordinateur et un serveur \myacro{acr-VRPN} régit cette interface.
-						C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau que le client (\myacro{acr-VMD} dans notre cas) va envoyer et recevoir les informations à l'interface haptique.
-
-						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu $v10.04$) a nécessité quelques modifications dans le code.
+						La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu) a nécessité quelques modifications dans le code.
 						Ces modifications ont été soumises au développeur de \myacro{acr-VRPN} qui les a intégrées dans les dernières versions.
 
 						L'avantage de cette architecture est la possibilité d'ajouter autant de serveurs et donc autant d'interfaces haptiques que nécessaire.
-						Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complique une logistique complexe.
-						On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéoprojecteur provoque des conditions d'expérimentation qui peuvent être désagréables.
-						C'est pourquoi aucune des expérimentations proposées ne dure plus de \mynum[mn]{30} ou, le cas échéant, une pause est effectuée au bout de \mynum[mn]{30} afin d'aérer la salle d'expérimentation.
+						Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complexifie la logistique.
+						On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéoprojecteur créé des températures durant l'expérimentation qui peuvent être désagréables.
+						C'est pourquoi aucune des expérimentations proposée ne dure plus de \mynum[mn]{30} ou, le cas échéant, une pause est effectuée au bout de \mynum[mn]{30} afin d'aérer la salle d'expérimentation.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation]{Plate-forme de simulation et de visualisation}
-				\myShaddock permet d'effectuer la visualisation des molécules.
+				\myShaddock permet d'effectuer la visualisation de molécules.
 				La visualisation est un processus complexe qui nécessite des rendus variés et complets.
-				En effet, devant le nombre important d'informations disponibles concernant une molécule, il est primordial d'avoir un rendu graphiques de molécules clair et complet sans être surchargé.
+				En effet, devant le nombre important d'informations que possède une molécule, il est primordial d'avoir accès à des rendus graphiques performants et complets sans surcharge.
 				Cette tâche est effectuée par un logiciel de visualisation présenté dans la \myref{sse-Shaddock-LogicielDeVisualisationMoleculaire}.
 
-				Ensuite, \myShaddock simule un environnement moléculaire.
+				Ensuite, \myShaddock simule une dynamique moléculaire.
 				Un logiciel de simulation est nécessaire pour réaliser cette tâche.
 				Il faut que ce logiciel puisse interagir avec le logiciel de visualisation.
 				De plus, il est nécessaire de pouvoir paramétrer finement la simulation.
 				Le logiciel de simulation choisi est présenté dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
 				Cependant, les logiciels de simulation ne sont pas conçus pour effectuer des simulations en temps-réel.
-				Pour proposer une interaction aux utilisateurs, il est nécessaire d'avoir accès à une simulation en temps-réel.
+				Pourtant, afin de proposer une dynamique moléculaire interactive aux utilisateurs, il est nécessaire d'avoir accès à une simulation en temps-réel.
 				Un module présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel} permet de faire communiquer le logiciel de visualisation avec le logiciel de simulation afin d'obtenir une simulation en temps-réel.
 
 				\begin{mysubsection}[sse-Shaddock-LogicielDeVisualisationMoleculaire]{Logiciel de visualisation moléculaire}
@@ -359,10 +371,10 @@
 						La complexité des molécules, le nombre important d'atomes, les nombreuses meta-informations, les structures particulières nécessitent d'avoir à sa disposition des moyens évolués et variés pour afficher une molécule.
 						Quatre représentations différentes \myref*{fig-simulation-IllustrationsDesRepresentationsDeMoleculesSurVMD} ont été utilisées sur la plate-forme \myShaddock :
 						\begin{description}
-							\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphères en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est importants mais on peut modifier la taille des sphères et des cylindres \myref*{fig-simulation-CPK};
+							\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphères en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est important mais la taille des sphères et des cylindres peut être modifiée \myref*{fig-simulation-CPK};
 							\item[\myLicorice] représente tous les liens entre les atomes par des cylindres, sans représenter les atomes; la taille des cylindres peut être modifiée \myref*{fig-simulation-Licorice};
 							\item[\myNewRibbon] produit une courbe spline sur les atomes $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban \myref*{fig-simulation-NewRibbon};
-							\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils d'affichage ainsi que les paramètres de la ligne en pointillés (couleur, largeur, \myetc) sont modifiables \myref*{fig-simulation-HBonds}.
+							\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils physiques ainsi que les paramètres d'affichage de la ligne (couleur, largeur, \myetc) sont modifiables \myref*{fig-simulation-HBonds}.
 						\end{description}
 
 						\begin{myfigure}
@@ -388,42 +400,47 @@
 						Chacune de ces représentations visuelles peut être affectée à tout ou partie de la molécule comme par exemple \og le \myglos{glo-Residu} \mynum{13} \fg, \og seulement les atomes de carbone \fg ou \og tous les \myglos*{glo-Residu} entre \mynum{1} et \mynum{16} sauf les atomes d'hydrogène \fg.
 						De plus, pour chacune des représentations précédentes, différentes colorations sont possibles :
 						\begin{description}
-							\item[Couleur fixe] donne une couleur unie prédéfinie (pour la couleur du curseur par exemple);
+							\item[Couleur fixe] donne une couleur unie prédéfinie (la couleur du curseur par exemple);
 							\item[Couleur des atomes] donne une couleur différente à chaque atome selon un code couleur standard dépendant de sa nature (rouge pour oxygène, blanc pour hydrogène, \myetc);
 							\item[Couleur des \myglosnl*{glo-Residu}] donne une couleur différente pour chaque atome selon une palette de couleurs prédéfinie par \myacro{acr-VMD};
 							\item[Transparence] rend transparent les objets tout en conservant la teinte;
-							\item[\textit{GoodSell}] accentuant les contours des objets sous le principe du \myemph{cell shading}.
+							\item[\textit{GoodSell}] accentue les contours des objets sous le principe du \myemph{cell shading}.
 						\end{description}
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-Shaddock-LaGenerationAutomatiqueDeFichierDeSimulation]{La génération automatique de fichier de simulation}
-						La simulation nécessite de nombreuses informations dont l'ensemble des liaisons entre atomes, des angles simples, des angles dihédraux et des angles de torsion.
-						La simple description des atomes et de leurs positions (fichier \myPDB) couplée aux résultats de \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires à la simulation.
+						La simulation nécessite de nombreuses informations.
+						Une partie de ces informations découle directement de la molécule à l'état d'équilibre; ces informations sont les suivantes :
+						\begin{itemize}
+							\item l'ensemble des liaisons entre atomes;
+							\item des angles simples;
+							\item des angles dihédraux;
+							\item des angles de torsion.
+						\end{itemize}
+						La simple description des atomes et de leurs positions à l'état d'équilibre (fichier \myPDB) couplée aux données générées par \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires au logiciel de simulation.
 						\myacro{acr-VMD} fournit tous les outils permettant de générer ce fichier nécessaire à la simulation (fichier \myPSF) par l'intermédiaire d'une extension : \myemph{Automatic \textsc{psf} builder}.
 					\end{mysubsubsection}
 				\end{mysubsection}
 				\begin{mysubsection}[sse-Shaddock-LogicielDeSimulationMoleculaire]{Logiciel de simulation moléculaire}
-					Les deux logiciels de simulation principaux existants sont \myacro{acr-NAMD} \mycite{Phillips-2005} et \myGromacs \mycite{Berendsen-1995}.
-					Bien que \myGromacs soit plus performant que \myacro{acr-NAMD}, surtout dans les dernières versions \mycite{Hess-2008} qui offre des performances jusqu'à quatre fois plus rapide que \myacro{acr-NAMD}.
-					Cependant, \myacro{acr-NAMD} est développé par la même université que \myacro{acr-VMD} et l'interaction entre les deux logiciels est donc extrêmement facilitée.
-					De plus, les petites molécules que nous utiliserons lors de nos simulations ne nécessitent pas des performances exceptionnelles.
-					Enfin, \myacro{acr-NAMD} peut être aisément connecté à \myacro{acr-VMD} dans le cadre d'une simulation interactive \myref*{sss-simulation-IMD} contrairement à \myGromacs.
+					Les deux principaux logiciels de simulation existants sont \myacro{acr-NAMD} \mycite{Phillips-2005} et \myGromacs \mycite{Berendsen-1995}.
+					\myGromacs est plus performant que \myacro{acr-NAMD}, surtout dans les dernières versions \mycite{Hess-2008} qui offre des performances jusqu'à quatre fois plus rapide que \myacro{acr-NAMD}.
+					\myacro{acr-NAMD} est développé par la même université que \myacro{acr-VMD} et la connexion entre les deux logiciels est facilitée.
+					Enfin, \myacro{acr-NAMD} peut être aisément connecté à \myacro{acr-VMD} dans le cadre d'une simulation interactive contrairement à \myGromacs.
 					C'est pourquoi le logiciel \myacro{acr-NAMD} a été retenu pour notre plate-forme.
 
-					Une des fonctionnalités de \myacro{acr-NAMD} utilisée est la possibilité de \myemph{fixer} des atomes.
+					Une des fonctionnalités de \myacro{acr-NAMD} utilisée est la possibilité de \og fixer \fg des atomes.
 					En effet, la fixation d'atomes permet d'exclure partiellement certains atomes durant la simulation.
 					Ces atomes interviennent dans le calcul des forces de la simulation mais eux-mêmes ne sont pas soumis aux forces de l'environnement.
 					Cette fonctionnalité est nécessaire pour simuler un point d'ancrage de la molécule dans l'environnement virtuel.
 					Sans ce point d'ancrage, la molécule pourrait dériver et sortir de l'espace de travail des utilisateurs sans possibilité de récupération.
-
 					\begin{mysubsubsection}[sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel]{Plate-forme de simulation moléculaire en temps-réel}
-						Les logiciels de simulation ne sont pas développés pour des simulations interactives en temps-réel.
-						Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations interactives en temps-réel \mycite{Stadler-1997}.
+						Les logiciels de simulation ne sont pas prévus pour des simulations interactives en temps-réel.
+						Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations en temps-réel \mycite{Stadler-1997}.
 						L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation offerte par \myacro{acr-NAMD}.
 
 						Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
 						En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre logiciel de simulation comme \myGromacs.
 						C'est une interface capable de gérer différents logiciels de visualisation et de simulation.
-						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme : c'est une des perspectives.
+						Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
@@ -433,17 +450,19 @@
 					\myAcro{acr-VMD} dispose déjà de différents outils permettant d'effectuer différentes manipulation sur les molécules.
 
 					Par défaut et sans configuration, la souris permet d'orienter la scène sur trois \myacro*{acr-DDL} afin d'observer la molécule sous différents angles.
+					Elle peut également être configurées pour translater la molécule ou obtenir diverses informations sur la molécules.
 
 					Il est également possible d'utiliser une souris \myThreeD, automatiquement détectée lorsqu'elle est branchée sur l'ordinateur.
 					Une souris \myThreeD permet de translater et d'orienter la scène.
-					La souris \myThreeD \mySpaceNavigator est utilisée dans le cadre de certaines de nos expérimentations.
+					La souris \myThreeD \mySpaceNavigator est utilisée dans le cadre de certaines de notre seconde expérimentation \myref*{cha-DeformationCollaborativeDeMolecule}.
 
-					Enfin, des outils spécifiques sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-interaction-VRPN}.
+					Enfin, des outils apportant une dimension haptique sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-Shaddock-ServeurDePeripheriques}.
 					Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans notre cas).
-					Les outils disponibles par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} et sont :
+					Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire}.
+					Ils sont les suivants :
 					\begin{description}
 						\item[\mytool{grab}] qui permet de sélectionner une molécule dans son intégralité et de la déplacer dans la scène;
-						\item[\mytool{tug}] qui permet de sélectionner un atome de la molécule et de lui appliquer une force (qui sera transmise à la simulation).
+						\item[\mytool{tug}] qui permet de sélectionner un atome de la molécule et de lui appliquer une force (qui sera transmise à la simulation) pour déformer la molécule.
 					\end{description}
 
 					Cependant, de nombreux outils supplémentaires ont été développés au-fur-et-à-mesure des besoins identifiés durant les expérimentations.
@@ -459,10 +478,11 @@
 						La mise en surbrillance est un agrandissement en transparence de l'élément pointé.
 						La couleur de cette mise en surbrillance est de la même couleur que le curseur de l'utilisateur.
 
-						Cependant, lorsque seul un atome est mis en surbrillance, il peut être difficile de l'apercevoir.
+						Dans le cas d'une sélection par \myglos{glo-Residu}, c'est l'ensemble du \myglos{glo-Residu} qui est mis en surbrillance.
+						Cependant, dans le cas d'une sélection par atome, la mise en surbrillance d'un seul atome pourrait être difficile à apercevoir au sein d'une molécule complexe.
 						En effet, le nombre important d'atomes d'une molécule peut surcharger le rendu graphique.
-						C'est pourquoi, l'ensemble du \myglos{glo-Residu} auquel appartient l'atome pointé est également mis en surbrillance.
-						Seul l'atome pointé est agrandi.
+						C'est pourquoi dans ce cas, l'ensemble du \myglos{glo-Residu} auquel appartient l'atome pointé est mis en surbrillance.
+						Cependant, l'atome pointé est agrandi afin de le distinguer du reste du \myglos{glo-Residu}.
 
 						Une fois l'élément pointé, l'utilisateur peut sélectionner l'élément.
 						Lorsque les utilisateurs sélectionnent l'élément, la surbrillance passera de la transparence à l'opacité.
@@ -493,25 +513,27 @@
 						De plus, certains atomes sont fortement liés et les éloigner peut perturber grandement l'état de stabilité.
 						Il est donc préférable de déplacer tous ces atomes liés en une seule manipulation.
 
-						C'est pourquoi un outil appliquant un effort à un groupe d'atomes permet de déplacer un bloc d'atomes tout en conservant une certaine stabilité.
+						C'est pourquoi un outil appliquant une force à un groupe d'atomes permet de le déplacer tout en conservant la stabilité intrinsèque.
 						Les groupes d'atomes dignes d'intérêt sont les \myglos*{glo-Residu} (une vingtaine d'atomes), les \myhelice* ou \myfeuillet* (une vingtaine de \myglos*{glo-Residu}) et les molécules.
 						Cependant, \myacro{acr-VMD} n'est pas capable de fournir l'information sémantique regroupant les atomes en \myhelice* ou en \myfeuillet*.
 						La fonctionnalité de l'outil \mytool{tug} a donc été étendue aux \myglos*{glo-Residu} et aux molécules.
 
 						Cependant, appliquer le même effort à l'ensemble des atomes de la molécule produit un effort total très important.
-						Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop importantes et produisent des incohérences dans la simulation voire même un arrêt de la simulation.
-						Il est donc nécessaire de diviser l'intensité des forces proportionnellement au nombre d'atomes sélectionnés.
+						Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop puissantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation.
+						En effet, \myacro{acr-NAMD} peut décider de stopper la simulation s'il considère que la simulation diverge trop d'un état stable.
+						Il est donc nécessaire de diviser l'intensité des forces appliquées proportionnellement au nombre d'atomes sélectionnés.
 					\end{mysubsubsection}
 					\begin{mysubsubsection}[sss-Shaddock-OutilDeDesignationEtAttraction]{Outil de désignation et attraction}
-						Un aspect récurrent constaté durant les expérimentations est la nécessité de désigner un élément de la molécule.
-						Parfois les utilisateurs éprouvent le besoin de désigner mais la plupart du temps, ce sont les enregistrement audio qui ont permis d'identifier ce besoin.
+						Un beson récurrent constaté durant les expérimentations est la nécessité pour les utilisateurs de désigner un élément de la molécule.
+						Parfois les utilisateurs éprouvent le besoin de désigner une élément de l'environnement virtuel pour un autre utilisateur.
+						Les enregistrements audio ont également permis d'identifier ce besoin.
 
 						L'outil de désignation a été conçu pour répondre à un processus en quatre étapes:
 						\begin{enumerate}[label={\alph*.},ref={\alph*}]
-							\item Recherche d'une cible \myref*{fig-designation-RechercheDUneCible};\label{enu-designation-RechercheDUneCible}
-							\item Désignation d'une cible \myref*{fig-designation-CibleDesignee};\label{enu-designation-DesignationDUneCible}
-							\item Acceptation d'une cible \myref*{fig-designation-CibleAcceptee};\label{enu-designation-AcceptationDUneCible}
-							\item Sélection d'une cible \myref*{fig-designation-CibleSelectionnee}.\label{enu-designation-SelectionDUneCible}
+							\item Recherche d'une cible;\label{enu-designation-RechercheDUneCible}
+							\item Désignation d'une cible;\label{enu-designation-DesignationDUneCible}
+							\item Acceptation d'une cible;\label{enu-designation-AcceptationDUneCible}
+							\item Sélection d'une cible.\label{enu-designation-SelectionDUneCible}
 						\end{enumerate}
 
 						\begin{myfigure}
@@ -535,24 +557,20 @@
 						\end{myfigure}
 
 						L'\myref{enu-designation-RechercheDUneCible} consiste pour un utilisateur~\myuser{A} à rechercher une cible à désigner.
-						La recherche de cette cible répondra au besoin d'obtenir de l'aide d'un utilisateur \myuser{B}.
+						Cette cible est choisie en fonction des objectifs de la tâche à réaliser et sera indiquée à un utilisateur \myuser{B} \myref*{fig-designation-RechercheDUneCible}.
 
-						L'\myref{enu-designation-DesignationDUneCible} consiste pour l'utilisateur~\myuser{A} à désigner la cible identifiée.
-						La cible est alors mise en surbrillance de façon à être vue des autres utilisateurs.
+						Une fois la cible trouvée, l'utilisateur~\myuser{A} désigne la cible identifiée lors de l'\myref{enu-designation-DesignationDUneCible}.
+						La cible est alors mise en surbrillance de façon à être vue des autres utilisateurs \myref*{fig-designation-CibleDesignee}.
 
 						L'\myref{enu-designation-AcceptationDUneCible} fait intervenir l'utilisateur~\myuser{B}.
 						L'utilisateur~\myuser{B} peut accepter ou non cette désignation.
-						S'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté.
+						S'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté \myref*{fig-designation-CibleAcceptee}.
 						Tant qu'elle n'est pas acceptée, la \myglos{glo-Residu} reste en surbrillance jusqu'à ce que la requête soit accepté ou modifiée.
 
 						L'\myref{enu-designation-SelectionDUneCible} est la dernière étape.
 						L'utilisateur~\myuser{B} ayant accepté doit maintenant sélectionner la cible pour achever le processus de désignation.
 						Tant que l'utilisateur~\myuser{B} n'a pas sélectionné le \myglos{glo-Residu} ciblé, le processus ne peut pas être considéré comme terminé et l'effet de surbrillance reste actif.
-
-						Parallèlement à ces quatre étapes, des aides haptiques ont été ajoutées pour la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique}.
-						Pour l'\myref{enu-designation-DesignationDUneCible}, des vibrations sont générées sur tous les utilisateurs concernés par la désignation.
-						De plus, dès l'instant qu'un utilisateur a accepté la désignation \myref*{enu-designation-AcceptationDUneCible}, il est guidé de façon haptique vers la cible.
-						La vibration chez tous les autres utilisateurs est arrêtée.
+						Lorsque la cible est sélectionnée, le processus de manipulation reprend normalement \myref*{fig-designation-CibleSelectionnee}.
 					\end{mysubsubsection}
 				\end{mysubsection}
 			\end{mysection}
@@ -635,7 +653,7 @@
 			\end{mysection}
 			\begin{mysection}[sec-exp1-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
 				Dans cette section est exposé l'ensemble du dispositif expérimental utilisé lors de l'expérience.
-				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockPlateFormeCollaborativeDeManipulationMoleculaire}.
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
 				Nous commencerons par présenter le matériel nécessaire dans la \myref{sse-exp1-DispositifTechnique}.
 				Ensuite, la \myref{sse-exp1-DispositionDesElements} détaillera la disposition de chaque élément dans le dispositif expérimental.
 				Enfin, nous terminerons par les visualisations proposées et les interactions possibles des sujets sur le dispositif expérimental dans la \myref{sse-exp1-VisualisationEtInteraction}.
@@ -1578,7 +1596,7 @@
 			\end{mysection}
 			\begin{mysection}[sec-exp2-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
 				Cette seconde expérimentation se base sur un dispositif expérimental relativement similaire à celui de la première expérimentation.
-				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockPlateFormeCollaborativeDeManipulationMoleculaire}.
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
 				Dans un premier temps, une liste du matériel utilisé est présenté dans la \myref{sse-exp2-DispositifTechnique} puis la disposition de chacun de ces éléments dans la \myref{sse-exp2-DispositionDesElements}.
 				Puis, dans un second temps, les aspects logiciels seront détaillés dans la \myref{sse-exp2-VisualisationEtInteraction}.
 				\begin{mysubsection}[sse-exp2-DispositifTechnique]{Dispositif technique}
@@ -2411,7 +2429,7 @@
 				\end{mysubsection}
 			\end{mysection}
 			\begin{mysection}[sec-exp3-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-ShaddockPlateFormeCollaborativeDeManipulationMoleculaire}.
+				L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
 				La troisième expérimentation propose un dispositif expérimental sensiblement identique à celui de la seconde expérimentation.
 				Une première différence concerne le nombre d'outils de déformation à disposition.
 				Le nombre de sujets étant plus important, il faut évidemment mettre plus d'outils à disposition.
@@ -3070,10 +3088,15 @@
 				Une caméra vidéo de marque \mySony (\textsc{hdr-sr11e}) sera installée afin de filmer l'expérimentation.
 				L'écran de vidéo-projection ainsi que les sujets (de dos) sont dans le plan de la vidéo.
 
-				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{cha-ShaddockPlateFormeCollaborativeDeManipulationMoleculaire}.
+				Pour les détails techniques concernant la plate-forme et les outils de manipulation et de déformation, se reporter au \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
 
 			\end{mysection}
 			\begin{mysection}[sec-exp4-Methode]{Méthode}
+						Parallèlement à ces quatre étapes, des aides haptiques ont été ajoutées pour la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique}.
+						Pour l'\myref{enu-designation-DesignationDUneCible}, des vibrations sont générées sur tous les utilisateurs pour qui la désignation est effectuée.
+						De plus, dès l'instant qu'un utilisateur a accepté la désignation \myref*{enu-designation-AcceptationDUneCible}, il est guidé de façon haptique vers la cible.
+						La vibration chez tous les autres utilisateurs est alors arrêtée.
+						L'attraction s'arrête lorsque la cible est sélectionnée.
 				\begin{mysubsection}[sse-exp4-Sujets]{Sujets}
 					\begin{myTodo}{Nombre de sujets}{Remplir toutes les informations statistiques concernant les sujets}
 						\mynum{000}~sujets (\mynum{000}~femmes et \mynum{000}~hommes) avec une moyenne d'âge de $\mu = 00.0$ ($\sigma = 0.00$) ont participés à cette expérimentation.
