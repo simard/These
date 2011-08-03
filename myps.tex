@@ -346,9 +346,7 @@
 	\@ifnextchar[%
 		{\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)}%
 		{%
-			\fpDiv{\my@ps@subdiv}{#6}{5}%
-			\fpRound{\my@ps@subdiv}{\my@ps@subdiv}{0}%
-			\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[\my@ps@subdiv]%
+			\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[]%
 		}%
 }
 \def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
@@ -358,9 +356,16 @@
 	\gdef\my@ps@legendminy{#5}%
 	\gdef\my@ps@legendmaxy{#6}%
 	\gdef\my@ps@legend{\myand{}}%
-	\ifstrempty{#1}%
-		{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
-		{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+	\ifstrempty{#7}%
+		{%
+			\ifstrempty{#1}%
+				{\psaxes[labels=y,ticks=y](#2,#5)(#3,#6)}%
+				{\psaxes[labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+		}{%
+			\ifstrempty{#1}%
+				{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
+				{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+		}
 	% Middle of the x-axis
 	\fpDiv{\my@ps@xmiddle}{#3}{2}%
 	% Set to the height of the x axis label
@@ -383,14 +388,17 @@
 	\addtolength{\my@ps@yoffset}{0.5ex}%
 	% y-label
 	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
-	\fpDiv{\temp}{#6}{#7}%
-	\fpRound{\iterations}{\temp}{0}%
-	\multido{\i=1+1}{\iterations}{%
-		\fpMul{\ylineoffset}{\i}{#7}
-		\ifstrempty{#1}%
-			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
-			{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
-	}%
+	\ifstrempty{#7}%
+		{}{%
+		\fpDiv{\temp}{#6}{#7}%
+		\fpRound{\iterations}{\temp}{0}%
+		\multido{\i=1+1}{\iterations}{%
+			\fpMul{\ylineoffset}{\i}{#7}
+			\ifstrempty{#1}%
+				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
+				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
+			}%
+		}%
 }
 
 % To separate each element of legend
