@@ -3384,10 +3384,12 @@
 	\begin{mychapter}[cha-ProtocoleExperimental]{Protocole expérimental}
 		\begin{mysection}[sec-pro-DispositifExperimental]{Dispositif expérimental}
 			\begin{mysubsection}[sse-pro-PresentationsDesMolecules]{Présentation des molécules}
+				Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisées.
+				À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
+				Tout d'abord, nous présenterons la liste des molécules utilisées.
+				Puis nous expliquerons le rendu visuel utilisé dans tous les expérimentations.
 				\begin{mysubsubsection}[sss-pro-ListeDesMolecules]{Liste des molécules}
-					Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisé.
-					À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
-					Chaque molécule est référencée sur la \myPDBbase\footnote{\url{http://www.pdb.org/}} par un identifiant \myPDB.
+					Chaque molécule utilisée est référencée sur la \myPDBbase\footnote{\url{http://www.pdb.org/}} par un identifiant \myPDB.
 					Voici la liste des molécules utilisées :
 					\begin{description}
 						\item[\myTRPZIPPER]
@@ -3406,8 +3408,50 @@
 							Le complexe de molécules \myNusENusG \mycite{Burmann-2010} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KVQ}{2KVQ}.
 							Il est constitué de deux molécules \textsc{NusE} et \textsc{NusG} possédant respectivement \mynum{1294}~atomes pour \mynum{80}~\myglos*{glo-Residu} et \mynum{929}~atomes pour \mynum{59}~\myglos*{glo-Residu}.
 					\end{description}
+
+					On notera la présence de molécule de taille relativement petite comme \myTRPZIPPER et \myTRPCAGE.
+					On trouve également des molécules de taille assez importante comme \myPrion et \myUbiquitin.
+					Enfin, pour la dernière expérimentation, un complexe de molécules a été utilisé avec \myNusENusG.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-pro-RepresentationDesMolecules]{Représentation des molécules}
+					La représentation des molécules est un domaine de recherche à part entière.
+					En effet, la complexité et l'abondance d'informations à visualiser nécessite des rendus graphiques avancés et complémentaires.
+					De plus, la quantité importante d'informations à représenter peut nécessiter une machine puissante afin de générer un rendu en temps-réel.
+					Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-LesRendusGraphiques}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
+
+					Afin d'obtenir un rendu de molécule pertinent, nous avons bénéficié des conseils d'un biologiste.
+					Ensuite, nous avons pu adapter les rendus de molécules en fonction de nos besoins pour les différents scénarios proposés.
+					Cependant, une base commune a été utilisée.
+
+					Tout d'abord, les atomes étant l'élément constituant de la molécule, il est nécessaire de les représenter en intégralité.
+					Cependant, ils sont très nombreux et produisent rapidement une surcharge de la scène donc le choix de leur taille est primordial.
+					Une première solution est de s'affranchir, partiellement, des atomes d'hydrogène.
+					En effet, ces derniers ne constituent pas une information importante et peuvent être déduits à partir du reste de la structure de la molécule.
+					Les atomes d'hydrogènes peuvent donc être représentés avec une taille réduite par rapport aux autres atomes.
+					Le rendu \myCPK est utilisé pour effectuer un rendu des atomes \myref*{fig-pro-RepresentationDesAtomesAvecCPK}.
+
+					\begin{myfigure}
+						\myimage{protocole-render-CPK}
+						\mycaption[fig-pro-RepresentationDesAtomesAvecCPK]{Représentation des atomes avec \myCPK}
+					\end{myfigure}
+
+					Cependant, la représentation de la molécule exclusivement avec les atomes et les liaisons entre les atomes ne permet pas d'appréhender la structure globale.
+					En effet, on peut voir une molécule comme un long brin qui se replie sur lui-même avec des feuilles tout le long du brin.
+					Il est donc pertinent de représenter cette structure principale.
+					C'est la représentation \myNewRibbon qui tient ce rôle \myref*{fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon}.
+
+					\begin{myfigure}
+						\myimage{protocole-render-NewRibbon}
+						\mycaption[fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon]{Représentation de la structure principale de la molécule avec \myNewRibbon}
+					\end{myfigure}
+
+					Pour finir, pour des raisons physiques d'interaction, certains atomes sont fixés au niveau de la simulation afin d'éviter des dérives de la molécule.
+					Ces atomes sont signalés visuellement par une représentation en gris \myref*{fig-pro-RepresentationDesAtomesFixesEnGris}.
+
+					\begin{myfigure}
+						\myimage{protocole-render-fixed}
+						\mycaption[fig-pro-RepresentationDesAtomesFixesEnGris]{Représentation des atomes fixés en gris}
+					\end{myfigure}
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-exp1-SpecificitesDeLaPremiereExperimentation]{Spécificités de la première expérimentation}
