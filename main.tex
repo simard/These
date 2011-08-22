@@ -3602,6 +3602,48 @@
 				\end{myfigure}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-exp2-OutilsDeManipulation]{Outils de manipulation}
+				Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
+				Grâce au choix du matériel capable de différencier aisément les opérations de translation et les opérations de rotation, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
+				En effet, la molécule n'a pas vraiment besoin d'être déplacer à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
+				Ceci permet également d'éviter des molécules qui sortent de l'écran à cause d'une mauvaise manipulation.
+				De plus, cela décharge d'une charge cognitive inutile.
+
+				En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
+				La tâche consiste à reconstituer une molécule dans son état d'équilibre.
+				Pour assister les sujets, nous avons déjà vu qu'un rendu visuel en transparence de la molécule dans son état stable est affichée à l'écran.
+				Pour augmenter l'aide visuelle apportée, nous allons également indiquer l'emplacement final d'un \myglos{glo-Residu} sélectionné.
+				En effet, dès qu'un sujet sélectionne un \myglos{glo-Residu}, ce \myglos{glo-Residu} est mis en surbrillance.
+				Le \myglos{glo-Residu} correspondant sur la molécule stable est également mis en surbrillance comme expliqué sur la \myref{fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
+				Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK avec des atomes grossis et coloré de la couleur du curseur du sujet concerné.
+
+				\begin{myfigure}
+					\psset{unit=0.08\textwidth}
+					\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
+					\begin{myps}(0,0)(11,8.5)
+						\rput[bl](1,0){\myimage{exp2-trp-zipper}}
+						\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
+						\myexptwolabel(1,5.5)[ghost-label]{myred}{Molécule cible}
+						\myexptwolabel(7.1,7.3)[deformed-residue-label]{myblue}{\myGlosnl{glo-Residu} sélectionné}
+						\myexptwolabel(1,3)[ghost-residue-label]{myblue}{\myGlosnl{glo-Residu} cible}
+						\myexptwolabel(4.0,8.15)[fixed-residue-label]{mygray}{\myGlosnl{glo-Residu} fixe}
+						\pnode(7.4,3.6){deformed}
+						\pnode(1.8,4){ghost}
+						\psset{linecolor=myblue}
+						\cnode(6.2,5.2){1.0}{deformed-residue}
+						\cnode(2.3,1.5){0.8}{ghost-residue}
+						\psset{linecolor=mygray}
+						\cnode(2.0,7){0.8}{fixed-residue}
+						\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
+						\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
+						\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
+						\psset{linecolor=myblue,nodesepB=0pt}
+						\ncdiagg[angleA=-90,offsetA=0.5]{c->}{deformed-residue-label}{deformed-residue}
+						\ncdiagg[angleA=-90,offsetA=-0.5]{c->}{ghost-residue-label}{ghost-residue}
+						\ncdiagg[angleA=180,linecolor=mygray]{c->}{fixed-residue-label}{fixed-residue}
+						\ncline[linewidth=10pt,linecolor=myblue,arrowsize=2pt 2,nodesepA=4pt]{C->}{deformed-residue}{ghost-residue}
+					\end{myps}
+					\mycaption[fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
+				\end{myfigure}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
