@@ -3375,6 +3375,35 @@
 	\myappendix
 	\begin{mychapter}[cha-ProtocoleExperimental]{Protocole expérimental}
 		\begin{mysection}[sec-pro-DispositifExperimental]{Dispositif expérimental}
+			\begin{mysubsection}[sse-pro-MaterielExperimental]{Matériel expérimental}
+				Les expérimentations se basent sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
+				Dans cette section, nous allons présenter le matériel utilisé et sa disposition.
+
+				Tout d'abord, voici le matériel de base utilisé pour les différentes expérimentations :
+				\begin{itemize}
+					\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
+					\item \mynum{2}~interfaces haptiques \myOmni;
+					\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series);
+					\item \mynum{1}~grand écran de vidéoprojection.
+				\end{itemize}
+
+				Un premier ordinateur~\mycomputer{A} est celui d'où l'expérimentateur va commander l'ensemble de l'expérimentation.
+				Cet ordinateur est destiné à l'application cliente \myacro{acr-VMD} : c'est donc cette machine qui s'occupe du calcul pour les rendus visuels.
+				La seconde machine~\mycomputer{B} est dédiée au moteur de simulation \myacro{acr-NAMD} : elle communique avec la machine~\mycomputer{A} par une connexion \myTCPIP.
+
+				L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
+				Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
+				L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
+				Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels\myetc).
+
+				Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
+				Un \myOmni est connecté sur chacune des deux machines.
+				Ces interfaces haptiques sont placées sur une table devant les sujets.
+				Les sujets ont la possibilité de déplacer les interfaces haptiques (avec l'aide de l'expérimentateur) afin de s'installer confortablement et d'utiliser la main qu'ils désirent pour la manipulation du périphérique.
+
+				Ce qui vient d'être décrit est la plate-forme de base qui est utilisée au cours des différentes expérimentations.
+				Cependant, des spécificités liées aux tâches proposées durant les différentes expérimentations sont détaillées au-fur-et-à-mesure.
+			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-PresentationsDesMolecules]{Présentation des molécules}
 				Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisées.
 				À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
@@ -3446,35 +3475,32 @@
 					\end{myfigure}
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-MaterielExperimental]{Matériel expérimental}
-				Les expérimentations se basent sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
-				Dans cette section, nous allons présenter le matériel utilisé et sa disposition.
-
-				Tout d'abord, voici le matériel de base utilisé pour les différentes expérimentations :
-				\begin{itemize}
-					\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
-					\item \mynum{2}~interfaces haptiques \myOmni;
-					\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series);
-					\item \mynum{1}~grand écran de vidéoprojection.
-				\end{itemize}
-
-				Un premier ordinateur~\mycomputer{A} est celui d'où l'expérimentateur va commander l'ensemble de l'expérimentation.
-				Cet ordinateur est destiné à l'application cliente \myacro{acr-VMD} : c'est donc cette machine qui s'occupe du calcul pour les rendus visuels.
-				La seconde machine~\mycomputer{B} est dédiée au moteur de simulation \myacro{acr-NAMD} : elle communique avec la machine~\mycomputer{A} par une connexion \myTCPIP.
-
-				L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
-				Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
-				L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
-
-				Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
-				Un \myOmni est connecté sur chacune des deux machines.
-				Ces interfaces haptiques sont placées sur une table devant les sujets.
-
-				Ce qui vient d'être décrit est la plate-forme de base qui est utilisée au cours des différentes expérimentations.
-				Cependant, des spécificités liées aux tâches proposées durant les différentes expérimentations sont détaillées au-fur-et-à-mesure.
-			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-exp1-SpecificitesDeLaPremiereExperimentation]{Spécificités de la première expérimentation}
 				\begin{mysubsubsection}[sss-pro-exp1-Materiel]{Matériel}
+					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
+					Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
+					Cependant, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
+					En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devait aura été déformée.
+					C'est pourquoi, nous mettons un outil de manipulation de la molécule à disposition des sujets.
+					Ce nouvel outil nécessite l'ajout de quelques matériels.
+
+					L'outil de manipulation sera assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
+					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
+					Dans ce cas, une machine de faible puissance est largement suffisante.
+					L'outil n'est pas partagé entre les utilisateurs.
+					En effet, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation.
+					L'interface sera donc placée devant le sujet en charge de cet outil.
+
+					Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
+					Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
+					Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
+					Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
+
+					Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
+					Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
+					C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
+					L'enregistrement est assuré par le logiciel \myAudacity.
+					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-pro-exp1-Visualisation]{Visualisation}
 					Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
