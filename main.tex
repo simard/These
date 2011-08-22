@@ -3489,18 +3489,13 @@
 			\begin{mysubsection}[sse-pro-exp1-Materiel]{Matériel}
 				Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
 				Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
-				Cependant, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
-				En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
-				C'est pourquoi, nous mettons un outil de manipulation de la molécule à disposition des sujets.
+				Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sse-pro-exp1-OutilsDeManipulation}.
 				Ce nouvel outil nécessite l'ajout de quelques matériels.
 
-				L'outil de manipulation sera assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
+				L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
 				L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
 				Dans ce cas, une machine de faible puissance est largement suffisante.
-				L'outil n'est pas partagé entre les utilisateurs.
-				En effet, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation.
-				L'interface sera donc placée devant le sujet en charge de cet outil.
-				Il est à noter que dans les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
+				L'interface est placée devant le sujet en charge de cet outil.
 
 				Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
 				Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
@@ -3535,7 +3530,16 @@
 					\mycaption[fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation]{Représentation de la molécule \myPrion pour la première expérimentation}
 				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp1-OutilsDisponibles]{Outils disponibles}
+			\begin{mysubsection}[sse-pro-exp1-OutilsDeManipulation]{Outils de manipulation}
+				Durant une tâche de recherche, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
+				En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
+				C'est pourquoi, nous mettons un outil d'orientation de la molécule à disposition des sujets.
+
+				Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de déplacer et de l'orienter.
+				Aucune modification par rapport à l'outil déjà proposé par \myacro{acr-VMD} n'a été ajoutée.
+				Cependant, l'outil n'est pas partagé entre les utilisateurs.
+				En effet, il est demandé aux sujets dès le début de l'expérimentation, de choisir celui qui sera en charge de cet outil de manipulation et ceci tout au long de l'expérimentation.
+				Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
@@ -3597,7 +3601,7 @@
 					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
 				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp2-OutilsDisponibles]{Outils disponibles}
+			\begin{mysubsection}[sse-pro-exp2-OutilsDeManipulation]{Outils de manipulation}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
@@ -3643,13 +3647,13 @@
 					\mycaption[fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
 				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp3-OutilsDisponibles]{Outils disponibles}
+			\begin{mysubsection}[sse-pro-exp3-OutilsDeManipulation]{Outils de manipulation}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp4-SpecificitesDeLaPremiereExperimentation]{Spécificités de la quatrième expérimentation}
 			\begin{mysubsection}[sse-pro-exp4-Materiel]{Matériel}
 				Dans cet quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
-				Deux sujets auront toujours à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sse-pro-exp4-OutilsDisponibles}.
+				Deux sujets auront toujours à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sse-pro-exp4-OutilsDeManipulation}.
 				Le troisième sujet aura à sa disposition trois outils dont deux basés sur une interface haptique.
 				Les deux interfaces haptiques utilisées sont un \myOmni et un \myDesktop, tous deux associés à une machine de faible puissance pour le serveur \myacro{acr-VRPN}.
 				De plus, ce troisième sujet aura accès à un outil de manipulation.
@@ -3694,7 +3698,7 @@
 					\mycaption[fig-pro-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2]{Représentation de la molécule \myNusENusG pour le scénario~\myscenario{2}}
 				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp4-OutilsDisponibles]{Outils disponibles}
+			\begin{mysubsection}[sse-pro-exp4-OutilsDeManipulation]{Outils de manipulation}
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
