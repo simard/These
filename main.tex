@@ -3373,341 +3373,339 @@
 
 	\myglossary
 	\myappendix
-	\begin{mychapter}[cha-ProtocoleExperimental]{Protocole expérimental}
-		\begin{mysection}[sec-pro-DispositifExperimental]{Dispositif expérimental}
-			\begin{mysubsection}[sse-pro-MaterielExperimental]{Matériel expérimental}
-				Les expérimentations se basent sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
-				Dans cette section, nous allons présenter le matériel utilisé et sa disposition.
+	\begin{mychapter}[cha-pro-DispositifExperimental]{Dispositif expérimental}
+		\begin{mysection}[sec-pro-MaterielExperimental]{Matériel expérimental}
+			Les expérimentations se basent sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
+			Dans cette section, nous allons présenter le matériel utilisé et sa disposition.
 
-				Tout d'abord, voici le matériel de base utilisé pour les différentes expérimentations :
-				\begin{itemize}
-					\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
-					\item \mynum{2}~interfaces haptiques \myOmni;
-					\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series)\footnote{Durant la première expérimentation, c'est un vidéoprojecteur \myCasioXJ qui a été utilisé.};
-					\item \mynum{1}~grand écran de vidéoprojection.
-				\end{itemize}
+			Tout d'abord, voici le matériel de base utilisé pour les différentes expérimentations :
+			\begin{itemize}
+				\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
+				\item \mynum{2}~interfaces haptiques \myOmni;
+				\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series)\footnote{Durant la première expérimentation, c'est un vidéoprojecteur \myCasioXJ qui a été utilisé.};
+				\item \mynum{1}~grand écran de vidéoprojection.
+			\end{itemize}
 
-				Un premier ordinateur~\mycomputer{A} est celui d'où l'expérimentateur va commander l'ensemble de l'expérimentation.
-				Cet ordinateur est destiné à l'application cliente \myacro{acr-VMD} : c'est donc cette machine qui s'occupe du calcul pour les rendus visuels.
-				La seconde machine~\mycomputer{B} est dédiée au moteur de simulation \myacro{acr-NAMD} : elle communique avec la machine~\mycomputer{A} par une connexion \myTCPIP.
+			Un premier ordinateur~\mycomputer{A} est celui d'où l'expérimentateur va commander l'ensemble de l'expérimentation.
+			Cet ordinateur est destiné à l'application cliente \myacro{acr-VMD} : c'est donc cette machine qui s'occupe du calcul pour les rendus visuels.
+			La seconde machine~\mycomputer{B} est dédiée au moteur de simulation \myacro{acr-NAMD} : elle communique avec la machine~\mycomputer{A} par une connexion \myTCPIP.
 
-				L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
-				Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
-				L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
-				Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels\myetc).
+			L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
+			Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
+			L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
+			Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels\myetc).
 
-				Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
-				Un \myOmni est connecté sur chacune des deux machines.
-				Ces interfaces haptiques sont placées sur une table devant les sujets.
-				Les sujets ont la possibilité de déplacer les interfaces haptiques (avec l'aide de l'expérimentateur) afin de s'installer confortablement et d'utiliser la main qu'ils désirent pour la manipulation du périphérique.
+			Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
+			Un \myOmni est connecté sur chacune des deux machines.
+			Ces interfaces haptiques sont placées sur une table devant les sujets.
+			Les sujets ont la possibilité de déplacer les interfaces haptiques (avec l'aide de l'expérimentateur) afin de s'installer confortablement et d'utiliser la main qu'ils désirent pour la manipulation du périphérique.
 
-				Ce qui vient d'être décrit est la plate-forme de base qui est utilisée au cours des différentes expérimentations.
-				Cependant, des spécificités liées aux tâches proposées durant les différentes expérimentations sont détaillées au-fur-et-à-mesure.
+			Ce qui vient d'être décrit est la plate-forme de base qui est utilisée au cours des différentes expérimentations.
+			Cependant, des spécificités liées aux tâches proposées durant les différentes expérimentations sont détaillées au-fur-et-à-mesure.
+		\end{mysection}
+		\begin{mysection}[sec-pro-PresentationsDesMolecules]{Présentation des molécules}
+			Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisées.
+			À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
+			Tout d'abord, nous présenterons la liste des molécules utilisées.
+			Puis nous expliquerons le rendu visuel utilisé dans tous les expérimentations.
+			\begin{mysubsection}[sse-pro-ListeDesMolecules]{Liste des molécules}
+				Chaque molécule utilisée est référencée sur la \myPDBbase\footnote{\url{http://www.pdb.org/}} par un identifiant \myPDB.
+				Voici la liste des molécules utilisées :
+				\begin{description}
+					\item[\myTRPZIPPER]
+						La molécule \myTRPZIPPER \mycite{Cochran-2001} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
+						Cette molécule contient \mynum{218}~atomes dont \mynum{12}~\myglos*{glo-Residu}.
+					\item[\myTRPCAGE]
+						La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y}.
+						Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
+					\item[\myPrion]
+						La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
+						Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
+					\item[\myUbiquitin]
+						La molécule nommée \myUbiquitin \mycite{Vijay-Kumar-1987} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1UBQ}{1UBQ}.
+						Cette molécule contient \mynum{1231}~atomes dont \mynum{76}~\myglos*{glo-Residu}.
+					\item[\myNusENusG]
+						Le complexe de molécules \myNusENusG \mycite{Burmann-2010} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KVQ}{2KVQ}.
+						Il est constitué de deux molécules \textsc{NusE} et \textsc{NusG} possédant respectivement \mynum{1294}~atomes pour \mynum{80}~\myglos*{glo-Residu} et \mynum{929}~atomes pour \mynum{59}~\myglos*{glo-Residu}.
+				\end{description}
+
+				On notera la présence de molécule de taille relativement petite comme \myTRPZIPPER et \myTRPCAGE.
+				On trouve également des molécules de taille assez importante comme \myPrion et \myUbiquitin.
+				Enfin, pour la dernière expérimentation, un complexe de molécules a été utilisé avec \myNusENusG.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-PresentationsDesMolecules]{Présentation des molécules}
-				Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisées.
-				À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
-				Tout d'abord, nous présenterons la liste des molécules utilisées.
-				Puis nous expliquerons le rendu visuel utilisé dans tous les expérimentations.
-				\begin{mysubsubsection}[sss-pro-ListeDesMolecules]{Liste des molécules}
-					Chaque molécule utilisée est référencée sur la \myPDBbase\footnote{\url{http://www.pdb.org/}} par un identifiant \myPDB.
-					Voici la liste des molécules utilisées :
-					\begin{description}
-						\item[\myTRPZIPPER]
-							La molécule \myTRPZIPPER \mycite{Cochran-2001} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1}.
-							Cette molécule contient \mynum{218}~atomes dont \mynum{12}~\myglos*{glo-Residu}.
-						\item[\myTRPCAGE]
-							La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y}.
-							Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
-						\item[\myPrion]
-							La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL}.
-							Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
-						\item[\myUbiquitin]
-							La molécule nommée \myUbiquitin \mycite{Vijay-Kumar-1987} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1UBQ}{1UBQ}.
-							Cette molécule contient \mynum{1231}~atomes dont \mynum{76}~\myglos*{glo-Residu}.
-						\item[\myNusENusG]
-							Le complexe de molécules \myNusENusG \mycite{Burmann-2010} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KVQ}{2KVQ}.
-							Il est constitué de deux molécules \textsc{NusE} et \textsc{NusG} possédant respectivement \mynum{1294}~atomes pour \mynum{80}~\myglos*{glo-Residu} et \mynum{929}~atomes pour \mynum{59}~\myglos*{glo-Residu}.
-					\end{description}
+			\begin{mysubsection}[sse-pro-RepresentationDesMolecules]{Représentation des molécules}
+				La représentation des molécules est un domaine de recherche à part entière.
+				En effet, la complexité et l'abondance d'informations à visualiser nécessite des rendus graphiques avancés et complémentaires.
+				De plus, la quantité importante d'informations à représenter peut nécessiter une machine puissante afin de générer un rendu en temps-réel.
+				Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-LesRendusGraphiques}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
 
-					On notera la présence de molécule de taille relativement petite comme \myTRPZIPPER et \myTRPCAGE.
-					On trouve également des molécules de taille assez importante comme \myPrion et \myUbiquitin.
-					Enfin, pour la dernière expérimentation, un complexe de molécules a été utilisé avec \myNusENusG.
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-RepresentationDesMolecules]{Représentation des molécules}
-					La représentation des molécules est un domaine de recherche à part entière.
-					En effet, la complexité et l'abondance d'informations à visualiser nécessite des rendus graphiques avancés et complémentaires.
-					De plus, la quantité importante d'informations à représenter peut nécessiter une machine puissante afin de générer un rendu en temps-réel.
-					Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-LesRendusGraphiques}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
+				Afin d'obtenir un rendu de molécule pertinent, nous avons bénéficié des conseils d'un biologiste.
+				Ensuite, nous avons pu adapter les rendus de molécules en fonction de nos besoins pour les différents scénarios proposés.
+				Cependant, une base commune a été utilisée.
 
-					Afin d'obtenir un rendu de molécule pertinent, nous avons bénéficié des conseils d'un biologiste.
-					Ensuite, nous avons pu adapter les rendus de molécules en fonction de nos besoins pour les différents scénarios proposés.
-					Cependant, une base commune a été utilisée.
+				Tout d'abord, les atomes étant l'élément constituant de la molécule, il est nécessaire de les représenter en intégralité.
+				Cependant, ils sont très nombreux et produisent rapidement une surcharge de la scène donc le choix de leur taille est primordial.
+				Une première solution est de s'affranchir, partiellement, des atomes d'hydrogène.
+				En effet, ces derniers ne constituent pas une information importante et peuvent être déduits à partir du reste de la structure de la molécule.
+				Les atomes d'hydrogènes peuvent donc être représentés avec une taille réduite par rapport aux autres atomes.
+				Le rendu \myCPK est utilisé pour effectuer un rendu des atomes \myref*{fig-pro-RepresentationDesAtomesAvecCPK}.
 
-					Tout d'abord, les atomes étant l'élément constituant de la molécule, il est nécessaire de les représenter en intégralité.
-					Cependant, ils sont très nombreux et produisent rapidement une surcharge de la scène donc le choix de leur taille est primordial.
-					Une première solution est de s'affranchir, partiellement, des atomes d'hydrogène.
-					En effet, ces derniers ne constituent pas une information importante et peuvent être déduits à partir du reste de la structure de la molécule.
-					Les atomes d'hydrogènes peuvent donc être représentés avec une taille réduite par rapport aux autres atomes.
-					Le rendu \myCPK est utilisé pour effectuer un rendu des atomes \myref*{fig-pro-RepresentationDesAtomesAvecCPK}.
+				\begin{myfigure}
+					\myimage{protocole-render-CPK}
+					\mycaption[fig-pro-RepresentationDesAtomesAvecCPK]{Représentation des atomes avec \myCPK}
+				\end{myfigure}
 
-					\begin{myfigure}
-						\myimage{protocole-render-CPK}
-						\mycaption[fig-pro-RepresentationDesAtomesAvecCPK]{Représentation des atomes avec \myCPK}
-					\end{myfigure}
+				Cependant, la représentation de la molécule exclusivement avec les atomes et les liaisons entre les atomes ne permet pas d'appréhender la structure globale.
+				En effet, on peut voir une molécule comme un long brin qui se replie sur lui-même avec des feuilles tout le long du brin.
+				Il est donc pertinent de représenter cette structure principale.
+				C'est la représentation \myNewRibbon qui tient ce rôle \myref*{fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon}.
 
-					Cependant, la représentation de la molécule exclusivement avec les atomes et les liaisons entre les atomes ne permet pas d'appréhender la structure globale.
-					En effet, on peut voir une molécule comme un long brin qui se replie sur lui-même avec des feuilles tout le long du brin.
-					Il est donc pertinent de représenter cette structure principale.
-					C'est la représentation \myNewRibbon qui tient ce rôle \myref*{fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon}.
+				\begin{myfigure}
+					\myimage{protocole-render-NewRibbon}
+					\mycaption[fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon]{Représentation de la structure principale de la molécule avec \myNewRibbon}
+				\end{myfigure}
 
-					\begin{myfigure}
-						\myimage{protocole-render-NewRibbon}
-						\mycaption[fig-pro-RepresentationDeLaStructurePrincipaleDeLaMoleculeAvecNewRibbon]{Représentation de la structure principale de la molécule avec \myNewRibbon}
-					\end{myfigure}
+				Pour finir, pour des raisons physiques d'interaction, certains atomes sont fixés au niveau de la simulation afin d'éviter des dérives de la molécule.
+				Ces atomes sont signalés visuellement par une représentation en gris \myref*{fig-pro-RepresentationDesAtomesFixesEnGris}.
 
-					Pour finir, pour des raisons physiques d'interaction, certains atomes sont fixés au niveau de la simulation afin d'éviter des dérives de la molécule.
-					Ces atomes sont signalés visuellement par une représentation en gris \myref*{fig-pro-RepresentationDesAtomesFixesEnGris}.
-
-					\begin{myfigure}
-						\myimage{protocole-render-fixed}
-						\mycaption[fig-pro-RepresentationDesAtomesFixesEnGris]{Représentation des atomes fixés en gris}
-					\end{myfigure}
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-OutilsDeManipulation]{Outils de manipulation}
-				La plate-forme de base propose deux interfaces haptiques.
-				Ces deux interfaces haptiques sont utilisées comme interfaces de déformation de la molécule : des outils \mytool{tug}.
-				Pour comprendre ce que sont des outils de déformation, on peut se reporter à la \myref{sse-Shaddock-LesOutilsExistants}.
-				Au cours des trois premières expérimentations, seules quelques modifications du rendu visuel associés à ces outils sont effectués.
-				Cependant, la quatrième expérimentation apporte des modifications plus lourdes de cet outil que ce soit au niveau visuel ou au niveau haptique.
-				On pourra se reporter aux chapitres respectifs pour plus de détails.
-
-				De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
-				Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-pro-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sss-pro-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sss-pro-exp4-Materiel}.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp1-SpecificitesDeLaPremiereExperimentation]{Spécificités de la première expérimentation}
-				\begin{mysubsubsection}[sss-pro-exp1-Materiel]{Matériel}
-					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
-					Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
-					Cependant, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
-					En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
-					C'est pourquoi, nous mettons un outil de manipulation de la molécule à disposition des sujets.
-					Ce nouvel outil nécessite l'ajout de quelques matériels.
-
-					L'outil de manipulation sera assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
-					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
-					Dans ce cas, une machine de faible puissance est largement suffisante.
-					L'outil n'est pas partagé entre les utilisateurs.
-					En effet, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation.
-					L'interface sera donc placée devant le sujet en charge de cet outil.
-					Il est à noter que dans les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
-
-					Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
-					Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
-					Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
-					Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
-
-					Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
-					Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
-					C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
-					L'enregistrement est assuré par le logiciel \myAudacity.
-					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
-
-					La \myref{fig-pro-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
-					La \myref{fig-pro-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-					\begin{myfigure}
-						\myimage{exp1-schema}
-						\mycaption[fig-pro-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{exp1-photo}
-						\mycaption[fig-pro-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp1-Visualisation]{Visualisation}
-					Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
-					Cette molécule est suffisamment volumineuse pour ne pas nécessiter d'atome fixé dans la simulation.
-					Une représentation de cette molécule durant la première expérimentation est sur la \myref{fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation}.
-
-					\begin{myfigure}
-						\myimage{protocole-render-exp1-prion}
-						\mycaption[fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation]{Représentation de la molécule \myPrion pour la première expérimentation}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp1-OutilsDisponibles]{Outils disponibles}
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
-				\begin{mysubsubsection}[sss-pro-exp2-Materiel]{Matériel}
-					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sse-pro-MaterielExperimental}.
-					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
-					Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
-					Cependant, la forme sous laquelle il est présenté n'est pas idéale.
-					L'outil de manipulation \mytool{grab} a posé quelques problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier cet outil.
-
-					Après quelques échanges avec un bio-informaticien, il est apparu qu'une souris~\myThreeD serait un outil plus approprié qu'une interface haptique.
-					En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes ce qui amène à des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
-					La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil de manipulation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
-					Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
-					Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil afin de stimuler les interactions.
-
-					En ce qui concerne l'utilisation des outils de déformation, chaque sujet d'un \myglos{glo-Binome} possède à sa disposition un outil de déformation.
-					Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
-					Dans ce cas, il est forcé de lâcher un des deux outils afin d'utiliser la souris~\myThreeD.
-					Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toute sélection effectuée avec tous les outils de déformation.
-
-					Les \myref{fig-pro-exp2-SchemaDuDispositifExperimental} et \myref{fig-pro-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
-
-					\begin{myfigure}
-						\myimage{exp2-schema}
-						\mycaption[fig-pro-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{exp2-photo}
-						\mycaption[fig-pro-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp2-Visualisation]{Visualisation}
-					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
-					Ces molécules sont représentés avec les rendus graphiques de base (\myCPK et \myNewRibbon).
-					Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
-					Cette molécule ne peut pas être représentées avec tous ces atomes pour deux raisons.
-					Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
-					De plus, la précision de la déformation ne nécessite pas la présence des atomes.
-					C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
-
-					Des images représentants les différents scénarios dans leur état initial sont présentées.
-					La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} représente le scénario~\myscenario{1A}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B} représente le scénario~\myscenario{1B}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} représente le scénario~\myscenario{2A} et la \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représente le scénario~\myscenario{2B}.
-
-					\begin{myfigure}
-						\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-zipper-atom}
-						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{1A}}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-cage-atom}
-						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{1B}}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{protocole-render-exp2-trp-zipper-residue}
-						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{2A}}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{protocole-render-exp2-trp-cage-residue}
-						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp2-OutilsDisponibles]{Outils disponibles}
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
-				\begin{mysubsubsection}[sss-pro-exp3-Materiel]{Matériel}
-					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
-					Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sse-pro-MaterielExperimental}.
-					Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
-					Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
-
-					Il faut noter que c'est la première expérimentation pour laquelle aucun outil de manipulation n'est fourni aux sujets.
-					En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil générateur de \myglos*{glo-ConflitDeCoordination} produirait surtout du chaos chez les \myglos*{glo-Quadrinome}.
-					Chaque sujet d'un \myglos{glo-Quadrinome} a un outil de déformation à sa disposition.
-					En ce qui concerne les \myglos*{glo-Binome}, chaque sujet peut utiliser deux outils dans une configuration \myglos*{glo-Bimanuel}.
-
-					Cette expérimentation sur le travail collaboratif de groupe (supérieur à deux sujets) est l'occasion de focaliser sur les communications qui seront certainement plus nombreuses.
-					Afin d'analyser ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée en hauteur derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
-					Cette caméra permet d'enregistrer la vidéo et le son.
-					Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
-
-					La \myref{fig-pro-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
-					La \myref{fig-pro-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-					\begin{myfigure}
-						\myimage{exp3-schema}
-						\mycaption[fig-pro-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{exp3-photo}
-						\mycaption[fig-pro-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp3-Visualisation]{Visualisation}
-					La troisième expérimentation propose une tâche relativement similaire à la seconde expérimentation.
-					La principale différence concerne la taille des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation qui concernait des molécules d'une quinzaine de \myglos*{glo-Residu}.
-					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1} et la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
-
-					\begin{myfigure}
-						\myimage{protocole-render-exp3-prion}
-						\mycaption[fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1]{Représentation de la molécule \myPrion pour le scénario~\myscenario{1}}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{protocole-render-exp3-ubiquitin}
-						\mycaption[fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp3-OutilsDisponibles]{Outils disponibles}
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp4-SpecificitesDeLaPremiereExperimentation]{Spécificités de la quatrième expérimentation}
-				\begin{mysubsubsection}[sss-pro-exp4-Materiel]{Matériel}
-					Dans cet quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
-					Deux sujets auront toujours à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sss-pro-exp4-OutilsDisponibles}.
-					Le troisième sujet aura à sa disposition trois outils dont deux basés sur une interface haptique.
-					Les deux interfaces haptiques utilisées sont un \myOmni et un \myDesktop, tous deux associés à une machine de faible puissance pour le serveur \myacro{acr-VRPN}.
-					De plus, ce troisième sujet aura accès à un outil de manipulation.
-					En effet, bien que les outils de manipulation sont générateurs de \myglos*{glo-ConflitDeCoordination}, il s'est avéré au cours de la troisième expérimentation que certaines situations requièrent un outil permettant d'orienter la scène.
-					Durant la première expérimentation, une interface haptique avait été utilisé mais n'était pas vraiment adapté pour cette fonctionnalité.
-					Au cours de la seconde expérimentation, c'est une souris~\myThreeD qui a remplacé l'interface haptique.
-					Bien que cet outil est très adapté pour cette fonctionnalité, il est relativement compliqué à prendre en main et nécessite un apprentissage.
-					Cet apprentissage n'est pas acceptable durant un processus expérimental de quelques dizaines de minutes.
-					C'est donc une simple souris \myUSB qui a été choisi comme outil de manipulation : il est un peu moins adapté à l'orientation qu'une souris~\myThreeD mais est nettement plus intuitif pour la plupart des sujets qui sont habitués à manipuler ce type de périphérique.
-
-					De la même manière que dans la troisième expérimentation, une caméra vidéo \mySony (\textsc{hdr-cx550}) a été installée derrière les sujets afin de filmer à la fois les sujets et l'écran de vidéoprojection.
-					Le son est également capter par la caméra.
-					Là encore, les vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
-
-					La \myref{fig-pro-exp4-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
-					La \myref{fig-pro-exp4-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-					\begin{myfigure}
-						\myimage{exp4-schema}
-						\mycaption[fig-pro-exp4-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-					\end{myfigure}
-					\begin{myTodo}{Images à compléter}{Il va falloir faire des photos du dispositif expérimental}
-						\begin{myfigure}
-							%\myimage{exp4-photo}
-							\mycaption[fig-pro-exp4-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-						\end{myfigure}
-					\end{myTodo}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp4-Visualisation]{Visualisation}
-					Dans cette quatrième et dernière expérimentation, les molécules étant très importantes, surtout pour le complexe de molécules \myNusENusG, nous avons décidé de donner un rendu secondaire aux atomes.
-					En effet, ils sont à présents rendus de manière transparente.
-					Cependant, nous verrons dans la section suivante que le coordinateur aura la possibilité de colorer les \myglos*{glo-Residu} au besoin.
-					Pour le reste, le rendu visuel est similaire à celui des expérimentations trois et quatre.
-					La \myref{fig-pro-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1} représente la molécule \myUbiquitin et la \myref{fig-pro-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2} représente le complexe de molécules \myNusENusG.
-
-					\begin{myfigure}
-						\myimage{protocole-render-exp4-ubiquitin}
-						\mycaption[fig-pro-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{1}}
-					\end{myfigure}
-					\begin{myfigure}
-						\myimage{protocole-render-exp4-nuse-nusg}
-						\mycaption[fig-pro-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2]{Représentation de la molécule \myNusENusG pour le scénario~\myscenario{2}}
-					\end{myfigure}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-pro-exp4-OutilsDisponibles]{Outils disponibles}
-				\end{mysubsubsection}
+				\begin{myfigure}
+					\myimage{protocole-render-fixed}
+					\mycaption[fig-pro-RepresentationDesAtomesFixesEnGris]{Représentation des atomes fixés en gris}
+				\end{myfigure}
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-pro-MethodeExperimentale]{Méthode expérimentale}
-			\begin{mysubsection}[sse-pro-exp1-PremiereExperimentation]{Première expérimentation}
+		\begin{mysection}[sec-pro-OutilsDeManipulation]{Outils de manipulation}
+			La plate-forme de base propose deux interfaces haptiques.
+			Ces deux interfaces haptiques sont utilisées comme interfaces de déformation de la molécule : des outils \mytool{tug}.
+			Pour comprendre ce que sont des outils de déformation, on peut se reporter à la \myref{sse-Shaddock-LesOutilsExistants}.
+			Au cours des trois premières expérimentations, seules quelques modifications du rendu visuel associés à ces outils sont effectués.
+			Cependant, la quatrième expérimentation apporte des modifications plus lourdes de cet outil que ce soit au niveau visuel ou au niveau haptique.
+			On pourra se reporter aux chapitres respectifs pour plus de détails.
+
+			De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
+			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sse-pro-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sse-pro-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp1-SpecificitesDeLaPremiereExperimentation]{Spécificités de la première expérimentation}
+			\begin{mysubsection}[sse-pro-exp1-Materiel]{Matériel}
+				Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
+				Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
+				Cependant, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
+				En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
+				C'est pourquoi, nous mettons un outil de manipulation de la molécule à disposition des sujets.
+				Ce nouvel outil nécessite l'ajout de quelques matériels.
+
+				L'outil de manipulation sera assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
+				L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
+				Dans ce cas, une machine de faible puissance est largement suffisante.
+				L'outil n'est pas partagé entre les utilisateurs.
+				En effet, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation.
+				L'interface sera donc placée devant le sujet en charge de cet outil.
+				Il est à noter que dans les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
+
+				Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
+				Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
+				Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
+				Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
+
+				Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
+				Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
+				C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
+				L'enregistrement est assuré par le logiciel \myAudacity.
+				Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
+
+				La \myref{fig-pro-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
+				La \myref{fig-pro-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+				\begin{myfigure}
+					\myimage{exp1-schema}
+					\mycaption[fig-pro-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{exp1-photo}
+					\mycaption[fig-pro-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp2-PremiereExperimentation]{Seconde expérimentation}
+			\begin{mysubsection}[sse-pro-exp1-Visualisation]{Visualisation}
+				Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
+				Cette molécule est suffisamment volumineuse pour ne pas nécessiter d'atome fixé dans la simulation.
+				Une représentation de cette molécule durant la première expérimentation est sur la \myref{fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation}.
+
+				\begin{myfigure}
+					\myimage{protocole-render-exp1-prion}
+					\mycaption[fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation]{Représentation de la molécule \myPrion pour la première expérimentation}
+				\end{myfigure}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp3-PremiereExperimentation]{Troisième expérimentation}
+			\begin{mysubsection}[sse-pro-exp1-OutilsDisponibles]{Outils disponibles}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp4-PremiereExperimentation]{Quatrième expérimentation}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
+			\begin{mysubsection}[sse-pro-exp2-Materiel]{Matériel}
+				Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
+				En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
+				Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
+				Cependant, la forme sous laquelle il est présenté n'est pas idéale.
+				L'outil de manipulation \mytool{grab} a posé quelques problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier cet outil.
+
+				Après quelques échanges avec un bio-informaticien, il est apparu qu'une souris~\myThreeD serait un outil plus approprié qu'une interface haptique.
+				En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes ce qui amène à des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
+				La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil de manipulation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
+				Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
+				Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil afin de stimuler les interactions.
+
+				En ce qui concerne l'utilisation des outils de déformation, chaque sujet d'un \myglos{glo-Binome} possède à sa disposition un outil de déformation.
+				Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
+				Dans ce cas, il est forcé de lâcher un des deux outils afin d'utiliser la souris~\myThreeD.
+				Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toute sélection effectuée avec tous les outils de déformation.
+
+				Les \myref{fig-pro-exp2-SchemaDuDispositifExperimental} et \myref{fig-pro-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
+
+				\begin{myfigure}
+					\myimage{exp2-schema}
+					\mycaption[fig-pro-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{exp2-photo}
+					\mycaption[fig-pro-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+				\end{myfigure}
 			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp2-Visualisation]{Visualisation}
+				Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
+				Ces molécules sont représentés avec les rendus graphiques de base (\myCPK et \myNewRibbon).
+				Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
+				Cette molécule ne peut pas être représentées avec tous ces atomes pour deux raisons.
+				Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
+				De plus, la précision de la déformation ne nécessite pas la présence des atomes.
+				C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
+
+				Des images représentants les différents scénarios dans leur état initial sont présentées.
+				La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} représente le scénario~\myscenario{1A}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B} représente le scénario~\myscenario{1B}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} représente le scénario~\myscenario{2A} et la \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représente le scénario~\myscenario{2B}.
+
+				\begin{myfigure}
+					\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-zipper-atom}
+					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{1A}}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-cage-atom}
+					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{1B}}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{protocole-render-exp2-trp-zipper-residue}
+					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{2A}}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{protocole-render-exp2-trp-cage-residue}
+					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
+				\end{myfigure}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp2-OutilsDisponibles]{Outils disponibles}
+			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
+			\begin{mysubsection}[sse-pro-exp3-Materiel]{Matériel}
+				La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
+				Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
+				Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
+				Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
+
+				Il faut noter que c'est la première expérimentation pour laquelle aucun outil de manipulation n'est fourni aux sujets.
+				En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil générateur de \myglos*{glo-ConflitDeCoordination} produirait surtout du chaos chez les \myglos*{glo-Quadrinome}.
+				Chaque sujet d'un \myglos{glo-Quadrinome} a un outil de déformation à sa disposition.
+				En ce qui concerne les \myglos*{glo-Binome}, chaque sujet peut utiliser deux outils dans une configuration \myglos*{glo-Bimanuel}.
+
+				Cette expérimentation sur le travail collaboratif de groupe (supérieur à deux sujets) est l'occasion de focaliser sur les communications qui seront certainement plus nombreuses.
+				Afin d'analyser ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée en hauteur derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
+				Cette caméra permet d'enregistrer la vidéo et le son.
+				Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
+
+				La \myref{fig-pro-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
+				La \myref{fig-pro-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+				\begin{myfigure}
+					\myimage{exp3-schema}
+					\mycaption[fig-pro-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{exp3-photo}
+					\mycaption[fig-pro-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+				\end{myfigure}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp3-Visualisation]{Visualisation}
+				La troisième expérimentation propose une tâche relativement similaire à la seconde expérimentation.
+				La principale différence concerne la taille des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation qui concernait des molécules d'une quinzaine de \myglos*{glo-Residu}.
+				La molécule \myPrion est utilisée pour le scénario~\myscenario{1} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1} et la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
+
+				\begin{myfigure}
+					\myimage{protocole-render-exp3-prion}
+					\mycaption[fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1]{Représentation de la molécule \myPrion pour le scénario~\myscenario{1}}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{protocole-render-exp3-ubiquitin}
+					\mycaption[fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
+				\end{myfigure}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp3-OutilsDisponibles]{Outils disponibles}
+			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp4-SpecificitesDeLaPremiereExperimentation]{Spécificités de la quatrième expérimentation}
+			\begin{mysubsection}[sse-pro-exp4-Materiel]{Matériel}
+				Dans cet quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
+				Deux sujets auront toujours à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sse-pro-exp4-OutilsDisponibles}.
+				Le troisième sujet aura à sa disposition trois outils dont deux basés sur une interface haptique.
+				Les deux interfaces haptiques utilisées sont un \myOmni et un \myDesktop, tous deux associés à une machine de faible puissance pour le serveur \myacro{acr-VRPN}.
+				De plus, ce troisième sujet aura accès à un outil de manipulation.
+				En effet, bien que les outils de manipulation sont générateurs de \myglos*{glo-ConflitDeCoordination}, il s'est avéré au cours de la troisième expérimentation que certaines situations requièrent un outil permettant d'orienter la scène.
+				Durant la première expérimentation, une interface haptique avait été utilisé mais n'était pas vraiment adapté pour cette fonctionnalité.
+				Au cours de la seconde expérimentation, c'est une souris~\myThreeD qui a remplacé l'interface haptique.
+				Bien que cet outil est très adapté pour cette fonctionnalité, il est relativement compliqué à prendre en main et nécessite un apprentissage.
+				Cet apprentissage n'est pas acceptable durant un processus expérimental de quelques dizaines de minutes.
+				C'est donc une simple souris \myUSB qui a été choisi comme outil de manipulation : il est un peu moins adapté à l'orientation qu'une souris~\myThreeD mais est nettement plus intuitif pour la plupart des sujets qui sont habitués à manipuler ce type de périphérique.
+
+				De la même manière que dans la troisième expérimentation, une caméra vidéo \mySony (\textsc{hdr-cx550}) a été installée derrière les sujets afin de filmer à la fois les sujets et l'écran de vidéoprojection.
+				Le son est également capter par la caméra.
+				Là encore, les vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
+
+				La \myref{fig-pro-exp4-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
+				La \myref{fig-pro-exp4-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+				\begin{myfigure}
+					\myimage{exp4-schema}
+					\mycaption[fig-pro-exp4-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+				\end{myfigure}
+				\begin{myTodo}{Images à compléter}{Il va falloir faire des photos du dispositif expérimental}
+					\begin{myfigure}
+						%\myimage{exp4-photo}
+						\mycaption[fig-pro-exp4-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{myTodo}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp4-Visualisation]{Visualisation}
+				Dans cette quatrième et dernière expérimentation, les molécules étant très importantes, surtout pour le complexe de molécules \myNusENusG, nous avons décidé de donner un rendu secondaire aux atomes.
+				En effet, ils sont à présents rendus de manière transparente.
+				Cependant, nous verrons dans la section suivante que le coordinateur aura la possibilité de colorer les \myglos*{glo-Residu} au besoin.
+				Pour le reste, le rendu visuel est similaire à celui des expérimentations trois et quatre.
+				La \myref{fig-pro-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1} représente la molécule \myUbiquitin et la \myref{fig-pro-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2} représente le complexe de molécules \myNusENusG.
+
+				\begin{myfigure}
+					\myimage{protocole-render-exp4-ubiquitin}
+					\mycaption[fig-pro-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{1}}
+				\end{myfigure}
+				\begin{myfigure}
+					\myimage{protocole-render-exp4-nuse-nusg}
+					\mycaption[fig-pro-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2]{Représentation de la molécule \myNusENusG pour le scénario~\myscenario{2}}
+				\end{myfigure}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-pro-exp4-OutilsDisponibles]{Outils disponibles}
+			\end{mysubsection}
+		\end{mysection}
+	\end{mychapter}
+	\begin{mychapter}[cha-pro-MethodeExperimentale]{Méthode expérimentale}
+		\begin{mysection}[sec-pro-exp1-PremiereExperimentation]{Première expérimentation}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp2-PremiereExperimentation]{Seconde expérimentation}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp3-PremiereExperimentation]{Troisième expérimentation}
+		\end{mysection}
+		\begin{mysection}[sec-pro-exp4-PremiereExperimentation]{Quatrième expérimentation}
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-Questionnaires]{Questionnaires}
