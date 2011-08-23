@@ -3705,12 +3705,12 @@
 				Le troisième sujet aura à sa disposition trois outils dont deux basés sur une interface haptique.
 				Les deux interfaces haptiques utilisées sont un \myOmni et un \myDesktop, tous deux associés à une machine de faible puissance pour le serveur \myacro{acr-VRPN}.
 				De plus, ce troisième sujet aura accès à un outil de manipulation.
-				En effet, bien que les outils de manipulation sont générateurs de \myglos*{glo-ConflitDeCoordination}, il s'est avéré au cours de la troisième expérimentation que certaines situations requièrent un outil permettant d'orienter la scène.
-				Durant la première expérimentation, une interface haptique avait été utilisé mais n'était pas vraiment adapté pour cette fonctionnalité.
+				En effet, bien que les outils d'orientation soient générateurs de \myglos*{glo-ConflitDeCoordination}, il s'est avéré au cours de la troisième expérimentation que certaines situations requièrent un tel outil.
+				Durant la première expérimentation, une interface haptique avait été utilisé mais n'était pas vraiment adaptée pour cette fonctionnalité.
 				Au cours de la seconde expérimentation, c'est une souris~\myThreeD qui a remplacé l'interface haptique.
-				Bien que cet outil est très adapté pour cette fonctionnalité, il est relativement compliqué à prendre en main et nécessite un apprentissage.
-				Cet apprentissage n'est pas acceptable durant un processus expérimental de quelques dizaines de minutes.
-				C'est donc une simple souris \myUSB qui a été choisi comme outil de manipulation : il est un peu moins adapté à l'orientation qu'une souris~\myThreeD mais est nettement plus intuitif pour la plupart des sujets qui sont habitués à manipuler ce type de périphérique.
+				Bien que cet outil soit très adapté pour cette fonctionnalité, il est relativement complexe à prendre en main et nécessite un apprentissage.
+				Cet apprentissage n'est pas acceptable durant un processus expérimental d'environ une heure.
+				C'est donc une simple souris \myUSB qui a été choisi comme outil de manipulation : il est un peu moins adapté pour l'orientation d'une molécule qu'une souris~\myThreeD mais est nettement plus intuitif pour la plupart des sujets qui sont habitués à manipuler ce type de périphérique.
 
 				De la même manière que dans la troisième expérimentation, une caméra vidéo \mySony (\textsc{hdr-cx550}) a été installée derrière les sujets afin de filmer à la fois les sujets et l'écran de vidéoprojection.
 				Le son est également capter par la caméra.
@@ -3747,6 +3747,43 @@
 				\end{myfigure}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-exp4-OutilsDeManipulation]{Outils de manipulation}
+				Pour cette expérimentation, des modifications ont été apportés aux différents outils.
+				En effet, nous souhaitons apporter une assistance haptique afin d'augmenter la communication sensorielle entre les sujets.
+				Les outils modifiés sont l'outil de désignation, l'outil de déformation par atome et l'outil de déformation par molécule que nous nommerons outil de manipulation\footnote{L'outil de déformation par molécule applique une force à l'ensemble des atomes de la molécule et produit ainsi un déplacement de la molécule en bloc; cette opération s'apparente plus à une translation de la molécule qu'à une déformation.}.
+				Ces outils sont décrits dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
+				\begin{mysubsubsection}[sss-pro-exp4-OutilDeDesignation]{Outil de désignation}
+					Le coordinateur est en charge d'effectuer les désignations envers les opérateurs.
+					Nous souhaitons fournir au coordinateur un moyen de connaître l'état de la désignation à chaque instant.
+					Une vibration est donc générée sur l'outil de désignation lorsque le coordinateur désigne une cible.
+					Le coordinateur est renseigné sur l'acceptation de cette désignation par l'arrêt de cette vibration.
+					De plus, tant que la cible désignée par le coordinateur n'aura pas été acceptée, le coordinateur ne pourra pas désigner une autre cible.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-pro-exp4-OutilDeDeformation]{Outil de déformation}
+					Un outil de déformation au niveau atomique est fourni aux deux opérateurs présents lors de l'expérimentation.
+					Nous souhaitons donner la possibilité au coordinateur d'indiquer rapidement qu'une désignation a été effectuée.
+					Lorsque le coordinateur désigne une cible, tous les outils des opérateurs sont soumis à une vibration.
+					Il est à noter que si les opérateurs sont en train de déformer la molécule, ils ne ressentent pas la vibration mais dès qu'ils relâchent leur sélection, la vibration leur indique qu'une désignation est en cours.
+					Les opérateurs ont la possibilité d'accepter ou non la désignation.
+					À l'instant où un des deux opérateur accepte la désignation, les vibrations s'arrêtent pour tous les opérateurs.
+					L'opérateur qui a accepté la désignation est alors attiré vers la cible à déformer.
+					De plus, il se voit offrir le pouvoir de déformer non plus au niveau atomique mais au niveau résiduel ce qui lui donne une capacité étendue.
+					L'objectif de cette augmentation des capacités est de stimuler l'envie d'interagir avec le coordinateur.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-pro-exp4-OutilDeManipulation]{Outil de manipulation}
+					Un dernier outil, détenu par le coordinateur, permet le déplacement de la molécule (outil de déformation au niveau moléculaire).
+					Cet outil va permettre au coordinateur de déplacer la molécule comme un bloc pour la rapprocher de sa cible finale.
+					Afin d'aider le coordinateur dans cette tâche, nous avons souhaiter prendre en compte les actions des opérateurs pour assister le déplacement de la molécule.
+					Ainsi, lorsque les opérateurs effectuent une déformation, une infime partie de l'effort déployé est reporté sur l'ensemble de la molécule afin de la déplacer avec cette même intention.
+					Les efforts reportés sont relativement faibles pour ne pas perturber la manipulation du coordinateur mais modifient sensiblement le déplacement de la molécule.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-pro-exp4-OutilDOrientation]{Outil d'orientation}
+					Pour finir, la souris permettant de modifier l'orientation de la scène est assignée au coordinateur.
+					La souris est donc le troisième périphérique destiné au coordinateur.
+					Le choix de surcharger le coordinateur est délibéré afin de limiter au maximum les manipulations à la souris.
+					En effet, la modification de l'orientation de la molécule ne modifie pas la position des curseurs qui se trouvent dans un référentiel différent.
+					En d'autres termes, la rotation de la molécule va perturber les opérateurs qui sont en train d'effectuer des déformations en modifiant la position des atomes.
+					En mettant à disposition la souris comme troisième outil pour le coordinateur, l'objectif est qu'elle soit peu utilisée, seulement lorsque c'est réellement nécessaire.
+				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
