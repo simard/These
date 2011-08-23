@@ -107,6 +107,15 @@
 	\part{#2}%
 	\label{#1}%
 }{}
+\newenvironment{mypart-}[1]{%
+	\phantomsection%
+	\part*{#1}%
+}{}
+\newenvironment{mypart+}[1]{%
+	\phantomsection%
+	\addcontentsline{toc}{part}{#1}%
+	\part*{#1}%
+}{}
 \newenvironment{mychapter}[2][]{%
 	\phantomsection%
 	\chapter{#2}%
@@ -115,20 +124,56 @@
 		\myminitoc%
 	\fi%
 }{}
+\newenvironment{mychapter-}[1]{%
+	\phantomsection%
+	\chapter*{#1}%
+}{}
+\newenvironment{mychapter+}[1]{%
+	\phantomsection%
+	\addcontentsline{toc}{chapter}{#1}%
+	\chapter*{#1}%
+}{}
 \newenvironment{mysection}[2][]{%
 	\phantomsection%
 	\section{#2}%
 	\label{#1}%
+}{}
+\newenvironment{mysection-}[1]{%
+	\phantomsection%
+	\section*{#1}%
+}{}
+\newenvironment{mysection+}[1]{%
+	\phantomsection%
+	\addcontentsline{toc}{section}{#1}%
+	\section*{#1}%
 }{}
 \newenvironment{mysubsection}[2][]{%
 	\phantomsection%
 	\subsection{#2}%
 	\label{#1}%
 }{}
+\newenvironment{mysubsection-}[1]{%
+	\phantomsection%
+	\subsection*{#1}%
+}{}
+\newenvironment{mysubsection+}[1]{%
+	\phantomsection%
+	\addcontentsline{toc}{subsection}{#1}%
+	\subsection*{#1}%
+}{}
 \newenvironment{mysubsubsection}[2][]{%
 	\phantomsection%
 	\subsubsection{#2}%
 	\label{#1}%
+}{}
+\newenvironment{mysubsubsection-}[1]{%
+	\phantomsection%
+	\subsubsection*{#1}%
+}{}
+\newenvironment{mysubsubsection+}[1]{%
+	\phantomsection%
+	\addcontentsline{toc}{subsubsection}{#1}%
+	\subsubsection*{#1}%
 }{}
 \newenvironment{myparagraph}[2][]{%
 	\phantomsection%
