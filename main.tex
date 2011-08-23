@@ -588,271 +588,50 @@
 			Finalement, la collaboration de groupe sera abordée au niveau de la troisième et dernière étude sur le travail collaboratif.
 
 			L'expérimentation est présentée en plusieurs parties.
-			Nous commencerons par présenter les objectifs et les hypothèses de cette première expérimentation dans la \myref{sec-exp1-Presentation}.
-			Le dispositif expérimental est présenté dans la \myref{sec-exp1-DispositifExperimentalEtMateriel}.
-			La \myref{sec-exp1-Methode} expose la tâche réalisée ainsi que les différentes variables de l'expérimentation.
+			Nous commencerons par présenter les objectifs et les hypothèses de cette première expérimentation dans la \myref{sec-exp1-Contexte}.
+			Les détails de l'expérimentation seront abordés dans la \myref{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
 			Enfin, les résultats sont analysés dans la \myref{sec-exp1-Resultats} puis une synthèse de cette expérimentation est exposée dans la \myref{sec-exp1-Synthese}.
 		\end{mysection}
-		\begin{mysection}[sec-exp1-Presentation]{Présentation}
-			\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
-				Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
-				Ces tâches sont cruciales car elles ont un impact important sur les tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
-				Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers cette étude.
+		\begin{mysection}[sec-exp1-Contexte]{Contexte}
+			Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
+			Ces tâches sont cruciales car elles ont un impact important sur les tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
+			Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers cette étude.
 
-				La recherche en environnement virtuel est une tâche élémentaire relativement peu explorée en biologie moléculaire.
-				Cependant, on trouve de nombreux travaux concernant la \og recherche de chemin \fg ou \myemph{wayfinding} en anglais.
-				\mycite[author]{Darken-1996a} consacre une thèse à la recherche de chemin en environnement virtuel en adaptant des solutions du monde réel.
-				Plus récemment, \mycite[author]{Menelas-2010} s'est intéressé au rendu multi-modal pour la perception de la mécanique des fluides.
-				Une des problématiques est la localisation de structures mécaniques particulières (vortex) dans le fluide à l'aide de retour audio-haptique.
+			La recherche en environnement virtuel est une tâche élémentaire relativement peu explorée en biologie moléculaire.
+			Cependant, on trouve de nombreux travaux concernant la \og recherche de chemin \fg ou \myemph{wayfinding} en anglais.
+			\mycite[author]{Darken-1996a} consacre une thèse à la recherche de chemin en environnement virtuel en adaptant des solutions du monde réel.
+			Plus récemment, \mycite[author]{Menelas-2010} s'est intéressé au rendu multi-modal pour la perception de la mécanique des fluides.
+			Une des problématiques est la localisation de structures mécaniques particulières (vortex) dans le fluide à l'aide de retour audio-haptique.
 
-				La recherche étant une tâche qui peut s'avérer complexe devant la quantité d'informations toujours grandissante, la collaboration s'est imposé comme une des solutions de ces dernières années.
-				La recherche collaborative est un champ de recherche assez largement étudié, notamment en ce qui concerne les moteurs de recherche collaboratifs.
-				\mycite[author]{Pickens-2007} explorent la recherche collaborative indirecte en utilisant les données de certains utilisateurs pour améliorer les recherches d'autres utilisateurs.
-				La thèse de \mycite[author]{Foley-2008} s'intéresse plus précisément à l'interaction synchrone des utilisateurs pour l'amélioration des résultats de recherche.
-				Certaines études proposent même représenter les informations de l'internet dans un environnement virtuel en \myThreeD comme \mycite[author]{Benford-1999} par exemple.
+			La recherche étant une tâche qui peut s'avérer complexe devant la quantité d'informations toujours grandissante, la collaboration s'est imposé comme une des solutions de ces dernières années.
+			La recherche collaborative est un champ de recherche assez largement étudié, notamment en ce qui concerne les moteurs de recherche collaboratifs.
+			\mycite[author]{Pickens-2007} explorent la recherche collaborative indirecte en utilisant les données de certains utilisateurs pour améliorer les recherches d'autres utilisateurs.
+			La thèse de \mycite[author]{Foley-2008} s'intéresse plus précisément à l'interaction synchrone des utilisateurs pour l'amélioration des résultats de recherche.
+			Certaines études proposent même représenter les informations de l'internet dans un environnement virtuel en \myThreeD comme \mycite[author]{Benford-1999} par exemple.
 
-				Cette première expérimentation a pour objectif d'explorer la recherche de \myglos*{glo-Residu} durant une simulation moléculaire.
-				La recherche s'effectuera dans un \myacro{acr-EVC}.
-				L'expérimentation a pour objectif principal de comparer les performances d'un \myglos{glo-Monome} et d'un \myglos{glo-Binome} sur cette tâche de recherche.
-				Les performances représentent à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
-				Un \myglos{glo-Binome} sera-t-il plus performant qu'un \myglos{glo-Monome} ?
+			Cette première expérimentation a pour objectif d'explorer la recherche de \myglos*{glo-Residu} durant une simulation moléculaire.
+			La recherche s'effectuera dans un \myacro{acr-EVC}.
+			L'expérimentation a pour objectif principal de comparer les performances d'un \myglos{glo-Monome} et d'un \myglos{glo-Binome} sur cette tâche de recherche.
+			Les performances représentent à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
+			Un \myglos{glo-Binome} sera-t-il plus performant qu'un \myglos{glo-Monome} ?
 
-				De plus, les méthodes et les stratégies de travail seront étudiées.
-				C'est principalement l'évolution de ces stratégies au sein des \myglos*{glo-Binome} qui focalisera notre attention.
-				Le travail en \myglos{glo-Binome} permet de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
+			De plus, les méthodes et les stratégies de travail seront étudiées.
+			C'est principalement l'évolution de ces stratégies au sein des \myglos*{glo-Binome} qui focalisera notre attention.
+			Le travail en \myglos{glo-Binome} permet de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
 
-				Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
-				Pour cela, l'évaluation sera confiée aux sujets.
-				L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-Hypotheses]{Hypothèses}
-				Nous émettons plusieurs hypothèses concernant cette première expérimentation.
-				Les hypothèses concernent les performances des \myglos*{glo-Binome} ainsi que leurs stratégies de travail.
-				Deuxièmement, une évaluation de la plate-forme est nécessaire.
-				Des hypothèses sont formulées pour noter l'utilisabilité de la plate-forme ainsi que la sensation de collaboration des utilisateurs.
-				\begin{myparagraph}[par-exp1-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
-					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
-					Les performances seront évaluées en terme de temps de réalisation de la tâche mais aussi en terme de ressources utilisées comme le nombre de sélections.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp1-StrategiesVariablesEnFonctionDesBinomes]{\myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome}}
-					Nous émettons l'hypothèse que les \myglos*{glo-Binome} adopteront des stratégies de collaboration différentes en fonction des affinités des sujets et de leurs espaces de travail respectifs.
-					L'identification des différentes stratégies permettra de les évaluer et de trouver la plus performante.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp1-LesSujetsPreferentLeTravailEnBinome]{\myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}}
-					Notre troisième hypothèse est de nature qualitative et suppose que les utilisateurs auront une préférence pour le travail en \myglos{glo-Binome} comparé au travail en \myglos{glo-Monome}.
-					Le travail en \myglos{glo-Binome} créé une collaboration sociale qui est préférée en général.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp1-LaPlateFormeEstApprecieeDesUtilisateurs]{\myhypothesis{4} La plate-forme est appréciée des utilisateurs}
-					Notre dernière hypothèse concerne la validation de notre plate-forme en terme d'utilisabilité (intuitivité, ergonomie, \myetc).
-					Elle est nécessaire pour la poursuite des études de cette thèse.
-				\end{myparagraph}
-			\end{mysubsection}
+			Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
+			Pour cela, l'évaluation sera confiée aux sujets.
+			L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
 		\end{mysection}
-		\begin{mysection}[sec-exp1-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-			Dans cette section est exposé l'ensemble du dispositif expérimental utilisé lors de l'expérience.
-			L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
-			Nous commencerons par présenter le matériel nécessaire dans la \myref{sse-exp1-DispositifTechnique}.
-			Ensuite, la \myref{sse-exp1-DispositionDesElements} détaillera la disposition de chaque élément dans le dispositif expérimental.
-			Enfin, nous terminerons par les visualisations proposées et les interactions possibles des sujets sur le dispositif expérimental dans la \myref{sse-exp1-VisualisationEtInteraction}.
-			\begin{mysubsection}[sse-exp1-DispositifTechnique]{Dispositif technique}
-				La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
-				\begin{itemize}
-					\item \mynum{1}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
-					\item \mynum{2}~ordinateurs de faible puissance;
-					\item \mynum{3}~interfaces haptiques \myOmni;
-					\item \mynum{1}~vidéoprojecteur \myCasioXJ;
-					\item \mynum{1}~grand écran de vidéoprojection;
-					\item \mynum{1}~écran \myLCD \mynum[pouces]{17};
-					\item \mynum{1}~microphone de bureau.
-				\end{itemize}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-DispositionDesElements]{Disposition des éléments}
-				Durant la phase expérimentale, les sujets sont placés en face de l'écran de vidéoprojection avec le vidéoprojecteur derrière eux.
-				La visualisation du grand écran est accessible à tous les sujets : c'est une vue \myemph{partagée}.
-				Dans le cas d'un \myglos{glo-Binome}, les sujets sont placés à côté l'un de l'autre.
-				Il n'y a aucun obstacle entre eux afin de ne pas gêner les éventuelles communications (verbales ou gestuelles).
-				De plus, les sujets auront face à eux un écran \myLCD.
-
-				Face aux sujets se trouvent trois interfaces haptiques.
-				L'interface du milieu est l'outil de manipulation \mytool{grab}.
-				Les deux interfaces sur les côtés sont des outils de déformation \mytool{tug} \myref*{sse-Shaddock-LesOutilsExistants}.
-
-				L'expérimentateur est placé derrière les sujets afin de ne pas gêner le champ visuel.
-				Il dispose d'un écran permettant de lancer et de stopper les scénarios.
-				La surveillance du bon déroulement de l'expérimentation est effectuée depuis ce poste.
-
-				Finalement, le microphone est placé sur la table face aux sujets afin d'enregistrer tous les échanges verbaux.
-				Les enregistrements sont effectués à l'aide du logiciel \myAudacity.
-
-				La \myref{fig-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
-				La \myref{fig-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-				\begin{myfigure}
-					\myimage{exp1-schema}
-					\mycaption[fig-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp1-photo}
-					\mycaption[fig-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-VisualisationEtInteraction]{Visualisation et interaction}
-				La vue complète de la molécule est projetée sur le grand écran.
-				Les rendus graphiques utilisés sur \myacro{acr-VMD} pour afficher la molécule sont les rendus suivants \myref*{sss-Shaddock-LesRendusGraphiques} :
-				\begin{itemize}
-					\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
-					\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
-					\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
-				\end{itemize}
-
-				L'écran \myLCD est utilisé pour afficher les \myglos*{glo-Residu} à chercher dans la molécule \myref*{sse-exp1-Tache}.
-				Un simple rendu \myCPK est utilisé comme on peut le voir sur la \myref{tab-exp1-ListeDesResidusRecherches}.
-
-				Parmi les trois interfaces haptiques \myOmni, l'outil \mytool{grab}, placé au centre est accessible depuis chacune des deux chaises à disposition.
-				Dans le cas d'un \myglos{glo-Binome}, un seul des deux sujets utilisera l'outil durant tout la durée de l'expérimentation.
-				Cependant, le choix du sujet qui utilisera cet outil est déterminé par négociation au sein du \myglos{glo-Binome}.
-
-				Concernant les deux outils \mytool{tug}, ils sont répartis entre les deux sujets dans le cas d'un \myglos{glo-Binome}.
-				Cependant, seulement un outil \mytool{tug} est laissé à disposition dans le cas d'un \myglos{glo-Monome}.
-				Les sujets peuvent se placer sur la chaise (droite ou gauche) qu'ils souhaitent et ainsi se mettre dans les meilleures conditions concernant leur main dominante.
-			\end{mysubsection}
-		\end{mysection}
-		\begin{mysection}[sec-exp1-Methode]{Méthode}
-			\begin{mysubsection}[sse-exp1-Sujets]{Sujets}
-				\mysummary{exp1-subjects.tex} avec une distribution d'âge de \mysummary{exp1-age.tex} ont participé à cette expérimentation.
-				Ils ont tous été recrutés au sein du \myacro{acr-LIMSI} et sont chercheurs, assistants de recherche, étudiants en thèse ou stagiaires dans les domaines suivants~:
-				\begin{itemize}
-					\item linguistique et traitement automatique de la parole;
-					\item réalité virtuelle et système immersifs;
-					\item audio-acoustique.
-				\end{itemize}
-
-				Tous les sujets sont francophones.
-				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant), de déficience audio ou de déficience moteur du haut du corps.
-				Les sujets ne sont pas rémunérés pour l'expérimentation.
-
-				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
-				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation.
-				Cependant, l'objectif de l'expérimentation n'est pas révélé.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-Variables]{Variables}
-				\begin{mysubsubsection}[sss-exp1-VariablesIndependantes]{Variables indépendantes}
-					\begin{myparagraph}[par-exp1-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux valeurs possibles : \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
-						\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de \myglos*{glo-Binome}.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \myref*{tab-exp1-ListeDesResidusRecherches}.
-						Différents niveaux de complexité caractérisent chaque \myglos{glo-Residu} \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
-					\end{myparagraph}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp1-VariablesDependantes]{Variables dépendantes}
-					\begin{myparagraph}[par-exp1-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
-						Il n'y a pas de limite de temps pour réaliser la tâche.
-						Ce temps est divisé en deux phases bien distinctes :
-						\begin{description}
-							\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
-								Cette recherche peut être visuelle en orientant et en déplaçant la molécule.
-								Elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles du centre de la molécule.
-							\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a identifié visuellement le \myglos{glo-Residu}.
-								Elle est constituée d'une phase de sélection puis d'une phase d'extraction hors de la molécule.
-						\end{description}
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-LaDistanceEntreLesEspacesDeTravail]{\myvard{2} La distance entre les espaces de travail}
-						Cette mesure est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} correspondant aux outils \mytool{tug}.
-						Elle est mesurée dans le monde réel mais peut être convertie dans l'environnement virtuel (à l'échelle de la molécule).
-						L'ordre de grandeur de cette mesure est le centimètre.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-CommunicationsVerbales]{\myvard{3} Communications verbales}
-						L'enregistrement des communications verbales permet de mesurer la quantité de temps de parole de chaque sujets pour chaque étape de l'expérimentation.
-						Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
-
-						\begin{myfigure}
-							\psset{unit=0.1\textwidth} % Fill entirely the page width
-							\begin{myps}(0,-1.75)(10,1.5)
-								\psset{linewidth=1pt,linecolor=black}%
-								\psset{fillstyle=solid}%
-								\psframe[fillcolor=mylightblue](0,-0.5)(6,0.5)%
-								\pspolygon[fillcolor=mylightred](6,-0.5)(6,0.5)(9,0.5)(10,0)(9,-0.5)%
-								\uput{16pt}[180](10,0){\LARGE\sl\textcolor{white!33}{temps}}
-								\psbrace[ref=lC,rot=-90,nodesepA=-3,nodesepB=-0.25](6,0.5)(0,0.5){%
-									\parbox{6\psxunit}{%
-										\centering\textcolor{myblue}{Temps de recherche}%
-									}%
-								}%
-								\psbrace[ref=lC,rot=-90,nodesepA=-2,nodesepB=-0.25](10,0.5)(6,0.5){%
-									\parbox{4\psxunit}{%
-										\centering\textcolor{myred}{Temps de sélection}%
-									}%
-								}%
-								\psframe[fillcolor=myblue](1,-0.5)(1.5,0.5)
-								\psframe[fillcolor=myblue](3,-0.5)(4.5,0.5)
-								\psframe[fillcolor=myblue](4.8,-0.5)(5,0.5)
-								\psframe[fillcolor=myred](6.5,-0.5)(7.5,0.5)
-								\psframe[fillcolor=myred](8,-0.5)(8.25,0.5)
-								\pnode(1.25,-0.5){verbal1}
-								\pnode(3.75,-0.5){verbal2}
-								\pnode(4.9,-0.5){verbal3}
-								\pnode(7,-0.5){verbal4}
-								\pnode(8.125,-0.5){verbal5}
-								\rput(5,-1.5){%
-									\Rnode{verbal}{%
-										\psframebox[linestyle=none]{\centering Communication verbale}%
-									}%
-								}%
-								\psset{linearc=0.1,angleA=-90}
-								\ncdiagg{<-}{verbal1}{verbal}
-								\ncdiagg{<-}{verbal2}{verbal}
-								\ncdiagg{<-}{verbal3}{verbal}
-								\ncdiagg{<-}{verbal4}{verbal}
-								\ncdiagg{<-}{verbal5}{verbal}
-							\end{myps}
-							\mycaption[fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu]{Étapes de la communication verbale pour la recherche d'un \myglosnl{glo-Residu}}
-						\end{myfigure}
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-AffiniteEntreLesSujets]{\myvard{4} Affinité entre les sujets}
-						Le degré d'affinité -- concernant uniquement les \myglos*{glo-Binome} -- est compris entre \mynum{1} et \mynum{5} selon les critères suivants :
-						\begin{enumerate}
-							\item Les sujets ne se connaissent pas;
-							\item Les sujets travaillent dans la même entreprise, le même laboratoire;
-							\item Les sujets travaillent dans la même équipe, sur les mêmes projets;
-							\item Les sujets travaillent ensemble, sont dans le même bureau;
-							\item Les sujets sont amis proches.
-						\end{enumerate}
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-ForceMoyenneAppliqueeParLesSujets]{\myvard{5} Force moyenne appliquée par les sujets}
-						Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
-						Une valeur moyenne de cette force est calculée pour être analysée.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp1-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
-						Un questionnaire est proposé à tous les sujets.
-						Il est constitué de trois ou quatre parties respectivement destinés aux \myglos*{glo-Monome} et \myglos*{glo-Binome}.
-						Le questionnaire fourni aux sujets est disponible dans la \myref{sec-Questionnaires-PremiereExperimentation}.
-					\end{myparagraph}
-				\end{mysubsubsection}
-			\end{mysubsection}
+		\begin{mysection}[sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire]{Expérimentation de recherche de résidu en simulation moléculaire}
 			\begin{mysubsection}[sse-exp1-Tache]{Tâche}
 				La tâche proposée consiste à trouver puis à extraire des \myglos*{glo-Residu} d'une molécule.
 				Les \myglos*{glo-Residu} sont des groupes d'atomes.
+				Trois molécules sont proposées dans le cadre de cette expérimentation.
+				La molécule \myTRPZIPPER sera utilisée pour la procédure d'apprentissage de la plate-forme.
+				Les molécules \myTRPCAGE et \myPrion sont utilisées pour la tâche de recherche et d'extraction de \myglos*{glo-Residu} : chaque molécules possède \mynum{5}~\myglos*{glo-Residu} à extraire.
 				Tous les \myglos*{glo-Residu} à rechercher sont affichés dans la \myref{tab-exp1-ListeDesResidusRecherches}.
-				Trois molécules sont proposées dans le cadre de cette expérimentation :
-				\begin{description}
-					\item[\myTRPZIPPER]
-						La molécule \myTRPZIPPER \mycite{Cochran-2001} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1LE1}{1LE1} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-						Cette molécule contient \mynum{218}~atomes dont \mynum{12}~\myglos*{glo-Residu}.
-						Elle est peu complexe et est seulement être utilisée pour un entraînement et un apprentissage des outils de manipulation.
-					\item[\myTRPCAGE]
-						La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnotemark[\value{footnote}].
-						Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
-						C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de \mynum{5}~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculeTRPCAGE}.
-					\item[\myPrion]
-						La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
-						Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
-						C'est une des deux molécules proposées pour la tâche de recherche et d'extraction de \mynum{5}~\myglos*{glo-Residu} \myref*{tab-exp1-ListeDesResidusRecherches-ResidusSurLaMoleculePrion}.
-				\end{description}
+				Pour une description plus précises des molécules, se reporter à la \myref{sec-pro-PresentationsDesMolecules}.
 
 				\begin{mytable}
 					\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des \myglosnl*{glo-Residu} recherchés}
@@ -1017,33 +796,13 @@
 				Pour effectuer ces étape de sélection, les sujets disposent de l'outil \mytool{tug}.
 				Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{sse-Shaddock-LesOutilsExistants}.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-Procedure]{Procédure}
-				L'expérimentation débute par une étape d'apprentissage avec la molécule \myTRPZIPPER.
-				L'apprentissage est destiné à familiariser les sujets avec la plate-forme, les outils de manipulation et la tâche à réaliser.
-				Cette phase dure maximum \mynum[mn]{5}.
-				L'expérimentateur est disponible pour répondre aux questions des sujets.
-
-				Lorsque l'étape d'apprentissage est terminée, les sujets sont soumis successivement au \mynum{10}~\myglos*{glo-Residu}.
-				Lorsqu'un \myglos{glo-Residu} est trouvé, sélectionné puis extrait, l'application est arrêtée.
-				Un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \myglos*{glo-Residu} à chercher.
-				L'enregistrement audio est démarré à la fin de l'étape d'apprentissage.
-
-				L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre aléatoire afin d'éviter un biais lié à l'apprentissage de la plate-forme et de la tâche.
-				Les sujets doivent trouver et extraire dix \myglos*{glo-Residu} en \myglos{glo-Monome} et dix \myglos{glo-Residu} en \myglos{glo-Binome}.
-				Toujours pour éviter un biais lié à l'apprentissage, les sujets sont soumis aux tâches en \myglos{glo-Monome} et en \myglos{glo-Binome} de façon alternée selon les trois combinaisons suivantes :
-				\begin{enumerate}
-					\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}, puis le \myglos{glo-Binome} \myuser{AB};
-					\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{B};
-					\item Le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}.
-				\end{enumerate}
-
-				Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}), ils sont soumis au remplissage du questionnaire.
-				Chaque sujet répond au questionnaire seul, sans communiquer avec son partenaire.
-
-				Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp1-SyntheseDeLaProcedureExperimentale}.
+			\begin{mysubsection}[sse-exp1-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
+				L'expérimentation est basée sur le dispositif expérimental décrit dans le \myref{cha-pro-DispositifExperimental}.
+				Cependant, certains choix expérimentaux concernant cette expérimentation de recherche en simulation moléculaire sont détaillés dans les sections suivantes.
+				Les détails à propos de la méthode expérimentale, présents dans la \myref{sec-met-exp1-PremiereExperimentation}, sont résumés dans le \myref{tab-exp1-SyntheseDeLaMethodeExperimentale}.
 
 				\begin{mytable}
-					\mycaption[tab-exp1-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+					\mycaption[tab-exp1-SyntheseDeLaMethodeExperimentale]{Synthèse de la méthode expérimentale}
 					\newcommand{\mytitlecolumn}[2]{%
 						\multirow{#1}*{%
 							\begin{minipage}{6em}%
@@ -1062,19 +821,19 @@
 						\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs                                             \\
 						\mymiddlerule[\heavyrulewidth]
 						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}      \\
-																	& \myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome} \\
-																	& \myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}    \\
-																	& \myhypothesis{4} La plate-forme est appréciée des utilisateurs               \\
+						                                          & \myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome} \\
+						                                          & \myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}    \\
+						                                          & \myhypothesis{4} La plate-forme est appréciée des utilisateurs               \\
 						\mymiddlerule
 						\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                  \\
-																	& \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
+						                                          & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
 						\mymiddlerule
 						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
-																	& \myvard{2} Distance entre les espaces de travail                             \\
-																	& \myvard{3} Communication verbales                                            \\
-																	& \myvard{4} Affinités entre les sujets                                        \\
-																	& \myvard{5} Force moyenne appliquée par le sujet                              \\
-																	& \myvard{6} Réponses qualitatives                                             \\
+						                                          & \myvard{2} Distance entre les espaces de travail                             \\
+						                                          & \myvard{3} Communication verbales                                            \\
+						                                          & \myvard{4} Affinités entre les sujets                                        \\
+						                                          & \myvard{5} Force moyenne appliquée par le sujet                              \\
+						                                          & \myvard{6} Réponses qualitatives                                             \\
 						\mymiddlerule[\heavyrulewidth]
 						\multicolumn{2}{c}{%
 							\small%
@@ -1095,6 +854,61 @@
 						\mybottomrule
 					\end{mytabular}
 				\end{mytable}
+				\begin{mysubsubsection}[sss-exp1-Materiel]{Matériel}
+					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
+					Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
+					Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sss-exp1-OutilsDeManipulation}.
+					Ce nouvel outil nécessite l'ajout de quelques matériels.
+
+					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
+					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
+					Dans ce cas, une machine de faible puissance est largement suffisante.
+					L'interface est placée devant le sujet en charge de cet outil.
+
+					Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
+					Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
+					Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
+					Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
+
+					Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
+					Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
+					C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
+					L'enregistrement est assuré par le logiciel \myAudacity.
+					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
+
+					La \myref{fig-pro-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
+					La \myref{fig-pro-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+					\begin{myfigure}
+						\myimage{exp1-schema}
+						\mycaption[fig-pro-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp1-photo}
+						\mycaption[fig-pro-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp1-Visualisation]{Visualisation}
+					Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
+					Cette molécule est suffisamment volumineuse pour ne pas nécessiter d'atome fixé dans la simulation.
+					Une représentation de cette molécule durant la première expérimentation est sur la \myref{fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation}.
+
+					\begin{myfigure}
+						\myimage{protocole-render-exp1-prion}
+						\mycaption[fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation]{Représentation de la molécule \myPrion pour la première expérimentation}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp1-OutilsDeManipulation]{Outils de manipulation}
+					Durant une tâche de recherche, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
+					En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
+					C'est pourquoi, nous mettons un outil d'orientation de la molécule à disposition des sujets.
+
+					Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de déplacer et de l'orienter.
+					Aucune modification par rapport à l'outil déjà proposé par \myacro{acr-VMD} n'a été ajoutée.
+					Cependant, l'outil n'est pas partagé entre les utilisateurs.
+					En effet, il est demandé aux sujets dès le début de l'expérimentation, de choisir celui qui sera en charge de cet outil de manipulation et ceci tout au long de l'expérimentation.
+					Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
+				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp1-Resultats]{Résultats}
@@ -1610,7 +1424,7 @@
 				\end{itemize}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-DispositionDesElements]{Disposition des éléments}
-				Cette nouvelle étude propose une disposition relativement similaire à la première expérimentation \myref*{sse-exp1-DispositionDesElements}.
+				Cette nouvelle étude propose une disposition relativement similaire à la première expérimentation \myref*{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
 				Les sujets sont face à un écran de vidéoprojection, le vidéoprojecteur se trouvant derrière eux.
 				La vue partagée permet à tous les sujets de voir le grand écran et de communiquer librement.
 
@@ -3483,64 +3297,7 @@
 			On pourra se reporter aux chapitres respectifs pour plus de détails.
 
 			De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
-			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sse-pro-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sse-pro-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
-		\end{mysection}
-		\begin{mysection}[sec-pro-exp1-SpecificitesDeLaPremiereExperimentation]{Spécificités de la première expérimentation}
-			\begin{mysubsection}[sse-pro-exp1-Materiel]{Matériel}
-				Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
-				Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
-				Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sse-pro-exp1-OutilsDeManipulation}.
-				Ce nouvel outil nécessite l'ajout de quelques matériels.
-
-				L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
-				L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
-				Dans ce cas, une machine de faible puissance est largement suffisante.
-				L'interface est placée devant le sujet en charge de cet outil.
-
-				Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
-				Le \myglos{glo-Residu} cible doit donc être affiché aux sujets.
-				Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
-				Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
-
-				Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
-				Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
-				C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
-				L'enregistrement est assuré par le logiciel \myAudacity.
-				Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
-
-				La \myref{fig-pro-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
-				La \myref{fig-pro-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-				\begin{myfigure}
-					\myimage{exp1-schema}
-					\mycaption[fig-pro-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp1-photo}
-					\mycaption[fig-pro-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp1-Visualisation]{Visualisation}
-				Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
-				Cette molécule est suffisamment volumineuse pour ne pas nécessiter d'atome fixé dans la simulation.
-				Une représentation de cette molécule durant la première expérimentation est sur la \myref{fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation}.
-
-				\begin{myfigure}
-					\myimage{protocole-render-exp1-prion}
-					\mycaption[fig-pro-exp1-RepresentationDeLaMoleculePrionPourLaPremiereExperimentation]{Représentation de la molécule \myPrion pour la première expérimentation}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp1-OutilsDeManipulation]{Outils de manipulation}
-				Durant une tâche de recherche, la déformation seule sur une molécule de taille importante va limiter les possibilités de recherche des sujets.
-				En effet, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé que lorsque toute la partie sur le devant aura été déformée et écartée.
-				C'est pourquoi, nous mettons un outil d'orientation de la molécule à disposition des sujets.
-
-				Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de déplacer et de l'orienter.
-				Aucune modification par rapport à l'outil déjà proposé par \myacro{acr-VMD} n'a été ajoutée.
-				Cependant, l'outil n'est pas partagé entre les utilisateurs.
-				En effet, il est demandé aux sujets dès le début de l'expérimentation, de choisir celui qui sera en charge de cet outil de manipulation et ceci tout au long de l'expérimentation.
-				Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
-			\end{mysubsection}
+			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sse-pro-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
 			\begin{mysubsection}[sse-pro-exp2-Materiel]{Matériel}
@@ -3787,8 +3544,169 @@
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
-	\begin{mychapter}[cha-pro-MethodeExperimentale]{Méthode expérimentale}
-		\begin{mysection}[sec-pro-exp1-PremiereExperimentation]{Première expérimentation}
+	\begin{mychapter}[cha-met-MethodeExperimentale]{Méthode expérimentale}
+		\begin{mysection}[sec-met-exp1-PremiereExperimentation]{Première expérimentation}
+			\begin{mysubsection}[sse-met-exp1-Hypotheses]{Hypothèses}
+				Nous émettons plusieurs hypothèses concernant cette première expérimentation.
+				Les hypothèses concernent les performances des \myglos*{glo-Binome} ainsi que leurs stratégies de travail.
+				Deuxièmement, une évaluation de la plate-forme est nécessaire.
+				Des hypothèses sont formulées pour noter l'utilisabilité de la plate-forme ainsi que la sensation de collaboration des utilisateurs.
+				\begin{myparagraph}[par-met-exp1-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
+					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
+					Les performances seront évaluées en terme de temps de réalisation de la tâche mais aussi en terme de ressources utilisées comme le nombre de sélections.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp1-StrategiesVariablesEnFonctionDesBinomes]{\myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome}}
+					Nous émettons l'hypothèse que les \myglos*{glo-Binome} adopteront des stratégies de collaboration différentes en fonction des affinités des sujets et de leurs espaces de travail respectifs.
+					L'identification des différentes stratégies permettra de les évaluer et de trouver la plus performante.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp1-LesSujetsPreferentLeTravailEnBinome]{\myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}}
+					Notre troisième hypothèse est de nature qualitative et suppose que les utilisateurs auront une préférence pour le travail en \myglos{glo-Binome} comparé au travail en \myglos{glo-Monome}.
+					Le travail en \myglos{glo-Binome} créé une collaboration sociale qui est préférée en général.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp1-LaPlateFormeEstApprecieeDesUtilisateurs]{\myhypothesis{4} La plate-forme est appréciée des utilisateurs}
+					Notre dernière hypothèse concerne la validation de notre plate-forme en terme d'utilisabilité (intuitivité, ergonomie, \myetc).
+					Elle est nécessaire pour la poursuite des études de cette thèse.
+				\end{myparagraph}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp1-Sujets]{Sujets}
+				\mysummary{exp1-subjects.tex} avec une distribution d'âge de \mysummary{exp1-age.tex} ont participé à cette expérimentation.
+				Ils ont tous été recrutés au sein du \myacro{acr-LIMSI} et sont chercheurs, assistants de recherche, étudiants en thèse ou stagiaires dans les domaines suivants~:
+				\begin{itemize}
+					\item linguistique et traitement automatique de la parole;
+					\item réalité virtuelle et système immersifs;
+					\item audio-acoustique.
+				\end{itemize}
+
+				Tous les sujets sont francophones.
+				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant), de déficience audio ou de déficience moteur du haut du corps.
+				Les sujets ne sont pas rémunérés pour l'expérimentation.
+
+				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
+				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation.
+				Cependant, l'objectif de l'expérimentation n'est pas révélé.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp1-Variables]{Variables}
+				\begin{mysubsubsection}[sss-met-exp1-VariablesIndependantes]{Variables indépendantes}
+					\begin{myparagraph}[par-met-exp1-NombreDeSujets]{\myvari{1} Nombre de sujets}
+						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						\myvari{1} possède deux valeurs possibles : \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
+						\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés ce qui fait deux fois plus de \myglos*{glo-Monome} que de \myglos*{glo-Binome}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
+						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \myref*{tab-exp1-ListeDesResidusRecherches}.
+						Différents niveaux de complexité caractérisent chaque \myglos{glo-Residu} \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
+					\end{myparagraph}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-met-exp1-VariablesDependantes]{Variables dépendantes}
+					\begin{myparagraph}[par-met-exp1-TempsDeRealisation]{\myvard{1} Temps de réalisation}
+						Ce temps est le temps total pour réaliser la tâche demandée, c'est-à-dire trouver le \myglos{glo-Residu} et l'extraire de la molécule.
+						Il n'y a pas de limite de temps pour réaliser la tâche.
+						Ce temps est divisé en deux phases bien distinctes :
+						\begin{description}
+							\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
+								Cette recherche peut être visuelle en orientant et en déplaçant la molécule.
+								Elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles du centre de la molécule.
+							\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a identifié visuellement le \myglos{glo-Residu}.
+								Elle est constituée d'une phase de sélection puis d'une phase d'extraction hors de la molécule.
+						\end{description}
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-LaDistanceEntreLesEspacesDeTravail]{\myvard{2} La distance entre les espaces de travail}
+						Cette mesure est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} correspondant aux outils \mytool{tug}.
+						Elle est mesurée dans le monde réel mais peut être convertie dans l'environnement virtuel (à l'échelle de la molécule).
+						L'ordre de grandeur de cette mesure est le centimètre.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-CommunicationsVerbales]{\myvard{3} Communications verbales}
+						L'enregistrement des communications verbales permet de mesurer la quantité de temps de parole de chaque sujets pour chaque étape de l'expérimentation.
+						Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
+
+						\begin{myfigure}
+							\psset{unit=0.1\textwidth} % Fill entirely the page width
+							\begin{myps}(0,-1.75)(10,1.5)
+								\psset{linewidth=1pt,linecolor=black}%
+								\psset{fillstyle=solid}%
+								\psframe[fillcolor=mylightblue](0,-0.5)(6,0.5)%
+								\pspolygon[fillcolor=mylightred](6,-0.5)(6,0.5)(9,0.5)(10,0)(9,-0.5)%
+								\uput{16pt}[180](10,0){\LARGE\sl\textcolor{white!33}{temps}}
+								\psbrace[ref=lC,rot=-90,nodesepA=-3,nodesepB=-0.25](6,0.5)(0,0.5){%
+									\parbox{6\psxunit}{%
+										\centering\textcolor{myblue}{Temps de recherche}%
+									}%
+								}%
+								\psbrace[ref=lC,rot=-90,nodesepA=-2,nodesepB=-0.25](10,0.5)(6,0.5){%
+									\parbox{4\psxunit}{%
+										\centering\textcolor{myred}{Temps de sélection}%
+									}%
+								}%
+								\psframe[fillcolor=myblue](1,-0.5)(1.5,0.5)
+								\psframe[fillcolor=myblue](3,-0.5)(4.5,0.5)
+								\psframe[fillcolor=myblue](4.8,-0.5)(5,0.5)
+								\psframe[fillcolor=myred](6.5,-0.5)(7.5,0.5)
+								\psframe[fillcolor=myred](8,-0.5)(8.25,0.5)
+								\pnode(1.25,-0.5){verbal1}
+								\pnode(3.75,-0.5){verbal2}
+								\pnode(4.9,-0.5){verbal3}
+								\pnode(7,-0.5){verbal4}
+								\pnode(8.125,-0.5){verbal5}
+								\rput(5,-1.5){%
+									\Rnode{verbal}{%
+										\psframebox[linestyle=none]{\centering Communication verbale}%
+									}%
+								}%
+								\psset{linearc=0.1,angleA=-90}
+								\ncdiagg{<-}{verbal1}{verbal}
+								\ncdiagg{<-}{verbal2}{verbal}
+								\ncdiagg{<-}{verbal3}{verbal}
+								\ncdiagg{<-}{verbal4}{verbal}
+								\ncdiagg{<-}{verbal5}{verbal}
+							\end{myps}
+							\mycaption[fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu]{Étapes de la communication verbale pour la recherche d'un \myglosnl{glo-Residu}}
+						\end{myfigure}
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-AffiniteEntreLesSujets]{\myvard{4} Affinité entre les sujets}
+						Le degré d'affinité -- concernant uniquement les \myglos*{glo-Binome} -- est compris entre \mynum{1} et \mynum{5} selon les critères suivants :
+						\begin{enumerate}
+							\item Les sujets ne se connaissent pas;
+							\item Les sujets travaillent dans la même entreprise, le même laboratoire;
+							\item Les sujets travaillent dans la même équipe, sur les mêmes projets;
+							\item Les sujets travaillent ensemble, sont dans le même bureau;
+							\item Les sujets sont amis proches.
+						\end{enumerate}
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-ForceMoyenneAppliqueeParLesSujets]{\myvard{5} Force moyenne appliquée par les sujets}
+						Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
+						Une valeur moyenne de cette force est calculée pour être analysée.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp1-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
+						Un questionnaire est proposé à tous les sujets.
+						Il est constitué de trois ou quatre parties respectivement destinés aux \myglos*{glo-Monome} et \myglos*{glo-Binome}.
+						Le questionnaire fourni aux sujets est disponible dans la \myref{sec-Questionnaires-PremiereExperimentation}.
+					\end{myparagraph}
+				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp1-Procedure]{Procédure}
+				L'expérimentation débute par une étape d'apprentissage avec la molécule \myTRPZIPPER.
+				L'apprentissage est destiné à familiariser les sujets avec la plate-forme, les outils de manipulation et la tâche à réaliser.
+				Cette phase dure maximum \mynum[mn]{5}.
+				L'expérimentateur est disponible pour répondre aux questions des sujets.
+
+				Lorsque l'étape d'apprentissage est terminée, les sujets sont soumis successivement au \mynum{10}~\myglos*{glo-Residu}.
+				Lorsqu'un \myglos{glo-Residu} est trouvé, sélectionné puis extrait, l'application est arrêtée.
+				Un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \myglos*{glo-Residu} à chercher.
+				L'enregistrement audio est démarré à la fin de l'étape d'apprentissage.
+
+				L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre aléatoire afin d'éviter un biais lié à l'apprentissage de la plate-forme et de la tâche.
+				Les sujets doivent trouver et extraire dix \myglos*{glo-Residu} en \myglos{glo-Monome} et dix \myglos{glo-Residu} en \myglos{glo-Binome}.
+				Toujours pour éviter un biais lié à l'apprentissage, les sujets sont soumis aux tâches en \myglos{glo-Monome} et en \myglos{glo-Binome} de façon alternée selon les trois combinaisons suivantes :
+				\begin{enumerate}
+					\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}, puis le \myglos{glo-Binome} \myuser{AB};
+					\item Le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{B};
+					\item Le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}.
+				\end{enumerate}
+
+				Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}), ils sont soumis au remplissage du questionnaire.
+				Chaque sujet répond au questionnaire seul, sans communiquer avec son partenaire.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp2-PremiereExperimentation]{Seconde expérimentation}
 		\end{mysection}
