@@ -1388,19 +1388,10 @@
 					La tâche proposée est la déformation d'une molécule.
 					L'objectif est de la rendre conforme à un modèle.
 					L'intégralité des atomes de la molécule à déformer est affiché.
-					Trois molécules sont utilisées dans le cadre de cette expérimentation :
-					\begin{description}
-						\item[\myPrion]
-							La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-							Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
-							Elle est très complexe et est seulement utilisée pour un entraînement complet et un apprentissage approfondi des outils de manipulation.
-						\item[\myTRPZIPPER]
-							La molécule \myTRPZIPPER \mycite{Christen-2009} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient \mynum{218}~atomes dont \mynum{12}~\myglos*{glo-Residu}.
-						\item[\myTRPCAGE]
-							La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
-					\end{description}
+					Trois molécules sont utilisées dans le cadre de cette expérimentation.
+					\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
+					\myTRPZIPPER et \myTRPCAGE seront chacune utilisée dans deux scénarios distincts.
+					Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 					Lorsqu'un sujet sélectionne un atome ou un \myglos{glo-Residu}, ce dernier est mis en surbrillance.
 					De plus, l'atome ou le \myglos{glo-Residu} correspondant sur la molécule cible est affiché afin de connaître la position finale de la sélection courante.
@@ -1494,7 +1485,7 @@
 					Il en résulte que l'outil \mytool{tug} pour les \myglos*{glo-Residu} permet d'appliquer un effort total plus important et perturbe plus fortement la simulation.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
+			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation, basée sur la dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
 				Un résumé de la methode expérimentale se trouve dans le \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-pro-exp2-PremiereExperimentation}.
 
@@ -2103,12 +2094,11 @@
 			En effet, cette tâche permet de stimuler les collaborations étroitement couplées.
 			Ce sont ces collaborations étroitement couplées qui provoquent les \myglos*{glo-ConflitDeCoordination}.
 
-			Les objectifs de cette nouvelle expérimentation seront exposés dans la \myref{sec-exp3-ContexteDeTravail} accompagnés par les hypothèses.
-			Les modifications apportées à la plate-forme et le nouveau dispositif expérimental seront détaillés dans la \myref{sec-exp3-DispositifExperimentalEtMateriel}.
-			La méthode expérimentale est présentée dans la \myref{sec-exp3-Methode}.
+			Les objectifs de cette nouvelle expérimentation sont exposés dans la \myref{sec-exp3-Contexte} accompagnés par les hypothèses.
+			La tâche et les modifications apportées à la plate-forme correspondantes sont détaillées dans la \myref{sec-exp3-ExperimentationSurLesDynamiquesDeGroupe}.
 			Enfin, les résultats seront analysés dans la \myref{sec-exp3-Resultats} puis une synthèse est proposée dans la \myref{sec-exp3-Synthese}.
 		\end{mysection}
-		\begin{mysection}[sec-exp3-ContexteDeTravail]{Contexte et objectifs}
+		\begin{mysection}[sec-exp3-Contexte]{Contexte}
 			Nous avons déjà effectué deux études sur le travail collaboratif mettant en avant les avantages d'un travail en \myglos{glo-Binome} par rapport au travail en \myglos{glo-Monome}.
 			Cependant, le travail de groupe ne se limitant pas aux \myglos*{glo-Binome}, nous nous intéresserons au \myglos*{glo-Quadrinome} dans cette étude.
 			Nous souhaitons observer le travail en \myglos{glo-Quadrinome} afin de confirmer nos précédentes conclusions.
@@ -2141,164 +2131,16 @@
 			C'est pourquoi nous testons une période de réflexion préalable au début de la tâche.
 			Cette période devrait permettre l'émergence des \myglos*{glo-Meneur} et des \myglos*{glo-Suiveur}.
 			Elle devrait également permettre une communication entre les utilisateurs pour la mise en place d'une stratégie.
-			\begin{mysubsection}[sse-exp3-Hypotheses]{Hypothèses}
-				Lors de cette nouvelle étude, nous souhaitons observer les dynamiques de groupe.
-				Nos hypothèses concerneront principalement l'évolution des groupes durant la réalisation de la tâche.
-				\begin{myparagraph}[par-exp3-AmeliorationDesPerformancesEnQuadrinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}}
-					Nous émettons l'hypothèse que les performances des \myglos*{glo-Quadrinome} seront meilleures que les performances des \myglos*{glo-Binome}.
-					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans l'étude sur l'entreprise \myHawthorne.
-					Cependant, nous nous plaçons dans un contexte de collaboration étroite.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp3-LeRemueMeningesStructureLeQuadrinome]{\myhypothesis{2} Le remue-méninges structure le \myglos{glo-Quadrinome}}
-					Dans cette nouvelle expérimentation, nous allons étudier la mise en place d'une période de réflexion, également appelée \myemph{remue-méninges}, avant le début de la tâche.
-					Nous émettons l'hypothèse que cette période de réflexion sera principalement utile pour les \myglos*{glo-Quadrinome}.
-				\end{myparagraph}
-			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp3-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-			L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
-			La troisième expérimentation propose un dispositif expérimental sensiblement identique à celui de la seconde expérimentation.
-			Une première différence concerne le nombre d'outils de déformation à disposition.
-			Le nombre de sujets étant plus important, il faut évidemment mettre plus d'outils à disposition.
-			De plus, nous ne mettons pas d'outil de manipulation de la molécule à disposition (contrairement à la précédente expérimentation).
-			Cet outil pose des difficultés de répartition entre les utilisateurs en \myglos{glo-Binome}.
-			Nous avons préféré ne pas confronter les \myglos*{glo-Quadrinome} à cet outil générateur de \myglos*{glo-ConflitDeCoordination}.
-
-			Le matériel utilisé est détaillé dans la \myref{sse-exp3-DispositifTechnique}.
-			Les aspects de visualisation et d'interaction du logiciel seront expliqués dans la \myref{sse-exp3-Visualisation}.
-			\begin{mysubsection}[sse-exp3-DispositifTechnique]{Dispositif technique}
-				Cette nouvelle étude propose une disposition identique à la seconde expérimentation \myref*{sse-exp2-SpecificitesDeLaPremiereExperimentation} avec les matériels suivants :
-				\begin{itemize}
-					\item \mynum{2}~ordinateurs quatre cœurs \myIntelCore avec \myRAM[Go]{4};
-					\item \mynum{2}~ordinateurs de faible puissance;
-					\item \mynum{4}~interfaces haptiques \myOmni;
-					\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series);
-					\item \mynum{1}~grand écran de vidéoprojection;
-					\item \mynum{1}~caméra \mySony (\textsc{pj50v hd}).
-				\end{itemize}
-
-				Les sujets sont face à un écran de vidéoprojection, le vidéoprojecteur se trouvant derrière eux.
-				La vue partagée permet à tous les sujets de voir le grand écran et de communiquer librement.
-
-				Quatre interfaces haptiques se trouvent faces aux sujets : ce sont quatre outils de déformation \mytool{tug} \myref*{sse-Shaddock-LesOutilsExistants}.
-				Les sujets en \myglos{glo-Binome} auront chacun accès à deux interfaces de déformation (manipulation \myglos*{glo-Bimanuel}).
-				Dans le cas d'un \myglos{glo-Quadrinome}, chaque sujet aura un outil de déformation à sa disposition (manipulation \myglos*{glo-Monomanuel}).
-				Les sujets n'ont pas la possibilité de modifier le point de vue de la scène.
-
-				L'expérimentateur dirige les opérations depuis un poste de travail placé derrière les sujets.
-				C'est lui qui lance et stoppe les différents scénarios proposés.
-
-				La caméra est placée derrière les sujets afin de filmer l'ensemble du groupe ainsi que l'écran de vidéoprojection.
-				Le son est également enregistré à l'aide de la caméra.
-
-				La \myref{fig-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
-				La \myref{fig-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-				\begin{myfigure}
-					\myimage{exp3-schema}
-					\mycaption[fig-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp3-photo}
-					\mycaption[fig-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp3-Visualisation]{Visualisation}
-				Chaque molécule proposée est projetée dans son intégralité sur l'écran de vidéoprojection avec les rendus graphiques suivants \myref*{sss-Shaddock-LesRendusGraphiques} :
-				\begin{itemize}
-					\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
-					\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
-					\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
-				\end{itemize}
-
-				De plus, l'état stable de la molécule (molécule cible) est affiché par un rendu \myNewRibbon partiellement transparent.
-				Pour les besoins de la simulation, certains \myglos*{glo-Residu} sont fixes et sont alors grisés.
-				Enfin, les \myglos*{glo-Residu} sélectionnés sont affichés avec un rendu \myCPK partiellement transparent et de la couleur du curseur concerné.
-				La \myref{fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} dans la \myref{sss-exp2-Visualisation} illustre l'ensemble des rendus graphiques précédemment décrits.
-			\end{mysubsection}
-		\end{mysection}
-		\begin{mysection}[sec-exp3-Methode]{Méthode}
-			\begin{mysubsection}[sse-exp3-Sujets]{Sujets}
-				\mysummary{exp3-subjects.tex} avec une moyenne d'âge de \mysummary{exp3-age.tex} ont participé à cette expérimentation.
-				Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont étudiants, chercheurs ou assistants de recherche dans les domaines suivants~:
-				\begin{itemize}
-					\item linguistique et traitement automatique de la parole;
-					\item réalité virtuelle et système immersifs;
-					\item audio-acoustique.
-				\end{itemize}
-				Ils ont tous le français comme langue principale.
-				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
-				Tous les participants de cette expérimentation ont été choisis car ils ont déjà une expérience sur la plate-forme : les participants connaissent déjà les outils de déformation et l'environnement virtuel.
-				Ceci doit permettre d'observer les évolutions de la dynamique de groupe tout en limitant les effets de l'apprentissage.
-
-				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
-				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp3-Variables]{Variables}
-				\begin{mysubsubsection}[sss-exp3-VariablesIndependantes]{Variables indépendantes}
-					\begin{myparagraph}[par-exp3-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux valeurs possibles : \og deux sujet (\mycf \myemph{\myglos{glo-Binome}}) \fg ou \og quatre sujets (\mycf \myemph{\myglos{glo-Quadrinome}}) \fg.
-						\mynum{8}~\myglos*{glo-Binome} et \mynum{4}~\myglos*{glo-Quadrinome} sont testés.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Deux tâches de déformation sont proposées et décrites dans la \myref{sss-exp3-DescriptionDeLaTache}.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-TempsAllouePourLeRemueMeninges]{\myvari{3} Temps alloué pour le remue-méninges}
-						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
-						\myvari{3} possède deux valeurs possibles : \og pas de remue-méninges \fg ou \og \mynum[mn]{1} de remue-méninges \fg.
-						Cette période de remue-méninges est allouée avant le début de chaque tâche et permet une réflexion préalable sur la tâche.
-					\end{myparagraph}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sec-exp3-VariablesDependantes]{Variables dépendantes}
-					\begin{myparagraph}[par-exp3-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						C'est le temps total que les sujets ont mis pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
-						Le temps est limité à \mynum[mn]{10}.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-FrequenceDeSelections]{\myvard{2} Fréquence des sélections}
-						\myvard{2} représente la fréquence des sélections réalisées durant chaque tâche à réaliser.
-						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}.
-						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
-						C'est l'information de fréquence qui est conservée puisqu'elle ne dépend pas du temps total de réalisation de la tâche.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-VitesseMoyenne]{\myvard{3} Vitesse moyenne}
-						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
-						Elle est calculée par intégration numérique des positions successives en fonction du temps.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-ForceMoyenneAppliqueeParLesSujets]{\myvard{4} Force moyenne appliquée par les sujets}
-						La force appliquée sur les atomes durant la simulation est mesurée pour chaque sujet.
-						Elle ne concerne que la force appliquée lors d'une sélection.
-						C'est la valeur moyenne sur l'ensemble d'une tâche qui est conservée.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp3-CommunicationsVerbales]{\myvard{5} Communications verbales}
-						L'enregistrement des communications permet de mesurer le nombre d'interventions verbales de chacun des sujets.
-						Deux catégories d'interventions sont classifiées :
-						\begin{description}
-							\item[Les observations] destinées à renseigner les autres sujets d'un état actuel de l'environnement, d'une information nécessaire ou bien d'une intention concernant une action;
-							\item[Les ordres] sont donnés aux autres sujets afin qu'ils réalisent une action déterminée.
-						\end{description}
-					\end{myparagraph}
-				\end{mysubsubsection}
-			\end{mysubsection}
+		\begin{mysection}[sec-exp3-ExperimentationSurLesDynamiquesDeGroupe]{Expérimentation sur les dynamiques de groupe}
 			\begin{mysubsection}[sse-exp3-Tache]{Tâche}
 				\begin{mysubsubsection}[sss-exp3-DescriptionDeLaTache]{Description de la tâche}
 					La tâche proposée est la déformation de molécules complexes dans un \myacro{acr-EVC}.
 					L'objectif est de la rendre conforme à une molécule modèle.
 					La molécule à déformer est affichée dans son intégralité (atomes et structures principales) mais seule la structure principale est visible sur la molécule modèle.
-					Trois molécules sont utilisées dans le cadre de cette expérimentation :
-					\begin{description}
-						\item[\myTRPCAGE]
-							La molécule nommée \myTRPCAGE \mycite{Neidigh-2002} a pour identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1L2Y}{1L2Y} sur la \myPDBbase\footnote{\url{http://www.pdb.org/}}.
-							Cette molécule contient \mynum{304}~atomes dont \mynum{20}~\myglos*{glo-Residu}.
-							Elle est seulement utilisée pour un entraînement et un apprentissage des outils de manipulation.
-						\item[\myPrion]
-							La molécule nommée \myPrion \mycite{Christen-2009} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=2KFL}{2KFL} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient \mynum{1779}~atomes dont \mynum{112}~\myglos*{glo-Residu}.
-						\item[\myUbiquitin]
-							La molécule nommée \myUbiquitin \mycite{Vijay-Kumar-1987} avec l'identifiant \myPDB \myPDBlink{http://www.rcsb.org/pdb/explore/explore.do?structureId=1UBQ}{1UBQ} sur la \myPDBbase\footnotemark[\value{footnote}].
-							Cette molécule contient \mynum{1231}~atomes dont \mynum{76}~\myglos*{glo-Residu}.
-					\end{description}
+					Dans cette expérimentation, la molécule \myTRPCAGE est utilisée pour la phase d'entraînement.
+					Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour la tâche de déformation collaborative.
+					Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 					Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
 					De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
@@ -2327,27 +2169,10 @@
 					Cependant, nous avons fait le choix d'enlever cet outil de manipulation afin d'éviter les \myglos*{glo-ConflitDeCoordination}, notamment au sein des \myglos*{glo-Quadrinome}.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp3-Procedure]{Procédure}
-				L'expérimentation débute par une étape d'entraînement avec la molécule \myTRPCAGE.
-				Pendant cette phase, les outils sont introduits et expliqués un par un.
-				Les sujets ayant déjà eu une expérience sur la plate-forme, cette phase est effectuée pour se remémorer l'environnement et les outils.
-				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
-				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
-
-				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au scénario \myscenario{1}.
-				Puis dans un second temps, le scénario \myscenario{2} leur est proposé.
-				Pour chaque scénario, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
-				L'ordre de ces deux scénarios n'est pas contre-balancé sur les différents groupes de sujets.
-
-				Tous les sujets sont confrontés aux deux scénarios deux fois.
-				Une première fois en \myglos{glo-Binome} et une seconde fois en \myglos{glo-Quadrinome}.
-				L'ordre de passage en \myglos{glo-Binome} et en \myglos{glo-Quadrinome} est alterné selon les groupes afin d'éviter les biais d'apprentissage.
-
-				L'enregistrement vidéo est démarré au début de la phase d'apprentissage pour chaque groupe.
-				Il est arrêté à la fin du second scénario.
-				La phase d'apprentissage est filmée pour des questions de simplicité logistique mais n'est pas utilisée dans les analyses.
-
-				Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
+			\begin{mysubsection}[sse-exp3-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
+				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
+				Les modifications sont présentées dans les sections qui vont suivre.
+				Le protocole expérimental est détaillé dans la \myref{sec-pro-exp3-PremiereExperimentation} et résumé dans le \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 
 				\begin{mytable}
 					\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -2399,6 +2224,56 @@
 						\mybottomrule
 					\end{mytabular}
 				\end{mytable}
+				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
+					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
+					Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
+					Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
+					Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
+
+					Chaque sujet d'un \myglos{glo-Quadrinome} possède un outil de déformation à sa disposition.
+					En ce qui concerne les \myglos*{glo-Binome}, chaque sujet peut utiliser deux outils dans une configuration \myglos*{glo-Bimanuel}.
+
+					Cette expérimentation sur le travail collaboratif de groupe (supérieur à deux sujets) est l'occasion de focaliser sur les communications qui seront certainement plus nombreuses.
+					Afin d'analyser ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée en hauteur derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
+					Cette caméra permet d'enregistrer la vidéo et le son.
+					Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
+
+					La \myref{fig-pro-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
+					La \myref{fig-pro-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
+
+					\begin{myfigure}
+						\myimage{exp3-schema}
+						\mycaption[fig-pro-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp3-photo}
+						\mycaption[fig-pro-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp3-Visualisation]{Visualisation}
+					La troisième expérimentation propose une tâche relativement similaire à la seconde expérimentation.
+					La principale différence concerne la taille des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation qui concernait des molécules d'une quinzaine de \myglos*{glo-Residu}.
+					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1} et la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
+
+					\begin{myfigure}
+						\myimage{protocole-render-exp3-prion}
+						\mycaption[fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1]{Représentation de la molécule \myPrion pour le scénario~\myscenario{1}}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{protocole-render-exp3-ubiquitin}
+						\mycaption[fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp3-OutilsDeManipulation]{Outils de manipulation}
+					Cette expérimentation fait intervenir quatre sujets.
+					Cependant, c'est la prmeière expérimentation pour laquelle aucun outil d'orientation de la molécule n'est fourni aux sujets.
+					En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil est générateur de \myglos*{glo-ConflitDeCoordination}.
+					Durant les précédentes expérimentations, les \myglos*{glo-ConflitDeCoordination} était relativement limité car ne concernait que des \myglos*{glo-Binome}.
+					Dans le cadre d'un \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos ce que nous ne souhaitons pas.
+
+					En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
+					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule dans son état stable.
+				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-Resultats]{Résultats}
@@ -2475,7 +2350,7 @@
 				\begin{mysubsubsection}[sss-exp3-EvolutionDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					Les deux tâches proposées sont de natures très différentes.
 					La \myref{fig-exp3-TempsDeRealisationDesScenarios} montre que la molécule \myUbiquitin a été plus complexe à déformer pour les groupes de sujets que la molécule \myPrion.
-					Il faut noter que les molécules n'ont pas été alternées lors de la procédure expérimentale \myref*{sse-exp3-Procedure} : c'est toujours la molécule \myPrion qui a été présentée en premier aux sujets.
+					Il faut noter que les molécules n'ont pas été alternées lors de la procédure expérimentale \myref*{sse-met-exp3-Procedure} : c'est toujours la molécule \myPrion qui a été présentée en premier aux sujets.
 					Pourtant, la réalisation de la déformation de la molécule \myUbiquitin a été plus longue, malgré l'apprentissage qui a eu lieu entre les deux scénarios..
 					D'ailleurs, on peut observer que de nombreux groupes de sujets ont atteint la limite de \mynum[mn]{10} lors de la déformation de la molécule \myUbiquitin ce qui prouve la réelle complexité de la tâche.
 
@@ -2803,7 +2678,7 @@
 			Les outils sont très différents en fonction des sujets.
 			De plus, de nouveaux outils sont proposés.
 
-			Cette nouvelle étude propose une disposition similaire à la troisième expérimentation \myref*{sse-exp3-DispositifTechnique} avec les matériels suivants :
+			Cette nouvelle étude propose une disposition similaire à la troisième expérimentation \myref*{sse-exp3-SpecificitesDuProtocoleExperimental} avec les matériels suivants :
 			\begin{itemize}
 				\item \mynum{2}~ordinateurs quatre cœurs \myIntelCore avec \myRAM[Go]{4};
 				\item \mynum{2}~ordinateurs de faible puissance;
@@ -2968,7 +2843,7 @@
 					En plaçant la souris comme troisième outil, l'objectif est qu'elle soit utilisée seulement lorsque c'est réellement nécessaire.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-DescriptionDeLaTache]{Description de la tâche}
-					Le visuel est identique à la tâche présentée pour la troisième expérimentation \myref*{sse-exp3-Visualisation}.
+					Le visuel est identique à la tâche présentée pour la troisième expérimentation \myref*{sss-exp3-Visualisation}.
 					En effet, la molécule est représentée en \myCPK et \myNewRibbon.
 					La molécule cible est représentée en \myNewRibbon transparent.
 					\begin{description}
@@ -3213,58 +3088,6 @@
 
 			De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
 			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sss-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
-		\end{mysection}
-		\begin{mysection}[sec-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
-			\begin{mysubsection}[sse-pro-exp3-Materiel]{Matériel}
-				La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
-				Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
-				Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
-				Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
-
-				Chaque sujet d'un \myglos{glo-Quadrinome} possède un outil de déformation à sa disposition.
-				En ce qui concerne les \myglos*{glo-Binome}, chaque sujet peut utiliser deux outils dans une configuration \myglos*{glo-Bimanuel}.
-
-				Cette expérimentation sur le travail collaboratif de groupe (supérieur à deux sujets) est l'occasion de focaliser sur les communications qui seront certainement plus nombreuses.
-				Afin d'analyser ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée en hauteur derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
-				Cette caméra permet d'enregistrer la vidéo et le son.
-				Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
-
-				La \myref{fig-pro-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
-				La \myref{fig-pro-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
-
-				\begin{myfigure}
-					\myimage{exp3-schema}
-					\mycaption[fig-pro-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp3-photo}
-					\mycaption[fig-pro-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp3-Visualisation]{Visualisation}
-				La troisième expérimentation propose une tâche relativement similaire à la seconde expérimentation.
-				La principale différence concerne la taille des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation qui concernait des molécules d'une quinzaine de \myglos*{glo-Residu}.
-				La molécule \myPrion est utilisée pour le scénario~\myscenario{1} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1} et la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} sur la \ref{fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
-
-				\begin{myfigure}
-					\myimage{protocole-render-exp3-prion}
-					\mycaption[fig-pro-exp3-RepresentationDeLaMoleculePrionPourLeScenario1]{Représentation de la molécule \myPrion pour le scénario~\myscenario{1}}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{protocole-render-exp3-ubiquitin}
-					\mycaption[fig-pro-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp3-OutilsDeManipulation]{Outils de manipulation}
-				Cette expérimentation fait intervenir quatre sujets.
-				Cependant, c'est la prmeière expérimentation pour laquelle aucun outil d'orientation de la molécule n'est fourni aux sujets.
-				En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil est générateur de \myglos*{glo-ConflitDeCoordination}.
-				Durant les précédentes expérimentations, les \myglos*{glo-ConflitDeCoordination} était relativement limité car ne concernait que des \myglos*{glo-Binome}.
-				Dans le cadre d'un \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos ce que nous ne souhaitons pas.
-
-				En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
-				Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule dans son état stable.
-			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp4-SpecificitesDeLaPremiereExperimentation]{Spécificités de la quatrième expérimentation}
 			\begin{mysubsection}[sse-pro-exp4-Materiel]{Matériel}
@@ -3620,6 +3443,102 @@
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp3-PremiereExperimentation]{Troisième expérimentation}
+			\begin{mysubsection}[sse-met-exp3-Hypotheses]{Hypothèses}
+				Lors de cette nouvelle étude, nous souhaitons observer les dynamiques de groupe.
+				Nos hypothèses concerneront principalement l'évolution des groupes durant la réalisation de la tâche.
+				\begin{myparagraph}[par-met-exp3-AmeliorationDesPerformancesEnQuadrinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}}
+					Nous émettons l'hypothèse que les performances des \myglos*{glo-Quadrinome} seront meilleures que les performances des \myglos*{glo-Binome}.
+					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans l'étude sur l'entreprise \myHawthorne.
+					Cependant, nous nous plaçons dans un contexte de collaboration étroite.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp3-LeRemueMeningesStructureLeQuadrinome]{\myhypothesis{2} Le remue-méninges structure le \myglos{glo-Quadrinome}}
+					Dans cette nouvelle expérimentation, nous allons étudier la mise en place d'une période de réflexion, également appelée \myemph{remue-méninges}, avant le début de la tâche.
+					Nous émettons l'hypothèse que cette période de réflexion sera principalement utile pour les \myglos*{glo-Quadrinome}.
+				\end{myparagraph}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp3-Sujets]{Sujets}
+				\mysummary{exp3-subjects.tex} avec une moyenne d'âge de \mysummary{exp3-age.tex} ont participé à cette expérimentation.
+				Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont étudiants, chercheurs ou assistants de recherche dans les domaines suivants~:
+				\begin{itemize}
+					\item linguistique et traitement automatique de la parole;
+					\item réalité virtuelle et système immersifs;
+					\item audio-acoustique.
+				\end{itemize}
+				Ils ont tous le français comme langue principale.
+				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+				Tous les participants de cette expérimentation ont été choisis car ils ont déjà une expérience sur la plate-forme : les participants connaissent déjà les outils de déformation et l'environnement virtuel.
+				Ceci doit permettre d'observer les évolutions de la dynamique de groupe tout en limitant les effets de l'apprentissage.
+
+				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
+				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp3-Variables]{Variables}
+				\begin{mysubsubsection}[sss-met-exp3-VariablesIndependantes]{Variables indépendantes}
+					\begin{myparagraph}[par-met-exp3-NombreDeSujets]{\myvari{1} Nombre de sujets}
+						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						\myvari{1} possède deux valeurs possibles : \og deux sujet (\mycf \myemph{\myglos{glo-Binome}}) \fg ou \og quatre sujets (\mycf \myemph{\myglos{glo-Quadrinome}}) \fg.
+						\mynum{8}~\myglos*{glo-Binome} et \mynum{4}~\myglos*{glo-Quadrinome} sont testés.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
+						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						Deux tâches de déformation sont proposées et décrites dans la \myref{sss-exp3-DescriptionDeLaTache}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-TempsAllouePourLeRemueMeninges]{\myvari{3} Temps alloué pour le remue-méninges}
+						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
+						\myvari{3} possède deux valeurs possibles : \og pas de remue-méninges \fg ou \og \mynum[mn]{1} de remue-méninges \fg.
+						Cette période de remue-méninges est allouée avant le début de chaque tâche et permet une réflexion préalable sur la tâche.
+					\end{myparagraph}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sec-met-exp3-VariablesDependantes]{Variables dépendantes}
+					\begin{myparagraph}[par-met-exp3-TempsDeRealisation]{\myvard{1} Temps de réalisation}
+						C'est le temps total que les sujets ont mis pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+						Le temps est limité à \mynum[mn]{10}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-FrequenceDeSelections]{\myvard{2} Fréquence des sélections}
+						\myvard{2} représente la fréquence des sélections réalisées durant chaque tâche à réaliser.
+						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}.
+						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
+						C'est l'information de fréquence qui est conservée puisqu'elle ne dépend pas du temps total de réalisation de la tâche.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-VitesseMoyenne]{\myvard{3} Vitesse moyenne}
+						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
+						Elle est calculée par intégration numérique des positions successives en fonction du temps.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-ForceMoyenneAppliqueeParLesSujets]{\myvard{4} Force moyenne appliquée par les sujets}
+						La force appliquée sur les atomes durant la simulation est mesurée pour chaque sujet.
+						Elle ne concerne que la force appliquée lors d'une sélection.
+						C'est la valeur moyenne sur l'ensemble d'une tâche qui est conservée.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp3-CommunicationsVerbales]{\myvard{5} Communications verbales}
+						L'enregistrement des communications permet de mesurer le nombre d'interventions verbales de chacun des sujets.
+						Deux catégories d'interventions sont classifiées :
+						\begin{description}
+							\item[Les observations] destinées à renseigner les autres sujets d'un état actuel de l'environnement, d'une information nécessaire ou bien d'une intention concernant une action;
+							\item[Les ordres] sont donnés aux autres sujets afin qu'ils réalisent une action déterminée.
+						\end{description}
+					\end{myparagraph}
+				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp3-Procedure]{Procédure}
+				L'expérimentation débute par une étape d'entraînement avec la molécule \myTRPCAGE.
+				Pendant cette phase, les outils sont introduits et expliqués un par un.
+				Les sujets ayant déjà eu une expérience sur la plate-forme, cette phase est effectuée pour se remémorer l'environnement et les outils.
+				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
+				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
+
+				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au scénario \myscenario{1}.
+				Puis dans un second temps, le scénario \myscenario{2} leur est proposé.
+				Pour chaque scénario, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+				L'ordre de ces deux scénarios n'est pas contre-balancé sur les différents groupes de sujets.
+
+				Tous les sujets sont confrontés aux deux scénarios deux fois.
+				Une première fois en \myglos{glo-Binome} et une seconde fois en \myglos{glo-Quadrinome}.
+				L'ordre de passage en \myglos{glo-Binome} et en \myglos{glo-Quadrinome} est alterné selon les groupes afin d'éviter les biais d'apprentissage.
+
+				L'enregistrement vidéo est démarré au début de la phase d'apprentissage pour chaque groupe.
+				Il est arrêté à la fin du second scénario.
+				La phase d'apprentissage est filmée pour des questions de simplicité logistique mais n'est pas utilisée dans les analyses.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp4-PremiereExperimentation]{Quatrième expérimentation}
 		\end{mysection}
