@@ -800,60 +800,6 @@
 				L'expérimentation est basée sur le dispositif expérimental décrit dans le \myref{cha-pro-DispositifExperimental}.
 				Cependant, certains choix expérimentaux concernant cette expérimentation de recherche en simulation moléculaire sont détaillés dans les sections suivantes.
 				Les détails à propos de la méthode expérimentale, présents dans la \myref{sec-met-exp1-PremiereExperimentation}, sont résumés dans la \myref{tab-exp1-SyntheseDeLaMethodeExperimentale}.
-
-				\begin{mytable}
-					\mycaption[tab-exp1-SyntheseDeLaMethodeExperimentale]{Synthèse de la méthode expérimentale}
-					\newcommand{\mytitlecolumn}[2]{%
-						\multirow{#1}*{%
-							\begin{minipage}{6em}%
-								\raggedleft #2%
-							\end{minipage}%
-						}
-					}
-					\newlength{\exponefirstcolumn}
-					\newlength{\exponesecondcolumn}
-					\setlength{\exponefirstcolumn}{7em}
-					\setlength{\exponesecondcolumn}{\textwidth}
-					\addtolength{\exponesecondcolumn}{-\exponefirstcolumn}
-					\addtolength{\exponesecondcolumn}{-4\tabcolsep}
-					\begin{mytabular}{>{\bfseries}p{\exponefirstcolumn}p{\exponesecondcolumn}}
-						\mytoprule
-						\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs                                             \\
-						\mymiddlerule[\heavyrulewidth]
-						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}      \\
-						                                          & \myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome} \\
-						                                          & \myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}    \\
-						                                          & \myhypothesis{4} La plate-forme est appréciée des utilisateurs               \\
-						\mymiddlerule
-						\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                  \\
-						                                          & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
-						\mymiddlerule
-						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
-						                                          & \myvard{2} Distance entre les espaces de travail                             \\
-						                                          & \myvard{3} Communication verbales                                            \\
-						                                          & \myvard{4} Affinités entre les sujets                                        \\
-						                                          & \myvard{5} Force moyenne appliquée par le sujet                              \\
-						                                          & \myvard{6} Réponses qualitatives                                             \\
-						\mymiddlerule[\heavyrulewidth]
-						\multicolumn{2}{c}{%
-							\small%
-							\begin{tabular}{^C-C-C}
-								\myrowstyle{\bfseries}
-								Condition \mycondition{1}         & Condition \mycondition{2}         & Condition \mycondition{3}         \\
-								\mymiddlerule
-								Sujet~\myuser{A}                  & Sujet~\myuser{A}                  & \myGlosnl{glo-Binome}~\myuser{AB} \\
-								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
-								\mymiddlerule
-								Sujet~\myuser{B}                  & \myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{A}                  \\
-								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
-								\mymiddlerule
-								\myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{B}                  & Sujet~\myuser{B}                  \\
-								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
-							\end{tabular}
-						} \\
-						\mybottomrule
-					\end{mytabular}
-				\end{mytable}
 				\begin{mysubsubsection}[sss-exp1-Materiel]{Matériel}
 					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
 					Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
@@ -909,6 +855,59 @@
 					En effet, il est demandé aux sujets dès le début de l'expérimentation, de choisir celui qui sera en charge de cet outil de manipulation et ceci tout au long de l'expérimentation.
 					Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
 				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-exp1-SyntheseDeLaMethodeExperimentale]{Synthèse de la méthode expérimentale}
+					\newcommand{\mytitlecolumn}[2]{%
+						\multirow{#1}*{%
+							\begin{minipage}{6em}%
+								\raggedleft #2%
+							\end{minipage}%
+						}
+					}
+					\newlength{\exponefirstcolumn}
+					\newlength{\exponesecondcolumn}
+					\setlength{\exponefirstcolumn}{7em}
+					\setlength{\exponesecondcolumn}{\textwidth}
+					\addtolength{\exponesecondcolumn}{-\exponefirstcolumn}
+					\addtolength{\exponesecondcolumn}{-4\tabcolsep}
+					\begin{mytabular}{>{\bfseries}p{\exponefirstcolumn}p{\exponesecondcolumn}}
+						\mytoprule
+						\mytitlecolumn{1}{Tâche}                  & Recherche et sélection de motifs                                             \\
+						\mymiddlerule[\heavyrulewidth]
+						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}      \\
+						                                          & \myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome} \\
+						                                          & \myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}    \\
+						                                          & \myhypothesis{4} La plate-forme est appréciée des utilisateurs               \\
+						\mymiddlerule
+						\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                  \\
+						                                          & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
+						\mymiddlerule
+						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                              \\
+						                                          & \myvard{2} Distance entre les espaces de travail                             \\
+						                                          & \myvard{3} Communication verbales                                            \\
+						                                          & \myvard{4} Affinités entre les sujets                                        \\
+						                                          & \myvard{5} Force moyenne appliquée par le sujet                              \\
+						                                          & \myvard{6} Réponses qualitatives                                             \\
+						\mymiddlerule[\heavyrulewidth]
+						\multicolumn{2}{c}{%
+							\small%
+							\begin{tabular}{^C-C-C}
+								\myrowstyle{\bfseries}
+								Condition \mycondition{1}         & Condition \mycondition{2}         & Condition \mycondition{3}         \\
+								\mymiddlerule
+								Sujet~\myuser{A}                  & Sujet~\myuser{A}                  & \myGlosnl{glo-Binome}~\myuser{AB} \\
+								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+								\mymiddlerule
+								Sujet~\myuser{B}                  & \myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{A}                  \\
+								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+								\mymiddlerule
+								\myGlosnl{glo-Binome}~\myuser{AB} & Sujet~\myuser{B}                  & Sujet~\myuser{B}                  \\
+								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
+							\end{tabular}
+						} \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp1-Resultats]{Résultats}
@@ -1488,60 +1487,6 @@
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation, basée sur la dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
 				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-PremiereExperimentation}.
-
-				\begin{mytable}
-					\mycaption[tab-exp2-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
-					\newcommand{\mytitlecolumn}[2]{%
-						\multirow{#1}*{%
-							\begin{minipage}{6em}%
-								\raggedleft #2%
-							\end{minipage}%
-						}
-					}
-					\newlength{\exptwofirstcolumn}
-					\newlength{\exptwosecondcolumn}
-					\setlength{\exptwofirstcolumn}{7em}
-					\setlength{\exptwosecondcolumn}{\textwidth}
-					\addtolength{\exptwosecondcolumn}{-\exptwofirstcolumn}
-					\addtolength{\exptwosecondcolumn}{-4\tabcolsep}
-					\begin{mytabular}{>{\bfseries}p{\exptwofirstcolumn}p{\exptwosecondcolumn}}
-						\mytoprule
-						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule                                                        \\
-						\mymiddlerule[\heavyrulewidth]
-						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}           \\
-						                                          & \myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes \\
-						                                          & \myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}           \\
-						                                          & \myhypothesis{4} Les sujets préfèrent le travail en collaboration                 \\
-						\mymiddlerule
-						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                       \\
-						                                          & \myvari{2} Complexité de la tâche                                                 \\
-						                                          & \myvari{3} Niveau d'apprentissage                                                 \\
-						\mymiddlerule
-						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
-						                                          & \myvard{2} Nombre de sélections                                                   \\
-						                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
-						                                          & \myvard{4} Distance active entre les espaces de travail                           \\
-						                                          & \myvard{5} Vitesse moyenne                                                        \\
-						                                          & \myvard{6} Réponses qualitatives                                                  \\
-						\mymiddlerule[\heavyrulewidth]
-						\multicolumn{2}{c}{%
-							\small%
-							\begin{tabular}{^C-C-C-C}
-								\myrowstyle{\bfseries}
-								Condition \mycondition{1}       & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4} \\
-								\mymiddlerule
-								\mynum{1}~sujet                 & \mynum{1}~sujet                 & \mynum{2}~sujets          & \mynum{2}~sujets          \\
-								\myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Bimanuel}         & Collaboratif              & Collaboratif              \\
-								\mymiddlerule
-								Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}  & Scénario~\myscenario{1b}  \\
-								Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}  & Scénario~\myscenario{1a}  \\
-								Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}  & Scénario~\myscenario{2b}  \\
-								Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}  & Scénario~\myscenario{2a}  \\
-							\end{tabular}
-						} \\
-						\mybottomrule
-					\end{mytabular}
-				\end{mytable}
 				\begin{mysubsubsection}[sss-exp2-Materiel]{Matériel}
 					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
 					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
@@ -1644,6 +1589,59 @@
 						\mycaption[fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
 					\end{myfigure}
 				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-exp2-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+					\newcommand{\mytitlecolumn}[2]{%
+						\multirow{#1}*{%
+							\begin{minipage}{6em}%
+								\raggedleft #2%
+							\end{minipage}%
+						}
+					}
+					\newlength{\exptwofirstcolumn}
+					\newlength{\exptwosecondcolumn}
+					\setlength{\exptwofirstcolumn}{7em}
+					\setlength{\exptwosecondcolumn}{\textwidth}
+					\addtolength{\exptwosecondcolumn}{-\exptwofirstcolumn}
+					\addtolength{\exptwosecondcolumn}{-4\tabcolsep}
+					\begin{mytabular}{>{\bfseries}p{\exptwofirstcolumn}p{\exptwosecondcolumn}}
+						\mytoprule
+						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule                                                        \\
+						\mymiddlerule[\heavyrulewidth]
+						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}           \\
+						                                          & \myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes \\
+						                                          & \myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}           \\
+						                                          & \myhypothesis{4} Les sujets préfèrent le travail en collaboration                 \\
+						\mymiddlerule
+						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                       \\
+						                                          & \myvari{2} Complexité de la tâche                                                 \\
+						                                          & \myvari{3} Niveau d'apprentissage                                                 \\
+						\mymiddlerule
+						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
+						                                          & \myvard{2} Nombre de sélections                                                   \\
+						                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
+						                                          & \myvard{4} Distance active entre les espaces de travail                           \\
+						                                          & \myvard{5} Vitesse moyenne                                                        \\
+						                                          & \myvard{6} Réponses qualitatives                                                  \\
+						\mymiddlerule[\heavyrulewidth]
+						\multicolumn{2}{c}{%
+							\small%
+							\begin{tabular}{^C-C-C-C}
+								\myrowstyle{\bfseries}
+								Condition \mycondition{1}       & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4} \\
+								\mymiddlerule
+								\mynum{1}~sujet                 & \mynum{1}~sujet                 & \mynum{2}~sujets          & \mynum{2}~sujets          \\
+								\myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Bimanuel}         & Collaboratif              & Collaboratif              \\
+								\mymiddlerule
+								Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}  & Scénario~\myscenario{1b}  \\
+								Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}  & Scénario~\myscenario{1a}  \\
+								Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}  & Scénario~\myscenario{2b}  \\
+								Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}  & Scénario~\myscenario{2a}  \\
+							\end{tabular}
+						} \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-Resultats]{Résultats}
@@ -2173,57 +2171,6 @@
 				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
 				Les modifications sont présentées dans les sections qui vont suivre.
 				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-PremiereExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
-
-				\begin{mytable}
-					\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
-					\newcommand{\mytitlecolumn}[2]{%
-						\multirow{#1}*{%
-							\begin{minipage}{6em}%
-								\raggedleft #2%
-							\end{minipage}%
-						}
-					}
-					\newlength{\expthreefirstcolumn}
-					\newlength{\expthreesecondcolumn}
-					\setlength{\expthreefirstcolumn}{7em}
-					\setlength{\expthreesecondcolumn}{\textwidth}
-					\addtolength{\expthreesecondcolumn}{-\expthreefirstcolumn}
-					\addtolength{\expthreesecondcolumn}{-4\tabcolsep}
-					\begin{mytabular}{>{\bfseries}p{\expthreefirstcolumn}p{\expthreesecondcolumn}}
-						\mytoprule
-						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule en groupe                                        \\
-						\mymiddlerule[\heavyrulewidth]
-						\mytitlecolumn{2}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome} \\
-																	& \myhypothesis{2} Le remue-méninges structure le \myglosnl{glo-Quadrinome}   \\
-						\mymiddlerule
-						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                 \\
-																	& \myvari{2} Complexité de la tâche                                           \\
-																	& \myvari{3} Temps alloué pour le remue-méninges                              \\
-						\mymiddlerule
-						\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                             \\
-																	& \myvard{2} Fréquence des sélections                                         \\
-																	& \myvard{3} Vitesse moyenne                                                  \\
-																	& \myvard{4} Force moyenne appliquée par les sujets                           \\
-																	& \myvard{5} Communications verbales                                          \\
-						\mymiddlerule[\heavyrulewidth]
-						\multicolumn{2}{c}{%
-							\small%
-							\begin{tabular}{^C-C-C-C}
-								\myrowstyle{\bfseries}
-								Condition \mycondition{1} & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4}       \\
-								\mymiddlerule
-								\mynum{2}~sujets          & \mynum{2}~sujets                & \mynum{4}~sujets          & \mynum{4}~sujets                \\
-								\myGlosnl{glo-Bimanuel}   & \myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Monomanuel} & \myGlosnl{glo-Monomanuel}       \\
-								\mymiddlerule
-								Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges & Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges \\
-								\mymiddlerule
-								Scénario~\myscenario{1}   & Scénario~\myscenario{1}         & Scénario~\myscenario{1}   & Scénario~\myscenario{1}         \\
-								Scénario~\myscenario{2}   & Scénario~\myscenario{2}         & Scénario~\myscenario{2}   & Scénario~\myscenario{2}         \\
-							\end{tabular}
-						} \\
-						\mybottomrule
-					\end{mytabular}
-				\end{mytable}
 				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
 					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
 					Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
@@ -2274,6 +2221,56 @@
 					En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
 					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule dans son état stable.
 				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+					\newcommand{\mytitlecolumn}[2]{%
+						\multirow{#1}*{%
+							\begin{minipage}{6em}%
+								\raggedleft #2%
+							\end{minipage}%
+						}
+					}
+					\newlength{\expthreefirstcolumn}
+					\newlength{\expthreesecondcolumn}
+					\setlength{\expthreefirstcolumn}{7em}
+					\setlength{\expthreesecondcolumn}{\textwidth}
+					\addtolength{\expthreesecondcolumn}{-\expthreefirstcolumn}
+					\addtolength{\expthreesecondcolumn}{-4\tabcolsep}
+					\begin{mytabular}{>{\bfseries}p{\expthreefirstcolumn}p{\expthreesecondcolumn}}
+						\mytoprule
+						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule en groupe                                        \\
+						\mymiddlerule[\heavyrulewidth]
+						\mytitlecolumn{2}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome} \\
+																	& \myhypothesis{2} Le remue-méninges structure le \myglosnl{glo-Quadrinome}   \\
+						\mymiddlerule
+						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                 \\
+																	& \myvari{2} Complexité de la tâche                                           \\
+																	& \myvari{3} Temps alloué pour le remue-méninges                              \\
+						\mymiddlerule
+						\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                             \\
+																	& \myvard{2} Fréquence des sélections                                         \\
+																	& \myvard{3} Vitesse moyenne                                                  \\
+																	& \myvard{4} Force moyenne appliquée par les sujets                           \\
+																	& \myvard{5} Communications verbales                                          \\
+						\mymiddlerule[\heavyrulewidth]
+						\multicolumn{2}{c}{%
+							\small%
+							\begin{tabular}{^C-C-C-C}
+								\myrowstyle{\bfseries}
+								Condition \mycondition{1} & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4}       \\
+								\mymiddlerule
+								\mynum{2}~sujets          & \mynum{2}~sujets                & \mynum{4}~sujets          & \mynum{4}~sujets                \\
+								\myGlosnl{glo-Bimanuel}   & \myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Monomanuel} & \myGlosnl{glo-Monomanuel}       \\
+								\mymiddlerule
+								Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges & Pas de remue-méninges     & \mynum[mn]{1} de remue-méninges \\
+								\mymiddlerule
+								Scénario~\myscenario{1}   & Scénario~\myscenario{1}         & Scénario~\myscenario{1}   & Scénario~\myscenario{1}         \\
+								Scénario~\myscenario{2}   & Scénario~\myscenario{2}         & Scénario~\myscenario{2}   & Scénario~\myscenario{2}         \\
+							\end{tabular}
+						} \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-Resultats]{Résultats}
@@ -2655,56 +2652,6 @@
 		\begin{mysection}[sec-exp4-Contexte]{Contexte}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-ExperimentationAvecAssistanceHaptique]{Expérimentation avec assistance haptique}
-			Les sections suivantes décrivent l'ensemble des modification apportées à la plate-forme de base \myref*{cha-pro-DispositifExperimental} et principalement aux outils.
-			La méthode expérimentale est exposée dans la \myref{sec-met-exp4-PremiereExperimentation}.
-			Un résumé de cette méthode se trouve dans la \myref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
-
-			\begin{mytable}
-				\mycaption[tab-exp4-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
-				\newcommand{\mytitlecolumn}[2]{%
-					\multirow{#1}*{%
-						\begin{minipage}{6em}%
-							\raggedleft #2%
-						\end{minipage}%
-					}
-				}
-				\newlength{\expfourfirstcolumn}
-				\newlength{\expfoursecondcolumn}
-				\setlength{\expfourfirstcolumn}{7em}
-				\setlength{\expfoursecondcolumn}{\textwidth}
-				\addtolength{\expfoursecondcolumn}{-\expfourfirstcolumn}
-				\addtolength{\expfoursecondcolumn}{-4\tabcolsep}
-				\begin{mytabular}{>{\bfseries}p{\expfourfirstcolumn}p{\expfoursecondcolumn}}
-					\mytoprule
-					\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule ou d'un complexe de molécule                   \\
-					\mymiddlerule[\heavyrulewidth]
-					\mytitlecolumn{3}{Hypothèses}             & \myhypothesis{1} Performances améliorées par l'assistance haptique        \\
-																& \myhypothesis{2} L'assistance haptique améliore la communication          \\
-																& \myhypothesis{3} La plate-forme est appréciée des experts                 \\
-					\mymiddlerule
-					\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Présence de l'assistance                                       \\
-																& \myvari{2} Molécules à déformer                                           \\
-					\mymiddlerule
-					\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Score de ressemblance minimum                                  \\
-																& \myvard{2} Temps du score \myacronl-{acr-RMSD}                            \\
-																& \myvard{3} Nombre de sélections                                           \\
-																& \myvard{4} Communication verbales et gestuelles                           \\
-																& \myvard{5} Test d'utilisabilité de la plate-forme                         \\
-					\mymiddlerule[\heavyrulewidth]
-					\multicolumn{2}{c}{%
-						\small%
-						\begin{tabular}{^C-C-C-C}
-							\myrowstyle{\bfseries}
-							Condition \mycondition{1} & Condition \mycondition{2} & Condition \mycondition{3} & Condition \mycondition{4} \\
-							\mymiddlerule
-							Sans assistance           & Avec assistance           & Sans assistance           & Avec assistance           \\
-							\mymiddlerule
-							\myUbiquitin              & \myUbiquitin              & \myNusENusG               & \myNusENusG               \\
-						\end{tabular}
-					} \\
-					\mybottomrule
-				\end{mytabular}
-			\end{mytable}
 			\begin{mysubsection}[sse-exp4-Tache]{Tâche}
 				La tâche proposée est la déformation de molécules et de complexes de molécules dans un \myacro{acr-EVC}.
 				L'objectif est de la rendre le plus conforme possible au modèle.
@@ -2804,6 +2751,9 @@
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
+				Les sections suivantes décrivent l'ensemble des modification apportées à la plate-forme de base \myref*{cha-pro-DispositifExperimental} et principalement aux outils.
+				La méthode expérimentale est exposée dans la \myref{sec-met-exp4-PremiereExperimentation}.
+				Un résumé de cette méthode se trouve dans la \myref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp4-Materiel]{Matériel}
 					Dans cet quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
 					Deux sujets auront toujours à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sss-exp4-OutilsDeManipulation}.
@@ -2890,6 +2840,52 @@
 						En mettant à disposition la souris comme troisième outil pour le coordinateur, l'objectif est qu'elle soit peu utilisée, seulement lorsque c'est réellement nécessaire.
 					\end{myparagraph}
 				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-exp4-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
+					\newcommand{\mytitlecolumn}[2]{%
+						\multirow{#1}*{%
+							\begin{minipage}{6em}%
+								\raggedleft #2%
+							\end{minipage}%
+						}
+					}
+					\newlength{\expfourfirstcolumn}
+					\newlength{\expfoursecondcolumn}
+					\setlength{\expfourfirstcolumn}{7em}
+					\setlength{\expfoursecondcolumn}{\textwidth}
+					\addtolength{\expfoursecondcolumn}{-\expfourfirstcolumn}
+					\addtolength{\expfoursecondcolumn}{-4\tabcolsep}
+					\begin{mytabular}{>{\bfseries}p{\expfourfirstcolumn}p{\expfoursecondcolumn}}
+						\mytoprule
+						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule ou d'un complexe de molécule                   \\
+						\mymiddlerule[\heavyrulewidth]
+						\mytitlecolumn{3}{Hypothèses}             & \myhypothesis{1} Performances améliorées par l'assistance haptique        \\
+						                                          & \myhypothesis{2} L'assistance haptique améliore la communication          \\
+						                                          & \myhypothesis{3} La plate-forme est appréciée des experts                 \\
+						\mymiddlerule
+						\mytitlecolumn{2}{Variable indépendantes} & \myvari{1} Présence de l'assistance                                       \\
+						                                          & \myvari{2} Molécules à déformer                                           \\
+						\mymiddlerule
+						\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Score de ressemblance minimum                                  \\
+						                                          & \myvard{2} Temps du score \myacronl-{acr-RMSD}                            \\
+						                                          & \myvard{3} Nombre de sélections                                           \\
+						                                          & \myvard{4} Communication verbales et gestuelles                           \\
+						                                          & \myvard{5} Test d'utilisabilité de la plate-forme                         \\
+						\mymiddlerule[\heavyrulewidth]
+						\multicolumn{2}{c}{%
+							\small%
+							\begin{tabular}{^C-C-C-C}
+								\myrowstyle{\bfseries}
+								Condition \mycondition{1} & Condition \mycondition{2} & Condition \mycondition{3} & Condition \mycondition{4} \\
+								\mymiddlerule
+								Sans assistance           & Avec assistance           & Sans assistance           & Avec assistance           \\
+								\mymiddlerule
+								\myUbiquitin              & \myUbiquitin              & \myNusENusG               & \myNusENusG               \\
+							\end{tabular}
+						} \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
