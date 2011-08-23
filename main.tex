@@ -1338,223 +1338,50 @@
 			Les deux premières tâches élémentaires du processus de déformation moléculaire \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} ont été étudiées dans cette première études.
 			Cette seconde étude se rapproche d'un processus complet de déformation moléculaire puisqu'elle se focalisera sur la tâche élémentaire de \myemph{manipulation}.
 
-			Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-Presentation}.
-			Ensuite, le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-DispositifExperimentalEtMateriel}.
-			La \myref{sec-exp2-Methode} expose les différents détails concernant la tâche proposée et les variables étudiées.
+			Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-Contexte}.
+			Ensuite, la tâche et le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-ExperimentationDeDeformationDeMolecule}.
 			Les résultats seront analysés dans la \myref{sec-exp2-Resultats}.
 			Enfin, la \myref{sec-exp2-Synthese} effectue une synthèse de cette seconde étude et propose des perspectives pour les expérimentations qui vont suivre.
 		\end{mysection}
-		\begin{mysection}[sec-exp2-Presentation]{Présentation}
-			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
-				Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
-				Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
-				La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
-				Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
+		\begin{mysection}[sec-exp2-Contexte]{Contexte}
+			Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+			Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
+			La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
+			Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
-				L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
-				\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
-				Les objets concernés sont plutôt simples comme des sphères.
-				Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-				Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
-				Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
+			L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
+			\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
+			Les objets concernés sont plutôt simples comme des sphères.
+			Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
+			Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
+			Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
 
-				Les processus de déformation collaboratifs sont également peu étudiés.
-				La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
-				\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
-				L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
-				Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
-				Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
-				Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
+			Les processus de déformation collaboratifs sont également peu étudiés.
+			La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
+			\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
+			L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
+			Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
+			Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
+			Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
 
-				On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
-				\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
-				Son projet repose sur la manipulation de corps rigides.
-				Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
-				La manipulation s'effectue alors sur un objet malléable.
-				Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
+			On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
+			\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
+			Son projet repose sur la manipulation de corps rigides.
+			Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
+			La manipulation s'effectue alors sur un objet malléable.
+			Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
 
-				L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
-				L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
-				L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
+			L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
+			L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
+			L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
 
-				De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
-				Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
+			De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
+			Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
 
-				Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
-				En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-Hypotheses]{Hypothèses}
-				Les hypothèses de cette nouvelle étude sont en grande partie basée sur l'étude précédente.
-				Nous souhaitons confirmer l'intérêt du travail collaboratif dans la tâche élémentaire de \myemph{manipulation}, notamment sur les tâches de complexité importante.
-				De plus, cette expérimentation propose d'étudier l'apprentissage de la tâche et d'en observer l'évolution dans le cadre du travail collaboratif.
-				\begin{myparagraph}[par-exp2-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
-					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
-					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans la première étude dans un contexte de \myemph{manipulation}.
-					La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} en collaboratif comparés aux \myglos*{glo-Monome} en \myglos{glo-Bimanuel}.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp2-MeilleurGainDePerformancesSurLesTachesComplexes]{\myhypothesis{2} Meilleur gain de performances sur les tâches complexes}
-					Nous émettons l'hypothèse que plus la tâche est complexe et plus une configuration de travail collaboratif produira un gain significatif de performances comparé à un \myglos{glo-Monome}.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp2-LApprentissageEstPlusPerformantPourLesBinomes]{\myhypothesis{3} L'apprentissage est plus performant pour les \myglosnl*{glo-Binome}}
-					Nous émettons l'hypothèse que le travail en collaboration augmente la vitesse d'apprentissage de la tâche.
-					En effet, nous supposons que l'interaction entre les partenaires va stimuler l'apprentissage et permettre l'échange des connaissances.
-				\end{myparagraph}
-				\begin{myparagraph}[par-exp2-LesSujetsPreferentLeTravailEnCollaboration]{\myhypothesis{4} Les sujets préfèrent le travail en collaboration}
-					Nous souhaitons évaluer auprès des utilisateurs l'intérêt vis-à-vis du travail collaboratif.
-					Notre hypothèse est que les utilisateurs préfèrent le travail collaboratif.
-					En effet, le contact social et la possibilité de communiquer sont des apports appréciés dans le milieu du travail.
-				\end{myparagraph}
-			\end{mysubsection}
+			Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
+			En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
 		\end{mysection}
-		\begin{mysection}[sec-exp2-DispositifExperimentalEtMateriel]{Dispositif expérimental et matériel}
-			Cette seconde expérimentation se base sur un dispositif expérimental relativement similaire à celui de la première expérimentation.
-			L'expérience est basée sur l'\myacro{acr-EVC} présenté dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}.
-			Dans un premier temps, une liste du matériel utilisé est présenté dans la \myref{sse-exp2-DispositifTechnique} puis la disposition de chacun de ces éléments dans la \myref{sse-exp2-DispositionDesElements}.
-			Puis, dans un second temps, les aspects logiciels seront détaillés dans la \myref{sse-exp2-VisualisationEtInteraction}.
-			\begin{mysubsection}[sse-exp2-DispositifTechnique]{Dispositif technique}
-				La réalisation de cette expérimentation nécessite l'ensemble des matériels suivants :
-				\begin{itemize}
-					\item \mynum{1}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
-					\item \mynum{2}~ordinateurs de faible puissance;
-					\item \mynum{2}~interfaces haptiques \myOmni;
-					\item \mynum{1}~microphone de bureau;
-					\item \mynum{1}~souris \myThreeD \mySpaceNavigator;
-					\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series);
-					\item \mynum{1}~grand écran de vidéoprojection.
-				\end{itemize}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-DispositionDesElements]{Disposition des éléments}
-				Cette nouvelle étude propose une disposition relativement similaire à la première expérimentation \myref*{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
-				Les sujets sont face à un écran de vidéoprojection, le vidéoprojecteur se trouvant derrière eux.
-				La vue partagée permet à tous les sujets de voir le grand écran et de communiquer librement.
-
-				Deux interfaces haptiques se trouvent faces aux sujets : ce sont deux outils de déformation \mytool{tug} \myref*{sse-Shaddock-LesOutilsExistants}.
-				Le sujet d'un \myglos{glo-Monome} aura accès aux deux interfaces en manipulation \myglos*{glo-Bimanuel}.
-				Dans le cas d'un \myglos{glo-Binome}, chaque sujet aura un outil à sa disposition.
-				De plus, le \mySpaceNavigator est placé entre les deux interfaces haptiques afin d'être accessibles à tous les sujets.
-
-				L'expérimentateur dirige les opérations depuis un poste de travail placé derrière les sujets.
-				C'est lui qui lance et stoppe les différents scénarios proposés.
-
-				Les \myref{fig-exp2-SchemaDuDispositifExperimental} et \myref{fig-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
-
-				\begin{myfigure}
-					\myimage{exp2-schema}
-					\mycaption[fig-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp2-photo}
-					\mycaption[fig-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-VisualisationEtInteraction]{Visualisation et interaction}
-				Chaque molécule proposée est projetée dans son intégralité sur l'écran de vidéoprojection avec les rendus graphiques suivants \myref*{sss-Shaddock-LesRendusGraphiques} :
-				\begin{itemize}
-					\item un rendu \myCPK avec des atomes de taille assez petite afin de pouvoir apprécier l'ensemble des atomes de la molécule;
-					\item un second rendu \myCPK pour agrandir tous les atomes sauf les atomes d'hydrogène qui sont peu informatifs;
-					\item un rendu \myNewRibbon pour apprécier la structure globale de la molécule.
-				\end{itemize}
-				De plus, un affichage de l'état stable de la molécule est affiché par un rendu \myNewRibbon transparent.
-				Pour les besoins de la simulation, certains \myglos*{glo-Residu} sont fixes et sont alors représentés avec la couleur grise.
-				Enfin, les \myglos*{glo-Residu} sélectionné sont affichés avec un rendu \myCPK en transparence et de la couleur du curseur concerné.
-				La \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} illustre l'ensemble des rendus graphiques précédemment décrits.
-
-				\begin{myfigure}
-					\psset{unit=0.08\textwidth}
-					\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
-					\begin{myps}(0,0)(11,8.5)
-						\rput[bl](1,0){\myimage{exp2-trp-zipper}}
-						\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
-						\myexptwolabel(1,5.5)[ghost-label]{myred}{Molécule cible}
-						\myexptwolabel(7.1,7.3)[deformed-residue-label]{myblue}{\myGlosnl{glo-Residu} sélectionné}
-						\myexptwolabel(1,3)[ghost-residue-label]{myblue}{\myGlosnl{glo-Residu} cible}
-						\myexptwolabel(4.0,8.15)[fixed-residue-label]{mygray}{\myGlosnl{glo-Residu} fixe}
-						\pnode(7.4,3.6){deformed}
-						\pnode(1.8,4){ghost}
-						\psset{linecolor=myblue}
-						\cnode(6.2,5.2){1.0}{deformed-residue}
-						\cnode(2.3,1.5){0.8}{ghost-residue}
-						\psset{linecolor=mygray}
-						\cnode(2.0,7){0.8}{fixed-residue}
-						\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
-						\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
-						\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
-						\psset{linecolor=myblue,nodesepB=0pt}
-						\ncdiagg[angleA=-90,offsetA=0.5]{c->}{deformed-residue-label}{deformed-residue}
-						\ncdiagg[angleA=-90,offsetA=-0.5]{c->}{ghost-residue-label}{ghost-residue}
-						\ncdiagg[angleA=180,linecolor=mygray]{c->}{fixed-residue-label}{fixed-residue}
-						\ncline[linewidth=10pt,linecolor=myblue,arrowsize=2pt 2,nodesepA=4pt]{C->}{deformed-residue}{ghost-residue}
-					\end{myps}
-					\mycaption[fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
-				\end{myfigure}
-
-				Les outils \mytool{tug} vont permettre aux sujets de déformer la molécule.
-				Les \myglos*{glo-Monome} se placent devant les deux interfaces haptiques de façon à pouvoir manipuler en configuration \myglos*{glo-Bimanuel}.
-				Dans le cas d'un \myglos{glo-Binome}, chaque sujet est installé face à un outil.
-				Le \mySpaceNavigator est laissé libre d'utilisation pour les sujets quelque soit le nombre de sujets.
-			\end{mysubsection}
-		\end{mysection}
-		\begin{mysection}[sec-exp2-Methode]{Méthode}
-			\begin{mysubsection}[sse-exp2-Sujets]{Sujets}
-				\mysummary{exp2-subjects.tex} avec une moyenne d'âge de \mysummary{exp2-age.tex} ont participé à cette expérimentation.
-				Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
-				\begin{itemize}
-					\item linguistique et traitement automatique de la parole;
-					\item réalité virtuelle et système immersifs;
-					\item audio-acoustique.
-				\end{itemize}
-				Ils ont tous le français comme langue principale.
-				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
-
-				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
-				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
-			\end{mysubsection}
-			\begin{mysubsection}[sec-exp2-Variables]{Variables}
-				\begin{mysubsubsection}[sss-exp2-VariablesIndependantes]{Variables indépendantes}
-					\begin{myparagraph}[par-exp2-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
-						\myvari{1} possède deux valeurs possibles : \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
-						\mynum{12}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} sont testés.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Deux tâches de déformation sont proposées sur chacune des deux molécules : une déformation au niveau inter-moléculaire et une déformation au niveau intra-moléculaire.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-LeNiveauDApprentissage]{\myvari{3} Le niveau d'apprentissage}
-						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Tous les sujets seront confrontés trois fois à la même tâche afin de voir l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
-					\end{myparagraph}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sec-exp2-VariablesDependantes]{Variables dépendantes}
-					\begin{myparagraph}[par-exp2-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
-						Le temps est limité à \mynum[mn]{10}.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
-						\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
-						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
-						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
-						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'ensemble de l'expérimentation.
-						Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
-						Elle est de l'ordre du centimètre.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-DistanceActiveEntreLesEspacesDeTravail]{\myvard{4} Distance active entre les espaces de travail}
-						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
-						C'est une distance physique du monde réel de l'ordre du centimètre.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-VitesseMoyenne]{\myvard{5} Vitesse moyenne}
-						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
-						Elle est calculée par intégration numérique des positions successives en fonction du temps.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
-						Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
-						Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
-						Le questionnaire soumis aux sujets est disponible dans la \myref{sec-Questionnaires-SecondeExperimentation}.
-					\end{myparagraph}
-				\end{mysubsubsection}
-			\end{mysubsection}
+		\begin{mysection}[sec-exp2-ExperimentationDeDeformationDeMolecule]{Expérimentation de déformation de molécule}
 			\begin{mysubsection}[sse-exp2-Tache]{Tâche}
 				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
 				\begin{mysubsubsection}[sss-exp2-DescriptionDeLaTache]{Description de la tâche}
@@ -1667,23 +1494,9 @@
 					Il en résulte que l'outil \mytool{tug} pour les \myglos*{glo-Residu} permet d'appliquer un effort total plus important et perturbe plus fortement la simulation.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-Procedure]{Procédure}
-				L'expérimentation débute par une étape d'entraînement avec la molécule \myPrion.
-				Pendant cette phase, les outils sont introduits et expliqués un par un.
-				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
-				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
-
-				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées aux scénarios \myscenario{1a} et \myscenario{1b}.
-				Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
-				L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
-
-				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
-				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
-
-				Tous les sujets sont confrontés aux quatre scénarios trois fois avec un jour d'intervalle entre chaque confrontation.
-				L'objectif de cette multiple confrontation est l'étude de l'apprentissage.
-
-				Un résumé du protocole expérimental est exprimé dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale}.
+			\begin{mysubsection}[sse-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
+				L'expérimentation, basée sur la dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
+				Un résumé de la methode expérimentale se trouve dans le \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-pro-exp2-PremiereExperimentation}.
 
 				\begin{mytable}
 					\mycaption[tab-exp2-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -1705,20 +1518,20 @@
 						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule                                                        \\
 						\mymiddlerule[\heavyrulewidth]
 						\mytitlecolumn{4}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}           \\
-																	& \myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes \\
-																	& \myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}           \\
-																	& \myhypothesis{4} Les sujets préfèrent le travail en collaboration                 \\
+						                                          & \myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes \\
+						                                          & \myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}           \\
+						                                          & \myhypothesis{4} Les sujets préfèrent le travail en collaboration                 \\
 						\mymiddlerule
 						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                       \\
-																	& \myvari{2} Complexité de la tâche                                                 \\
-																	& \myvari{3} Niveau d'apprentissage                                                 \\
+						                                          & \myvari{2} Complexité de la tâche                                                 \\
+						                                          & \myvari{3} Niveau d'apprentissage                                                 \\
 						\mymiddlerule
 						\mytitlecolumn{6}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                   \\
-																	& \myvard{2} Nombre de sélections                                                   \\
-																	& \myvard{3} Distance passive entre les espaces de travail                          \\
-																	& \myvard{4} Distance active entre les espaces de travail                           \\
-																	& \myvard{5} Vitesse moyenne                                                        \\
-																	& \myvard{6} Réponses qualitatives                                                  \\
+						                                          & \myvard{2} Nombre de sélections                                                   \\
+						                                          & \myvard{3} Distance passive entre les espaces de travail                          \\
+						                                          & \myvard{4} Distance active entre les espaces de travail                           \\
+						                                          & \myvard{5} Vitesse moyenne                                                        \\
+						                                          & \myvard{6} Réponses qualitatives                                                  \\
 						\mymiddlerule[\heavyrulewidth]
 						\multicolumn{2}{c}{%
 							\small%
@@ -1738,6 +1551,108 @@
 						\mybottomrule
 					\end{mytabular}
 				\end{mytable}
+				\begin{mysubsubsection}[sss-exp2-Materiel]{Matériel}
+					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
+					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
+					Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
+					Cependant, la forme sous laquelle il est présenté n'est pas idéale.
+					L'outil de manipulation \mytool{grab} a posé quelques problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier cet outil.
+
+					Après quelques échanges avec un bio-informaticien, il est apparu qu'une souris~\myThreeD serait un outil plus approprié qu'une interface haptique.
+					En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes ce qui amène à des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
+					La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil de manipulation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
+					Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
+					Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil afin de stimuler les interactions.
+
+					En ce qui concerne l'utilisation des outils de déformation, chaque sujet d'un \myglos{glo-Binome} possède à sa disposition un outil de déformation.
+					Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
+					Dans ce cas, il est forcé de lâcher un des deux outils afin d'utiliser la souris~\myThreeD.
+					Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toute sélection effectuée avec tous les outils de déformation.
+
+					Les \myref{fig-pro-exp2-SchemaDuDispositifExperimental} et \myref{fig-pro-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
+
+					\begin{myfigure}
+						\myimage{exp2-schema}
+						\mycaption[fig-pro-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{exp2-photo}
+						\mycaption[fig-pro-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp2-Visualisation]{Visualisation}
+					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
+					Ces molécules sont représentés avec les rendus graphiques de base (\myCPK et \myNewRibbon).
+					Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
+					Cette molécule ne peut pas être représentées avec tous ces atomes pour deux raisons.
+					Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
+					De plus, la précision de la déformation ne nécessite pas la présence des atomes.
+					C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
+
+					Des images représentants les différents scénarios dans leur état initial sont présentées.
+					La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} représente le scénario~\myscenario{1A}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B} représente le scénario~\myscenario{1B}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} représente le scénario~\myscenario{2A} et la \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représente le scénario~\myscenario{2B}.
+
+					\begin{myfigure}
+						\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-zipper-atom}
+						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{1A}}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-cage-atom}
+						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{1B}}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{protocole-render-exp2-trp-zipper-residue}
+						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{2A}}
+					\end{myfigure}
+					\begin{myfigure}
+						\myimage{protocole-render-exp2-trp-cage-residue}
+						\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
+					\end{myfigure}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp2-OutilsDeManipulation]{Outils de manipulation}
+					Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
+					Grâce au choix du matériel capable de différencier aisément les opérations de translation et les opérations de rotation, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
+					En effet, la molécule n'a pas vraiment besoin d'être déplacer à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
+					Ceci permet également d'éviter des molécules qui sortent de l'écran à cause d'une mauvaise manipulation.
+					De plus, cela décharge d'une charge cognitive inutile.
+
+					En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
+					La tâche consiste à reconstituer une molécule dans son état d'équilibre.
+					Pour assister les sujets, nous avons déjà vu qu'un rendu visuel en transparence de la molécule dans son état stable est affichée à l'écran.
+					Pour augmenter l'aide visuelle apportée, nous allons également indiquer l'emplacement final d'un \myglos{glo-Residu} sélectionné.
+					En effet, dès qu'un sujet sélectionne un \myglos{glo-Residu}, ce \myglos{glo-Residu} est mis en surbrillance.
+					Le \myglos{glo-Residu} correspondant sur la molécule stable est également mis en surbrillance comme expliqué sur la \myref{fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
+					Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK avec des atomes grossis et coloré de la couleur du curseur du sujet concerné.
+
+					\begin{myfigure}
+						\psset{unit=0.08\textwidth}
+						\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
+						\begin{myps}(0,0)(11,8.5)
+							\rput[bl](1,0){\myimage{exp2-trp-zipper}}
+							\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
+							\myexptwolabel(1,5.5)[ghost-label]{myred}{Molécule cible}
+							\myexptwolabel(7.1,7.3)[deformed-residue-label]{myblue}{\myGlosnl{glo-Residu} sélectionné}
+							\myexptwolabel(1,3)[ghost-residue-label]{myblue}{\myGlosnl{glo-Residu} cible}
+							\myexptwolabel(4.0,8.15)[fixed-residue-label]{mygray}{\myGlosnl{glo-Residu} fixe}
+							\pnode(7.4,3.6){deformed}
+							\pnode(1.8,4){ghost}
+							\psset{linecolor=myblue}
+							\cnode(6.2,5.2){1.0}{deformed-residue}
+							\cnode(2.3,1.5){0.8}{ghost-residue}
+							\psset{linecolor=mygray}
+							\cnode(2.0,7){0.8}{fixed-residue}
+							\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
+							\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
+							\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
+							\psset{linecolor=myblue,nodesepB=0pt}
+							\ncdiagg[angleA=-90,offsetA=0.5]{c->}{deformed-residue-label}{deformed-residue}
+							\ncdiagg[angleA=-90,offsetA=-0.5]{c->}{ghost-residue-label}{ghost-residue}
+							\ncdiagg[angleA=180,linecolor=mygray]{c->}{fixed-residue-label}{fixed-residue}
+							\ncline[linewidth=10pt,linecolor=myblue,arrowsize=2pt 2,nodesepA=4pt]{C->}{deformed-residue}{ghost-residue}
+						\end{myps}
+						\mycaption[fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
+					\end{myfigure}
+				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-Resultats]{Résultats}
@@ -2252,7 +2167,7 @@
 			Le matériel utilisé est détaillé dans la \myref{sse-exp3-DispositifTechnique}.
 			Les aspects de visualisation et d'interaction du logiciel seront expliqués dans la \myref{sse-exp3-Visualisation}.
 			\begin{mysubsection}[sse-exp3-DispositifTechnique]{Dispositif technique}
-				Cette nouvelle étude propose une disposition identique à la seconde expérimentation \myref*{sse-exp2-DispositionDesElements} avec les matériels suivants :
+				Cette nouvelle étude propose une disposition identique à la seconde expérimentation \myref*{sse-exp2-SpecificitesDeLaPremiereExperimentation} avec les matériels suivants :
 				\begin{itemize}
 					\item \mynum{2}~ordinateurs quatre cœurs \myIntelCore avec \myRAM[Go]{4};
 					\item \mynum{2}~ordinateurs de faible puissance;
@@ -2299,7 +2214,7 @@
 				De plus, l'état stable de la molécule (molécule cible) est affiché par un rendu \myNewRibbon partiellement transparent.
 				Pour les besoins de la simulation, certains \myglos*{glo-Residu} sont fixes et sont alors grisés.
 				Enfin, les \myglos*{glo-Residu} sélectionnés sont affichés avec un rendu \myCPK partiellement transparent et de la couleur du curseur concerné.
-				La \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} dans la \myref{sse-exp2-VisualisationEtInteraction} illustre l'ensemble des rendus graphiques précédemment décrits.
+				La \myref{fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule} dans la \myref{sss-exp2-Visualisation} illustre l'ensemble des rendus graphiques précédemment décrits.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-Methode]{Méthode}
@@ -3297,111 +3212,7 @@
 			On pourra se reporter aux chapitres respectifs pour plus de détails.
 
 			De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
-			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sse-pro-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
-		\end{mysection}
-		\begin{mysection}[sec-pro-exp2-SpecificitesDeLaPremiereExperimentation]{Spécificités de la seconde expérimentation}
-			\begin{mysubsection}[sse-pro-exp2-Materiel]{Matériel}
-				Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
-				En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
-				Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
-				Cependant, la forme sous laquelle il est présenté n'est pas idéale.
-				L'outil de manipulation \mytool{grab} a posé quelques problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier cet outil.
-
-				Après quelques échanges avec un bio-informaticien, il est apparu qu'une souris~\myThreeD serait un outil plus approprié qu'une interface haptique.
-				En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes ce qui amène à des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
-				La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil de manipulation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
-				Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
-				Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil afin de stimuler les interactions.
-
-				En ce qui concerne l'utilisation des outils de déformation, chaque sujet d'un \myglos{glo-Binome} possède à sa disposition un outil de déformation.
-				Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
-				Dans ce cas, il est forcé de lâcher un des deux outils afin d'utiliser la souris~\myThreeD.
-				Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toute sélection effectuée avec tous les outils de déformation.
-
-				Les \myref{fig-pro-exp2-SchemaDuDispositifExperimental} et \myref{fig-pro-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
-
-				\begin{myfigure}
-					\myimage{exp2-schema}
-					\mycaption[fig-pro-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{exp2-photo}
-					\mycaption[fig-pro-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp2-Visualisation]{Visualisation}
-				Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
-				Ces molécules sont représentés avec les rendus graphiques de base (\myCPK et \myNewRibbon).
-				Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
-				Cette molécule ne peut pas être représentées avec tous ces atomes pour deux raisons.
-				Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
-				De plus, la précision de la déformation ne nécessite pas la présence des atomes.
-				C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
-
-				Des images représentants les différents scénarios dans leur état initial sont présentées.
-				La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} représente le scénario~\myscenario{1A}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B} représente le scénario~\myscenario{1B}, La \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} représente le scénario~\myscenario{2A} et la \myref{fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représente le scénario~\myscenario{2B}.
-
-				\begin{myfigure}
-					\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-zipper-atom}
-					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{1A}}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage[width=0.5\textwidth]{protocole-render-exp2-trp-cage-atom}
-					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{1B}}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{protocole-render-exp2-trp-zipper-residue}
-					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{2A}}
-				\end{myfigure}
-				\begin{myfigure}
-					\myimage{protocole-render-exp2-trp-cage-residue}
-					\mycaption[fig-pro-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
-				\end{myfigure}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-pro-exp2-OutilsDeManipulation]{Outils de manipulation}
-				Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
-				Grâce au choix du matériel capable de différencier aisément les opérations de translation et les opérations de rotation, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
-				En effet, la molécule n'a pas vraiment besoin d'être déplacer à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
-				Ceci permet également d'éviter des molécules qui sortent de l'écran à cause d'une mauvaise manipulation.
-				De plus, cela décharge d'une charge cognitive inutile.
-
-				En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
-				La tâche consiste à reconstituer une molécule dans son état d'équilibre.
-				Pour assister les sujets, nous avons déjà vu qu'un rendu visuel en transparence de la molécule dans son état stable est affichée à l'écran.
-				Pour augmenter l'aide visuelle apportée, nous allons également indiquer l'emplacement final d'un \myglos{glo-Residu} sélectionné.
-				En effet, dès qu'un sujet sélectionne un \myglos{glo-Residu}, ce \myglos{glo-Residu} est mis en surbrillance.
-				Le \myglos{glo-Residu} correspondant sur la molécule stable est également mis en surbrillance comme expliqué sur la \myref{fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
-				Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK avec des atomes grossis et coloré de la couleur du curseur du sujet concerné.
-
-				\begin{myfigure}
-					\psset{unit=0.08\textwidth}
-					\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
-					\begin{myps}(0,0)(11,8.5)
-						\rput[bl](1,0){\myimage{exp2-trp-zipper}}
-						\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
-						\myexptwolabel(1,5.5)[ghost-label]{myred}{Molécule cible}
-						\myexptwolabel(7.1,7.3)[deformed-residue-label]{myblue}{\myGlosnl{glo-Residu} sélectionné}
-						\myexptwolabel(1,3)[ghost-residue-label]{myblue}{\myGlosnl{glo-Residu} cible}
-						\myexptwolabel(4.0,8.15)[fixed-residue-label]{mygray}{\myGlosnl{glo-Residu} fixe}
-						\pnode(7.4,3.6){deformed}
-						\pnode(1.8,4){ghost}
-						\psset{linecolor=myblue}
-						\cnode(6.2,5.2){1.0}{deformed-residue}
-						\cnode(2.3,1.5){0.8}{ghost-residue}
-						\psset{linecolor=mygray}
-						\cnode(2.0,7){0.8}{fixed-residue}
-						\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=1pt 3,arrowinset=.2,nodesepA=3pt}
-						\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
-						\ncangle[angleA=-90,angleB=180,offsetA=-0.5]{c->}{ghost-label}{ghost}
-						\psset{linecolor=myblue,nodesepB=0pt}
-						\ncdiagg[angleA=-90,offsetA=0.5]{c->}{deformed-residue-label}{deformed-residue}
-						\ncdiagg[angleA=-90,offsetA=-0.5]{c->}{ghost-residue-label}{ghost-residue}
-						\ncdiagg[angleA=180,linecolor=mygray]{c->}{fixed-residue-label}{fixed-residue}
-						\ncline[linewidth=10pt,linecolor=myblue,arrowsize=2pt 2,nodesepA=4pt]{C->}{deformed-residue}{ghost-residue}
-					\end{myps}
-					\mycaption[fig-pro-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule]{Illustration des rendus pour l'affichage de la molécule}
-				\end{myfigure}
-			\end{mysubsection}
+			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sss-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sse-pro-exp4-Materiel}.
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp3-SpecificitesDeLaPremiereExperimentation]{Spécificités de la troisième expérimentation}
 			\begin{mysubsection}[sse-pro-exp3-Materiel]{Matériel}
@@ -3451,7 +3262,7 @@
 				Durant les précédentes expérimentations, les \myglos*{glo-ConflitDeCoordination} était relativement limité car ne concernait que des \myglos*{glo-Binome}.
 				Dans le cadre d'un \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos ce que nous ne souhaitons pas.
 
-				En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sse-pro-exp2-OutilsDeManipulation}.
+				En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
 				Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule dans son état stable.
 			\end{mysubsection}
 		\end{mysection}
@@ -3709,6 +3520,104 @@
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp2-PremiereExperimentation]{Seconde expérimentation}
+			\begin{mysubsection}[sse-met-exp2-Hypotheses]{Hypothèses}
+				Les hypothèses de cette nouvelle étude sont en grande partie basée sur l'étude précédente.
+				Nous souhaitons confirmer l'intérêt du travail collaboratif dans la tâche élémentaire de \myemph{manipulation}, notamment sur les tâches de complexité importante.
+				De plus, cette expérimentation propose d'étudier l'apprentissage de la tâche et d'en observer l'évolution dans le cadre du travail collaboratif.
+				\begin{myparagraph}[par-met-exp2-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
+					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
+					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans la première étude dans un contexte de \myemph{manipulation}.
+					La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} en collaboratif comparés aux \myglos*{glo-Monome} en \myglos{glo-Bimanuel}.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp2-MeilleurGainDePerformancesSurLesTachesComplexes]{\myhypothesis{2} Meilleur gain de performances sur les tâches complexes}
+					Nous émettons l'hypothèse que plus la tâche est complexe et plus une configuration de travail collaboratif produira un gain significatif de performances comparé à un \myglos{glo-Monome}.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp2-LApprentissageEstPlusPerformantPourLesBinomes]{\myhypothesis{3} L'apprentissage est plus performant pour les \myglosnl*{glo-Binome}}
+					Nous émettons l'hypothèse que le travail en collaboration augmente la vitesse d'apprentissage de la tâche.
+					En effet, nous supposons que l'interaction entre les partenaires va stimuler l'apprentissage et permettre l'échange des connaissances.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp2-LesSujetsPreferentLeTravailEnCollaboration]{\myhypothesis{4} Les sujets préfèrent le travail en collaboration}
+					Nous souhaitons évaluer auprès des utilisateurs l'intérêt vis-à-vis du travail collaboratif.
+					Notre hypothèse est que les utilisateurs préfèrent le travail collaboratif.
+					En effet, le contact social et la possibilité de communiquer sont des apports appréciés dans le milieu du travail.
+				\end{myparagraph}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp2-Sujets]{Sujets}
+				\mysummary{exp2-subjects.tex} avec une moyenne d'âge de \mysummary{exp2-age.tex} ont participé à cette expérimentation.
+				Ils ont tous été recrutés au sein du laboratoire \myacro{acr-LIMSI} et sont chercheurs ou assistants de recherche dans les domaines suivants~:
+				\begin{itemize}
+					\item linguistique et traitement automatique de la parole;
+					\item réalité virtuelle et système immersifs;
+					\item audio-acoustique.
+				\end{itemize}
+				Ils ont tous le français comme langue principale.
+				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+
+				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
+				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
+			\end{mysubsection}
+			\begin{mysubsection}[sec-met-exp2-Variables]{Variables}
+				\begin{mysubsubsection}[sss-met-exp2-VariablesIndependantes]{Variables indépendantes}
+					\begin{myparagraph}[par-met-exp2-NombreDeSujets]{\myvari{1} Nombre de sujets}
+						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
+						\myvari{1} possède deux valeurs possibles : \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
+						\mynum{12}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} sont testés.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
+						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						Deux tâches de déformation sont proposées sur chacune des deux molécules : une déformation au niveau inter-moléculaire et une déformation au niveau intra-moléculaire.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-LeNiveauDApprentissage]{\myvari{3} Le niveau d'apprentissage}
+						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						Tous les sujets seront confrontés trois fois à la même tâche afin de voir l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
+					\end{myparagraph}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sec-met-exp2-VariablesDependantes]{Variables dépendantes}
+					\begin{myparagraph}[par-met-exp2-TempsDeRealisation]{\myvard{1} Temps de réalisation}
+						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+						Le temps est limité à \mynum[mn]{10}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
+						\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
+						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
+						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
+						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'ensemble de l'expérimentation.
+						Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
+						Elle est de l'ordre du centimètre.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-DistanceActiveEntreLesEspacesDeTravail]{\myvard{4} Distance active entre les espaces de travail}
+						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
+						C'est une distance physique du monde réel de l'ordre du centimètre.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-VitesseMoyenne]{\myvard{5} Vitesse moyenne}
+						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
+						Elle est calculée par intégration numérique des positions successives en fonction du temps.
+					\end{myparagraph}
+					\begin{myparagraph}[par-met-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
+						Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
+						Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
+						Le questionnaire soumis aux sujets est disponible dans la \myref{sec-Questionnaires-SecondeExperimentation}.
+					\end{myparagraph}
+				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-met-exp2-Procedure]{Procédure}
+				L'expérimentation débute par une étape d'entraînement avec la molécule \myPrion.
+				Pendant cette phase, les outils sont introduits et expliqués un par un.
+				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
+				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
+
+				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées aux scénarios \myscenario{1a} et \myscenario{1b}.
+				Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
+				L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+
+				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
+				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+
+				Tous les sujets sont confrontés aux quatre scénarios trois fois avec un jour d'intervalle entre chaque confrontation.
+				L'objectif de cette multiple confrontation est l'étude de l'apprentissage.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-pro-exp3-PremiereExperimentation]{Troisième expérimentation}
 		\end{mysection}
