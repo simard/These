@@ -11,6 +11,7 @@ set foldtext=v:folddashes.substitute(getline(v:foldstart),"\\begin{\([A-Za-z]\+\
 let s:mymax_length_line_number=strlen(substitute(system("cat ".expand("%")." | wc -l"),"[ \t\n]*","","g"))
 let s:myprintf_pattern="%".s:mymax_length_line_number."d lignes"
 let s:sections={"document":"Document","mypart":"Partie","mychapter":"Chapitre","mysection":"Section","mysubsection":"Sous-section","mysubsubsection":"Sous-sous-section","myparagraph":"Paragraphe","mysubparagraph":"Sous-paragraphe","itemize":"Liste à items","enumerate":"Énumération","description":"Liste de descriptions","minipage":"Mini-page","myTodo":"À faire"}
+let s:sections_flag="\%(\*\|-\|+\)"
 let s:floats={"myfigure":"Figure","mysubfigure":"Sous-figure","mytable":"Table","mysubtable":"Sous-table","mytabular":"Tableau"}
 let s:captionscmd="\\\\my\\%(sub\\)\\?caption\\>"
 function! MYfindfloatcaption()
@@ -29,13 +30,13 @@ function! MYfoldtext()
 	let out_blocname=""
 	let out_caption=""
 	let in_line=getline(v:foldstart)
-	let in_blocid=substitute(in_line,'^\s*\\begin{\([A-Za-z]\{-}\)}.*$','\1','g')
+	let in_blocid=substitute(in_line,'^\s*\\begin{\([A-Za-z]\{-}\)\%(\*\|-\|+\)\?}.*$','\1','g')
 	let in_num_lines=printf(s:myprintf_pattern,v:foldend-v:foldstart+1)
 	for section_key in keys(s:sections)
 		if in_blocid ==# section_key
 			let out_blocname=s:sections[in_blocid]
-			let out_caption=substitute(in_line,'^\s*\\begin{[A-Za-z]*}\%(\[.*\]\)\?\%({\(.*\)}\)\?\s*$','\1','g')
-			let out_label=substitute(in_line,'^\s*\\begin{[A-Za-z]*}\%(\[\(.*\)\]\)\?\%({.*}\)\?\s*$','\1','g')
+			let out_caption=substitute(in_line,'^\s*\\begin{[A-Za-z]*\%(\*\|-\|+\)\?}\%(\[.*\]\)\?\%({\(.*\)}\)\?\s*$','\1','g')
+			let out_label=substitute(in_line,'^\s*\\begin{[A-Za-z]*\%(\*\|-\|+\)\?}\%(\[\(.*\)\]\)\?\%({.*}\)\?\s*$','\1','g')
 			if strlen(matchstr(out_caption,'}{')) != 0
 				let out_caption=substitute(out_caption,'}{.*$','','g')
 			end
