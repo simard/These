@@ -457,7 +457,7 @@
 
 				Enfin, des outils apportant une dimension haptique sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-Shaddock-ServeurDePeripheriques}.
 				Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans notre cas).
-				Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire}.
+				Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResidusDansUneMolecule}.
 				Ils sont les suivants :
 				\begin{description}
 					\item[\mytool{grab}] qui permet de sélectionner une molécule dans son intégralité et de la déplacer dans la scène;
@@ -574,23 +574,20 @@
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
-	\begin{mychapter}[cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire]{Recherche collaborative de résidus en simulation moléculaire}
+	\begin{mychapter}[cha-RechercheCollaborativeDeResidusDansUneMolecule]{Recherche collaborative de résidus dans une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
-			La majeure partie de la thèse est l'étude du travail collaboratif en environnement virtuel complexe.
-			L'environnement virtuel complexe choisi est la simulation moléculaire.
-			Nous nous intéresserons à la déformation moléculaire qui se découpe en quatre tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
-			Nous nous proposons d'étudier ces quatre tâches élémentaires indépendamment les unes des autres.
-			La première de ces expérimentations s'intéresse particulièrement au deux premières tâches élémentaires : la \myemph{sélection} et la \myemph{recherche}.
-			La seconde et la troisième expérimentation permettront d'étudier plus particulièrement les tâches élémentaires de \myemph{manipulation} et d'\myemph{évaluation}.
+			Cette introduction nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro{acr-PCV} \mycite{Fuchs-2006a}.
+			Le processus d'exploration et de sélection sont les étapes primordiales à toute manipulation ultérieure.
+			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}, notamment à cause de la complexité des molécules liée au nombre important d'atomes et à leur structure repliée.
+			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
+			Cependant, la distribution des charges cognitives de travail est une troisième solution que nous choisissons d'explorer par l'intermédiaire du travail collaboratif.
 
-			La thèse portant sur le travail collaboratif, cette première étude met en collaboration deux individus sur la tâche de recherche.
-			La seconde étude utilisera des \myglos*{glo-Binome} dans une tâche de manipulation.
-			Finalement, la collaboration de groupe sera abordée au niveau de la troisième et dernière étude sur le travail collaboratif.
-
-			L'expérimentation est présentée en plusieurs parties.
-			Nous commencerons par présenter les objectifs et les hypothèses de cette première expérimentation dans la \myref{sec-exp1-Contexte}.
-			Les détails de l'expérimentation seront abordés dans la \myref{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
-			Enfin, les résultats sont analysés dans la \myref{sec-exp1-Resultats} puis une synthèse de cette expérimentation est exposée dans la \myref{sec-exp1-Synthese}.
+			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
+			Le prétexte à cette étude sera une expérimentation sur la recherche de \myglos*{glo-Residu} présentée dans la \myref{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
+			L'étude proposée permettra de montrer l'intérêt du travail collaboratif sur des tâches de nature complexes.
+			Cependant, nous verrons que les différents \myglos*{glo-Binome} adoptent des stratégies relativement différentes, menant à des performances hétérogènes.
+			Nous identifierons ainsi les aspects positifs de la collaboration mais également les limites d'une telle configuration de travail.
 		\end{mysection}
 		\begin{mysection}[sec-exp1-Contexte]{Contexte}
 			Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
@@ -1345,7 +1342,7 @@
 		\begin{mysection}[sec-exp2-Contexte]{Contexte}
 			Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
-			La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
+			La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusDansUneMolecule} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
 			Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
 			L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
@@ -2351,7 +2348,7 @@
 					Pourtant, la réalisation de la déformation de la molécule \myUbiquitin a été plus longue, malgré l'apprentissage qui a eu lieu entre les deux scénarios..
 					D'ailleurs, on peut observer que de nombreux groupes de sujets ont atteint la limite de \mynum[mn]{10} lors de la déformation de la molécule \myUbiquitin ce qui prouve la réelle complexité de la tâche.
 
-					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResidusEnSimulationMoleculaire} a montré que le travail en configuration \myglos*{glo-Bimanuel} permet de moins bonnes performances qu'un travail collaboratif en configuration \myglos*{glo-Monomanuel}.
+					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResidusDansUneMolecule} a montré que le travail en configuration \myglos*{glo-Bimanuel} permet de moins bonnes performances qu'un travail collaboratif en configuration \myglos*{glo-Monomanuel}.
 					Cependant, cette nouvelle étude compare une configuration \myglos*{glo-Monomanuel} et \myglos*{glo-Bimanuel} à chaque fois dans un cadre de collaboration.
 					On constate d'après la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances identiques aux \myglos*{glo-Binome}, quel que soit le scénario.
 					D'ailleurs, les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui confirme les performances identiques \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
