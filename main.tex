@@ -457,7 +457,7 @@
 
 				Enfin, des outils apportant une dimension haptique sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-Shaddock-ServeurDePeripheriques}.
 				Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans notre cas).
-				Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResidusDansUneMolecule}.
+				Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDansUnEnvironnementVirtuelComplexe}.
 				Ils sont les suivants :
 				\begin{description}
 					\item[\mytool{grab}] qui permet de sélectionner une molécule dans son intégralité et de la déplacer dans la scène;
@@ -574,7 +574,7 @@
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
-	\begin{mychapter}[cha-RechercheCollaborativeDeResidusDansUneMolecule]{Recherche collaborative de résidus dans une molécule}
+	\begin{mychapter}[cha-RechercheCollaborativeDansUnEnvironnementVirtuelComplexe]{Recherche collaborative dans un environnement virtuel complexe}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
 			Cette introduction nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro{acr-PCV} \mycite{Fuchs-2006a}.
 			Chaque primitive nécessite que la précédente ait été réalisée avec succès; on ne peut pas manipuler tant qu'une sélection n'a pas été effectuée; on ne peut pas sélectionner sans avoir naviguer, explorer et identifier les cibles à sélectionner.
@@ -586,7 +586,7 @@
 
 			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
-			Le prétexte à cette étude sera une expérimentation sur la recherche de \myglos*{glo-Residu} présentée dans la \myref{sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire}.
+			Le prétexte à cette étude sera une expérimentation sur la recherche de \myglos*{glo-Residu} présentée dans la \myref{sec-exp1-RechercheDeResiduAuSeinDUneMolecule}.
 			L'étude proposée permettra de montrer l'intérêt du travail collaboratif sur des tâches de nature complexes.
 			Cependant, nous verrons que les différents \myglos*{glo-Binome} adoptent des stratégies relativement différentes, menant à des performances hétérogènes.
 			Nous identifierons ainsi les aspects positifs de la collaboration mais également les limites d'une telle configuration de travail.
@@ -651,9 +651,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire]{Expérimentation de recherche de résidu en simulation moléculaire}
-			\begin{mysubsection}[sse-exp1-Tache]{Tâche}
-				La tâche proposée consiste à trouver puis à extraire des \myglos*{glo-Residu} d'une molécule.
+		\begin{mysection}[sec-exp1-RechercheDeResiduAuSeinDUneMolecule]{Recherche de résidu au sein d'une molécule}
+			Afin de répondre à nos hypothèses de travail, résumée dans la \myref{sse-met-exp1-Hypotheses}, nous mettons en place une expérimentation de recherche de \myglos{glo-Residu} au sein d'une molécule pendant une simulation moléculaire en temps-réel.
+			Cette section est destinée à décrire la tâche proposée puis les spécificités du protocole expérimental.
+			\begin{mysubsection}[sse-exp1-DescriptionDeLaTache]{Description de la tâche}
+				La tâche proposée consiste à trouver puis à extraire des \myglos*{glo-Residu} au sein d'une molécule.
 				Les \myglos*{glo-Residu} sont des groupes d'atomes.
 				Trois molécules sont proposées dans le cadre de cette expérimentation.
 				La molécule \myTRPZIPPER sera utilisée pour la procédure d'apprentissage de la plate-forme.
@@ -1373,7 +1375,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-exp2-Contexte]{Contexte}
 			Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
-			La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResidusDansUneMolecule} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
+			La précédente expérimentation \myref*{cha-RechercheCollaborativeDansUnEnvironnementVirtuelComplexe} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
 			Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
 			L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
@@ -2379,7 +2381,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pourtant, la réalisation de la déformation de la molécule \myUbiquitin a été plus longue, malgré l'apprentissage qui a eu lieu entre les deux scénarios..
 					D'ailleurs, on peut observer que de nombreux groupes de sujets ont atteint la limite de \mynum[mn]{10} lors de la déformation de la molécule \myUbiquitin ce qui prouve la réelle complexité de la tâche.
 
-					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResidusDansUneMolecule} a montré que le travail en configuration \myglos*{glo-Bimanuel} permet de moins bonnes performances qu'un travail collaboratif en configuration \myglos*{glo-Monomanuel}.
+					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDansUnEnvironnementVirtuelComplexe} a montré que le travail en configuration \myglos*{glo-Bimanuel} permet de moins bonnes performances qu'un travail collaboratif en configuration \myglos*{glo-Monomanuel}.
 					Cependant, cette nouvelle étude compare une configuration \myglos*{glo-Monomanuel} et \myglos*{glo-Bimanuel} à chaque fois dans un cadre de collaboration.
 					On constate d'après la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances identiques aux \myglos*{glo-Binome}, quel que soit le scénario.
 					D'ailleurs, les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui confirme les performances identiques \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
