@@ -577,10 +577,12 @@
 	\begin{mychapter}[cha-RechercheCollaborativeDeResidusDansUneMolecule]{Recherche collaborative de résidus dans une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
 			Cette introduction nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro{acr-PCV} \mycite{Fuchs-2006a}.
+			Chaque primitive nécessite que la précédente ait été réalisée avec succès; on ne peut pas manipuler tant qu'une sélection n'a pas été effectuée; on ne peut pas sélectionner sans avoir naviguer, explorer et identifier les cibles à sélectionner.
 			Le processus d'exploration et de sélection sont les étapes primordiales à toute manipulation ultérieure.
 			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}, notamment à cause de la complexité des molécules liée au nombre important d'atomes et à leur structure repliée.
 			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
-			Cependant, la distribution des charges cognitives de travail est une troisième solution que nous choisissons d'explorer par l'intermédiaire du travail collaboratif.
+			Cependant, la distribution des charges cognitives de travail est une troisième solution que nous choisissons d'explorer.
+			La collaboration va nous permette d'effectuer cette distribution des charges cognitives.
 
 			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
@@ -589,36 +591,65 @@
 			Cependant, nous verrons que les différents \myglos*{glo-Binome} adoptent des stratégies relativement différentes, menant à des performances hétérogènes.
 			Nous identifierons ainsi les aspects positifs de la collaboration mais également les limites d'une telle configuration de travail.
 		\end{mysection}
-		\begin{mysection}[sec-exp1-Contexte]{Contexte}
-			Dans cette première expérimentation, nous proposons d'étudier les deux premières des quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
-			Ces tâches sont cruciales car elles ont un impact important sur les tâches suivantes que sont la \myemph{déformation} et la \myemph{manipulation}.
-			Les difficultés liées à la complexité de l'environnement virtuel moléculaire seront étudiées à travers cette étude.
+		\begin{mysection}[sec-exp1-RechercheEtSelectionCollaborative]{Recherche et sélection collaborative}
+			\begin{mysubsection}[sse-exp1-TravauxExistants]{Travaux existants}
+				Les quatre \myacro*{acr-PCV} décrites par \mycite[author]{Fuchs-2006a} sont une succession d'étapes nécessaires de l'interaction avec un environnement virtuel.
+				Dans ce chapitre, nous proposons d'étudier les deux premières de ces quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
+				Ces étapes sont cruciales car elles ont un impact important sur les étapes suivantes que sont la \myemph{manipulation} et l'\myemph{évaluation}.
+				En effet, une mauvaise sélection aura pour effet un contrôle moins précis sur le processus de déformation et une difficulté supplémentaire dans la réalisation de la tâche demandée.
 
-			La recherche en environnement virtuel est une tâche élémentaire relativement peu explorée en biologie moléculaire.
-			Cependant, on trouve de nombreux travaux concernant la \og recherche de chemin \fg ou \myemph{wayfinding} en anglais.
-			\mycite[author]{Darken-1996a} consacre une thèse à la recherche de chemin en environnement virtuel en adaptant des solutions du monde réel.
-			Plus récemment, \mycite[author]{Menelas-2010} s'est intéressé au rendu multi-modal pour la perception de la mécanique des fluides.
-			Une des problématiques est la localisation de structures mécaniques particulières (vortex) dans le fluide à l'aide de retour audio-haptique.
+				La sélection en environnement virtuel est une tâche élémentaire relativement peu explorée pour la biologie moléculaire en environnement virtuel.
+				Pourtant, elle est déjà relativement développée pour les \myacro*{acr-AFM} mais les contraintes techniques de cette technique sont très éloignées de nos contraintes techniques en environnement virtuel donc nous ne nous étendrons pas sur ce sujet.
+				La taille et la complexité des molécules nécessite des solutions de sélections adaptées.
+				Les logiciels les plus utilisés comme \myPyMOL et \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
+				Par exemple, pour sélectionner tous les atomes de type \myatom{C}, \myatom{O}, \myatom{N} ou \myatom{CA}, on utilisera les commandes suivantes dans \myPyMOL
+				\begin{mySource*}[language={}]
+pymol> select mysel, name c+o+n+ca
+				\end{mySource*}
+				ou dans \myacro{acr-VMD}
+				\begin{mySource*}[language={}]
+vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
+				\end{mySource*}
+				Cette méthode de sélection est seulement efficace dans le cas où la cible à sélectionner est connue à l'avance.
+				Dans le cadre de l'exploration virtuelle d'une molécule, \myacro{acr-VMD} propose par exemple une sélection par \myemph{picking}\footnote{Méthode qui consiste à trouver l'élément pointé par la souris (\myTwoD) dans l'environnement virtuel (\myThreeD).} à l'aide de la souris.
+				Cependant, ce type de méthode atteint rapidement ces limites en terme de précision dès que la molécule est de taille trop importante : la complexité de la molécule sur la dimension de la profondeur rend relativement inutilisable la méthode du \myemph{picking}.
 
-			La recherche étant une tâche qui peut s'avérer complexe devant la quantité d'informations toujours grandissante, la collaboration s'est imposé comme une des solutions de ces dernières années.
-			La recherche collaborative est un champ de recherche assez largement étudié, notamment en ce qui concerne les moteurs de recherche collaboratifs.
-			\mycite[author]{Pickens-2007} explorent la recherche collaborative indirecte en utilisant les données de certains utilisateurs pour améliorer les recherches d'autres utilisateurs.
-			La thèse de \mycite[author]{Foley-2008} s'intéresse plus précisément à l'interaction synchrone des utilisateurs pour l'amélioration des résultats de recherche.
-			Certaines études proposent même représenter les informations de l'internet dans un environnement virtuel en \myThreeD comme \mycite[author]{Benford-1999} par exemple.
+				Depuis déjà plusieurs années, la communauté de la réalité virtuelle s'est intéressé à cette problématique en proposant des périphériques d'interaction pour les environnement virtuels en \myThreeD.
+				\mycite[author]{Pavlovic-1996} ont développé une plate-forme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
+				Cependant, les techniques de segmentations pour une reconnaissance de gestes efficace sont encore difficiles à mettre en place, même si l'arrivée récente de la \myKinect de \myMicrosoft a aidé à cette démocratisation.
+				On trouve également les travaux de \mycite[author]{Polys-2004} qui propose une interaction avec une \myemph{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myemph{workbench}\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
+				Tous ces dispositifs sont relativement lourds à déployer et ne sont pas adaptés pour une installation sur un ordinateur de bureau.
 
-			Cette première expérimentation a pour objectif d'explorer la recherche de \myglos*{glo-Residu} durant une simulation moléculaire.
-			La recherche s'effectuera dans un \myacro{acr-EVC}.
-			L'expérimentation a pour objectif principal de comparer les performances d'un \myglos{glo-Monome} et d'un \myglos{glo-Binome} sur cette tâche de recherche.
-			Les performances représentent à la fois le temps total pour réaliser la tâche mais aussi les ressources mises en place pour accéder à ce résultat.
-			Un \myglos{glo-Binome} sera-t-il plus performant qu'un \myglos{glo-Monome} ?
+				Tous les dispositifs présentés dans ce dernier paragraphe sont testés sur des molécules ne contenant que quelques atomes avec peu d'intérêt pour les biologistes.
+				Cependant, la sélection dans des tâches plus pertinentes pour les biologistes est un sujet encore peu exploré.
+				\mycite[author]{Levine-1997} proposent une plate-forme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un amarrage de molécules.
+				Cependant, l'amarrage de molécule s'effectue ici sur des corps rigides ce qui simplifie grandement la complexité de l'exploration.
+				On trouve également les travaux de \mycite[author]{Ferey-2008a} mais là encore, il s'agit de corps rigides.
+				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilise les périphériques haptiques pour aider à la localisation de ponts ioniques au sein de simulation moléculaire en temps-réel.
+				L'interface haptique utilisée permet de ressentir les forces en action dans la simulation et ainsi améliorer le processus d'exploration et de sélection.
+				D'ailleurs, c'est le dispositif d'interaction que nous avons retenu pour notre plate-forme.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
+				Dans ce chapitre, nous aborderons les tâches de recherche et de sélection dans un \myacro{acr-EVC}.
+				La recherche au sein d'une simulation moléculaire est une tâche très complexe en raison du grand nombre d'atomes et de la mobilité des atomes.
+				Nous proposons d'étudier l'apport d'une configuration de travail collaboratif pour la réalisation de cette tâche.
 
-			De plus, les méthodes et les stratégies de travail seront étudiées.
-			C'est principalement l'évolution de ces stratégies au sein des \myglos*{glo-Binome} qui focalisera notre attention.
-			Le travail en \myglos{glo-Binome} permet de mettre en avant différentes stratégies de travail discriminées en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
+				Les objectifs de cette première partie sont multiples.
+				Tout d'abord, nous souhaitons observer les performances comparées d'un travail autonome face à une configuration de travail collaborative.
+				Notre hypothèse va dans le sens d'une amélioration des performances pour les configurations de travail collaboratives sur des tâches de nature complexe.
 
-			Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
-			Pour cela, l'évaluation sera confiée aux sujets.
-			L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
+				De plus, nous souhaitons observer les stratégies de travail en collaboration.
+				Nous supposons que les stratégies vont varier d'un groupe à l'autre en fonction des affinités et des connaissances intrinsèques du groupe.
+				Le travail collaboratif permet de mettre en avant des stratégies de travail distinctes en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
+
+				Ensuite, nous nous intéresserons plus précisément aux avis des utilisateurs.
+				En effet, il est nécessaire de prendre en compte l'expérience de l'utilisateur afin de proposer des solutions intuitives et confortables.
+				Ainsi, nous supposons que le travail collaboratif est plus apprécié des utilisateurs l'émulsion collective qui naît des interactions et de la communication.
+
+				Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
+				Pour cela, l'évaluation sera confiée aux sujets.
+				L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp1-ExperimentationDeRechercheDeResiduEnSimulationMoleculaire]{Expérimentation de recherche de résidu en simulation moléculaire}
 			\begin{mysubsection}[sse-exp1-Tache]{Tâche}

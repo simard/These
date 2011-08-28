@@ -48,7 +48,6 @@
 
 %% Packages to call
 % About characters encoding
-%\RequirePackage[postscript]{ucs}
 \RequirePackage[utf8]{inputenc}
 % About fonts
 \RequirePackage[T1]{fontenc}
