@@ -292,7 +292,7 @@
 				Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectuée par un processus qui distribue les informations aux différents clients.
 				D'ailleurs, ce papier fournit un bon état de l'art des différents type d'architectures en soulignant les avantages et inconvénients de chacune.
 
-				En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisation sur le réseau plus rapides : elles nécessitent moins de paquet réseau pour la communication.
+				En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisations sur le réseau plus rapides : elles nécessitent moins de paquet réseau pour la communication.
 				Cependant, ce type d'architecture génère des retours haptiques instables.
 				D'ailleurs, \mycite[author]{Kim-2004} qui étudie le déplacement collaboratif d'une boîte virtuelle assisté par l'haptique signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
 				Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptées pour des application collaboratives utilisant l'haptique.
@@ -1229,7 +1229,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						En effet, la force moyenne est assez élevée par rapport à la plupart des autres \myglos*{glo-Binome} ce qui montre qu'aucun des deux sujets n'est moins actif (ce qui entraînerait une force moyenne moins élevée).
 						La différence des forces moyennes quasi-nulle entre les deux sujets confirme ce résultat.
 						Ceci s'explique par une bonne coordination entre les sujets pendant laquelle les deux membres du \myglos{glo-Binome} vont effectuer des actions complémentaires mais de même intensité.
-						La stratégie adoptée peut être définie comme une stratégie \myemph{par manipulation complémentaire} : les deux sujets sont attentifs aux actions de leur partenaire afin d'avoir un meilleur contrôle du processus de déformation par une synchronisation améliorée.
+						La stratégie adoptée peut être définie comme une stratégie \myemph{par manipulation complémentaire} : les deux sujets sont attentifs aux actions de leur partenaire afin d'avoir un meilleur contrôle du processus de déformation par une coordination améliorée.
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp1-CollaborationEnChampVoisin-Communication]{Communication}
 						La communication verbale est faible comme le montre la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
@@ -1375,47 +1375,49 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Dans ce chapitre, nous allons étudier le processus de déformation d'une molécule.
 			Nous souhaitons vérifier la pertinence de la configuration de travail collaboratif pour appréhender la déformation d'une molécule.
 			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
-			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant la plater-forme, les outils ou encore la tâche à réaliser.
+			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant la plate-forme, les outils ou encore la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
-				Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
-				Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
-				La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
-				Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
+				L'utilisation de retours haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
+				\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides à l'aide de retour haptique.
+				Les objets concernés sont des faible complexité, comme des sphères par exemple.
+				Puis, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
+				Là encore, les éléments déformables sont de faibles complexité et n'ont quasiment pas d'application concrète.
 
-				L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
-				\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
-				Les objets concernés sont plutôt simples comme des sphères.
-				Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-				Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
-				Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
+				Cependant, afin d'effectuer des déformations plus pertinentes, certains se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
+				\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation de maillages pouvant être utilisé pour des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}.
+				Un des objectifs de cette plate-forme est de répondre aux contraintes de latence liées au réseau.
+				Pour cela, il propose une architecture de type pair-à-pair basée sur le protocole \myacro{acr-UDP}.
+				Aucune des données transmises n'est compressée mais l'expérimentation a lieu sur un réseau interne avec une bande passante importante.
+				De son côté, \mycite[author]{Tang-2010a} propose une plate-forme client/serveur de déformation collaborative de maillages.
+				Pour répondre à la problématique de la latence, il encode les paramètres du maillage pour accélérer la transmission.
+				De plus, la plate-forme est capable de reconstruire partiellement le maillage lorsque des données ont été transmises de manière incomplète.
+				\mycite[author]{Muller-2006} développe le logiciel \myClayWorks, repris plus tard par \mycite[author]{Gorlatch-2009}, permettant la sculpture virtuelle sur glaise.
+				Dans cette étude, les problèmatiques d'accès exclusif à certains objets ou à certaines parties d'un objet afin de faciliter la coordination des différents acteurs sont brièvement évoquées.
 
-				Les processus de déformation collaboratifs sont également peu étudiés.
-				La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
-				\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
-				L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
-				Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
-				Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
-				Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
-
-				On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
-				\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
-				Son projet repose sur la manipulation de corps rigides.
-				Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
-				La manipulation s'effectue alors sur un objet malléable.
-				Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
+				Cependant, dans ces travaux, la collaboration se résume à déformer localement dans un environnement partagé puis mettre à jour en temps-réel le rendu visuel de tous les participants en tenant compte des actions de chacun.
+				La collaboration n'est pas mise en avant : c'est surtout un prétexte pour la validation d'une plate-forme distribuée adaptée pour le retour haptique.
+				En effet, tous les \myacro*{acr-EVC} proposés sont consacrés à la collaboration distante (bien que les travaux de \mycite[author]{Sumengen-2007} n'aient été testés que sur une réseau interne) et la problématique d'un échange de données en temps-réel est l'une des principales problématiques traitée.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
-				L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
-				L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
-				L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
+				Ce chapitre sera l'occasion d'aborder les problématiques de la déformation avec une configuration collaborative.
+				La déformation est une tâche nécessitant plus de précision que la recherche.
+				Nous souhaitons ainsi comparer les performances sur une tâche complexe nécessitant de la coordination.
 
-				De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
-				Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
+				La comparaison opposera des \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel} à des \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel}.
+				En effet, la première étude nous a montré les contraintes d'une configuration collaborative en terme de temps de communication.
+				Paradoxalement, les utilisateurs qui manipulent seuls sont confrontés à une charge cognitive de travail importante.
+				En fournissant les mêmes ressources (deux outils de déformation), nous souhaitons comparer la capacité de coordination d'un \myglos{glo-Binome} aux capacités cognitives de traitement d'un \myglos{glo-Monome} face à une importante charge de travail.
+				Nous supposons que les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} soient plus performants que les \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
+
+				Dans un second temps, nous souhaitons tisser un lien entre la complexité de la tâche et le nombre de sujets concernant les performances finales.
+				En effet, les tâches complexes fournissent une charge cognitive de travail très importante; plus cette charge de travail est importante et plus les \myglos*{glo-Monome} risquent de ne pas être capables d'appréhender cette charge.
+				Notre hypothèse estime que les tâches les plus complexes seront quasiment inaccessibles aux \myglos*{glo-Monome}.
 
 				Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
-				En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
+				Nous comparons les performances des \myglos*{glo-Monome} et des \myglos*{glo-Binome} concernant la réalisation d'une même tâche répétée plusieurs fois.
+				Nous supposons que la motivation et l'échange qui naît d'un travail en groupe va permettre aux \myglos*{glo-Binome} d'appréhender plus rapidement la plate-forme, les outils ou encore la tâche.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-PresentationDeLExperimentation]{Présentation de l'expérimentation}
@@ -1485,7 +1487,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							La déformation requise demande une grande dépense d'énergie.
 							En effet, la molécule proposée se trouve dans une sorte de puit de potentiel (un \myemph{minima} local) et l'objectif est d'atteindre un autre puit de potentiel (un autre \myemph{minima} local).
 							L'énergie nécessaire pour passer d'un puit à l'autre est relativement importante, à tel point qu'un seul outil de déformation n'est pas suffisant.
-							La manipulation synchrone de deux \myglos*{glo-Residu} est la seule solution pour atteindre l'objectif.
+							La manipulation coordonnée de deux \myglos*{glo-Residu} est la seule solution pour atteindre l'objectif.
 					\end{description}
 
 					Un résumé de la complexité des quatre tâches est exposé dans la \myref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
