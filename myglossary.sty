@@ -42,6 +42,8 @@
 \RequirePackage{translator}
 % To improve the glossary
 \RequirePackage[toc=true,style=altlist]{glossaries}
+% Improve the bookmarks in the PDF
+\RequirePackage[dvips]{bookmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
@@ -52,7 +54,10 @@
 %% New commands %%
 %%%%%%%%%%%%%%%%%%
 %% Define the command to display the glossary at the end of document
-\newrobustcmd\myglossary{\printglossaries}
+\newrobustcmd\myglossary{%
+	\bookmark[level=0]{}%
+	\printglossaries%
+}
 %% To create a new glossary entry
 % Following options are allowed:
 % - name: the name (text which will appeared in document)
