@@ -1379,51 +1379,54 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Les deux premières tâches élémentaires du processus de déformation moléculaire \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} ont été étudiées dans cette première études.
 			Cette seconde étude se rapproche d'un processus complet de déformation moléculaire puisqu'elle se focalisera sur la tâche élémentaire de \myemph{manipulation}.
 
-			Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-Contexte}.
-			Ensuite, la tâche et le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-ExperimentationDeDeformationDeMolecule}.
+			Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel}.
+			Ensuite, la tâche et le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-PresentationDeLExperimentation}.
 			Les résultats seront analysés dans la \myref{sec-exp2-Resultats}.
 			Enfin, la \myref{sec-exp2-Synthese} effectue une synthèse de cette seconde étude et propose des perspectives pour les expérimentations qui vont suivre.
 		\end{mysection}
-		\begin{mysection}[sec-exp2-Contexte]{Contexte}
-			Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
-			Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
-			La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
-			Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
+		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
+			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
+				Après avoir étudié la tâche élémentaire de \myemph{recherche} et de \myemph{sélection}, cette seconde expérimentation se portera plus en détails sur la tâche élémentaire de \myemph{déformation} en collaboration \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+				Cette tâche nécessite une grande synchronisation et favorise les collaborations étroites.
+				La précédente expérimentation \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule} a souligné l'avantage de la collaboration sur des tâches nécessitant un couplage fort.
+				Les tâches proposées dans cette expérimentation sont élaborées pour stimuler les interactions entre les sujets.
 
-			L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
-			\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
-			Les objets concernés sont plutôt simples comme des sphères.
-			Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-			Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
-			Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
+				L'utilisation d'interfaces haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
+				\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides et teste son modèle avec des interfaces \myOmni.
+				Les objets concernés sont plutôt simples comme des sphères.
+				Quelques années plus tard, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
+				Jusqu'à présent, l'utilisation de l'haptique pour la déformation en temps-réel de molécules n'a pas été étudié.
+				Nous pouvons tout de même citer \mycite[author]{Subasi-2006} qui propose une approche de manipulation de molécule rigide utilisant l'haptique.
 
-			Les processus de déformation collaboratifs sont également peu étudiés.
-			La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
-			\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
-			L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
-			Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
-			Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
-			Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
+				Les processus de déformation collaboratifs sont également peu étudiés.
+				La littérature s'attarde principalement sur des \myacro*{acr-EVC}.
+				\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation d'objets dans un \myacro{acr-EVC}.
+				L'objectif de cette plate-forme est de répondre à des contraintes de latence liées au réseau.
+				Pour répondre à la problématique de latence, \mycite[author]{Tang-2010a} encode les paramètres du maillage pour accélérer la transmission.
+				Les \myacro*{acr-EVC} proposés sont destinés à des collaborations distantes et la problématique du temps-réel en est le sujet d'intérêt principal.
+				Notre plate-forme se place dans un contexte colocalisé où les contraintes de réseau n'ont pas d'existence.
 
-			On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
-			\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
-			Son projet repose sur la manipulation de corps rigides.
-			Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
-			La manipulation s'effectue alors sur un objet malléable.
-			Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
+				On peut tout de même trouver quelques exemples de manipulation collaborative à l'aide d'interface haptique.
+				\mycite[author]{Gautier-2008} propose par exemple une plate-forme de travail collaboratif pour la \myacro{acr-CAO}.
+				Son projet repose sur la manipulation de corps rigides.
+				Pour des corps flexibles, \mycite[author]{Muller-2006} développe le logiciel \myClayWorks qui permet la sculpture sur glaise.
+				La manipulation s'effectue alors sur un objet malléable.
+				Ici encore, l'accent est mis sur la collaboration distante comme le montre cette autre publication sur \myClayWorks \mycite{Gorlatch-2009}.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
+				L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
+				L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
+				L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
 
-			L'expérimentation proposée dans cette nouvelle étude va de nouveau mettre en opposition un \myglos{glo-Monome} et un \myglos{glo-Binome}.
-			L'objectif est comparer une manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome} avec une manipulation \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
-			L'expérimentation s'appuie sur un \myacro{acr-EVC} permettant une collaboration colocalisée, s'affranchissant ainsi des problématiques de la collaboration distante.
+				De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
+				Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
 
-			De plus, nous mettrons en relation la performance des groupes en fonction de la complexité de la tâche.
-			Ce point nous permet de confirmer les conclusions de la première étude mais dans un contexte de manipulation moléculaire.
-
-			Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
-			En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
+				Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
+				En effet, le travail de groupe peut stimuler l'apprentissage et donc être bénéfique en terme de performances sur le court terme.
+			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp2-ExperimentationDeDeformationDeMolecule]{Expérimentation de déformation de molécule}
-			\begin{mysubsection}[sse-exp2-Tache]{Tâche}
+		\begin{mysection}[sec-exp2-PresentationDeLExperimentation]{Présentation de l'expérimentation}
+			\begin{mysubsection}[sse-exp2-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
 				\begin{mysubsubsection}[sss-exp2-DescriptionDeLaTache]{Description de la tâche}
 					La tâche proposée est la déformation d'une molécule.
@@ -2134,58 +2137,59 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			En effet, cette tâche permet de stimuler les collaborations étroitement couplées.
 			Ce sont ces collaborations étroitement couplées qui provoquent les \myglos*{glo-ConflitDeCoordination}.
 
-			Les objectifs de cette nouvelle expérimentation sont exposés dans la \myref{sec-exp3-Contexte} accompagnés par les hypothèses.
-			La tâche et les modifications apportées à la plate-forme correspondantes sont détaillées dans la \myref{sec-exp3-ExperimentationSurLesDynamiquesDeGroupe}.
+			Les objectifs de cette nouvelle expérimentation sont exposés dans la \myref{sec-exp3-CollaborationDeGroupe} accompagnés par les hypothèses.
+			La tâche et les modifications apportées à la plate-forme correspondantes sont détaillées dans la \myref{sec-exp3-PresentationDeLExperimentation}.
 			Enfin, les résultats seront analysés dans la \myref{sec-exp3-Resultats} puis une synthèse est proposée dans la \myref{sec-exp3-Synthese}.
 		\end{mysection}
-		\begin{mysection}[sec-exp3-Contexte]{Contexte}
-			Nous avons déjà effectué deux études sur le travail collaboratif mettant en avant les avantages d'un travail en \myglos{glo-Binome} par rapport au travail en \myglos{glo-Monome}.
-			Cependant, le travail de groupe ne se limitant pas aux \myglos*{glo-Binome}, nous nous intéresserons au \myglos*{glo-Quadrinome} dans cette étude.
-			Nous souhaitons observer le travail en \myglos{glo-Quadrinome} afin de confirmer nos précédentes conclusions.
+		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
+			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
+				Nous avons déjà effectué deux études sur le travail collaboratif mettant en avant les avantages d'un travail en \myglos{glo-Binome} par rapport au travail en \myglos{glo-Monome}.
+				Cependant, le travail de groupe ne se limitant pas aux \myglos*{glo-Binome}, nous nous intéresserons au \myglos*{glo-Quadrinome} dans cette étude.
+				Nous souhaitons observer le travail en \myglos{glo-Quadrinome} afin de confirmer nos précédentes conclusions.
 
-			Le travail de groupe a été très largement étudié à la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle dans le domaine de la psychologie sociale.
-			L'ouvrage de \mycite[author]{Mugny-1995} aborde les problématiques de la psychologie sociale dans le cadre général mais s'intéresse plus précisément aux dynamiques de groupe dans les chapitres premier et premier~bis.
-			Il aborde en particulier les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne qui constitue la plus importante étude sur les dynamiques de groupe.
-			Cette étude effectuée entre les années 1927 et 1932 a été publiée par \mycite[author]{Roethlisberger-1939}.
-			Le travail de groupe permet d'obtenir une meilleure productivité grâce au phénomène de \myglos{glo-MotivationSociale}.
-			La \myglos{glo-MotivationSociale} stimule chaque ouvrier par la présence d'autres ouvriers.
+				Le travail de groupe a été très largement étudié à la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle dans le domaine de la psychologie sociale.
+				L'ouvrage de \mycite[author]{Mugny-1995} aborde les problématiques de la psychologie sociale dans le cadre général mais s'intéresse plus précisément aux dynamiques de groupe dans les chapitres premier et premier~bis.
+				Il aborde en particulier les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne qui constitue la plus importante étude sur les dynamiques de groupe.
+				Cette étude effectuée entre les années 1927 et 1932 a été publiée par \mycite[author]{Roethlisberger-1939}.
+				Le travail de groupe permet d'obtenir une meilleure productivité grâce au phénomène de \myglos{glo-MotivationSociale}.
+				La \myglos{glo-MotivationSociale} stimule chaque ouvrier par la présence d'autres ouvriers.
 
-			Cependant, ces études diffèrent de notre cas en un point important.
-			Les études précédentes ne concernent pas des tâches de collaboration étroitement couplée.
-			Que ce soit pour l'assemblage d'automobile dans le cas du taylorisme ou l'assemblage d'appareils de radio dans le cas de l'entreprise \myHawthorne, les études sur le travail collaboratif proposées placent chaque ouvrier sur un poste de travail indépendant : la collaboration est très faible.
-			En effet, il n'est pas nécessaire pour les ouvriers d'interagir pendant la réalisation de la tâche.
-			Notre plate-forme fournit un outil de travail où la collaboration est étroite.
+				Cependant, ces études diffèrent de notre cas en un point important.
+				Les études précédentes ne concernent pas des tâches de collaboration étroitement couplée.
+				Que ce soit pour l'assemblage d'automobile dans le cas du taylorisme ou l'assemblage d'appareils de radio dans le cas de l'entreprise \myHawthorne, les études sur le travail collaboratif proposées placent chaque ouvrier sur un poste de travail indépendant : la collaboration est très faible.
+				En effet, il n'est pas nécessaire pour les ouvriers d'interagir pendant la réalisation de la tâche.
+				Notre plate-forme fournit un outil de travail où la collaboration est étroite.
 
-			Les études mettant en scène des tâches de collaboration étroite en groupe supérieur à deux utilisateurs sont peu nombreuses.
-			On peut noter l'étude de \mycite[author]{Chan-2008} qui propose un système de prise de contrôle collaboratif à tour de rôle.
-			Cette étude montre l'utilité de l'outil haptique dans la réalisation d'une tâche collaborative mais ne caractérise ni les stratégies adoptées, ni la structure du groupe.
-			C'est à ces questions que nous nous intéressons dans cette troisième expérimentation.
+				Les études mettant en scène des tâches de collaboration étroite en groupe supérieur à deux utilisateurs sont peu nombreuses.
+				On peut noter l'étude de \mycite[author]{Chan-2008} qui propose un système de prise de contrôle collaboratif à tour de rôle.
+				Cette étude montre l'utilité de l'outil haptique dans la réalisation d'une tâche collaborative mais ne caractérise ni les stratégies adoptées, ni la structure du groupe.
+				C'est à ces questions que nous nous intéressons dans cette troisième expérimentation.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp3-Objectifs]{Objectifs}
+				L'objectif de notre troisième étude est de confirmer les conclusions obtenues dans le cadre du travail de Elton \myname{Mayo}.
+				En effet, cette étude a montré que le travail en groupe permet d'augmenter la productivité.
+				De plus, il a montré que les groupes qualifiés de \myglos*{glo-StructureInformelle}, finissent toujours par se structurer.
+				Les \myglos*{glo-StructureInformelle} sont des groupes qui ne possédent pas de chef et où chaque participant a le même statut à priori.
+				Ce type de structure permet de faire émerger naturellement, et par acceptation mutuelle, un \myglos{glo-Meneur} et des \myglos*{glo-Suiveur}.
 
-			L'objectif de notre troisième étude est de confirmer les conclusions obtenues dans le cadre du travail de Elton \myname{Mayo}.
-			En effet, cette étude a montré que le travail en groupe permet d'augmenter la productivité.
-			De plus, il a montré que les groupes qualifiés de \myglos*{glo-StructureInformelle}, finissent toujours par se structurer.
-			Les \myglos*{glo-StructureInformelle} sont des groupes qui ne possédent pas de chef et où chaque participant a le même statut à priori.
-			Ce type de structure permet de faire émerger naturellement, et par acceptation mutuelle, un \myglos{glo-Meneur} et des \myglos*{glo-Suiveur}.
-
-			Étant donné le peu de temps alloué à notre tâche\footnote{Notre tâche dure quelques dizaines de minutes par rapport aux cinq années de l'étude de Elton \myname{Mayo}}, l'émergence d'un \myglos{glo-Meneur} est incertaine.
-			C'est pourquoi nous testons une période de réflexion préalable au début de la tâche.
-			Cette période devrait permettre l'émergence des \myglos*{glo-Meneur} et des \myglos*{glo-Suiveur}.
-			Elle devrait également permettre une communication entre les utilisateurs pour la mise en place d'une stratégie.
+				Étant donné le peu de temps alloué à notre tâche\footnote{Notre tâche dure quelques dizaines de minutes par rapport aux cinq années de l'étude de Elton \myname{Mayo}}, l'émergence d'un \myglos{glo-Meneur} est incertaine.
+				C'est pourquoi nous testons une période de réflexion préalable au début de la tâche.
+				Cette période devrait permettre l'émergence des \myglos*{glo-Meneur} et des \myglos*{glo-Suiveur}.
+				Elle devrait également permettre une communication entre les utilisateurs pour la mise en place d'une stratégie.
+			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp3-ExperimentationSurLesDynamiquesDeGroupe]{Expérimentation sur les dynamiques de groupe}
-			\begin{mysubsection}[sse-exp3-Tache]{Tâche}
-				\begin{mysubsubsection}[sss-exp3-DescriptionDeLaTache]{Description de la tâche}
-					La tâche proposée est la déformation de molécules complexes dans un \myacro{acr-EVC}.
-					L'objectif est de la rendre conforme à une molécule modèle.
-					La molécule à déformer est affichée dans son intégralité (atomes et structures principales) mais seule la structure principale est visible sur la molécule modèle.
-					Dans cette expérimentation, la molécule \myTRPCAGE est utilisée pour la phase d'entraînement.
-					Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour la tâche de déformation collaborative.
-					Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
+		\begin{mysection}[sec-exp3-PresentationDeLExperimentation]{Présentation de l'expérimentation}
+			\begin{mysubsection}[sse-exp3-DescriptionDeLaTache]{Description de la tâche}
+				La tâche proposée est la déformation de molécules complexes dans un \myacro{acr-EVC}.
+				L'objectif est de la rendre conforme à une molécule modèle.
+				La molécule à déformer est affichée dans son intégralité (atomes et structures principales) mais seule la structure principale est visible sur la molécule modèle.
+				Dans cette expérimentation, la molécule \myTRPCAGE est utilisée pour la phase d'entraînement.
+				Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour la tâche de déformation collaborative.
+				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
-					Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
-					De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
-					On pourra trouver la description de ces éléments dans la \myref{sss-exp2-DescriptionDeLaTache}.
-				\end{mysubsubsection}
+				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
+				De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
+				On pourra trouver la description de ces éléments dans la \myref{sss-exp2-DescriptionDeLaTache}.
 				\begin{mysubsubsection}[sss-exp3-DescriptionDesScenarios]{Description des scénarios}
 					Deux scénarios sont proposés : un sur la molécule \myPrion et un sur la molécule \myUbiquitin.
 					Les paragraphes suivants décrivent les deux scénarios :
@@ -2691,10 +2695,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Il est primordial de recueillir l'avis des utilisateurs en ce qui concerne une plate-forme de travail.
 			Des outils haptiques inconfortables, des détails visuels incohérents, des interactions peu intuitives sont autant de paramètres qui peuvent rendre un système inefficace.
 		\end{mysection}
-		\begin{mysection}[sec-exp4-Contexte]{Contexte}
+		\begin{mysection}[sec-exp4-AssistanceHaptiquePourLaCommunication]{Assistance haptique pour la communication}
 		\end{mysection}
-		\begin{mysection}[sec-exp4-ExperimentationAvecAssistanceHaptique]{Expérimentation avec assistance haptique}
-			\begin{mysubsection}[sse-exp4-Tache]{Tâche}
+		\begin{mysection}[sec-exp4-PresentationDeLExperimentation]{Présentation de l'expérimentation}
+			\begin{mysubsection}[sse-exp4-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée est la déformation de molécules et de complexes de molécules dans un \myacro{acr-EVC}.
 				L'objectif est de la rendre le plus conforme possible au modèle.
 				Cinq molécules sont utilisés dans le cadre de cette expérimentation dont trois exclusivement réservées pour l'entraînement :
@@ -2929,6 +2933,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{mytabular}
 				\end{mytable}
 			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-exp4-Resultats]{Résultats}
+		\end{mysection}
+		\begin{mysection}[sec-exp4-Synthese]{Synthèse}
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter+}{Conclusion et perspectives}
@@ -3353,7 +3361,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
 						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Deux tâches de déformation sont proposées et décrites dans la \myref{sss-exp3-DescriptionDeLaTache}.
+						Deux tâches de déformation sont proposées et décrites dans la \myref{sse-exp3-DescriptionDeLaTache}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-TempsAllouePourLeRemueMeninges]{\myvari{3} Temps alloué pour le remue-méninges}
 						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
