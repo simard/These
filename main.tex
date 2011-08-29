@@ -948,6 +948,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Les données, confrontées à un test de \mycite[author]{Shapiro-1965}, ne sont pas distribuées selon une loi normale.
 			Cependant, un test de \mycite[author]{Brown-1974} permet de confirmer l'\myglos{glo-Homoscedasticite}.
 			L'analyse de la variance est alors pratiquée à l'aide d'un test de \mycite[author]{Friedman-1940} adapté pour les \myglos*{glo-VariableIntraSujets} non-paramètriques.
+
+			Il est à noter que les données comparées entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} ne sont pas du même ordre de grandeur (\mynum{24}~\myglos*{glo-Monome} face à \mynum{12}~\myglos*{glo-Binome}).
+			Afin de pouvoir effectuer une comparaison du même ordre de grandeur, les données des sujets ayant fait partie d'un même \myglos{glo-Binome} ont été moyennées.
+			Ainsi, pour chaque variable correspond une donnée en \myglos{glo-Monome} et une donnée en \myglos{glo-Binome}.
 			\begin{mysubsection}[sse-exp1-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
 				\begin{myfigure}
 					\psset{xunit=0.0889\textwidth,yunit=0.01cm}
@@ -993,10 +997,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} obtient un temps de sélection significativement plus long que les autres \myglos*{glo-Residu}.
 
 				Les cinq \myglos*{glo-Residu} \myresidue{1}, \myresidue{2}, \myresidue{3}, \myresidue{4} et \myresidue{5} sont au sein de la molécule \myTRPCAGE qui en compte un nombre total relativement limité (\mynum{20}~\myglos*{glo-Residu}).
-				Les sujets construisent rapidement une carte mentale de la molécule ce qui leur permet de d'identifier rapidement les \myglos*{glo-Residu} recherchés.
-				De plus, les faibles contraintes physiques de la molécule (énergie totale du système peu élevée à cause du faible nombre d'atomes) la rende facile à déformer.
-				Cela facilite la recherche des \myglos*{glo-Residu} qui sont dans une position interne à la molécule et qui nécessitent une déformation.
-				Tous ces facteurs rendent les tâches de recherche et de sélection peu complexes sur la molécule \myTRPCAGE ce qui explique des temps de réalisation de la tâche très courts.
+				Durant la phase d'exploration, les sujets construisent rapidement une carte mentale de la molécule ce qui leur permet de d'identifier rapidement les \myglos*{glo-Residu} recherchés.
+				De plus, les faibles contraintes physiques de la molécule (énergie totale du système peu élevée à cause du faible nombre d'atomes) la rende facile à déformer et permet un accès rapide aux structures internes.
+				Cela facilite la recherche des \myglos*{glo-Residu} qui sont dans une position interne à la molécule et qui nécessitent une déformation plus importante afin de pouvoir l'extraire.
+				Tous ces facteurs rendent les tâches de recherche et de sélection peu complexes sur la molécule \myTRPCAGE ce qui explique des temps de réalisation de la tâche très courts, aussi bien pour les \myglos*{glo-Monome} que pour les \myglos*{glo-Binome}.
 
 				Les cinq \myglos*{glo-Residu} \myresidue{6}, \myresidue{7}, \myresidue{8}, \myresidue{9} et \myresidue{10} sont au sein de la molécule \myPrion qui en compte un nombre total relativement important (\mynum{112}~\myglos*{glo-Residu}).
 				La construction complète d'une carte mentale est très complexe à cause du nombre importants d'atomes qui sont continuellement en mouvement (dû à la simulation en temps-réel).
@@ -1040,7 +1044,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						Une phase de déformation est nécessaire pour le sélectionner.
 						Le \myglos{glo-Residu} \myresidue{6} est concerné.
 						Dans cette configuration, le travail collaboratif améliore significativement les performances.
-						En effet, l'étape de déformation peut bénéficier d'une action synchronisée entre plusieurs sujets : l'effort déployé est alors plus important ce qui permet de déformer la molécule plus rapidement.
+						En effet, l'étape de déformation bénéficie d'une action coordonnée entre les sujets : l'effort déployé est alors plus important et le contrôle sur la déformation meilleur ce qui permet une réalisation de la tâche plus rapide.
 				\end{description}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-StrategiesDeTravail]{Stratégies de travail}
@@ -1116,10 +1120,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\mybarplot{exp1-timeaudio-groups-searchselection.csv}
 						\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
 					\end{myps}
-					\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection des sujets pour chaque \myglosnl{glo-Binome}}
+					\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection entre les sujets pour chaque \myglosnl{glo-Binome}}
 				\end{myfigure}
 
-				La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} présente les pourcentages de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome} par rapport au temps total de réalisation de la tâche.
+				La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} présente les pourcentages de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome} par rapport au temps total de réalisation de la tâche.
 				Le pourcentage représente le rapport du temps de communication verbale durant la phase recherche ou de sélection rapporté respectivement au temps total de la phase de recherche ou de sélection.
 				Les \myglos*{glo-Binome} \mygroup{1} à \mygroup{4} ainsi que \mygroup{9} communiquent plus durant la phase de sélection.
 				Les \myglos*{glo-Binome} \mygroup{5} à \mygroup{8} et \mygroup{10} à \mygroup{12} communiquent plus durant la phase de recherche.
@@ -1143,116 +1147,127 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				L'ensemble des résultats et analyses précédentes permet de différencier les \myglos*{glo-Binome} ce qui confirme notre hypothèse \myhypothesis{2}.
 				Les \myglos*{glo-Binome} se différencient pas des stratégies de travail variables.
 				Les sections suivantes caractérisent les différentes stratégies de travail en fonction de plusieurs paramètres (distance entre les espaces de travail, affinités, temps de réalisation de la tâche, communication verbale, forces moyennes appliquées).
-				Trois stratégies sont décrites distinguées en fonction des distances entre les espaces de travail.
+				Trois stratégies sont décrites, distinguées en fonction des distances entre les espaces de travail.
 				\begin{description}
-					\item[Interaction en champ proche] pour les distances inférieures à \mynum[mm]{8};
-					\item[Interaction en champ voisin] pour les distances comprises entre \mynum[mm]{8} et \mynum[mm]{14};
-					\item[Interaction en champ distant] pour les distances supérieures à \mynum[mm]{14}.
+					\item[Collaboration en champ proche] pour les distances inférieures à \mynum[mm]{8};
+					\item[Collaboration en champ voisin] pour les distances comprises entre \mynum[mm]{8} et \mynum[mm]{14};
+					\item[Collaboration en champ distant] pour les distances supérieures à \mynum[mm]{14}.
 				\end{description}
 				Les mesures de distances sont données dans le référentiel du monde réel.
-				\begin{mysubsubsection}[sss-exp1-InteractionEnChampProche]{Interaction en champ proche}
-					Les interactions en champs proches, inférieure à \mynum[mm]{8}, correspondent, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\og \AA \fg désigne l'\myangstrom qui est une unité de mesure telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
-					\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{5}, \mygroup{6}, \mygroup{7}, \mygroup{8}, \mygroup{9}, \mygroup{10}, \mygroup{11} et \mygroup{12}).
-					Ces \myglos*{glo-Binome} travaillent en collaboration étroite sur les \myglos*{glo-Residu}.
-					Étant donné la distance inférieure \mynum[\AA]{10}, les \myglos*{glo-Binome} concernés travaillent sur les mêmes \myglos*{glo-Residu}.
-
-					Sur la \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration étroite ont de fortes affinités ($\mu = 4$) : ce sont des collègues proches ou des amis.
-					D'après la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de réalisation de la tâche relativement moyens comparés aux autres stratégies de travail.
-					Cela se traduit également par une communication variable selon les \myglos*{glo-Binome} comme affichée sur la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
-
-					Les temps de communication verbale sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montrent que les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer durant la phase de recherche que durant la phase de sélection (excepté pour \mygroup{9}).
-					Ces résultats mettent en évidence les difficultés du travail en champ proche liées aux nombreux \myglos*{glo-ConflitDeCoordination} durant la phase de recherche.
-
-					En effet, les \myglos*{glo-Binome} avec de fortes affinités travaillent sur les mêmes \myglos*{glo-Residu}.
-					Ils doivent donc coordonner leurs mouvements de manipulation pour déplacer un \myglos{glo-Residu} et cette coordination nécessite une communication verbale importante.
-					La collaboration est alors étroitement couplée mais il en résulte une perte de temps à cause de cette communication.
-
-					La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre de fortes disparités entre les \myglos*{glo-Binome} concernant la force moyenne appliquée durant la manipulation.
-					Des observations durant l'expérimentation ont permis de d'identifier deux stratégies adoptées par les sujets :
-					\begin{description}
-						\item[par contrôle] où les deux sujets effectuent la même action pour obtenir un meilleur contrôle sur les structures manipulées;
-						\item[par guidage] où un des deux sujets indique à son partenaire la déformation à effectuer ou la position à atteindre.
-					\end{description}
-					Ces deux stratégies impliquent une communication étroite entre les sujets afin de coordonner au mieux les actions \myref*{fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix}.
-
-					Les \myglos*{glo-Binome} ne travaillent pas de façon partagée comme le montre les différences importantes de forces appliquées \myref*{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome}.
-					Un des deux sujets effectue une majorité du travail contrairement à l'autre sujet.
-					De plus, les interactions en champ proche générent de nombreux \myglos*{glo-ConflitDeCoordination} nécessitant une communication verbale accrue.
-					D'ailleurs, les communications verbales révèlent de nombreuses incompréhension dans l'inter-référencement (\og Pas dans cette direction \fg, \og Pas ici mais ici \fg, \og C'est juste derrière \fg, \myetc).
-					En effet, la grande complexité des tâches considérées et une conscience incomplète de l'environnement et de l'état de son partenaire provoque des inter-référencements imprécis et entraîne une mauvaise coordination.
-					Ces \myglos*{glo-ConflitDeCoordination} et incompréhensions restreignent les performances du \myglos{glo-Binome}.
+				\begin{mysubsubsection}[sss-exp1-CollaborationEnChampProche]{Collaboration en champ proche}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampProche-Caracteristiques]{Caractéristiques}
+						La collaboration en champ proche, inférieures à \mynum[mm]{8}, correspond, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\og \AA \fg désigne l'\myangstrom qui est une unité de mesure telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
+						\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{5}, \mygroup{6}, \mygroup{7}, \mygroup{8}, \mygroup{9}, \mygroup{10}, \mygroup{11} et \mygroup{12}).
+						Étant donné la distance inférieure à \mynum[\AA]{10}, les \myglos*{glo-Binome} concernés manipulent en collaboration étroite sur les mêmes \myglos*{glo-Residu}.
+						Ces \myglos*{glo-Binome} se caractérisent par une forte affinité ($\mu = 4$) : ce sont des collègues ou des amis \myref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}.
+						D'après la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}, ces \myglos*{glo-Binome} obtiennent des temps de réalisation de la tâche moyens.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampProche-PartageDeLaTache]{Partage de la tâche}
+						La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre de fortes disparités entre les \myglos*{glo-Binome} concernant la force moyenne appliquée pendant la manipulation.
+						Des observations pendant l'expérimentation ont permis d'identifier deux stratégies adoptées par les sujets : \og par contrôle \fg où les deux sujets effectuent la même action pour obtenir un meilleur contrôle sur les structures manipulées; \og par guidage \fg où un des deux sujets indique à son partenaire la déformation à effectuer ou la position à atteindre.
+						Le partage des tâches est donc très différent selon les initiatives de chacun des sujets.
+						Cependant, les \myglos*{glo-Binome} se distribuent mal la charge de travail comme le montre les différences importantes entre les forces appliquées par les deux sujets \myref*{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome}.
+						En effet, seul un des deux sujets réalise une grande partie de la tâche à réaliser.
+						Le second sujet joue plutôt le rôle du suiveur.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampProche-Communication]{Communication}
+						Les temps de communication verbale sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} montrent une disparité entre les sujets.
+						Les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer pendant la phase de recherche que pendant la phase de sélection (excepté pour \mygroup{9}) ce qui met en évidence les difficultés du travail en champ proche liées aux nombreux \myglos*{glo-ConflitDeCoordination} pendant la phase de recherche.
+						En effet, les \myglos*{glo-Binome} doivent coordonner leurs mouvements de manipulation pour déplacer un \myglos{glo-Residu} et cette coordination nécessite une communication verbale importante.
+						La collaboration est alors étroitement couplée mais il en résulte une perte de temps à cause du temps alloué à la communication.
+						D'ailleurs, l'analyse des communications verbales a permis de mettre en évidence de nombreuses incompréhensions dans l'inter-référencement (\og Pas dans cette direction \fg, \og Pas ici mais ici \fg, \og C'est juste derrière \fg, \myetc).
+						En effet, la grande complexité des tâches ainsi qu'une conscience incomplète de l'environnement et de l'état de son partenaire provoque des inter-référencements imprécis entrainant une mauvaise coordination.
+						Ces \myglos*{glo-ConflitDeCoordination} et ces incompréhensions diminuent les performances globales du \myglos{glo-Binome}.
+					\end{myparagraph}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp1-InteractionEnChampVoisin]{Interaction en champ voisin}
-					Les interactions en champ voisin, comprises entre \mynum[mm]{8} et \mynum[mm]{14}, correspondent, dans l'environnement virtuel, à des distances de l'ordre de \myglos*{glo-Residu} voisins (entre \mynum[\AA]{10} et \mynum[\AA]{20}).
-					\mynum{3}~\myglos*{glo-Binome} sur \mynum{12} se trouvent dans cette catégorie (\myglos*{glo-Binome} \mygroup{2}, \mygroup{3} et \mygroup{4}).
-					Ces \myglos*{glo-Binome} travaillent en collaboration relativement étroite sur des \myglos*{glo-Residu} voisins.
-					La \myref{fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus} montre la dépendance physique ou structurelle entre les \myglos*{glo-Residu} voisins.
-					En effet, les \myglos*{glo-Residu} interagissent entre eux : plus les distances sont courtes, plus les contraintes physiques sont fortes.
+				\begin{mysubsubsection}[sss-exp1-CollaborationEnChampVoisin]{Collaboration en champ voisin}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampVoisin-Caracteristiques]{Caractéristiques}
+						La collaboration en champ voisin, comprises entre \mynum[mm]{8} et \mynum[mm]{14}, correspond, dans l'environnement virtuel, à des distances de l'ordre de \myglos*{glo-Residu} voisins (entre \mynum[\AA]{10} et \mynum[\AA]{20}).
+						\mynum{3}~\myglos*{glo-Binome} sur \mynum{12} se trouvent dans cette catégorie (\myglos*{glo-Binome} \mygroup{2}, \mygroup{3} et \mygroup{4}).
+						Ces \myglos*{glo-Binome} travaillent en collaboration relativement étroite sur des \myglos*{glo-Residu} voisins.
+						La \myref{fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus} montre la dépendance physique ou structurelle entre les \myglos*{glo-Residu} voisins.
+						En effet, les \myglos*{glo-Residu} interagissent entre eux à travers diverses forces physiques : plus les distances sont courtes, plus les contraintes physiques sont fortes.
+						La \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} montre que les \myglos*{glo-Binome} concernés ont des affinités moyennes ($\mu = 3$) : ce sont des collègues de bureau ou d'équipe ne travaillant pas forcément sur les mêmes projets.
+						Ces \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de réalisation de la tâche \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}.
 
-					\begin{myfigure}
-						\setlength{\mywidth}{10pc}
-						\setlength{\myheight}{10pc}
-						\psset{xunit=\mywidth,yunit=\myheight}
-						\begin{myps}(-1,-0.2)(1.15,1)
-							\psset{ref=c}
-							\rput(0.5,0.5){\myimage[width=\mywidth,angle=90]{exp1-trp-zipper}}
-							\rput(0.35,-0.1){\rnode{connected-residues-label}{\begin{tabular}{c}Connected residues\\[-1ex]\textcolor{black!70}{\scriptsize Structural dependencies}\end{tabular}}}
-							\rput(0.2,0.3){\pnode{connected-residues1}}
-							\rput(0.5,0.3){\pnode{connected-residues2}}
-							\rput(-0.5,0.7){\rnode{close-macro-label}{\begin{tabular}{c}Close macrostructures\\[-1ex]\textcolor{black!70}{\scriptsize Physical dependencies}\end{tabular}}}
-							\rput(0,0.9){\pnode{close-macro1}}
-							\rput(-0.1,0.5){\pnode{close-macro2}}
-							\nccurve[angleA=135,angleB=-90]{->}{connected-residues-label}{connected-residues1}
-							\nccurve[angleA=45,angleB=-90]{->}{connected-residues-label}{connected-residues2}
-							\nccurve[angleA=90,angleB=180]{->}{close-macro-label}{close-macro1}
-							\nccurve[angleA=-90,angleB=180]{->}{close-macro-label}{close-macro2}
-						\end{myps}
-						\mycaption[fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus]{Couplage physique et structure entre les \myglosnl*{glo-Residu}}
-					\end{myfigure}
-
-					Sur la \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}, tous les \myglos*{glo-Binome} manipulant en collaboration moyennement couplées ont des affinités moyennes ($\mu = 3$) : ce sont des collègues de bureau ou d'équipe ne travaillant pas forcément sur les mêmes projets.
-					La \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome} montre que les \myglos*{glo-Binome} obtiennent de très bonnes performances sur les temps de réalisation de la tâche.
-					De plus, la communication verbale est faible comme le montre la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
-					La manipulation en champ voisin permet d'être continuellement conscient des actions du partenaire ce qui évite les communications verbales.
-					Cependant, les sujets manipulent des \myglos*{glo-Residu} différents ce qui limite les \myglos*{glo-ConflitDeCoordination} qui interviennent en champ proche.
-
-					La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome} montre un nombre de \myglos*{glo-ConflitDeCoordination} plus faible durant la phase de recherche.
-					En effet, la communication verbale est nettement moins importante durant la phase de recherche que durant la phase de sélection.
-
-					La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} illustre une bonne répartition des efforts entre les deux membres du \myglos{glo-Binome}.
-					En effet, la force moyenne est assez élevée par rapport à la plupart des autres \myglos*{glo-Binome} ce qui montre qu'aucun des deux sujets n'est moins actif (ce qui entraînerait une force moyenne moins élevée).
-					La différence des forces moyennes quasi-nulle entre les deux sujets confirme ce résultat.
-					Ceci peut s'expliquer par une bonne coordination pendant laquelle les deux membres du \myglos{glo-Binome} vont effectuer des actions complémentaires mais de même intensité.
-					La stratégie adoptée peut être définie comme une stratégie \myemph{par manipulation complémentaire} : les deux sujets sont attentifs aux actions de leur partenaire afin d'avoir un meilleur contrôle du processus de déformation par une synchronisation améliorée.
-
-					L'analyse des communication verbales met en évidence les phases de communication de coordination (\og Maintenant, prends ça \fg, \og peux-tu m'aider ici ? \fg, \og Bien ! \fg, \myetc).
-					Les performances des \myglos*{glo-Binome} travaillant en champ voisin sont relativement élevées bien que quelques \myglos*{glo-ConflitDeCoordination} similaires à ceux rencontrés en champs proches soient présents bien que plus limités en nombre.
+						\begin{myfigure}
+							\setlength{\mywidth}{10pc}
+							\setlength{\myheight}{10pc}
+							\psset{xunit=\mywidth,yunit=\myheight}
+							\begin{myps}(-1,-0.2)(1.15,1)
+								\psset{ref=c}
+								\rput(0.5,0.5){\myimage[width=\mywidth,angle=90]{exp1-trp-zipper}}
+								\rput(0.35,-0.1){%
+									\rnode{connected-residues-label}{%
+										\begin{tabular}{c}%
+											Connected residues\\[-1ex]%
+											\textcolor{black!70}{\scriptsize Structural dependencies}%
+										\end{tabular}%
+									}%
+								}
+								\rput(0.2,0.3){\pnode{connected-residues1}}
+								\rput(0.5,0.3){\pnode{connected-residues2}}
+								\rput(-0.5,0.7){%
+									\rnode{close-macro-label}{%
+										\begin{tabular}{c}%
+											Close macrostructures\\[-1ex]%
+											\textcolor{black!70}{\scriptsize Physical dependencies}%
+										\end{tabular}%
+									}%
+								}
+								\rput(0,0.9){\pnode{close-macro1}}
+								\rput(-0.1,0.5){\pnode{close-macro2}}
+								\nccurve[angleA=135,angleB=-90]{->}{connected-residues-label}{connected-residues1}
+								\nccurve[angleA=45,angleB=-90]{->}{connected-residues-label}{connected-residues2}
+								\nccurve[angleA=90,angleB=180]{->}{close-macro-label}{close-macro1}
+								\nccurve[angleA=-90,angleB=180]{->}{close-macro-label}{close-macro2}
+							\end{myps}
+							\mycaption[fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus]{Couplage physique et structure entre les \myglosnl*{glo-Residu}}
+						\end{myfigure}
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampVoisin-PartageDeLaTache]{Partage de la tâche}
+						La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} illustre une bonne répartition des efforts entre les deux membres du \myglos{glo-Binome}.
+						En effet, la force moyenne est assez élevée par rapport à la plupart des autres \myglos*{glo-Binome} ce qui montre qu'aucun des deux sujets n'est moins actif (ce qui entraînerait une force moyenne moins élevée).
+						La différence des forces moyennes quasi-nulle entre les deux sujets confirme ce résultat.
+						Ceci s'explique par une bonne coordination entre les sujets pendant laquelle les deux membres du \myglos{glo-Binome} vont effectuer des actions complémentaires mais de même intensité.
+						La stratégie adoptée peut être définie comme une stratégie \myemph{par manipulation complémentaire} : les deux sujets sont attentifs aux actions de leur partenaire afin d'avoir un meilleur contrôle du processus de déformation par une synchronisation améliorée.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampVoisin-Communication]{Communication}
+						La communication verbale est faible comme le montre la \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome}.
+						La manipulation en champ voisin permet d'être continuellement conscient des actions du partenaire (grâce à la vision périphérique) ce qui limite les communications verbales.
+						Cependant, les sujets manipulent des \myglos*{glo-Residu} différents restreignant ainsi les \myglos*{glo-ConflitDeCoordination} par rapport à la collaboration en champ proche.
+						De plus, la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} montre un nombre de \myglos*{glo-ConflitDeCoordination} plus faible pendant la phase de recherche.
+						En effet, la communication verbale est nettement moins importante pendant la phase de recherche que pendant la phase de sélection.
+						L'analyse des communication verbales met en évidence des phases de communication de coordination (\og Maintenant, prends ça \fg, \og peux-tu m'aider ici ? \fg, \og Bien ! \fg, \myetc).
+						Les performances des \myglos*{glo-Binome} travaillant en champ voisin sont relativement élevées bien que quelques \myglos*{glo-ConflitDeCoordination} similaires à ceux rencontrés dans une collaboration en champ proche soient présents.
+						Cependant, le nombre de \myglos*{glo-ConflitDeCoordination} est plus limité.
+					\end{myparagraph}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp1-InteractionEnChampDistant]{Interaction en champ distant}
-					Les interactions en champ voisin, supérieures à \mynum[mm]{14}, correspondent, dans l'environnement virtuel, à des \myglos*{glo-Residu} sans interaction physique (supérieur à \mynum[\AA]{20}).
-					\mynum{1}~\myglos{glo-Binome} sur \mynum{12} est concerné par cette catégorie (\myglos{glo-Binome} \mygroup{1}).
-					Ce \myglos{glo-Binome} travaille de façon faiblement couplée.
-					En effet, les membres de ce \myglos{glo-Binome} travaillent de façon complétement indépendante, en limitant au maximum le nombre d'interactions.
-
-					Les affinités des membres de ce \myglos{glo-Binome} sont très faibles \myref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} : les membres ne se connaissent presque pas.
-					De plus, le \myglos{glo-Binome} obtient de très mauvaises performances en ce qui concerne le temps de réalisation de la tâche comme le montre la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}.
-					La \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre que le temps de communication verbale est assez important.
-					Cependant, le temps de réalisation étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}.
-					En effet, les membres du \myglos{glo-Binome} travaillent à distance et ont peu d'interactions entre eux.
-					Le peu d'interaction permet de limiter le nombre de \myglos*{glo-ConflitDeCoordination} ce qui implique le peu de communication verbale comme on peut le voir sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionDesSujetsPourChaqueBinome}.
-					Cette figure montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
-					En effet, les phases de sélection forcent une collaboration étroite (spécificité de la tâche proposée) et favorisent les \myglos*{glo-ConflitDeCoordination}.
-
-					La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre un effort moyen appliqué par les \myglos*{glo-Binome} peu élevé (comparé aux stratégies en champ voisin).
-					De plus, les forces moyennes appliquées par chacun des deux sujets sont très inégales.
-					Il y a une mauvaise répartition de la charge de travail au sein du \myglos{glo-Binome}.
-
-					En effectuant des interactions en champ distants, les sujets se définissent leur propre espace de travail mais également leur propre stratégie en fonction des événement locaux à leur espace de travail.
-					Les interactions entre les sujets sont limitées au maximum.
-					Cette configuration réduit considérablement les \myglos*{glo-ConflitDeCoordination} ainsi que la communication.
-					Cependant, elle nuit beaucoup aux performances du groupe dans son ensemble.
-					En effet, les stratégies sont différentes et la phase de sélection nécessite une collaboration.
-					De plus, l'inégalité de la répartition des charges de travail dévalue les performances.
+				\begin{mysubsubsection}[sss-exp1-CollaborationEnChampDistant]{Collaboration en champ distant}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampDistant-Caracteristiques]{Caractéristiques}
+						La collaboration en champ voisin, supérieures à \mynum[mm]{14}, correspond, dans l'environnement virtuel, à des \myglos*{glo-Residu} sans interaction physique (supérieur à \mynum[\AA]{20}).
+						\mynum{1}~\myglos{glo-Binome} sur \mynum{12} est concerné par cette catégorie (\myglos{glo-Binome} \mygroup{1}).
+						Ce \myglos{glo-Binome} travaille de façon faiblement couplée.
+						En effet, les membres de ce \myglos{glo-Binome} travaillent de façon complétement indépendante, en limitant au maximum le nombre d'interactions.
+						Les affinités des membres de ce \myglos{glo-Binome} sont très faibles \myref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} : les membres ne se connaissent presque pas.
+						Le \myglos{glo-Binome} obtient de très mauvaises performances en ce qui concerne le temps de réalisation de la tâche comme le montre la \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampDistant-PartageDeLaTache]{Partage de la tâche}
+						La \myref{fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome} montre un effort moyen appliqué par les \myglos*{glo-Binome} peu élevé (comparé aux stratégies de collaboration en champ voisin).
+						De plus, les forces moyennes appliquées par chacun des deux sujets sont très inégales.
+						Il y a une mauvaise répartition de la charge de travail au sein du \myglos{glo-Binome}.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp1-CollaborationEnChampDistant-Communication]{Communication}
+						La \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre que le temps de communication verbale est assez important.
+						Cependant, le temps de réalisation étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome}.
+						En effet, les membres du \myglos{glo-Binome} travaillent à distance et ont peu d'interactions entre eux.
+						Le peu d'interaction permet de limiter le nombre de \myglos*{glo-ConflitDeCoordination} ce qui implique le peu de communication verbale comme on peut le voir sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome}.
+						Cette figure montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
+						En effet, les phases de sélection forcent une collaboration étroite (spécificité de la tâche proposée) et favorisent les \myglos*{glo-ConflitDeCoordination}.
+						Cependant, les phases de recherche permettent aux sujets de manipuler de manière distante.
+						Ainsi, ils se définissent leur propre espace de travail mais également leur propre stratégie en fonction des événement locaux à leur espace de travail.
+						Pourtant, la phase de sélection nécessite une collaboration étroite et si les stratégies sont différentes, il en résulte de mauvaises performances dû au temps important pour se coordonner à nouveau.
+					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-SyntheseDesStrategiesDeTravail]{Synthèse des stratégies de travail}
 					Les \myglos*{glo-Binome} sont susceptibles d'adopter une des trois stratégies de travail vues dans les sections précédentes.
@@ -1268,47 +1283,41 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-ResultatsQualitatifs]{Résultats qualitatifs}
 				Les résultats qualitatifs sont constitués de deux parties.
-				La première permet de déterminer les impressions des sujets concernant la collaboration, les rôles et efficacité de chacun durant la tâche.
+				La première permet de déterminer les impressions des sujets concernant la collaboration, les rôles et efficacité de chacun pendant la tâche.
 				La seconde partie a pour but d'évaluer la plate-forme.
 				Toutes les notes sont comprises entre un et cinq (échelle de \mycite[author]{Likert-1932} à cinq niveaux).
 				\begin{mysubsubsection}[sss-exp1-EvaluationDuTravailEnCollaboration]{Évaluation du travail en collaboration}
 					Les résultats du questionnaire montre qu'une majorité des sujets de cette expérimentation ont apprécié et préféré la réalisation de la tâche en configuration collaborative (\mysummary{exp1-evaluation-group.tex}).
 					De plus, le sentiment d'effectuer une tâche en collaboration est fort.
 					L'hypothèse \myhypothesis{3} est confirmée par les sujets qui préfèrent le travail en collaboration que le travail en \myglos{glo-Monome}.
-					C'est un point important pour la poursuite de nos travaux de recherche sur le travail collaboratif : les sujets apprécient le travail en collaboration.
 
 					Durant les tâches collaboratives, les sujets considèrent qu'ils ont effectivement contribués à la réalisation de la tâche (\mysummary{exp1-evaluation-help.tex}).
 					Cependant, les sujets considèrent qu'ils ne se sont imposés ni en \myglos{glo-Meneur} ou ni en \myglos{glo-Suiveur} (\mysummary{exp1-evaluation-leader.tex}).
 					En effet, des questions supplémentaires ont permis de mettre en évidence que chaque sujet a tendance à surestimer le rôle du partenaire ($\approx\mynum[\%]{70}$).
 
-					La collaboration fonctionne grâce à une confiance mutuelle : chaque sujet considère que son partenaire a effectué le travail demandé.
-					Aucune vérification n'est effectuée par un sujet sur le travail effectué par le partenaire : ceci permet de construire cette confiance mutuelle.
-					De plus, ceci permet à chaque sujet de se sentir utile à la réalisation de la tâche et d'éviter les phénomènes de \myglos{glo-ParesseSociale}.
-					Dans le cas où un sujet remet en cause le travail de son partenaire, le partenaire ne se sent plus utile et peut s'isoler, soustrayant ainsi son potentiel de l'action collaborative.
-
 					Concernant la communication, les participants estiment qu'ils exploitent principalement la communication verbale (\mysummary{exp1-evaluation-verbal.tex}) et, dans une proportion plus faible mais tout de même importante, virtuelle (\mysummary{exp1-evaluation-virtual.tex}).
 					En ce qui concerne la communication gestuelle, ils la considèrent quasiment inexistante (\mysummary{exp1-evaluation-gestural.tex}).
 
-					La communication gestuelle n'est pas ou peu utilisée pour plusieurs raisons.
+					La communication gestuelle n'est pas ou peu utilisée.
 					La principale raison est la difficulté de communiquer avec des gestes lorsque les mains sont occupées par la manipulation.
-					Deuxièmement, les sujets ont rapidement adopté le canal virtuel qui est plus précis dans les tâches de désignation qui constituent la plupart des besoins de communication.
-					La communication verbale reste le canal principal de communication : c'est le canal le plus naturel pour communiquer.
-					Cependant, il vient aussi en soutien du canal virtuel.
-					En effet, aucun outil visuel ou haptique n'a été fourni pour effectuer des tâches de désignation et le canal virtuel seul serait incapable de remplir seul cette mission.
+					Les sujets ont rapidement adopté la désignation virtuelle qui est plus précise et plus adaptée dans les phases de désignation qui constituent la plupart des besoins de communication.
+					La communication verbale reste le principal moyen de communication : c'est la manière la plus naturelle de communiquer.
+					Cependant, il vient aussi en soutien de la désignation virtuelle.
+					En effet, aucun outil visuel ou haptique n'a été fourni pour effectuer des désignations et le curseur ne suffit pas toujours à remplir cette mission.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-EvaluationDuSysteme]{Évaluation du système}
-					L'évaluation du système en terme d'intuitivité comme en terme de confort est relativement satisfaisante.
-					En effet, en ce qui concerne l'intuitivité des graphismes et effets visuels, les participants les trouve accessibles (\mysummary{exp1-platform-visual-intuitive.tex}).
-					Il est en va de même en ce qui concerne l'intuitivité des interactions avec le système (\mysummary{exp1-platform-interaction-intuitive.tex}).
-					Pour le confort, le visuel (\mysummary{exp1-platform-visual-confortable.tex}) et les interactions (\mysummary{exp1-platform-interaction-confortable.tex}) jouissent d'une évaluation similaire.
+					L'évaluation du système en terme d'utilisabilité est relativement satisfaisante.
+					En effet, en ce qui concerne les graphismes et les effets visuels, les participants les ont trouvé accessibles (\mysummary{exp1-platform-visual-intuitive.tex}).
+					De la même façon, l'utilisabilité des moyens d'interaction avec le système sont bien notés (\mysummary{exp1-platform-interaction-intuitive.tex}).
+					En terme de confort d'utilisation, les effets visuels (\mysummary{exp1-platform-visual-confortable.tex}) et les interactions (\mysummary{exp1-platform-interaction-confortable.tex}) sont bien évalués également.
 
-					Là encore, les sujets valident l'hypothèse \myhypothesis{4}.
+					Là encore, les résultats permettent de valider l'hypothèse \myhypothesis{4}.
 					La plate-forme est relativement bien évaluée.
 					Il semble cependant nécessaire d'apporter encore des améliorations afin de répondre au mieux aux attentes des utilisateurs.
 
 					Ces résultats sont cependant à nuancer.
 					Les écart-types sont relativement élevés ce qui veut dire qu'il y a de fortes disparités dans ces notations entre les différents sujets : certains sujets se sont déclarés plutôt insatisfaits concernant le confort (visuel : \mynum{2}, interaction : \mynum{2}).
-					De plus, les outils proposés durant cette expérimentation sont relativement simples et peu envahissants.
+					De plus, les outils proposés pendant cette expérimentation sont relativement simples et peu envahissants.
 					Des outils plus complexes, plus informatifs seraient peut-être moins intuitifs au premier abord et pourrait mener à un inconfort.
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -1316,12 +1325,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-exp1-Synthese]{Synthèse}
 			\begin{mysubsection}[sse-exp1-ResumeDesResultats]{Résumé des résultats}
 				Dans ce chapitre, nous avons observé et comparé les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} pendant une tâche de recherche et de sélection sur une simulation moléculaire en temps-réel.
-				L'objectif était de montrer l'intérêt du travail collaboratif dans l'amélioration des performances et d'identifier les différentes stratégies de travail.
-				De plus, il fallait valider la pertinence du système mis en place.
+				L'objectif était de montrer l'intérêt des approches collaboratives pour l'amélioration des performances et d'identifier les différentes stratégies de travail.
+				De plus, il fallait valider la pertinence de la plate-forme mise en place.
 
-				La collaboration a prouvé son intérêt, notamment sur les tâches les plus complexes.
+				Les approches collaboratives ont prouvé leur intérêt, notamment sur les tâches les plus complexes.
 				Cependant, la complexité d'une tâche est relativement difficile à établir.
-				Le nombre d'atomes (et donc le nombre de \myglos*{glo-Residu}) joue un rôle important dans cette complexité.
+				Au delà des facteur de position, de couleur ou de forme, le nombre d'atomes de la molécule (et donc le nombre de \myglos*{glo-Residu}) semble jouer un rôle important dans cette complexité.
 				Un grand nombre d'atomes surcharge l'environnement virtuel qui difficile à appréhender.
 				Un deuxième facteur de complexité à prendre en compte est l'amplitude des contraintes physiques de la molécule.
 				Certaines zones de la molécule sont dans un état de stabilité tel qu'il est difficile de déformer les \myglos*{glo-Residu} de cette zone.
@@ -1343,7 +1352,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				L'évaluation qualitative par questionnaire apporte également de nombreuses réponses intéressantes.
 				Tout d'abord, les sujets ont mis en avant un élément primordial de la communication : le canal virtuel est important.
-				À l'aide d'observations durant les phases expérimentales, ce canal de communication est principalement exploité pour des actions de désignation.
+				À l'aide d'observations pendant les phases expérimentales, ce canal de communication est principalement exploité pour des actions de désignation.
 				Fournir des outils spécifiquement conçus pour la désignation devient une nécessité.
 
 				Enfin, ces évaluations qualitatives ont permis de valider l'\myacro{acr-EVC} proposé.
@@ -2506,7 +2515,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansRemueMeninges} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansRemueMeninges} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
 					Nous avons vu dans la \myref{sse-exp3-EvolutionDesPerformances} que les \myglos*{glo-Quadrinome} éprouvent des difficultés dans la résolution des \myglos*{glo-ConflitDeCoordination}.
 					D'après les figures observées, le remue-méninges permet l'élaboration d'une stratégie et la définition des rôles de chacun des sujets.
-					L'élaboration d'une stratégie réduit de façon importante le nombre de \myglos*{glo-ConflitDeCoordination} durant la réalisation de la tâche et ainsi améliore les performances.
+					L'élaboration d'une stratégie réduit de façon importante le nombre de \myglos*{glo-ConflitDeCoordination} pendant la réalisation de la tâche et ainsi améliore les performances.
 					De plus, une définition précise des rôles de chacun avant le début de la tâche permet de partitionner la tâche ou de l'organiser le cas échéant et ainsi d'éviter le phénomène de \myglos{glo-ParesseSociale}.
 
 					Dans le cas de la molécule \myPrion, la tâche peut aisément être divisée en quatre sous-tâches élémentaires ce qui facilite l'identification des rôles.
@@ -2936,7 +2945,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{itemize}
 				\item \mynum{2}~ordinateur quatre cœurs \myIntelCore avec \myRAM[Go]{4};
 				\item \mynum{2}~interfaces haptiques \myOmni;
-				\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series)\footnote{Durant la première expérimentation, c'est un vidéoprojecteur \myCasioXJ qui a été utilisé.};
+				\item \mynum{1}~vidéoprojecteur \myACER (\textsc{p5}~series)\footnote{Pour la première expérimentation, c'est un vidéoprojecteur \myCasioXJ qui a été utilisé.};
 				\item \mynum{1}~grand écran de vidéoprojection.
 			\end{itemize}
 
@@ -3170,7 +3179,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\end{enumerate}
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-ForceMoyenneAppliqueeParLesSujets]{\myvard{5} Force moyenne appliquée par les sujets}
-						Le force appliquée par chaque sujet sur les atomes durant la simulation est mesurée.
+						Le force appliquée par chaque sujet sur les atomes pendant la simulation est mesurée.
 						Une valeur moyenne de cette force est calculée pour être analysée.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
