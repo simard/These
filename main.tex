@@ -576,20 +576,19 @@
 	\end{mychapter}
 	\begin{mychapter}[cha-RechercheCollaborativeDeResiduSurUneMolecule]{Recherche collaborative de résidu sur une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
-			Cette introduction nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro{acr-PCV} \mycite{Fuchs-2006a}.
+			Le premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro*{acr-PCV} \mycite{Fuchs-2006a}.
 			Chaque primitive nécessite que la précédente ait été réalisée avec succès; on ne peut pas manipuler tant qu'une sélection n'a pas été effectuée; on ne peut pas sélectionner sans avoir naviguer, explorer et identifier les cibles à sélectionner.
 			Le processus d'exploration et de sélection sont les étapes primordiales à toute manipulation ultérieure.
-			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}, notamment à cause de la complexité des molécules liée au nombre important d'atomes et à leur structure repliée.
+			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}, notamment à cause de la complexité des molécules liée au nombre important d'atomes et à la structure repliée.
 			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
-			Cependant, la distribution des charges cognitives de travail est une troisième solution que nous choisissons d'explorer.
-			La collaboration va nous permette d'effectuer cette distribution des charges cognitives.
+			Cependant, nous choisissons d'explorer une troisième solution : la distribution des charges cognitives de travail par l'intermédiaire d'une collaboration synchrone colocalisée.
 
 			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
 			Le prétexte à cette étude sera une expérimentation sur la recherche de \myglos*{glo-Residu} présentée dans la \myref{sec-exp1-PresentationDeLExperimentation}.
-			L'étude proposée permettra de montrer l'intérêt du travail collaboratif sur des tâches de nature complexes.
+			L'étude proposée montre l'intérêt du travail collaboratif sur des tâches de nature complexe.
 			Cependant, nous verrons que les différents \myglos*{glo-Binome} adoptent des stratégies relativement différentes, menant à des performances hétérogènes.
-			Nous identifierons ainsi les aspects positifs de la collaboration mais également les limites d'une telle configuration de travail.
+			Nous identifierons ainsi les avantages de la collaboration mais également les limites d'une telle configuration de travail.
 		\end{mysection}
 		\begin{mysection}[sec-exp1-RechercheEtSelectionCollaborative]{Recherche et sélection collaborative}
 			\begin{mysubsection}[sse-exp1-TravauxExistants]{Travaux existants}
@@ -1366,23 +1365,17 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-DeformationCollaborativeDeMolecule]{Déformation collaborative de molécule}
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
-			Dans le précédent chapitre, nous avons effectué une première étude du travail collaboratif sur une tâche de recherche et de sélection.
-			Cette étude montre la pertinence d'un travail en \myglos{glo-Binome} pour la \myemph{recherche} et la \myemph{sélection} de \myglos*{glo-Residu} dans un environnement complexe.
-			En effet, les \myglos*{glo-Binome} sont plus performants sur des tâches très complexes et gardent des performances équivalentes aux \myglos*{glo-Monome} sur des tâches de complexité faible.
-			Cette première expérimentation nous permet d'identifier certains points importants nécessaires pour nos prochaines études.
+			Cette première expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
+			Afin de notre compléter notre étude du travail collaboratif dans un environnement virtuel complexe, nous souhaitons à présent nous intéresser à la \myacro{acr-PCV} suivante : la \myemph{déformation}.
+			En effet, on trouve déjà plusieurs environnements virtuels permettant de manipuler des molécules rigides afin d'effectuer de l'\myglos{glo-AmarrageMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
+			Cependant, l'amarrage moléculaire s'effectue de manière optimale lorsqu'on a la possibilité de déformer les molécules.
+			Ceci est rendu possible par l'avénement des simulations interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
+			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver puis ensuite avec l'utilisation d'interface haptique pour la manipulation et la déformation \mycite{Delalande-2010}.
 
-			Tout d'abord, nous allons focaliser nos études sur des tâches de complexité importante.
-			La caractérisation de la complexité d'une tâche dépend en grande partie de la nature de la tâche elle-même (par exemple, la forme ou la couleur d'un \myglos{glo-Residu}.
-			Cependant, le nombre total d'atomes (et donc de \myglos*{glo-Residu}) présents dans la molécule est un facteur de complexité qui ne dépendra pas ou peu de la nature de la tâche.
-			Ce facteur pourra être utilisé pour proposer des tâches complexes.
-
-			Les deux premières tâches élémentaires du processus de déformation moléculaire \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} ont été étudiées dans cette première études.
-			Cette seconde étude se rapproche d'un processus complet de déformation moléculaire puisqu'elle se focalisera sur la tâche élémentaire de \myemph{manipulation}.
-
-			Tout d'abord, nous présenterons les objectifs et les hypothèses de cette seconde expérimentation dans la \myref{sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel}.
-			Ensuite, la tâche et le dispositif expérimental, modifié pour cette nouvelle étude, est présenté dans la \myref{sec-exp2-PresentationDeLExperimentation}.
-			Les résultats seront analysés dans la \myref{sec-exp2-Resultats}.
-			Enfin, la \myref{sec-exp2-Synthese} effectue une synthèse de cette seconde étude et propose des perspectives pour les expérimentations qui vont suivre.
+			Dans ce chapitre, nous allons étudier le processus de déformation d'une molécule.
+			Nous souhaitons vérifier la pertinence de la configuration de travail collaboratif pour appréhender la déformation d'une molécule.
+			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
+			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant la plater-forme, les outils ou encore la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
@@ -1908,7 +1901,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Il s'affranchit ainsi des problèmes de coordination entre les deux outils ce qui lui permet de compenser le manque de ressources pour la manipulation.
 
 				Cependant, le cas des scénarios complexes force le \myglos{glo-Monome} à manipuler dans une configuration \myglos*{glo-Bimanuel}.
-				Dans la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome}, nous avons montré que la configuration \myglos*{glo-Bimanuel} ne permet pas d'égaler les performances d'un travail collaboratif.
+				Dans la section précédente, nous avons montré que la configuration \myglos*{glo-Bimanuel} ne permet pas d'égaler les performances d'un travail collaboratif.
 				Nous pouvons donc conclure que les \myglos*{glo-Binome} sont plus performants dans le cadre de scénarios suffisamment complexes.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
