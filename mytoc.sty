@@ -44,6 +44,8 @@
 	% To make small table of contents at the beginning of each section
 	\RequirePackage{minitoc}
 \fi
+% Improve the bookmarks in the PDF
+\RequirePackage[dvips]{bookmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% New configuration %%
@@ -67,6 +69,7 @@
 %%%%%%%%%%%%%%%%%%
 % Define the appendix command
 \newcommand{\myappendix}{%
+	\bookmark[level=0]{}%
 	\phantomsection%
 	\appendixpage%
 	\cleardoublepage%
