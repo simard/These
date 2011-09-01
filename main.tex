@@ -519,7 +519,7 @@
 
 					Cependant, appliquer le même effort à l'ensemble des atomes de la molécule produit un effort total très important.
 					Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop puissantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation.
-					En effet, \myacro{acr-NAMD} peut décider de stopper la simulation s'il considère que la simulation diverge trop d'un état stable.
+					En effet, \myacro{acr-NAMD} peut décider d'arrêter la simulation s'il considère que la simulation diverge trop d'un état stable.
 					Il est donc nécessaire de diviser l'intensité des forces appliquées proportionnellement au nombre d'atomes sélectionnés.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-OutilDeDesignation]{Outil de désignation}
@@ -1366,27 +1366,27 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\begin{mychapter}[cha-DeformationCollaborativeDeMolecule]{Déformation collaborative de molécule}
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
 			Cette première expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
-			Afin de notre compléter notre étude du travail collaboratif dans un environnement virtuel complexe, nous souhaitons à présent nous intéresser à la \myacro{acr-PCV} suivante : la \myemph{déformation}.
+			Afin de compléter notre étude du travail collaboratif dans un environnement virtuel complexe, nous souhaitons à présent nous intéresser à la \myacro{acr-PCV} suivante : la \myemph{déformation}.
 			En effet, on trouve déjà plusieurs environnements virtuels permettant de manipuler des molécules rigides afin d'effectuer de l'\myglos{glo-AmarrageMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
 			Cependant, l'amarrage moléculaire s'effectue de manière optimale lorsqu'on a la possibilité de déformer les molécules.
 			Ceci est rendu possible par l'avénement des simulations interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
 			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver puis ensuite avec l'utilisation d'interface haptique pour la manipulation et la déformation \mycite{Delalande-2010}.
 
 			Dans ce chapitre, nous allons étudier le processus de déformation d'une molécule.
-			Nous souhaitons vérifier la pertinence de la configuration de travail collaboratif pour appréhender la déformation d'une molécule.
+			Nous souhaitons vérifier la pertinence de la configuration de travail collaborative pour appréhender la déformation d'une molécule.
 			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
-			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant la plate-forme, les outils ou encore la tâche à réaliser.
+			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage de la plate-forme, des outils ou encore de la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
 				L'utilisation de retours haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
-				\mycite[author]{Shen-2006} propose déjà une solution pour déformer des objets non-rigides à l'aide de retour haptique.
-				Les objets concernés sont des faible complexité, comme des sphères par exemple.
+				\mycite[author]{Shen-2006} proposent déjà une solution pour déformer des objets non-rigides à l'aide de retour haptique.
+				Les objets concernés sont de faible complexité, comme des sphères par exemple.
 				Puis, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-				Là encore, les éléments déformables sont de faibles complexité et n'ont quasiment pas d'application concrète.
+				Là encore, les éléments déformables sont de faibles complexité et n'ont quasiment pas d'application utile et concrète dans le monde réel.
 
-				Cependant, afin d'effectuer des déformations plus pertinentes, certains se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
-				\mycite[author]{Sumengen-2007} propose une plate-forme permettant la déformation de maillages pouvant être utilisé pour des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}.
+				Cependant, afin d'effectuer des déformations plus complexes, certains se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
+				\mycite[author]{Sumengen-2007} proposent une plate-forme permettant la déformation de maillages destinés à des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}.
 				Un des objectifs de cette plate-forme est de répondre aux contraintes de latence liées au réseau.
 				Pour cela, il propose une architecture de type pair-à-pair basée sur le protocole \myacro{acr-UDP}.
 				Aucune des données transmises n'est compressée mais l'expérimentation a lieu sur un réseau interne avec une bande passante importante.
@@ -1423,105 +1423,97 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-exp2-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp2-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
-				\begin{mysubsubsection}[sss-exp2-DescriptionDeLaTache]{Description de la tâche}
-					La tâche proposée est la déformation d'une molécule.
-					L'objectif est de la rendre conforme à un modèle.
-					L'intégralité des atomes de la molécule à déformer est affiché.
-					Trois molécules sont utilisées dans le cadre de cette expérimentation.
-					\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
-					\myTRPZIPPER et \myTRPCAGE seront chacune utilisée dans deux scénarios distincts.
-					Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
+				L'objectif est de modifier la conformation initiale d'une molécule pour atteindre une conformation finale.
+				En effet, la recherche d'un état stable est exactement ce qu'une tâche de \myglos{glo-AmarrageMoleculaire} cherche à réaliser.
+				De plus, la déformation est une tâche permettant de stimuler les actions de coordination les outils de déformation ne permettant pas certaines manipulations.
 
-					Lorsqu'un sujet sélectionne un atome ou un \myglos{glo-Residu}, ce dernier est mis en surbrillance.
-					De plus, l'atome ou le \myglos{glo-Residu} correspondant sur la molécule cible est affiché afin de connaître la position finale de la sélection courante.
+				Trois molécules sont utilisées dans le cadre de cette expérimentation.
+				\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
+				\myTRPZIPPER et \myTRPCAGE seront chacune utilisée dans deux scénarios distincts.
+				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
-					Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
-					Le score affiché est le \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes \myref*{equ-RMSD}.
-					\begin{equation}\label{equ-RMSD}
-						\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
-					\end{equation}
-					où $N$~est le nombre total d'atomes et~$c_i$, $m_i$~sont respectivement l'atome~$i$ de la molécule à comparer et de la molécule modèle.
+				Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
+				Le score affiché est le \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes \myref*{equ-RMSD}.
+				\begin{equation}\label{equ-RMSD}
+					\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
+				\end{equation}
+				où $N$~est le nombre total d'atomes et~$c_i$, $m_i$~sont respectivement l'atome~$i$ de la molécule à comparer $\mathbf{c}$ et de la molécule modèle $\mathbf{m}$.
 
-					\begin{myfigure}
-						\psset{unit=0.08\textwidth}
-						\begin{myps}(0,0)(12,9)
-							\rput[bl](1,0){\myimage[width=0.6\textwidth]{exp2-trp-zipper}}
-							\rput[bl](6.2,5){\myimage[width=5cm,angle=0]{exp2-red-cursor}}
-							\rput[bl](8.5,0.5){\myimage[width=3.5cm,angle=-20]{exp2-green-cursor}}
-							\psframe*[linecolor=red](0,8)(12,9)
-							\psframe*[linecolor=green](0,8)(2,9)
-							\rput(6,8.5){\textcolor{white}{\bfseries\sffamily\LARGE Score RMSD}}
-							\psframe[linewidth=1pt,linecolor=black](0,0)(12,9)
-						\end{myps}
-						\mycaption[fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible]{Affichage de la molécule à déformer et de la molécule cible}
-					\end{myfigure}
-				\end{mysubsubsection}
+				\begin{myfigure}
+					\psset{unit=0.08\textwidth}
+					\begin{myps}(0,0)(12,9)
+						\rput[bl](1,0){\myimage[width=0.6\textwidth]{exp2-trp-zipper}}
+						\rput[bl](6.2,5){\myimage[width=5cm,angle=0]{exp2-red-cursor}}
+						\rput[bl](8.5,0.5){\myimage[width=3.5cm,angle=-20]{exp2-green-cursor}}
+						\psframe*[linecolor=red](0,8)(12,9)
+						\psframe*[linecolor=green](0,8)(2,9)
+						\rput(6,8.5){\textcolor{white}{\bfseries\sffamily\LARGE Score RMSD}}
+						\psframe[linewidth=1pt,linecolor=black](0,0)(12,9)
+					\end{myps}
+					\mycaption[fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible]{Affichage de la molécule à déformer et de la molécule cible}
+				\end{myfigure}
 				\begin{mysubsubsection}[sss-exp2-DescriptionDesScenarios]{Description des scénarios}
-					Quatre scénarios sont proposés : deux molécules expérimentées dans deux niveaux de manipulation différents.
+					Quatre scénarios sont proposés avec deux molécules expérimentées dans deux niveaux de manipulation différents.
 					Les deux niveaux différents de manipulation sont :
 					\begin{itemize}
-						\item inter-moléculaire (à l'échelle d'un \myglos{glo-Residu});
-						\item intra-moléculaire (à l'échelle d'un atome).
+						\item inter-moléculaire (à l'échelle d'un \myglos{glo-Residu}) pour un niveau de déformation avec une granularité élevée;
+						\item intra-moléculaire (à l'échelle d'un atome) pour un niveau de déformation avec une granularité fine.
 					\end{itemize}
 
-					Les paragraphes suivants décrivent les quatre scénarios :
-					\begin{description}
-						\item[Scénario~\myscenario{1a}]
-							Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
-							Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule au sein de l'environnement virtuel et éviter d'éventuelles dérives hors du champ visuel.
-							L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement.
-							La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
-						\item[Scénario~\myscenario{1b}]
-							Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
-							Comme le scénario~\myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
-							L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement.
-							La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
-						\item[Scénario~\myscenario{2a}]
-							Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
-							Seulement trois \myglos*{glo-Residu} sont laissés libres tandis que tous les autres sont fixés.
-							Les contraintes physiques de cette tâche sont relativement faibles.
-							Cependant, la difficulté de cette tâche réside dans la recherche des \myglos*{glo-Residu} à déformer qui ne sont pas aisés à trouver.
-						\item[Scénario~\myscenario{2b}]
-							Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
-							Seulement six \myglos*{glo-Residu} sont laissés libres tandis que les autres sont fixés.
-							La déformation requise demande une grande dépense d'énergie.
-							En effet, la molécule proposée se trouve dans une sorte de puit de potentiel (un \myemph{minima} local) et l'objectif est d'atteindre un autre puit de potentiel (un autre \myemph{minima} local).
-							L'énergie nécessaire pour passer d'un puit à l'autre est relativement importante, à tel point qu'un seul outil de déformation n'est pas suffisant.
-							La manipulation coordonnée de deux \myglos*{glo-Residu} est la seule solution pour atteindre l'objectif.
-					\end{description}
-
-					Un résumé de la complexité des quatre tâches est exposé dans la \myref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
+					Les paragraphes qui vont suivre décrivent les quatre scénarios basés sur les critères de complexité suivants :
 					\begin{description}
 						\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
 						\item[\myGlosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} de la molécules non fixés dans la simulation;
-						\item[Cassure] Ce sont les cassures de la chaîne principale de la molécule; elles représentent les jonctions entre \myhelice* et/ou les \myfeuillet*;
-						\item[Champ de force] Il représente la difficulté en terme de contrainte physique; il exprime l'énergie minimum nécessaire pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
+						\item[Cassure] Ce sont des angles dans la chaîne principale de la molécule; elles représentent les jonctions entre \myhelice* et/ou les \myfeuillet* et nécessitent deux points d'accroche pour être reformées;
+						\item[Champ de force] C'est l'intensité des forces dans les zones de déformation; il exprime l'énergie minimum nécessaire à déployer pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
 					\end{description}
+					\begin{myparagraph}[par-exp2-Scenario1a]{Scénario~\myscenario{1a}}
+						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
+						Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter d'éventuelles dérives hors du champ visuel.
+						L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement ce qui en fait une molécule assez malléable avec un champ de force moyennement contraint.
+						La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
+						La difficulté de ce scénario réside dans la nécessité de maintenir les \myglos*{glo-Residu} déjà placés pendant que le reste de la molécule est déformée.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp2-Scenario1b]{Scénario~\myscenario{1b}}
+						Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
+						Comme le scénario~\myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
+						L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement ce qui en fait une molécule assez malléable avec un champ de force moyennement contraint.
+						La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
+						Ce scénario est plus difficile que le scénario~\myscenario{1a} car le nombre d'atomes à placer est plus élevé et qu'il est nécessaire de maintenir en place deux cassures.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp2-Scenario2a]{Scénario~\myscenario{2a}}
+						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
+						Seulement trois \myglos*{glo-Residu} sont laissés libres et tous les autres \myglos*{glo-Residu} sont fixés.
+						Le champ de force au sein de la zone de déformation pour cette molécule est très faible et aucune cassure n'est à reformer.
+						Cependant, la difficulté de ce scénario réside dans la précision de la déformation nécessaire.
+						En effet, plutôt que de modifier la position des \myglos*{glo-Residu}, ce scénario nécessite la modification de l'orientation d'un \myglos*{glo-Residu} donc une précision accrue dans la sélection et la déformation des atomes.
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp2-Scenario2b]{Scénario~\myscenario{2b}}
+						Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
+						Seulement six \myglos*{glo-Residu} sont laissés libres et tous les autres \myglos*{glo-Residu} sont fixés.
+						Le champ de force au sein de la zone de déformation est très important et l'énergie qu'il est nécessaire de déployer pour réussir cette déformation est importante.
+						Cette déformation ne peut être réalisée qu'avec la manipulation simultanée et coordonnée de deux \myglos*{glo-Residu} : ceci permet de recréer la cassure.
+					\end{myparagraph}
+
+					Un résumé de la complexité des quatre tâches est exposé dans la \myref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
 
 					\begin{mytable}
 						\mycaption[tab-exp2-ParametresDeComplexiteDesTaches]{Paramètres de complexité des tâches}
 						\begin{mytabular}{^>{\bfseries}p{9em}-C-C-C-C}
 							\mytoprule
 							\myrowstyle{\bfseries}
-							Scénario                    & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
+							Scénario                      & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
 							\mymiddlerule[\heavyrulewidth]
-							Nombre d'atomes             & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
+							Nombre d'atomes               & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
 							\mymiddlerule
-							\myGlosnl{glo-Residu} libre & \mynum{11}      & \mynum{19}      & \mynum{3}       & \mynum{7}       \\
+							\myGlosnl*{glo-Residu} libres & \mynum{11}      & \mynum{19}      & \mynum{3}       & \mynum{7}       \\
 							\mymiddlerule
-							Cassure                     & \mynum{1}       & \mynum{2}       & \mynum{0}       & \mynum{1}       \\
+							Cassure                       & \mynum{1}       & \mynum{2}       & \mynum{0}       & \mynum{1}       \\
 							\mymiddlerule
-							Champ de force              & Moyen           & Moyen           & Faible          & Fort            \\
+							Champ de force                & Moyen           & Moyen           & Faible          & Fort            \\
 							\mybottomrule
 						\end{mytabular}
 					\end{mytable}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp2-LesOutilsDisponibles]{Les outils disponibles}
-					Des outils de déformation légérement différents sont proposés en fonction de la tâche à réaliser.
-					Pour les tâches de déformation au niveau inter-moléculaire, l'outil de déformation est l'outil \mytool{tug} pour les \myglos*{glo-Residu} : il permet de déformer d'un tenant l'intégralité d'un \myglos{glo-Residu}.
-					Pour les tâches de déformation au niveau intra-moléculaire, l'outil de déformation est l'outil \mytool{tug} pour les atomes : il permet d'appliquer une force sur un seul atome.
-					L'outil \mytool{tug} pour les \myglos*{glo-Residu} applique la même force à chaque atome du \myglos{glo-Residu}.
-					Il en résulte que l'outil \mytool{tug} pour les \myglos*{glo-Residu} permet d'appliquer un effort total plus important et perturbe plus fortement la simulation.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
@@ -1558,15 +1550,16 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-Visualisation]{Visualisation}
 					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
-					Ces molécules sont représentés avec les rendus graphiques de base (\myCPK et \myNewRibbon).
+					Ces molécules sont représentées avec les rendus graphiques de base (\myCPK et \myNewRibbon).
 					Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
-					Cette molécule ne peut pas être représentées avec tous ces atomes pour deux raisons.
+					Ces molécules ne peuvent pas être représentées avec tous leurs atomes pour deux raisons.
 					Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
 					De plus, la précision de la déformation ne nécessite pas la présence des atomes.
 					C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
 
-					Des images représentants les différents scénarios dans leur état initial sont présentées.
-					La \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} représente le scénario~\myscenario{1A}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B} représente le scénario~\myscenario{1B}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} représente le scénario~\myscenario{2A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représente le scénario~\myscenario{2B}.
+					Des images représentants les différents scénarios dans leurs états initiaux sont présentées.
+					Les scénarios inter-moléculaires \myscenario{1a} et \myscenario{1b} sont respectivement représentés sur la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B}.
+					Les scénarios intra-moléculaires \myscenario{2a} et \myscenario{2b} sont respectivement représentés sur la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B}.
 
 					\begin{myfigure}
 						\myimage[width=0.5\textwidth]{exp2-scenario1A}
@@ -1588,9 +1581,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-OutilsDeManipulation]{Outils de manipulation}
 					Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
 					Grâce au choix du matériel capable de différencier aisément les opérations de translation et les opérations de rotation, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
-					En effet, la molécule n'a pas vraiment besoin d'être déplacer à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
-					Ceci permet également d'éviter des molécules qui sortent de l'écran à cause d'une mauvaise manipulation.
-					De plus, cela décharge d'une charge cognitive inutile.
+					En effet, la molécule n'a pas vraiment besoin d'être déplacée à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
+					Ceci permet également d'éviter des molécules qui sortent de l'espace visuel des sujets (l'écran) à cause d'une mauvaise manipulation.
+					De plus, ce choix permet d'enlever une part de la charge cognitive des sujets.
 
 					En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
 					La tâche consiste à reconstituer une molécule dans son état d'équilibre.
@@ -2184,7 +2177,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
 				De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
-				On pourra trouver la description de ces éléments dans la \myref{sss-exp2-DescriptionDeLaTache}.
+				On pourra trouver la description de ces éléments dans la \myref{sse-exp2-DescriptionDeLaTache}.
 				\begin{mysubsubsection}[sss-exp3-DescriptionDesScenarios]{Description des scénarios}
 					Deux scénarios sont proposés : un sur la molécule \myPrion et un sur la molécule \myUbiquitin.
 					Les paragraphes suivants décrivent les deux scénarios :
@@ -2787,7 +2780,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour ce propos, la molécule \myTRPZIPPER a été rendue complétement libre (aucun atome n'est fixé) et elle est attaché à l'outil de manipulation.
 
 					Afin de réaliser la tâche, différentes mesures sont disponibles en temps-réel pour les sujets.
-					La première de ces mesures est le score \myacro{acr-RMSD} qui est décrit dans la \myref{sss-exp2-DescriptionDeLaTache}.
+					La première de ces mesures est le score \myacro{acr-RMSD} qui est décrit dans la \myref{sse-exp2-DescriptionDeLaTache}.
 					La seconde mesure est l'énergie totale du système, valeur calculée par \myacro{acr-NAMD} et représentant une synthèse des énergies électriques et des énergies de \myname{van der Waals}.
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -3267,36 +3260,37 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-LeNiveauDApprentissage]{\myvari{3} Le niveau d'apprentissage}
 						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Tous les sujets seront confrontés trois fois à la même tâche afin de voir l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
+						Tous les sujets sont confrontés trois fois à la même série de tâches (quatre scénarios) sur trois jours successifs afin d'observer l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sec-met-exp2-VariablesDependantes]{Variables dépendantes}
 					\begin{myparagraph}[par-met-exp2-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre la conformation finale.
 						Le temps est limité à \mynum[mn]{10}.
+						Au-delà de cette limite, l'application est arrêtée
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
-						\myvard{2} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
-						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
-						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
+						C'est le nombre de sélections réalisées durant chaque tâche.
+						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par chacun des deux \myglos{glo-EffecteurTerminal}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
-						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents durant l'ensemble de l'expérimentation.
-						Cette distance représente donc une distance physique du monde réel, pas une distance virtuelle.
-						Elle est de l'ordre du centimètre.
+						C'est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} pendant toute la durée de chaque tâche.
+						Mesurée dans l'espace physique de l'utilisateur, elle est de l'ordre du centimètre.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-DistanceActiveEntreLesEspacesDeTravail]{\myvard{4} Distance active entre les espaces de travail}
-						Cette distance est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} présents seulement lorsque ces deux \myglos*{glo-EffecteurTerminal} sont en cours de manipulation (un atome ou un \myglos{glo-Residu} est sélectionné).
-						C'est une distance physique du monde réel de l'ordre du centimètre.
+						Basée sur le même principe que la précédente, elle mesure la distance entre les deux \myglos*{glo-EffecteurTerminal}.
+						Cependant, la moyenne est calculée seulement sur les distances lorsque les deux \myglos*{glo-EffecteurTerminal} sont en phase de sélection, lorsqu'ils sont actifs.
+						Les distances ne sont pas prises en compte lorsque les deux \myglos*{glo-EffecteurTerminal} sont inactifs ou que seulement un des deux est en phase de sélection.
+						Cette moyenne est également de l'ordre du centimètre.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-VitesseMoyenne]{\myvard{5} Vitesse moyenne}
-						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
+						Elle mesure la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
 						Elle est calculée par intégration numérique des positions successives en fonction du temps.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
 						Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
 						Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
-						Le questionnaire soumis aux sujets est disponible dans la \myref{sec-Questionnaires-SecondeExperimentation}.
+						Le questionnaire soumis aux sujets est exposé dans la \myref{sec-Questionnaires-SecondeExperimentation}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -3310,11 +3304,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
 				L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
 
-				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été terminés par les sujets, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
-				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été achevés, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
+				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint ou lorsque \mynum[mn]{10} de déformation sont dépassées.
 
-				Tous les sujets sont confrontés aux quatre scénarios trois fois avec un jour d'intervalle entre chaque confrontation.
-				L'objectif de cette multiple confrontation est l'étude de l'apprentissage.
+				Tous les sujets sont confrontés trois fois à l'ensemble des quatre scénarios avec un jour d'intervalle entre chaque confrontation.
+				L'objectif de cette multiple confrontation est l'étude de l'apprentissage en configuration collaborative.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-met-exp3-PremiereExperimentation]{Troisième expérimentation}
