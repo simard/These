@@ -977,7 +977,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				La \myref{fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
 				L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
-				Cependant, en se limitant au groupe des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, on montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
+				Cependant, en se limitant au groupe des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, l'analyse montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
 
 				\begin{myfigure}
 					\psset{xunit=0.0889\textwidth,yunit=0.01cm}
@@ -1678,7 +1678,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-Resultats]{Résultats}
-			Cette section présente et analyse l'ensemble des mesures expérimentales de cette première étude concernant la recherche et la sélection sur une tâche complexe de collaboration.
+			Cette section présente et analyse l'ensemble des mesures expérimentales de cette seconde étude concernant la déformation de molécules complexes en configuration collaborative.
 			Les données, confrontées à un test de \mycite[author]{Shapiro-1965}, ne sont pas distribuées selon une loi normale.
 			Cependant, un test de \mycite[author]{Brown-1974} permet de confirmer l'\myglos{glo-Homoscedasticite}.
 			L'analyse de la variance est alors pratiquée avec différents tests statistiques suivant les cas :
@@ -1696,7 +1696,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets]{Temps de réalisation en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} en fonction du nombre de sujets \myvari{1}.
 				L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-group-anova.tex}).
 
 				\begin{myfigure}
@@ -1709,11 +1709,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets} présente la distance passive \myvard{3} et active \myvard{4} entre les \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets} présente la distance passive \myvard{3} et active \myvard{4} entre les \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1}.
 				L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} (\myanova{exp2-diff-activepassive-group-anova-passive.tex}).
-				De la même façon, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}).
+				Cependant, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}).
 
-				On peut également observer l'évolution entre distance passive et active.
+				On peut également comparer les distances passive et active en fonction du nombre de sujets \myvari{1}.
 				L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}).
 				Par contre, l'analyse ne montre pas d'effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Binome} (\myanova{exp2-diff-activepassive-group-anova-binome.tex}).
 
@@ -1724,16 +1724,16 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\myboxplot{exp2-numsel-group-dominant.csv}
 						\mylegend{\myleg{main dominante}{myblue}\myand\myleg{main dominée}{myblue!70}}
 					\end{myps}
-					\mycaption[fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Nombre de sélection de la main dominante et dominée en fonction du nombre de sujets}
+					\mycaption[fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets]{Nombre de sélections par main dominante/dominée en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente le nombre de sélections de la main dominante et dominée \myvard{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-				On constate un déséquilibre entre la main dominante et dominée des \myglos*{glo-Monome}.
-				Les \myglos*{glo-Binome} n'utilisent que leur main dominante ce qui explique l'absence de valeur pour la main dominée.
-				En cumulant le nombre total de sélections (main dominante et main dominée) pour les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, on montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}).
+				La \myref{fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets} présente le nombre de sélections par main dominante/dominée \myvard{2} en fonction du nombre de sujets \myvari{1}.
+				Les \myglos*{glo-Binome} n'utilisant que leur main dominante, il n'y a pas de résultat pour la main dominée.
+				On constate un déséquilibre du nombre de sélections entre la main dominante et la main dominée pour les \myglos*{glo-Monome}.
+				L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre total de sélections (somme des mains dominante et dominée pour les \myglos*{glo-Monome}) \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}).
 
-				Il faut noter que le nombre de sélections pour la main dominante des \myglos*{glo-Binome} comptabilise les sélections des deux sujets présents contrairement aux \myglos*{glo-Monome} : ceci explique le nombre plus élevé de sélections en \myglos*{glo-Binome}.
-				Cependant, si on compare le nombre moyen de sélections par sujet (pour sa main dominante), on montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections de la main dominante \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
+				Le nombre de sélections pour la main dominante comptabilise les sélections des deux sujets du \myglos{glo-Binome} contrairement aux \myglos*{glo-Monome} : ceci explique le nombre plus élevé de sélections en \myglos*{glo-Binome}.
+				Cependant, si on compare le nombre moyen de sélections par sujet (pour la main dominante), l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections de la main dominante \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
 
 				\begin{myfigure}
 					\psset{xunit=0.272108844\textwidth,yunit=2.5cm}
@@ -1745,59 +1745,61 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Vitesse moyenne de la main dominante et dominée en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{5} des \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1}.
 				L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}).
-				On observe un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}).
-				On observe également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
+				L'analyse montre un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}).
+				L'analyse montre également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
 
 				Le premier résultat sur la \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} nous permet de confirmer notre hypothèse \myhypothesis{1} : les \myglos*{glo-Binome} sont plus performants que les \myglos*{glo-Monome}.
-				Cependant, la suite de l'analyse va permettre de mettre en avant les paramètres précis pour lesquels il y a un gain de performances ainsi que les scénarios les plus favorables.
+				Cependant, la suite de l'analyse va permettre de mettre en avant les paramètres précis pour lesquels il y a un gain de performances ainsi que les scénarios les plus adaptés à cette configuration de travail.
 
-				Pour commencer, l'observation des distances moyennes entre les \myglos*{glo-EffecteurTerminal} nous permet d'observer un désequilibre de performances entre  les \myglos*{glo-Monome} et les \myglos*{glo-Binome} \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
-				En effet, lorsqu'on mesure cette distance de façon continue sur toute l'expérimentation, on constate une distance moyenne plus importante chez les \myglos*{glo-Monome}.
-				Cependant, la mesure de cette distance seulement dans le cas où les deux \myglos*{glo-EffecteurTerminal} sont effectivement actifs nous montre que ce sont les \myglos*{glo-Binome} qui couvre le plus grand espace de travail.
-				En effet, les \myglos*{glo-Monome} sont en manipulation \myglos*{glo-Bimanuel} ce qui est une configuration complexe sur le plan cognitif.
+				Pour commencer, les distances moyennes entre les \myglos*{glo-EffecteurTerminal} nous permet d'observer un désequilibre de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
+				En effet, la distance passive entre les \myglos*{glo-EffecteurTerminal} (distance moyenne sur toute la durée de la tâche) est plus importante pour les \myglos*{glo-Monome} que pour les \myglos*{glo-Binome}.
+				Cependant, la distance active (seulement lorsque les deux \myglos*{glo-EffecteurTerminal} sont en phase de sélection) montre un effet inverse.
+				En effet, la manipulation \myglos*{glo-Bimanuel} (pour les \myglos*{glo-Monome}) constitue une charge de travail cognitive importante.
 				Le sujet doit alors être capable de gérer deux \myglos*{glo-EffecteurTerminal} à chaque instant.
-				La difficulté de cette configuration a mené la plupart des sujets à utiliser seulement un \myglos{glo-EffecteurTerminal} en laissant le second sur le côté afin que le curseur ne gêne pas à l'écran.
-				Ceci a pour effet d'augmenter la distance moyenne bien que le deuxième \myglos{glo-EffecteurTerminal} ne soit pas utilisé.
+				Cette configuration a mené la plupart des sujets à utiliser seulement un \myglos{glo-EffecteurTerminal} en laissant le second sur le côté afin que le curseur ne gêne pas à l'écran.
+				La main dominée n'est utilisée que dans les cas où le sujet estime que c'est absolument nécessaire pour achever la tâche.
+				Ceci a pour effet d'augmenter la distance passive moyenne.
+				Cependant, la distance est censée représenter l'espace de travail couvert au sein de l'environnement virtuel.
+				Dans ce cas, elle est incorrecte car bien que la distance soit importante, elle ne représente pas un espace de travail étant donné que le deuxième \myglos{glo-EffecteurTerminal} n'est pas utilisé.
 
 				La distance active permet d'éviter ce biais de mesure.
-				Cette mesure ne concerne alors que les \myglos*{glo-Monome} capables d'effectuer la tâche en utilisant leurs deux mains.
-				On constate alors que les \myglos*{glo-Binome} sont capables de couvrir un plus grand espace de travail.
-				En effet, les \myglos*{glo-Monome} ne sont pas capables de couvrir un espace aussi grand car ils ne peuvent focaliser visuellement que sur une zone de travail à la fois.
-				Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se retrouvent dans cette zone limitée dans l'espace.
+				En effet, cette mesure ne prend pas en compte les phases d'inactivité d'un \myglos{glo-EffecteurTerminal}.
+				On constate alors que les \myglos*{glo-Binome} couvrent un plus grand espace de travail.
+				Les \myglos*{glo-Monome} couvrent un espace de travail plus restreint car ils peuvent focaliser visuellement sur une seule zone de travail à la fois.
+				Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se trouvent toujours proche de la zone de manipulation, dans la zone de focus du sujet.
 
-				La \myref{fig-exp2-NombreDeSelectionsDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} confirme ce déséquilibre.
-				En effet, on constate un plus grand nombre total de sélections pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-group-dominant-mean-binome.tex}~sélections) que pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-group-dominant-mean-monome.tex}~sélections).
-				Là encore, le sujet effectuant la tâche en \myglos{glo-Monome} n'est pas capable d'exploiter pleinement les deux outils en sa possession : la charge cognitive est trop importante.
-				Cependant, les analyses statistiques montre que l'outil utilisé par la main dominante obtient un taux d'utilisation identique en \myglos{glo-Monome} ou en \myglos{glo-Binome}.
-				Le sujet en \myglos{glo-Monome} n'est pas capable d'exploiter pleinement les possibilités des deux outils en configuration \myglos*{glo-Bimanuel}.
-				Par opposition, les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} répartissent correctement la charge de travail entre les deux outils.
+				La \myref{fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets} confirme ce déséquilibre.
+				En effet, on constate un nombre total de sélections plus grand pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-group-dominant-mean-binome.tex}~sélections) que pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-group-dominant-mean-monome.tex}~sélections).
+				Là encore, le sujet effectuant la tâche en \myglos{glo-Monome} n'exploite pas pleinement les deux outils en sa possession : la charge de travail cognitive est trop importante.
+				En effet, la \myacro{acr-TRM} \mycite{Wickens-1984} estime que la gestion de plusieurs ressources pour la même modalité est impossible.
+				Cependant, les analyses statistiques montre que l'outil utilisé par la main dominante obtient un taux d'utilisation identique entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
+				Les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} répartissent correctement la charge de travail entre les deux ressources disponibles ce qui n'est pas le cas des \myglos*{glo-Monome}.
 
-				On constate que la configuration \myglos*{glo-Bimanuel} a également un effet néfaste sur l'utilisation de l'outil associé à la main dominante.
-				En effet, l'analyse montre une différence significative entre la vitesse moyenne de la main dominante des \myglos*{glo-Monome} et des \myglos*{glo-Binome}.
+				Cependant, l'outil associé à la main dominante est géné par la configuration \myglos*{glo-Bimanuel}.
+				En effet, l'analyse montre une différence significative entre la vitesse moyenne de la main dominante des \myglos*{glo-Monome} et celle des \myglos*{glo-Binome}.
 				La configuration \myglos*{glo-Bimanuel} provoque une séquentialité dans les actions du sujet : il manipule avec un outil, puis avec l'autre mais rarement les deux en même temps.
-				Cette séquentialité a pour effet des pauses alternatives entre les outils ce qui explique cette vitesse moyenne plus basse.
+				Cette séquentialité a pour effet des pauses alternatives entre les outils ce qui explique une vitesse moyenne plus basse.
 
 				Cette section nous a permis de constater que le travail en \myglos{glo-Binome} permet de meilleures performances que le travail en \myglos{glo-Monome}.
 				Une analyse plus détaillé a mis en avant la difficulté du travail en configuration \myglos*{glo-Bimanuel} : la charge de travail cognitive à assumer avec deux outils est trop importante.
 				Cette difficulté a pour effet de fortement dégrader le taux d'utilisation d'un des deux outils.
-				On constate également une légére dégradation de l'utilisation de l'outil associé à la main dominante.
-				Pour résumer, il est préférable de partager les ressources disponibles (outils de manipulation dans notre cas) entre différents participants.
+				On constate également une légére baisse de l'utilisation de l'outil associé à la main dominante.
+				Pour résumer, il est préférable de distribuer les ressources disponibles (outils de manipulation dans notre cas) entre différents participants : la configuration \myglos*{glo-Bimanuel} apporte une charge de travail cognitive trop importante.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-GainDePerformanceSurLesTachesComplexes]{Gain de performance sur les tâches complexes}
+			\begin{mysubsection}[sse-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache]{Évolution des performances en fonction de la complexité de la tâche}
 				\begin{myfigure}
 					\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
 					\begin{myps}(-0.5,-75)(4,290)
 						\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
 						\myboxplot{exp2-time-task.csv}
-						\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 					\end{myps}
 					\mycaption[fig-exp2-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
 				\end{myfigure}
 
-				La \myref{fig-exp2-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2}.
-				L'analyse montre un effet significatif des scénarios \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-task-anova.tex}).
+				La \myref{fig-exp2-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} en fonction de la complexité de la tâche \myvari{2} (temps cumulé des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
+				L'analyse montre un effet significatif de la complexité de la tâche \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-task-anova.tex}).
 				Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de trier les scénarios en deux classes de complexité : $\left\{\myscenario{1a}, \myscenario{2a}\right\}$ et $\left\{\myscenario{1b}, \myscenario{2b}\right\}$.
 
 				\begin{myfigure}
@@ -1810,7 +1812,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 				En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-time-task-group-anova-trpzipper.tex}).
 				Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
 
@@ -1824,7 +1826,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque scénario en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 				En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-numsel-task-group-anova-trpzipper.tex}).
 				Cependant, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-numsel-task-group-anova-trpcage.tex}).
 
@@ -1849,7 +1851,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque scénario en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives \myvard{3} et actives \myvard{4} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives \myvard{3} et actives \myvard{4} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 				En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) mais pas d'effet significatif sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
 				Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}).
 
@@ -1863,41 +1865,37 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets]{Vitesse moyenne sur chaque scénario en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 				En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-speed-task-group-anova-trpzipper.tex}).
 				De même, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-speed-task-group-anova-trpcage.tex}).
 
-				L'analyse du temps de réalisation des différentes tâches nous permet de classifier ces tâches par niveau de complexité : les scénarios \myscenario{1a} et \myscenario{2a} sont relativement simples alors que les scénarios \myscenario{1b} et \myscenario{2b} sont complexes.
-				Ce résultat confirme un résultat obtenu dans la précédente expérimentation \myref*{sse-exp1-ResumeDesResultats} : le nombre d'atomes tient un rôle prépondérant dans la complexité de la tâche à réaliser.
-				En effet, les scénarios \myscenario{1a} et \myscenario{2a} concernent la molécule \myTRPZIPPER avec \mynum{218}~atomes et \mynum{12}~\myglos*{glo-Residu} alors que les scénarios \myscenario{1b} et \myscenario{2b} concernent la molécule \myTRPZIPPER avec \mynum{304}~atomes et \mynum{20}~\myglos*{glo-Residu}.
+				L'analyse du temps de réalisation des différentes tâches ainsi que la \myref{tab-exp2-ParametresDeComplexiteDesTaches} nous permet de classifier ces tâches par niveau de complexité : les scénarios \myscenario{1a} et \myscenario{2a} sont simples alors que les scénarios \myscenario{1b} et \myscenario{2b} sont complexes.
+				En effet, les scénarios \myscenario{1a} et \myscenario{2a} concernent la molécule \myTRPZIPPER contenant peu d'atomes et de \myglos*{glo-Residu} libres.
+				Par contre, les scénarios \myscenario{1b} et \myscenario{2b}, dont le nombre d'atomes et de \myglos*{glo-Residu} libres est plus important, est constitué de champ de force à fortes contraintes physiques et nécessité la formation de plusieurs cassures.
 
 				En observant les différences de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur la \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets}, on constate que l'apport du travail collaboratif n'est vrai que dans le cas des tâches complexes.
-				La spécificité des tâches complexes réside dans l'obligation d'avoir recourt aux deux outils pour achever la tâche.
-				En effet, en observant la \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive}, l'analyse montre une différence significative sur les scénarios simples.
-				D'après la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome}, les \myglos*{glo-Monome} ont tendance à délaisser le deuxième outil à cause de la difficulté de manipulation en configuration \myglos*{glo-Bimanuel}.
-				L'outil délaissé augmentait ainsi la valeur de la distance passive mesurée en étant éloigné de la zone d'activité pour ne pas gêner.
-				Étant donné que la distance passive mesurée pour les \myglos*{glo-Monome} est significativement plus importante que celle mesurée pour les \myglos*{glo-Binome}, on peut en déduire que les scénarios simples n'ont pas nécessité l'intervention de deux outils pour achever la tâche.
+				La contrainte des tâches complexes réside dans la nécessité d'avoir recourt aux deux outils pour achever la tâche.
+				En effet, en observant la \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive}, l'analyse de la distance active montre une différence significative entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} pour les scénarios simples.
+				Sur la base des résultats de la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome}, les \myglos*{glo-Monome} ont tendance à délaisser le deuxième outil à cause de la forte charge cognitive qu'ajoute la configuration \myglos*{glo-Bimanuel}.
+				L'outil délaissé augmente ainsi la valeur de la distance passive mesurée en étant mis à l'écart.
+				En observant seulement les scénarios simples \myscenario{1a} et \myscenario{2a}, on constate que la distance passive des \myglos*{glo-Monome} est plus importante que celle des \myglos*{glo-Binome}.
+				On en conclue que les \myglos*{glo-Monome} que la complexité de ces scénarios n'a pas nécessité une manipulation \myglos*{glo-Bimanuel} et que la tâche a pu être achevée avec un seul outil de déformation.
+				Il y a donc peu d'intérêt d'effectuer ces tâches peu complexe en collaboration puisqu'il n'y a aucune amélioration significative des performances bien que le nombre de ressources utilisées (les outils de déformation) soit doublé.
 
-				Cependant, dans le cas des scénarios complexes, l'analyse ne montre pas de différence significative.
-				Dans le cas des scénarios complexes, l'utilisation d'un deuxième outil est nécessaire et malgré la difficulté de la manipulation en configuration \myglos*{glo-Bimanuel}, les \myglos*{glo-Monome} ont effectué la tâche à l'aide des deux outils.
-				Les deux outils se trouvant tous les deux dans la zone de travail, la distance passive diminue.
-				Ceci explique la similarité des valeurs mesurées entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} pour les scénarios complexes.
+				Cependant, pour les scénarios complexes, l'analyse ne montre pas de différence significative de la distance passive entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
+				Pour ces scénarios, l'utilisation du deuxième outil est nécessaire et malgré la charge cognitive importante que cela représente pour les \myglos*{glo-Monome},la tâche est réalisée à l'aide des deux outils (configuration \myglos*{glo-Bimanuel}).
+				Dans ce cadre, la configuration \myglos*{glo-Monomanuel} adoptée par les \myglos*{glo-Binome} permet de meilleures performances comme le montre les analyses pour une distance active similaire.
+				En effet, l'espace de travail couvert par les \myglos*{glo-Monome} est identique à celui des \myglos*{glo-Binome} mais leur incapacité à traiter cognitivement cette charge supplémentaire de travail les rend moins performants.
 
 				L'analyse du nombre de sélections vient appuyer ces conclusions.
 				En effet, les \myglos*{glo-Monome} effectuent moins de sélections que les \myglos*{glo-Binome} dans la réalisation des scénarios simples.
-				Dans les scénarios complexes, on comptabilise un nombre de sélections similaires entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
+				Cependant, on comptabilise un nombre de sélections similaires entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} dans les scénarios complexes.
 
-				En observant à présent les distances actives sur la \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistanceActive}, l'analyse confirme ce qui a été mesuré dans la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome} : l'espace de travail couvert par les \myglos*{glo-Binome} est plus important que celui couvert par les \myglos*{glo-Monome}.
-				De la même façon, l'analyse des vitesses moyennes confirme également les conclusions précédemment obtenues.
-
-				Dans cette section, nous avons apporté des précisions concernant les améliorations de performances des \myglos*{glo-Binome} par rapport aux \myglos*{glo-Monome}.
-				En effet, les analyses montrent que cette amélioration de performances ne se produit que sur des scénarios de complexité élevée.
-				Dans le cas de scénarios simples, le \myglos*{glo-Monome} parvient à réaliser la tâche avec un seul outil.
-				Il s'affranchit ainsi des problèmes de coordination entre les deux outils ce qui lui permet de compenser le manque de ressources pour la manipulation.
-
-				Cependant, le cas des scénarios complexes force le \myglos{glo-Monome} à manipuler dans une configuration \myglos*{glo-Bimanuel}.
-				Dans la section précédente, nous avons montré que la configuration \myglos*{glo-Bimanuel} ne permet pas d'égaler les performances d'un travail collaboratif.
-				Nous pouvons donc conclure que les \myglos*{glo-Binome} sont plus performants dans le cadre de scénarios suffisamment complexes.
+				Dans cette section, nous avons montré que les améliorations de performances des \myglos*{glo-Binome} par rapport aux \myglos*{glo-Monome} étaient très liées à la complexité de la tâche.
+				En effet, sur des tâches de faible complexité, les \myglos*{glo-Monome} obtiennent de bonnes performances (même en configuration \myglos*{glo-Monomanuel}) alors que les \myglos*{glo-Binome} souffrent de \myglos*{glo-ConflitDeCoordination} : les performances sont similaires.
+				Cependant, dans le cas de tâche complexes, les \myglos*{glo-ConflitDeCoordination} ne sont pas suffisamment pénalisants et la collaboration permet d'obtenir de meilleures performances que le travail seul.
+				Dans la section précédente, nous avons montré que la configuration \myglos*{glo-Bimanuel} ne permet pas d'égaler les performances d'un travail en collaboration.
+				Complétons cette conclusion par le fait qu'elle est surtout vraie pour les scénarios complexes.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
 				\begin{myfigure}
@@ -1910,7 +1908,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{myfigure}
 
 				La \myref{fig-exp2-TempsDeRealisationDeChaqueEssai} présente le temps de réalisation \myvard{1} des différents essais \myvari{3}.
-				On montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
+				L'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
 				Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le deuxième essai ainsi qu'entre le deuxième essai et le troisième.
 
 				\begin{myfigure}
@@ -1923,10 +1921,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-				On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le deuxième essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
+				La \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
+				L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le deuxième essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
 
-				De plus, on montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} pour les \myglos*{glo-Monome} (\myanova{exp2-time-try-group-anova-monome.tex}) et pour les \myglos*{glo-Binome} (\myanova{exp2-time-try-group-anova-binome.tex}).
+				De plus, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} pour les \myglos*{glo-Monome} (\myanova{exp2-time-try-group-anova-monome.tex}) et pour les \myglos*{glo-Binome} (\myanova{exp2-time-try-group-anova-binome.tex}).
 				Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative seulement à partir de dernier essai pour les \myglos*{glo-Monome} alors que l'évolution est significative dès le deuxième essai pour les \myglos*{glo-Binome}.
 
 				\begin{myfigure}
@@ -1939,12 +1937,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque essai en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-				On montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le premier essai (\myanova{exp2-numsel-try-group-anova-try1.tex}) ou le troisième essai (\myanova{exp2-numsel-try-group-anova-try3.tex}).
-				Cependant, on montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le deuxième essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
+				La \myref{fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
+				L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le premier essai (\myanova{exp2-numsel-try-group-anova-try1.tex}) ou le troisième essai (\myanova{exp2-numsel-try-group-anova-try3.tex}).
+				Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le deuxième essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
 
-				De plus, on montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-try-group-anova-monome.tex}).
-				Cependant, on montre un effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-try-group-anova-binome.tex}).
+				De plus, l'analyse montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-try-group-anova-monome.tex}).
+				Cependant, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-try-group-anova-binome.tex}).
 				Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une diminution significative du nombre de sélections pour les \myglos*{glo-Binome} entre le premier et le dernier essai.
 
 				\begin{myfigure}
@@ -1954,15 +1952,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\myboxplot{exp2-active-try-group.csv}
 						\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 					\end{myps}
-					\mycaption[fig-exp2-DistanceActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets]{Distance active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque essai en fonction du nombre de sujets}
+					\mycaption[fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets]{Distance active entre les \myglosnl*{glo-EffecteurTerminal} pour chaque essai en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets} présente la distance active \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
-				La distance passive a été ignorée étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}.
+				La \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets} présente la distance active \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
+				La distance passive n'a pas été prise en considération étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}.
 				L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) et pour le deuxième essai (\myanova{exp2-active-try-group-anova-try2.tex}) mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
 
-				De plus, on montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Binome} (\myanova{exp2-active-try-group-anova-binome.tex}).
-				Cependant, on montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-active-try-group-anova-monome.tex}).
+				De plus, l'analyse montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Binome} (\myanova{exp2-active-try-group-anova-binome.tex}).
+				Cependant, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-active-try-group-anova-monome.tex}).
 				Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le troisième essai.
 
 				\begin{myfigure}
@@ -1972,49 +1970,42 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\myboxplot{exp2-speed-try-group.csv}
 						\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 					\end{myps}
-					\mycaption[fig-exp2-VitesseMoyenneSurChaqueEssaiEnFonctionDuNombreDeSujets]{Vitesse moyenne sur chaque essai en fonction du nombre de sujets}
+					\mycaption[fig-exp2-VitesseMoyennePourChaqueEssaiEnFonctionDuNombreDeSujets]{Vitesse moyenne pour chaque essai en fonction du nombre de sujets}
 				\end{myfigure}
 
-				La \myref{fig-exp2-VitesseMoyenneSurChaqueEssaiEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1} ayant réalisé l'expérience.
+				La \myref{fig-exp2-VitesseMoyennePourChaqueEssaiEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
 				L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour le premier essai (\myanova{exp2-speed-try-group-anova-try1.tex}), le second essai (\myanova{exp2-speed-try-group-anova-try2.tex}) et le troisième essai (\myanova{exp2-speed-try-group-anova-try3.tex}).
 
-				De plus, on montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-speed-try-group-anova-monome.tex}) et les \myglos*{glo-Binome} (\myanova{exp2-speed-try-group-anova-binome.tex}).
+				De plus, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur la vitesse moyenne \myvard{5} pour les \myglos*{glo-Monome} (\myanova{exp2-speed-try-group-anova-monome.tex}) et les \myglos*{glo-Binome} (\myanova{exp2-speed-try-group-anova-binome.tex}).
 				Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre dans chaque cas (\myglos{glo-Monome} et \myglos{glo-Binome}) une augmentation significative après le premier essai.
 
-				L'observation des temps de réalisation de la tâche \myref*{fig-exp2-TempsDeRealisationDeChaqueEssai} nous permet de caractériser un apprentissage réel sur l'ensemble des trois réalisation de la tâche.
-				Le détail de l'apprentissage en fonction du nombre de sujets sur la \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} apporte cependant un point important : les \myglos*{glo-Binome} évoluent plus rapidement que les \myglos*{glo-Monome}.
-				En effet, on constate un effet franc de l'apprentissage dès le second essai dans le cas des \myglos*{glo-Binome} alors que ce n'est que sur le dernier essai que les \myglos*{glo-Monome} montrent une évolution dans les performances de temps.
+				L'observation des temps de réalisation de la tâche \myref*{fig-exp2-TempsDeRealisationDeChaqueEssai} nous permet de caractériser un apprentissage réel sur l'ensemble des trois réalisations de la tâche.
+				Le détail de l'apprentissage en fonction du nombre de sujets sur la \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} apporte cependant un point important : les \myglos*{glo-Binome} améliorent plus rapidement leurs performances que les \myglos*{glo-Monome}.
+				En effet, on constate une amélioration franche des performances dès le second essai dans le cas des \myglos*{glo-Binome} alors que ce n'est que sur le dernier essai que les \myglos*{glo-Monome} montrent une évolution.
+				L'amélioration plus rapide des performances chez les \myglos*{glo-Binome} suggère un apprentissage plus rapide de la tâche, des outils et de tous les éléments de la plate-forme\footnote{On observe une amélioration des performances par apprentissage mais rien ne permet de distinguer quel aspect de la tâche a été intégrée le plus vite.}.
 
-				Avec les différentes variables indépendantes observés, on remarque que les \myglos*{glo-Binome} ont une phase d'adaptation à la tâche très courte voire quasi inexistante.
-				Par exemple, le nombre de sélections des \myglos*{glo-Binome} par essai décroît.
-				Cependant, si on le met en relation avec l'amélioration de temps de réalisation, on en déduit qu'il est normal que le nombre de sélections décroissent proportionnellement.
-				Pourtant, les \myglos*{glo-Monome} qui améliorent également leur temps de réalisation ne diminue pas le nombre de sélections.
-				En effet, les \myglos*{glo-Monome} apprennent à manipuler en configuration \myglos*{glo-Bimanuel}.
-				Ils augmentent ainsi leur potentiel de manipulation, augmentant aussi la fréquence des sélections, tout en diminuant le temps de réalisation ce qui a pour effet de faire stagner le nombre total de sélections.
+				En observant l'évolution des variables \myvard{1} (temps de réalisation) et \myvard{2} (nombre de sélections), on constate que les \myglos*{glo-Binome} ont un apprentissage rapide.
+				Le temps de réalisation décroît ainsi que le nombre de sélections ce qui n'est pas le cas des \myglos*{glo-Monome}.
+				En effet, le temps de réalisation des \myglos*{glo-Monome} décroît alors que le nombre de sélections ne décroît pas de manière significative.
+				Au-fur-et-à-mesure des essais, les \myglos*{glo-Monome} apprennent et intègre la manipulation en configuration \myglos*{glo-Bimanuel} : ils augmentent ainsi leurs performances (diminution du temps de réalisation et du nombre de sélections de la main dominante) tout conservant un nombre de sélections relativement constant (par une augmentation du nombre de sélections de la main dominée).
 
-				On observe clairement l'intégration progressive du deuxième outil mis à disposition du \myglos*{glo-Binome} dans la \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxSurChaqueEssaiEnFonctionDuNombreDeSujets}.
-				Alors que l'espace de travail des \myglos*{glo-Binome} reste relativement constant, celui des \myglos*{glo-Monome} augmente au-fur-et-à-mesure des essais jusqu'à atteindre une valeur similaire à celle des \myglos*{glo-Binome}.
-				En effet, la manipulation \myglos*{glo-Bimanuel} nécessite un apprentissage car il n'est pas intuitif.
-				Avec l'apprentissage, les \myglos*{glo-Monome} sont capables de gérer un espace de travail de plus en plus grand.
-				La plupart du temps, ils comprennent rapidement la difficulté de manipuler à deux endroits différents au même instant.
-				Cependant, le potentiel de ce deuxième outil n'est pas ignoré et il est utilisé (avec la main dominée la plupart du temps) comme un moyen de fixer un \myglos{glo-Residu} pendant que l'autre outil déforme.
-				Ceci permet de déformer une partie de la molécule tout en conservant la stabilité d'une partie déjà déformée.
+				On observe clairement l'apprentissage progressif du deuxième outil mis à disposition des \myglos*{glo-Monome} dans la \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets}.
+				Alors que l'espace de travail des \myglos*{glo-Binome} reste stable sur l'ensemble des essais, celui des \myglos*{glo-Monome} s'étend au-fur-et-à-mesure des essais jusqu'à atteindre une valeur similaire à celle des \myglos*{glo-Binome}.
+				En effet, seul l'apprentissage permet de s'affranchir en partie de la charge cognitive importante que représente la manipulation \myglos*{glo-Bimanuel} \mycite{Wickens-1984} : avec l'apprentissage, les \myglos*{glo-Monome} sont capables de gérer un espace de travail de plus en plus grand.
+				Le potentiel du deuxième outil n'est pas ignoré et il est utilisé (avec la main dominée) comme un moyen de fixer un \myglos{glo-Residu} déjà déplacé pendant que l'autre outil déforme.
+				Ceci permet de déformer une partie de la molécule tout en conservant la stabilité de la partie déjà déformée.
+				Les \myglos*{glo-Monome} ont la capacité d'adopter une stratégie plus adaptée à la situation car aucune limite de surcharge cognitive ne contraint les sujets.
 
-				En ce qui concerne les vitesses moyennes, les \myglos*{glo-Monome} comme les \myglos*{glo-Binome} augmentent leur rapidité.
+				En ce qui concerne les vitesses moyennes, les \myglos*{glo-Monome} comme les \myglos*{glo-Binome} s'améliorent en manipulant plus rapidement.
 				Cependant, les \myglos*{glo-Binome} restent nettement plus rapides que les \myglos*{glo-Monome}.
-				Cette amélioration de la vitesse tout au long des essais permet d'expliquer l'amélioration en terme de temps de réalisation : la tâche est réalisée plus rapidement car les sujets manipulent plus rapidement.
+				Cette amélioration peut être mise en relation avec l'amélioration des temps de réalisation : la tâche est réalisée plus rapidement car les sujets manipulent plus rapidement.
 
-				Dans cette section, nous avons mis en avant l'avantage de la collaboration dans la phase d'apprentissage.
-				L'apprentissage concerne aussi bien l'apprentissage des outils, de la tâche à réaliser ou encore l'utilisation de la plate-forme : les mesures effectuées ne permettent pas de caractériser le type d'apprentissage.
-				En effet, les \myglos*{glo-Binome} semblent atteindre des performances optimales assez rapidement.
-				La possibilité de communiquer, d'échanger, de conseiller permet de mutualiser l'apprentissage et de l'accélérer.
-				De plus, le \myglos{glo-Binome} peut bénéficier des connaissances spécifiques ou de l'expérience d'un des membres du \myglos{glo-Binome}.
-				Tout ceci nous permet de montrer que l'apprentissage en \myglos{glo-Binome} est plus rapide que l'apprentissage en \myglos{glo-Monome}.
-
-				La complexité de la manipulation \myglos*{glo-Bimanuel} montre également ses limites.
-				Pour certaines variables indépendantes, les \myglos{glo-Monome} parviennent à obtenir des résultats similaires aux \myglos*{glo-Binome} mais seulement au bout du troisième et dernier essai.
-				Cependant, cet apprentissage nécessite un travail cognitif important : il sera probablement difficile pour les \myglos*{glo-Monome} d'appréhender de nouveaux outils ou des tâches plus complexes.
-				Le travail en \myglos{glo-Binome} montre ainsi son avantage sur le travail de manipulation \myglos*{glo-Bimanuel} en \myglos{glo-Monome}.
+				Dans cette section, nous avons mis en évidence les améliorations en terme d'apprentissage pour les configurations collaboratives sans distinction sur les aspects de l'apprentissage (plate-forme, outils, tâche, \myetc).
+				En effet, les \myglos*{glo-Binome} atteignent des performances optimales rapidement tandis que les \myglos*{glo-Monome} ont besoin de plus de temps pour converger vers de bonnes performances.
+				La capacité des \myglos*{glo-Binome} à communiquer, échanger et conseiller permet de mutualiser l'apprentissage et de l'accélérer.
+				De plus, un \myglos{glo-Binome} peut bénéficier des connaissances spécifiques ou de l'expérience d'un des membres du \myglos{glo-Binome} et ainsi mutualiser les aptitudes de chacun pour créer une vraie dynamique de groupe.
+				La configuration \myglos*{glo-Bimanuel} offre une alternative de manipulation aux \myglos*{glo-Monome} avec une surcharge de travail trop importante : l'apprentissage est plus difficile.
+				De plus, les \myglos*{glo-Monome} ont probablement atteint les limites de la charge cognitive maximum supportée avec cette configuration : l'ajout de nouvelles fonctionnalités serait probablement inefficace (contrairement aux \myglos*{glo-Binome}).
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-ResultatsQualitatifs]{Résultats qualitatifs}
 				Ce questionnaire est destiné à évaluer la collaboration du point du vue de l'utilisateur.
