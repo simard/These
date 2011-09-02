@@ -73,10 +73,18 @@ write(
 	  file = out.file.binome.monomanual
 	  )
 
-summary.preference = summary(dat.exp2$evaluation.preference)
+dat.exp2.factorize = aggregate(
+							   dat.exp2,
+							   by = list(
+										 dat.exp2$subject.surname,
+										 dat.exp2$subject.name
+										 ),
+							   FUN = smart.mean
+							   )
+summary.preference = summary(dat.exp2.factorize$evaluation.preference)
 summary.preference.total = summary.preference[[1]] + summary.preference[[2]]
-summary.preference.monome.bimanual = summary.preference[[1]] / summary.preference.total
-summary.preference.binome.monomanual = summary.preference[[2]] / summary.preference.total
+summary.preference.binome.monomanual = summary.preference[[1]] / summary.preference.total
+summary.preference.monome.bimanual = summary.preference[[2]] / summary.preference.total
 out.summary.preference.monome.bimanual = ratio2tex(summary.preference.monome.bimanual)
 out.file.preference.monome.bimanual = gsub(".csv", "-preference-monome-bimanual.tex", out.file)
 write(
