@@ -2042,53 +2042,47 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp2-Synthese]{Synthèse}
 			\begin{mysubsection}[sse-exp2-ResumeDesResultats]{Résumé des résultats}
-				Dans cette seconde expérimentation, nous avons comparé et étudié les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} sur une tâche de déformation.
-				De plus, nous avons cherché à observer l'effet de l'apprentissage sur les performances.
-				L'objectif était de confirmer certains résultats de la première expérimentation dans un contexte différent de manipulation et de déformation.
-				On a également cherché à déterminer l'effet de la collaboration sur l'apprentissage.
+				Dans cette seconde expérimentation, nous avons comparé et étudié les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} sur une tâche de déformation avec un nombre identique de ressources.
+				De plus, nous avons cherché à observer l'apport de la configuration collaborative sur l'apprentissage sur les performances.
+				L'objectif était de placer la configuration collaborative dans un contexte de déformation avec de nouvelles contraintes par rapport aux tâches de recherche et de sélection.
 
-				Tout d'abord, le travail collaboratif a de nouveau prouvé son intérêt en terme de performances.
-				En effet, il a été montré qu'avec un nombre de ressources déterminées (un outil de manipulation et deux outils de déformation dans notre cas), il est préférable de les répartir sur plusieurs sujets.
-				Cette répartition permet une séparation de la charge cognitive de travail.
-				Pourtant, un sujet seul ne perd pas de temps avec les problèmes de coordination, ni de communication.
-				Cependant, une charge cognitive trop importante compense largement cet avantage.
+				Il a été montré qu'avec un nombre de ressources déterminées (un outil de manipulation et deux outils de déformation dans notre cas), il est préférable de les répartir sur plusieurs sujets.
+				Cette répartition des ressources permet une meilleure distribution cognitive des charges de travail.
+				En effet, la charge cognitive est trop importante pour un utilisateur seul.
+				La configuration collaborative, bien que souffrant de \myglos*{glo-ConflitDeCoordination}, obtient tout de même des meilleures performances.
 
-				Deuxièmement, nous avons confirmé l'intérêt du travail collaboratif sur des tâches de nature complexe.
-				Les \myglos*{glo-Binome} ont particulièrement montré leur supériorité en terme de performances sur les scénarios complexes.
-				Malgré cela, les \myglos*{glo-Binome} obtiennent tout de même des performances au moins aussi bonne que les \myglos*{glo-Monome} sur des scénarios simples.
-				Dans tous les cas, il est donc préférable d'avoir recours à une configuration collaborative.
+				Deuxièmement, nous avons montré que la configuration collaborative est particulièrement performante pour les scénarios à forte complexité.
+				En ce qui concerne les scénarios à faible complexité, les performances d'une configuration collaborative ne sont ni meilleures, ni moins bonne que celle d'un seul manipulateur en configuration \myglos*{glo-Bimanuel}.
+				On notera tout de même que les sujets semblent préférer la configuration collaborative.
 
 				Le troisième résultat important concerne l'apprentissage.
-				Nous avons montré que le travail en collaboration a une influence sur le phénomène d'apprentissage.
+				Nous avons montré que le travail en collaboration a une influence sur l'évolution de l'apprentissage.
 				En effet, l'apprentissage est catalysé par la communication et les échanges entre les sujets.
-				Étant donné la complexité de la tâche ainsi que de la plate-forme, cet apprentissage accéléré par le travail en collaboration est réellement bénéfique.
-
-				Les trois points abordés montrent les avantages à mettre en place un environnement de travail collaboratif pour remplacer le travail seul.
-				Le questionnaire appuie ce résultat par des avis relativement portés vers le travail collaboratif.
+				La complexité de la tâche ainsi que de la plate-forme (rendu visuel, outils, \myetc) nécessite un apprentissage important.
+				L'apprentissage accéléré provoqué par une configuration collaborative est donc un avantage permettant d'appréhender plus rapidement la tâche à réaliser.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-Perspectives]{Perspectives}
-				Cette expérimentation nous a permis de mettre en opposition des \myglos*{glo-Monome} avec des \myglos*{glo-Binome}.
-				Nous avons vu les avantages d'un travail collaboratif en \myglos{glo-Binome}.
-				L'étape suivante sera l'étude du travail collaboratif avec des groupes de plus de deux sujets.
-				En effet, l'objectif d'une telle étude devrait permettre d'augmenter 
+				Cette expérimentation nous a permis de comparer une configuration collaborative à une configuration \myglos*{glo-Bimanuel} possédant chacune le même nombre de ressources.
+				Nous avons vu les avantages d'une configuration collaborative avec des \myglos*{glo-Binome}.
+				L'étape suivante sera l'étude du travail collaboratif sur des groupes de plus de deux sujets.
+				Ceci devrait permettre d'augmenter encore le potentiel cognitif du groupe.
 
 				Pour mener une telle étude, il va falloir proposer des scénarios plus complexes.
 				Cette deuxième expérimentation a montré une nouvelle fois le rôle prépondérant de la taille de la molécule dans la complexité de la tâche.
-				Nous verrons que les molécules proposées dans la prochaine étude sont significativement plus importante que celle utilisée jusqu'à présent.
+				Nous verrons que les molécules proposées dans la prochaine étude sont significativement plus importantes que celle utilisées jusqu'à présent.
 
-				L'introduction de deux sujets supplémentaires va probablement générer des dynamiques de groupes qui n'avait pas de raison d'exister au sein d'un \myglos{glo-Binome}.
-				Cette nouvelle étude va permettre d'observer ces dynamiques et de les caractériser.
+				L'ajout de sujets supplémentaires va probablement générer des dynamiques de groupes qui n'avait pas de raison d'exister au sein d'un \myglos{glo-Binome}.
+				Cette troisième étude permettra l'observation des dynamiques et de les caractériser.
 				L'objectif sera de détecter les limites et les contraintes afin de pouvoir fournir des outils pour répondre aux problématiques soulevées.
 
 				Cette deuxième expérimentation a également permis de remettre en cause la pertinence d'une manipulation en configuration \myglos*{glo-Bimanuel}.
 				D'après les analyses, la charge cognitive qu'apporte la gestion d'un deuxième outil de déformation est trop importante.
 				Cependant, l'outil de déformation est relativement complexe à appréhender.
 				Il ne faut donc pas exclure la possibilité de fournir un outil simple et un outil complexe pour une manipulation en configuration \myglos*{glo-Bimanuel}.
-				Nous verrons que la configuration de la dernière étude \myref*{cha-TravailCollaboratifAssisteParHaptique} propose une configuration \myglos{glo-Bimanuel} avec un outil simple et un outil plus complexe.
+				Nous verrons que la configuration de la dernière étude \myref*{cha-TravailCollaboratifAssisteParHaptique} propose une configuration \myglos*{glo-Bimanuel} avec un outil simple de déplacement et un outil plus complexe de désignation.
 
-				Le questionnaire nous a également permis de mettre en avant les lacunes en ce qui concerne l'utilisation du canal de communication virtuel.
-				La dernière expérimentation qui proposera de nouveaux outils d'interaction sera l'occasion d'introduire des outils adaptés pour permettre d'utiliser efficacement ce canal de communication.
-				En l'occurrence, un outil de désignation sera proposé.
+				Le questionnaire nous a également permis de mettre en avant les lacunes en ce qui concerne l'utilisation de la modalité virtuelle.
+				La dernière expérimentation sera l'occasion d'introduire des nouveaux outils adaptés pour permettre d'utiliser efficacement cette modalité pour la communication et en particulier, un outil de désignation.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
