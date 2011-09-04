@@ -44,7 +44,7 @@
 	\PassOptionsToPackage{frenchb}{babel}
 	\PassOptionsToPackage{myfrancais}{myref}
 \fi
-\PassOptionsToPackage{sorting=nyt,hyperref=auto,abbreviate=false,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,block=space,maxcitenames=2,maxbibnames=99}{biblatex}
+\PassOptionsToPackage{sorting=nyt,hyperref=auto,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=false,date=long,urldate=long,block=space,maxcitenames=2,maxbibnames=99}{biblatex}
 
 %% Packages to call
 % About characters encoding
