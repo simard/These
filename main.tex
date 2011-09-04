@@ -2102,26 +2102,23 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-LesDynamiquesDeGroupe]{Les dynamiques de groupe}
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
-			Les deux expérimentations précédentes ont permis d'étudier les différentes tâches élémentaires que sont la recherche, la sélection, la manipulation et l'évaluation.
-			Tout d'abord, les tâches élémentaires de recherche et de sélection ont été abordées dans la première expérimentation.
-			Dans un second temps, ce sont les tâches élémentaires de manipulation et d'évaluation qui ont été expérimentées.
-			Cependant, dans un cas comme dans l'autre, la collaboration s'est limitée à des groupes de deux utilisateurs, des \myglos*{glo-Binome}.
+			Les différentes \myacro*{acr-PCV} ont à présent été étudiées dans les précédents chapitres.
+			Cependant, l'étude du travail collaboratif ne peut être restreinte à l'étude des \myglos*{glo-Binome}.
+			En effet, \mycite[author]{Roethlisberger-1939} sont dans les premiers à mettre en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
+			La dynamique de groupe possède un fonctionnement plus complexe qu'un simple \myglos{glo-Binome}.
+			Cependant, ces études consistent à étudier le travail coopératif et pas le travail collaboratif : les sujets se divisent préalablement la tâche en plusieurs sous-tâches.
+			Plus récemment, \myInternet a donné naissance à de nombreux outils de collaboration dont les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
+			On peut également citer les incontournables outils de gestions de versions tels que \myGit \mycite{Git-2011}, \myMercurial \mycite{Mercurial-2011} ou \mySVN \mycite{SVN-2011} qui permettent la collaboration de plusieurs développeur pour la création ou la modification de programmes informatiques.
+			Cependant, ces deux exemples permettent seulement une collaboration asynchrone où chaque acteur intervient derrière son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
+			Aujourd'hui, les outils permettant la collaboration synchrone sont encore rares (systèmes de vidéoconférences, jeux vidéos en ligne).
 
-			Cette précédente expérimentation concernant principalement la manipulation a permis de mettre en évidence des problématiques de coordination et de communication.
-			L'analyse de ces problématiques est primordiale afin de pouvoir proposer des outils adaptés.
-			La prochaine étude devra stimuler les interactions afin de pouvoir étudier avec précision la coordination et la communication entre les sujets.
-
-			De plus, une étude faisant intervenir plus de deux personnes est nécessaire.
-			Jusqu'à présent, afin de simplifier l'environnement d'étude, la collaboration a été limitée à deux utilisateurs.
-			Pour étudier pleinement le travail collaboratif, il est nécessaire d'envisager une étude avec des groupes de plus de deux utilisateurs.
-
-			La tâche élémentaire de manipulation semble fournir un environnement d'expérimentation favorable.
-			En effet, cette tâche permet de stimuler les collaborations étroitement couplées.
-			Ce sont ces collaborations étroitement couplées qui provoquent les \myglos*{glo-ConflitDeCoordination}.
-
-			Les objectifs de cette nouvelle expérimentation sont exposés dans la \myref{sec-exp3-CollaborationDeGroupe} accompagnés par les hypothèses.
-			La tâche et les modifications apportées à la plate-forme correspondantes sont détaillées dans la \myref{sec-exp3-PresentationDeLExperimentation}.
-			Enfin, les résultats seront analysés dans la \myref{sec-exp3-Resultats} puis une synthèse est proposée dans la \myref{sec-exp3-Synthese}.
+			Ce chapitre constitue notre première étude sur le travail collaboratif concernant les groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Roethlisberger-1939}.}.
+			Au regard des travaux existants, une dynamique de groupe va émerger.
+			Cependant, nous souhaitons étudier cette dynamique de groupe au sein d'une tâche colocalisée synchrone.
+			Parmi les deux études précédentes, les scénarios de déformation nous ont fournis les tâches les plus complexes et les plus étroitement couplées.
+			Nous nous placerons donc à nouveau dans un contexte de déformation moléculaire.
+			Nous souhaitons tester la mise en place de périodes de \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot-valise \myemph{remue-méninges} car il évoque plus de notions en rapport avec notre sujet.} afin de catalyser le potentiel du groupe.
+			L'étude portera également sur l'identification des rôles de chaque utilisateur au sein du groupe.
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
@@ -2198,10 +2195,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp3-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
 				Les modifications sont présentées dans les sections qui vont suivre.
-				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-PremiereExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé à la place de \myemph{remue-méninges} car il évoque plus de notions en rapport avec notre sujet.}.
+				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-PremiereExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
 					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
-					Ce sont donc deux outils de déformation supplémentaires qui sont ajoutés à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
+					Deux outils de déformation supplémentaires sont ajoutés à la plate-forme \myref*{sec-pro-MaterielExperimental}.
 					Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
 					Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
 
