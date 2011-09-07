@@ -1,0 +1,74 @@
+noremap <F4> :wa<Enter>:!/usr/bin/time -p make bibtex glossary acronym<Enter>
+noremap <F5> :wa<Enter>:!/usr/bin/time -p make<Enter>
+noremap <F6> :wa<Enter>:!/usr/bin/time -p make final<Enter>
+noremap <F7> :!open Abstract.pdf<Enter>
+set linebreak
+set listchars=eol:$,tab:·\ ,trail:=,extends:>,precedes:<
+set list
+set foldmarker=\\begin{,\\end{
+set foldmethod=marker
+set foldtext=v:folddashes.substitute(getline(v:foldstart),"\\begin{\([A-Za-z]\+\)}","\1","g")
+let s:mymax_length_line_number=strlen(substitute(system("cat ".expand("%")." | wc -l"),"[ \t\n]*","","g"))
+let s:myprintf_pattern="%".s:mymax_length_line_number."d lignes"
+let s:sections={"document":"Document","mypart":"Partie","mychapter":"Chapitre","mysection":"Section","mysubsection":"Sous-section","mysubsubsection":"Sous-sous-section","myparagraph":"Paragraphe","mysubparagraph":"Sous-paragraphe","itemize":"Liste à items","enumerate":"Énumération","description":"Liste de descriptions","minipage":"Mini-page","myTodo":"À faire"}
+let s:sections_flag="\%(\*\|-\|+\)"
+let s:floats={"myfigure":"Figure","mysubfigure":"Sous-figure","mytable":"Table","mysubtable":"Sous-table","mytabular":"Tableau"}
+let s:captionscmd="\\\\my\\%(sub\\)\\?caption\\>"
+function! MYfindfloatcaption()
+	for line_number in range(v:foldstart,v:foldend)
+		let in_line=getline(line_number)
+		if strlen(matchstr(in_line,s:captionscmd)) != 0
+			let in_caption_line=in_line
+			break
+		end
+		let in_caption_line="No caption"
+	endfor
+	let out_line=substitute(in_caption_line,'^\s*\\my\%(sub\)\?caption\%(\[.\{-}\]\){\(.*\)}\s*$','\1','g')
+	return out_line
+endfunction
+function! MYfoldtext()
+	let out_blocname=""
+	let out_caption=""
+	let in_line=getline(v:foldstart)
+	let in_blocid=substitute(in_line,'^\s*\\begin{\([A-Za-z]\{-}\)\%(\*\|-\|+\)\?}.*$','\1','g')
+	let in_num_lines=printf(s:myprintf_pattern,v:foldend-v:foldstart+1)
+	for section_key in keys(s:sections)
+		if in_blocid ==# section_key
+			let out_blocname=s:sections[in_blocid]
+			let out_caption=substitute(in_line,'^\s*\\begin{[A-Za-z]*\%(\*\|-\|+\)\?}\%(\[.*\]\)\?\%({\(.*\)}\)\?\s*$','\1','g')
+			let out_label=substitute(in_line,'^\s*\\begin{[A-Za-z]*\%(\*\|-\|+\)\?}\%(\[\(.*\)\]\)\?\%({.*}\)\?\s*$','\1','g')
+			if strlen(matchstr(out_caption,'}{')) != 0
+				let out_caption=substitute(out_caption,'}{.*$','','g')
+			end
+		end
+	endfor
+	for float_key in keys(s:floats)
+		if in_blocid ==# float_key
+			let out_blocname=s:floats[in_blocid]
+			let out_caption=MYfindfloatcaption()
+		end
+	endfor
+	let out_line="+"
+	let out_line=out_line.v:folddashes
+	let out_line=out_line." <"
+	let out_line=out_line.in_num_lines
+	let out_line=out_line."> "
+	let out_line=out_line.out_blocname
+	if strlen(out_caption) != 0
+		let out_line=out_line." - "
+		let out_line=out_line.out_caption
+	end
+	if strlen(out_label) != 0
+		let out_line=out_line." [["
+		let out_line=out_line.out_label
+		let out_line=out_line."]]"
+	end
+	let out_line=out_line." "
+	return out_line
+endfunction
+set foldtext=MYfoldtext()
+set spelllang=fr
+set spellfile=.fr.utf-8.add
+set spell
+highlight Folded term=standout ctermfg=Black ctermbg=DarkGray
+highlight SpellBad ctermfg=white ctermbg=DarkRed
