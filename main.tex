@@ -47,6 +47,21 @@
 	\mainmatter
 	\begin{mychapter}[cha-LeSujet]{Le sujet}
 		\begin{mysection}[sec-EtatDeLArt]{État de l'art}
+			La distinction entre travail coopératif et travail collaboratif est expliquée par \mycite[author]{Roschelle-1995}.
+			\begin{quote}
+				\it Cooperative work is accomplished by the division of labour among participants, as an activity where each person is responsible for a portion of the problem solving.
+				We focus on collaboration as the mutual engagement of participants in a coordinated effort to solve the problem together.
+			\end{quote}
+			traduit dans \mycite{Knauf-2010} en français
+			\begin{quote}
+				Le travail coopératif implique une division du travail entre les participants, chaque participant étant responsable d’une partie du problème à résoudre.
+				Dans la collaboration, les participants s’engagent tous dans les mêmes tâches, en se coordonnant, afin de résoudre le problème ensemble.
+			\end{quote}
+			Le travail collaboratif s'est développé rapidement avec l'informatique.
+			On peut citer les outils de gestions de versions tels que \mycite[author]{Git-2011}, \mycite[author]{Mercurial-2011} ou encore \mycite[author]{SVN-2011} qui permettent la collaboration de plusieurs développeurs pour la création ou la modification de programmes informatiques.
+			Puis \myInternet a donné naissance à des outils de collaboration tels que les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
+			Cependant, ces deux exemples proposent une collaboration asynchrone où chaque acteur intervient derrière son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
+			Aujourd'hui, les outils permettant la collaboration synchrone sont encore rares (systèmes de vidéoconférences, jeux vidéos en ligne).
 		\end{mysection}
 		\begin{mysection}[sec-Contexte]{Contexte}
 			\begin{mysubsection}[sse-LAmarrageMoleculaire]{L'\myglosnl{glo-AmarrageMoleculaire}}
@@ -2113,18 +2128,16 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Cependant, l'étude du travail collaboratif ne peut être restreinte à l'étude des \myglos*{glo-Binome}.
 			En effet, \mycite[author]{Roethlisberger-1939} sont dans les premiers à mettre en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
 			La dynamique de groupe possède un fonctionnement plus complexe qu'un simple \myglos{glo-Binome}.
-			Cependant, ces études consistent à étudier le travail coopératif et pas le travail collaboratif : les sujets se divisent préalablement la tâche en plusieurs sous-tâches.
-			Plus récemment, \myInternet a donné naissance à de nombreux outils de collaboration dont les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
-			On peut également citer les incontournables outils de gestions de versions tels que \myGit \mycite{Git-2011}, \myMercurial \mycite{Mercurial-2011} ou \mySVN \mycite{SVN-2011} qui permettent la collaboration de plusieurs développeur pour la création ou la modification de programmes informatiques.
-			Cependant, ces deux exemples permettent seulement une collaboration asynchrone où chaque acteur intervient derrière son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
-			Aujourd'hui, les outils permettant la collaboration synchrone sont encore rares (systèmes de vidéoconférences, jeux vidéos en ligne).
+			À cette époque, seul le travail coopératif est étudié, le travail collaboratif n'est étudié que quelques années plus tard.
+			\mycite[author]{Bales-1950} s'intéresse particulièrement à la communication dans les petits groupes également appelés groupes restreints.
+			L'ensemble de ces études concernent des collaborations asynchrones ou, le cas échéant, des collaborations pour des tâches à faible couplage.
 
-			Ce chapitre constitue notre première étude sur le travail collaboratif concernant les groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Roethlisberger-1939}.}.
+			Ce chapitre constitue notre première étude sur le travail collaboratif concernant des groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Roethlisberger-1939}.}.
 			Au regard des travaux existants, une dynamique de groupe va émerger.
-			Cependant, nous souhaitons étudier cette dynamique de groupe au sein d'une tâche colocalisée synchrone.
-			Parmi les deux études précédentes, les scénarios de déformation nous ont fournis les tâches les plus complexes et les plus étroitement couplées.
-			Nous nous placerons donc à nouveau dans un contexte de déformation moléculaire.
-			Nous souhaitons tester la mise en place de périodes de \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot-valise \myemph{remue-méninges} car il évoque plus de notions en rapport avec notre sujet.} afin de catalyser le potentiel du groupe.
+			Cependant, nous souhaitons étudier cette dynamique de groupe au sein d'une collaboration synchrone avec des scénarios à fort couplage.
+			Parmi les deux études précédentes, les scénarios de déformation ont permis d'identifier les tâches complexes et étroitement couplées.
+			Nous nous plaçons donc à nouveau dans un contexte de déformation moléculaire.
+			Nous souhaitons tester la mise en place de périodes de \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot \myemph{remue-méninges} car il est plus utilisé dans la littérature.} afin de catalyser le potentiel du groupe.
 			L'étude portera également sur l'identification des rôles de chaque utilisateur au sein du groupe.
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
