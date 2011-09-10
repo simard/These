@@ -1371,7 +1371,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp1-Conclusion]{Conclusion}
 				Basés sur les résultats précédents, certaines perspectives assez évidentes s'imposent et ont guidé les expérimentations qui suivent.
 				Tout d'abord, il semble nécessaire de proposer des tâches suffisamment complexes pour le travail collaboratif apporte une amélioration des performances.
-				Ceci se traduit soit par des tâches à fortes zones de contraintes \myref*{cha-DeformationCollaborativeDeMolecule} ou par la manipulation de molécules de taille importante \myref*{cha-LesDynamiquesDeGroupe}.
+				Ceci se traduit soit par des tâches à fortes zones de contraintes \myref*{cha-DeformationCollaborativeDeMolecule} ou par la manipulation de molécules de taille importante \myref*{cha-LaDynamiqueDeGroupe}.
 
 				Les différentes stratégies observées ont permis de mettre en évidence l'intérêt de la collaboration en champ voisin.
 				Il semble nécessaire de favoriser ce type de collaboration par des tâches stimulantes et des outils d'interaction adaptés.
@@ -2122,17 +2122,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
-	\begin{mychapter}[cha-LesDynamiquesDeGroupe]{Les dynamiques de groupe}
+	\begin{mychapter}[cha-LaDynamiqueDeGroupe]{La dynamique de groupe}
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
 			Les différentes \myacro*{acr-PCV} ont à présent été étudiées dans les précédents chapitres.
 			Cependant, l'étude du travail collaboratif ne peut être restreinte à l'étude des \myglos*{glo-Binome}.
 			En effet, \mycite[author]{Roethlisberger-1939} sont dans les premiers à mettre en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
 			La dynamique de groupe possède un fonctionnement plus complexe qu'un simple \myglos{glo-Binome}.
-			À cette époque, seul le travail coopératif est étudié, le travail collaboratif n'est étudié que quelques années plus tard.
-			\mycite[author]{Bales-1950} s'intéresse particulièrement à la communication dans les petits groupes également appelés groupes restreints.
-			L'ensemble de ces études concernent des collaborations asynchrones ou, le cas échéant, des collaborations pour des tâches à faible couplage.
 
-			Ce chapitre constitue notre première étude sur le travail collaboratif concernant des groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Roethlisberger-1939}.}.
+			Ce chapitre constitue notre première étude sur le travail collaboratif concernant des groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Bales-1950}.}.
 			Au regard des travaux existants, une dynamique de groupe va émerger.
 			Cependant, nous souhaitons étudier cette dynamique de groupe au sein d'une collaboration synchrone avec des scénarios à fort couplage.
 			Parmi les deux études précédentes, les scénarios de déformation ont permis d'identifier les tâches complexes et étroitement couplées.
@@ -2142,27 +2139,24 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
-				Nous avons déjà effectué deux études sur le travail collaboratif mettant en avant les avantages d'un travail en \myglos{glo-Binome} par rapport au travail en \myglos{glo-Monome}.
-				Cependant, le travail de groupe ne se limitant pas aux \myglos*{glo-Binome}, nous nous intéresserons au \myglos*{glo-Quadrinome} dans cette étude.
-				Nous souhaitons observer le travail en \myglos{glo-Quadrinome} afin de confirmer nos précédentes conclusions.
-
 				Le travail de groupe a été très largement étudié à la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle dans le domaine de la psychologie sociale.
-				L'ouvrage de \mycite[author]{Mugny-1995} aborde les problématiques de la psychologie sociale dans le cadre général mais s'intéresse plus précisément aux dynamiques de groupe dans les chapitres premier et premier~bis.
-				Il aborde en particulier les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne qui constitue la plus importante étude sur les dynamiques de groupe.
-				Cette étude effectuée entre les années 1927 et 1932 a été publiée par \mycite[author]{Roethlisberger-1939}.
-				Le travail de groupe permet d'obtenir une meilleure productivité grâce au phénomène de \myglos{glo-MotivationSociale}.
-				La \myglos{glo-MotivationSociale} stimule chaque ouvrier par la présence d'autres ouvriers.
+				L'ouvrage de \mycite[author]{Mugny-1995} abordent les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
+				Il aborde en particulier les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne qui constitue une des premières études sur la dynamique de groupe.
+				Cette étude, destinée à étudier l'effet des conditions de travail (température, temps de pause, \myetc), a été effectuée entre les années 1927 et 1932.
+				Cependant, l'étude a permis d'observer une amélioration de la productivité des ouvriers, quelque soit les conditions de travail.
+				\mycite[author]{Roethlisberger-1939} explique cette amélioration par la stimulation sociale qu'exerce chaque individu sur ses partenaires : c'est la \myglos{glo-MotivationSociale}.
+				Les résultats de cette étude concernant les groupes de taille importante sont actuellement utilisés dans les techniques modernes de \myemph{management} \mycite{Wood-2004}.
 
-				Cependant, ces études diffèrent de notre cas en un point important.
-				Les études précédentes ne concernent pas des tâches de collaboration étroitement couplée.
-				Que ce soit pour l'assemblage d'automobile dans le cas du taylorisme ou l'assemblage d'appareils de radio dans le cas de l'entreprise \myHawthorne, les études sur le travail collaboratif proposées placent chaque ouvrier sur un poste de travail indépendant : la collaboration est très faible.
-				En effet, il n'est pas nécessaire pour les ouvriers d'interagir pendant la réalisation de la tâche.
-				Notre plate-forme fournit un outil de travail où la collaboration est étroite.
+				La psychologie sociale de la dynamique de groupe s'est également intéressée aux groupes de petites taille appelés également groupes restreints.
+				C'est \mycite[author]{Bales-1950} qui proposent les premières analyses sur ces groupes de \mynum{3} à une vingtaine de partenaires.
+				Un des résultats intéressants montre que quelque soit la taille du groupe, le groupe sera dominé par un voire deux membres du groupe.
+				Cependant, \mycite[author]{Zajonc-1965} montre que les groupes seront performants sur des tâches simples mais peu performants sur des tâches complexes.
+				En effet, les membres du groupe effectuent avec facilité une tâche simple sans crainte de l'évaluation de leurs partenaires.
+				Sur une tâche de nature complexe, l'évaluation effrait et fait baisser les performances du groupe.
 
-				Les études mettant en scène des tâches de collaboration étroite en groupe supérieur à deux utilisateurs sont peu nombreuses.
-				On peut noter l'étude de \mycite[author]{Chan-2008} qui propose un système de prise de contrôle collaboratif à tour de rôle.
-				Cette étude montre l'utilité de l'outil haptique dans la réalisation d'une tâche collaborative mais ne caractérise ni les stratégies adoptées, ni la structure du groupe.
-				C'est à ces questions que nous nous intéressons dans cette troisième expérimentation.
+				Jusqu'à présent, les études concernant la dynamique des groupes et plus particulièrement celle concernant les groupes restreints sont nombreuses.
+				Cependant, chaque étude proposée concerne des tâches nécessitant seulement une collaboration faiblement couplée.
+				Dans ce chapitre, nous étudions la dynamique des groupes au sein d'un scénario nécessitant une collaboration fortement couplée afin d'observer les différences avec les configurations précédemment étudiées dans la littérature.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-Objectifs]{Objectifs}
 				L'objectif de notre troisième étude est de confirmer les conclusions obtenues dans le cadre du travail de Elton \myname{Mayo}.
