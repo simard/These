@@ -1544,7 +1544,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation, basée sur la dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
-				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-PremiereExperimentation}.
+				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-SecondeExperimentation}.
 				\begin{mysubsubsection}[sss-exp2-Materiel]{Matériel}
 					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
 					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
@@ -2192,23 +2192,23 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour la tâche de déformation collaborative.
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
-				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation.
+				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation \myref*{sse-exp2-SpecificitesDuProtocoleExperimental}.
 				De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
 				On pourra trouver la description de ces éléments dans la \myref{sse-exp2-DescriptionDeLaTache}.
 				\begin{mysubsubsection}[sss-exp3-DescriptionDesScenarios]{Description des scénarios}
-					Deux scénarios sont proposés : un sur la molécule \myPrion et un sur la molécule \myUbiquitin.
-					Les paragraphes suivants décrivent les deux scénarios :
+					Deux scénarios sont proposés : un faiblement couplée et un fortement couplé.
+					Les paragraphes suivants décrivent ces deux scénarios :
 					\begin{description}
 						\item[Scénario~\myscenario{1}]
-							Cette tâche concerne la déformation de la molécule \myPrion.
-							La déformation de cette molécule nécessite de replacer correctement une chaîne de \mynum{16}~\myglos*{glo-Residu}.
+							Ce scénario concerne la déformation de la molécule \myPrion.
+							La déformation de cette molécule nécessite de replacer correctement par rapport à un modèle, une chaîne de \mynum{16}~\myglos*{glo-Residu}.
 							Cette chaîne se trouve en périphérie de la molécule et n'est donc pas soumise à de fortes contraintes physiques.
-							Cette tâche est aisément divisible en sous-tâches; dans ce cas, les sujets peuvent sélectionner la chaîne de \myglos*{glo-Residu} à intervalle réguliers de manière à la séparer en parties égales : c'est une collaboration faiblement couplée.
+							Ce scénario est aisément divisible en sous-tâches présentant de faibles interactions physiques entre eux : c'est une collaboration faiblement couplée.
 						\item[Scénario~\myscenario{2}]
 							Cette tâche concerne la déformation de la molécule \myUbiquitin.
-							La déformation de cette molécule nécessite de replacer correctement une chaîne de \mynum{19}~\myglos*{glo-Residu}.
+							La déformation de cette molécule nécessite de replacer correctement par rapport à un modèle, une chaîne de \mynum{19}~\myglos*{glo-Residu}.
 							Cette chaîne se trouve au sein de la molécule où elle est soumise à de fortes contraintes physiques, notamment le milieu de la chaîne : il très difficile d'avoir un contrôle précis sur la déformation du milieu de la chaîne.
-							Cette tâche doit être réalisée avec une coordination de l'ensemble des sujets : c'est une collaboration étroite.
+							Ce scénario nécessite plusieurs points de contrôle et une coordination de l'ensemble des sujets : c'est une collaboration étroitement couplée.
 					\end{description}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-LesOutilsDisponibles]{Les outils disponibles}
@@ -2221,7 +2221,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp3-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
 				Les modifications sont présentées dans les sections qui vont suivre.
-				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-PremiereExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
+				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-TroisiemeExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
 					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
 					Deux outils de déformation supplémentaires sont ajoutés à la plate-forme \myref*{sec-pro-MaterielExperimental}.
@@ -2289,20 +2289,21 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\addtolength{\expthreesecondcolumn}{-4\tabcolsep}
 					\begin{mytabular}{>{\bfseries}p{\expthreefirstcolumn}p{\expthreesecondcolumn}}
 						\mytoprule
-						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule en groupe                                        \\
+						\mytitlecolumn{1}{Tâche}                  & Déformation d'une molécule en groupe                                                  \\
 						\mymiddlerule[\heavyrulewidth]
-						\mytitlecolumn{2}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome} \\
-						                                          & \myhypothesis{2} Le \mybrainstorming structure le \myglosnl{glo-Quadrinome} \\
+						\mytitlecolumn{2}{Hypothèses}             & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}           \\
+						                                          & \myhypothesis{2} Émergence de \myglosnl{glo-Meneur} dans le \myglosnl{glo-Quadrinome} \\
+						                                          & \myhypothesis{3} Le \mybrainstorming structure le \myglosnl{glo-Quadrinome}           \\
 						\mymiddlerule
-						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                 \\
-						                                          & \myvari{2} Complexité de la tâche                                           \\
-						                                          & \myvari{3} Temps alloué pour le \mybrainstorming                            \\
+						\mytitlecolumn{3}{Variable indépendantes} & \myvari{1} Nombre de sujets                                                           \\
+						                                          & \myvari{2} Complexité de la tâche                                                     \\
+						                                          & \myvari{3} Temps alloué pour le \mybrainstorming                                      \\
 						\mymiddlerule
-						\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                             \\
-						                                          & \myvard{2} Fréquence des sélections                                         \\
-						                                          & \myvard{3} Vitesse moyenne                                                  \\
-						                                          & \myvard{4} Force moyenne appliquée par les sujets                           \\
-						                                          & \myvard{5} Communications verbales                                          \\
+						\mytitlecolumn{5}{Variable dépendantes}   & \myvard{1} Temps de réalisation                                                       \\
+						                                          & \myvard{2} Fréquence des sélections                                                   \\
+						                                          & \myvard{3} Vitesse moyenne                                                            \\
+						                                          & \myvard{4} Force moyenne appliquée par les sujets                                     \\
+						                                          & \myvard{5} Communications verbales                                                    \\
 						\mymiddlerule[\heavyrulewidth]
 						\multicolumn{2}{c}{%
 							\small%
@@ -2803,7 +2804,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				Les sections suivantes décrivent l'ensemble des modification apportées à la plate-forme de base \myref*{cha-pro-DispositifExperimental} et principalement aux outils.
-				La méthode expérimentale est exposée dans la \myref{sec-met-exp4-PremiereExperimentation}.
+				La méthode expérimentale est exposée dans la \myref{sec-met-exp4-QuatriemeExperimentation}.
 				Un résumé de cette méthode se trouve dans la \myref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp4-Materiel]{Matériel}
 					Dans cet quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
@@ -3230,7 +3231,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Chaque sujet répond au questionnaire de manière autonome, sans communiquer avec son partenaire.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-met-exp2-PremiereExperimentation]{Seconde expérimentation}
+		\begin{mysection}[sec-met-exp2-SecondeExperimentation]{Seconde expérimentation}
 			\begin{mysubsection}[sse-met-exp2-Hypotheses]{Hypothèses}
 				Les hypothèses de cette nouvelle étude sont en grande partie basée sur l'étude précédente.
 				Nous souhaitons confirmer l'intérêt du travail collaboratif dans la tâche élémentaire de \myemph{manipulation}, notamment sur les tâches de complexité importante.
@@ -3331,16 +3332,20 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				L'objectif de cette multiple confrontation est l'étude de l'apprentissage en configuration collaborative.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-met-exp3-PremiereExperimentation]{Troisième expérimentation}
+		\begin{mysection}[sec-met-exp3-TroisiemeExperimentation]{Troisième expérimentation}
 			\begin{mysubsection}[sse-met-exp3-Hypotheses]{Hypothèses}
 				Lors de cette nouvelle étude, nous souhaitons observer les dynamiques de groupe.
 				Nos hypothèses concerneront principalement l'évolution des groupes durant la réalisation de la tâche.
 				\begin{myparagraph}[par-met-exp3-AmeliorationDesPerformancesEnQuadrinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}}
 					Nous émettons l'hypothèse que les performances des \myglos*{glo-Quadrinome} seront meilleures que les performances des \myglos*{glo-Binome}.
-					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans l'étude sur l'entreprise \myHawthorne.
-					Cependant, nous nous plaçons dans un contexte de collaboration étroite.
+					Cette hypothèse vient contredire les conclusions obtenue par \mycite[author]{Zajonc-1965} concernant les tâches complexes.
+					Cependant, notre contexte est différent puisqu'il concerne la collaboration étroite et nous pensons que dans ce contexte, il est nécessaire d'augmenter le nombre de sujets pour améliorer les performances, même sur une tâche complexe.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp3-LeBrainstormingStructureLeQuadrinome]{\myhypothesis{2} Le \mybrainstorming structure le \myglos{glo-Quadrinome}}
+				\begin{myparagraph}[par-met-exp3-EmergenceDeMeneursDansLeQuadrinome]{\myhypothesis{2} Émergence de \myglos{glo-Meneur} dans le \myglos{glo-Quadrinome}}
+					D'après \mycite[author]{Bales-1950}, les groupes restreints voient émerger un voire deux \myglos*{glo-Meneur}, quelque soit la taille du groupe.
+					Nous émettons l'hypothèse que l'émergence d'un \myglos{glo-Meneur} aura également lieu dans notre contexte de collaboration étroitement couplée.
+				\end{myparagraph}
+				\begin{myparagraph}[par-met-exp3-LeBrainstormingStructureLeQuadrinome]{\myhypothesis{3} Le \mybrainstorming structure le \myglos{glo-Quadrinome}}
 					Dans cette nouvelle expérimentation, nous allons étudier la mise en place d'une période de réflexion, également appelée \mybrainstorming, avant le début de la tâche.
 					Nous émettons l'hypothèse que cette période de réflexion sera principalement utile pour les \myglos*{glo-Quadrinome}.
 				\end{myparagraph}
@@ -3364,7 +3369,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-met-exp3-Variables]{Variables}
 				\begin{mysubsubsection}[sss-met-exp3-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp3-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						Cette \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
 						\myvari{1} possède deux valeurs possibles : \og deux sujet (\mycf \myemph{\myglos{glo-Binome}}) \fg ou \og quatre sujets (\mycf \myemph{\myglos{glo-Quadrinome}}) \fg.
 						\mynum{8}~\myglos*{glo-Binome} et \mynum{4}~\myglos*{glo-Quadrinome} sont testés.
 					\end{myparagraph}
@@ -3394,15 +3399,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						Elle est calculée par intégration numérique des positions successives en fonction du temps.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-ForceMoyenneAppliqueeParLesSujets]{\myvard{4} Force moyenne appliquée par les sujets}
-						La force appliquée sur les atomes durant la simulation est mesurée pour chaque sujet.
-						Elle ne concerne que la force appliquée lors d'une sélection.
-						C'est la valeur moyenne sur l'ensemble d'une tâche qui est conservée.
+						La force appliquée sur les atomes durant la simulation par les sujets est mesurée.
+						C'est la force appliquée lorsqu'un atome est sélectionné.
+						La mesure conservée est la valeur moyenne sur l'ensemble de la tâche réalisée.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-CommunicationsVerbales]{\myvard{5} Communications verbales}
-						L'enregistrement des communications permet de mesurer le nombre d'interventions verbales de chacun des sujets.
-						Deux catégories d'interventions sont classifiées :
+						L'enregistrement des communications verbales permet de mesurer le nombre d'interventions verbales de chacun des sujets.
+						Deux catégories d'interventions sont distinguées :
 						\begin{description}
-							\item[Les observations] destinées à renseigner les autres sujets d'un état actuel de l'environnement, d'une information nécessaire ou bien d'une intention concernant une action;
+							\item[Les observations] pour indiquer aux autres sujets une intention d'action ou pour informer sur l'état actuel de l'environnement;
 							\item[Les ordres] sont donnés aux autres sujets afin qu'ils réalisent une action déterminée.
 						\end{description}
 					\end{myparagraph}
@@ -3411,13 +3416,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-met-exp3-Procedure]{Procédure}
 				L'expérimentation débute par une étape d'entraînement avec la molécule \myTRPCAGE.
 				Pendant cette phase, les outils sont introduits et expliqués un par un.
-				Les sujets ayant déjà eu une expérience sur la plate-forme, cette phase est effectuée pour se remémorer l'environnement et les outils.
+				Les sujets ayant déjà réalisé une expérience sur la plate-forme, cette phase est effectuée pour se remémorer l'environnement et les outils.
 				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 
 				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées au scénario \myscenario{1}.
 				Puis dans un second temps, le scénario \myscenario{2} leur est proposé.
-				Pour chaque scénario, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
+				Pour chaque scénario, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} \myref*{sse-exp2-DescriptionDeLaTache} désiré est atteint.
 				L'ordre de ces deux scénarios n'est pas contre-balancé sur les différents groupes de sujets.
 
 				Tous les sujets sont confrontés aux deux scénarios deux fois.
@@ -3429,7 +3434,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La phase d'apprentissage est filmée pour des questions de simplicité logistique mais n'est pas utilisée dans les analyses.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-met-exp4-PremiereExperimentation]{Quatrième expérimentation}
+		\begin{mysection}[sec-met-exp4-QuatriemeExperimentation]{Quatrième expérimentation}
 			\begin{mysubsection}[sse-met-exp4-Hypotheses]{Hypothèses}
 				\begin{myparagraph}[par-met-exp4-PerformancesAmelioreesParLAssitanceHaptique]{\myhypothesis{1} Performances améliorées par l'assistance haptique}
 					Nous émettons l'hypothèse que les performances de groupe seront meilleures lorsque l'assistance haptique sera mise à disposition des utilisateurs.
