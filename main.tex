@@ -2326,7 +2326,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-Resultats]{Résultats}
-			\begin{mysubsection}[sse-exp3-EvolutionDesPerformances]{Évolution des performances}
+			\begin{mysubsection}[sse-exp3-AmeliorationDesPerformances]{Amélioration des performances}
 				\begin{mysubsubsection}[sss-exp3-EvolutionDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
@@ -2398,39 +2398,39 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-EvolutionDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					Les deux tâches proposées sont de natures très différentes.
-					La \myref{fig-exp3-TempsDeRealisationDesScenarios} montre que la molécule \myUbiquitin a été plus complexe à déformer pour les groupes de sujets que la molécule \myPrion.
-					Il faut noter que les molécules n'ont pas été alternées lors de la procédure expérimentale \myref*{sse-met-exp3-Procedure} : c'est toujours la molécule \myPrion qui a été présentée en premier aux sujets.
-					Pourtant, la réalisation de la déformation de la molécule \myUbiquitin a été plus longue, malgré l'apprentissage qui a eu lieu entre les deux scénarios..
-					D'ailleurs, on peut observer que de nombreux groupes de sujets ont atteint la limite de \mynum[mn]{10} lors de la déformation de la molécule \myUbiquitin ce qui prouve la réelle complexité de la tâche.
+					Malgré l'apprentissage, la \myref{fig-exp3-TempsDeRealisationDesScenarios} montre que la molécule \myUbiquitin a été la plus longue à réaliser : la tâche collaborative étroitement couplée est plus complexe que la tâche faiblement couplée.
+					Pourtant, les molécules n'ont pas été alternées lors de la procédure expérimentale \myref*{sse-met-exp3-Procedure} : c'est toujours la molécule \myPrion qui a été présentée en premier aux sujets.
+					De plus, de nombreux groupes ont atteint la limite de \mynum[mn]{10} lors de la réalisation du scénario \myscenario{2} (\myUbiquitin).
+					Nous pouvons en déduire que la collaboration étroitement couplée est plus complexe à appréhender par les sujets.
 
-					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} a montré que le travail en configuration \myglos*{glo-Bimanuel} permet de moins bonnes performances qu'un travail collaboratif en configuration \myglos*{glo-Monomanuel}.
-					Cependant, cette nouvelle étude compare une configuration \myglos*{glo-Monomanuel} et \myglos*{glo-Bimanuel} à chaque fois dans un cadre de collaboration.
+					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} a montré que les performances sont meilleures lorsque les ressources disponibles (outils de manipulation) sont partagés entre plusieurs utilisateurs.
+					Cependant, cette étude compare deux configurations collaboratives.
 					On constate d'après la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances identiques aux \myglos*{glo-Binome}, quel que soit le scénario.
-					D'ailleurs, les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui confirme les performances identiques \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
+					D'ailleurs, les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui confirme ce résultat \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
 
 					Pourtant, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} montre des différences significatives entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} concernant la vitesse moyenne des \myglos*{glo-EffecteurTerminal}.
-					L'étude exposée par \mycite[author]{Roethlisberger-1939} a mis en évidence le phénomène de \myglos{glo-MotivationSociale}.
-					Son étude appliquée à des groupes\footnote{Un groupe est constitué d'au moins trois sujets selon lui} a montré une importante stimulation de la motivation liée au travail à plusieurs.
-					Cette \myglos{glo-MotivationSociale} nous permet d'expliquer cette vitesse moyenne plus importante chez les \myglos*{glo-Quadrinome} que chez les \myglos*{glo-Binome}.
+					L'étude exposée par \mycite[author]{Roethlisberger-1939} a mis en évidence le phénomène de \myglos{glo-MotivationSociale} : les utilisateurs se motivent entre eux pour réaliser la tâche.
+					Ceci permet aux \myglos*{glo-Quadrinome} d'obtenir une activité intense avec peu de phases de relâchement durant la réalisation de la tâche.
+					La vitesse moyenne est ainsi augmentée de manière significative chez les \myglos*{glo-Quadrinome}.
 
 					Dans l'étude précédente, nous avons également mis en évidence la présence de \myglos*{glo-ConflitDeCoordination} chez les \myglos*{glo-Binome}.
 					Ces \myglos*{glo-ConflitDeCoordination} entravent la progression de la tâche.
-					Cependant, les sujets parviennent à résoudre ces conflits grâce à la communication.
+					Cependant, nous avions constaté que les sujets parviennent à résoudre ces conflits grâce à la communication verbale.
 					Dans cette troisième expérimentation, la \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} montre que le nombre d'échanges verbaux en \myglos{glo-Quadrinome} est inférieur à celui en \myglos{glo-Binome}.
+					Ce résultat est surprenant étant donné que le nombre d'interactions possibles entre les sujets (et donc les \myglos*{glo-ConflitDeCoordination}) sont plus nombreux chez les \myglos*{glo-Quadrinome}.
+					En effet, un \myglos{glo-ConflitDeCoordination} intervient lorsqu'au moins deux collaborateurs manipulent sur la même zone de travail.
+					Les combinaisons de conflits dans un \myglos{glo-Quadrinome} sont plus nombreuses que dans un \myglos{glo-Binome}.
 
-					Les \myglos*{glo-Quadrinome} ont potentiellement plus de \myglos*{glo-ConflitDeCoordination} que les \myglos*{glo-Binome} (le nombre de combinaisons deux à deux est plus important).
-					Pourtant, leur communication est moins abondante.
-					Il est plus difficile pour les sujets de prendre la parole au sein d'un groupe de quatre utilisateurs, notamment pour les \myglos*{glo-Suiveur}.
-					En effet, il est plus difficile de se faire entendre, notamment lorsque deux \myglos*{glo-ConflitDeCoordination} interviennent en même temps : qui est prioritaire et qui doit parler le premier ?
-					Dans le cas des \myglos*{glo-Binome}, la conversation entre deux utilisateurs ne soulève pas ce genre de problématiques.
-					Ce manque de communication chez les \myglos*{glo-Quadrinome} provoque une baisse de performances.
-					Cependant, la \myglos{glo-MotivationSociale} stimule les sujets en \myglos*{glo-Quadrinome} pour manipuler plus rapidement ce qui compense cette baisse de performances.
+					Il semble que la différence entre un \myglos{glo-Binome} et un groupe restreint influe sur la manière de communiquer.
+					À partir d'observations effectuées durant la phase expérimentale, nous avons pu constater que certains sujets se montraient relativement silencieux, même en situation de \myglos{glo-ConflitDeCoordination}.
+					Nous verrons dans la \myref{sse-exp3-DefinitionDUnMeneur} que la présence d'un meneur dans un groupe perturbe la communication verbale au sein d'un groupe.
+					En l'occurrence, le meneur a tendance à monopoliser la parole et à gérer les \myglos{glo-ConflitDeCoordination}.
 
-					Cette section nous a permis de confirmer certaines conclusions présentées par \mycite[author]{Roethlisberger-1939} concernant la \myglos{glo-MotivationSociale}.
-					En effet, ce phénomène de groupe semble s'appliquer également dans le cas d'une collaboration étroite ce qui permet d'améliorer les performances des \myglos*{glo-Quadrinome}.
-					Cependant, la communication au sein d'un \myglos*{glo-Quadrinome} est plus complexe étant donné un ombre d'interactions possibles beaucoup plus important.
-					Ces deux phénomènes s'équilibrent pour donner des performances similaires entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
-					Afin d'améliorer les performances d'un \myglos{glo-Quadrinome}, il faudrait faciliter ces résolutions verbales de \myglos*{glo-ConflitDeCoordination}.
+					Dans cette section, nous n'avons constater aucune évolution des performances entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
+					Cependant, malgré un nombre potentiel de \myglos*{glo-ConflitDeCoordination} important et une communication verbale faible, les \myglos*{glo-Quadrinome} obtiennent des performances similaires aux \myglos*{glo-Binome}.
+					L'augmentation de la vitesse moyenne, provoquée par le phénomène de \myglos{glo-MotivationSociale} déjà remarqué par \mycite[author]{Roethlisberger-1939}, permet d'expliquer ces performances.
+					En effet, la \myglos{glo-MotivationSociale} permet de réduire les phases d'inaction en stimulant l'intérêt des sujets pour la tâche à réaliser.
+					Afin d'améliorer les performances d'un \myglos{glo-Quadrinome}, il faudrait faciliter les communications verbales pour une gestion optimale des \myglos*{glo-ConflitDeCoordination}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-AvantageDuBrainstormingPourLesQuadrinomes]{Avantage du \mybrainstorming pour les \myglosnl*{glo-Quadrinome}}
@@ -2523,7 +2523,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La présence d'un \mybrainstorming n'améliore pas la résolution des \myglos*{glo-ConflitDeCoordination}.
 
 					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
-					Nous avons vu dans la \myref{sse-exp3-EvolutionDesPerformances} que les \myglos*{glo-Quadrinome} éprouvent des difficultés dans la résolution des \myglos*{glo-ConflitDeCoordination}.
+					Nous avons vu dans la \myref{sse-exp3-AmeliorationDesPerformances} que les \myglos*{glo-Quadrinome} éprouvent des difficultés dans la résolution des \myglos*{glo-ConflitDeCoordination}.
 					D'après les figures observées, le \mybrainstorming permet l'élaboration d'une stratégie et la définition des rôles de chacun des sujets.
 					L'élaboration d'une stratégie réduit de façon importante le nombre de \myglos*{glo-ConflitDeCoordination} pendant la réalisation de la tâche et ainsi améliore les performances.
 					De plus, une définition précise des rôles de chacun avant le début de la tâche permet de partitionner la tâche ou de l'organiser le cas échéant et ainsi d'éviter le phénomène de \myglos{glo-ParesseSociale}.
@@ -2540,7 +2540,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La réflexion alors menée ne permet pas d'aboutir au meilleur choix de stratégie.
 
 					Cependant, on constate sur la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} qu'il n'y a pas d'évolution de la vitesse moyenne des \myglos*{glo-EffecteurTerminal} pour les \myglos*{glo-Quadrinome}.
-					Les \myglos*{glo-Quadrinome} sont déjà stimulés par le phénomène de \myglos{glo-MotivationSociale} décrit dans la \myref{sse-exp3-EvolutionDesPerformances}.
+					Les \myglos*{glo-Quadrinome} sont déjà stimulés par le phénomène de \myglos{glo-MotivationSociale} décrit dans la \myref{sse-exp3-AmeliorationDesPerformances}.
 					Le \mybrainstorming ne leur permet d'effectuer les gestes plus rapidement mais ils utilisent maintenant cette vitesse avec des stratégies optimisées.
 
 					Cette section nous a permis de tester et de confirmer l'intérêt d'un \mybrainstorming pour structurer les groupes : cette période est bénéfique pour les \myglos*{glo-Quadrinome}.
