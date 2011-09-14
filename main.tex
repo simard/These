@@ -598,31 +598,28 @@
 	\end{mychapter}
 	\begin{mychapter}[cha-RechercheCollaborativeDeResiduSurUneMolecule]{Recherche collaborative de résidu sur une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
-			Le premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro*{acr-PCV} \mycite{Fuchs-2006a}.
+			L'état de l'art du premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro*{acr-PCV} \mycite{Fuchs-2006a}.
 			Chaque primitive nécessite que la précédente ait été réalisée avec succès; on ne peut pas manipuler tant qu'une sélection n'a pas été effectuée; on ne peut pas sélectionner sans avoir naviguer, explorer et identifier les cibles à sélectionner.
 			Le processus d'exploration et de sélection sont les étapes primordiales à toute manipulation ultérieure.
-			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}, notamment à cause de la complexité des molécules liée au nombre important d'atomes et à la structure repliée.
+			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}.
+			En effet, les molécules possèdent un nombre importants d'atomes sous la forme d'une longue chaîne carbonée repliée sur elle-même ce qui rend la recherche d'une cible complexe.
 			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
 			Cependant, nous choisissons d'explorer une troisième solution : la distribution des charges cognitives de travail par l'intermédiaire d'une collaboration synchrone colocalisée.
 
 			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
-			Le prétexte à cette étude sera une expérimentation sur la recherche de \myglos*{glo-Residu} présentée dans la \myref{sec-exp1-PresentationDeLExperimentation}.
+			Le prétexte de cette étude est la recherche de \myglos*{glo-Residu}.
 			L'étude proposée montre l'intérêt du travail collaboratif sur des tâches de nature complexe.
-			Cependant, nous verrons que les différents \myglos*{glo-Binome} adoptent des stratégies relativement différentes, menant à des performances hétérogènes.
-			Nous identifierons ainsi les avantages de la collaboration mais également les limites d'une telle configuration de travail.
+			Cependant, nous verrons que les \myglos*{glo-Binome} adoptent des stratégies différentes, menant à des performances hétérogènes.
+			Nous identifions ainsi les avantages de la collaboration mais également les contraintes d'une telle configuration de travail.
 		\end{mysection}
 		\begin{mysection}[sec-exp1-RechercheEtSelectionCollaborative]{Recherche et sélection collaborative}
 			\begin{mysubsection}[sse-exp1-TravauxExistants]{Travaux existants}
-				Les quatre \myacro*{acr-PCV} décrites par \mycite[author]{Fuchs-2006a} sont une succession d'étapes nécessaires de l'interaction avec un environnement virtuel.
-				Dans ce chapitre, nous proposons d'étudier les deux premières de ces quatre tâches élémentaires \myref*{sse-LAmarrageMoleculaire}: la \myemph{recherche} et la \myemph{sélection}.
-				Ces étapes sont cruciales car elles ont un impact important sur les étapes suivantes que sont la \myemph{manipulation} et l'\myemph{évaluation}.
-				En effet, une mauvaise sélection aura pour effet un contrôle moins précis sur le processus de déformation et une difficulté supplémentaire dans la réalisation de la tâche demandée.
-
 				La sélection en environnement virtuel est une tâche élémentaire relativement peu explorée pour la biologie moléculaire en environnement virtuel.
-				Pourtant, elle est déjà relativement développée pour les \myacro*{acr-AFM} mais les contraintes techniques de cette technique sont très éloignées de nos contraintes techniques en environnement virtuel donc nous ne nous étendrons pas sur ce sujet.
-				La taille et la complexité des molécules nécessite des solutions de sélections adaptées.
-				Les logiciels les plus utilisés comme \myPyMOL et \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
+				Pourtant, elle est déjà relativement développée pour les \myacro*{acr-AFM} mais les contraintes techniques de cette technologie sont très différentes de nos contraintes en environnement virtuel; nous ne nous étendrons pas sur ce sujet.
+
+				La taille et la complexité des molécules nécessite des solutions de sélection adaptées.
+				Les logiciels les plus utilisés tel que \myPyMOL ou \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
 				Par exemple, pour sélectionner tous les atomes de type \myatom{C}, \myatom{O}, \myatom{N} ou \myatom{CA}, on utilisera les commandes suivantes dans \myPyMOL
 				\begin{mySource*}[language={}]
 pymol> select mysel, name c+o+n+ca
@@ -632,28 +629,27 @@ pymol> select mysel, name c+o+n+ca
 vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mySource*}
 				Cette méthode de sélection est seulement efficace dans le cas où la cible à sélectionner est connue à l'avance.
-				Dans le cadre de l'exploration virtuelle d'une molécule, \myacro{acr-VMD} propose par exemple une sélection par \myemph{picking}\footnote{Méthode qui consiste à trouver l'élément pointé par la souris (\myTwoD) dans l'environnement virtuel (\myThreeD).} à l'aide de la souris.
-				Cependant, ce type de méthode atteint rapidement ces limites en terme de précision dès que la molécule est de taille trop importante : la complexité de la molécule sur la dimension de la profondeur rend relativement inutilisable la méthode du \myemph{picking}.
+				Dans le cadre de l'exploration virtuelle d'une molécule en \myThreeD, \myacro{acr-VMD} propose également une sélection par \myemph{picking}\footnote{Méthode qui consiste à trouver l'élément pointé par la souris (\myTwoD) dans l'environnement virtuel (\myThreeD).} à l'aide de la souris.
+				Cependant, ce type de méthode atteint ses limites en terme de précision dès que la molécule est de taille trop importante : la perception de la profondeur n'est pas permise avec cette méthode de sélection.
 
-				Depuis déjà plusieurs années, la communauté de la réalité virtuelle s'est intéressé à cette problématique en proposant des périphériques d'interaction pour les environnement virtuels en \myThreeD.
+				Depuis déjà plusieurs années, la communauté de la réalité virtuelle s'est intéressé à cette problématique en proposant des périphériques d'interaction pour les environnements virtuels en \myThreeD.
 				\mycite[author]{Pavlovic-1996} ont développé une plate-forme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
-				Cependant, les techniques de segmentations pour une reconnaissance de gestes efficace sont encore difficiles à mettre en place, même si l'arrivée récente de la \myKinect de \myMicrosoft a aidé à cette démocratisation.
+				Cependant, les techniques de segmentations pour la reconnaissance des gestes sont encore difficiles à mettre en place, même si l'arrivée récente de la \myKinect de \myMicrosoft a amélioré cette démocratisation.
 				On trouve également les travaux de \mycite[author]{Polys-2004} qui propose une interaction avec une \myemph{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myemph{workbench}\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
-				Tous ces dispositifs sont relativement lourds à déployer et ne sont pas adaptés pour une installation sur un ordinateur de bureau.
+				Tous ces dispositifs sont relativement lourds à déployer et ne sont pas adaptés pour une utilisation sur un ordinateur de bureau.
 
-				Tous les dispositifs présentés dans ce dernier paragraphe sont testés sur des molécules ne contenant que quelques atomes avec peu d'intérêt pour les biologistes.
-				Cependant, la sélection dans des tâches plus pertinentes pour les biologistes est un sujet encore peu exploré.
+				Tous les dispositifs présentés dans le paragraphe précédent sont testés sur des molécules ne contenant que quelques atomes et ayant peu d'intérêt pour les biologistes.
+				Cependant, la sélection sur des tâches pertinentes pour les biologistes est un sujet encore peu exploré.
 				\mycite[author]{Levine-1997} proposent une plate-forme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un amarrage de molécules.
 				Cependant, l'amarrage de molécule s'effectue ici sur des corps rigides ce qui simplifie grandement la complexité de l'exploration.
 				On trouve également les travaux de \mycite[author]{Ferey-2008a} mais là encore, il s'agit de corps rigides.
-				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilise les périphériques haptiques pour aider à la localisation de ponts ioniques au sein de simulation moléculaire en temps-réel.
+				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilisent les périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel.
 				L'interface haptique utilisée permet de ressentir les forces en action dans la simulation et ainsi améliorer le processus d'exploration et de sélection.
-				D'ailleurs, c'est le dispositif d'interaction que nous avons retenu pour notre plate-forme.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
-				Dans ce chapitre, nous aborderons les tâches de recherche et de sélection dans un \myacro{acr-EVC}.
+				Dans ce chapitre, nous abordons les tâches de recherche et de sélection dans un \myacro{acr-EVC}.
 				La recherche au sein d'une simulation moléculaire est une tâche très complexe en raison du grand nombre d'atomes et de la mobilité des atomes.
-				Nous proposons d'étudier l'apport d'une configuration de travail collaboratif pour la réalisation de cette tâche.
+				Nous proposons d'étudier l'apport de la distribution des charges de travail par une configuration de travail collaboratif pour la réalisation de cette tâche.
 
 				Les objectifs de cette première partie sont multiples.
 				Tout d'abord, nous souhaitons observer les performances comparées d'un travail autonome face à une configuration de travail collaborative.
@@ -661,26 +657,26 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				De plus, nous souhaitons observer les stratégies de travail en collaboration.
 				Nous supposons que les stratégies vont varier d'un groupe à l'autre en fonction des affinités et des connaissances intrinsèques du groupe.
-				Le travail collaboratif permet de mettre en avant des stratégies de travail distinctes en fonction de la communication, des espaces de travail, de la répartition des tâches, \myetc
+				Nous verrons qu'une configuration collaborative permet de mettre en avant des stratégies de travail distinctes en fonction de la communication entre les utilisateurs, des espaces de travail des manipulateurs, de la répartition des tâches, \myetc
 
-				Ensuite, nous nous intéresserons plus précisément aux avis des utilisateurs.
-				En effet, il est nécessaire de prendre en compte l'expérience de l'utilisateur afin de proposer des solutions intuitives et confortables.
-				Ainsi, nous supposons que le travail collaboratif est plus apprécié des utilisateurs l'émulsion collective qui naît des interactions et de la communication.
+				Ensuite, nous nous intéressons plus précisément aux avis des utilisateurs.
+				Nous supposons que la configuration collaborative est plus apprécié des utilisateurs grâce à l'émulsion sociale qui naît des interactions et de la communication entre les manipulateurs.
 
-				Enfin, il est nécessaire de valider la plate-forme de manipulation proposée.
+				Enfin, nous souhaitons valider la plate-forme de manipulation proposée.
 				Pour cela, l'évaluation sera confiée aux sujets.
-				L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles.
+				En effet, il est nécessaire de prendre en compte l'expérience de l'utilisateur afin d'améliorer l'ergonomie des outils proposés.
+				L'objectif est de vérifier l'utilisabilité de la plate-forme afin d'identifier les points faibles et les contraintes.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp1-PresentationDeLExperimentation]{Présentation de l'expérimentation}
-			Afin de répondre à nos hypothèses de travail, résumées dans la \myref{sse-met-exp1-Hypotheses}, nous mettons en place une expérimentation de recherche de \myglos{glo-Residu} au sein d'une molécule pendant une simulation moléculaire en temps-réel.
+			Afin de répondre à nos hypothèses de travail, résumées dans la \myref{sse-met-exp1-Hypotheses}, nous mettons en place une expérimentation pour la recherche de \myglos{glo-Residu} au sein d'une molécule à travers une simulation en temps-réel.
 			Cette section est destinée à décrire la tâche proposée puis les spécificités du protocole expérimental.
 			\begin{mysubsection}[sse-exp1-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée consiste à trouver des \myglos*{glo-Residu} au sein d'une molécule puis à les extraire hors de la molécule.
-				Les \myglos*{glo-Residu} sont des groupes d'atomes s'associant les uns aux autres pour former une molécule.
+				Les \myglos*{glo-Residu} sont des groupes d'atomes s'associant les uns aux autres le long d'une chaîne carbonée pour former une molécule.
 				Trois molécules sont proposées dans le cadre de cette expérimentation.
 				La molécule \myTRPZIPPER sera utilisée pour la procédure d'apprentissage de la plate-forme.
-				Les molécules \myTRPCAGE et \myPrion sont utilisées pour la tâche de recherche et d'extraction de \myglos*{glo-Residu} : chaque molécules possède \mynum{5}~\myglos*{glo-Residu} à extraire.
+				Les molécules \myTRPCAGE et \myPrion sont utilisées pour la tâche de recherche et d'extraction de \myglos*{glo-Residu} : chaque molécule possède \mynum{5}~\myglos*{glo-Residu} à extraire.
 				Tous les \myglos*{glo-Residu} à rechercher sont affichés dans la \myref{tab-exp1-ListeDesResidusRecherches}.
 				Pour une description plus précises des molécules, se reporter à la \myref{sec-pro-PresentationsDesMolecules}.
 
@@ -721,7 +717,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mytable}
 
 				La \myref{fig-exp1-RepartitionDesResidusSurLesMolecules} montre la répartition des \myglos*{glo-Residu} sur les deux molécules.
-				Chaque \myglos{glo-Residu} possède ses propres spécificités (position, couleurs\myetc).
+				Chaque \myglos{glo-Residu} possède ses propres spécificités (position, couleur, \myetc).
 				Les critères de complexité, résumés pour chaque \myglos{glo-Residu} dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
 				\begin{description}
 					\item[Nombre de \myglosnl*{glo-Residu}] Le nombre total de \myglos*{glo-Residu} présents dans la molécule.
@@ -841,15 +837,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{myfigure}
 
 				La tâche proposée nécessite deux étapes.
-				Selon \mycite[author]{Bowman-1999}, on distingue tout d'abord l'étape de recherche de l'objectif.
-				Pour explorer la molécule afin d'identifier l'objectif, les sujets disposent de l'outil \mytool{grab}.
-				Lorsque l'objectif recherché est identifié, les sujets entrent dans la seconde étape : la sélection.
+				Selon \mycite[author]{Bowman-1999}, on distingue tout d'abord l'étape de recherche de la cible.
+				Pour explorer la molécule afin d'identifier cette cible, les sujets disposent de l'outil \mytool{grab}.
+				Lorsque la cible recherchée est identifiée, les sujets entrent dans la seconde étape : la sélection.
 				Pour effectuer cette étape de sélection, les sujets disposent de l'outil \mytool{tug}.
 				Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{sse-Shaddock-LesOutilsExistants}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation est basée sur le dispositif expérimental décrit dans le \myref{cha-pro-DispositifExperimental}.
-				Cependant, certains choix expérimentaux concernant cette expérimentation de recherche en simulation moléculaire sont détaillés dans les sections suivantes.
+				Cependant, certains choix expérimentaux concernant cette expérimentation sont détaillés dans les sections suivantes.
 				Les détails à propos de la méthode expérimentale, présents dans la \myref{sec-met-exp1-PremiereExperimentation}, sont résumés dans la \myref{tab-exp1-SyntheseDeLaMethodeExperimentale}.
 				\begin{mysubsubsection}[sss-exp1-Materiel]{Matériel}
 					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
@@ -859,17 +855,17 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
 					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
-					Dans ce cas, une machine de faible puissance est largement suffisante en tant que serveur.
+					Dans ce cas, une machine de faible puissance est suffisante en tant que serveur.
 					L'interface est placée devant le sujet en charge de cet outil.
 
 					Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
-					Le \myglos{glo-Residu} cible doit donc être affiché aux sujets pendant toute la durée de la taâche.
-					Afin de ne pas perturber la scène virtuelle, nous n'affichons pas le \myglos{glo-Residu} sur l'écran de vidéoprojection.
+					Le \myglos{glo-Residu} à rechercher est affiché aux sujets pendant toute la durée de la tâche.
+					Afin de ne pas perturber la scène virtuelle, le \myglos{glo-Residu} n'est pas affiché sur l'écran de vidéoprojection.
 					Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
 
-					Pour finir, cette première expérimentation est déstinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
+					Pour finir, cette première expérimentation est destinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
 					Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
-					C'est pourquoi, un micro a été installé sur la table face aux sujets afin de capter toutes les communications orales.
+					C'est pourquoi, un microphone a été installé sur la table, face aux sujets, afin de capter toutes les communications orales.
 					L'enregistrement est assuré par le logiciel \myAudacity.
 					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
 
@@ -898,14 +894,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-OutilsDeManipulation]{Outils de manipulation}
 					Durant cette tâche de recherche, nous donnons aux utilisateurs la possibilté de déformer la molécule à l'aide de l'outil \mytool{tug}.
-					Cependant, afin d'offrir un potentiel d'exploration optimal, il est nécessaire d'avoir également à sa disposition un moyen d'orienter la scène.
+					Cependant, afin de fournir un moyen d'explorer la molécule sous tous ses angles, il est nécessaire d'avoir également à sa disposition un moyen d'orienter la scène.
 					Le cas échéant, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé qu'après une longue et fastidieuse déformation.
 					C'est pourquoi, nous mettons un outil d'orientation de la molécule à disposition des sujets.
 
-					Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de déplacer et de l'orienter.
+					Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de la déplacer et de l'orienter.
 					Aucune modification par rapport à l'outil déjà proposé par \myacro{acr-VMD} n'a été ajoutée.
 					Cependant, l'outil n'est pas partagé entre les utilisateurs.
-					En effet, il est demandé aux sujets dès le début de l'expérimentation, de choisir celui qui sera en charge de cet outil de manipulation et ceci tout au long de l'expérimentation.
+					En effet, dès le début de l'expérimentation, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation et ceci, tout au long de l'expérimentation.
 					Ce choix a été fait pour limiter les conflits entre les deux utilisateurs pendant la phase de recherche et de sélection.
 					Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
 				\end{mysubsubsection}
