@@ -1387,17 +1387,17 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-DeformationCollaborativeDeMolecule]{Déformation collaborative de molécule}
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
-			Cette première expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
-			Afin de compléter notre étude du travail collaboratif dans un environnement virtuel complexe, nous souhaitons à présent nous intéresser à la \myacro{acr-PCV} suivante : la \myemph{déformation}.
-			En effet, on trouve déjà plusieurs environnements virtuels permettant de manipuler des molécules rigides afin d'effectuer de l'\myglos{glo-AmarrageMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
-			Cependant, l'amarrage moléculaire s'effectue de manière optimale lorsqu'on a la possibilité de déformer les molécules.
-			Ceci est rendu possible par l'avénement des simulations interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
-			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver puis ensuite avec l'utilisation d'interface haptique pour la manipulation et la déformation \mycite{Delalande-2010}.
+			La précédente expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
+			Afin de compléter notre étude, nous souhaitons à présent nous intéresser à la \myemph{déformation}.
+			En effet, on trouve déjà des environnements virtuels permettant de manipuler des molécules rigides pour effectuer un \myglos{glo-AmarrageMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
+			Cependant, un myglos{glo-AmarrageMoleculaire} nécessite de pouvoir déformer les molécules.
+			Ceci est rendu possible par l'avénement des simulations moléculaires interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
+			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver pour permettre une simulation moléculaire en temps-réel basée sur différents moteurs de simulation (\myacro{acr-NAMD} ou \myGromacs).
+			Puis, \mycite[author]{Delalande-2010} améliorent la manipulation et la déformation interactive par l'utilisation d'une interface haptique.
 
-			Dans ce chapitre, nous allons étudier le processus de déformation d'une molécule.
-			Nous souhaitons vérifier la pertinence de la configuration de travail collaborative pour appréhender la déformation d'une molécule.
+			Dans ce chapitre, nous souhaitons étudier la pertinence d'une configuration collaborative pour appréhender la déformation d'une molécule.
 			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
-			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage de la plate-forme, des outils ou encore de la tâche à réaliser.
+			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant l'utilisation des outils, de la plate-forme ou encore de la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
@@ -1405,49 +1405,46 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\mycite[author]{Shen-2006} proposent déjà une solution pour déformer des objets non-rigides à l'aide de retour haptique.
 				Les objets concernés sont de faible complexité, comme des sphères par exemple.
 				Puis, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-				Là encore, les éléments déformables sont de faibles complexité et n'ont quasiment pas d'application utile et concrète dans le monde réel.
+				Là encore, les éléments déformables sont de faible complexité et n'ont quasiment pas d'application utile et concrète dans le monde réel.
 
 				Cependant, afin d'effectuer des déformations plus complexes, certains se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
 				\mycite[author]{Sumengen-2007} proposent une plate-forme permettant la déformation de maillages destinés à des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}.
-				Un des objectifs de cette plate-forme est de répondre aux contraintes de latence liées au réseau.
 				Pour cela, il propose une architecture de type pair-à-pair basée sur le protocole \myacro{acr-UDP}.
-				Aucune des données transmises n'est compressée mais l'expérimentation a lieu sur un réseau interne avec une bande passante importante.
-				De son côté, \mycite[author]{Tang-2010a} propose une plate-forme client/serveur de déformation collaborative de maillages.
-				Pour répondre à la problématique de la latence, il encode les paramètres du maillage pour accélérer la transmission.
-				De plus, la plate-forme est capable de reconstruire partiellement le maillage lorsque des données ont été transmises de manière incomplète.
-				\mycite[author]{Muller-2006} développe le logiciel \myClayWorks, repris plus tard par \mycite[author]{Gorlatch-2009}, permettant la sculpture virtuelle sur glaise.
-				Dans cette étude, les problèmatiques d'accès exclusif à certains objets ou à certaines parties d'un objet afin de faciliter la coordination des différents acteurs sont brièvement évoquées.
+				De son côté, \mycite[author]{Tang-2010a} proposent une plate-forme client/serveur de déformation collaborative de maillages.
+				Ces deux plate-formes proposent chacun une plate-forme de déformation collaborative mais se focalisent principalement sur les contraintes techniques d'une telle plate-forme.
+				\mycite[author]{Muller-2006} développent le logiciel \myClayWorks, complété plus tard par \mycite[author]{Gorlatch-2009}, permettant la sculpture virtuelle sur glaise.
+				Dans cette étude, les problèmatiques d'accès exclusif à certains objets ou à certaines parties d'un objet sont brièvement évoquées afin de faciliter la coordination des différents acteurs.
 
-				Cependant, dans ces travaux, la collaboration se résume à déformer localement dans un environnement partagé puis mettre à jour en temps-réel le rendu visuel de tous les participants en tenant compte des actions de chacun.
-				La collaboration n'est pas mise en avant : c'est surtout un prétexte pour la validation d'une plate-forme distribuée adaptée pour le retour haptique.
-				En effet, tous les \myacro*{acr-EVC} proposés sont consacrés à la collaboration distante (bien que les travaux de \mycite[author]{Sumengen-2007} n'aient été testés que sur une réseau interne) et la problématique d'un échange de données en temps-réel est l'une des principales problématiques traitée.
+				Tous les travaux présentés ci-dessus proposent une déformation collaborative distante où chaque utilisateur effectue une déformation localement.
+				Les contraintes liées à la collaboration entre les acteurs n'est pas présentée.
+				En effet, tous les \myacro*{acr-EVC} proposés sont consacrés aux problématiques techniques de la collaboration distante.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
-				Ce chapitre sera l'occasion d'aborder les problématiques de la déformation avec une configuration collaborative.
-				La déformation est une tâche nécessitant plus de précision que la recherche.
+				Ce chapitre sera l'occasion d'aborder les problématiques de la déformation lors d'une configuration collaborative.
+				La déformation est une tâche nécessitant plus de précision que la recherche car les cibles doivent être déplacées à un endroit défini.
 				Nous souhaitons ainsi comparer les performances sur une tâche complexe nécessitant de la coordination.
 
-				La comparaison opposera des \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel} à des \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel}.
+				L'étude met en jeu un nombre de ressources fixe pour la déformation et compare une distribution des ressources (configuration collaborative) à une mutualisation des ressources (configuration individuelle).
 				En effet, la première étude nous a montré les contraintes d'une configuration collaborative en terme de temps de communication.
 				Paradoxalement, les utilisateurs qui manipulent seuls sont confrontés à une charge cognitive de travail importante.
 				En fournissant les mêmes ressources (deux outils de déformation), nous souhaitons comparer la capacité de coordination d'un \myglos{glo-Binome} aux capacités cognitives de traitement d'un \myglos{glo-Monome} face à une importante charge de travail.
-				Nous supposons que les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} soient plus performants que les \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
+				Nous supposons que les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} sont plus performants que les \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
 
-				Dans un second temps, nous souhaitons tisser un lien entre la complexité de la tâche et le nombre de sujets concernant les performances finales.
-				En effet, les tâches complexes fournissent une charge cognitive de travail très importante; plus cette charge de travail est importante et plus les \myglos*{glo-Monome} risquent de ne pas être capables d'appréhender cette charge.
-				Notre hypothèse estime que les tâches les plus complexes seront quasiment inaccessibles aux \myglos*{glo-Monome}.
+				Dans un second temps, nous souhaitons définir un lien entre la complexité de la tâche et le nombre de sujets impliqués.
+				En effet, les tâches complexes fournissent une charge cognitive de travail très importante; plus cette charge de travail est importante et plus les \myglos*{glo-Monome} devraient éprouver des difficultés à traiter l'ensemble des informations.
+				Nous émettons l'hypothèse que les tâches les plus complexes seront plus difficiles à réaliser par les \myglos*{glo-Monome} que par les \myglos*{glo-Binome}.
 
 				Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
 				Nous comparons les performances des \myglos*{glo-Monome} et des \myglos*{glo-Binome} concernant la réalisation d'une même tâche répétée plusieurs fois.
-				Nous supposons que la motivation et l'échange qui naît d'un travail en groupe va permettre aux \myglos*{glo-Binome} d'appréhender plus rapidement la plate-forme, les outils ou encore la tâche.
+				Nous supposons que la motivation et l'échange qui a lieu lors d'un travail collaboratif va permettre aux \myglos*{glo-Binome} d'appréhender plus rapidement la plate-forme, les outils ou encore la tâche.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp2-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
 				L'objectif est de modifier la conformation initiale d'une molécule pour atteindre une conformation finale.
-				En effet, la recherche d'un état stable est exactement ce qu'une tâche de \myglos{glo-AmarrageMoleculaire} cherche à réaliser.
-				De plus, la déformation est une tâche permettant de stimuler les actions de coordination les outils de déformation ne permettant pas certaines manipulations.
+				En effet, la recherche d'un état stable est exactement ce qu'une tâche d'\myglos{glo-AmarrageMoleculaire} cherche à réaliser.
+				De plus, la déformation est une tâche permettant de stimuler les actions coordonnées pour une collaboration étroitement couplée.
 
 				Trois molécules sont utilisées dans le cadre de cette expérimentation.
 				\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
@@ -1455,11 +1452,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 				Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
-				Le score affiché est le \myacro{acr-RMSD} qui permet de mesurer la différence entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes \myref*{equ-RMSD}.
+				Le score affiché est le \myacro{acr-RMSD} qui permet de mesurer la différence de forme entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes.
+				L'\myref{equ-RMSD} est utilisée pour le calcul de cette différence.
 				\begin{equation}\label{equ-RMSD}
 					\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
 				\end{equation}
-				où $N$~est le nombre total d'atomes et~$c_i$, $m_i$~sont respectivement l'atome~$i$ de la molécule à comparer $\mathbf{c}$ et de la molécule modèle $\mathbf{m}$.
+				où $N$~est le nombre total d'atomes et~$c_i$, $m_i$~sont respectivement les atomes~$i$ de la molécule à comparer $\mathbf{c}$ et de la molécule modèle $\mathbf{m}$.
 
 				\begin{myfigure}
 					\psset{unit=0.08\textwidth}
@@ -1475,7 +1473,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\mycaption[fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible]{Affichage de la molécule à déformer et de la molécule cible}
 				\end{myfigure}
 				\begin{mysubsubsection}[sss-exp2-DescriptionDesScenarios]{Description des scénarios}
-					Quatre scénarios sont proposés avec deux molécules expérimentées dans deux niveaux de manipulation différents.
+					Quatre scénarios sont proposés sur deux molécules avec deux niveaux de manipulation différents.
 					Les deux niveaux différents de manipulation sont :
 					\begin{itemize}
 						\item inter-moléculaire (à l'échelle d'un \myglos{glo-Residu}) pour un niveau de déformation avec une granularité élevée;
@@ -1491,7 +1489,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{description}
 					\begin{myparagraph}[par-exp2-Scenario1a]{Scénario~\myscenario{1a}}
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
-						Un \myglos{glo-Residu} à l'extrémité -- la molécule formant une chaîne -- est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter d'éventuelles dérives hors du champ visuel.
+						Un \myglos{glo-Residu} à l'extrémité\footnote{La molécule forme une chaîne carbonée; il s'agit ici d'une des extrémités de cette chaîne.} est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter d'éventuelles dérives hors du champ visuel.
 						L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement ce qui en fait une molécule assez malléable avec un champ de force moyennement contraint.
 						La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
 						La difficulté de ce scénario réside dans la nécessité de maintenir les \myglos*{glo-Residu} déjà placés pendant que le reste de la molécule est déformée.
@@ -1539,25 +1537,29 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
-				L'expérimentation, basée sur la dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
+				L'expérimentation, basée sur le dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
 				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-SecondeExperimentation}.
 				\begin{mysubsubsection}[sss-exp2-Materiel]{Matériel}
 					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plate-forme de base \myref*{sec-pro-MaterielExperimental}.
-					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil de manipulation.
+					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil d'orientation de la molécule.
 					Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
 					Cependant, la forme sous laquelle il est présenté n'est pas idéale.
-					L'outil de manipulation \mytool{grab} a posé quelques problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier cet outil.
+					L'outil d'orientation \mytool{grab} a posé des problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier l'outil.
 
-					Après quelques échanges avec un bio-informaticien, il est apparu qu'une souris~\myThreeD serait un outil plus approprié qu'une interface haptique.
-					En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes ce qui amène à des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
-					La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil de manipulation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
+					Après une discussion avec un bio-informaticien, il est apparu qu'une souris~\myThreeD est un outil plus approprié qu'une interface haptique pour l'orientation de la scène.
+					En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes de l'objet.
+					Cette contrainte amène des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
+					La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil d'orientation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
 					Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
-					Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil afin de stimuler les interactions.
+					Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil.
+					L'objectif est de stimuler les interactions.
 
-					En ce qui concerne l'utilisation des outils de déformation, chaque sujet d'un \myglos{glo-Binome} possède à sa disposition un outil de déformation.
+					En ce qui concerne l'utilisation des outils de déformation en \myglos{glo-Binome}, chaque sujet possède à sa disposition un outil de déformation.
+					La répartition de l'outil d'orientation est laissé à la responsabilités des deux membres du \myglos{glo-Binome}.
 					Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
-					Dans ce cas, il est forcé de lâcher un des deux outils afin d'utiliser la souris~\myThreeD.
-					Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toute sélection effectuée avec tous les outils de déformation.
+					Il peut également utiliser l'outil d'orientation mais dans ce cas, il est forcé de lâcher un des deux outils de déformation.
+					Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toutes les sélections effectuées avec un outil de déformation.
+					De cette façon, les membres du \myglos{glo-Binome} ne peuvent pas utiliser l'outil d'orientation en même temps que les outils de déformations (contrainte physique inhérente au \myglos*{glo-Monome}).
 
 					Les \myref{fig-exp2-SchemaDuDispositifExperimental} et \myref{fig-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
 
@@ -1573,11 +1575,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-Visualisation]{Visualisation}
 					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
 					Ces molécules sont représentées avec les rendus graphiques de base (\myCPK et \myNewRibbon).
-					Cependant, la tâche nécessite d'avoir à disposition la molécule dans son état stable.
-					Ces molécules ne peuvent pas être représentées avec tous leurs atomes pour deux raisons.
+					Cependant, la tâche nécessite d'afficher la molécule dans son état stable qui est l'objectif que doivent atteindre les sujets.
+					Cette molécule ne peut pas être représentée avec tous les atomes pour deux raisons.
 					Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
-					De plus, la précision de la déformation ne nécessite pas la présence des atomes.
-					C'est pourquoi, la molécule dans son état stable sera affichée seulement avec un rendu \myNewRibbon, en transparence pour rester discret.
+					De plus, la précision nécessaire pour les déformations demandées ne nécessite pas un affinement au niveau atomique.
+					C'est pourquoi, la molécule dans son état stable sera discrètement affichée avec un rendu \myNewRibbon en transparence.
 
 					Des images représentants les différents scénarios dans leurs états initiaux sont présentées.
 					Les scénarios inter-moléculaires \myscenario{1a} et \myscenario{1b} sont respectivement représentés sur la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B}.
@@ -1602,18 +1604,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-OutilsDeManipulation]{Outils de manipulation}
 					Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
-					Grâce au choix du matériel capable de différencier aisément les opérations de translation et les opérations de rotation, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
-					En effet, la molécule n'a pas vraiment besoin d'être déplacée à l'écran et c'est surtout la possibilité d'orienter la molécule qui est nécessaire aux sujets.
-					Ceci permet également d'éviter des molécules qui sortent de l'espace visuel des sujets (l'écran) à cause d'une mauvaise manipulation.
-					De plus, ce choix permet d'enlever une part de la charge cognitive des sujets.
+					Grâce au choix du matériel qui permet de différencier aisément les translations et les rotations, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
+					En effet, la molécule n'a pas besoin d'être déplacée à l'écran et c'est surtout l'orientation la molécule qui est nécessaire aux sujets.
+					Ceci permet également d'éviter que les molécules ne sortent de l'espace visuel des sujets (scène vidéoprojetée) à cause d'une mauvaise manipulation.
+					De plus, ce choix permet d'enlever une part de la charge cognitive aux manipulateurs.
 
 					En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
 					La tâche consiste à reconstituer une molécule dans son état d'équilibre.
-					Pour assister les sujets, nous avons déjà vu qu'un rendu visuel en transparence de la molécule dans son état stable est affichée à l'écran.
+					Pour aider les sujets dans cette tâche, nous avons affiché un rendu visuel en transparence de la molécule dans son état stable.
 					Pour augmenter l'aide visuelle apportée, nous allons également indiquer l'emplacement final d'un \myglos{glo-Residu} sélectionné.
 					En effet, dès qu'un sujet sélectionne un \myglos{glo-Residu}, ce \myglos{glo-Residu} est mis en surbrillance.
 					Le \myglos{glo-Residu} correspondant sur la molécule stable est également mis en surbrillance comme expliqué sur la \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
-					Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK avec des atomes grossis et coloré de la couleur du curseur du sujet concerné.
+					Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK coloré de la couleur du curseur du sujet concerné.
 
 					\begin{myfigure}
 						\psset{unit=0.08\textwidth}
