@@ -178,7 +178,7 @@ $(IMG)/%.eps: $(IMG)/%.png
 $(IMG)/%.eps: $(IMG)/%.pdf
 	touch $@
 	pdf2ps $< `echo $< | sed 's/\.pdf/\.ps/g'`
-	export pdf_num=`pdf2dsc $< /dev/stdout | grep "%%Pages" | sed 's/^[^0-9]*\([0-9]*\)[^0-9]*$$/\1/g'`; for num in `seq 1 $$pdf_num`; do psselect -p$$num `echo $< | sed 's/\.pdf/\.ps/g'` `echo $< | sed "s/\.pdf/-"$$num"\.ps/g"`; ps2eps `echo $< | sed "s/\.pdf/-"$$num"\.ps/g"` `echo $< | sed "s/\.pdf/-"$$num"\.eps/g"`done
+	export pdf_num=`pdf2dsc $< /dev/stdout | grep "%%Pages" | sed 's/^[^0-9]*\([0-9]*\)[^0-9]*$$/\1/g'`; for num in `seq 1 $$pdf_num`; do psselect -p$$num `echo $< | sed 's/\.pdf/\.ps/g'` `echo $< | sed "s/\.pdf/-"$$num"\.ps/g"`; done
 
 # Generate CSV files from R files
 $(FILES)/%.csv: $(FILES)/%.r $(FILES)/Rinit $(DATABASE)
