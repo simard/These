@@ -258,6 +258,27 @@
 	\end{titlepage}
 	\clearpage
 }
+\def\@makechapterhead#1{%
+	\addtocontents{tcs}{\protect\addvspace{10\p@}}%
+	\addtocontents{tdo}{\protect\addvspace{10\p@}}%
+	\vspace*{50\p@}%
+	{\parindent \z@ \raggedleft \normalfont%
+	\ifnum \c@secnumdepth >\m@ne%
+	\psset{unit=1cm}%
+	\begin{pspicture}(-6,-1)(1,1.5)%
+		\psframe[linewidth=0,linecolor=myred,fillstyle=solid,fillcolor=myred](-5,-1)(0,0)%
+		\psframe[linewidth=0,framearc=.25,linecolor=myred,fillstyle=solid,fillcolor=myred](-1,-1)(1,1)%
+		\psframe[linewidth=0,framearc=.25,linecolor=white,fillstyle=solid,fillcolor=white](-6,-0.95)(-1,1)%
+		\uput[45](-5,-1){\large\bfseries\sffamily\textcolor{myred}{\@chapapp}}%
+		\rput(0,0){\psscaleboxto(1.5,1.5){\white\selectfont\bfseries\sffamily\thechapter}}%
+	\end{pspicture}%
+	\par\nobreak%
+	\fi%
+	\interlinepenalty\@M%
+	\Huge\bfseries\sffamily #1\par\nobreak%
+	\vskip 40\p@%
+	}%
+}
 
 %% Redéfinition de la mise en page des paragraphes
 \setlength{\parindent}{0cm}
