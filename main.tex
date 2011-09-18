@@ -3576,7 +3576,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			La deuxième partie est exclusivement réservée aux \myglos*{glo-Binome} et n'était pas proposée au \myglos*{glo-Monome}.
 			Ce questionnaire contient \mynum[pages]{5} (\mynum[pages]{3} pour les \myglos*{glo-Monome}).
 			Les questions sont évaluées selon une échelle de \mycite[author]{Likert-1932} à cinq niveaux.
-			\myinsertpdf[pdfpages={1-5}]{exp1-questionnary}
+			\myinsertpdf[pdfpages={1-5}]{exp1-questionnaire}
 		\end{mysection}
 		\begin{mysection}[sec-Questionnaires-SecondeExperimentation]{Seconde expérimentation}
 			Le questionnaire proposé durant la seconde expérimentation est décliné en deux versions : une version pour les \myglos*{glo-Monome} et une version pour les \myglos*{glo-Binome}.
@@ -3615,32 +3615,36 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-Questionnaires-QuatriemeExperimentation]{Quatrième expérimentation}
-			Le questionnaire proposé durant la quatrième et dernière expérimentation est une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
-			Il est soumis sous un format papier et chaque utilisateur est invité à y répondre seul, sans l'aide de ces partenaires.
+			Le questionnaire proposé durant la quatrième et dernière expérimentation contient une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
+			Une explication détaillé de ce questionnaire se trouve dans la \myref{sse-Questionnaires-QuatriemeExperimentation-LeQuestionnaireSUS}.
+			Le questionnaire est soumis sous un format papier et chaque utilisateur est invité à y répondre seul, sans l'aide de ces partenaires.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
+			\myinsertpdf[pdfpages={1-5}]{exp4-questionnaire}
 			\begin{mysubsection}[sse-Questionnaires-QuatriemeExperimentation-LeQuestionnaireSUS]{Le questionnaire \myacronl-{acr-SUS}}
-				Le questionnaire \myacro{acr-SUS} est constitué de \mynum{10}~questions.
-				Chaque question donne lieu à une réponse sur une échelle de \mycite[author]{Likert-1932} à cinq niveaux allant de \og Fortement en désaccord (score de \mynum{1}) \fg à \og Fortement en accord (score de \mynum{5}) \fg.
-				Les questions sont les suivantes :
-				\begin{enumerate}[label={Q\arabic*.},ref={Q\arabic*}]
-					\item Je pense que j'utiliserai ce système fréquemment
-					\item J'ai trouvé ce système inutilement complexe
-					\item J'ai pensé que ce système était facile à utiliser
-					\item Je pense qu'il me faudrait l'aide d'un technicien pour être capable d'utiliser ce système
-					\item J'ai trouvé que les différentes fonctions de la plate-forme étaient bien intégrées
-					\item J'ai trouvé qu'il y avait trop d'incohérences dans cette plate-forme
-					\item Je pense que la plupart des gens apprendraient rapidement à utiliser cette plate-forme
-					\item J'ai trouvé le système très lourd à utiliser
-					\item Je me sentais très confiant en utilisant cette plate-forme
-					\item J'aurai besoin d'apprendre beaucoup de choses avant de pouvoir utiliser cette plate-forme
-				\end{enumerate}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-Questionnaires-QuatriemeExperimentation-EvaluationDuScoreSUS]{Évaluation du score \myacronl-{acr-SUS}}
-				Pour évaluer le score \myacro-{acr-SUS} à partir du questionnaire, il faut des score entre \mynum{0} et \mynum{4} pour chacune des questions.
-				Concernant les questions \mynum{1}, \mynum{3}, \mynum{5}, \mynum{7} et \mynum{9}, on prend le score compris en \mynum{1} et \mynum{5} auquel on enlève \mynum{1}.
-				Concernant les questions \mynum{2}, \mynum{4}, \mynum{6}, \mynum{8} et \mynum{10}, on soustrait de \mynum{5} le score compris en \mynum{1} et \mynum{5}.
-				Pour terminer, on multiplie par \mynum{2.5} la somme de l'ensemble des scores.
-				Le score final obtenu est une note comprise entre \mynum{0} et \mynum{100}.
+				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-LesQuestions]{Les questions}
+					Le questionnaire \myacro{acr-SUS} est constitué de \mynum{10}~questions.
+					Chaque question donne lieu à une réponse sur une échelle de \mycite[author]{Likert-1932} à cinq niveaux allant de \og Fortement en désaccord (score de \mynum{1}) \fg à \og Fortement en accord (score de \mynum{5}) \fg.
+					Les questions sont les suivantes :
+					\begin{enumerate}[label={Q\arabic*.},ref={Q\arabic*}]
+						\item Je pense que j'utiliserai ce système fréquemment
+						\item J'ai trouvé ce système inutilement complexe
+						\item J'ai pensé que ce système était facile à utiliser
+						\item Je pense qu'il me faudrait l'aide d'un technicien pour être capable d'utiliser ce système
+						\item J'ai trouvé que les différentes fonctions de la plate-forme étaient bien intégrées
+						\item J'ai trouvé qu'il y avait trop d'incohérences dans cette plate-forme
+						\item Je pense que la plupart des gens apprendraient rapidement à utiliser cette plate-forme
+						\item J'ai trouvé le système très lourd à utiliser
+						\item Je me sentais très confiant en utilisant cette plate-forme
+						\item J'aurai besoin d'apprendre beaucoup de choses avant de pouvoir utiliser cette plate-forme
+					\end{enumerate}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-EvaluationDuScoreSUS]{Évaluation du score \myacronl-{acr-SUS}}
+					Pour évaluer le score \myacro-{acr-SUS} à partir du questionnaire, il faut des score entre \mynum{0} et \mynum{4} pour chacune des questions.
+					Concernant les questions \mynum{1}, \mynum{3}, \mynum{5}, \mynum{7} et \mynum{9}, on prend le score compris en \mynum{1} et \mynum{5} auquel on enlève \mynum{1}.
+					Concernant les questions \mynum{2}, \mynum{4}, \mynum{6}, \mynum{8} et \mynum{10}, on soustrait de \mynum{5} le score compris en \mynum{1} et \mynum{5}.
+					Pour terminer, on multiplie par \mynum{2.5} la somme de l'ensemble des scores.
+					Le score final obtenu est une note comprise entre \mynum{0} et \mynum{100}.
+				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-ExempleDeScoreSUS]{Exemple de score \myacronl-{acr-SUS}}
 					Imaginons un questionnaire rempli de la façon suivante :
 					\newcommand{\mySUSplus}[1]{%
