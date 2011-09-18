@@ -2122,124 +2122,117 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-LaDynamiqueDeGroupe]{La dynamique de groupe}
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
-			Les différentes \myacro*{acr-PCV} ont à présent été étudiées dans les précédents chapitres.
-			Cependant, l'étude du travail collaboratif ne peut être restreinte à l'étude des \myglos*{glo-Binome}.
-			En effet, \mycite[author]{Roethlisberger-1939} sont dans les premiers à mettre en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
-			La dynamique de groupe possède un fonctionnement plus complexe qu'un simple \myglos{glo-Binome}.
+			À présent, les différentes \myacro*{acr-PCV} ont été étudiées dans un contexte de collaboration étroitement couplée à travers les deux précédents chapitres.
+			Cependant, l'observation du travail collaboratif ne peut être restreint à l'étude des \myglos*{glo-Binome}.
+			En effet, \mycite[author]{Roethlisberger-1939} a mis en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
+			Ces dynamiques de groupe montre une collaboration très différente de que ce que nous avons pu observer chez les \myglos*{glo-Binome}.
 
-			Ce chapitre constitue notre première étude sur le travail collaboratif concernant des groupes d'utilisateurs\footnote{On considère qu'un groupe est constitué au minimum de trois personnes \mycite{Bales-1950}.}.
-			Au regard des travaux existants, une dynamique de groupe va émerger.
-			Cependant, nous souhaitons étudier cette dynamique de groupe au sein d'une collaboration synchrone avec des scénarios à fort couplage.
-			Parmi les deux études précédentes, les scénarios de déformation ont permis d'identifier les tâches complexes et étroitement couplées.
-			Nous nous plaçons donc à nouveau dans un contexte de déformation moléculaire.
-			Nous souhaitons tester la mise en place de périodes de \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot \myemph{remue-méninges} car il est plus utilisé dans la littérature.} afin de catalyser le potentiel du groupe.
-			L'étude portera également sur l'identification des rôles de chaque utilisateur au sein du groupe.
+			Ce chapitre constitue notre première étude sur le travail collaboratif avec des groupes d'utilisateurs\footnote{\mycite[author]{Bales-1950} considère qu'un groupe est constitué au minimum de trois personnes.}.
+			Au regard des travaux existants, une dynamique de groupe devrait émerger.
+			Cependant, notre contexte de travail est différent des précédents travaux sur le sujet : nous nous intéressons aux collaborations étroitement couplées.
+			C'est dans ce contexte que nous allons observer les dynamiques de groupe qui émergent.
+			Nous nous plaçons de nouveau dans un contexte de déformation moléculaire qui fournit un environnement d'étude propice aux collaboratio étroitement couplée.
+			De plus, nous souhaitons tester l'utilité du \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot \myemph{remue-méninges} car il est plus utilisé dans la littérature.} qui d'après \mycite[author]{Osborn-1963}, améliore les performances de groupe.
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
-				Le travail de groupe a été très largement étudié à la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle dans le domaine de la psychologie sociale.
-				L'ouvrage de \mycite[author]{Mugny-1995} abordent les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
-				Il aborde en particulier les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne qui constitue une des premières études sur la dynamique de groupe.
+				L'ouvrage de \mycite[author]{Mugny-1995} aborde les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
+				Les premières études sur la dynamique de groupe date de la révolution industrielle entre la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle avec en particulier, les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne.
 				Cette étude, destinée à étudier l'effet des conditions de travail (température, temps de pause, \myetc), a été effectuée entre les années 1927 et 1932.
-				Cependant, l'étude a permis d'observer une amélioration de la productivité des ouvriers, quelque soit les conditions de travail.
+				Cependant, l'étude a montré que l'amélioration de la productivité des ouvriers n'était pas liée aux conditions de travail.
 				\mycite[author]{Roethlisberger-1939} explique cette amélioration par la stimulation sociale qu'exerce chaque individu sur ses partenaires : c'est la \myglos{glo-MotivationSociale}.
-				Les résultats de cette étude concernant les groupes de taille importante sont actuellement utilisés dans les techniques modernes de \myemph{management} \mycite{Wood-2004}.
+				Les résultats de cette étude sur les groupes de taille importante sont actuellement utilisés dans les techniques modernes de \myemph{management} \mycite{Wood-2004,Bruce-2006}.
 
 				Cependant, en parallèle à cette théorie de la dynamique des groupes basée sur la \myglos{glo-MotivationSociale}, \mycite[author]{Ringelmann-1913} met en évidence une théorie radicalement différente.
 				En effet, à travers un exercice de traction sur une corde, il montre que la somme des efforts individuels est plus importante que l'effort combiné du groupe, chaque sujet se fiant à son voisin pour réaliser la tâche.
-				Ce phénomène, appelé \myglos{glo-ParesseSociale}, est exactement le contraire des résultats obtenus par \mycite[author]{Roethlisberger-1939} sur la \myglos{glo-MotivationSociale}.
+				Ce phénomène, appelé \myglos{glo-ParesseSociale}, s'oppose aux résultats obtenus par \mycite[author]{Roethlisberger-1939} sur la \myglos{glo-MotivationSociale}.
 				Une étude plus poussée de ce phénomène effectuée par \mycite[author]{Latane-1979} confirme les résultats obtenus sur la \myglos{glo-ParesseSociale}.
-				Cependant, l'analyse de \mycite[author]{Latane-1979} conclue sur la nécessité de trouver une solution pour limiter ce problème et propose de renforcer la responsabilité individuelle plutôt que de la diffuser sur le groupe en tant qu'entité propre.
-				Une définition précise des rôles de chacun durant la collaboration permettra de responsabiliser chaque sujet tout en conservant les effets bénéfiques de la \myglos{glo-MotivationSociale}.
-				De cette façon, chaque sujet ne peut pas se reposer sur ses partenaires pour réaliser sa tâche et se sent responsable au sein du groupe.
+				Cependant, \mycite[author]{Latane-1979} propose de limiter ce problème en renforçant la responsabilité individuelle plutôt que de la diffuser sur le groupe.
+				La responsabilisation par la définition de rôles distincts permet de ne pas se décharger des actions à réaliser sur ses partenaires tout en conservant les effets bénéfiques de la \myglos{glo-MotivationSociale}.
 
-				La psychologie sociale de la dynamique de groupe s'est également intéressée aux groupes de petites taille appelés également groupes restreints.
-				C'est \mycite[author]{Bales-1950} qui proposent les premières analyses sur ces groupes de trois à une vingtaine de partenaires.
-				Un des résultats intéressants montre que quelque soit la taille du groupe, le groupe sera dominé par un voire deux membres du groupe.
-				Cependant, \mycite[author]{Zajonc-1965} montre que les groupes seront performants sur des tâches simples mais peu performants sur des tâches complexes.
-				En effet, les membres du groupe effectuent avec facilité une tâche simple sans crainte de l'évaluation de leurs partenaires.
-				Sur une tâche de nature complexe, l'évaluation effrait et fait baisser les performances du groupe.
+				Une part de ces études sur la dynamique de groupe est consacrée aux groupes de petites tailles appelés également groupes restreints.
+				\mycite[author]{Bales-1950} proposent les premières analyses sur ces groupes de trois à une vingtaine de partenaires.
+				Les résultats montrent que quelque soit la taille du groupe, le groupe sera dominé par un voire deux membres du groupe.
+				Cependant, \mycite[author]{Zajonc-1965} montre que les groupes sont performants sur des tâches simples mais peu performants sur des tâches complexes.
+				En effet, les tâches simples sont réalisées sans crainte du jugement ou de l'évaluation par les partenaires.
+				Sur une tâche de nature complexe, l'évaluation et le jugement par les partenaires est un frein et a pour conséquences de faire baisser les performances du groupe.
+
+				Au sein des groupes restreints, \mycite[author]{Osborn-1963} propose d'améliorer les performances dans les groupes restreints par l'introduction de la notion de \mybrainstorming.
+				Pourtant, \mycite[author]{Diehl-1987} montre que le \mybrainstorming apporte moins de bénéfices en groupe que lorsqu'il est effectué individuellement.
+				\mycite[author]{Poole-2005} expliquent que les groupes focalisent en priorité sur les informations qu'ils ont en commun.
+				La peur de l'évaluation négative va empêcher l'émergence de solutions originales.
+				Cependant, \mycite[author]{Tuckman-1965} considère que le \mybrainstorming permet tout de même de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
 
 				Jusqu'à présent, les études concernant la dynamique des groupes et plus particulièrement celle concernant les groupes restreints sont nombreuses.
-				Cependant, chaque étude proposée concerne des tâches nécessitant seulement une collaboration faiblement couplée.
-				Dans ce chapitre, nous étudions la dynamique des groupes au sein d'un scénario nécessitant une collaboration fortement couplée afin d'observer les différences avec les configurations précédemment étudiées dans la littérature.
+				Cependant, chaque étude proposée concerne des tâches autour d'une collaboration faiblement couplée.
+				Dans ce chapitre, nous étudions la dynamique des groupes autour d'une collaboration fortement couplée afin d'observer les différences avec les configurations précédemment étudiées dans la littérature.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-Objectifs]{Objectifs}
-				Dans cette troisième étude, nous souhaitons étudier le travail collaboratif dans le cadre de groupes restreints.
-				Jusqu'à présent, nous avons seulement été confrontés à des \myglos*{glo-Binome}.
+				Dans cette troisième étude, nous souhaitons étudier le travail collaboratif pour les groupes restreints.
+				Jusqu'à présent, nous avons été confrontés à des \myglos*{glo-Binome}.
 				La littérature montre des stratégies propres aux groupes restreints et distinctes de celles adoptées par les \myglos*{glo-Binome}.
-				Nous souhaitons étudier cette dynamique de groupe dans un contexte de collaboration étroitement couplée.
+				Nous souhaitons étudier cette dynamique de groupe pour la collaboration étroitement couplée.
 
-				Étant donné les résultats obtenus dans nos précédentes études, nous devrions observer une amélioration des performances pour les groupes (quatre utilisateurs) par rapport aux \myglos*{glo-Binome} sur un scénario nécessitant une collaboration étroitement couplée.
+				Étant donné les résultats obtenus dans nos précédentes études, nous souhaitons observer une amélioration des performances en fonction du nombre d'utilisateurs pour un scénario de collaboration étroitement couplée.
 				Pourtant, les conclusions de \mycite[author]{Zajonc-1965} montrent que les groupes sont moins performants lorsqu'ils sont confrontés à une tâche complexe.
-				Cependant, nous émettons l'hypothèse que seuls des groupes seront capables d'achever la tâche demandée.
-				Étant donné la coordination nécessaire demandée par la tâche, nous pensons que les conclusions obtenues seront différentes de celles obtenues par \mycite[author]{Zajonc-1965} dans le cadre d'une tâche à faible couplage.
-				En effet, nous avons vu précédemment que la configuration \myglos*{glo-Bimanuel} menait à une surcharge cognitive difficile à traiter par les sujets et la coordination nécessaire devrait donner un avantage aux groupes restreints.
+				Cependant, étant donné la coordination nécessaire demandée par la tâche, nous pensons que les conclusions obtenues pour la collaboration étroitement couplée seront différentes de celles obtenues par \mycite[author]{Zajonc-1965} dans le cadre d'une tâche à faible couplage.
+				En effet, nous avons vu précédemment que la configuration \myglos*{glo-Bimanuel} menait à une surcharge cognitive difficile à traiter par les sujets; la coordination nécessaire pour les scénarios proposés devrait donner un avantage aux groupes restreints.
 
 				D'après les conclusions de \mycite[author]{Bales-1950}, un groupe est toujours mené par un ou deux utilisateurs, quelque soit la taille du groupe.
 				Nous émettons l'hypothèse que ces \myglos*{glo-Meneur} vont également apparaître dans le cadre d'une collaboration étroitement couplée.
 
-				Finalement, nous souhaitons proposer une solution pour limiter les \myglos*{glo-ConflitDeCoordination} qui devraient être plus nombreux dans le cas de groupes restreints.
+				Finalement, nous souhaitons proposer une solution pour limiter les \myglos*{glo-ConflitDeCoordination}.
 				\mycite[author]{Bales-1950} a noté que les groupes restreints consacrent du temps pour se connaître (sans rapport avec la tâche à réaliser) puis discutent à propos de la stratégie à adopter.
-				Afin de répondre à la première contrainte, les groupes restreints choisis dans cette expérimentation seront tous constitués de sujets se connaissant déjà dans le cadre professionnel.
-				Puis, pour maximiser l'efficacité d'une discussion à propos de l'élaboration d'une stratégie, nous souhaitons tester la mise en place d'une période de \mybrainstorming au début de la tâche.
-				Nous émettons l'hypothèse que cette période permettra aux groupes de s'organiser et d'élaborer une stratégie et ainsi, améliorera les performances globales du groupe.
-				En effet, aucune déformation ne sera possible durant cette période.
-				De cette façon, la capacité cognitive du groupe devrait être maximisée pour l'élaboration de la stratégie.
+				Afin de répondre à ce besoin de se connaître, les groupes choisis dans cette expérimentation sont tous constitués de sujets se connaissant déjà dans le cadre professionnel.
+				Puis, afin d'améliorer l'efficacité d'une discussion à propos de l'élaboration d'une stratégie, nous souhaitons tester la mise en place d'une période de \mybrainstorming au début de la tâche.
+				Nous émettons l'hypothèse que cette période permettra aux groupes de s'organiser et d'élaborer une stratégie afin d'améliorer les performances globales du groupe.
 				De plus, si l'hypothèse précédente se vérifie, le \mybrainstorming devrait permettre d'identifier plus rapidement le ou les \myglos*{glo-Meneur} du groupe.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp3-DescriptionDeLaTache]{Description de la tâche}
-				La tâche proposée est la déformation de molécules complexes dans un \myacro{acr-EVC}.
-				L'objectif est de la rendre conforme à une molécule modèle.
-				La molécule à déformer est affichée dans son intégralité (atomes et structures principales) mais seule la structure principale est visible sur la molécule modèle.
+				La tâche proposée est la déformation de molécules dans un \myacro{acr-EVC}.
+				L'objectif est de rendre une molécule complexe conforme à une molécule modèle.
 				Dans cette expérimentation, la molécule \myTRPCAGE est utilisée pour la phase d'entraînement.
-				Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour la tâche de déformation collaborative.
+				Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour les scénarios de déformation collaborative.
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation \myref*{sse-exp2-SpecificitesDuProtocoleExperimental}.
-				De la même façon, le système d'évaluation de la solution à l'aide du score \myacro{acr-RMSD} est identique.
+				De la même façon, le système d'évaluation basé sur le score \myacro{acr-RMSD} est identique.
 				On pourra trouver la description de ces éléments dans la \myref{sse-exp2-DescriptionDeLaTache}.
 				\begin{mysubsubsection}[sss-exp3-DescriptionDesScenarios]{Description des scénarios}
-					Deux scénarios sont proposés : un faiblement couplée et un fortement couplé.
+					Deux scénarios sont proposés : un scénario avec des interactions faiblement couplées et un scénario avec des interactions fortement couplées.
 					Les paragraphes suivants décrivent ces deux scénarios :
 					\begin{description}
 						\item[Scénario~\myscenario{1}]
-							Ce scénario concerne la déformation de la molécule \myPrion.
-							La déformation de cette molécule nécessite de replacer correctement par rapport à un modèle, une chaîne de \mynum{16}~\myglos*{glo-Residu}.
+							Basé sur la molécule \myPrion, il nécessite de replacer correctement une chaîne de \mynum{16}~\myglos*{glo-Residu} par rapport à un modèle.
 							Cette chaîne se trouve en périphérie de la molécule et n'est donc pas soumise à de fortes contraintes physiques.
-							Ce scénario est aisément divisible en sous-tâches présentant de faibles interactions physiques entre eux : c'est une collaboration faiblement couplée.
+							Ce scénario est divisible en tâches élémentaires présentant de faibles interactions physiques.
+							L'objectif est d'obtenir une collaboration faiblement couplée.
 						\item[Scénario~\myscenario{2}]
-							Cette tâche concerne la déformation de la molécule \myUbiquitin.
-							La déformation de cette molécule nécessite de replacer correctement par rapport à un modèle, une chaîne de \mynum{19}~\myglos*{glo-Residu}.
-							Cette chaîne se trouve au sein de la molécule où elle est soumise à de fortes contraintes physiques, notamment le milieu de la chaîne : il très difficile d'avoir un contrôle précis sur la déformation du milieu de la chaîne.
-							Ce scénario nécessite plusieurs points de contrôle et une coordination de l'ensemble des sujets : c'est une collaboration étroitement couplée.
+							Basé sur la molécule \myUbiquitin, il nécessite de replacer correctement une chaîne de \mynum{19}~\myglos*{glo-Residu} par rapport à un modèle.
+							Cette chaîne se trouve au sein de la molécule où elle est soumise à de fortes contraintes physiques, notamment au milieu de la chaîne; le contrôle précis de la déformation au milieu de la chaîne est complexe.
+							La réalisation de ce scénario nécessite plusieurs points de contrôle et une coordination de l'ensemble des sujets.
+							L'objectif est d'obtenir une collaboration étroitement couplée.
 					\end{description}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp3-LesOutilsDisponibles]{Les outils disponibles}
-					Des outils de déformation au niveau atomique, identiques à la seconde expérimentation \myref*{sss-exp2-LesOutilsDisponibles}, sont proposés pour la réalisation de la tâche.
-					Il est à noter que les sujets n'ont pas la possibilité de modifier le point de vue de la molécule.
-					Bien que l'intégralité des scénarios soient réalisables sans modifier le point de vue, cette contrainte peut s'avérer être un handicap dans certains cas.
-					Cependant, nous avons fait le choix d'enlever cet outil de manipulation afin d'éviter les \myglos*{glo-ConflitDeCoordination}, notamment au sein des \myglos*{glo-Quadrinome}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
 				Les modifications sont présentées dans les sections qui vont suivre.
-				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-TroisiemeExperimentation} et résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
+				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-TroisiemeExperimentation} avec un résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
-					La troisième expérimentation se focalise sur le travail de groupe et en particulier, sur des \myglos*{glo-Quadrinome}.
-					Deux outils de déformation supplémentaires sont ajoutés à la plate-forme \myref*{sec-pro-MaterielExperimental}.
-					Deux \myOmni supplémentaires sont ajoutés sur la table devant les sujets de manière à ce que chaque sujet puisse avoir accès à une interface haptique.
-					Pour chaque nouvel \myOmni est associé un nouveau serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance, suffisante pour ce propos.
+					Cette expérimentation se focalise sur le travail de groupe et en particulier, sur les \myglos*{glo-Quadrinome}.
+					Il est nécessaire d'ajouter deux outils de déformation supplémentaires à la plate-forme \myref*{sec-pro-MaterielExperimental}.
+					Deux \myOmni supplémentaires sont posés sur la table, devant les sujets, de manière à ce que chacun puisse avoir accès à une interface haptique.
+					Un serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance est ajouté pour chaque nouvel \myOmni.
 
 					Chaque sujet d'un \myglos{glo-Quadrinome} possède un outil de déformation à sa disposition.
-					En ce qui concerne les \myglos*{glo-Binome}, chaque sujet peut utiliser deux outils dans une configuration \myglos*{glo-Bimanuel}.
+					En ce qui concerne les \myglos*{glo-Binome}, chaque sujet possède deux outils pour une configuration \myglos*{glo-Bimanuel}.
 
-					Cette expérimentation sur le travail collaboratif de groupe (supérieur à deux sujets) est l'occasion de focaliser sur les communications qui seront certainement plus nombreuses.
-					Afin d'analyser ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée en hauteur derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
-					Cette caméra permet d'enregistrer la vidéo et le son.
+					Cette expérimentation sur le travail collaboratif de groupe est l'occasion d'observer les communications.
+					Afin d'enregistrer ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
+					Cet enregistrement permet de conserver toutes les communications orales ainsi que les actions effectuées en parallèle (action virtuelle ou réelle).
 					Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
 
 					La \myref{fig-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
@@ -2255,9 +2248,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-Visualisation]{Visualisation}
-					La troisième expérimentation propose une tâche relativement similaire à la seconde expérimentation.
-					La principale différence concerne la taille des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation qui concernait des molécules d'une quinzaine de \myglos*{glo-Residu}.
-					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} sur la \ref{fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1} et la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} sur la \ref{fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
+					Cette expérimentation propose une tâche relativement similaire à la précédente expérimentation.
+					La principale différence concerne la complexité des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation concernant des molécules d'une quinzaine de \myglos*{glo-Residu}.
+					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} \myref*{fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1}; la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} \myref*{fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
 
 					\begin{myfigure}
 						\myimage{exp3-scenario1}
@@ -2269,14 +2262,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-OutilsDeManipulation]{Outils de manipulation}
-					Cette expérimentation fait intervenir quatre sujets.
-					Cependant, c'est la prmeière expérimentation pour laquelle aucun outil d'orientation de la molécule n'est fourni aux sujets.
+					Cette expérimentation fait intervenir des \myglos*{glo-Quadrinome}.
+					Cependant, c'est la première expérimentation pour laquelle aucun outil d'orientation de la molécule n'est fourni aux sujets.
 					En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil est générateur de \myglos*{glo-ConflitDeCoordination}.
-					Durant les précédentes expérimentations, les \myglos*{glo-ConflitDeCoordination} était relativement limité car ne concernait que des \myglos*{glo-Binome}.
-					Dans le cadre d'un \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos ce que nous ne souhaitons pas.
+					Durant les précédentes expérimentations, le nombre de \myglos*{glo-ConflitDeCoordination} était relativement limités car ils ne concernaient que des \myglos*{glo-Binome}.
+					Avec des \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos, ce que nous souhaitons éviter.
 
 					En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
-					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule dans son état stable.
+					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule modèle.
 				\end{mysubsubsection}
 				\begin{mytable}
 					\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
