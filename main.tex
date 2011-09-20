@@ -1,4 +1,4 @@
-\documentclass[myfrancais]{mythesis}
+\documentclass[myfrancais,ngerman,english,frenchb]{mythesis}
 \usepackage{mydate}
 \usepackage{mytodo}
 \usepackage{mycolor}
@@ -44,28 +44,128 @@
 		\myemph{<Proposition de solution>}\par
 		\myemph{<Synthèse et perspectives>}\par
 	\end{mychapter+}
+	\begin{mychapter+}{Abstract}
+		\selectlanguage{english}
+		\selectlanguage{frenchb}
+	\end{mychapter+}
 	\mainmatter
-	\begin{mychapter}[cha-LeSujet]{Le sujet}
-		\begin{mysection}[sec-EtatDeLArt]{État de l'art}
+	\begin{mychapter+}{Introduction}
+	\end{mychapter+}
+	\begin{mychapter}[cha-sota-EtudeBibliographique]{Étude bibliographique}
+		\begin{mysection}[sec-sota-Introduction]{Introduction}
+		\end{mysection}
+		\begin{mysection}[sec-sota-ContexteDeTravail-LaModelisationMoleculaire]{Contexte de travail : la modélisation moléculaire}
+			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que l'expression \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu utilisée dans la littérature française.} qui fournit un environnement de travail complexe.
+			Dans cette section, nous commencerons par présenter le \myglos{glo-DockingMoleculaire} avant de montrer les différentes solutions existantes pour traiter ce problème complexe.
+			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
+				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} à prédire l'orientation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
+				\mycite[author]{Fischer-1894} proposent une image illustrant le \myglos{glo-DockingMoleculaire} avec son modèle \og clef-serrure \fg décrit de la façon suivante.
+				\begin{myquote}[ngerman]
+					\it Um ein Bild zu gebrauchen, will ich sagen, da\ss{} Enzym und Glycosid wie Schlo\ss{} und Schlüssel zueinander passen müssen, um eine chemische Wirkung aufeinander ausüben zu können.
+				\end{myquote}
+				On trouve une traduction en français de cette citation dans \mycite{Hasenknopf-2005}.
+				\begin{myquote}[frenchb]
+					Pour utiliser une image, je dirais que l'enzyme et le glucoside doivent être ajustés comme la serrure et la clef, pour exercer une action chimique l'un sur l'autre.
+				\end{myquote}
+
+				\begin{myfigure}
+					\psset{xunit=0.066666667\textwidth,yunit=0.05\textwidth}
+					\def\mycircleletter(#1,#2)#3{%
+						\rput(#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
+					}
+					\begin{myps}(-7.5,-9.5)(7.5,7.5)
+						\rput(-5,4){\myimage[width=0.25\textwidth]{sota-docking-molecule-A}}
+						\mycircleletter(-5,0){A}
+						\rput(0,4){\Huge\bfseries +}
+						\rput(5,4){\myimage[width=0.207437276\textwidth]{sota-docking-molecule-B}}
+						\mycircleletter(5,0){B}
+						\rput(0,-5){\myimage[width=0.386200717\textwidth]{sota-docking-complex-AB}}
+						\psline[linewidth=10pt,linecolor=myblue!70]{->}(0,1)(0,-2)
+						\mycircleletter(-1,-9){A}
+						\rput(0,-9){\Large\bfseries +}
+						\mycircleletter(1,-9){B}
+					\end{myps}
+					\mycaption[fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules]{Complexe de molécules assemblé à partir de deux molécules}
+				\end{myfigure}
+
+				La métaphore s'arrête ici car il est nécessaire d'évaluer la conformation entre les deux molécules et l'ouverture d'une serrure à l'aide d'une clef ne saurait suffire à expliquer l'évaluation d'un \myglos{glo-DockingMoleculaire}.
+				La stabilité d'un complexe de molécules est évaluée sur deux mesures distinctes : la complémentarité géométrique et la complémentarité chimique \myref*{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire}.
+				L'importance de la complémentarité géométrique, aussi appelée complémentarité structurale \mycite{Church-1977}, a été mise en valeur par \mycite[author]{Jiang-2003}; elle consiste à trouver une partie du profil sur chaque molécule afin de pouvoir les emboîter, comme dans un puzzle.
+				La \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteGeometrique} illustre la complémentarité géométrique dans une représentation simplifiée en \myTwoD.
+				Cependant, l'évaluation de la stabilité d'un complexe de molécule s'accompagne également d'une évaluation de la complémentarité chimique comme décrit par \mycite[author]{Kessler-1999}.
+				La complémentarité chimique s'intéresse plus précisément aux interactions chimiques entre les molécules comme les charges électrostatiques \mycite{McCoy-1997}, les ponts hydrogènes \mycite{Arunan-2011} ou encore les régions hydrophiles et hydrophobes \mycite{Blalock-1984}.
+				Par exemple, la \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteElectrostatique} illustre la complémentarité électrostatique.
+
+				\begin{myfigure}
+					\newcommand{\mymolA}{%
+						\psclip{%
+							\pscustom[linestyle=none]{%
+								\psline[linestyle=none](5,2)(5,3)(-5,3)(-5,2)%
+								\pscurve[linestyle=none](-5,2)(-5,1.5)(-3,0)(0,0.5)(1,-0.5)(2,1)(3,0)(5,1.5)(5,2)%
+							}%
+						}%
+						\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myred,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,-10)}](-5,-0.5)(5,3)%
+						\endpsclip%
+						\psecurve[linestyle=solid,linewidth=1pt,linecolor=black](-5,2)(-5,1.5)(-3,0)(0,0.5)(1,-0.5)(2,1)(3,0)(5,1.5)(5,2)%
+					}
+					\newcommand{\mymolB}{%
+						\psclip{%
+							\pscustom[linestyle=none]{%
+								\psline[linestyle=none](5,-2)(5,-3)(-5,-3)(-5,-2)%
+								\pscurve[linestyle=none](-5,-2)(-5,-1.5)(-3,-0.5)(0,0)(1,-1)(2,0.5)(3,-0.5)(5,-1.5)(5,-2)
+							}%
+						}
+						\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myblue,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,10)}](-5,0.5)(5,-3)
+						\endpsclip
+						\psecurve[linestyle=solid,linewidth=1pt,linecolor=black](-5,-2)(-5,-1.5)(-3,-0.5)(0,0)(1,-1)(2,0.5)(3,-0.5)(5,-1.5)(5,-2)
+					}
+					\def\mysign(#1,#2)#3{\rput(#1,#2){\Large\bfseries\sffamily\textcolor{white}{#3}}}
+					\begin{mysubfigure}
+						\psset{unit=0.049\textwidth}
+						\begin{myps}(-5,-3)(5,3)
+							\mymolA
+							\mymolB
+						\end{myps}
+						\mysubcaption[fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteGeometrique]{Complémentarité géométrique}
+					\end{mysubfigure}
+					\begin{mysubfigure}
+						\psset{unit=0.049\textwidth}
+						\begin{myps}(-5,-3)(5,3)
+							\mymolA
+							\mymolB
+							\mysign(-3,0.5){+}
+							\mysign(-3,-1){--}
+							\mysign(-0.5,-0.5){+}
+							\mysign(-0.5,0.75){--}
+							\mysign(2,1.5){+}
+							\mysign(2,-0.25){--}
+						\end{myps}
+						\mysubcaption[fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteElectrostatique]{Complémentarité électrostatique}
+					\end{mysubfigure}
+					\mycaption[fig-sota-MesuresPourLEvaluationDuDockingMoleculaire]{Mesures pour l'évaluation du \myglosnl{glo-DockingMoleculaire}}
+				\end{myfigure}
+			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
 			La distinction entre travail coopératif et travail collaboratif est expliquée par \mycite[author]{Roschelle-1995}.
-			\begin{quote}
+			\begin{myquote}[english]
 				\it Cooperative work is accomplished by the division of labour among participants, as an activity where each person is responsible for a portion of the problem solving.
 				We focus on collaboration as the mutual engagement of participants in a coordinated effort to solve the problem together.
-			\end{quote}
+			\end{myquote}
 			traduit dans \mycite{Knauf-2010} en français
-			\begin{quote}
+			\begin{myquote}[frenchb]
 				Le travail coopératif implique une division du travail entre les participants, chaque participant étant responsable d’une partie du problème à résoudre.
 				Dans la collaboration, les participants s’engagent tous dans les mêmes tâches, en se coordonnant, afin de résoudre le problème ensemble.
-			\end{quote}
+			\end{myquote}
 			Le travail collaboratif s'est développé rapidement avec l'informatique.
 			On peut citer les outils de gestions de versions tels que \mycite[author]{Git-2011}, \mycite[author]{Mercurial-2011} ou encore \mycite[author]{SVN-2011} qui permettent la collaboration de plusieurs développeurs pour la création ou la modification de programmes informatiques.
 			Puis \myInternet a donné naissance à des outils de collaboration tels que les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
 			Cependant, ces deux exemples proposent une collaboration asynchrone où chaque acteur intervient derrière son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
 			Aujourd'hui, les outils permettant la collaboration synchrone sont encore rares (systèmes de vidéoconférences, jeux vidéos en ligne).
 		\end{mysection}
-		\begin{mysection}[sec-Contexte]{Contexte}
-			\begin{mysubsection}[sse-LAmarrageMoleculaire]{L'\myglosnl{glo-AmarrageMoleculaire}}
-				Le contexte de l'expérimentation est l'\myglos{glo-AmarrageMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
+		\begin{mysection}[sec-sota-Contexte]{Contexte}
+			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
+				Le contexte de l'expérimentation est le \myglos{glo-DockingMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
 				Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
 				Il est basé sur une décomposition en trois niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
 				\begin{description}
@@ -77,7 +177,7 @@
 						L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
 				\end{description}
 
-				Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
+				Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
 				\begin{description}
 					\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 					\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
@@ -108,14 +208,14 @@
 						\ncline{->}{Evaluation}{Objective}
 						\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Search}
 					\end{myps}
-					\mycaption[fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
+					\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
 				\end{myfigure}
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Manipulation collaborative de molécules}
 		\begin{mysection}[sec-Shaddock-Introduction]{Introduction}
-			Le \myref{cha-LeSujet} nous a permis d'identifier des problématiques de recherche.
+			Le \myref{cha-sota-EtudeBibliographique} nous a permis d'identifier des problématiques de recherche.
 			C'est autour de ces problématiques que la plate-forme \myShaddock a été élaborée.
 
 			Nous commencerons par présenter les choix de matériels et d'architecture logicielle \myref*{sec-Shaddock-ArchitectureMaterielleEtLogicielle}.
@@ -261,7 +361,7 @@
 				Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un logiciel spécifique qui s'occupera de cette communication avec l'interface.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-ConfigurationDeTravailCollaboratif]{Configuration de travail collaboratif}
-				Le \myref{cha-LeSujet} a permis de lister les principaux critères qui caractérisent une plate-forme pour le travail collaboratif.
+				Le \myref{cha-sota-EtudeBibliographique} a permis de lister les principaux critères qui caractérisent une plate-forme pour le travail collaboratif.
 				Le travail peut être synchrone ou asynchrone et il peut être distant ou colocalisé \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
 
 				\begin{myfigure}
@@ -606,7 +706,7 @@
 			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
 			Cependant, nous choisissons d'explorer une troisième solution : la distribution des charges cognitives de travail par l'intermédiaire d'une collaboration synchrone colocalisée.
 
-			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
+			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
 			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
 			Le prétexte de cette étude est la recherche de \myglos*{glo-Residu}.
 			L'étude proposée montre l'intérêt du travail collaboratif sur des tâches de nature complexe.
@@ -1178,7 +1278,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-CollaborationEnChampProche]{Collaboration en champ proche}
 					\begin{myparagraph}[par-exp1-CollaborationEnChampProche-Caracteristiques]{Caractéristiques}
-						La collaboration en champ proche, inférieures à \mynum[mm]{8}, correspond, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\og \AA \fg désigne l'\myangstrom qui est une unité de mesure telle que $\mynum[\text{\AA}]{1} = \mynum[m]{e-10}$}.
+						La collaboration en champ proche, inférieures à \mynum[mm]{8}, correspond, dans l'environnement virtuel, à des distances inférieures à \mynum[\AA]{10} ce qui est environ l'envergure d'un \myglos{glo-Residu}\footnote{\og \AA \fg désigne l'\myangstrom qui est une unité de mesure telle que $\mynum[\AA]{1} = \mynum[m]{e-10}$}.
 						\mynum{8}~\myglos*{glo-Binome} sur \mynum{12} sont concernés par cette catégorie (\myglos*{glo-Binome} \mygroup{5}, \mygroup{6}, \mygroup{7}, \mygroup{8}, \mygroup{9}, \mygroup{10}, \mygroup{11} et \mygroup{12}).
 						Étant donné la distance inférieure à \mynum[\AA]{10}, les \myglos*{glo-Binome} concernés manipulent en collaboration étroite sur les mêmes \myglos*{glo-Residu}.
 						Ces \myglos*{glo-Binome} se caractérisent par une forte affinité ($\mu = 4$) : ce sont des collègues ou des amis \myref*{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome}.
@@ -1389,8 +1489,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
 			La précédente expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
 			Afin de compléter notre étude, nous souhaitons à présent nous intéresser à la \myemph{déformation}.
-			En effet, on trouve déjà des environnements virtuels permettant de manipuler des molécules rigides pour effectuer un \myglos{glo-AmarrageMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
-			Cependant, un myglos{glo-AmarrageMoleculaire} nécessite de pouvoir déformer les molécules.
+			En effet, on trouve déjà des environnements virtuels permettant de manipuler des molécules rigides pour effectuer un \myglos{glo-DockingMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
+			Cependant, un \myglos{glo-DockingMoleculaire} nécessite de pouvoir déformer les molécules.
 			Ceci est rendu possible par l'avénement des simulations moléculaires interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
 			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver pour permettre une simulation moléculaire en temps-réel basée sur différents moteurs de simulation (\myacro{acr-NAMD} ou \myGromacs).
 			Puis, \mycite[author]{Delalande-2010} améliorent la manipulation et la déformation interactive par l'utilisation d'une interface haptique.
@@ -1443,7 +1543,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp2-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
 				L'objectif est de modifier la conformation initiale d'une molécule pour atteindre une conformation finale.
-				En effet, la recherche d'un état stable est exactement ce qu'une tâche d'\myglos{glo-AmarrageMoleculaire} cherche à réaliser.
+				En effet, la recherche d'un état stable est exactement ce qu'une tâche de \myglos{glo-DockingMoleculaire} cherche à réaliser.
 				De plus, la déformation est une tâche permettant de stimuler les actions coordonnées pour une collaboration étroitement couplée.
 
 				Trois molécules sont utilisées dans le cadre de cette expérimentation.
@@ -2689,13 +2789,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
 		\begin{mysection}[sec-exp4-Introduction]{Introduction}
-			Cette dernière expérimentation aura pour objectif d'introduire et de valider des outils de communication haptique dans le cadre d'une tâche d'\myglos{glo-AmarrageMoleculaire}.
+			Cette dernière expérimentation aura pour objectif d'introduire et de valider des outils de communication haptique dans le cadre d'une tâche de \myglos{glo-DockingMoleculaire}.
 			Sur la base des précédentes expérimentations, des outils haptiques censés améliorer les interactions et les communications entre les manipulateurs sont proposés.
 			L'expérimentation testera l'intérêt et l'apport de ces outils sur la collaboration de groupe.
 
 			Le principal facteur observé sera les performances du groupe.
 			Les performances regardées seront le temps mis pour achever la tâche mais également la qualité de la solution trouvée.
-			En effet, la qualité de la solution est une variable non-négligeable dans le cadre d'une tâche d'\myglos{glo-AmarrageMoleculaire}.
+			En effet, la qualité de la solution est une variable non-négligeable dans le cadre d'une tâche de \myglos{glo-DockingMoleculaire}.
 
 			Le second facteur concernera l'évaluation qualitative du système par les utilisateurs.
 			Il est primordial de recueillir l'avis des utilisateurs en ce qui concerne une plate-forme de travail.
@@ -2786,7 +2886,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							Dans cette tâche, seuls les outils de désignation et de déformation sont proposés; la molécule \myUbiquitin possède des atomes fixes afin de ne pas dériver.
 						\item[Scénario~\myscenario{2}]
 							La seconde tâche consiste à reconstituer le complexe de molécules \myNusENusG.
-							En effet, la molécule \myNusG est laissé complétement libre et doit être amarrer à la molécule \myNusE : c'est une tâche d'\myglos{glo-AmarrageMoleculaire} simplifié.
+							En effet, la molécule \myNusG est laissé complétement libre et doit être amarrer à la molécule \myNusE : c'est une tâche de \myglos{glo-DockingMoleculaire} simplifié.
 							On distingue deux phases dans cette tâche; il faut approcher la molécule \myNusG puis il faut affiner l'amarrage par une déformation interne de \myNusG.
 							Tous les outils (désignation, déformation et manipulation) sont proposés dans ce scénario; la molécule \myNusG est attaché à l'outil de manipulation et l'ensembl des atomes de la chaîne carbonée principale de la molécule \myNusE sont fixes afin d'éviter que la molécule ne dérive.
 					\end{description}
