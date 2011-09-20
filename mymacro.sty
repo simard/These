@@ -59,6 +59,14 @@
 }
 % To print numbers (see 'numprint' package)
 \newcommand{\mynum}[2][]{\ifstrempty{#1}{\numprint{#2}}{\numprint[#1]{#2}}}
+% A quote environment with language inside!
+\newenvironment{myquote}[1][english]{%
+	\begin{otherlanguage}{#1}
+	\begin{quote}
+}{%
+	\end{quote}
+	\end{otherlanguage}
+}
 
 %% Symboles
 % © : Copyright
