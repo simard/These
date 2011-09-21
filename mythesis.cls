@@ -148,13 +148,13 @@
 \defbibheading{bibintoc}[\bibname]{%
 	\section*{#1}%
 	\addcontentsline{toc}{section}{#1}%
-	\markboth{#1}{#1}
+	\markboth{#1}{#1}%
 }
 % Define the 'subbibintoc' heading of 'biblatex'
 \defbibheading{subbibintoc}[\nameref{refsegment:\therefsegment}]{%
 	\subsection*{#1}%
 	\addcontentsline{toc}{subsection}{#1}%
-	\markboth{#1}{#1}
+	\markboth{#1}{#1}%
 }
 % Automatic bibliography at the end of each chapter
 \let\mybib@old@endmychapter\endmychapter
