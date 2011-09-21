@@ -130,6 +130,7 @@
 \newenvironment{mychapter-}[1]{%
 	\phantomsection%
 	\chapter*{#1}%
+	\markboth{#1}{#1}%
 }{
 	\adjustmtc%
 }
@@ -137,6 +138,7 @@
 	\phantomsection%
 	\addcontentsline{toc}{chapter}{#1}%
 	\chapter*{#1}%
+	\markboth{#1}{#1}%
 }{
 	\adjustmtc%
 }
@@ -148,11 +150,13 @@
 \newenvironment{mysection-}[1]{%
 	\phantomsection%
 	\section*{#1}%
+	\markboth{#1}{#1}%
 }{}
 \newenvironment{mysection+}[1]{%
 	\phantomsection%
 	\addcontentsline{toc}{section}{#1}%
 	\section*{#1}%
+	\markboth{#1}{#1}%
 }{}
 \newenvironment{mysubsection}[2][]{%
 	\phantomsection%
