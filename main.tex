@@ -56,10 +56,10 @@
 		\end{mysection}
 		\begin{mysection}[sec-sota-ContexteDeTravail-LaModelisationMoleculaire]{Contexte de travail : la modélisation moléculaire}
 			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que l'expression \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu utilisée dans la littérature française.} qui fournit un environnement de travail complexe.
-			Dans cette section, nous commencerons par présenter le \myglos{glo-DockingMoleculaire} avant de montrer les différentes solutions existantes pour traiter ce problème complexe.
+			Cette section présente le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème complexe.
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
-				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} à prédire l'orientation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
-				\mycite[author]{Fischer-1894} proposent une image illustrant le \myglos{glo-DockingMoleculaire} avec son modèle \og clef-serrure \fg décrit de la façon suivante.
+				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
+				\mycite[author]{Fischer-1894} illustrent le \myglos{glo-DockingMoleculaire} avec le modèle \og clef-serrure \fg décrit de la façon suivante.
 				\begin{myquote}[ngerman]
 					\it Um ein Bild zu gebrauchen, will ich sagen, da\ss{} Enzym und Glycosid wie Schlo\ss{} und Schlüssel zueinander passen müssen, um eine chemische Wirkung aufeinander ausüben zu können.
 				\end{myquote}
@@ -88,12 +88,15 @@
 					\mycaption[fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules]{Complexe de molécules assemblé à partir de deux molécules}
 				\end{myfigure}
 
-				La métaphore s'arrête ici car il est nécessaire d'évaluer la conformation entre les deux molécules et l'ouverture d'une serrure à l'aide d'une clef ne saurait suffire à expliquer l'évaluation d'un \myglos{glo-DockingMoleculaire}.
-				La stabilité d'un complexe de molécules est évaluée sur deux mesures distinctes : la complémentarité géométrique et la complémentarité chimique \myref*{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire}.
-				L'importance de la complémentarité géométrique, aussi appelée complémentarité structurale \mycite{Church-1977}, a été mise en valeur par \mycite[author]{Jiang-2003}; elle consiste à trouver une partie du profil sur chaque molécule afin de pouvoir les emboîter, comme dans un puzzle.
+				La métaphore s'arrête ici.
+				En effet, s'il suffit simplement de vérifier que la clef ouvre la serrure pour confirmer la correspondance entre les deux objets, l'évaluation d'un complexe de molécules est moins évidente.
+				La stabilité d'un complexe de molécules est évaluée sur deux mesures : la complémentarité géométrique et la complémentarité chimique \myref*{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire}.
+				La complémentarité géométrique, parfois nommée complémentarité structurale \mycite{Church-1977}, consiste à trouver la partie des profils de la molécule qui vont s'imbriquer, comme un puzzle en \myThreeD.
 				La \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteGeometrique} illustre la complémentarité géométrique dans une représentation simplifiée en \myTwoD.
+				\mycite[author]{Jiang-2003} consacre une publication à montrer l'importance de la complémentarité géométrique dans le \myglos{glo-DockingMoleculaire}.
+
 				Cependant, l'évaluation de la stabilité d'un complexe de molécule s'accompagne également d'une évaluation de la complémentarité chimique comme décrit par \mycite[author]{Kessler-1999}.
-				La complémentarité chimique s'intéresse plus précisément aux interactions chimiques entre les molécules comme les charges électrostatiques \mycite{McCoy-1997}, les ponts hydrogènes \mycite{Arunan-2011} ou encore les régions hydrophiles et hydrophobes \mycite{Blalock-1984}.
+				Cette complémentarité s'intéresse aux interactions chimiques entre les molécules comme les charges électrostatiques \mycite{McCoy-1997}, les ponts hydrogènes \mycite{Arunan-2011} ou encore les régions hydrophiles et hydrophobes \mycite{Blalock-1984}.
 				Par exemple, la \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteElectrostatique} illustre la complémentarité électrostatique.
 
 				\begin{myfigure}
@@ -144,6 +147,10 @@
 					\end{mysubfigure}
 					\mycaption[fig-sota-MesuresPourLEvaluationDuDockingMoleculaire]{Mesures pour l'évaluation du \myglosnl{glo-DockingMoleculaire}}
 				\end{myfigure}
+
+				Le nombre de combinaisons géométriques et le nombre de contraintes chimiques font du \myglos{glo-DockingMoleculaire} une tâche de recherche très complexe.
+				Une exploration exhaustive n'est pas envisageable.
+				La section suivante présente les différents solutions logicielles existante pour réaliser un \myglos{glo-DockingMoleculaire}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-RealisationDUnDockingMoleculaire]{Réalisation d'un \myglosnl{glo-DockingMoleculaire}}
 				La réalisation d'un \myglos{glo-DockingMoleculaire} nécessite de trouver les sites de liaison entre les molécules basés sur la complémentarité (géométrique et/ou chimique).
