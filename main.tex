@@ -145,6 +145,35 @@
 					\mycaption[fig-sota-MesuresPourLEvaluationDuDockingMoleculaire]{Mesures pour l'évaluation du \myglosnl{glo-DockingMoleculaire}}
 				\end{myfigure}
 			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-RealisationDUnDockingMoleculaire]{Réalisation d'un \myglosnl{glo-DockingMoleculaire}}
+				La réalisation d'un \myglos{glo-DockingMoleculaire} nécessite de trouver les sites de liaison entre les molécules basés sur la complémentarité (géométrique et/ou chimique).
+				\mycite[author]{Schulz-Gasch-2004} ou encore \mycite[author]{Leach-2006} exposent un état de l'art sur les moyens d'évaluer un \myglos{glo-DockingMoleculaire}.
+				En général, les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels exclusivement par complémentarité géométrique.
+				Cette première évaluation permet de filtrer de nombreuses possibilités.
+				Puis une évaluation chimique partielle ou complète est éventuellement intégré au moteur de recherche.
+
+				La combinatoire de ce problème est tellement importante qu'une approche exhaustive est impossible à réaliser dans un temps raisonnable.
+				Afin de trouver ces sites de liaison, différents types d'algorithmes ont été proposés.
+				\mycite[author]{Jones-1997} s'orientent vers des algorithmes génétiques avec le système \myGOLD pour évaluer la complémentarité géométrique et complète la recherche avec une analyse des champs de forces.
+				Puis, toujours basé sur les algorithmes génétiques, une amélioration est proposée par \mycite[author]{Morris-1998} avec le système \myAutoDock, probablement la solution la plus utilisée actuellement \mycite{Grosdidier-2007}.
+				Les méthodes basées sur la méthode de \myname{Monte-Carlo} sont également étudiées avec les systèmes \myGlide \mycite{Friesner-2004,Halgren-2004} ou encore \myBoxSearch \mycite{Hart-1992,Cummings-1995}.
+				Enfin, l'outil \myFlexX \mycite{Rarey-1997,Rarey-1999}, également très utilisé, tente de reconstruire le ligand de manière incrémentale.
+
+				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions ne semble efficace pour tous les complexes de molécules testées.
+				Pourtant, les solutions présentées ci-dessus utilisent déjà une approximation de l'environnement moléculaire.
+				En effet, ces solutions considèrent les molécules comme des corps rigides hors une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins : une molécule est un corps flexible.
+				La \myref{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta} représente un complexe de molécules ainsi que sa structure interne constituée d'\myhelice* et de \myfeuillet*.
+				Les \myhelice* et les \myfeuillet* constituent la plus grosse granularité de la flexibilité d'une molécule alors que les atomes constituent la granularité la plus fine.
+
+				\begin{myfigure}
+					\myimage{sota-docking-alphabeta}
+					\mycaption[fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta]{Illustration d'une molécule avec ces \myhelice* et ces \myfeuillet*}
+				\end{myfigure}
+
+				Afin de répondre à cette problématique de flexibilité, \mycite[author]{Osterberg-2002} proposent une extension à \myAutoDock en considérant le complexe de molécules sous forme de grille pour grossier la granularité et augmenter la vitesse d'évaluation d'une configuration de \myglos{glo-DockingMoleculaire}.
+				\mycite[author]{Meagher-2004} proposent de simuler la flexibilité en testant plusieurs conformations différentes d'une même protéine.
+				On trouve également les travaux de \mycite[author]{Radestock-2005} qui combinent les problématiques géométriques et chimiques pour trouver des solutions flexibles de \myglos{glo-DockingMoleculaire} ou encore les travaux de \mycite[author]{Keizers-2005} utilisant les moteurs de dynamique moléculaire.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
 			La distinction entre travail coopératif et travail collaboratif est expliquée par \mycite[author]{Roschelle-1995}.
