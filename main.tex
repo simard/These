@@ -152,34 +152,77 @@
 				Une exploration exhaustive n'est pas envisageable.
 				La section suivante présente les différents solutions logicielles existante pour réaliser un \myglos{glo-DockingMoleculaire}.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-RealisationDUnDockingMoleculaire]{Réalisation d'un \myglosnl{glo-DockingMoleculaire}}
-				La réalisation d'un \myglos{glo-DockingMoleculaire} nécessite de trouver les sites de liaison entre les molécules basés sur la complémentarité (géométrique et/ou chimique).
-				\mycite[author]{Schulz-Gasch-2004} ou encore \mycite[author]{Leach-2006} exposent un état de l'art sur les moyens d'évaluer un \myglos{glo-DockingMoleculaire}.
-				En général, les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels exclusivement par complémentarité géométrique.
+			\begin{mysubsection}[sse-sota-RechercheDeSolutionsDeDockingMoleculaire]{Recherche de solutions de \myglosnl{glo-DockingMoleculaire}}
+				La recherche de solutions de \myglos{glo-DockingMoleculaire} consiste à trouver les sites de liaisons entre les molécules.
+				Les algorithmes de recherche se basent principalement sur deux principes de base.
+				Tout d'abord, l'algorithme doit être capable d'évaluer une conformation par un score de confiance.
+				Puis, une heuristique est nécessaire afin de converger le plus efficacement possible vers des solutions valides.
+
+				\mycite[author]{Schulz-Gasch-2004} ou encore \mycite[author]{Leach-2006} proposent un état de l'art sur les moyens d'évaluer un \myglos{glo-DockingMoleculaire}.
+				En général, les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels seulement par complémentarité géométrique.
 				Cette première évaluation permet de filtrer de nombreuses possibilités.
-				Puis une évaluation chimique partielle ou complète est éventuellement intégré au moteur de recherche.
-
-				La combinatoire de ce problème est tellement importante qu'une approche exhaustive est impossible à réaliser dans un temps raisonnable.
+				Puis une évaluation chimique partielle ou complète est éventuellement effectuée par l'algorithme de recherche.
 				Afin de trouver ces sites de liaison, différents types d'algorithmes ont été proposés.
-				\mycite[author]{Jones-1997} s'orientent vers des algorithmes génétiques avec le système \myGOLD pour évaluer la complémentarité géométrique et complète la recherche avec une analyse des champs de forces.
-				Puis, toujours basé sur les algorithmes génétiques, une amélioration est proposée par \mycite[author]{Morris-1998} avec le système \myAutoDock, probablement la solution la plus utilisée actuellement \mycite{Grosdidier-2007}.
-				Les méthodes basées sur la méthode de \myname{Monte-Carlo} sont également étudiées avec les systèmes \myGlide \mycite{Friesner-2004,Halgren-2004} ou encore \myBoxSearch \mycite{Hart-1992,Cummings-1995}.
-				Enfin, l'outil \myFlexX \mycite{Rarey-1997,Rarey-1999}, également très utilisé, tente de reconstruire le ligand de manière incrémentale.
 
-				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions ne semble efficace pour tous les complexes de molécules testées.
-				Pourtant, les solutions présentées ci-dessus utilisent déjà une approximation de l'environnement moléculaire.
-				En effet, ces solutions considèrent les molécules comme des corps rigides hors une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins : une molécule est un corps flexible.
-				La \myref{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta} représente un complexe de molécules ainsi que sa structure interne constituée d'\myhelice* et de \myfeuillet*.
-				Les \myhelice* et les \myfeuillet* constituent la plus grosse granularité de la flexibilité d'une molécule alors que les atomes constituent la granularité la plus fine.
+				\mycite[author]{Jones-1997} utilisent les algorithmes génétiques sur le système \myGOLD pour chercher des conformations par complémentarité géométrique et complète la recherche par une évaluation des champs de forces.
+				Puis \mycite[author]{Morris-1998} propose une amélioration par des algorithmes génétiques lamarckistes avec le logiciel \myAutoDock; c'est la solution de \myglos{glo-DockingMoleculaire} la plus utilisée actuellement \mycite{Grosdidier-2007}.
+				\myICMDocking s'oriente plutôt vers une méthode basée sur les \myacro*{acr-ICM} \mycite{Abagyan-1994a,Abagyan-1994b}.
+				Les solutions logicielles basées sur la méthode de \myname{Monte-Carlo} sont également étudiées avec les plate-forme \myGlide \mycite{Friesner-2004,Halgren-2004} ou encore \myBoxSearch \mycite{Hart-1992,Cummings-1995}.
+				Enfin, les outils \myFlexX \mycite{Rarey-1997,Rarey-1999} ou encore \myDOCK \mycite{Ewing-2001}, également très utilisés, tentent de reconstruire le ligand de manière incrémentale autour d'une base protéinique.
+
+				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions logicielles ne semble fournir la solution ultime.
+				De plus, les solutions présentées ci-dessus se basent seulement sur une approximation de l'environnement moléculaire : les molécules sont considérées comme des corps rigides.
+				En effet, une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins : une molécule s'apparente plutôt à un corps flexible.
+				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome (granularité la plus fine) aux \myhelice* et \myfeuillet* (granularité la plus importante.
+				La \myref{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta} représente la structure interne d'un complexe de molécules constituée d'\myhelice* et de \myfeuillet*.
 
 				\begin{myfigure}
 					\myimage{sota-docking-alphabeta}
 					\mycaption[fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta]{Illustration d'une molécule avec ces \myhelice* et ces \myfeuillet*}
 				\end{myfigure}
 
-				Afin de répondre à cette problématique de flexibilité, \mycite[author]{Osterberg-2002} proposent une extension à \myAutoDock en considérant le complexe de molécules sous forme de grille pour grossier la granularité et augmenter la vitesse d'évaluation d'une configuration de \myglos{glo-DockingMoleculaire}.
+				Afin de répondre à cette problématique supplémentaire de flexibilité, \mycite[author]{Osterberg-2002} étendent les capacités de \myAutoDock.
+				La granularité est augmentée en considérant le complexe de molécules sous forme de grille afin d'augmenter la vitesse d'évaluation de la configuration testée.
 				\mycite[author]{Meagher-2004} proposent de simuler la flexibilité en testant plusieurs conformations différentes d'une même protéine.
 				On trouve également les travaux de \mycite[author]{Radestock-2005} qui combinent les problématiques géométriques et chimiques pour trouver des solutions flexibles de \myglos{glo-DockingMoleculaire} ou encore les travaux de \mycite[author]{Keizers-2005} utilisant les moteurs de dynamique moléculaire.
+				La complexité induite par la flexibilité rend impossible une exploration totale de l'espace des recherches.
+				C'est pourquoi les logiciels présentés dans la \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} évaluent plutôt des système semi-flexibles par différentes solutions dont voici quelques exemples:
+				\begin{itemize}
+					\item Une des deux molécules voire seulement la chaîne carbonée est rendue rigide;
+					\item Utiliser différentes conformations d'une molécule sur des solutions de \myglos{glo-DockingMoleculaire} rigide;
+					\item Découper l'espace de recherche de manière plus grossière pour améliorer les performances de traitement.
+				\end{itemize}
+				La complexité liée à la flexibilité est telle qu'aucune solution logicielle ne semble être capable de traiter le \myglos{glo-DockingMoleculaire} flexible de manière satisfaisante.
+				Nous allons voir dans la prochaine section qu'une approche très différente du problème existe.
+
+				\begin{mytable}
+					\begin{mytabular}{^>{\hsize=0.2\textwidth}C->{\hsize=0.3\textwidth}C->{\hsize=0.4\textwidth}C}
+						\mytoprule
+						\myrowstyle{\bfseries}
+						Logiciel & Algorithme & Références \\
+						\mymiddlerule[\heavyrulewidth]
+						\myAutoDock & Algorithme génétique & \mycite{Morris-1998,Osterberg-2002} \\
+						\mymiddlerule
+						\myDOCK & Reconstruction incrémentale & \mycite{Ewing-2001} \\
+						\mymiddlerule
+						\myICMDocking & Méthode \myacro{acr-ICM} & \mycite{Abagyan-1994a,Abagyan-1994b} \\
+						\mymiddlerule
+						\myGOLD & Algorithme génétique & \mycite{Jones-1997} \\
+						\mymiddlerule
+						\myFlexX & Reconstruction incrémentale & \mycite{Rarey-1997,Rarey-1999} \\
+						\mymiddlerule
+						\myGlide & Méthode de \myname{Monte-Carlo} & \mycite{Friesner-2004,Halgren-2004} \\
+						\mymiddlerule
+						\myBoxSearch & Méthode de \myname{Monte-Carlo} & \mycite{Hart-1992,Cummings-1995} \\
+						\mybottomrule
+					\end{mytabular}
+					\mycaption[tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire]{Liste non-exhaustive de solutions logicielles de \myglosnl{glo-DockingMoleculaire}}
+				\end{mytable}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-LeDockingMoleculaireEnEnvironnementVirtuel]{Le \myglosnl{glo-DockingMoleculaire} en environnement virtuel}
+				Cependant, malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} et se rapprocher au plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
+				Devant cette complexité, un nouveau type de solutions pour traiter le problème de \myglos{glo-DockingMoleculaire} émerge.
+				L'idée est de faire intervenir l'humain qui est capable de filtrer plus intelligemment les solutions pour lesquelles il faut améliorer la précision et celles qu'on peut rejeter immédiatement.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
