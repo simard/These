@@ -173,8 +173,17 @@
 				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions logicielles ne semble fournir la solution ultime.
 				De plus, les solutions présentées ci-dessus se basent seulement sur une approximation de l'environnement moléculaire : les molécules sont considérées comme des corps rigides.
 				En effet, une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins : une molécule s'apparente plutôt à un corps flexible.
-				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome (granularité la plus fine) aux \myhelice* et \myfeuillet* (granularité la plus importante.
-				La \myref{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta} représente la structure interne d'un complexe de molécules constituée d'\myhelice* et de \myfeuillet*.
+				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome (granularité la plus fine) aux molécules en passant par les \myhelice* et \myfeuillet* (granularité intermédiaire).
+				On peut distinguer trois niveaux de flexibilité différentes :
+				\begin{description}
+					\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
+						L'objectif est de trouver la meilleure concordance entre les molécules en terme de position et d'orientation.
+					\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
+						L'amarrage de deux molécules (ou plus) introduit de nombreux sites de liaison qui doivent être optimisées en fonction de critères variés (la complémentarité géométrique, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
+						La flexibilité s'organise alors autour de macro-structures telles que les \myhelice* ou les \myfeuillet* \myref*{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta}.
+					\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
+						L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
+				\end{description}
 
 				\begin{myfigure}
 					\myimage{sota-docking-alphabeta}
@@ -186,7 +195,7 @@
 				\mycite[author]{Meagher-2004} proposent de simuler la flexibilité en testant plusieurs conformations différentes d'une même protéine.
 				On trouve également les travaux de \mycite[author]{Radestock-2005} qui combinent les problématiques géométriques et chimiques pour trouver des solutions flexibles de \myglos{glo-DockingMoleculaire} ou encore les travaux de \mycite[author]{Keizers-2005} utilisant les moteurs de dynamique moléculaire.
 				La complexité induite par la flexibilité rend impossible une exploration totale de l'espace des recherches.
-				C'est pourquoi les logiciels présentés dans la \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} évaluent plutôt des système semi-flexibles par différentes solutions dont voici quelques exemples:
+				C'est pourquoi les logiciels présentés dans la \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} évaluent plutôt des systèmes semi-flexibles par différentes solutions dont voici quelques exemples:
 				\begin{itemize}
 					\item Une des deux molécules voire seulement la chaîne carbonée est rendue rigide;
 					\item Utiliser différentes conformations d'une molécule sur des solutions de \myglos{glo-DockingMoleculaire} rigide;
@@ -222,7 +231,8 @@
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaireEnEnvironnementVirtuel]{Le \myglosnl{glo-DockingMoleculaire} en environnement virtuel}
 				Cependant, malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} et se rapprocher au plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
 				Devant cette complexité, un nouveau type de solutions pour traiter le problème de \myglos{glo-DockingMoleculaire} émerge.
-				L'idée est de faire intervenir l'humain qui est capable de filtrer plus intelligemment les solutions pour lesquelles il faut améliorer la précision et celles qu'on peut rejeter immédiatement.
+				L'idée est de faire intervenir l'humain.
+				En effet, un expert, bien que moins rapide pour traiter rapidement les données, est capable de filtrer plus intelligemment les solutions pour lesquelles il faut améliorer la précision et celles qu'on peut rejeter immédiatement.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
