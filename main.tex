@@ -165,7 +165,7 @@
 				Afin de trouver ces sites de liaison, différents types d'algorithmes ont été proposés.
 
 				\mycite[author]{Jones-1997} utilisent les algorithmes génétiques sur le système \myGOLD pour chercher des conformations par complémentarité géométrique et complète la recherche par une évaluation des champs de forces.
-				Puis \mycite[author]{Morris-1998} propose une amélioration par des algorithmes génétiques lamarckistes avec le logiciel \myAutoDock; c'est la solution de \myglos{glo-DockingMoleculaire} la plus utilisée actuellement \mycite{Grosdidier-2007}.
+				Puis \mycite[author]{Morris-1998} propose une amélioration par des algorithmes génétiques lamarckistes avec le logiciel \myAutoDock; c'est la solution de \myglos{glo-DockingMoleculaire} la plus référencée actuellement \mycite{Grosdidier-2007}.
 				\myICMDocking s'oriente plutôt vers une méthode basée sur les \myacro*{acr-ICM} \mycite{Abagyan-1994a,Abagyan-1994b}.
 				Les solutions logicielles basées sur la méthode de \myname{Monte-Carlo} sont également étudiées avec les plate-forme \myGlide \mycite{Friesner-2004,Halgren-2004} ou encore \myBoxSearch \mycite{Hart-1992,Cummings-1995}.
 				Enfin, les outils \myFlexX \mycite{Rarey-1997,Rarey-1999} ou encore \myDOCK \mycite{Ewing-2001}, également très utilisés, tentent de reconstruire le ligand de manière incrémentale autour d'une base protéinique.
@@ -233,6 +233,47 @@
 				Devant cette complexité, un nouveau type de solutions pour traiter le problème de \myglos{glo-DockingMoleculaire} émerge.
 				L'idée est de faire intervenir l'humain.
 				En effet, un expert, bien que moins rapide pour traiter rapidement les données, est capable de filtrer plus intelligemment les solutions pour lesquelles il faut améliorer la précision et celles qu'on peut rejeter immédiatement.
+
+				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion par les solutions de \myglos{glo-RealiteVirtuelle}.
+				\myGROPEHaptic est le premier projet à s'intéresser à la manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990} et déjà à l'époque, c'est le \myglos{glo-DockingMoleculaire} qui intéresse.
+				Pour l'interaction, ce sont des interfaces haptiques spécifiques qui sont proposées.
+				Nous allons voir que la \myglos{glo-RealiteVirtuelle} est beaucoup utilisée pour comprendre ou agir sur la visualisation et la déformation moléculaire.
+
+				Afin de pouvoir immerger les biologistes au sein d'un environnement virtuel, plusieurs verrous technologiques ont été étudiés.
+				\mycite[author]{Bergman-1993} explore les structures moléculaires avec la plate-forme \myVIEW en proposant différentes représentations pour les molécules.
+				Quelques années plus tard, les premiers logiciels sont développés et distribués à large échelle comme \myacro{acr-VMD} \mycite{Humphrey-1996} ou \myPyMOL \mycite{DeLano-2002}.
+
+				Cependant, les visualisations statiques ne suffisent pas à comprendre les interactions chimiques en action au sein d'une molécule.
+				\mycite[author]{Huitema-2000} fournit une possibilité de visualiser des trajectoires d'atomes à propos de la dynamique de protéines.
+				Puis \mycite[author]{Klosowski-2002} franchit une étape supplémentaire en proposant une visualisation temps-réel à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
+				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} propose une visualisation multimodale en ajoutant un retour haptique afin de percevoir les champs de forces.
+
+				En parallèle, les scientifiques s'intéressent également à la manipulation de molécules en temps-réel.
+				La modélisation moléculaire assistée par ordinateur est proposée sur la plate-forme \myHIMM (\myemph{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
+				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} introduit une interface tangible.
+				Cependant, les biologistes cherchent à interagir virtuellement avec la dynamique des molécules afin de pouvoir s'affranchir de la difficulté de cette manipulation dans le monde réel.
+				Les interactions proposées se font alors par traction des atomes \mycite{Haan-2002,Koutek-2002}.
+				\mycite[author]{Lee-2004} calque les interactions haptiques sur l'approximation du champ de force de \mycite[author]{Lennard-Jones-1924a,Lennard-Jones-1924b}, largement adopté par la communauté.
+				Enfin, la manipulation interactive avec la simulation d'une molécule flexible devient possible avec la plate-forme proposée par \mycite[author]{Delalande-2009} à laquelle il ajoute la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
+
+				Ces solutions pour interagir avec les molécules sont en partie utilisées pour l'apprentissage de la dynamique moléculaire.
+				Par exemple, \mycite[author]{Sankaranarayanan-2003} propose une plate-forme interactive avec des interfaces haptiques pour apprendre et comprendre les structures moléculaires.
+				Puis \mycite[author]{Wollacott-2007} s'intéresse à la compréhension des interactions chimiques avec la combinaison d'une interface haptique et de l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
+				C'est avec le système \myChemicalForceFeedback (retour haptique des forces chimiques) que l'apprentissage du \myglos{glo-DockingMoleculaire} par l'intermédiaire de la \myglos{glo-RealiteVirtuelle} est abordée \mycite{Bivall-Persson-2007,Bivall-Persson-2008}.
+
+				En effet, la discipline qui semble le plus intéresser les biologistes est le \myglos{glo-DockingMoleculaire}.
+				Très tôt, des projets de \myglos{glo-DockingMoleculaire} voient le jour comme \myGROPEHaptic \mycite{Ouh-Young-1988,Brooks-1990} ou encore \mySTALK \mycite{Levine-1997}.
+				Des chercheurs reconnus de la communauté haptique commencent à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
+				\mycite[author]{Lai-Yuen-2005} propose une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006}.
+				Puis, à l'aide d'interfaces haptiques plus largement répandue comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du système devient possible.
+				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} propose des modèles de forces haptiques adaptés.
+
+				Les différentes briques permettant d'effectuer du \myglos{glo-DockingMoleculaire} flexible interactif sont présentes.
+				\mycite[author]{Delalande-2010} nous offre la possibilité de manipuler des simulations réalistes en temps-réel.
+				Puis \mycite[author]{Daunay-2009} offre la possibilité d'évaluer en temps-réel ces simulations.
+				\mycite[author]{Stone-2010} fournit les interfaces nécessaires sur le logiciel \myacro{acr-VMD} pour accéder à des solutions de \myglos{glo-RealiteVirtuelle}.
+				Des modèles de forces haptiques spécifiques au \myglos{glo-DockingMoleculaire} sont développés \mycite{Hou-2010}.
+				Pourtant, tous ces outils et solutions associés à la complexité que représente la réalisation d'une tâche de \myglos{glo-DockingMoleculaire} semble difficilement accessible à un manipulateur seul.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
