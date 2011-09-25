@@ -232,48 +232,94 @@
 				Cependant, malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} et se rapprocher au plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
 				Devant cette complexité, un nouveau type de solutions pour traiter le problème de \myglos{glo-DockingMoleculaire} émerge.
 				L'idée est de faire intervenir l'humain.
-				En effet, un expert, bien que moins rapide pour traiter rapidement les données, est capable de filtrer plus intelligemment les solutions pour lesquelles il faut améliorer la précision et celles qu'on peut rejeter immédiatement.
+				En effet, bien que moins rapide pour traiter rapidement un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes de celles qu'on peut rejeter immédiatement.
 
-				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion par les solutions de \myglos{glo-RealiteVirtuelle}.
-				\myGROPEHaptic est le premier projet à s'intéresser à la manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990} et déjà à l'époque, c'est le \myglos{glo-DockingMoleculaire} qui intéresse.
+				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion à l'aide de solutions de \myglos{glo-RealiteVirtuelle}.
+				\myGROPEHaptic est le premier projet concernant la manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990} et déjà à l'époque, c'est le \myglos{glo-DockingMoleculaire} qui intéresse.
 				Pour l'interaction, ce sont des interfaces haptiques spécifiques qui sont proposées.
 				Nous allons voir que la \myglos{glo-RealiteVirtuelle} est beaucoup utilisée pour comprendre ou agir sur la visualisation et la déformation moléculaire.
 
 				Afin de pouvoir immerger les biologistes au sein d'un environnement virtuel, plusieurs verrous technologiques ont été étudiés.
-				\mycite[author]{Bergman-1993} explore les structures moléculaires avec la plate-forme \myVIEW en proposant différentes représentations pour les molécules.
+				\mycite[author]{Bergman-1993} explorent les structures moléculaires avec la plate-forme \myVIEW en proposant différentes représentations pour les molécules \myref*{fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993}.
 				Quelques années plus tard, les premiers logiciels sont développés et distribués à large échelle comme \myacro{acr-VMD} \mycite{Humphrey-1996} ou \myPyMOL \mycite{DeLano-2002}.
 
+				\begin{myfigure}
+					\myimage{sota-Bergman-1993}
+					\mycaption[fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993]{Représentation avancée proposée par \mycite[author]{Bergman-1993}}
+				\end{myfigure}
+
 				Cependant, les visualisations statiques ne suffisent pas à comprendre les interactions chimiques en action au sein d'une molécule.
-				\mycite[author]{Huitema-2000} fournit une possibilité de visualiser des trajectoires d'atomes à propos de la dynamique de protéines.
-				Puis \mycite[author]{Klosowski-2002} franchit une étape supplémentaire en proposant une visualisation temps-réel à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
-				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} propose une visualisation multimodale en ajoutant un retour haptique afin de percevoir les champs de forces.
+				\mycite[author]{Huitema-2000} fournissent une possibilité de visualiser des trajectoires d'atomes à propos de la dynamique de protéines.
+				Puis \mycite[author]{Klosowski-2002} franchissent une étape supplémentaire en proposant une visualisation temps-réel à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
+				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} proposent une visualisation multimodale en ajoutant un retour haptique afin de percevoir les champs de forces \myref*{fig-sota-VisualisationMultimodaleProposeeParDavies2005}.
+
+				\begin{myfigure}
+					\myimage{sota-Davies-2005}
+					\mycaption[fig-sota-VisualisationMultimodaleProposeeParDavies2005]{Visualisation multimodale proposée par \mycite[author]{Davies-2005}}
+				\end{myfigure}
 
 				En parallèle, les scientifiques s'intéressent également à la manipulation de molécules en temps-réel.
 				La modélisation moléculaire assistée par ordinateur est proposée sur la plate-forme \myHIMM (\myemph{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
 				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} introduit une interface tangible.
 				Cependant, les biologistes cherchent à interagir virtuellement avec la dynamique des molécules afin de pouvoir s'affranchir de la difficulté de cette manipulation dans le monde réel.
 				Les interactions proposées se font alors par traction des atomes \mycite{Haan-2002,Koutek-2002}.
-				\mycite[author]{Lee-2004} calque les interactions haptiques sur l'approximation du champ de force de \mycite[author]{Lennard-Jones-1924a,Lennard-Jones-1924b}, largement adopté par la communauté.
-				Enfin, la manipulation interactive avec la simulation d'une molécule flexible devient possible avec la plate-forme proposée par \mycite[author]{Delalande-2009} à laquelle il ajoute la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
+				\mycite[author]{Lee-2004} calquent les interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}, largement adopté par la communauté \myref*{fig-sota-PotentielDeLennardJones1924}.
+				\begin{equation}\label{eq-sota-PotentielDeLennardJones}
+					V_{Lennard-Jones} = 4\varepsilon \left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6\right]
+				\end{equation}
+				Enfin, la manipulation interactive avec la simulation d'une molécule flexible devient possible avec la plate-forme proposée par \mycite[author]{Delalande-2009} à laquelle on ajoute la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
+
+				\begin{myfigure}
+					\psset{xunit=0.181818182\textwidth,yunit=0.125\textwidth}
+					\begin{myps}(-0.5,-1)(5,2.25)
+						\newcommand{\myEzero}{0.8 }
+						\newcommand{\mysigma}{1.5 }
+						\newcommand{\myrm}{1.683693072}
+						\psaxes{->}(0,0)(0,-1)(5,2.25)
+						\makeatletter
+						\setlength{\my@ps@xoffset}{1\pslabelsep}%
+						\settowidth{\my@ps@yoffset}{-1}
+						\addtolength{\my@ps@yoffset}{2\pslabelsep}%
+						\uput{\my@ps@xoffset}[90](4.5,0){\textit{distance}}
+						\uput{\my@ps@yoffset}[180](0,0.5){\rotateleft{\textit{énergie potentielle}}}
+						\makeatother
+						\psplot[linewidth=1.5pt,linecolor=myred,plotpoints=1000]{1.412304381}{5}{4 \myEzero \mysigma x div \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul \mysigma x div mul sub mul mul}
+						\psline[linestyle=dashed,linecolor=myblue](\myrm,0)(\myrm,-\myEzero)
+						\uput[45](\myrm,0){\textcolor{myblue}{$r_m = 2^{\frac{1}{6}} \sigma$}}
+						\psline[linestyle=dashed,linecolor=myblue](0,-\myEzero)(\myrm,-\myEzero)
+						\uput[180](0,-\myEzero){\textcolor{myblue}{$\varepsilon$}}
+					\end{myps}
+					\mycaption[fig-sota-PotentielDeLennardJones1924]{Potentiel de \mycite[author]{Lennard-Jones-1924a}}
+				\end{myfigure}
 
 				Ces solutions pour interagir avec les molécules sont en partie utilisées pour l'apprentissage de la dynamique moléculaire.
-				Par exemple, \mycite[author]{Sankaranarayanan-2003} propose une plate-forme interactive avec des interfaces haptiques pour apprendre et comprendre les structures moléculaires.
-				Puis \mycite[author]{Wollacott-2007} s'intéresse à la compréhension des interactions chimiques avec la combinaison d'une interface haptique et de l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
+				Par exemple, \mycite[author]{Sankaranarayanan-2003} proposent une plate-forme interactive avec des interfaces haptiques pour apprendre et comprendre les structures moléculaires.
+				Puis \mycite[author]{Wollacott-2007} s'intéressent à la compréhension des interactions chimiques avec la combinaison d'une interface haptique et de l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
 				C'est avec le système \myChemicalForceFeedback (retour haptique des forces chimiques) que l'apprentissage du \myglos{glo-DockingMoleculaire} par l'intermédiaire de la \myglos{glo-RealiteVirtuelle} est abordée \mycite{Bivall-Persson-2007,Bivall-Persson-2008}.
 
 				En effet, la discipline qui semble le plus intéresser les biologistes est le \myglos{glo-DockingMoleculaire}.
 				Très tôt, des projets de \myglos{glo-DockingMoleculaire} voient le jour comme \myGROPEHaptic \mycite{Ouh-Young-1988,Brooks-1990} ou encore \mySTALK \mycite{Levine-1997}.
 				Des chercheurs reconnus de la communauté haptique commencent à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
-				\mycite[author]{Lai-Yuen-2005} propose une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006}.
+				\mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006} \myref*{fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006}.
 				Puis, à l'aide d'interfaces haptiques plus largement répandue comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du système devient possible.
-				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} propose des modèles de forces haptiques adaptés.
+				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de forces haptiques adaptés.
+
+				\begin{myfigure}
+					\myimage{sota-Lai-Yuen-2006}
+					\mycaption[fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006]{\myGlosnl{glo-DockingMoleculaire} rigide à l'aide d'une interface à cinq \myacronl*{acr-DDL} \mycite{Lai-Yuen-2006}}
+				\end{myfigure}
 
 				Les différentes briques permettant d'effectuer du \myglos{glo-DockingMoleculaire} flexible interactif sont présentes.
 				\mycite[author]{Delalande-2010} nous offre la possibilité de manipuler des simulations réalistes en temps-réel.
-				Puis \mycite[author]{Daunay-2009} offre la possibilité d'évaluer en temps-réel ces simulations.
-				\mycite[author]{Stone-2010} fournit les interfaces nécessaires sur le logiciel \myacro{acr-VMD} pour accéder à des solutions de \myglos{glo-RealiteVirtuelle}.
+				Puis \mycite[author]{Daunay-2009} offrent la possibilité d'évaluer en temps-réel ces simulations.
+				\mycite[author]{Stone-2010} fournissent les interfaces nécessaires sur le logiciel \myacro{acr-VMD} pour accéder à des solutions de \myglos{glo-RealiteVirtuelle}.
 				Des modèles de forces haptiques spécifiques au \myglos{glo-DockingMoleculaire} sont développés \mycite{Hou-2010}.
 				Pourtant, tous ces outils et solutions associés à la complexité que représente la réalisation d'une tâche de \myglos{glo-DockingMoleculaire} semble difficilement accessible à un manipulateur seul.
+
+				\begin{myfigure}
+					\myimage{sota-Daunay-2009}
+					\mycaption[fig-sota-DockingMoleculaireRigideAvecLeVirtuoseDaunay2009]{\myGlosnl{glo-DockingMoleculaire} rigide avec le \myVirtuose \mycite{Daunay-2009}}
+				\end{myfigure}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
