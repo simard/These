@@ -639,7 +639,7 @@
 				\end{myfigure}
 
 				À l'origine, les interfaces haptiques de \mySensAble était programmable à l'aide de l'\myacro{acr-API} \myGhost \mycite{SensAble-2002}.
-				Le travail de \mycite[author]{Itkowitz-2005} a permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
+				Le travail de \mycite[author]{Itkowitz-2005} ont permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
 				C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur \myShaddock.
 				Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un logiciel spécifique qui s'occupera de cette communication avec l'interface.
 			\end{mysubsection}
@@ -692,25 +692,25 @@
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-UneArchitectureClientServeur]{Une architecture client/serveur}
 				Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{En anglais, \myemph{peer-to-peer} parfois abrégé en \textsc{p2p}.}.
-				Parmi les études notables, \mycite[author]{Iglesias-2008} propose une tâche d'assemblage collaboratif assisté par l'haptique.
+				Parmi les études notables, \mycite[author]{Iglesias-2008} proposent une tâche d'assemblage collaboratif assisté par l'haptique.
 				Une des problématiques soulevée est la difficulté de maintenir un environnement virtuel cohérent et fidèle pour tous les utilisateurs.
 				Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectuée par un processus qui distribue les informations aux différents clients.
 				D'ailleurs, ce papier fournit un bon état de l'art des différents type d'architectures en soulignant les avantages et inconvénients de chacune.
 
 				En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisations sur le réseau plus rapides : elles nécessitent moins de paquet réseau pour la communication.
 				Cependant, ce type d'architecture génère des retours haptiques instables.
-				D'ailleurs, \mycite[author]{Kim-2004} qui étudie le déplacement collaboratif d'une boîte virtuelle assisté par l'haptique signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
+				D'ailleurs, \mycite[author]{Kim-2004}, qui étudient le déplacement collaboratif d'une boîte virtuelle assisté par l'haptique, signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
 				Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptées pour des application collaboratives utilisant l'haptique.
 				
 				D'autres travaux proposent des architectures client/serveur utilisant les interactions haptiques.
-				\mycite[author]{Huang-2010} propose la manipulation d'un jeu de construction par blocs.
+				\mycite[author]{Huang-2010} proposent la manipulation d'un jeu de construction par blocs.
 				La simulation est centralisée sur un serveur et les interaction haptiques sont produites par l'intermédiaire de clients.
 				Il ne souligne aucune instabilité dans les interactions haptiques.
-				\mycite[author]{Norman-2010} s'intéresse particulièrement aux influences du réseau sur les interactions visuo-haptiques.
+				\mycite[author]{Norman-2010} s'intéressent particulièrement aux influences du réseau sur les interactions visuo-haptiques.
 				L'architecture client/serveur est la plus adaptée pour la gestion de simulation.
 				Cependant, il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
 
-				\mycite[author]{Marsh-2006} propose une comparaison de ces deux types d'architectures et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
+				\mycite[author]{Marsh-2006} proposent une comparaison de ces deux types d'architectures et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
 				Cependant, l'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système (et donc entre les utilisateurs).
 				Cependant, ce type d'architecture nécessite deux fois plus de paquets sur le réseau qu'une architecture pair-à-pair.
 				Par opposition, l'architecture de type pair-à-pair ne permet pas d'obtenir un rendu haptique stable alors que l'achitecture de type client/serveur le permet.
@@ -1018,7 +1018,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Depuis déjà plusieurs années, la communauté de la réalité virtuelle s'est intéressé à cette problématique en proposant des périphériques d'interaction pour les environnements virtuels en \myThreeD.
 				\mycite[author]{Pavlovic-1996} ont développé une plate-forme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
 				Cependant, les techniques de segmentations pour la reconnaissance des gestes sont encore difficiles à mettre en place, même si l'arrivée récente de la \myKinect de \myMicrosoft a amélioré cette démocratisation.
-				On trouve également les travaux de \mycite[author]{Polys-2004} qui propose une interaction avec une \myemph{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myemph{workbench}\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
+				On trouve également les travaux de \mycite[author]{Polys-2004} qui proposent une interaction avec une \myemph{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myemph{workbench}\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
 				Tous ces dispositifs sont relativement lourds à déployer et ne sont pas adaptés pour une utilisation sur un ordinateur de bureau.
 
 				Tous les dispositifs présentés dans le paragraphe précédent sont testés sur des molécules ne contenant que quelques atomes et ayant peu d'intérêt pour les biologistes.
@@ -2507,7 +2507,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
 			À présent, les différentes \myacro*{acr-PCV} ont été étudiées dans un contexte de collaboration étroitement couplée à travers les deux précédents chapitres.
 			Cependant, l'observation du travail collaboratif ne peut être restreint à l'étude des \myglos*{glo-Binome}.
-			En effet, \mycite[author]{Roethlisberger-1939} a mis en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
+			En effet, \mycite[author]{Roethlisberger-1939} ont mis en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
 			Ces dynamiques de groupe montre une collaboration très différente de que ce que nous avons pu observer chez les \myglos*{glo-Binome}.
 
 			Ce chapitre constitue notre première étude sur le travail collaboratif avec des groupes d'utilisateurs\footnote{\mycite[author]{Bales-1950} considère qu'un groupe est constitué au minimum de trois personnes.}.
@@ -2519,18 +2519,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
-				L'ouvrage de \mycite[author]{Mugny-1995} aborde les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
+				L'ouvrage de \mycite[author]{Mugny-1995} abordent les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
 				Les premières études sur la dynamique de groupe date de la révolution industrielle entre la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle avec en particulier, les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne.
 				Cette étude, destinée à étudier l'effet des conditions de travail (température, temps de pause, \myetc), a été effectuée entre les années 1927 et 1932.
 				Cependant, l'étude a montré que l'amélioration de la productivité des ouvriers n'était pas liée aux conditions de travail.
-				\mycite[author]{Roethlisberger-1939} explique cette amélioration par la stimulation sociale qu'exerce chaque individu sur ses partenaires : c'est la \myglos{glo-MotivationSociale}.
+				\mycite[author]{Roethlisberger-1939} expliquent cette amélioration par la stimulation sociale qu'exerce chaque individu sur ses partenaires : c'est la \myglos{glo-MotivationSociale}.
 				Les résultats de cette étude sur les groupes de taille importante sont actuellement utilisés dans les techniques modernes de \myemph{management} \mycite{Wood-2004,Bruce-2006}.
 
 				Cependant, en parallèle à cette théorie de la dynamique des groupes basée sur la \myglos{glo-MotivationSociale}, \mycite[author]{Ringelmann-1913} met en évidence une théorie radicalement différente.
 				En effet, à travers un exercice de traction sur une corde, il montre que la somme des efforts individuels est plus importante que l'effort combiné du groupe, chaque sujet se fiant à son voisin pour réaliser la tâche.
 				Ce phénomène, appelé \myglos{glo-ParesseSociale}, s'oppose aux résultats obtenus par \mycite[author]{Roethlisberger-1939} sur la \myglos{glo-MotivationSociale}.
-				Une étude plus poussée de ce phénomène effectuée par \mycite[author]{Latane-1979} confirme les résultats obtenus sur la \myglos{glo-ParesseSociale}.
-				Cependant, \mycite[author]{Latane-1979} propose de limiter ce problème en renforçant la responsabilité individuelle plutôt que de la diffuser sur le groupe.
+				Une étude plus poussée de ce phénomène, effectuée par \mycite[author]{Latane-1979}, confirme les résultats obtenus sur la \myglos{glo-ParesseSociale}.
+				Cependant, \mycite[author]{Latane-1979} proposent de limiter ce problème en renforçant la responsabilité individuelle plutôt que de la diffuser sur le groupe.
 				La responsabilisation par la définition de rôles distincts permet de ne pas se décharger des actions à réaliser sur ses partenaires tout en conservant les effets bénéfiques de la \myglos{glo-MotivationSociale}.
 
 				Une part de ces études sur la dynamique de groupe est consacrée aux groupes de petites tailles appelés également groupes restreints.
@@ -2541,7 +2541,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Sur une tâche de nature complexe, l'évaluation et le jugement par les partenaires est un frein et a pour conséquences de faire baisser les performances du groupe.
 
 				Au sein des groupes restreints, \mycite[author]{Osborn-1963} propose d'améliorer les performances dans les groupes restreints par l'introduction de la notion de \mybrainstorming.
-				Pourtant, \mycite[author]{Diehl-1987} montre que le \mybrainstorming apporte moins de bénéfices en groupe que lorsqu'il est effectué individuellement.
+				Pourtant, \mycite[author]{Diehl-1987} montrent que le \mybrainstorming apporte moins de bénéfices en groupe que lorsqu'il est effectué individuellement.
 				\mycite[author]{Poole-2005} expliquent que les groupes focalisent en priorité sur les informations qu'ils ont en commun.
 				La peur de l'évaluation négative va empêcher l'émergence de solutions originales.
 				Cependant, \mycite[author]{Tuckman-1965} considère que le \mybrainstorming permet tout de même de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
