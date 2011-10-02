@@ -328,16 +328,16 @@
 			\begin{mysubsection}[sse-sota-LaDistributionCognitiveDesChargesDeTravail]{La distribution cognitive des charges de travail}
 				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmis les premiers a avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources.
 				Par exemple, \mycite[author]{Wegner-1987} s'intéresse à la distribution de la mémoire dans un groupe ce qui permet à chaque individu de se libérer d'une charge cognitive.
-				\mycite[author]{George-1990} souligne également les effets de l'état émotionnel de chacun sur l'état émotionnel du groupe\footnote{\mycite[author]{Yammarino-1992} a remis en cause les conclusions obtenues mais le travail de \mycite[author]{George-1990} a de nouveau été confirmé par \mycite[author]{George-1993}.}
+				\mycite[author]{George-1990} souligne également les effets de l'état émotionnel de chacun sur l'état émotionnel du groupe\footnote{\mycite[author]{Yammarino-1992} ont remis en cause les conclusions obtenues mais le travail de \mycite[author]{George-1990} a de nouveau été confirmé par \mycite[author]{George-1993}.}.
 
 				C'est \mycite[author]{Hutchins-1995} qui concrétise la notion de distribution cognitive avec une étude des interactions qui ont lieu dans un cockpit d'avion.
 				L'année suivante, il cristallise ses conclusions autour de ces observations en psychologie sociale et de ses connaissances en anthropologie \mycite{Hutchins-1996} : il fait une distinction entre les propriétés cognitives d'un individu et les propriétés cognitives d'un groupe.
 				Deux communautés se créent; ceux qui considérent que le travail cognitif d'un groupe d'individus est une somme des propriétés cognitives de chaque individu; et ceux qui considèrent que certains aspects cognitifs d'un groupe d'individus sont propres à la collaboration.
 
-				Afin de justifier le rejet de l'approche internaliste et individualiste, \mycite[author]{Clark-1998} explique que lorsque notre cognition s'appuie sur une aide externe, elle devient interactive et relationnelle, c'est-à-dire non détachable d'un composant externe présent dans l'environnement.
+				Pour justifier le rejet de l'approche internaliste et individualiste, \mycite[author]{Clark-1998} explique que lorsque notre cognition s'appuie sur une aide externe, elle devient interactive et relationnelle, c'est-à-dire non détachable d'un composant externe présent dans l'environnement.
 				De plus, \mycite[author]{Clark-2001} parle du lien étroit entre la notion d'extension cognitive et les processus cognitifs complexes : les problèmes de nature complexe stimule cette extension cognitive.
 
-				\mycite[author]{Hollan-2000} propose de définir la distribution cognitive de la façon suivante
+				\mycite[author]{Hollan-2000} proposent de définir la distribution cognitive de la façon suivante
 				\begin{myquote}[english]
 					Unlike traditional theories, however, [the theory of distributed cognition] extends the reach of what is considered cognitive beyond the individual to encompass interactions between people and with resources and materials in the environment.
 				\end{myquote}
@@ -345,8 +345,60 @@
 				\begin{myquote}[frenchb]
 					On peut déplacer la frontière de l'unité cognitive d'analyse au-delà de l'enveloppe corporelle de l'individu de façon à inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
 				\end{myquote}
-				Plus récemment, \mycite[author]{Zhang-2006} synthétise la distribution cognitive en décrivant les groupes d'individus comme des systèmes ayant des interactions externes (avec des matériels) \mycite{Zhang-1994} et des interactions internes (avec des partenaires).
+				Plus récemment, \mycite[author]{Zhang-2006} synthétisent la distribution cognitive en décrivant les groupes d'individus comme des systèmes ayant des interactions externes (avec des matériels) \mycite{Zhang-1994} et des interactions internes (avec des partenaires).
 				En effet, les éléments externes sont également inclus dans le processus de distribution cognitive pour soulager les individus.
+				La \myref{fig-sota-RepresentationDunSystemeCognitivementDistribue} illustre un tel système de distribution cognitive.
+
+				\begin{myfigure}
+					\psset{unit=0.1\textwidth}
+					\definecolor{mylightestredblue}{rgb}{0.875 0.705 0.79328125}
+					\begin{myps}(-5,-2.5)(5,4)
+						\pspolygon*[linearc=0.5,linecolor=mylightestred](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)
+						\pspolygon*[linearc=0.5,linecolor=mylightestblue](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)
+						\psclip{%
+							\pscustom[linestyle=none]{%
+								\pspolygon*[linearc=0.5](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)
+							}
+							\pscustom[linestyle=none]{%
+								\pspolygon*[linearc=0.5](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)
+							}
+						}
+						\psframe*[linecolor=mylightestredblue](-5,-2.5)(5,4)
+						\endpsclip
+						\psset{fillcolor=white}
+						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,0)(-0.5,4)
+						\rput(-2.5,3.75){\textcolor{black!70}{Espace interne}}
+						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](4.5,0)(0.5,4)
+						\rput(2.5,3.75){\textcolor{black!70}{Espace externe}}
+						\psframe[linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,-2.5)(4.5,-0.5)
+						\mynode(-2,3)[individu1]{\textcolor{myblue}{Individu~\mynum{1}}}
+						\mynode(-3,2)[individu2]{\textcolor{myred}{Individu~\mynum{2}}}
+						\mynode(-2,1)[individu3]{\textcolor{mygreen}{Individu~\mynum{3}}}
+						\mynode(2.5,2.5)[artefact1]{Artefact~\mynum{1}}
+						\mynode(2.5,1.5)[artefact2]{Artefact~\mynum{2}}
+						\psellipse[fillstyle=solid,fillcolor=white](0,-1.25)(1,0.5)
+						\rput(0,-1.25){Tâche}
+						\rput(0,-2.25){\textcolor{black!70}{Abstraction de l'espace de travail}}
+						\psset{arrows={<->}}
+						\ncline{individu1}{individu2}
+						\ncline{individu2}{individu3}
+						\ncline[offset=8pt]{individu1}{individu3}
+						\psset{arrows={-}}
+						\ncline{artefact1}{artefact2}
+						\psset{arrows={<->}}
+						\psset{linecolor=myblue}
+						\ncline{individu1}{artefact1}
+						\ncline{individu1}{artefact2}
+						\psset{linecolor=myred}
+						\ncline{individu2}{artefact1}
+						\ncline{individu2}{artefact2}
+						\psset{linecolor=mygreen}
+						\ncline{individu3}{artefact1}
+						\ncline{individu3}{artefact2}
+					\end{myps}
+					\mycaption[fig-sota-RepresentationDunSystemeCognitivementDistribue]{Représentation d'un système cognitivement distribué}
+				\end{myfigure}
+
 				\mycite[author]{Zhang-1997} dresse une liste des propriétés cognitives auxquelles peuvent répondre ces éléments externes :
 				\begin{itemize}
 					\item fournir une aide mémorielle à court ou long terme afin de réduire la charge cognitive;
@@ -362,13 +414,13 @@
 
 				Les éléments externes de la distribution cognitive, que \mycite[author]{Norman-1991} et \mycite[author]{Kirsh-1999} appellent artefact, répondent au besoin d'affordance.
 				Le concept d'affordance a été identifié par \mycite{Gibson-1977}.
-				L'affordance est l'ensemble des possibilités d'actions sur et avec un objet \mycite{Gibson-1979} mais cette définition s'est par la suite réduite aux seules possibilités dont l'acteur est conscient.
+				L'affordance est l'ensemble des possibilités d'actions sur et avec un artefact \mycite{Gibson-1979} mais cette définition s'est par la suite réduite aux seules possibilités dont l'acteur est conscient.
 				C'est \mycite[author]{Norman-1988} qui utilise ce terme pour la première fois dans le contexte de la distribution cognitive.
 				Il en fait une description plus précise lorsqu'il se rend compte que ce terme est mal utilisé par la communauté \mycite{Norman-1999}.
-				Le terme est utilisé en suite par les fondateurs de la psychologie cognitive sociale \mycite{Patel-2000}.
+				Le terme est ensuite utilisé par les fondateurs de la psychologie cognitive sociale \mycite{Patel-2000}.
 
-				Cependant, \mycite[author]{Foushee-1987} montre qu'une configuration de travail collaboratif peut amener un gain en efficacité mais peut également amener une perte d'efficacité.
-				Par exemple, \mycite[author]{Patel-1999} montre une perte d'efficacité sur une application permettant la collaboration distante.
+				Cependant, \mycite[author]{Foushee-1987} montrent qu'une configuration de travail collaboratif peut amener un gain en efficacité mais peut également amener une perte d'efficacité.
+				Par exemple, \mycite[author]{Patel-1999} montrent une perte d'efficacité sur une application permettant la collaboration distante.
 				\mycite[author]{Zhang-1998} esquisse une explication dépendant de la répartition des connaissances dans un groupe : si les connaissances sont complémentaires, il y a un gain en efficacité.
 				Nous allons voir dans les sections suivantes que différent phénomènes influent sur les performances d'un groupe.
 			\end{mysubsection}
