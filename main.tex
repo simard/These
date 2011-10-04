@@ -424,9 +424,93 @@
 				\mycite[author]{Zhang-1998} esquisse une explication dépendant de la répartition des connaissances dans un groupe : si les connaissances sont complémentaires, il y a un gain en efficacité.
 				Nous allons voir dans les sections suivantes que différent phénomènes influent sur les performances d'un groupe.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-LaParesseSociale]{La paresse sociale}
-			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LaFacilitationSociale]{La facilitation sociale}
+				La \myglos{glo-FacilitationSociale} est un phénomène qui a été mis en évidence par \mycite[author]{Triplett-1898}.
+				Il s'est intéressé aux résultats de coureurs cyclistes ayant coucouru dans trois différentes conditions :
+				\begin{enumerate}
+					\item Course seul;
+					\item Course avec un meneur (également appelé \myemph{lièvre} dans le jargon);
+					\item Course dans des conditions de compétition.
+				\end{enumerate}
+				Les résultats \myref*{fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes} montrent que les coureurs en présence d'autres individus sont plus rapides que les coureurs effectuant l'épreuve seuls.
+
+				\begin{myfigure}
+					\psset{xunit=0.298507463\textwidth,yunit=0.05cm}
+					\begin{myps}(-0.35,-25)(3,65)
+						\myaxes(0,3){condition}(0,60)[10]{vitesse~(km/h)}
+						\mybarplot{sota-triplett.csv}
+						\mybarplot[plotstyle=values]{sota-triplett.csv}
+						\uput{1pt}[-90](0.5,38.650022682){\bfseries\textcolor{white}{\mynum[km/h]{39}}}
+						\uput{1pt}[-90](1.5,50.161371429){\bfseries\textcolor{white}{\mynum[km/h]{50}}}
+						\uput{1pt}[-90](2.5,52.502386951){\bfseries\textcolor{white}{\mynum[km/h]{52}}}
+					\end{myps}
+					\mycaption[fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes]{Résultats obtenus par \mycite[author]{Triplett-1898} avec des cyclistes}
+				\end{myfigure}
+
+				Ce phénomène mis en évidence par \mycite[author]{Triplett-1898} a été plus largement discuté par \mycite[author]{Seashore-1899}.
+				Des expérimentations sur des étudiants ont ensuite été menées par \mycite[author]{Mayer-1903} puis par \mycite[author]{Meumann-1904}.
+				\mycite[author]{Mayer-1903} confirme l'amélioration des performances en plaçant des spectateurs pour toute la durée de la réalisation de la tâche (rédaction de dictée ou résolution de problème arithmétiques).
+				\mycite[author]{Meumann-1904} ajoute une pierre à l'édifice en confirmant avec des tests plus poussés (tests de mémoire, ergographe et dynamomètre) que les étudiants sont toujours moins performants lorsqu'ils sont seuls.
+
+				Le terme \myglos{glo-FacilitationSociale} est utilisé pour la première fois par \mycite[author]{Allport-1924} \mycite{Strauss-2002}.
+				Il en donne la définition suivante.
+				\begin{myquote}[english]
+					\it The action prepared or in progress is some response participated in by all, and the social stimuli releasing or augmenting such response are the sight and sound of others doing the same thing.
+				\end{myquote}
+				qui peut-être traduite par
+				\begin{myquote}[frenchb]
+					Une action collaborative préparée ou en progression possède une réponse et la stimulation sociale provoque une augmentation de cette réponse uniquement à la vue et au son provoqué par d’autres effectuant les mêmes mouvements.
+				\end{myquote}
+
+				\mycite[author]{Allport-1924} aborde ce phénomène par une collaboration où chaque individu effectue la même tâche.
+				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}, qui a étudié les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne, constate également que les travail en groupe génére une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances de chacun des membres individuellement.
+				La \myglos{glo-FacilitationSociale} a même été observée sur les animaux comme les cafards \mycite{Zajonc-1969} ou les singes \mycite{Dindo-2009}.
+
+				Cependant, des nuances de ce phénomène commencent à être observées.
+				Par exemple, des différences de performances sont observées en fonction de la nature de la tâche.
+				Déjà, \mycite[author]{Yerkes-1908} avait constaté, dans un contexte non-collaboratif, que les performances d'un individu pouvait dépendre de la complexité de la tâche et du niveau de stimulation.
+				Une trop forte motivation a des effets néfastes sur les performances de l'individu lors de la réalisation d'une tâche complexe \myref*{fig-sota-LoiDeYerkesDodsonSurLeLienEntreLaStimulationDesIndividusEtLesPerformances}.
+				\mycite[author]{Zajonc-1965} a fait le lien entre la loi de \mycite[author]{Yerkes-1908} et la \myglos{glo-FacilitationSociale}.
+				En effet, la présence de partenaires dans la réalisation d'une tâche permet de stimuler.
+				Dans le cadre d'une tâche simple, chacun des membres est confiant dans ses propres capacités à réaliser la tâche et la présence d'observateurs va stimuler son besoin de bien réussir la tâche.
+				Cependant, la réalisation d'une tâche complexe va être entravée par l'évaluation des membres les uns entre les autres : la tâche n'étant ni habituelle, ni facile, les membres du groupes perdent leur confiance.
+
+				\begin{myfigure}
+					\psset{xunit=0.090909091\textwidth,yunit=0.06\textwidth}
+					\begin{myps}(-1,-1.5)(10,5)
+						\psaxes[ticks=none,labels=none]{->}(0,0)(0,0)(10,5)
+						\psplot[plotpoints=1000,linecolor=myblue]{1}{9}[%
+							/expconst 2.71828182845904523536028747135266249775724709369995 def%
+							/lambda 2 def%
+							/offsetx 4 def
+						]{5 1 1 expconst lambda x offsetx sub mul neg exp add div mul}
+						\psplot[plotpoints=1000,linecolor=myred]{1}{9}[%
+							/expconst 2.71828182845904523536028747135266249775724709369995 def%
+							/piconst 3.141592653589793238462643383279502884197169399375105 def%
+							/mu 0 def%
+							/sigma 1 def%
+							/ampconst 10 sigma 2 piconst mul sqrt mul div def%
+						]{ampconst expconst x 5 sub mu sub 2 exp 2 sigma sigma mul mul div neg exp mul}
+						\uput[-90](1,0){faible}
+						\uput[-90](9,0){élevée}
+						\uput{4ex}[-90](5,0){\myemph{stimulation}}
+						\uput[180](0,4){\rotateleft{bonne}}
+						\uput[180](0,1){\rotateleft{mauvaise}}
+						\uput{2em}[180](0,2.5){\rotateleft{\myemph{performance}}}
+						\uput[-90](8.5,5){\textcolor{myblue}{Tâche simple}}
+						\uput[90](8.5,0){\textcolor{myred}{Tâche complexe}}
+					\end{myps}
+					\mycaption[fig-sota-LoiDeYerkesDodsonSurLeLienEntreLaStimulationDesIndividusEtLesPerformances]{Loi de \mycite[author]{Yerkes-1908} sur le lien entre la stimulation des individus et les performances}
+				\end{myfigure}
+
+				Malgré cela, \mycite[author]{Castro-1994} montre que la stimulation sociale est meilleure lorsque les participants se connaissent entre eux.
+				En effet, les participants qui se connaissent vont s'affranchir de la peur d'être évalué.
+
+				Dans cette section, nous avons présenté la \myglos{glo-FacilitationSociale}.
+				Ce phénomène permet, par la simple présence ou la participation de plusieurs partenaires, de stimuler un groupe et d'en augmenter les performances.
+				Cependant, nous allons voir dans la section suivante qu'une autre théorie concernant la psychologie sociale s'oppose à celle de la \myglos{glo-FacilitationSociale} : la \myglos{glo-ParesseSociale}.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-LaParesseSociale]{La paresse sociale}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
