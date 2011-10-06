@@ -260,7 +260,7 @@
 
 				En parallèle, les scientifiques s'intéressent également à la manipulation de molécules en temps-réel.
 				La modélisation moléculaire assistée par ordinateur est proposée sur la plate-forme \myHIMM (\myemph{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
-				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} introduit une interface tangible.
+				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} introduit une interface tangible censée représenté la molécule manipulée.
 				Cependant, les biologistes cherchent à interagir virtuellement avec la dynamique des molécules afin de pouvoir s'affranchir de la difficulté de cette manipulation dans le monde réel.
 				Les interactions proposées se font alors par traction des atomes \mycite{Haan-2002,Koutek-2002}.
 				\mycite[author]{Lee-2004} calquent les interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}, largement adopté par la communauté \myref*{fig-sota-PotentielDeLennardJones1924}.
@@ -324,7 +324,26 @@
 		\end{mysection}
 		\begin{mysection}[sec-sota-LeTravailCollaboratif]{Le travail collaboratif}
 			La difficulté de la tâche présentée précédemment nous amène à nous poser la question : quelle solution pouvons-nous proposer afin d'être capable d'appréhender une tâche d'une telle complexité ?
-			Nous allons découvrir dans cette section qu'un certain nombre de chercheurs en psychologie sociale se sont intéressés à la distribution cognitive des charges de travail pour répondre à ce problème.
+			Nous allons découvrir dans cette section qu'un certain nombre de chercheurs en psychologie sociale se sont intéressés au travail collaboratif sous la forme d'une distribution cognitive des charges de travail afin de répondre à des problèmes complexes.
+			\begin{mysubsection}[par-sota-TravailCollaboratifOuTravailCooperatif]{Travail collaboratif ou travail coopératif ?}
+				Tout d'abord, il est nécessaire de faire la distinction entre travail coopératif et travail collaboratif.
+				\mycite[author]{Roschelle-1995} expliquent très bien cette différence.
+				\begin{myquote}[english]
+					\it Cooperative work is accomplished by the division of labour among participants, as an activity where each person is responsible for a portion of the problem solving.
+					We focus on collaboration as the mutual engagement of participants in a coordinated effort to solve the problem together.
+				\end{myquote}
+				dont on trouve une traduction en français dans les travaux de \mycite[author]{Knauf-2010}
+				\begin{myquote}[frenchb]
+					Le travail coopératif implique une division du travail entre les participants, chaque participant étant responsable d’une partie du problème à résoudre.
+					Dans la collaboration, les participants s’engagent tous dans les mêmes tâches, en se coordonnant, afin de résoudre le problème ensemble.
+				\end{myquote}
+
+				Le travail collaboratif s'est développé rapidement avec l'informatique.
+				On peut citer les outils de gestions de versions tels que \mycite[author]{Git-2011}, \mycite[author]{Mercurial-2011} ou encore \mycite[author]{SVN-2011} qui permettent la collaboration de plusieurs développeurs pour la création ou la modification de programmes informatiques.
+				Puis \myInternet a donné naissance à des outils de collaboration tels que les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
+				Cependant, ces deux exemples proposent une collaboration asynchrone où chaque acteur intervient à la suite de son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
+				Aujourd'hui, les outils permettant la collaboration synchrone se limitent à quelques domaines restreints (systèmes de vidéoconférences, jeux vidéos en ligne).
+			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LaDistributionCognitiveDesChargesDeTravail]{La distribution cognitive des charges de travail}
 				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmis les premiers a avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources.
 				Par exemple, \mycite[author]{Wegner-1987} s'intéresse à la distribution de la mémoire dans un groupe ce qui permet à chaque individu de se libérer d'une charge cognitive.
@@ -590,7 +609,7 @@
 				Dans une étude dans laquelle il compare entre autre une configuration de travail collaboratif distribuée avec une configuration colocalisée, \mycite[author]{Chidambaram-2005} montrent qu'un travail colocalisé permet de faciliter l'auto-évaluation et augmente cette pression sociale.
 				En effet, le travail colocalisé permet d'avoir une meilleur perception des actions de chacun des membres et ainsi d'évaluer de façon plus précise le travail du collaborateur.
 				Cependant, \mycite[author]{Chidambaram-2005} constatent un effet pervers : certains membres du groupes tente simplement de donner l'impression qu'ils travaillent sans être particulièrement effectif.
-				On trouve également les récents travaux de \mycite[author]{Buisine-2011} qui montre que l'occupation spatiale de l'environnement est importante : un accès limité à l'espace de travail mène à de la \myglos{glo-ParesseSociale}.
+				On trouve également les récents travaux de \mycite[author]{Buisine-2011} qui montrent que l'occupation spatiale de l'environnement est importante : un accès limité à l'espace de travail mène à de la \myglos{glo-ParesseSociale}.
 				En effet, si l'environnement de travail est un tableau par exemple, dès qu'un des membres du groupes utilise le tableau, les autres n'y ont pas un accès physique.
 				L'idéal est d'avoir un accès équilibré à l'espace de travail pour tout les membres du groupe (une table ronde par exemple).
 
@@ -598,71 +617,52 @@
 				Cependant, fournir une identification des rôles de chacun est une première réponse à ce problème, l'auto-évaluation étant la seconde et c'est par l'intermédiaire d'un travail colocalisé que ce deuxième point peut être en partie pris en charge.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-sota-EtatDeLArt]{État de l'art}
-			La distinction entre travail coopératif et travail collaboratif est expliquée par \mycite[author]{Roschelle-1995}.
-			\begin{myquote}[english]
-				\it Cooperative work is accomplished by the division of labour among participants, as an activity where each person is responsible for a portion of the problem solving.
-				We focus on collaboration as the mutual engagement of participants in a coordinated effort to solve the problem together.
-			\end{myquote}
-			traduit dans \mycite{Knauf-2010} en français
-			\begin{myquote}[frenchb]
-				Le travail coopératif implique une division du travail entre les participants, chaque participant étant responsable d’une partie du problème à résoudre.
-				Dans la collaboration, les participants s’engagent tous dans les mêmes tâches, en se coordonnant, afin de résoudre le problème ensemble.
-			\end{myquote}
-			Le travail collaboratif s'est développé rapidement avec l'informatique.
-			On peut citer les outils de gestions de versions tels que \mycite[author]{Git-2011}, \mycite[author]{Mercurial-2011} ou encore \mycite[author]{SVN-2011} qui permettent la collaboration de plusieurs développeurs pour la création ou la modification de programmes informatiques.
-			Puis \myInternet a donné naissance à des outils de collaboration tels que les \myWiki* \mycite{Leuf-2001,Wagner-2004} avec le succès de \myWikipedia que l'on connaît.
-			Cependant, ces deux exemples proposent une collaboration asynchrone où chaque acteur intervient derrière son prédécesseur pour ajouter, améliorer ou corriger une partie du travail.
-			Aujourd'hui, les outils permettant la collaboration synchrone sont encore rares (systèmes de vidéoconférences, jeux vidéos en ligne).
-		\end{mysection}
-		\begin{mysection}[sec-sota-Contexte]{Contexte}
-			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
-				Le contexte de l'expérimentation est le \myglos{glo-DockingMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
-				Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
-				Il est basé sur une décomposition en trois niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
-				\begin{description}
-					\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
-						L'objectif est de trouver la meilleure concordance entre les molécule en terme de position et d'orientation.
-					\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
-						L'amarrage de ces deux molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
-					\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
-						L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
-				\end{description}
+		\begin{mysection}[sec-sota-Conclusion]{Conclusion}
+			Le contexte de l'expérimentation est le \myglos{glo-DockingMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
+			Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
+			Il est basé sur une décomposition en trois niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
+			\begin{description}
+				\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
+					L'objectif est de trouver la meilleure concordance entre les molécule en terme de position et d'orientation.
+				\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
+					L'amarrage de ces deux molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
+				\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
+					L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
+			\end{description}
 
-				Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
-				\begin{description}
-					\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
-					\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
-					\item[Déformation] La tâche consiste à déformer la structure en manipulant la cible précédemment sélectionnée, que ce soit au niveau inter-moléculaire, intra-moléculaire ou atomique.
-						L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
-					\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
-						En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
-				\end{description}
+			Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
+			\begin{description}
+				\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
+				\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
+				\item[Déformation] La tâche consiste à déformer la structure en manipulant la cible précédemment sélectionnée, que ce soit au niveau inter-moléculaire, intra-moléculaire ou atomique.
+					L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
+				\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
+					En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
+			\end{description}
 
-				\begin{myfigure}
-					\psset{xunit=0.2\textwidth}
-					\def\mycirclenum(#1,#2)#3{%
-						\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
-					}
-					\begin{myps}(-2.5,-1)(2.5,5)
-						\mynode(0,4)[Search]{Recherche}
-						\mycirclenum(0,4){1}
-						\mynode(0,3)[Selection]{Sélection}
-						\mycirclenum(0,3){2}
-						\mynode(0,2)[Manipulation]{Manipulation}
-						\mycirclenum(0,2){3}
-						\mynode(0,1)[Evaluation]{Évaluation}
-						\mycirclenum(0,1){4}
-						\mynode[fillstyle=solid,fillcolor=myblue!25](0,-0.5)[Objective]{Objectif atteint}
-						\ncline{->}{Search}{Selection}
-						\ncline{->}{Selection}{Manipulation}
-						\ncline{->}{Manipulation}{Evaluation}
-						\ncline{->}{Evaluation}{Objective}
-						\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Search}
-					\end{myps}
-					\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
-				\end{myfigure}
-			\end{mysubsection}
+			\begin{myfigure}
+				\psset{xunit=0.2\textwidth}
+				\def\mycirclenum(#1,#2)#3{%
+					\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
+				}
+				\begin{myps}(-2.5,-1)(2.5,5)
+					\mynode(0,4)[Search]{Recherche}
+					\mycirclenum(0,4){1}
+					\mynode(0,3)[Selection]{Sélection}
+					\mycirclenum(0,3){2}
+					\mynode(0,2)[Manipulation]{Manipulation}
+					\mycirclenum(0,2){3}
+					\mynode(0,1)[Evaluation]{Évaluation}
+					\mycirclenum(0,1){4}
+					\mynode[fillstyle=solid,fillcolor=myblue!25](0,-0.5)[Objective]{Objectif atteint}
+					\ncline{->}{Search}{Selection}
+					\ncline{->}{Selection}{Manipulation}
+					\ncline{->}{Manipulation}{Evaluation}
+					\ncline{->}{Evaluation}{Objective}
+					\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Search}
+				\end{myps}
+				\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
+			\end{myfigure}
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Manipulation collaborative de molécules}
