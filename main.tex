@@ -617,6 +617,110 @@
 				Cependant, fournir une identification des rôles de chacun est une première réponse à ce problème, l'auto-évaluation étant la seconde et c'est par l'intermédiaire d'un travail colocalisé que ce deuxième point peut être en partie pris en charge.
 			\end{mysubsection}
 		\end{mysection}
+		\begin{mysection}[sec-sota-CollaborationEnEnvironnementVirtuel]{Collaboration en environnement virtuel}
+			\begin{mysubsection}[sse-sota-CommunicationEnEnvironnementVirtuel]{Communication en environnement virtuel}
+				\begin{myfigure}
+					\let\oldarraystretch\arraystretch
+					\def\arraystretch{0.75}
+					\psset{unit=0.083333333\textwidth,linewidth=1pt}
+					\begin{myps}(-6,-1.5)(6,5.75)
+						\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
+						\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
+						\rput(0,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
+						\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+						\ncput*[nrot=:U,npos=0.5]{\myemph{Feedthrough}}
+						\ncput*[nrot=:U,npos=2.5]{\myemph{Feedthrough}}
+						\psclip{%
+							\rput(0,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
+						}
+						\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+						\endpsclip
+						\rput(0,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
+						\ncangle[angleA=-90,angleB=180,linearc=.25]{<->}{alice}{artefact}
+						\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+						\ncangle[angleA=-90,angleB=0,linearc=.25]{<->}{bob}{artefact}
+						\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+						\ncput*[npos=1.5]{Compréhension}
+					\end{myps}
+					\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
+					\let\arraystretch\oldarraystretch
+				\end{myfigure}
+				\begin{myfigure}
+					\let\oldarraystretch\arraystretch
+					\def\arraystretch{0.75}
+					\psset{unit=0.083333333\textwidth,linewidth=1pt}
+					\begin{myps}(-6,-1.5)(6,5.75)
+						\mynode(-4,4)[alice]{\begin{tabular}{c}\Large Expert~\mynum{1}\\Spécialité~\textsc{a}\end{tabular}}
+						\mynode(4,4)[bob]{\begin{tabular}{c}\Large Expert~\mynum{2}\\Spécialité~\textsc{b}\end{tabular}}
+						\rput(-4,0){\circlenode[style=nodestyle]{artefact1}{\Large Artefact~\mynum{1}}}
+						\rput(4,0){\circlenode[style=nodestyle]{artefact2}{\Large Artefact~\mynum{2}}}
+						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+						\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
+						\rput(4,0){\circlenode[style=nodestyle,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
+						\ncput*[nrot=:U,npos=1.5]{\myemph{Feedthrough}}
+						\psclip{%
+							\rput(-4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{1}}}
+						}
+						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+						\endpsclip
+						\psclip{%
+							\rput(4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{2}}}
+						}
+						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+						\endpsclip
+						\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
+						\rput(4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
+						\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact1}
+						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+						\ncline[offset=0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{bob}{artefact2}
+						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+						\ncput*[npos=1.5]{Compréhension}
+						\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
+						\ncput*[npos=0.5]{Synchronization}
+					\end{myps}
+					\mycaption[fig-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
+					\let\arraystretch\oldarraystretch
+				\end{myfigure}
+				\begin{myfigure}
+					\let\oldarraystretch\arraystretch
+					\def\arraystretch{0.75}
+					\psset{unit=0.083333333\textwidth,linewidth=1pt}
+					\begin{myps}(-6,-1.5)(6,5.75)
+						\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
+						\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
+						\rput(-4,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
+						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25]{->}{alice}{bob}
+						\ncput*[nrot=:U,npos=1.5]{\emph{Feedthrough}}
+						\psclip{%
+							\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
+						}
+						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25,linecolor=black!25]{->}{alice}{bob}
+						\endpsclip
+						\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
+						\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact}
+						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+						\ncangle[angleA=-90,angleB=0,linearc=.25]{<-}{bob}{artefact}
+						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Retour\\sensoriel\end{tabular}}
+						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+						\ncput*[npos=1.5]{Compréhension}
+					\end{myps}
+					\mycaption[fig-sota-CollaborationParInterReferencement]{Collaboration par inter-référencement}
+					\let\arraystretch\oldarraystretch
+				\end{myfigure}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-PresenceAuSeinDuGroupe]{Présence au sein du groupe}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-PlateFormeDeCollaborationVirtuelle]{Plate-forme de collaboration virtuelle}
+			\end{mysubsection}
+		\end{mysection}
 		\begin{mysection}[sec-sota-Conclusion]{Conclusion}
 			Le contexte de l'expérimentation est le \myglos{glo-DockingMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
 			Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
