@@ -819,7 +819,6 @@
 				\begin{myfigure}
 					\psset{unit=0.083333333\textwidth}
 					\begin{myps}(-1,-1)(8,4)
-						\myaxes[ticks=none,labels=none,arrows={->}](0,8){distance}(0,4){temps}
 						\psclip{%
 							\pscustom[linestyle=none]{%
 								\pszigzag[coilwidth=0.5cm,coilheight=5,linearc=.5]{-}(0,2)(8,2)
@@ -834,6 +833,7 @@
 						}
 						\psframe*[linecolor=myblue!30](0,0)(8,4)
 						\endpsclip
+						\myaxes[ticks=none,labels=none,arrows={->}](0,8){distance}(0,4){temps}
 						\pszigzag[coilwidth=0.5cm,coilheight=5,linestyle=dashed,linearc=.5,linewidth=.5pt]{-}(0,2)(8,2)
 						\pszigzag[coilwidth=0.5cm,coilheight=5,linestyle=dashed,linearc=.5,linewidth=.5pt]{-}(4,0)(4,4)
 						\rput(2,1){\begin{tabular}{c}Collaboration\\face-à-face\end{tabular}}
