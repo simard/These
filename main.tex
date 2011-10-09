@@ -634,129 +634,165 @@
 						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher,\myetc).
 					\item[\myemph{Feedthrough}] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
 						Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
-						\mycite[author]{Junuzovic-2009} utilise même le terme \myemph{feedthrough} pour une communication indirecte avec un participant en intermédiaire.
+						\mycite[author]{Junuzovic-2009} utilisent même le terme \myemph{feedthrough} pour une communication indirecte avec un participant en intermédiaire.
 					\item[Compréhension partagée] Les participants doivent posséder au moins un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
 						Cette aspect de la communication est inconscient mais est nécessaire pour la collaboration.
 				\end{description}
 				Avec ces différents canaux de communication, conscient pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myemph{feedthrough} et compréhension partagée), il est possible de définir trois scénarios de collaboration différents basé sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
+				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
+					Illustré sur la \myref*{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
+					Chaque participant possède un accès libre aux artefacts et à la possibilité d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts sur les participants.
 
-				Le premier scénario est la collaboration à plusieurs utilisateurs \myref*{fig-sota-CollaborationAPlusieursUtilisateurs}.
-				C'est l'aspect le plus intuitif de la distribution cognitive des charges \myref*{sse-sota-LaDistributionCognitiveDesChargesDeTravail}.
-				Dans ce scénario, chaque participant possède un accès libre aux artefacts et est capable d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts sur les participants \mycite{Dewan-1998,Grasset-2002}.
-				On notera que tous les participants accèdent aux mêmes artefacts ce qui peut poser une concurrence à l'accès des ressources comme signalé par \mycite[author]{Buisine-2011}.
+					\begin{myfigure}
+						\let\oldarraystretch\arraystretch
+						\def\arraystretch{0.75}
+						\psset{unit=0.083333333\textwidth,linewidth=1pt}
+						\begin{myps}(-6,-1.5)(6,5.75)
+							\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
+							\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
+							\rput(0,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
+							\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+							\ncput*[nrot=:U,npos=0.5]{\myemph{Feedthrough}}
+							\ncput*[nrot=:U,npos=2.5]{\myemph{Feedthrough}}
+							\psclip{%
+								\rput(0,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
+							}
+							\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\endpsclip
+							\rput(0,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
+							\ncangle[angleA=-90,angleB=180,linearc=.25]{<->}{alice}{artefact}
+							\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+							\ncangle[angleA=-90,angleB=0,linearc=.25]{<->}{bob}{artefact}
+							\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+						\end{myps}
+						\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
+						\let\arraystretch\oldarraystretch
+					\end{myfigure}
 
-				\begin{myfigure}
-					\let\oldarraystretch\arraystretch
-					\def\arraystretch{0.75}
-					\psset{unit=0.083333333\textwidth,linewidth=1pt}
-					\begin{myps}(-6,-1.5)(6,5.75)
-						\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
-						\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
-						\rput(0,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
-						\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
-						\ncput*[nrot=:U,npos=0.5]{\myemph{Feedthrough}}
-						\ncput*[nrot=:U,npos=2.5]{\myemph{Feedthrough}}
-						\psclip{%
-							\rput(0,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
-						}
-						\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
-						\endpsclip
-						\rput(0,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
-						\ncangle[angleA=-90,angleB=180,linearc=.25]{<->}{alice}{artefact}
-						\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-						\ncangle[angleA=-90,angleB=0,linearc=.25]{<->}{bob}{artefact}
-						\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
-						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
-					\end{myps}
-					\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
-					\let\arraystretch\oldarraystretch
-				\end{myfigure}
+					Ce scénario permet une collaboration d'égal à égal entre les collaborateurs ce qui peut faciliter la communication.
+					Cependant, nous avons vu dans la \myref{sse-sota-LaParesseSociale} sur la \myglos{glo-ParesseSociale} qu'une identification des rôles était préférable.
+					Ce type de scénarios aura tendance à favoriser la \myglos{glo-ParesseSociale} en proposant des rôles strictement identiques aux utilisateurs.
 
-				On peut également identifier les scénarios multi-experts \myref*{fig-sota-CollaborationAPlusieursExperts}.
-				Certaines tâches complexes (dont le \myglos{glo-DockingMoleculaire} peut nécessiter la présence d'experts venant de différents domaines.
-				Dans ce scénario, les experts ont des connaissances différentes, potentiellement complémentaires \mycite{Althoff-2007a,Althoff-2007b}.
-				De ce fait, leur spécialité nécessite un artefact adapté et chaque expert possède un accès à son artefact.
-				Les artefacts se synchronisent entre eux afin de conserver un environnement virtuel cohérent pour tous les experts.
-				Dans ce genre de scénarios, la compréhension partagée est difficile car les bases de connaissances des experts peuvent être très différentes \mycite{Bach-2010}.
+					De plus, on notera que tous les participants accèdent aux mêmes artefacts.
+					Si deux collaborateurs accèdent, modifient ou manipulent en même temps un même artefact, cela peut poser des problèmes de cohérence de l'environnement virtuel ou de sécurité de l'information comme l'explique \mycite[author]{Dewan-1998}.
+					\mycite[author]{Dewan-1998} énoncent une liste de conditions à respecter pour limiter les problèmes de concurrences d'accès aux codes sources pour le développement de programmes informatiques.
+					Quelques années plus tard, c'est le projet \mycite[author]{SVN-2011} qui voit le jour pour effectuer du développement informatique en collaboration.
+					\mycite[author]{Grasset-2002} sont également confrontés à ce problème d'accès aux ressources sur sa plate-forme multi-utilisateurs \myMARE et propose un système de contrôle d'accès aux informations.
+					Toutefois, \mycite[author]{Buisine-2011} soulignent qu'une possibilité d'accès aux artefacts également distribuée entre les utilisateurs permet de réduire la \myglos{glo-ParesseSociale}.
+					En effet, si un utilisateur ne parvient pas à accéder aux artefacts, il va s'isoler.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
+					Le scénario à plusieurs experts se distingue du scénario à plusieurs utilisateurs par la compétence des membres du groupe : les experts proviennent de spécialités difféntes.
+					La médecine est un domaine qui s'adapte très bien à ce type de scénario étant donné le nombre important de spécialités différentes \mycite{Althoff-2007a,Althoff-2007b}.
+					Les experts possédant des connaissances différentes, il est nécessaire pour eux d'avoir des artefacts adaptés à leur besoins \myref*{fig-sota-CollaborationAPlusieursExperts}.
+					Si on prend l'exemple du \myglos{glo-DockingMoleculaire}, un biologiste n'aura pas les mêmes besoins en information qu'un chimiste et leurs actions sur la tâche à réaliser seront également de natures différentes.
+					Les artefacts se synchronisent entre eux afin de conserver un environnement virtuel cohérent pour l'ensemble des experts.
 
-				\begin{myfigure}
-					\let\oldarraystretch\arraystretch
-					\def\arraystretch{0.75}
-					\psset{unit=0.083333333\textwidth,linewidth=1pt}
-					\begin{myps}(-6,-1.5)(6,5.75)
-						\mynode(-4,4)[alice]{\begin{tabular}{c}\Large Expert~\mynum{1}\\Spécialité~\textsc{a}\end{tabular}}
-						\mynode(4,4)[bob]{\begin{tabular}{c}\Large Expert~\mynum{2}\\Spécialité~\textsc{b}\end{tabular}}
-						\rput(-4,0){\circlenode[style=nodestyle]{artefact1}{\Large Artefact~\mynum{1}}}
-						\rput(4,0){\circlenode[style=nodestyle]{artefact2}{\Large Artefact~\mynum{2}}}
-						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
-						\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
-						\rput(4,0){\circlenode[style=nodestyle,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
-						\ncput*[nrot=:U,npos=1.5]{\myemph{Feedthrough}}
-						\psclip{%
-							\rput(-4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{1}}}
-						}
-						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
-						\endpsclip
-						\psclip{%
-							\rput(4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{2}}}
-						}
-						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
-						\endpsclip
-						\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
-						\rput(4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
-						\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact1}
-						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-						\ncline[offset=0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{bob}{artefact2}
-						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
-						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
-						\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
-						\ncput*[npos=0.5]{Synchronization}
-					\end{myps}
-					\mycaption[fig-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
-					\let\arraystretch\oldarraystretch
-				\end{myfigure}
+					\begin{myfigure}
+						\let\oldarraystretch\arraystretch
+						\def\arraystretch{0.75}
+						\psset{unit=0.083333333\textwidth,linewidth=1pt}
+						\begin{myps}(-6,-1.5)(6,5.75)
+							\mynode(-4,4)[alice]{\begin{tabular}{c}\Large Expert~\mynum{1}\\Spécialité~\textsc{a}\end{tabular}}
+							\mynode(4,4)[bob]{\begin{tabular}{c}\Large Expert~\mynum{2}\\Spécialité~\textsc{b}\end{tabular}}
+							\rput(-4,0){\circlenode[style=nodestyle]{artefact1}{\Large Artefact~\mynum{1}}}
+							\rput(4,0){\circlenode[style=nodestyle]{artefact2}{\Large Artefact~\mynum{2}}}
+							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+							\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
+							\rput(4,0){\circlenode[style=nodestyle,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
+							\ncput*[nrot=:U,npos=1.5]{\myemph{Feedthrough}}
+							\psclip{%
+								\rput(-4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{1}}}
+							}
+							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\endpsclip
+							\psclip{%
+								\rput(4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{2}}}
+							}
+							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\endpsclip
+							\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
+							\rput(4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
+							\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact1}
+							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+							\ncline[offset=0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{bob}{artefact2}
+							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+							\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
+							\ncput*[npos=0.5]{Synchronization}
+						\end{myps}
+						\mycaption[fig-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
+						\let\arraystretch\oldarraystretch
+					\end{myfigure}
 
-				Pour finir, on identifie le scénario à un manipulateur et un observateur \myref*{fig-sota-CollaborationParManipulateurEtObservateur}.
-				L'idée est d'éviter les accès concurrents aux artefacts en ne fournissant l'accès qu'à un seul des utilisateurs.
-				La difficulté de cette configuration vient de la nécessiter pour l'observateur de pouvoir agir sur l'artefact par l'intermédiaire du manipulateur.
-				\mycite[author]{Chastine-2007} met en évidence ce phénomène en expliquant et qualifiant l'inter-référencement qu'il a pu constater sur la plate-forme \myAMMPVis \mycite{Chastine-2005}.
+					Certaines tâches sont très adaptées à ce type de collaboration.
+					Elle permet une identification des rôles de chacun et limite ainsi toute \myglos{glo-ParesseSociale} : chaque utilisateur doit se fier à lui-même pour réaliser la tâche.
+					De plus, l'accès aux artefacts devient simplifié puisqu'il n'y a plus d'accès concurrent à un même artefact par deux utilisateurs.
+					Cependant, une synchronisation entre les artefacts est nécessaire afin de conserver une cohérence de l'environnement virtuel pour l'ensemble des utilisateurs ce qui peut poser quelques difficultés techniques.
+					\mycite[author]{Barbic-2007} ainsi que \mycite[author]{Gautier-2008} abordent ces problèmes de synchronisation sur des simulations de déformation d'objets déformables.
 
-				\begin{myfigure}
-					\let\oldarraystretch\arraystretch
-					\def\arraystretch{0.75}
-					\psset{unit=0.083333333\textwidth,linewidth=1pt}
-					\begin{myps}(-6,-1.5)(6,5.75)
-						\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
-						\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
-						\rput(-4,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
-						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25]{->}{alice}{bob}
-						\ncput*[nrot=:U,npos=1.5]{\emph{Feedthrough}}
-						\psclip{%
-							\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
-						}
-						\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25,linecolor=black!25]{->}{alice}{bob}
-						\endpsclip
-						\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
-						\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact}
-						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-						\ncangle[angleA=-90,angleB=0,linearc=.25]{<-}{bob}{artefact}
-						\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Retour\\sensoriel\end{tabular}}
-						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
-						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
-					\end{myps}
-					\mycaption[fig-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
-					\let\arraystretch\oldarraystretch
-				\end{myfigure}
+					Dans les scénarios à plusieurs experts, la compréhension partagée est difficile car les bases de connaissances des experts peuvent être très différentes.
+					Il est nécessaire de se construire une base de connaissance commune selon \mycite[author]{Bach-2010}, notion déjà identifiée comme le \myemph{grounding} par \mycite[author]{Clark-1991} \myref*{sss-sota-LeGrounding}.
+					Par exemple, le jargon utilisé entre deux experts de spécialités différentes peut être une entrave importante à la communication directe.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
+					Dans les deux scénarios précédent, il est difficile de synchroniser les actions des différents utilisateurs.
+					Dans le scénario à plusieurs utilisateurs, c'est l'accès concurrent aux artefacts qui pose problème; dans le scénario à plusieurs experts, c'est la synchronisation entre les artefacts.
+					Afin de passer outre ces contraintes, le scénario par manipulateur et observateur offre un accès exclusif à un seul utilisateur du groupe, les autres n'ayant que la possibilité d'interagir directement avec cet utilisateur \myref*{fig-sota-CollaborationParManipulateurEtObservateur}.
+					L'observateur agit alors sur les artefacts par l'intermédiaire du manipulateur.
+
+					\begin{myfigure}
+						\let\oldarraystretch\arraystretch
+						\def\arraystretch{0.75}
+						\psset{unit=0.083333333\textwidth,linewidth=1pt}
+						\begin{myps}(-6,-1.5)(6,5.75)
+							\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
+							\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
+							\rput(-4,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
+							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25]{->}{alice}{bob}
+							\ncput*[nrot=:U,npos=1.5]{\emph{Feedthrough}}
+							\psclip{%
+								\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
+							}
+							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25,linecolor=black!25]{->}{alice}{bob}
+							\endpsclip
+							\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
+							\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact}
+							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
+							\ncangle[angleA=-90,angleB=0,linearc=.25]{<-}{bob}{artefact}
+							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Retour\\sensoriel\end{tabular}}
+							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
+							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+						\end{myps}
+						\mycaption[fig-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
+						\let\arraystretch\oldarraystretch
+					\end{myfigure}
+
+					Ce scénario permet de s'affranchir des contraintes d'accès concurrent aux artefacts ou de synchronisation entre les artefacts.
+					Les observateurs possède également une charge de travail cognitive beaucoup plus faible et peuvent se consacrer de manière plus importante à l'analyse des données disponibles et à la proposition de solutions pertinentes.
+
+					Cependant, l'activité de l'observateur le mène à indiquer, désigner des objectifs au manipulateur ce qui augmente le besoin de communication.
+					\mycite[author]{Chastine-2007} aborde cette problématique dans ces travaux de thèse : il nomme ce concept inter-référencement \myref*{sss-sota-LInterReferencement}.
+					De plus, un travail récent cherchant à caractériser \og l'intelligence d'un groupe \fg a conclu que l'un des facteurs d'intelligence d'un groupe était une répartition équitable des charges de travails entre les membres du groupe \mycite{Woolley-2010}.
+					Dans ce scénario, l'asymétrie des différents rôles (manipulateur et observateur) semble favoriser un déséquilibre important des charges de travail.
+				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-PresenceAuSeinDuGroupe]{Présence au sein du groupe}
+			\begin{mysubsection}[sse-sota-NotionsImportantesConcernantLaCommunication]{Notions importantes concernant la communication}
+				\begin{mysubsubsection}[sss-sota-LaPresence]{La présence}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-LeGrounding]{Le \myemph{grounding}}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-LInterReferencement]{L'inter-référencement}
+				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-PlateFormeDeCollaborationVirtuelle]{Plate-forme de collaboration virtuelle}
 			\end{mysubsection}
