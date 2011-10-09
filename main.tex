@@ -625,6 +625,26 @@
 			\end{description}
 			Dans cette section, nous allons décrire les interactions qui ont lieu entre les différents acteurs d'un système collaboratif.
 			\begin{mysubsection}[sse-sota-CommunicationEnEnvironnementVirtuel]{Communication en environnement virtuel}
+				\mycite[author]{Dix-1997} a proposé de classifier différentes catégories de communication :
+				\begin{description}
+					\item[Communication directe] C'est le moyen de communication le plus naturel.
+						La communication se fait de manière orale ou gestuelle principalement.
+						Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
+					\item[Contrôle et retour sensoriel] C'est l'interaction entre un participant et un artefact.
+						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher,\myetc).
+					\item[\myemph{Feedthrough}] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
+						Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
+						\mycite[author]{Junuzovic-2009} utilise même le terme \myemph{feedthrough} pour une communication indirecte avec un participant en intermédiaire.
+					\item[Compréhension partagée] Les participants doivent posséder au moins un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
+						Cette aspect de la communication est inconscient mais est nécessaire pour la collaboration.
+				\end{description}
+				Avec ces différents canaux de communication, conscient pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myemph{feedthrough} et compréhension partagée), il est possible de définir trois scénarios de collaboration différents basé sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
+
+				Le premier scénario est la collaboration à plusieurs utilisateurs \myref*{fig-sota-CollaborationAPlusieursUtilisateurs}.
+				C'est l'aspect le plus intuitif de la distribution cognitive des charges \myref*{sse-sota-LaDistributionCognitiveDesChargesDeTravail}.
+				Dans ce scénario, chaque participant possède un accès libre aux artefacts et est capable d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts sur les participants \mycite{Dewan-1998,Grasset-2002}.
+				On notera que tous les participants accèdent aux mêmes artefacts ce qui peut poser une concurrence à l'accès des ressources comme signalé par \mycite[author]{Buisine-2011}.
+
 				\begin{myfigure}
 					\let\oldarraystretch\arraystretch
 					\def\arraystretch{0.75}
@@ -649,11 +669,19 @@
 						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{Compréhension}
+						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
 					\end{myps}
 					\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
 					\let\arraystretch\oldarraystretch
 				\end{myfigure}
+
+				On peut également identifier les scénarios multi-experts \myref*{fig-sota-CollaborationAPlusieursExperts}.
+				Certaines tâches complexes (dont le \myglos{glo-DockingMoleculaire} peut nécessiter la présence d'experts venant de différents domaines.
+				Dans ce scénario, les experts ont des connaissances différentes, potentiellement complémentaires \mycite{Althoff-2007a,Althoff-2007b}.
+				De ce fait, leur spécialité nécessite un artefact adapté et chaque expert possède un accès à son artefact.
+				Les artefacts se synchronisent entre eux afin de conserver un environnement virtuel cohérent pour tous les experts.
+				Dans ce genre de scénarios, la compréhension partagée est difficile car les bases de connaissances des experts peuvent être très différentes \mycite{Bach-2010}.
+
 				\begin{myfigure}
 					\let\oldarraystretch\arraystretch
 					\def\arraystretch{0.75}
@@ -686,13 +714,19 @@
 						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{Compréhension}
+						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
 						\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
 						\ncput*[npos=0.5]{Synchronization}
 					\end{myps}
 					\mycaption[fig-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
 					\let\arraystretch\oldarraystretch
 				\end{myfigure}
+
+				Pour finir, on identifie le scénario à un manipulateur et un observateur \myref*{fig-sota-CollaborationParManipulateurEtObservateur}.
+				L'idée est d'éviter les accès concurrents aux artefacts en ne fournissant l'accès qu'à un seul des utilisateurs.
+				La difficulté de cette configuration vient de la nécessiter pour l'observateur de pouvoir agir sur l'artefact par l'intermédiaire du manipulateur.
+				\mycite[author]{Chastine-2007} met en évidence ce phénomène en expliquant et qualifiant l'inter-référencement qu'il a pu constater sur la plate-forme \myAMMPVis \mycite{Chastine-2005}.
+
 				\begin{myfigure}
 					\let\oldarraystretch\arraystretch
 					\def\arraystretch{0.75}
@@ -716,9 +750,9 @@
 						\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 						\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 						\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-						\ncput*[npos=1.5]{Compréhension}
+						\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
 					\end{myps}
-					\mycaption[fig-sota-CollaborationParInterReferencement]{Collaboration par inter-référencement}
+					\mycaption[fig-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
 					\let\arraystretch\oldarraystretch
 				\end{myfigure}
 			\end{mysubsection}
