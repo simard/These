@@ -792,18 +792,18 @@
 				Cette section s'attarde sur trois notions particulièrement importante dans le travail collaboratif : le \myemph{grounding}, la présence et l'inter-référencement.
 				\begin{mysubsubsection}[sss-sota-LeGrounding]{Le \myemph{grounding}}
 					Cette notion, mise en évidence par \mycite[author]{Clark-1989}, est nécessaire à la collaboration.
-					\mycite[author]{Clark-1991} explique ce besoin de \myemph{grounding} par la phrase suivante.
+					\mycite[author]{Clark-1991} expliquent ce besoin de \myemph{grounding} par la phrase suivante.
 					\begin{myquote}[english]
 						\it [A group] cannot even begin to coordinate on content without assuming a vast amount of shared information or common ground -- that is, mutual knowledge, mutual beliefs, and mutual assumptions.
 					\end{myquote}
 					qu'on pourrait traduire par
 					\begin{myquote}[frenchb]
-						Un groupe ne peut même pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
+						Un groupe ne peut pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
 					\end{myquote}
 
 					Le \myemph{grounding} est nécessaire à la transmission d'information.
 					En effet, toute information transmise suppose déjà de nombreuses informations implicites que l'interlocuteur doit connaître.
-					\mycite[author]{Dillenbourg-1996} étudie ce partage d'informations sur une tâche d'enquête fictive sur un meurtre.
+					\mycite[author]{Dillenbourg-1996} étudient ce partage d'informations sur une tâche d'enquête fictive sur un meurtre.
 					Il constate que chaque membre du groupe se construit sa propre représentation de l'environnement dans lequel il se trouve et évolue en fonction des informations que chacun trouve et de sa culture existante \mycite{Baker-1999}.
 
 					Lors d'un travail de collaboration, chaque membre possède déjà sa propre base de connaissances qui peut partiellement recouvrir celle des autres membres mais également être complémentaire.
@@ -818,8 +818,44 @@
 					La désignation de ces éléments n'est pas toujours simple et c'est le sujet de la prochaine section.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-LInterReferencement]{L'inter-référencement}
+					La notion d'inter-référencement est très récente et c'est \mycite[author]{Chastine-2007} qui l'a mise en évidence à travers sa plate-forme \myAMMPVis \mycite{Chastine-2005,Chastine-2006}.
+					L'inter-référencement est défini par \mycite[author]{Chastine-2007} comme
+					\begin{myquote}[english]
+						\it The ability for one participant to refer to a set of artifacts in the environment, and for that reference to be correctly interpreted by others.
+					\end{myquote}
+					qu'on traduira par
+					\begin{myquote}[frenchb]
+						La capacité pour un des participants de désigner un ensemble d'artefacts dans l'environnement et que cette désignation soit correctement comprise par les autres collaborateurs.
+					\end{myquote}
+
+					Au travers de ces travaux de thèse, il s'attarde un peu plus sur cette définition en considérant les différents acteurs de l'inter-référencement.
+					Un utilisateur initie une désignation vers un élément de l'environnement.
+					Un (ou plusieurs) autre utilisateur reçoit cette désignation.
+					Cette désignation est caractérisée par plusieurs paramètres :
+					\begin{itemize}
+						\item une technique de sélection;
+						\item un groupe d'éléments sélectionnés;
+						\item une technique de représentation;
+						\item une relation entre l'initiateur et l'élément sélectionné;
+						\item une relation entre le (ou les) receveur et l'élément sélectionné;
+						\item un contexte entre l'initiateur et le (ou les) receveur;
+						\item un moyen d'accuser réception du référencement (optionnel).
+					\end{itemize}
+
+					Afin de résoudre cette problématique, \mycite[author]{Chastine-2007a} se propose, dans un contexte de collaboration distante, d'utiliser des techniques de réalité augmentée pour désigner les éléments inter-référencés \myref*{fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee}.
+					Dans une étude l'année suivante, \mycite[author]{Chastine-2008} montre que les techniques qu'il propose pour améliorer l'inter-référencement permettent de limiter les ambigüités et d'améliorer les performances globales du groupe.
+
+					\begin{myfigure}
+						\myimage{sota-Chastine}
+						\mycaption[fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee]{Inter-référencement visuel proposé par \mycite[author]{Chastine-2007a} à l'aide de techniques de réalité augmentée}
+					\end{myfigure}
+
+					Afin d'effectuer des inter-référencements à un collaborateur, il est nécessaire de savoir si le collaborateur est attentif.
+					Il est nécessaire d'adapter la manière de procéder en fonction des connaissances de ce collaborateur.
+					Cet ensemble de connaissances concernant l'état actuel de chacun des collaborateurs constitue la conscience de la présence.
+					Cette notion sera vue dans la section suivante.
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-sota-LaPresence]{La présence}
+				\begin{mysubsubsection}[sss-sota-LaPresenceDeGroupe]{La présence de groupe}
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-PlateFormeDeCollaborationVirtuelle]{Plate-forme de collaboration virtuelle}
