@@ -163,3 +163,13 @@ dat.exp3 = read.table("exp3.csv", h=T)
 # TRP-Cage was the training molecule
 dat.exp3 = dat.exp3[dat.exp3$molecule != "trp-cage", ]
 dat.exp3$molecule = factor(dat.exp3$molecule)
+
+dat.exp4 = read.table("exp4.csv", h=T)
+# TRP-Cage was the training molecule
+dat.exp4 = dat.exp4[dat.exp4$molecule != "trp-cage", ]
+dat.exp4 = dat.exp4[dat.exp4$molecule != "prion", ]
+dat.exp4 = dat.exp4[dat.exp4$molecule != "trp-zipper", ]
+dat.exp4$molecule = factor(dat.exp4$molecule)
+dat.exp4.coo = dat.exp4[dat.exp4$tool.name == "bio-coo", ]
+dat.exp4.ope = dat.exp4[dat.exp4$tool.name == "bio-ope", ]
+dat.exp4.fmo = dat.exp4[dat.exp4$tool.name == "bio-fmo", ]
