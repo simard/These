@@ -44,7 +44,7 @@
 			\ifstrempty{#1}%
 				{%
 				}{%
-					\MakeLowercase{#1}%
+					\MakeLowercase{#1}\ %
 				}%
 			\makefirstuc{\MakeLowercase{#2}}%
 		}%
@@ -52,7 +52,7 @@
 		\ifstrempty{#1}%
 			{%
 			}{%
-				\MakeLowercase{#1}%
+				\MakeLowercase{#1}\ %
 			}%
 		\MakeUppercase{#2}%
 	\fi
