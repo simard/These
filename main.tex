@@ -3775,6 +3775,29 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-Resultats]{Résultats}
+			\begin{mysubsection}[sse-exp4-AmeliorationDesPerformances]{Amélioration des performances}
+				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.75cm}
+						\begin{myps}(-0.425,-1.5)(2,6.25)
+							\myaxes(0,2){haptique}(0,6)[1]{score \myacronl{acr-RMSD}}
+							\myboxplot{exp4-rmsd-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique]{Score \myacronl{acr-RMSD} minimum atteint avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique} présente le score \myglos{acr-RMSD} minimum atteint \myvard{1} avec et sans haptique \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le score \myacro{acr-RMSD} minimum atteint \myvard{1} (\myanova{exp4-rmsd-haptic-anova.tex}).
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
+				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp4-AmeliorationDeLaCommunication]{Amélioration de la communication}
+				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-DonneesEtTestsStatistiques]{Données et tests statistiques}
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
+				\end{mysubsubsection}
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-Synthese]{Synthèse}
 			\begin{mysubsection}[sse-exp4-ResumeDesResultats]{Résumé des résultats}

@@ -83,6 +83,13 @@ kruskal2tex <- function(kruskal) {
 	string
 }
 
+wilcox2tex <- function(wilcox) {
+	string = "$W = \\mynum{<chi>}$, $p = \\mynum{<p>}$%"
+	string = set.chi(string, wilcox$statistic)
+	string = set.p(string, wilcox$p.value)
+	string
+}
+
 summary2tex <- function(summary) {
 	string = "$\\mu = \\mynum{<mu>}$, $\\sigma = \\mynum{<sigma>}$%"
 	string = set.mu(string, summary$mean)
