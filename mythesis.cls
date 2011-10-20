@@ -171,9 +171,19 @@
 \newcommand{\documenttype}[1]{\def\@documenttype{#1}}
 \newcommand{\university}[1]{\def\@university{#1}}
 \newcommand{\jury}[1]{\def\@jury{#1}}
-\newcommand{\jurymember}[5]{%
-	#1 & #2 & \myname{#3} & (#4) \\[-1ex]%
-	\multicolumn{4}{@{}l}{\footnotesize\textcolor{black!70}{#5}} \\%
+\def\jurymember#1#2{%
+	\@ifnextchar[{\jurymember@i{#1}{#2}}{\jurymember@i{#1}{#2}[]}%
+}
+\def\jurymember@i#1#2[#3]#4#5#6{%
+	#1 & #2~\myname[#3]{#4} & (#5) \\[-0.67ex]%
+	\multicolumn{3}{l}{%
+		\hspace{0.33\textwidth}%
+		\setlength{\parskip}{0.25ex plus 0.5ex minus 0.2ex}%
+		\begin{minipage}[t]{0.73\textwidth}%
+			\footnotesize\textcolor{black!70}{#6}%
+		\end{minipage}%
+		\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}%
+	} \\%
 }
 \newcommand{\signatures}[1]{\def\@signatures{#1}}
 \newcommand{\Version}[1]{\def\@Version{#1}}
@@ -238,9 +248,9 @@
 		{en présence de\par}
 		\fi
 		\vspace{1ex}
-		{\normalsize\centering\begin{tabular}{l@{ }l@{ }c@{ }l@{ }l}
+		{\normalsize\centering\begin{mytabular}{>{\hsize=0.3\textwidth}R>{\hsize=0.5\textwidth}L>{\hsize=0.2\textwidth}R}
 			\@jury
-		\end{tabular}\par}
+		\end{mytabular}\par}
 	\vspace{1cm}
 	\fi
 	\ifx\@signatures\@empty
