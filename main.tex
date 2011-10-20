@@ -3800,6 +3800,30 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.0075cm}
+						\begin{myps}(-0.425,-150)(2,525)
+							\myaxes(0,2){haptique}(0,500)[100]{temps~(s)}
+							\myboxplot{exp4-rmsd-time-haptic-ubiquitin.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeUbiquitin]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique sur la molécule \myUbiquitin}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeUbiquitin} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} sur la molécule \myUbiquitin.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-ubiquitin-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.0125cm}
+						\begin{myps}(-0.425,-100)(2,325)
+							\myaxes(0,2){haptique}(0,300)[50]{temps~(s)}
+							\myboxplot{exp4-rmsd-time-haptic-nuse.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeNusE]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique sur la molécule \myNusE}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeNusE} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} sur la molécule \myNusE.
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-nuse-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 				\end{mysubsubsection}
