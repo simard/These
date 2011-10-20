@@ -173,3 +173,5 @@ dat.exp4$molecule = factor(dat.exp4$molecule)
 dat.exp4.coo = dat.exp4[dat.exp4$tool.name == "bio-coo", ]
 dat.exp4.ope = dat.exp4[dat.exp4$tool.name == "bio-ope", ]
 dat.exp4.fmo = dat.exp4[dat.exp4$tool.name == "bio-fmo", ]
+dat.exp4.ope.left = dat.exp4.ope[dat.exp4.ope$subject.place == "left", ]
+dat.exp4.ope.right = dat.exp4.ope[dat.exp4.ope$subject.place == "right", ]
