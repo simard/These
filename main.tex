@@ -3788,6 +3788,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique} présente le score \myglos{acr-RMSD} minimum atteint \myvard{1} avec et sans haptique \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le score \myacro{acr-RMSD} minimum atteint \myvard{1} (\myanova{exp4-rmsd-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.0075cm}
+						\begin{myps}(-0.425,-150)(2,525)
+							\myaxes(0,2){haptique}(0,500)[100]{temps~(s)}
+							\myboxplot{exp4-rmsd-time-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 				\end{mysubsubsection}
