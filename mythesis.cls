@@ -171,6 +171,10 @@
 \newcommand{\documenttype}[1]{\def\@documenttype{#1}}
 \newcommand{\university}[1]{\def\@university{#1}}
 \newcommand{\jury}[1]{\def\@jury{#1}}
+\newcommand{\jurymember}[5]{%
+	#1 & #2 & \myname{#3} & (#4) \\[-1ex]%
+	\multicolumn{4}{@{}l}{\footnotesize\textcolor{black!70}{#5}} \\%
+}
 \newcommand{\signatures}[1]{\def\@signatures{#1}}
 \newcommand{\Version}[1]{\def\@Version{#1}}
 \newcommand{\VersionDef}[5]{(\mydate[datesep={--}]{#2}{#3}{#4}) Version~#1%
