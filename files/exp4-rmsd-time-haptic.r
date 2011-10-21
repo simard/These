@@ -23,7 +23,7 @@ write.table(bp$stats,
 			row.names = FALSE,
 			col.names = TRUE)
 
-wilcox = wilcox.test(dat$min.rmsd.time ~ dat$haptic)
+wilcox = wilcox.test(dat$min.rmsd.time ~ dat$haptic, paired = TRUE)
 out.anova = wilcox2tex(wilcox)
 out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
 write(
