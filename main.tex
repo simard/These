@@ -636,7 +636,7 @@
 						La communication se fait de manière orale ou gestuelle principalement.
 						Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
 					\item[Contrôle et retour sensoriel] C'est l'interaction entre un participant et un artefact.
-						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher,\myetc).
+						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher, \myetc).
 					\item[\myemph{Feedthrough}] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
 						Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
 						\mycite[author]{Junuzovic-2009} utilisent même le terme \myemph{feedthrough} pour une communication indirecte avec un participant en intermédiaire.
@@ -947,24 +947,22 @@
 			\end{myfigure}
 		\end{mysection}
 	\end{mychapter}
-	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Manipulation collaborative de molécules}
+	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Plate-forme de manipulation collaborative de molécules}
 		\begin{mysection}[sec-Shaddock-Introduction]{Introduction}
-			Le \myref{cha-sota-EtudeBibliographique} nous a permis d'identifier des problématiques de recherche.
+			Le \myref{cha-sota-EtudeBibliographique} nous a permis d'identifier des problématiques de recherche : nombre important d'atomes, multiple connaissances nécessaires, flexibilité des molécules, \myetc
 			C'est autour de ces problématiques que la plate-forme \myShaddock a été élaborée.
 
 			Nous commencerons par présenter les choix de matériels et d'architecture logicielle \myref*{sec-Shaddock-ArchitectureMaterielleEtLogicielle}.
-			Certaines propriétés particulières sont nécessaires pour le choix de l'interface haptique permettant la manipulation interactive; elles seront détaillées dans la \myref{sse-Shaddock-LInterfaceHaptique}.
-			L'ensemble des éléments de la plate-forme sont organisés selon un architecture client/serveur; les raisons de ce choix sont expliquées dans la \myref{sse-Shaddock-UneArchitectureClientServeur}.
+			L'ensemble des éléments de la plate-forme sont organisés selon une architecture client/serveur; les raisons de ce choix sont expliquées dans la \myref{sse-Shaddock-ArchitectureLogicielleAdoptee}.
 
 			Ensuite, la plate-forme de simulation moléculaire en temps-réel est présentée \myref*{sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation}.
-			Tout d'abord, un logiciel de visualisation complet est nécessaire pour obtenir des affichages détaillés et complexes de molécules; le logiciel est présenté dans la \myref{sse-Shaddock-LogicielDeVisualisationMoleculaire}.
-			Puis un logiciel de simulation est utilisé afin d'obtenir un comportement physique réaliste de la molécule; les différentes solutions existantes ainsi que le logiciel retenu sont présentés dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
-			Enfin, un module spécifique permettant d'obtenir des simulations moléculaires en temps-réel est présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel}.
+			Tout d'abord, un module de visualisation est nécessaire pour obtenir des visualisations détaillées et complètes de molécules; le module est présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
+			Puis un module de simulation moléculaire est ajouté au module visualisation; plusieurs solutions sont possible et le module retenu est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
+			Cependant, afin d'obtenir une simulation moléculaire interactive temps-réel, un module spécifique doit être ajouté; il sera présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel}.
 
-			Le logiciel de visualisation moléculaire utilisé propose des premiers outils d'interaction avec les molécules.
+			Le module de visualisation moléculaire utilisé propose déjà des outils permettant d'interagir avec les molécules.
 			Ces outils sont présentés dans la \myref{sse-Shaddock-LesOutilsExistants}.
-			Cependant, les outils existants n'ont pas été suffisants dans certains cas.
-			De plus, notre étude du travail collaboratif a mené à la proposition de nouveaux outils haptiques présentés dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
+			Cependant, notre étude du travail collaboratif nous a amené à proposer des outils de manipulation avancés qui seront présentés dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
 
 			Les différents éléments de cette plate-forme sont résumés dans deux diagrammes \myacro{acr-UML}.
 			Un diagramme de déploiement \myacro{acr-UML} de la plate-forme \myShaddock est présenté sur la \myref{fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateFormeShaddock}.
@@ -975,15 +973,21 @@
 				\psset{framearc=.1,shadow=true,blur=true}
 				\begin{myps}(-5,-10)(5,10)
 					\rotateleft{%
+						\psframe*[linecolor=mygreen!2,shadow=false](-7.4,-7)(-2.6,7)
+						\psframe*[linecolor=myblue!2,shadow=false](-2.4,-7)(2.4,7)
+						\psframe*[linecolor=myred!2,shadow=false](2.6,-7)(7.4,7)
+						\uput[-90](-5,7){\LARGE\textcolor{mygreen!25}{Simulation}}
+						\uput[-90](0,7){\LARGE\textcolor{myblue!25}{Visualisation}}
+						\uput[-90](5,7){\LARGE\textcolor{myred!25}{Interaction}}
 						\rput(0,0){%
-							\myumlnode*<PCUtilisateur>[\myLinux et \myacronl-{acr-CUDA}]{Client : \myPC utilisateur}{%
+							\myumlnode*<PCUtilisateur>[\myLinux et \myacronl-{acr-CUDA}]{Client : Nœud principal}{%
 								\myumlcomponent<VMD>[application]{\myacronl-{acr-VMD}}%
 							}%
 						}
 						\rput(-5,0){%
-							\myumlnode*<ServeurNAMD>[\myLinux et \myacronl-{acr-CUDA}]{Serveur : Serveur \myacronl-{acr-NAMD}}{%
+							\myumlnode*<ServeurNAMD>[\myLinux et \myacronl-{acr-CUDA}]{Serveur : Nœud \myacronl-{acr-NAMD}}{%
 								\begin{psmatrix}[rowsep=1]%
-									\myumlcomponent<NAMD>[executable]{{\mysource{namd2}}} \\%
+									\myumlcomponent<NAMD>[programme]{{\mysource{namd2}}} \\%
 									\myumlcomponent<FichierSimulation>[fichier]{%
 										\\[-1ex]%
 											\begin{psmatrix}[rowsep=0]%
@@ -994,21 +998,21 @@
 								}%
 							}
 							\rput(5,4){%
-								\myumlnode*<ServeurVRPN1>[\myLinux, \myMacOS ou \myWindows]{Serveur~\mynum{1} : Serveur \myacronl-{acr-VRPN}}{%
-									\myumlcomponent<VRPN1>[executable]{{\mysource{vrpn_server}}}%
+								\myumlnode*<ServeurVRPN1>[\myLinux, \myMacOS ou \myWindows]{Serveur : Nœud \myacronl-{acr-VRPN}~\mynum{1}}{%
+									\myumlcomponent<VRPN1>[programme]{{\mysource{vrpn_server}}}%
 								}%
 							}
 							\rput(5,1){%
-								\myumlnode<PHANToM1>[\myOmni]{Interface~1 : Interface haptique}%
+								\myumlnode<PHANToM1>[\myOmni]{Interface : Interface haptique~\mynum{1}}%
 							}
 							\rput(5,-0.5){\Huge$\vdots$}
 							\rput(5,-3){%
-								\myumlnode*<ServeurVRPNn>[\myLinux, \myMacOS ou \myWindows]{Serveur~$n$ : Serveur \myacronl-{acr-VRPN}}{%
-									\myumlcomponent<VRPNn>[executable]{{\mysource{vrpn_server}}}%
+								\myumlnode*<ServeurVRPNn>[\myLinux, \myMacOS ou \myWindows]{Serveur : Nœud \myacronl-{acr-VRPN}~$n$}{%
+									\myumlcomponent<VRPNn>[programme]{{\mysource{vrpn_server}}}%
 								}%
 							}
 							\rput(5,-6){%
-								\myumlnode<PHANToMn>[\myOmni]{Interface~$n$ : Interface haptique}%
+								\myumlnode<PHANToMn>[\myOmni]{Interface : Interface haptique~$n$}%
 							}
 							\rput(0,-5){%
 								\myumlnode<VideoProjecteur>[vue partagée]{Affichage : Vidéoprojecteur}
@@ -1065,38 +1069,9 @@
 			\end{myfigure}
 		\end{mysection}
 		\begin{mysection}[sec-Shaddock-ArchitectureMaterielleEtLogicielle]{Architecture matérielle et logicielle}
-			\begin{mysubsection}[sse-Shaddock-LInterfaceHaptique]{L'interface haptique}
-				Une plate-forme de manipulation interactive en temps-réel nécessite des outils d'interaction.
-				De plus, le but final de cette thèse est d'apporter des solutions d'assistance haptique pour le travail collaboratif.
-				Les types d'interfaces haptiques disponibles sur le marché sont relativement nombreuses et variées.
-				Cependant, plusieurs contraintes nous ont permis de choisir le \myOmni et le \myDesktop.
-
-				Tout d'abord, nous cherchons à pouvoir effectuer de la manipulation dans un environnement en \myThreeD; il faut choisir une interface permettant au minimum six \myacro*{acr-DDL} en entrée et au minimum trois \myacro*{acr-DDL} en retour haptique.
-				En effet, un outil permettant de manipuler une molécule en translation et en rotation nécessite six \myacro*{acr-DDL} en entrée.
-				Cependant, il est également nécessaire que le périphérique possède au minimum trois \myacro*{acr-DDL} en retour haptique (en translation) afin de créer des solutions d'assistance haptique.
-				Évidemment, trois \myacro*{acr-DDL} supplémentaires en retour haptique (pour la rotation) pourraient permettre des solutions d'assistance plus spécifiques mais les interfaces haptiques proposant six \myacro*{acr-DDL} sont rares et relativement chères.
-
-				De nombreuses interfaces répondent au critères donnés comme le \myPremium de chez \mySensAble ou le \myVirtuose de chez \myHaption.
-				Cependant, deux critères supplémentaires nous ont permis de choisir.
-				Tout d'abord, nous souhaitons fournir des outils accessibles à des biologistes : il est préférable d'avoir un outil de taille modérée qui puisse se poser sur un bureau et se substituer à une souris.
-				Deuxièmement, le \myOmni fournit actuellement le meilleur rapport qualité/prix du marché en fonction de nos contraintes.
-				En effet, dans le cadre du travail collaboratif, plusieurs interfaces haptiques sont nécessaires.
-				De plus, le prix modéré peut amener les biologistes à adopter les outils sans avoir à investir de gros budgets; ceci peut également faciliter l'intégration de ces solutions dans les laboratoires de biologistes.
-				C'est donc l'interface \myOmni \mycite{Massie-1994} de l'entreprise \mySensAble qui répond le mieux à nos attentes pour la plate-forme \myShaddock \myref*{fig-simulation-InterfaceOmniSixDDLTroisDDL}.
-
-				\begin{myfigure}
-					\myimage{simulation-omni}
-					\mycaption[fig-simulation-InterfaceOmniSixDDLTroisDDL]{Interface \myOmni 6~\myacronl-{acr-DDL}/3~\myacronl-{acr-DDL}}
-				\end{myfigure}
-
-				À l'origine, les interfaces haptiques de \mySensAble était programmable à l'aide de l'\myacro{acr-API} \myGhost \mycite{SensAble-2002}.
-				Le travail de \mycite[author]{Itkowitz-2005} ont permis de fournir une nouvelle \myacro{acr-API} plus facile à utiliser : \myOpenHaptics.
-				C'est à partir de cette \myacro{acr-API} que les interfaces haptiques sont utilisées sur \myShaddock.
-				Cependant, nous verrons dans la \myref{sse-Shaddock-UneArchitectureClientServeur} que c'est un logiciel spécifique qui s'occupera de cette communication avec l'interface.
-			\end{mysubsection}
-			\begin{mysubsection}[sse-Shaddock-ConfigurationDeTravailCollaboratif]{Configuration de travail collaboratif}
-				Le \myref{cha-sota-EtudeBibliographique} a permis de lister les principaux critères qui caractérisent une plate-forme pour le travail collaboratif.
-				Le travail peut être synchrone ou asynchrone et il peut être distant ou colocalisé \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
+			\begin{mysubsection}[sse-Shaddock-TravailCollaboratifSynchroneEtColocalise]{Travail collaboratif synchrone et colocalisé}
+				\mycite[author]{Ellis-1991} a proposé une classification des différentes configurations de travail collaboratif dans le temps et dans l'espace.
+				Il distingue quatre classes principales qu'on peut représenter sur un graphique \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
 
 				\begin{myfigure}
 					\psset{unit=0.083333333\textwidth}
@@ -1130,84 +1105,104 @@
 					\mycaption[fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis]{Classification des tâches collaboratives selon \mycite[author]{Ellis-1991}}
 				\end{myfigure}
 
-				Nous avons vu l'importance d'une bonne conscience périphérique des autres utilisateurs dans les travaux de \mycite[author]{Casera-2006} ou \mycite[author]{Tang-2006} et plus particulièrement dans l'étude proposée par \mycite[author]{Sallnas-2010} : elle montre l'amélioration des performances lorsque la conscience périphérique est augmentée.
-				Les solutions de collaboration distantes doivent recréer cette conscience en transmettant les informations audio ou même visuelle.
-				Pour conserver une bonne conscience périphérique, il est préférable de ne pas numériser les communications mais de conserver leur aspect réel : il faut une collaboration synchrone colocalisée ou collaboration face-à-face selon \mycite[author]{Ellis-1991} \myref*{fig-Shaddock-ClassificationDesTachesCollaborativesSelonEllis}.
+				Nous avons choisi de nous placer dans une configuration de collaboration synchrone et colocalisée, ou collaboration face-à-face.
+				En effet, afin de pouvoir faire interagir en temps-réel les utilisateurs les uns avec les autres, la synchronisation dans le temps est nécessaire.
+				En ce qui concerne la collaboration dans l'espace, une collaboration pourrait être envisageable.
+				Cependant, cette solution de collaboration distante n'a pas été retenue pour différentes raisons.
 
-				De plus, la conscience périphérique ne se limite pas seulement à la conscience physique des autres utilisateurs.
-				En effet, les collaborateurs agissent sur l'environnement ce qui permet de leur donner une existence virtuelle par l'intermédiaire des modifications de la scène.
-				Ceci participe également à la conscience périphérique.
-				Afin d'obtenir la meilleure conscience périphérique concernant l'environnement virtuel, les utilisateurs doivent partager le même environnement virtuel.
-				C'est pour cette raison que la plate-forme \myShaddock propose une visualisation vidéoprojetée sur un grand écran.
-				De cette façon, la vue est partagée par l'ensemble des utilisateurs.
+				Tout d'abord, la \myref{sss-sota-LaConscienceDeGroupe} évoque les problématiques liées à la conscience périphériques des partenaires dans la réalisation d'une tâche collaborative.
+				Étant donné que plusieurs études ont montré que les performances collaboratives sont meilleures lorsque la conscience périphérique est bonne, il nous paraît nécessaire de se placer dans des conditions optimales pour augmenter cette conscience périphérique.
+				La présence physique au même endroit de tous les collaborateurs est la façon la plus naturelle de créer cette conscience de manière optimale.
+				Dans une solution de collaboration distante, de nombreuses informations doivent être enregistrées puis transmises numériquement avec les problématiques de représentations de l'information qui peut se poser.
+
+				De plus, la collaboration distante introduit des problématiques techniques.
+				Par exemple, la latence d'un réseau peut poser problème pour la synchronisation de la simulation entre les différents postes de travail.
+
+				Pour finir, la configuration de collaboration colocalisée permet d'avoir un environnement virtuel commun par l'intermédiaire d'un affichage partagé.
+				L'affichage est effectué par l'intermédiaire d'un vidéo projecteur et projeté sur un grand écran.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-Shaddock-UneArchitectureClientServeur]{Une architecture client/serveur}
-				Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{En anglais, \myemph{peer-to-peer} parfois abrégé en \textsc{p2p}.}.
-				Parmi les études notables, \mycite[author]{Iglesias-2008} proposent une tâche d'assemblage collaboratif assisté par l'haptique.
-				Une des problématiques soulevée est la difficulté de maintenir un environnement virtuel cohérent et fidèle pour tous les utilisateurs.
-				Afin de parer à ce problème, les développeurs ont retenu une architecture de type client/serveur : la simulation est effectuée par un processus qui distribue les informations aux différents clients.
-				D'ailleurs, ce papier fournit un bon état de l'art des différents type d'architectures en soulignant les avantages et inconvénients de chacune.
+			\begin{mysubsection}[sse-Shaddock-ArchitectureLogicielleAdoptee]{Architecture logicielle adoptée}
+				Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{\myemph{Peer-to-peer} en anglais, parfois abrégé en \textsc{p2p}.}.
+				\begin{mysubsubsection}[sss-Shaddock-ArchitecturePairAPair]{Architecture pair-à-pair}
+					L'architecture pair-à-pair consiste à faire communiquer chaque nœud du réseau avec chacun des autres nœuds : le réseau forme un graphe complet.
+					L'avantage d'une telle architecture et la rapidité de transfert de l'information puisqu'il n'y a pas d'intermédiaire.
+					Cependant, plus le réseau est grand et plus ce type de solutions est difficile à mettre en place.
 
-				En effet, il est expliqué que les architectures de types pair-à-pair permettent d'avoir des synchronisations sur le réseau plus rapides : elles nécessitent moins de paquet réseau pour la communication.
-				Cependant, ce type d'architecture génère des retours haptiques instables.
-				D'ailleurs, \mycite[author]{Kim-2004}, qui étudient le déplacement collaboratif d'une boîte virtuelle assisté par l'haptique, signalent qu'ils ont dû ajouter une viscosité importante dans le retour haptique pour éviter les instabilités.
-				Bien que les architectures pair-à-pair permettent de bons résultats sur une connexion réseau relativement lente voire même sur un réseau susceptible d'avoir des coupures, elles ne sont pas adaptées pour des application collaboratives utilisant l'haptique.
-				
-				D'autres travaux proposent des architectures client/serveur utilisant les interactions haptiques.
-				\mycite[author]{Huang-2010} proposent la manipulation d'un jeu de construction par blocs.
-				La simulation est centralisée sur un serveur et les interaction haptiques sont produites par l'intermédiaire de clients.
-				Il ne souligne aucune instabilité dans les interactions haptiques.
-				\mycite[author]{Norman-2010} s'intéressent particulièrement aux influences du réseau sur les interactions visuo-haptiques.
-				L'architecture client/serveur est la plus adaptée pour la gestion de simulation.
-				Cependant, il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
+					Actuellement, les travaux concernant l'utilisation de ce type d'architecture pour la synchronisation d'une manipulation virtuelle à l'aide de l'haptique sont peu nombreux.
+					Par exemple, \mycite[author]{Kim-2004} constatent que la latence des réseaux est une problématique importante pour les retours haptiques générés.
+					En effet, la fréquence de traitement nécessaire pour l'haptique est nettement plus élevée que pour le retour visuel ($\approx \mynum[Hz]{1000}$ contre $\approx \mynum[Hz]{60}$).
+					C'est pourquoi il utilise une architecture pair-à-pair.
+					En effet, en dehors d'être une communication directe entre les nœuds, c'est surtout une architecture qui nécessite d'avoir une instance du programme exécutée sur chaque nœud : ainsi, il n'est pas nécessaire d'avoir un réseau pour supporter une fréquence de \mynum[Hz]{1000}, il suffit d'avoir des nœuds qui le supportent.
 
-				\mycite[author]{Marsh-2006} proposent une comparaison de ces deux types d'architectures et en vient à la conclusion que l'architecture pair-à-pair est la plus performante en terme de latence.
-				Cependant, l'avantage d'une architecture client/serveur est la cohérence de la simulation entre les différents nœuds du système (et donc entre les utilisateurs).
-				Cependant, ce type d'architecture nécessite deux fois plus de paquets sur le réseau qu'une architecture pair-à-pair.
-				Par opposition, l'architecture de type pair-à-pair ne permet pas d'obtenir un rendu haptique stable alors que l'achitecture de type client/serveur le permet.
+					Cependant, \mycite[author]{Iglesias-2008} explique, à travers une tâche d'assemblage collaboratif, qu'il est nécessaire que les simulations entre les nœuds du réseau se synchronisent pour rester cohérentes entre elles.
+					C'est l'inconvénient majeur de l'architecture pair-à-pair : les environnements virtuels présentés aux différents collaborateurs peuvent diverger et ne pas être cohérents les uns avec les autres.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-Shaddock-ArchitectureClientServeur]{Architecture client/serveur}
+					Pour contrer les incohérences de simulation, l'architecture client/serveur est nettement plus adaptée.
+					La simulation principale n'est exécutée qu'une seule fois sur un nœud du réseau appelé serveur.
+					Les collaborateurs utilisent des nœuds clients qui communiquent avec le serveur pour récupérer les informations.
 
-				Dans notre cas, tous les utilisateurs se trouvent confrontés à la même simulation de façon colocalisée.
-				L'affichage étant partagé, c'est l'architecture client/serveur qui est utilisée sur la plate-forme \myShaddock.
-				Cependant, nous venons de voir que l'architecture client/serveur n'est pas optimale en terme de performances sur le réseau.
-				Heureusement, la proximité des utilisateurs durant l'expérimentation nous permet d'utiliser le réseau interne du laboratoire avec une bande passante suffisante pour compenser l'inefficacité de l'architecture client/serveur en terme de débit.
-				La plate-forme \myShaddock se distinge donc sous la forme d'une architecture de type client/serveur.
+					Bien évidemment, dans ce cas, la latence du réseau a beaucoup plus d'influence sur la qualité des retours haptiques.
+					Cependant, nous nous plaçons dans un contexte de collaboration colocalisée ce qui veut dire que des réseaux internes peuvent être utilisés ce qui devrait limiter grandement les problèmes de latence.
+
+					\mycite[author]{Huang-2010} montrent la faisabilité d'une telle configuration en proposant la manipulation d'un jeu de construction par blocs.
+					La simulation est centralisée sur un serveur et les interactions haptiques sont produites par l'intermédiaire de clients.
+					Il ne souligne aucune instabilité dans les interactions haptiques.
+					\mycite[author]{Marsh-2006} ou encore \mycite[author]{Norman-2010} s'intéressent particulièrement aux influences du réseau sur les interactions visuo-haptiques.
+					D'après eux, l'architecture client/serveur est la plus adaptée pour la gestion de simulation.
+					Cependant, il conclue sur la nécessité d'avoir une information qui transite rapidement afin d'obtenir un rendu haptique le plus fidèle possible.
+
+					Étant donné que nous nous plaçons dans un contexte de simulation moléculaire, il nous est nécessaire de maintenir un environnement virtuel cohérent tout au long de la simulation.
+					La plate-forme \myShaddock est pourvue d'une architecture client/serveur comme on peut le voir sur la \myref{fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateFormeShaddock}.
+				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-ServeurDePeripheriques]{Serveur de périphériques}
-					Afin de gérer ces connexions client/serveur pour les interfaces haptiques, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
-					La connexion avec le moteur de simulation est gérée par un autre module qui sera détaillé plus tard dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel}.
+					Afin de gérer les connexions client/serveur pour les interfaces haptiques, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
+					La connexion avec le moteur de simulation est gérée par un autre module qui sera détaillé plus tard dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel}.
 
 					\myacro{acr-VRPN} offre un moyen simple et relativement universel de connecter des périphériques principalement utilisés en réalité virtuelle.
 					En effet, il fournit un serveur pour chaque périphérique.
 					Ensuite, l'application cliente peut envoyer et recevoir les informations nécessaires à la communication avec chacun des périphériques.
 
-					Dans notre cas, l'interface haptique est connectée physiquement à un ordinateur et un serveur \myacro{acr-VRPN} commande cette interface.
-					C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau que le client (\myacro{acr-VMD} dans notre cas) va accéder aux informations de l'interface haptique.
+					Dans notre cas, l'interface haptique est connectée physiquement à un ordinateur\footnote{Cela suppose d'avoir un ordinateur par interface haptique ce qui peut considérablement complexifier la logistique avec un grand nombre de participants.} et un serveur \myacro{acr-VRPN} commande cette interface haptique.
+					C'est seulement par l'intermédiaire de ce serveur \myacro{acr-VRPN} et à travers le réseau que le client (\myacro{acr-VMD} dans notre cas) va interagir avec l'interface haptique.
 
-					La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu) a nécessité quelques modifications dans le code.
-					Ces modifications ont été soumises au développeur de \myacro{acr-VRPN} qui les a intégrées dans les dernières versions.
-
-					L'avantage de cette architecture est la possibilité d'ajouter autant de serveurs et donc autant d'interfaces haptiques que nécessaire.
-					Cependant, cela suppose également d'avoir autant d'ordinateurs que de serveurs ce qui complexifie la logistique.
-					On pourra noter que la chaleur dégagée par l'ensemble de ces machines additionnée à celle du vidéoprojecteur créé des températures durant l'expérimentation qui peuvent être désagréables.
-					C'est pourquoi aucune des expérimentations proposée ne dure plus de \mynum[mn]{30} ou, le cas échéant, une pause est effectuée au bout de \mynum[mn]{30} afin d'aérer la salle d'expérimentation.
+					La compilation de \myacro{acr-VRPN} en tant que serveur de \myOmni sous le système d'exploitation \myLinux (\myUbuntu) a nécessité quelques modifications dans le code source qui n'avait pas été prévu pour ce cas d'utilisation.
+					Ces modifications ont été soumises aux développeurs de \myacro{acr-VRPN} qui les ont intégrées dans les versions les plus récentes.
 				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-Shaddock-OutilDInteractionUtilise]{Outil d'interaction utilisé}
+				Pour cette plate-forme de manipulation de molécules interactive et temps-réel, l'outil d'interaction doit répondre à plusieurs contraintes.
+
+				Tout d'abord, la manipulation de molécules intervient dans un environnement virtuel en \myThreeD.
+				Bien que la simple souris soit déjà utilisée dans de nombreuses applications pour interagir avec des environnement virtuels en \myThreeD (modélisation, jeux vidéos, \myCAO, \myetc), ce n'est pas l'outil le plus adapté, notamment pour la sélection en profondeur.
+				L'outil doit permettre la manipulation et la sélection dans cet environnement virtuel \myThreeD avec six~\myacro*{acr-DDL}.
+
+				Nous souhaitons proposer une plate-forme pouvant être facilement déployée.
+				En effet, les biologistes, public potentiel de ce type de plate-forme, sont plus habitués à travailler sur des ordinateurs de bureau que dans les environnement immersifs utilisés en réalité virtuelle.
+				C'est pourquoi nous orientons notre choix de matériel sur des outils de bureau.
+				Cependant, \mycite[author]{Sallnas-2000} a montré l'intérêt d'un retour haptique pour l'amélioration des performances dans les configurations de travail collaboratif; c'est donc naturellement que nous nous sommes orientées vers des interfaces haptiques de bureau.
+
+				Parmi les interfaces haptiques disponibles sur le marché, le \myOmni répond à l'ensemble de ces contraintes avec un rapport qualité/prix correct.
+				Le \myDesktop, qui répond également aux contraintes, aurait permis des retours haptiques plus fidèles mais son prix élevé ne convient à notre plate-forme collaborative où il faudra en déployer plusieurs.
+				De plus, sa connectique (port parallèle) quasiment obsolète, est de plus en plus difficile à trouver sur les ordinateurs récents\footnote{Un convertisseur vers une connectique \myFireWire vendu par \mySensAble existe mais nécessite une dépense supplémentaire significative.}.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation]{Plate-forme de simulation et de visualisation}
 			\myShaddock permet d'effectuer la visualisation de molécules.
 			La visualisation est un processus complexe qui nécessite des rendus variés et complets.
 			En effet, devant le nombre important d'informations que possède une molécule, il est primordial d'avoir accès à des rendus graphiques performants et complets sans surcharge.
-			Cette tâche est effectuée par un logiciel de visualisation présenté dans la \myref{sse-Shaddock-LogicielDeVisualisationMoleculaire}.
+			Cette tâche est effectuée par un module de visualisation présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
 
 			Ensuite, \myShaddock simule une dynamique moléculaire.
-			Un logiciel de simulation est nécessaire pour réaliser cette tâche.
-			Il faut que ce logiciel puisse interagir avec le logiciel de visualisation.
+			Un module de simulation est nécessaire pour réaliser cette tâche.
+			Il faut que ce module puisse interagir avec le module de visualisation.
 			De plus, il est nécessaire de pouvoir paramétrer finement la simulation.
-			Le logiciel de simulation choisi est présenté dans la \myref{sse-Shaddock-LogicielDeSimulationMoleculaire}.
+			Le module de simulation choisi est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
 			Cependant, les logiciels de simulation ne sont pas conçus pour effectuer des simulations en temps-réel.
 			Pourtant, afin de proposer une dynamique moléculaire interactive aux utilisateurs, il est nécessaire d'avoir accès à une simulation en temps-réel.
-			Un module présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel} permet de faire communiquer le logiciel de visualisation avec le logiciel de simulation afin d'obtenir une simulation en temps-réel.
+			Un module présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel} permet de faire communiquer le module de visualisation avec le module de simulation afin d'obtenir une simulation en temps-réel.
 
-			\begin{mysubsection}[sse-Shaddock-LogicielDeVisualisationMoleculaire]{Logiciel de visualisation moléculaire}
+			\begin{mysubsection}[sse-Shaddock-ModuleDeVisualisationMoleculaire]{Module de visualisation moléculaire}
 				Les outils de visualisation moléculaire disponibles sont relativement nombreux.
 				Parmi les plus populaires, on peut citer \myPyMOL \mycite{PyMOL-2010}, \myacro{acr-VMD} \mycite{Humphrey-1996}, \myChimera \mycite{Pettersen-2004}, \myRasmol \mycite{Sayle-1995} sans compter les nombreux dérivés permettant un affichage en ligne tel que \myJmol \mycite{Jmol-2006} pour ne citer que le plus connu.
 				\myPyMOL et \myacro{acr-VMD} se distinguent particulièrement par leurs nombreuses fonctionnalités et leur large utilisation dans le milieu spécialisé.
@@ -1271,11 +1266,11 @@
 						\item des angles dihédraux;
 						\item des angles de torsion.
 					\end{itemize}
-					La simple description des atomes et de leurs positions à l'état d'équilibre (fichier \myPDB) couplée aux données générées par \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires au logiciel de simulation.
+					La simple description des atomes et de leurs positions à l'état d'équilibre (fichier \myPDB) couplée aux données générées par \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires au module de simulation.
 					\myacro{acr-VMD} fournit tous les outils permettant de générer ce fichier nécessaire à la simulation (fichier \myPSF) par l'intermédiaire d'une extension : \myemph{Automatic \textsc{psf} builder}.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-Shaddock-LogicielDeSimulationMoleculaire]{Logiciel de simulation moléculaire}
+			\begin{mysubsection}[sse-Shaddock-ModuleDeSimulationMoleculaire]{Module de simulation moléculaire}
 				Les deux principaux logiciels de simulation existants sont \myacro{acr-NAMD} \mycite{Phillips-2005} et \myGromacs \mycite{Berendsen-1995}.
 				\myGromacs est plus performant que \myacro{acr-NAMD}, surtout dans les dernières versions \mycite{Hess-2008} qui offre des performances jusqu'à quatre fois plus rapide que \myacro{acr-NAMD}.
 				\myacro{acr-NAMD} est développé par la même université que \myacro{acr-VMD} et la connexion entre les deux logiciels est facilitée.
@@ -1287,13 +1282,13 @@
 				Ces atomes interviennent dans le calcul des forces de la simulation mais eux-mêmes ne sont pas soumis aux forces de l'environnement.
 				Cette fonctionnalité est nécessaire pour simuler un point d'ancrage de la molécule dans l'environnement virtuel.
 				Sans ce point d'ancrage, la molécule pourrait dériver et sortir de l'espace de travail des utilisateurs sans possibilité de récupération.
-				\begin{mysubsubsection}[sss-Shaddock-PlateFormeDeSimulationMoleculaireEnTempsReel]{Plate-forme de simulation moléculaire en temps-réel}
+				\begin{mysubsubsection}[sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel]{Plate-forme de simulation moléculaire interactive et temps-réel}
 					Les logiciels de simulation ne sont pas prévus pour des simulations interactives en temps-réel.
 					Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations en temps-réel \mycite{Stadler-1997}.
 					L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation offerte par \myacro{acr-NAMD}.
 
 					Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
-					En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre logiciel de simulation comme \myGromacs.
+					En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre module de simulation comme \myGromacs.
 					C'est une interface capable de gérer différents logiciels de visualisation et de simulation.
 					Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme.
 				\end{mysubsubsection}
@@ -1321,9 +1316,9 @@
 				\end{description}
 
 				Cependant, de nombreux outils supplémentaires ont été développés au-fur-et-à-mesure des besoins identifiés durant les expérimentations.
-				Ces nouveaux outils sont détaillés dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
+				Ces nouveaux outils sont détaillés dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-Shaddock-LesNouveauxOutilsDInteraction]{Les nouveaux outils d'interaction}
+			\begin{mysubsection}[sse-Shaddock-OutilsDeManipulationAvances]{Outils de manipulation avancés}
 				Durant les différentes études menées dans la suite de ce document, les analyses et les remarques d'utilisateurs ont permis d'améliorer les outils d'interaction et d'en proposer de nouveaux.
 				Le développement de ces nouveaux outils a nécessité une modification du programme \myacro{acr-VMD} par extension des outils déjà existants.
 				Des fonctionnalités ont été ajoutées et sont présentées dans les sections suivantes.
@@ -3691,7 +3686,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour cette expérimentation, des modifications ont été apportés aux différents outils.
 					En effet, nous souhaitons apporter une assistance haptique afin d'augmenter la communication sensorielle entre les sujets.
 					Les outils modifiés sont l'outil de désignation, l'outil de déformation par atome et l'outil de déformation par molécule que nous nommerons outil de manipulation\footnote{L'outil de déformation par molécule applique une force à l'ensemble des atomes de la molécule et produit ainsi un déplacement de la molécule en bloc; cette opération s'apparente plus à une translation de la molécule qu'à une déformation.}.
-					Ces outils sont décrits dans la \myref{sse-Shaddock-LesNouveauxOutilsDInteraction}.
+					Ces outils sont décrits dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
 					\begin{myparagraph}[par-exp4-OutilDeDesignation]{Outil de désignation}
 						Le coordinateur est en charge d'effectuer les désignations envers les opérateurs.
 						Nous souhaitons fournir au coordinateur un moyen de connaître l'état de la désignation à chaque instant.
@@ -3889,7 +3884,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
 			Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
 			L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
-			Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels\myetc).
+			Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels, \myetc).
 
 			Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
 			Un \myOmni est connecté sur chacune des deux machines.
