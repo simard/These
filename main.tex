@@ -958,10 +958,10 @@
 			Ensuite, la plate-forme de simulation moléculaire en temps-réel est présentée \myref*{sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation}.
 			Tout d'abord, un module de visualisation est nécessaire pour obtenir des visualisations détaillées et complètes de molécules; le module est présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
 			Puis un module de simulation moléculaire est ajouté au module visualisation; plusieurs solutions sont possible et le module retenu est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
-			Cependant, afin d'obtenir une simulation moléculaire interactive temps-réel, un module spécifique doit être ajouté; il sera présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel}.
+			Cependant, afin d'obtenir une simulation moléculaire interactive temps-réel, un module spécifique doit être ajouté; il sera présenté dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel}.
 
 			Le module de visualisation moléculaire utilisé propose déjà des outils permettant d'interagir avec les molécules.
-			Ces outils sont présentés dans la \myref{sse-Shaddock-LesOutilsExistants}.
+			Ces outils sont présentés dans la \myref{sse-Shaddock-OutilsExistants}.
 			Cependant, notre étude du travail collaboratif nous a amené à proposer des outils de manipulation avancés qui seront présentés dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
 
 			Les différents éléments de cette plate-forme sont résumés dans deux diagrammes \myacro{acr-UML}.
@@ -1024,16 +1024,17 @@
 							\myumlrealization[angleA=-90,angleB=90]{VRPNn}{PHANToMn}[nccurve]%
 							\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
 							\nbput[npos=0.666667]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'affichage\end{psmatrix}}
-							\ncput*[framesep=1pt,nrot=:D,npos=0.333333]{\textcolor{black!30}{\scriptsize \myVGA}}
+							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.333333]{\textcolor{black!30}{\scriptsize \myVGA}}
 							\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
 							\naput[npos=0.25]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ de simulation\end{psmatrix}}
-							\ncput*[framesep=1pt,nrot=:U,npos=0.55]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:U,npos=0.635]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+							\psframe*[linecolor=white](-2.6,-2)(-2.4,-0.06) % To hide the background of the label
 							\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
 							\nbput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
-							\ncput*[framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
 							\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPNn}{VMD}[nccurve]
 							\naput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
-							\ncput*[framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
+							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
 						}
 					\end{myps}
 					\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateFormeShaddock]{Diagramme de déploiement \myacronl-{acr-UML} de la plate-forme \myShaddock}
@@ -1110,7 +1111,7 @@
 				En ce qui concerne la collaboration dans l'espace, une collaboration pourrait être envisageable.
 				Cependant, cette solution de collaboration distante n'a pas été retenue pour différentes raisons.
 
-				Tout d'abord, la \myref{sss-sota-LaConscienceDeGroupe} évoque les problématiques liées à la conscience périphériques des partenaires dans la réalisation d'une tâche collaborative.
+				Tout d'abord, la \myref{sss-sota-LaConscienceDeGroupe} évoque les problématiques liées à la conscience périphérique des partenaires dans la réalisation d'une tâche collaborative.
 				Étant donné que plusieurs études ont montré que les performances collaboratives sont meilleures lorsque la conscience périphérique est bonne, il nous paraît nécessaire de se placer dans des conditions optimales pour augmenter cette conscience périphérique.
 				La présence physique au même endroit de tous les collaborateurs est la façon la plus naturelle de créer cette conscience de manière optimale.
 				Dans une solution de collaboration distante, de nombreuses informations doivent être enregistrées puis transmises numériquement avec les problématiques de représentations de l'information qui peut se poser.
@@ -1157,7 +1158,7 @@
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-ServeurDePeripheriques]{Serveur de périphériques}
 					Afin de gérer les connexions client/serveur pour les interfaces haptiques, nous utilisons le logiciel \myacro{acr-VRPN} développé par \mycite[author]{Taylor-II-2001}.
-					La connexion avec le moteur de simulation est gérée par un autre module qui sera détaillé plus tard dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel}.
+					La connexion avec le moteur de simulation est gérée par un autre module qui sera détaillé plus tard dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel}.
 
 					\myacro{acr-VRPN} offre un moyen simple et relativement universel de connecter des périphériques principalement utilisés en réalité virtuelle.
 					En effet, il fournit un serveur pour chaque périphérique.
@@ -1170,6 +1171,121 @@
 					Ces modifications ont été soumises aux développeurs de \myacro{acr-VRPN} qui les ont intégrées dans les versions les plus récentes.
 				\end{mysubsubsection}
 			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation]{Plate-forme de simulation et de visualisation}
+			\myShaddock permet d'effectuer la visualisation de l'environnement moléculaire manipulé.
+			La visualisation est un processus complexe qui nécessite des rendus détaillés et complets des éléments virtuels de l'environnement.
+			En effet, devant le nombre important d'informations que possède une molécule (atomes, flexibilité, chimie, champs de forces, \myetc), il est primordial d'avoir des rendus graphiques permettant d'afficher un maximum d'informations pour un minimum de charge visuelle.
+			Cette tâche est effectuée par un module de visualisation présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
+
+			Ensuite, \myShaddock simule une dynamique moléculaire.
+			Un module de simulation est nécessaire pour réaliser cette tâche.
+			Il faut que ce module puisse interagir avec le module de visualisation.
+			De plus, il est nécessaire de pouvoir paramétrer finement la simulation.
+			Le module de simulation choisi est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
+
+			Cependant, les moteurs de simulation ne sont pas conçus pour effectuer des simulations en temps-réel, et encore moins des simulations \myemph{interactives} en temps-réel.
+			Pourtant, afin de proposer une dynamique moléculaire interactive et temps-réel aux utilisateurs, un module présenté dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel} permet de faire communiquer le module de visualisation avec le module de simulation.
+
+			\begin{mysubsection}[sse-Shaddock-ModuleDeVisualisationMoleculaire]{Module de visualisation moléculaire}
+				Les outils de visualisation moléculaire disponibles sont relativement nombreux.
+				Parmi les plus populaires, on peut citer \myPyMOL \mycite{PyMOL-2010}, \myacro{acr-VMD} \mycite{Humphrey-1996}, \myChimera \mycite{Pettersen-2004}, \myRasmol \mycite{Sayle-1995} sans compter les nombreux dérivés permettant un affichage en ligne tel que \myJmol \mycite{Jmol-2006} pour ne citer que le plus connu.
+				\myPyMOL et \myacro{acr-VMD} se distinguent particulièrement par leurs nombreuses fonctionnalités et leur large utilisation dans le milieu spécialisé.
+
+				\myPyMOL est probablement le logiciel de visualisation le plus utilisé par les experts du domaine car c'est le plus abouti en ce qui concerne les performances d'affichage.
+				Cependant, \myPyMOL ne permet pas l'affichage de simulations temps-réel\footnote{Les travaux récents de \mycite[author]{Baugh-2011} semblent proposer la visualisation en temps-réel d'une simulation moléculaire avec \myPyMOL.}, ni la manipulation interactive de molécules.
+
+				\myacro{acr-VMD} possède également une large gamme de rendus graphiques.
+				De plus, depuis maintenant quelques mois, \myacro{acr-VMD} utilise également des optimisations \myGPU pour l'affichage à l'aide de la bibliothèque \myCUDA.
+				Contrairement à \myPyMOL, \myacro{acr-VMD} permet le rendu graphique en temps-réel de données de simulation.
+
+				La possibilité d'avoir accès à des rendus graphiques détaillés et complets de la molécule est primordiale pour la visualisation.
+				La complexité des molécules, le nombre important d'atomes, les nombreuses meta-informations, les structures particulières nécessitent d'avoir à sa disposition des rendus graphiques spécifiques.
+
+				Le rendu graphique \myCPK a été retenu pour un affichage complet de la molécule avec tous ces atomes et ces liaisons covalentes.
+				Cependant, dans certains cas, l'affichage explicite des atomes (une sphère) surcharge l'environnement visuel.
+				C'est pourquoi, le rendu complémentaire \myLicorice a également été retenu pour un simple affichage des liaisons covalentes.
+				On notera toutefois que les couleurs informent tout de même sur la natures des atomes.
+				Ensuite, la chaîne carbonée principale de la molécule est une structure tout à fait particulière mais primordiale dans la compréhension des déformations et de la dynamique de la molécule.
+				C'est le rendu \myNewRibbon qui permet de représenter cette chaîne carbonée.
+				Enfin, les liaisons hydrogènes ajoutent des informations supplémentaires pertinentes sur la dynamique des atomes et sont représentés par le rendu \myHBonds.
+
+				Les quatre représentations différentes \myref*{fig-simulation-IllustrationsDesRendusGraphiquesDeMoleculesSurVMD} sélectionnées sur la plate-forme \myShaddock sont présentées ici :
+				\begin{description}
+					\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphères en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est important mais la taille des sphères et des cylindres peut être modifiée \myref*{fig-simulation-CPK};
+					\item[\myLicorice] représente tous les liens entre les atomes par des cylindres, sans représenter les atomes; la taille des cylindres peut être modifiée \myref*{fig-simulation-Licorice};
+					\item[\myNewRibbon] produit une courbe spline sur les atomes $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban \myref*{fig-simulation-NewRibbon};
+					\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils physiques ainsi que les paramètres d'affichage de la ligne (couleur, largeur, \myetc) sont modifiables \myref*{fig-simulation-HBonds}.
+				\end{description}
+
+				\begin{myfigure}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{simulation-CPK}
+						\mysubcaption[fig-simulation-CPK]{\myCPK}
+					\end{mysubfigure}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{simulation-Licorice}
+						\mysubcaption[fig-simulation-Licorice]{\myLicorice}
+					\end{mysubfigure}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{simulation-NewRibbon}
+						\mysubcaption[fig-simulation-NewRibbon]{\myNewRibbon}
+					\end{mysubfigure}
+					\begin{mysubfigure}
+						\myimage[width=0.49\textwidth]{simulation-HBonds}
+						\mysubcaption[fig-simulation-HBonds]{\myHBonds}
+					\end{mysubfigure}
+					\mycaption[fig-simulation-IllustrationsDesRendusGraphiquesDeMoleculesSurVMD]{Illustration des rendus graphiques de molécules sur \myacronl{acr-VMD}}
+				\end{myfigure}
+
+				Chacune de ces représentations visuelles peut être affectée à tout ou partie de la molécule comme par exemple \og le \myglos{glo-Residu} \mynum{13} \fg, \og seulement les atomes de carbone \fg ou \og tous les \myglos*{glo-Residu} entre \mynum{1} et \mynum{16} sauf les atomes d'hydrogène \fg.
+				De plus, pour chacune des représentations précédentes, différentes colorations sont possibles permettant de mettre en évidence ou au contraire de rendre discrètes certaines parties de la molécule :
+				\begin{description}
+					\item[Couleur fixe] donne une couleur unie prédéfinie (la couleur du curseur par exemple);
+					\item[Couleur des atomes] donne une couleur différente à chaque atome selon un code couleur standard dépendant de sa nature (rouge pour oxygène, blanc pour hydrogène, \myetc);
+					\item[Couleur des \myglosnl*{glo-Residu}] donne une couleur différente pour chaque atome selon une palette de couleurs prédéfinie par \myacro{acr-VMD};
+					\item[Transparence] rend transparent les objets tout en conservant la teinte;
+					\item[\textit{GoodSell}] accentue les contours des objets sous le principe du \myemph{cell shading}.
+				\end{description}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-Shaddock-ModuleDeSimulationMoleculaire]{Module de simulation moléculaire}
+				Les trois principaux modules de simulation moléculaire existants sont \myGromacs \mycite{Berendsen-1995}, \myacro{acr-NAMD} \mycite{Phillips-2005} et \myAMBER \mycite{Case-2005}.
+				\mycite[author]{Hess-2008} montre que \myGromacs est plus performant que \myacro{acr-NAMD}.
+				Un rapport technique de \mycite[author]{Loeffler-2009a} a également permis de montrer que \myGromacs domine en terme de performances de calculs.
+				Une comparaison plus détaillée montre que chaque moteur de simulation offre de bons résultats en fonction des problèmes auquel il est confronté et du matériel utilisé \mycite{Loeffler-2009b}.
+
+				Cependant, \myacro{acr-NAMD} est développé par la même université que \myacro{acr-VMD} ce qui fait que la connexion entre les deux logiciels est facilitée.
+				Enfin, l'interaction en temps-réel avec le moteur de simulation est possible avec \myacro{acr-NAMD} mais pas avec \myGromacs.
+				C'est pourquoi le moteur de simulation moléculaire \myacro{acr-NAMD} a été retenu pour notre plate-forme.
+
+				Une des fonctionnalités de \myacro{acr-NAMD} utilisée est la possibilité de \og fixer \fg des atomes.
+				En effet, la restriction de la simulation moléculaire à certaines régions de la molécule permet d'exclure certains atomes de la déformation.
+				Ces atomes interviennent dans le calcul des forces de la simulation mais eux-mêmes ne sont pas soumis aux forces de l'environnement.
+				Cette fonctionnalité nous permet de créer un point d'ancrage pour la molécule avant d'éviter toute dérive.
+				\begin{mysubsubsection}[sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel]{Simulation moléculaire interactive et temps-réel}
+					Les logiciels de simulation moléculaire existants ne sont pas prévus pour des simulations interactives en temps-réel.
+					Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations en temps-réel \mycite{Stadler-1997}.
+					L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation offerte par \myacro{acr-NAMD}.
+
+					Cependant, le protocole \myacro{acr-IMD} a récemment été porté par l'\myacro{acr-IBPC} pour une utilisation avec \myGromacs.
+					En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre module de simulation comme \myGromacs.
+					Cette nouvelle solution pourrait permettre d'améliorer les capacités de simulation de notre plate-forme mais elle n'a pas encore été implémentée.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-Shaddock-LaGenerationAutomatiqueDeFichierDeSimulation]{La génération automatique de fichier de simulation}
+					La configuration de la simulation nécessite un grand nombre d'informations.
+					Une partie de ces informations découle directement de la molécule à l'état d'équilibre; ces informations sont les suivantes :
+					\begin{itemize}
+						\item l'ensemble des liaisons entre atomes;
+						\item des angles simples;
+						\item des angles dihédraux;
+						\item des angles de torsion.
+					\end{itemize}
+					La simple description des atomes et de leurs positions à l'état d'équilibre (fichier \myPDB) couplée aux données générées par \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires au module de simulation.
+					\myacro{acr-VMD} fournit l'outil permettant de générer le fichier nécessaire à la simulation (fichier \myPSF) par l'intermédiaire d'une extension : \myemph{Automatic \textsc{psf} builder}.
+				\end{mysubsubsection}
+			\end{mysubsection}
+		\end{mysection}
+		\begin{mysection}[sec-Shaddock-LesOutilsDInteraction]{Les outils d'interaction}
 			\begin{mysubsection}[sse-Shaddock-OutilDInteractionUtilise]{Outil d'interaction utilisé}
 				Pour cette plate-forme de manipulation de molécules interactive et temps-réel, l'outil d'interaction doit répondre à plusieurs contraintes.
 
@@ -1186,157 +1302,44 @@
 				Le \myDesktop, qui répond également aux contraintes, aurait permis des retours haptiques plus fidèles mais son prix élevé ne convient à notre plate-forme collaborative où il faudra en déployer plusieurs.
 				De plus, sa connectique (port parallèle) quasiment obsolète, est de plus en plus difficile à trouver sur les ordinateurs récents\footnote{Un convertisseur vers une connectique \myFireWire vendu par \mySensAble existe mais nécessite une dépense supplémentaire significative.}.
 			\end{mysubsection}
-		\end{mysection}
-		\begin{mysection}[sec-Shaddock-PlateFormeDeSimulationEtDeVisualisation]{Plate-forme de simulation et de visualisation}
-			\myShaddock permet d'effectuer la visualisation de molécules.
-			La visualisation est un processus complexe qui nécessite des rendus variés et complets.
-			En effet, devant le nombre important d'informations que possède une molécule, il est primordial d'avoir accès à des rendus graphiques performants et complets sans surcharge.
-			Cette tâche est effectuée par un module de visualisation présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
+			\begin{mysubsection}[sse-Shaddock-OutilsExistants]{Outils existants}
+				\myAcro{acr-VMD} dispose de différents outils permettant d'effectuer diverses manipulations sur les molécules (sélection, orientation, déplacement, \myetc).
 
-			Ensuite, \myShaddock simule une dynamique moléculaire.
-			Un module de simulation est nécessaire pour réaliser cette tâche.
-			Il faut que ce module puisse interagir avec le module de visualisation.
-			De plus, il est nécessaire de pouvoir paramétrer finement la simulation.
-			Le module de simulation choisi est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
-			Cependant, les logiciels de simulation ne sont pas conçus pour effectuer des simulations en temps-réel.
-			Pourtant, afin de proposer une dynamique moléculaire interactive aux utilisateurs, il est nécessaire d'avoir accès à une simulation en temps-réel.
-			Un module présenté dans la \myref{sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel} permet de faire communiquer le module de visualisation avec le module de simulation afin d'obtenir une simulation en temps-réel.
+				Une des fonctions élémentaires proposée par \myacro{acr-VMD} est la possibilité d'orienter la scène sur trois \myacro*{acr-DDL} afin d'observer la molécule sous différents angles.
+				C'est la souris qui tient ce rôle et elle peut également être configurée pour translater la molécule ou obtenir diverses informations sur la molécule et sur les atomes.
+				Il est également possible d'utiliser une souris \myThreeD permettant de regrouper les fonctions de translation et d'orientation de la scène.
+				La souris \myThreeD \mySpaceNavigator est utilisée dans le cadre de notre seconde expérimentation \myref*{cha-DeformationCollaborativeDeMolecule}.
 
-			\begin{mysubsection}[sse-Shaddock-ModuleDeVisualisationMoleculaire]{Module de visualisation moléculaire}
-				Les outils de visualisation moléculaire disponibles sont relativement nombreux.
-				Parmi les plus populaires, on peut citer \myPyMOL \mycite{PyMOL-2010}, \myacro{acr-VMD} \mycite{Humphrey-1996}, \myChimera \mycite{Pettersen-2004}, \myRasmol \mycite{Sayle-1995} sans compter les nombreux dérivés permettant un affichage en ligne tel que \myJmol \mycite{Jmol-2006} pour ne citer que le plus connu.
-				\myPyMOL et \myacro{acr-VMD} se distinguent particulièrement par leurs nombreuses fonctionnalités et leur large utilisation dans le milieu spécialisé.
+				Ces fonctionnalités de navigation sont complétées par des fonctionnalités de manipulations élémentaires.
+				Il est possible de déplacer des atomes ou des groupes d'atomes à l'aide des périphériques précédemment cités.
+				Cependant, la fonctionnalité qui nous intéresse est la possibilité d'effectuer ces manipulations à l'aide d'interfaces haptiques par l'intermédiaire d'une connexion \myacro{acr-VRPN} \myref*{sss-Shaddock-ServeurDePeripheriques}.
 
-				\myPyMOL est probablement le logiciel de visualisation le plus utilisé par les experts du domaine car c'est le plus complet pour fournir des rendus graphiques de molécules très complets.
-				Cependant, \myPyMOL ne permet pas l'affichage de simulations temps-réel ni la manipulation interactive de molécules.
-
-				\myacro{acr-VMD} possède également une large gamme de rendus graphiques.
-				Contrairement à \myPyMOL, \myacro{acr-VMD} est adapté pour le rendu graphique en temps-réel de données de simulation.
-				Il permet également la manipulation interactive de molécules.
-				Les fonctionnalités de \myacro{acr-VMD} sont nombreuses et seulement certaines on été utilisées dans le cadre des expérimentations qui vont suivre.
-				Elles sont exposées dans les paragraphes suivants.
-
-				\begin{mysubsubsection}[sss-Shaddock-LesRendusGraphiques]{Les rendus graphiques}
-					La possibilité d'avoir accès à des rendus graphiques divers et complets est primordiale pour la visualisation moléculaire.
-					La complexité des molécules, le nombre important d'atomes, les nombreuses meta-informations, les structures particulières nécessitent d'avoir à sa disposition des moyens évolués et variés pour afficher une molécule.
-					Quatre représentations différentes \myref*{fig-simulation-IllustrationsDesRepresentationsDeMoleculesSurVMD} ont été utilisées sur la plate-forme \myShaddock :
-					\begin{description}
-						\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphères en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est important mais la taille des sphères et des cylindres peut être modifiée \myref*{fig-simulation-CPK};
-						\item[\myLicorice] représente tous les liens entre les atomes par des cylindres, sans représenter les atomes; la taille des cylindres peut être modifiée \myref*{fig-simulation-Licorice};
-						\item[\myNewRibbon] produit une courbe spline sur les atomes $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban \myref*{fig-simulation-NewRibbon};
-						\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils physiques ainsi que les paramètres d'affichage de la ligne (couleur, largeur, \myetc) sont modifiables \myref*{fig-simulation-HBonds}.
-					\end{description}
-
-					\begin{myfigure}
-						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{simulation-CPK}
-							\mysubcaption[fig-simulation-CPK]{\myCPK}
-						\end{mysubfigure}
-						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{simulation-Licorice}
-							\mysubcaption[fig-simulation-Licorice]{\myLicorice}
-						\end{mysubfigure}
-						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{simulation-NewRibbon}
-							\mysubcaption[fig-simulation-NewRibbon]{\myNewRibbon}
-						\end{mysubfigure}
-						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{simulation-HBonds}
-							\mysubcaption[fig-simulation-HBonds]{\myHBonds}
-						\end{mysubfigure}
-						\mycaption[fig-simulation-IllustrationsDesRepresentationsDeMoleculesSurVMD]{Illustration des représentations de molécules sur \myacronl{acr-VMD}}
-					\end{myfigure}
-
-					Chacune de ces représentations visuelles peut être affectée à tout ou partie de la molécule comme par exemple \og le \myglos{glo-Residu} \mynum{13} \fg, \og seulement les atomes de carbone \fg ou \og tous les \myglos*{glo-Residu} entre \mynum{1} et \mynum{16} sauf les atomes d'hydrogène \fg.
-					De plus, pour chacune des représentations précédentes, différentes colorations sont possibles :
-					\begin{description}
-						\item[Couleur fixe] donne une couleur unie prédéfinie (la couleur du curseur par exemple);
-						\item[Couleur des atomes] donne une couleur différente à chaque atome selon un code couleur standard dépendant de sa nature (rouge pour oxygène, blanc pour hydrogène, \myetc);
-						\item[Couleur des \myglosnl*{glo-Residu}] donne une couleur différente pour chaque atome selon une palette de couleurs prédéfinie par \myacro{acr-VMD};
-						\item[Transparence] rend transparent les objets tout en conservant la teinte;
-						\item[\textit{GoodSell}] accentue les contours des objets sous le principe du \myemph{cell shading}.
-					\end{description}
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-Shaddock-LaGenerationAutomatiqueDeFichierDeSimulation]{La génération automatique de fichier de simulation}
-					La simulation nécessite de nombreuses informations.
-					Une partie de ces informations découle directement de la molécule à l'état d'équilibre; ces informations sont les suivantes :
-					\begin{itemize}
-						\item l'ensemble des liaisons entre atomes;
-						\item des angles simples;
-						\item des angles dihédraux;
-						\item des angles de torsion.
-					\end{itemize}
-					La simple description des atomes et de leurs positions à l'état d'équilibre (fichier \myPDB) couplée aux données générées par \myCHARMM \mycite{Brooks-1983} permet de générer les fichiers nécessaires au module de simulation.
-					\myacro{acr-VMD} fournit tous les outils permettant de générer ce fichier nécessaire à la simulation (fichier \myPSF) par l'intermédiaire d'une extension : \myemph{Automatic \textsc{psf} builder}.
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-Shaddock-ModuleDeSimulationMoleculaire]{Module de simulation moléculaire}
-				Les deux principaux logiciels de simulation existants sont \myacro{acr-NAMD} \mycite{Phillips-2005} et \myGromacs \mycite{Berendsen-1995}.
-				\myGromacs est plus performant que \myacro{acr-NAMD}, surtout dans les dernières versions \mycite{Hess-2008} qui offre des performances jusqu'à quatre fois plus rapide que \myacro{acr-NAMD}.
-				\myacro{acr-NAMD} est développé par la même université que \myacro{acr-VMD} et la connexion entre les deux logiciels est facilitée.
-				Enfin, \myacro{acr-NAMD} peut être aisément connecté à \myacro{acr-VMD} dans le cadre d'une simulation interactive contrairement à \myGromacs.
-				C'est pourquoi le logiciel \myacro{acr-NAMD} a été retenu pour notre plate-forme.
-
-				Une des fonctionnalités de \myacro{acr-NAMD} utilisée est la possibilité de \og fixer \fg des atomes.
-				En effet, la fixation d'atomes permet d'exclure partiellement certains atomes durant la simulation.
-				Ces atomes interviennent dans le calcul des forces de la simulation mais eux-mêmes ne sont pas soumis aux forces de l'environnement.
-				Cette fonctionnalité est nécessaire pour simuler un point d'ancrage de la molécule dans l'environnement virtuel.
-				Sans ce point d'ancrage, la molécule pourrait dériver et sortir de l'espace de travail des utilisateurs sans possibilité de récupération.
-				\begin{mysubsubsection}[sss-Shaddock-PlateFormeDeSimulationMoleculaireInteractiveEtTempsReel]{Plate-forme de simulation moléculaire interactive et temps-réel}
-					Les logiciels de simulation ne sont pas prévus pour des simulations interactives en temps-réel.
-					Cependant, l'\myacro{acr-ITAP} a développé le protocole \myacro{acr-IMD} permettant d'utiliser \myacro{acr-NAMD} couplé à \myacro{acr-VMD} pour des simulations en temps-réel \mycite{Stadler-1997}.
-					L'extension \myemph{\myacronl{acr-IMD} connect} permet de connecter rapidement le logiciel \myacro{acr-VMD} avec la simulation offerte par \myacro{acr-NAMD}.
-
-					Cependant, entre le début du développement de notre plate-forme en 2008 et aujourd'hui, une nouvelle solution plus générique a été développée au sein de l'\myacro{acr-IBPC}.
-					En effet, \myMDDriver \mycite{Delalande-2009} est une interface permettant d'utiliser le protocole \myacro{acr-IMD} avec d'autre module de simulation comme \myGromacs.
-					C'est une interface capable de gérer différents logiciels de visualisation et de simulation.
-					Cependant, cette nouvelle solution n'a pas encore été implémentée dans notre plate-forme.
-				\end{mysubsubsection}
-			\end{mysubsection}
-		\end{mysection}
-		\begin{mysection}[sec-Shaddock-LesOutilsDInteraction]{Les outils d'interaction}
-			\begin{mysubsection}[sse-Shaddock-LesOutilsExistants]{Les outils existants}
-				La manipulation des molécules est nécessaire sur la plate-forme \myShaddock.
-				\myAcro{acr-VMD} dispose déjà de différents outils permettant d'effectuer différentes manipulation sur les molécules.
-
-				Par défaut et sans configuration, la souris permet d'orienter la scène sur trois \myacro*{acr-DDL} afin d'observer la molécule sous différents angles.
-				Elle peut également être configurées pour translater la molécule ou obtenir diverses informations sur la molécules.
-
-				Il est également possible d'utiliser une souris \myThreeD, automatiquement détectée lorsqu'elle est branchée sur l'ordinateur.
-				Une souris \myThreeD permet de translater et d'orienter la scène.
-				La souris \myThreeD \mySpaceNavigator est utilisée dans le cadre de certaines de notre seconde expérimentation \myref*{cha-DeformationCollaborativeDeMolecule}.
-
-				Enfin, des outils apportant une dimension haptique sont disponibles par l'intermédiaire d'une connexion avec \myacro{acr-VRPN} \myref*{sss-Shaddock-ServeurDePeripheriques}.
-				Ces outils sont liés à des périphériques externes (des interfaces \myOmni dans notre cas).
-				Les outils proposés par défaut dans \myacro{acr-VMD} ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule}.
+				La connexion à de telles interfaces permet à \myacro{acr-VMD} de proposer deux outils : un outil de navigation et un outil de manipulation.
 				Ils sont les suivants :
 				\begin{description}
 					\item[\mytool{grab}] qui permet de sélectionner une molécule dans son intégralité et de la déplacer dans la scène;
-					\item[\mytool{tug}] qui permet de sélectionner un atome de la molécule et de lui appliquer une force (qui sera transmise à la simulation) pour déformer la molécule.
+					\item[\mytool{tug}] qui permet de sélectionner un atome de la molécule et de lui appliquer une force (qui sera transmise au moteur de simulation) pour déformer la molécule.
 				\end{description}
-
+				Ces outils ont été utilisés dans la première expérimentation \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule}.
 				Cependant, de nombreux outils supplémentaires ont été développés au-fur-et-à-mesure des besoins identifiés durant les expérimentations.
 				Ces nouveaux outils sont détaillés dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-OutilsDeManipulationAvances]{Outils de manipulation avancés}
-				Durant les différentes études menées dans la suite de ce document, les analyses et les remarques d'utilisateurs ont permis d'améliorer les outils d'interaction et d'en proposer de nouveaux.
-				Le développement de ces nouveaux outils a nécessité une modification du programme \myacro{acr-VMD} par extension des outils déjà existants.
-				Des fonctionnalités ont été ajoutées et sont présentées dans les sections suivantes.
-				\begin{mysubsubsection}[sss-Shaddock-AmeliorationDeLaSelection]{Amélioration de la sélection}
-					Durant le processus de recherche et de sélection, les utilisateurs ont souvent évoqué le besoin de connaître en continu leur position et de savoir à priori l'élément qui va être sélectionné.
-					Pour que les utilisateurs connaissent à chaque instant l'élément qui peut être sélectionné, une information visuelle met en surbrillance l'élément pointé à chaque instant.
-					La mise en surbrillance est un agrandissement en transparence de l'élément pointé.
-					La couleur de cette mise en surbrillance est de la même couleur que le curseur de l'utilisateur.
+				Durant les différentes études menées dans la suite de ce document, les analyses et les remarques d'utilisateurs ont permis de mettre en évidence les limites et les contraintes des outils existants.
+				De nouveaux outils ont été développés pour répondre à ces besoins, notamment en terme de collaboration.
+				Le développement de ces nouveaux outils a nécessité la modification de \myacro{acr-VMD} par extension des outils déjà existants.
+				Les fonctionnalités ajoutées sont présentées dans les sections suivantes.
+				\begin{mysubsubsection}[sss-Shaddock-OutilDeSelectionCollaboratif]{Outil de sélection collaboratif}
+					Afin d'effectuer correctement une sélection, il est préférable de connaître \myapriori quel cible sera sélectionnée en fonction de la position actuelle du curseur.
+					C'est pourquoi, cet outil de sélection amélioré met continuellement en surbrillance la cible la plus proche du curseur.
+					Afin de distinguer une cible sélectionnée d'une cible par encore sélectionnée, les cibles non-sélectionnées sont simplement surligné de manière transparente alors que les cibles sélectionnées sont de couleurs opaques \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
 
-					Dans le cas d'une sélection par \myglos{glo-Residu}, c'est l'ensemble du \myglos{glo-Residu} qui est mis en surbrillance.
-					Cependant, dans le cas d'une sélection par atome, la mise en surbrillance d'un seul atome pourrait être difficile à apercevoir au sein d'une molécule complexe.
-					En effet, le nombre important d'atomes d'une molécule peut surcharger le rendu graphique.
-					C'est pourquoi dans ce cas, l'ensemble du \myglos{glo-Residu} auquel appartient l'atome pointé est mis en surbrillance.
-					Cependant, l'atome pointé est agrandi afin de le distinguer du reste du \myglos{glo-Residu}.
+					Cependant, dans un contexte de travail collaboratif, il doit être possible pour chacun des collaborateurs de distinguer sa sélection de la sélections des autres.
+					Les curseurs de chacun des participants étant de couleur différente, le surlignage est effectué en utilisant cette couleur.
 
-					Une fois l'élément pointé, l'utilisateur peut sélectionner l'élément.
-					Lorsque les utilisateurs sélectionnent l'élément, la surbrillance passera de la transparence à l'opacité.
-					Une illustration des effets visuels relatifs au pointage et à la sélection est affichée sur la \myref{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
+					Il est également possible de sélectionner des groupes d'atomes (dispositif mis en place sur certaines des expérimentations).
+					Cependant, plutôt que de considérer un centre virtuel de ce groupe d'atomes (barycentre par exemple) qui ne serait pas affiché, les interactions haptiques sont effectuées par rapport à un atome.
+					Pour que les utilisateurs aient une indication précise concernant les interactions haptiques, cet atome est agrandi par rapport aux reste du groupe d'atome \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
 
 					\begin{myfigure}
 						\begin{mysubfigure}
@@ -1352,39 +1355,42 @@
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-DeformationParGroupeDAtomes]{Déformation par groupe d'atomes}
 					L'outil \mytool{tug} permet de déformer la molécule en appliquant un effort à l'atome sélectionné.
-					Cependant, la déformation par l'intermédiaire d'un seul atome possède deux désavantages.
+					Cependant, la déformation par l'intermédiaire d'un seul atome possède deux désavantages :
+					\begin{itemize}
+						\item la déformation d'une molécule atome par atome est un processus très fastidieux;
+							il serait plus efficace de déplacer un groupe d'atomes d'un bloc.
+						\item la molécule se trouve la plupart du temps dans un état relativement stable et le déplacement d'un atome perturbe cet état de stabilité par un étirement des structures;
+							le déplacement d'un groupe d'atomes en un bloc permettrait d'éviter cet étirement et de conserver une meilleure stabilité.
+					\end{itemize}
 
-					Tout d'abord, la déformation d'une molécule atome par atome est un processus très fastidieux.
-					Il serait plus efficace de déplacer un groupe d'atomes en une seule fois.
+					C'est pourquoi nous proposons un outil appliquant une force à un groupe d'atomes pour le déplacer tout en conservant la stabilité intrinsèque de ce groupe.
+					Les groupes d'atomes dignes d'intérêt sont les \myglos*{glo-Residu} (quelques dizaines d'atomes), les \myhelice* ou \myfeuillet* (quelques dizaines de \myglos*{glo-Residu}) et les molécules (enchaînement de \myhelice* et de \myfeuillet*).
+					L'outil de déformation a été généralisé aux \myglos*{glo-Residu} et aux molécules.
+					Cependant, la généralisation aux \myhelice* et aux \myfeuillet* a été laissée de côté pour deux raisons :
+					\begin{itemize}
+						\item la forme allongée de ces structures nécessite de repenser partiellement voire complétement l'outil de déformation car la translation seule ne peut plus être utilisée;
+						\item les informations concernant ces structures ne sont pas toujours bien renseignées dans les bases de données de molécules.
+					\end{itemize}
 
-					De plus, l'application d'un effort sur un atome provoque l'étirement de la molécule.
-					Au repos, la molécule est dans état relativement stable.
-					Déplacer un atome perturbe cet état de stabilité.
-					De plus, certains atomes sont fortement liés et les éloigner peut perturber grandement l'état de stabilité.
-					Il est donc préférable de déplacer tous ces atomes liés en une seule manipulation.
-
-					C'est pourquoi un outil appliquant une force à un groupe d'atomes permet de le déplacer tout en conservant la stabilité intrinsèque.
-					Les groupes d'atomes dignes d'intérêt sont les \myglos*{glo-Residu} (une vingtaine d'atomes), les \myhelice* ou \myfeuillet* (une vingtaine de \myglos*{glo-Residu}) et les molécules.
-					Cependant, \myacro{acr-VMD} n'est pas capable de fournir l'information sémantique regroupant les atomes en \myhelice* ou en \myfeuillet*.
-					La fonctionnalité de l'outil \mytool{tug} a donc été étendue aux \myglos*{glo-Residu} et aux molécules.
-
-					Cependant, appliquer le même effort à l'ensemble des atomes de la molécule produit un effort total très important.
-					Si l'effort total est trop important, les perturbations envoyées à la simulation sont trop puissantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation.
-					En effet, \myacro{acr-NAMD} peut décider d'arrêter la simulation s'il considère que la simulation diverge trop d'un état stable.
-					Il est donc nécessaire de diviser l'intensité des forces appliquées proportionnellement au nombre d'atomes sélectionnés.
+					Cependant, appliquer le même effort à l'ensemble des atomes d'un \myglos{glo-Residu} ou d'une molécule produit un effort total très important.
+					Si l'effort total est trop élevé, les perturbations envoyées à la simulation sont trop importantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation\footnote{\myacronl{acr-NAMD} s'arrête automatiquement lorsqu'il estime que les perturbations produisent trop d'incohérences.}.
+					Afin de conserver un effort total de déformation constant quelque soit le nombre d'atomes sélectionnés, la force appliquée à chaque atome est divisée par le nombre totale d'atomes sélectionnés.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-OutilDeDesignation]{Outil de désignation}
-					Un besoin récurrent constaté durant les expérimentations est la nécessité pour les utilisateurs de désigner un élément de la molécule.
-					Parfois les utilisateurs éprouvent le besoin de désigner une élément de l'environnement virtuel pour un autre utilisateur.
-					Les enregistrements audio ont également permis d'identifier ce besoin.
-
-					L'outil de désignation a été conçu pour répondre à un processus en quatre étapes:
-					\begin{enumerate}[label={\alph*.},ref={\alph*}]
-						\item Recherche d'une cible;\label{enu-designation-RechercheDUneCible}
-						\item Désignation d'une cible;\label{enu-designation-DesignationDUneCible}
-						\item Acceptation d'une cible;\label{enu-designation-AcceptationDUneCible}
-						\item Sélection d'une cible.\label{enu-designation-SelectionDUneCible}
-					\end{enumerate}
+					L'outil de désignation a été créé pour répondre au besoin d'indiquer des régions d'intérêt aux partenaires.
+					Il se découpe en quatre étapes élémentaires (détaillées ci-après) :
+					\begin{description}
+						\item[Recherche d'une cible] Cette étape consiste pour un utilisateur~\myuser{A} à identifier une cible à désigner digne d'intérêt;
+							cette cible est choisie en fonction des objectifs de la tâche à réaliser \myref*{fig-designation-RechercheDUneCible}.
+						\item[Désignation d'une cible] Une fois la cible trouvée, l'utilisateur~\myuser{A} la désigne à son partenaire~\myuser{B};
+							la cible est alors mise en surbrillance de façon à être vue des autres utilisateurs \myref*{fig-designation-CibleDesignee}.
+						\item[Acceptation d'une cible] L'utilisateur~\myuser{B} peut alors accepter ou non cette désignation;
+							s'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté \myref*{fig-designation-CibleAcceptee};
+							tant qu'elle n'est pas acceptée, la \myglos{glo-Residu} reste en surbrillance jusqu'à ce que la requête soit accepté ou modifiée par l'utilisateur~\myuser{A}.
+						\item[Sélection d'une cible] L'utilisateur~\myuser{B} ayant accepté doit maintenant sélectionner la cible pour achever le processus de désignation;
+							tant que l'utilisateur~\myuser{B} n'a pas sélectionné le \myglos{glo-Residu} ciblé, le processus ne peut pas être considéré comme terminé et l'effet de surbrillance reste actif;
+							lorsque la cible est sélectionnée, le processus de manipulation reprend normalement \myref*{fig-designation-CibleSelectionnee}.
+					\end{description}
 
 					\begin{myfigure}
 						\begin{mysubfigure}
@@ -1405,22 +1411,6 @@
 						\end{mysubfigure}
 						\mycaption[fig-designation-LesQuatreEtapesDeLaDesignation]{Les quatre étapes de la désignation}
 					\end{myfigure}
-
-					L'\myref{enu-designation-RechercheDUneCible} consiste pour un utilisateur~\myuser{A} à rechercher une cible à désigner.
-					Cette cible est choisie en fonction des objectifs de la tâche à réaliser et sera indiquée à un utilisateur \myuser{B} \myref*{fig-designation-RechercheDUneCible}.
-
-					Une fois la cible trouvée, l'utilisateur~\myuser{A} désigne la cible identifiée lors de l'\myref{enu-designation-DesignationDUneCible}.
-					La cible est alors mise en surbrillance de façon à être vue des autres utilisateurs \myref*{fig-designation-CibleDesignee}.
-
-					L'\myref{enu-designation-AcceptationDUneCible} fait intervenir l'utilisateur~\myuser{B}.
-					L'utilisateur~\myuser{B} peut accepter ou non cette désignation.
-					S'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté \myref*{fig-designation-CibleAcceptee}.
-					Tant qu'elle n'est pas acceptée, la \myglos{glo-Residu} reste en surbrillance jusqu'à ce que la requête soit accepté ou modifiée.
-
-					L'\myref{enu-designation-SelectionDUneCible} est la dernière étape.
-					L'utilisateur~\myuser{B} ayant accepté doit maintenant sélectionner la cible pour achever le processus de désignation.
-					Tant que l'utilisateur~\myuser{B} n'a pas sélectionné le \myglos{glo-Residu} ciblé, le processus ne peut pas être considéré comme terminé et l'effet de surbrillance reste actif.
-					Lorsque la cible est sélectionnée, le processus de manipulation reprend normalement \myref*{fig-designation-CibleSelectionnee}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
@@ -1670,7 +1660,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Pour explorer la molécule afin d'identifier cette cible, les sujets disposent de l'outil \mytool{grab}.
 				Lorsque la cible recherchée est identifiée, les sujets entrent dans la seconde étape : la sélection.
 				Pour effectuer cette étape de sélection, les sujets disposent de l'outil \mytool{tug}.
-				Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{sse-Shaddock-LesOutilsExistants}.
+				Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{sse-Shaddock-OutilsExistants}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation est basée sur le dispositif expérimental décrit dans le \myref{cha-pro-DispositifExperimental}.
@@ -1682,7 +1672,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sss-exp1-OutilsDeManipulation}.
 					Ce nouvel outil nécessite l'ajout de quelques matériels.
 
-					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-LesOutilsExistants}.
+					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-OutilsExistants}.
 					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
 					Dans ce cas, une machine de faible puissance est suffisante en tant que serveur.
 					L'interface est placée devant le sujet en charge de cet outil.
@@ -3928,7 +3918,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La représentation des molécules est un domaine de recherche à part entière.
 				En effet, la complexité et l'abondance d'informations à visualiser nécessite des rendus graphiques avancés et complémentaires.
 				De plus, la quantité importante d'informations à représenter peut nécessiter une machine puissante afin de générer un rendu en temps-réel.
-				Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-LesRendusGraphiques}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
+				Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-RendusGraphiquesSelectionnesPourNotrePlateForme}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
 
 				Afin d'obtenir un rendu de molécule pertinent, nous avons bénéficié des conseils d'un biologiste.
 				Ensuite, nous avons pu adapter les rendus de molécules en fonction de nos besoins pour les différents scénarios proposés.
@@ -3968,7 +3958,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-pro-OutilsDeManipulation]{Outils de manipulation}
 			La plate-forme de base propose deux interfaces haptiques.
 			Ces deux interfaces haptiques sont utilisées comme interfaces de déformation de la molécule : des outils \mytool{tug}.
-			Pour comprendre ce que sont des outils de déformation, on peut se reporter à la \myref{sse-Shaddock-LesOutilsExistants}.
+			Pour comprendre ce que sont des outils de déformation, on peut se reporter à la \myref{sse-Shaddock-OutilsExistants}.
 			Au cours des trois premières expérimentations, seules quelques modifications du rendu visuel associés à ces outils sont effectués.
 			Cependant, la quatrième expérimentation apporte des modifications plus lourdes de cet outil que ce soit au niveau visuel ou au niveau haptique.
 			On pourra se reporter aux chapitres respectifs pour plus de détails.
