@@ -165,15 +165,13 @@
 
 				\mycite[author]{Schulz-Gasch-2004} ou encore \mycite[author]{Leach-2006} proposent un état de l'art sur les moyens d'évaluer un \myglos{glo-DockingMoleculaire}.
 				En général, les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels seulement par complémentarité géométrique.
-				Cette première évaluation permet de filtrer de nombreuses possibilités.
+				Cette première évaluation permet un filtre important de l'espace des solutions.
 				Puis une évaluation chimique partielle ou complète est éventuellement effectuée par l'algorithme de recherche.
 				Afin de trouver ces sites de liaison, différents types d'algorithmes ont été proposés.
 
-				\mycite[author]{Jones-1997} utilisent les algorithmes génétiques sur le système \myGOLD pour chercher des conformations par complémentarité géométrique et complète la recherche par une évaluation des champs de forces.
-				Puis \mycite[author]{Morris-1998} propose une amélioration par des algorithmes génétiques lamarckistes avec le logiciel \myAutoDock; c'est la solution de \myglos{glo-DockingMoleculaire} la plus référencée actuellement \mycite{Grosdidier-2007}.
-				\myICMDocking s'oriente plutôt vers une méthode basée sur les \myacro*{acr-ICM} \mycite{Abagyan-1994a,Abagyan-1994b}.
-				Les solutions logicielles basées sur la méthode de \myname{Monte-Carlo} sont également étudiées avec les plate-forme \myGlide \mycite{Friesner-2004,Halgren-2004} ou encore \myBoxSearch \mycite{Hart-1992,Cummings-1995}.
-				Enfin, les outils \myFlexX \mycite{Rarey-1997,Rarey-1999} ou encore \myDOCK \mycite{Ewing-2001}, également très utilisés, tentent de reconstruire le ligand de manière incrémentale autour d'une base protéinique.
+				Parmi les algorithmes les plus utilisés, on peut citer les algorithmes génétiques, les \myacro*{acr-ICM}, la méthode de \myname{Monte-Carlo} ou encore la reconstruction incrémentale autour d'une base protéinique.
+				À chaque algorithme est associé une ou plusieurs solutions logicielles dont les plus référencées selon \mycite[author]{Grosdidier-2007} sont \myAutoDock (\mynum[\%]{27}), \myGOLD (\mynum[\%]{15}), \myFlexX (\mynum[\%]{11}), \myDOCK (\mynum[\%]{6}) ou encore \myICMDocking (\mynum[\%]{6}).
+				La \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} propose une liste non-exhaustive de solutions logicielles de \myglos{glo-DockingMoleculaire}.
 
 				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions logicielles ne semble fournir la solution ultime.
 				De plus, les solutions présentées ci-dessus se basent seulement sur une approximation de l'environnement moléculaire : les molécules sont considérées comme des corps rigides.
@@ -195,19 +193,22 @@
 					\mycaption[fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta]{Illustration d'une molécule avec ces \myhelice* et ces \myfeuillet*}
 				\end{myfigure}
 
-				Afin de répondre à cette problématique supplémentaire de flexibilité, \mycite[author]{Osterberg-2002} étendent les capacités de \myAutoDock.
-				La granularité est augmentée en considérant le complexe de molécules sous forme de grille afin d'augmenter la vitesse d'évaluation de la configuration testée.
-				\mycite[author]{Meagher-2004} proposent de simuler la flexibilité en testant plusieurs conformations différentes d'une même protéine.
-				On trouve également les travaux de \mycite[author]{Radestock-2005} qui combinent les problématiques géométriques et chimiques pour trouver des solutions flexibles de \myglos{glo-DockingMoleculaire} ou encore les travaux de \mycite[author]{Keizers-2005} utilisant les moteurs de dynamique moléculaire.
-				La complexité induite par la flexibilité rend impossible une exploration totale de l'espace des recherches.
-				C'est pourquoi les logiciels présentés dans la \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} évaluent plutôt des systèmes semi-flexibles par différentes solutions dont voici quelques exemples:
+				La complexité induite par la flexibilité rend impossible une exploration totale de l'espace de recherche.
+				Afin de répondre à cette problématique supplémentaire de flexibilité, différentes approches ont été proposées :
 				\begin{itemize}
-					\item Une des deux molécules voire seulement la chaîne carbonée est rendue rigide;
-					\item Utiliser différentes conformations d'une molécule sur des solutions de \myglos{glo-DockingMoleculaire} rigide;
-					\item Découper l'espace de recherche de manière plus grossière pour améliorer les performances de traitement.
+					\item Une partie du complexe de molécules étudié est rendue rigide;
+					\item Utiliser différentes conformations d'une molécule sur des solutions de \myglos{glo-DockingMoleculaire} rigide \mycite{Meagher-2004};
+					\item Découper l'espace de recherche de manière grossière pour améliorer les performances d'évaluation \mycite{Osterberg-2002}.
 				\end{itemize}
-				La complexité liée à la flexibilité est telle qu'aucune solution logicielle ne semble être capable de traiter le \myglos{glo-DockingMoleculaire} flexible de manière satisfaisante.
-				Nous allons voir dans la prochaine section qu'une approche très différente du problème existe.
+
+				La flexibilité introduit une complexité importante dans l'évaluation et la recherche de solution en \myglos{glo-DockingMoleculaire}.
+				Par exemple, la complémentarité géométrique fait en partie appel aux algorithmes de détection de collision, problématiques à part entière en interaction temps-réel avec les environnements virtuels.
+				Si on ajoute les informations chimiques, électrostatiques et la flexibilité, le nombre de dimensions du problème est nettement trop important pour pouvoir être traité en temps raisonnable par un ordinateur de manière exhaustive.
+				Cependant, nous allons voir dans la section suivante qu'une approche utilisant les capacités combinées de l'humain et de la machine est possible.
+
+				D'ailleurs, c'est durant la rédaction de cette thèse qu'un résultat important concernant cette approche a été dévoilé.
+				À l'aide de \myFoldIt, un logiciel de \myglos{glo-DockingMoleculaire} vulgarisé et distribué sous forme de jeu vidéo, la solution d'un problème de \myglos{glo-DockingMoleculaire} qui pourrait faire avancer la recherche sur le \mySIDA a été découverte \mycite{Khatib-2011}.
+				Ce logiciel utilise en particulier la capacité d'un humain à sortir de minima locaux rapidement là où un ordinateur serait inefficace.
 
 				\begin{mytable}
 					\begin{mytabular}{^>{\hsize=0.2\textwidth}C->{\hsize=0.3\textwidth}C->{\hsize=0.4\textwidth}C}
@@ -215,37 +216,35 @@
 						\myrowstyle{\bfseries}
 						Logiciel & Algorithme & Références \\
 						\mymiddlerule[\heavyrulewidth]
-						\myAutoDock & Algorithme génétique & \mycite{Morris-1998,Osterberg-2002} \\
+						\myAutoDock & Algorithme génétique & \mycite{Morris-1998}\mycite{Osterberg-2002} \\
 						\mymiddlerule
 						\myDOCK & Reconstruction incrémentale & \mycite{Ewing-2001} \\
 						\mymiddlerule
-						\myICMDocking & Méthode \myacro{acr-ICM} & \mycite{Abagyan-1994a,Abagyan-1994b} \\
+						\myICMDocking & Méthode \myacro{acr-ICM} & \mycite{Abagyan-1994a}\mycite{Abagyan-1994b} \\
 						\mymiddlerule
 						\myGOLD & Algorithme génétique & \mycite{Jones-1997} \\
 						\mymiddlerule
-						\myFlexX & Reconstruction incrémentale & \mycite{Rarey-1997,Rarey-1999} \\
+						\myFlexX & Reconstruction incrémentale & \mycite{Rarey-1997}\mycite{Rarey-1999} \\
 						\mymiddlerule
-						\myGlide & Méthode de \myname{Monte-Carlo} & \mycite{Friesner-2004,Halgren-2004} \\
+						\myGlide & Méthode de \myname{Monte-Carlo} & \mycite{Friesner-2004}\mycite{Halgren-2004} \\
 						\mymiddlerule
-						\myBoxSearch & Méthode de \myname{Monte-Carlo} & \mycite{Hart-1992,Cummings-1995} \\
+						\myBoxSearch & Méthode de \myname{Monte-Carlo} & \mycite{Hart-1992}\mycite{Cummings-1995} \\
 						\mybottomrule
 					\end{mytabular}
 					\mycaption[tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire]{Liste non-exhaustive de solutions logicielles de \myglosnl{glo-DockingMoleculaire}}
 				\end{mytable}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaireEnEnvironnementVirtuel]{Le \myglosnl{glo-DockingMoleculaire} en environnement virtuel}
-				Cependant, malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} et se rapprocher au plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
-				Devant cette complexité, un nouveau type de solutions pour traiter le problème de \myglos{glo-DockingMoleculaire} émerge.
-				L'idée est de faire intervenir l'humain.
-				En effet, bien que moins rapide pour traiter rapidement un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes de celles qu'on peut rejeter immédiatement.
+				Malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} existantes et se rapprocher toujours plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
+				Devant cette complexité, une approche alternative basée sur l'introduction de l'humain et de ses capacités de décisions au sein du processus de recherche d'une solution par un ordinateur.
+				En effet, bien que moins rapide pour traiter rapidement un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes et d'en rejeter d'autres qui sont aberrantes.
 
-				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion à l'aide de solutions de \myglos{glo-RealiteVirtuelle}.
-				\myGROPEHaptic est le premier projet concernant la manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990} et déjà à l'époque, c'est le \myglos{glo-DockingMoleculaire} qui intéresse.
-				Pour l'interaction, ce sont des interfaces haptiques spécifiques qui sont proposées.
-				Nous allons voir que la \myglos{glo-RealiteVirtuelle} est beaucoup utilisée pour comprendre ou agir sur la visualisation et la déformation moléculaire.
-
-				Afin de pouvoir immerger les biologistes au sein d'un environnement virtuel, plusieurs verrous technologiques ont été étudiés.
-				\mycite[author]{Bergman-1993} explorent les structures moléculaires avec la plate-forme \myVIEW en proposant différentes représentations pour les molécules \myref*{fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993}.
+				L'idée d'immerger un humain au sein du processus de \myglos{glo-DockingMoleculaire} date de $1967$ avec le projet \myGROPE comme l'explique \mycite[author]{Grunwald-2008}.
+				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion à l'aide d'environnements de \myglos{glo-RealiteVirtuelle}.
+				\mycite[author]{Batter-1972} proposent les premières solutions d'immersion grâce à ce projet.
+				
+				L'immersion dans un environnement virtuel avec des molécules pose tout de suite le problème de la représentation des molécules.
+				\mycite[author]{Bergman-1993} proposent la plate-forme \myVIEW avec différents rendus graphiques pour représenter les molécules \myref*{fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993}.
 				Quelques années plus tard, les premiers logiciels sont développés et distribués à large échelle comme \myacro{acr-VMD} \mycite{Humphrey-1996} ou \myPyMOL \mycite{DeLano-2002}.
 
 				\begin{myfigure}
@@ -256,23 +255,25 @@
 				Cependant, les visualisations statiques ne suffisent pas à comprendre les interactions chimiques en action au sein d'une molécule.
 				\mycite[author]{Huitema-2000} fournissent une possibilité de visualiser des trajectoires d'atomes à propos de la dynamique de protéines.
 				Puis \mycite[author]{Klosowski-2002} franchissent une étape supplémentaire en proposant une visualisation temps-réel à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
-				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} proposent une visualisation multimodale en ajoutant un retour haptique afin de percevoir les champs de forces \myref*{fig-sota-VisualisationMultimodaleProposeeParDavies2005}.
+				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} proposent une visualisation multimodale en ajoutant un modèle de force haptique calqué sur les champs de forces électriques d'une molécule \myref*{fig-sota-VisualisationMultimodaleProposeeParDavies2005}.
 
 				\begin{myfigure}
 					\myimage{sota-Davies-2005}
 					\mycaption[fig-sota-VisualisationMultimodaleProposeeParDavies2005]{Visualisation multimodale proposée par \mycite[author]{Davies-2005}}
 				\end{myfigure}
 
-				En parallèle, les scientifiques s'intéressent également à la manipulation de molécules en temps-réel.
-				La modélisation moléculaire assistée par ordinateur est proposée sur la plate-forme \myHIMM (\myemph{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
-				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} introduit une interface tangible censée représenté la molécule manipulée.
+				D'ailleurs, les retours haptiques sont également utilisés pour la manipulation de molécules.
+				Le projet \myGROPEHaptic qui se place dans la continuité du projet \myGROPE propose une manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990}.
+				Puis, la modélisation moléculaire assistée par ordinateur est proposée sur la plate-forme \myHIMM (\myemph{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
+				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} propose l'utilisation d'une interface tangible censée représenter la molécule manipulée.
+
 				Cependant, les biologistes cherchent à interagir virtuellement avec la dynamique des molécules afin de pouvoir s'affranchir de la difficulté de cette manipulation dans le monde réel.
 				Les interactions proposées se font alors par traction des atomes \mycite{Haan-2002,Koutek-2002}.
 				\mycite[author]{Lee-2004} calquent les interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}, largement adopté par la communauté \myref*{fig-sota-PotentielDeLennardJones1924}.
 				\begin{equation}\label{eq-sota-PotentielDeLennardJones}
-					V_{Lennard-Jones} = 4\varepsilon \left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6\right]
+					V_{LJ} = 4\varepsilon \left[\left(\frac{\sigma}{r_m}\right)^{12} - \left(\frac{\sigma}{r_m}\right)^6\right]
 				\end{equation}
-				Enfin, la manipulation interactive avec la simulation d'une molécule flexible devient possible avec la plate-forme proposée par \mycite[author]{Delalande-2009} à laquelle on ajoute la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
+				Enfin, la manipulation interactive avec des structures moléculaires flexibles devient possible avec la plate-forme proposée par \mycite[author]{Delalande-2009} à laquelle on peut ajouter la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
 
 				\begin{myfigure}
 					\psset{xunit=0.181818182\textwidth,yunit=0.125\textwidth}
@@ -298,15 +299,14 @@
 				\end{myfigure}
 
 				Ces solutions pour interagir avec les molécules sont en partie utilisées pour l'apprentissage de la dynamique moléculaire.
-				Par exemple, \mycite[author]{Sankaranarayanan-2003} proposent une plate-forme interactive avec des interfaces haptiques pour apprendre et comprendre les structures moléculaires.
-				Puis \mycite[author]{Wollacott-2007} s'intéressent à la compréhension des interactions chimiques avec la combinaison d'une interface haptique et de l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
+				Par exemple, \mycite[author]{Sankaranarayanan-2003} proposent une plate-forme interactive avec des interfaces haptiques pour enseigner différents aspects qui constituent la structure moléculaire.
+				Puis \mycite[author]{Wollacott-2007} s'intéressent à la compréhension des interactions chimiques en combinant une interface haptique et l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
 				C'est avec le système \myChemicalForceFeedback (retour haptique des forces chimiques) que l'apprentissage du \myglos{glo-DockingMoleculaire} par l'intermédiaire de la \myglos{glo-RealiteVirtuelle} est abordée \mycite{Bivall-Persson-2007,Bivall-Persson-2008}.
 
-				En effet, la discipline qui semble le plus intéresser les biologistes est le \myglos{glo-DockingMoleculaire}.
-				Très tôt, des projets de \myglos{glo-DockingMoleculaire} voient le jour comme \myGROPEHaptic \mycite{Ouh-Young-1988,Brooks-1990} ou encore \mySTALK \mycite{Levine-1997}.
-				Des chercheurs reconnus de la communauté haptique commencent à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
-				\mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006} \myref*{fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006}.
-				Puis, à l'aide d'interfaces haptiques plus largement répandue comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du système devient possible.
+				Après les projets comme \myGROPE, d'autres projets de \myglos{glo-DockingMoleculaire} comme \mySTALK \mycite{Levine-1997} voient le jour.
+				La communauté haptique commence également à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
+				Par exemple, \mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006} \myref*{fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006}.
+				Puis, à l'aide d'interfaces haptiques plus largement répandue comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation moléculaire \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du système devient possible.
 				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de forces haptiques adaptés.
 
 				\begin{myfigure}
@@ -350,7 +350,7 @@
 				Aujourd'hui, les outils permettant la collaboration synchrone se limitent à quelques domaines restreints (systèmes de vidéoconférences, jeux vidéos en ligne).
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LaDistributionCognitiveDesChargesDeTravail]{La distribution cognitive des charges de travail}
-				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmis les premiers a avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources.
+				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmi les premiers a avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources.
 				Par exemple, \mycite[author]{Wegner-1987} s'intéresse à la distribution de la mémoire dans un groupe ce qui permet à chaque individu de se libérer d'une charge cognitive.
 				\mycite[author]{George-1990} souligne également les effets de l'état émotionnel de chacun sur l'état émotionnel du groupe\footnote{\mycite[author]{Yammarino-1992} ont remis en cause les conclusions obtenues mais le travail de \mycite[author]{George-1990} a de nouveau été confirmé par \mycite[author]{George-1993}.}.
 
@@ -1123,7 +1123,7 @@
 				L'affichage est effectué par l'intermédiaire d'un vidéo projecteur et projeté sur un grand écran.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-ArchitectureLogicielleAdoptee]{Architecture logicielle adoptée}
-				Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{\myemph{Peer-to-peer} en anglais, parfois abrégé en \textsc{p2p}.}.
+				Deux types d'architectures ont été explorés pour les \myacro*{acr-EVC} : client/serveur ou pair-à-pair\footnote{\myemph{Peer-to-peer} en anglais, parfois abrégé en \myPtwoP.}.
 				\begin{mysubsubsection}[sss-Shaddock-ArchitecturePairAPair]{Architecture pair-à-pair}
 					L'architecture pair-à-pair consiste à faire communiquer chaque nœud du réseau avec chacun des autres nœuds : le réseau forme un graphe complet.
 					L'avantage d'une telle architecture et la rapidité de transfert de l'information puisqu'il n'y a pas d'intermédiaire.
@@ -1373,12 +1373,12 @@
 					\end{itemize}
 
 					Cependant, appliquer le même effort à l'ensemble des atomes d'un \myglos{glo-Residu} ou d'une molécule produit un effort total très important.
-					Si l'effort total est trop élevé, les perturbations envoyées à la simulation sont trop importantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation\footnote{\myacronl{acr-NAMD} s'arrête automatiquement lorsqu'il estime que les perturbations produisent trop d'incohérences.}.
+					Si l'effort total est trop élevé, les perturbations envoyées à la simulation sont trop importantes et peuvent produire des incohérences dans la simulation voire même un arrêt de la simulation\footnote{\myacro-{acr-NAMD} s'arrête automatiquement lorsqu'il estime que les perturbations produisent trop d'incohérences.}.
 					Afin de conserver un effort total de déformation constant quelque soit le nombre d'atomes sélectionnés, la force appliquée à chaque atome est divisée par le nombre totale d'atomes sélectionnés.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Shaddock-OutilDeDesignation]{Outil de désignation}
 					L'outil de désignation a été créé pour répondre au besoin d'indiquer des régions d'intérêt aux partenaires.
-					Il se découpe en quatre étapes élémentaires (détaillées ci-après) :
+					Il se découpe en quatre étapes élémentaires :
 					\begin{description}
 						\item[Recherche d'une cible] Cette étape consiste pour un utilisateur~\myuser{A} à identifier une cible à désigner digne d'intérêt;
 							cette cible est choisie en fonction des objectifs de la tâche à réaliser \myref*{fig-designation-RechercheDUneCible}.
