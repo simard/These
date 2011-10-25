@@ -3809,6 +3809,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeNusE} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} sur la molécule \myNusE.
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-nuse-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.07cm}
+						\begin{myps}(-0.425,-15)(2,72.5)
+							\myaxes(0,2){haptique}(0,70)[10]{sélections~(nb)}
+							\myboxplot{exp4-button1-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-NombreDeSelectionParLesOperateursAvecEtSansHaptique]{Nombre de sélections par les opérateurs avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-NombreDeSelectionParLesOperateursAvecEtSansHaptique} présente le nombre de sélections effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-button1-haptic-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
