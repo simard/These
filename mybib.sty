@@ -5,17 +5,9 @@
 %% Declare package options %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % For the intermediate bibliographies
-\newif\if@minibib \@minibibfalse
-\DeclareOptionX[my]{minibib}{\@minibibtrue}
 % What is the section level to print the bibliographies
 \xdef\mybib@bibprintlevel{none}
 \DeclareOptionX[my]{bibprintlevel}[none]{\xdef\mybib@bibprintlevel{#1}}
-% What is the level of the 'section' subbibliography
-\xdef\mybib@bibsectionlevel{none}
-\DeclareOptionX[my]{bibsectionlevel}[none]{\xdef\mybib@bibsectionlevel{#1}\@minibibtrue}
-% What is the level of the 'segment' subbibliography
-\xdef\mybib@bibsegmentlevel{none}
-\DeclareOptionX[my]{bibsegmentlevel}[none]{\xdef\mybib@bibsegmentlevel{#1}\@minibibtrue}
 % For more powerful command about bibliography citations
 \newif\if@natbib \@natbibfalse
 \DeclareOptionX[my]{natbib}{\@natbibtrue}
@@ -33,30 +25,6 @@
 \ProcessOptionsX[my]
 
 %% Options to pass to packages
-\if@minibib
-	\if@biblatex
-		\ifstrempty{\mybib@bibsectionlevel}%
-		{}{%
-			\PassOptionsToPackage{refsection=\mybib@bibsectionlevel}{biblatex}
-		}
-		\ifstrempty{\mybib@bibsegmentlevel}%
-		{}{%
-			\PassOptionsToPackage{refsegment=\mybib@bibsegmentlevel}{biblatex}
-		}
-	\else
-		\PassOptionsToPackage{globalcitecopy}{bibunits}
-		\ifstrequal{\mybib@bibsectionlevel}{chapter}{%
-				\passoptionstopackage{sectionbib}{bibunits}
-			}{%
-				\passoptionstopackage{subsectionbib}{bibunits}
-			}
-		\ifstrequal{\mybib@bibsectionlevel}{section}{%
-				\passoptionstopackage{subsectionbib}{bibunits}
-			}{%
-				\passoptionstopackage{sectionbib}{bibunits}
-			}
-	\fi
-\fi
 \if@natbib
 	\PassOptionsToPackage{natbib}{biblatex}
 \fi
@@ -83,9 +51,6 @@
 	\fi
 	% For seperated bibliographies in sections or chapters
 	% Compatible with natbib
-	\if@minibib
-		\RequirePackage{bibunits}
-	\fi
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -101,77 +66,18 @@
 %% To include a bibliography
 \newrobustcmd\mybiblio[1][]{%
 	\if@biblatex%
-		\defbibfilter{all}{\keyword{Simard}}%
+		\clearpage%
 		\ifstrempty{#1}%
 		{%
-			\printbibliography[heading=bibintoc,filter=all]%
+			\printbibliography[heading=bibintoc]%
 		}{%
-			\printbibliography[heading=bibintoc,filter=all,#1]%
+			\printbibliography[heading=bibintoc,#1]%
 		}%
 	\else%
 		\bibliographystyle{apalike}%
 		\bibliography{biblio}%
 	\fi%
 }
-\if@minibib
-	%% Define the necessary command to create the bibunits bibliographies
-	%% This command should be put after '\begin{document}'
-	\newrobustcmd\mydominibib[2][apalike]{%
-		% Define the bibunit level
-		% If neither 'minibibchapter', nor 'minibibsection' was defined,
-		% then '\begin{bibunit} ... \end{bibunit}' can be used.
-		\if@minibibchapter%
-			\bibliographyunit[\chapter]%
-		\fi%
-		\if@minibibsection%
-			\bibliographyunit[\section]%
-		\fi%
-		% Define default files and style for bibunits sections
-		\defaultbibliography{#2}%
-		\defaultbibliographystyle{#1}%
-	}
-\fi
-\if@minibib
-	\if@biblatex
-		\newrobustcmd\myminibiblio[1][]{%
-			\ifstrempty{#1}%
-			{%
-				\if@minibibchapter%
-					\printbibliography[heading=subbibintoc,section=\the\c@refsection]%
-				\else%
-					\if@minibibsection%
-						\printbibliography[heading=subbibintoc,segment=\the\c@refsegment]%
-					\else%
-						\printbibliography[heading=subbibintoc]%
-					\fi%
-				\fi%
-			}{%
-				\if@minibibchapter%
-					\printbibliography[heading=subbibintoc,section=\the\c@refsection,#1]%
-				\else%
-					\if@minibibsection%
-						\printbibliography[heading=subbibintoc,segment=\the\c@refsegment,#1]%
-					\else%
-						\printbibliography[heading=subbibintoc,#1]%
-					\fi%
-				\fi%
-			}%
-		}
-	\else
-		\newrobustcmd\myminibiblio[1][]{%
-			\ifstrempty{#1}%
-			{%
-				\putbib%
-			}{%
-				\putbib[\args@one]%
-			}%
-		}
-	\fi
-\else
-	\newrobustcmd\myminibiblio[1][]{%
-		\PackageWarning{mybib}{You should use `minibib' package option to do mini bibliographies.}
-	}
-\fi
 % Replace the command '\cite'
 % Thanks to the 'natbib' package, you can use:
 % - \mycite{<ref>} -> [<author>, <year>]
