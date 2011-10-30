@@ -3791,27 +3791,17 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.0075cm}
-						\begin{myps}(-0.425,-150)(2,525)
-							\myaxes(0,2){haptique}(0,500)[100]{temps~(s)}
-							\myboxplot{exp4-rmsd-time-haptic-ubiquitin.csv}
+						\begin{myps}(-0.425,-150)(2,575)
+							\myaxes(0,2){scénario}(0,500)[100]{temps~(s)}
+							\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
+							\mylegend{\myleg{Sans assistance}{myblue}\myand\myleg{Avec assistance}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeUbiquitin]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique sur la molécule \myUbiquitin}
+						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique pour chaque scénario}
 					\end{myfigure}
 
-					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeUbiquitin} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} sur la molécule \myUbiquitin.
-					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-ubiquitin-anova.tex}).
-
-					\begin{myfigure}
-						\psset{xunit=0.274914089\textwidth,yunit=0.0125cm}
-						\begin{myps}(-0.425,-100)(2,325)
-							\myaxes(0,2){haptique}(0,300)[50]{temps~(s)}
-							\myboxplot{exp4-rmsd-time-haptic-nuse.csv}
-						\end{myps}
-						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeNusE]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique sur la molécule \myNusE}
-					\end{myfigure}
-
-					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiqueSurLaMoleculeNusE} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} sur la molécule \myNusE.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} (\myanova{exp4-rmsd-time-haptic-nuse-anova.tex}).
+					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} pour chaque scénario.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour la molécule \myUbiquitin (\myanova{exp4-rmsd-time-molecule-haptic-ubiquitin-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour le complexe de molécules \myNusENusG (\myanova{exp4-rmsd-time-molecule-haptic-nuse-anova.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.07cm}
@@ -3823,7 +3813,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-NombreDeSelectionParLesOperateursAvecEtSansHaptique} présente le nombre de sélections effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
-					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-button1-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-button1-haptic-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
@@ -4565,7 +4555,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{enumerate}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-EvaluationDuScoreSUS]{Évaluation du score \myacronl-{acr-SUS}}
-					Pour évaluer le score \myacro-{acr-SUS} à partir du questionnaire, il faut des score entre \mynum{0} et \mynum{4} pour chacune des questions.
+					Afin d'évaluer le score \myacro-{acr-SUS} à partir du questionnaire, chaque question doit avoir une note comprise entre \mynum{0} et \mynum{4}.
 					Concernant les questions \mynum{1}, \mynum{3}, \mynum{5}, \mynum{7} et \mynum{9}, on prend le score compris en \mynum{1} et \mynum{5} auquel on enlève \mynum{1}.
 					Concernant les questions \mynum{2}, \mynum{4}, \mynum{6}, \mynum{8} et \mynum{10}, on soustrait de \mynum{5} le score compris en \mynum{1} et \mynum{5}.
 					Pour terminer, on multiplie par \mynum{2.5} la somme de l'ensemble des scores.
