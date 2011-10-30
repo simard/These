@@ -3864,6 +3864,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-NombreDeSelectionAuCoursDuProcessusDeDesignationAvecEtSansHaptique} présente le nombre de sélections au cours du processus de désignation avec et sans haptique \myvari{1}.
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-accept-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=4cm}
+						\begin{myps}(-0.425,-0.3)(2,1.05)
+							\myaxes(0,2){haptique}(0,1.0)[0.2]{vitesse~(mm/s)}
+							\myboxplot{exp4-speed-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique]{Vitesse moyenne du coordinateur avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique} présente la vitesse moyenne du coordinateur avec et sans haptique \myvari{1}.
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-speed-haptic-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
 				\end{mysubsubsection}
