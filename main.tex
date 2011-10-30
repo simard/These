@@ -4392,14 +4392,19 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{myparagraph}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp4-Sujets]{Sujets}
-				\begin{myTodo}{Nombre de sujets}{Remplir toutes les informations statistiques concernant les sujets}
-					\textcolor{myred}{<\mynum{000}~sujets (\mynum{000}~femmes et \mynum{000}~hommes)>} avec une moyenne d'âge de \textcolor{myred}{<$\mu = 00.0$ ($\sigma = 0.00$)>} ont participés à cette expérimentation.
-					Ils ont été recrutés au sein \textcolor{myred}{<laboratoire>} et sont \textcolor{myred}{<statuts, métier>}.
-					Ils ont tous le français comme langue principale.
-					Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
-				\end{myTodo}
+				\mysummary{exp4-subjects.tex} avec une moyenne d'âge de \mysummary{exp4-age.tex} ont participé à cette expérimentation.
+				Ils ont été recrutés au sein du \myCNRSLIMSI et de l'\myacro{acr-IBPC}; ils sont étudiants, chercheurs ou assistants de recherche dans les domaines suivants :
+				\begin{itemize}
+					\item bio-informatique;
+					\item linguistique et traitement automatique de la parole;
+					\item réalité virtuelle et système immersifs;
+					\item audio-acoustique.
+				\end{itemize}
+				Ils ont tous le français comme langue principale à l'exception d'un sujet néerlandais qui parle un français courant.
+				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
 
 				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
+				Cependant, tous les sujets sont familiers avec la plate-forme \myShaddock ou ont eu l'occasion de manipuler des plate-formes de manipulation interactive de molécules similaires.
 				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais l'objectif de l'étude n'est pas révélé.
 			\end{mysubsection}
 			\begin{mysubsection}[sec-met-exp4-Variables]{Variables}
@@ -4489,7 +4494,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La section à remplir dépend du premier passage : avec ou sans assistance haptique.
 					Durant cette phase, il est demandé aux sujets de ne pas communiquer entre eux.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp4-Phase7-DeuxiemeEtapeDEvaluation]{Phase~\mynum{7} : Deuxième étape d'évaluation}
+				\begin{myparagraph}[par-met-exp4-Phase7-DeuxiemeEtapeDEvaluation]{Phase~\mynum{7} : deuxième étape d'évaluation}
 					La deuxième étape d'évaluation est identique à la première excepté pour la variable \myvari{1}.
 					Si les sujets ont été confrontés à une assistance haptique dans la première étape, alors la seconde étape s'effectuera sans assistance haptique et réciproquement.
 

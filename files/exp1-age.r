@@ -9,7 +9,11 @@ write(
 	  file = out.file
 	  )
 
-summary.age = global.summary(dat.exp1$subject.age)
+dat.exp1.age = aggregate(
+		  dat.exp1,
+		  by = list(subject.surname = dat.exp1$subject.surname, subject.name = dat.exp1$subject.name),
+		  FUN = smart.mean)
+summary.age = global.summary(dat.exp1.age$subject.age)
 out.summary.age = summary2tex(summary.age)
 out.file.age = gsub(".csv", ".tex", out.file)
 write(
