@@ -3762,7 +3762,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp4-Resultats]{Résultats}
 			Cette section présente et analyse l'ensemble des mesures expérimentales de cette quatrième étude.
-			Les données ont été confrontées au test des rangs signés \mycite{Wilcoxon-1945}.
+			Les données, qui sont appareillées et en faible nombre, ont été confrontées au test des rangs signés de \mycite[author]{Wilcoxon-1945}.
 			\begin{mysubsection}[sse-exp4-AmeliorationDesPerformances]{Amélioration des performances}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
@@ -3804,15 +3804,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour le complexe de molécules \myNusENusG (\myanova{exp4-rmsd-time-molecule-haptic-nuse-anova.tex}).
 
 					\begin{myfigure}
-						\psset{xunit=0.274914089\textwidth,yunit=0.07cm}
-						\begin{myps}(-0.425,-15)(2,72.5)
-							\myaxes(0,2){haptique}(0,70)[10]{sélections~(nb)}
+						\psset{xunit=0.230769231\textwidth,yunit=30cm}
+						\begin{myps}(-0.6,-0.04)(2,0.155)
+							\myaxes(0,2){haptique}(0,0.150)[0.025]{sélections~(nb/s)}
 							\myboxplot{exp4-button1-haptic.csv}
 						\end{myps}
-						\mycaption[fig-exp4-NombreDeSelectionParLesOperateursAvecEtSansHaptique]{Nombre de sélections par les opérateurs avec et sans haptique}
+						\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique]{Nombre de sélections par seconde effectuées par les opérateurs pour la déformation avec et sans haptique}
 					\end{myfigure}
 
-					La \myref{fig-exp4-NombreDeSelectionParLesOperateursAvecEtSansHaptique} présente le nombre de sélections effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
+					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique} présente le nombre de sélections par seconde effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-button1-haptic-anova.tex}).
 
 					\begin{myfigure}
@@ -3832,11 +3832,20 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'assistance haptique proposée ne semble pas permettre d'améliorer la collaboration entre les sujets.
 					D'ailleurs, ni le score \myacro{acr-RMSD}, ni le temps pour atteindre ce score n'est amélioré avec les outils d'assistance haptique à la communication proposés \myref*{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique}.
 
-					Pourtant, si on effectue une observation détaillée en fonction des tâches proposées, on constate que sur le complexe de molécules \myNusENusG, les outils d'assistance permettent d'améliorer significativement les performances.
+					Pourtant, si on effectue une analyse détaillée en fonction des tâches proposées, on constate que sur le complexe de molécules \myNusENusG, les outils d'assistance permettent d'améliorer significativement les performances.
 					En ce qui concerne le scénario~\myscenario{1} (molécule \myUbiquitin), aucune évolution n'est observée.
-					Le complexe de molécules \myNusENusG (scénario~\myscenario{2}) reste clairement la tâche la plus complexe à réaliser de part le nombre de \myglos*{glo-Residu} à déformer et part la taille globale des deux molécules en présence.
-					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises une sorte d'abandon face à la complexité de la tâche.
-					Cependant, il semble que la présence d'outils d'assistance à la communication a permis d'améliorer significativement les performances globales.
+
+					Le complexe de molécules \myNusENusG (scénario~\myscenario{2}) reste clairement la tâche la plus complexe à réaliser part le nombre de \myglos*{glo-Residu} à déformer et part la taille globale des deux molécules en présence.
+					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises une sorte d'abandon face à la complexité de cette tâche.
+					Cependant, il semble que la présence d'outils d'assistance à la communication ait permis d'améliorer significativement les performances globales.
+
+					On observe également une baisse significative de la fréquence du nombre de déformations effectuées par les opérateurs \myref*{fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique}.
+					Le coordinateur est le seul des sujets à ne pas être occupé à déformer la molécule.
+					Il se consacre à évaluer les meilleurs déformations avec une vue globale de la tâche.
+					Avec les outils d'assistance haptique à sa disposition, il peut communiquer plus facilement et plus rapidement ces directives.
+					Ceci a pour effet que les opérateurs effectuent moins d'actions solitaires qui peuvent être brèves car inutiles ou interrompue par une requête du coordinateur.
+					Les séquence de sélection et donc de déformation sont alors plus longues et moins nombreuses.
+					D'ailleurs, la \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} montre que les opérateurs sont plus rapides à atteindre la cible désignée avec l'assistance haptique ce qui leur permet de passer plus de temps à déformer mais moins de temps à chercher des tâches à réaliser.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-AmeliorationDeLaCommunication]{Amélioration de la communication}
@@ -3859,10 +3868,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\myaxes(0,2){haptique}(0,15)[5]{sélections~(nb)}
 							\myboxplot{exp4-accept-haptic.csv}
 						\end{myps}
-						\mycaption[fig-exp4-NombreDeSelectionAuCoursDuProcessusDeDesignationAvecEtSansHaptique]{Nombre de sélection au cours du processus de désignation avec et sans haptique}
+						\mycaption[fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique]{Nombre de désignations acceptées au cours du processus de désignation avec et sans haptique}
 					\end{myfigure}
 
-					La \myref{fig-exp4-NombreDeSelectionAuCoursDuProcessusDeDesignationAvecEtSansHaptique} présente le nombre de sélections au cours du processus de désignation avec et sans haptique \myvari{1}.
+					La \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} présente le nombre de désignations acceptées au cours du processus de désignation avec et sans haptique \myvari{1}.
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-accept-haptic-anova.tex}).
 
 					\begin{myfigure}
