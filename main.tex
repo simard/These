@@ -3804,16 +3804,28 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour le complexe de molécules \myNusENusG (\myanova{exp4-rmsd-time-molecule-haptic-nuse-anova.tex}).
 
 					\begin{myfigure}
-						\psset{xunit=0.230769231\textwidth,yunit=30cm}
+						\psset{xunit=0.256410256\textwidth,yunit=30cm}
 						\begin{myps}(-0.6,-0.04)(2,0.155)
-							\myaxes(0,2){haptique}(0,0.150)[0.025]{sélections~(nb/s)}
-							\myboxplot{exp4-button1-haptic.csv}
+							\myaxes(0,2){haptique}(0,0.150)[0.025]{fréquence~(nb/s)}
+							\myboxplot{exp4-freq-button1-haptic.csv}
 						\end{myps}
-						\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique]{Nombre de sélections par seconde effectuées par les opérateurs pour la déformation avec et sans haptique}
+						\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique]{Nombre de sélections par seconde effectuées par un opérateur pour la déformation avec et sans haptique}
 					\end{myfigure}
 
-					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique} présente le nombre de sélections par seconde effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-button1-haptic-anova.tex}).
+					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} présente le nombre de sélections par seconde effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-freq-button1-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.175cm}
+						\begin{myps}(-0.425,-7)(2,26)
+							\myaxes(0,2){haptique}(0,25)[5]{temps~(s)}
+							\myboxplot{exp4-meantime-button1-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique]{Temps moyen d'une sélection effectuée par un opérateur pour la déformation avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} présente le temps moyen d'une sélection effectuée par un opérateur pour une déformation avec et sans haptique \myvari{1}.
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps moyen d'une sélection (\myanova{exp4-meantime-button1-haptic-anova.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.1cm}
@@ -3830,22 +3842,35 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
 					L'assistance haptique proposée ne semble pas permettre d'améliorer la collaboration entre les sujets.
-					D'ailleurs, ni le score \myacro{acr-RMSD}, ni le temps pour atteindre ce score n'est amélioré avec les outils d'assistance haptique à la communication proposés \myref*{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique}.
+					D'ailleurs, la \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} montre que le temps mis pour atteindre ce score ne s'est également pas amélioré avec les outils d'assistance haptique proposés.
 
-					Pourtant, si on effectue une analyse détaillée en fonction des tâches proposées, on constate que sur le complexe de molécules \myNusENusG, les outils d'assistance permettent d'améliorer significativement les performances.
-					En ce qui concerne le scénario~\myscenario{1} (molécule \myUbiquitin), aucune évolution n'est observée.
+					Cependant, une analyse tenant compte des spécificités de chaque scénario montre que l'utilisation des outils d'assistance haptique permet une amélioration sur le complexe de molécules \myNusENusG (scénario~\myscenario{2}) mais pas sur la molécule \myUbiquitin (scénario~\myscenario{1}).
+					Le complexe de molécules \myNusENusG est la tâche la plus complexe à réaliser part le nombre de \myglos*{glo-Residu} à déformer et part la taille globale des deux molécules en présence.
+					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises une sorte d'abandon face à la complexité de cette tâche : \og On ne fera pas mieux \fg, \og On n'arrivera jamais à améliorer le score \fg, \og Cette molécule est trop difficile \fg, \myetc
+					Confrontés à ces difficultés, les sujets ont été plus performants lorsqu'ils étaient assistés par les outils d'assistance haptique.
 
-					Le complexe de molécules \myNusENusG (scénario~\myscenario{2}) reste clairement la tâche la plus complexe à réaliser part le nombre de \myglos*{glo-Residu} à déformer et part la taille globale des deux molécules en présence.
-					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises une sorte d'abandon face à la complexité de cette tâche.
-					Cependant, il semble que la présence d'outils d'assistance à la communication ait permis d'améliorer significativement les performances globales.
+					La plupart du temps, le découragement vis-à-vis de la tâche à réaliser vient du coordinateur qui est le seul à avoir une vue globale de l'objectif à réaliser.
+					En effet, il est le seul sujet qui ne peut pas effectuer de déformation.
+					Il se consacre alors à l'évaluation des meilleures stratégies pour la réalisation de la tâche.
+					Grâce aux outils d'assistance haptique mis à sa disposition, il peut communiquer plus facilement et plus rapidement ces directives \myref*{sse-exp4-AmeliorationDeLaCommunication}.
+					Ces outils permettent d'augmenter l'attention des opérateurs qui vont effectuer moins d'actions solitaires.
+					Une action solitaire est une action que l'opérateur décide, sans concertation avec les autres membres du groupe et potentiellement, en désaccord avec la stratégie globale adoptée par ses partenaires.
+					Ces actions peuvent ainsi être improductives et éventuellement interrompues par une requête du coordinateur.
+					Elles sont donc relativement brèves dans le temps par rapport aux actions proposées et désignées par le coordinateur.
 
-					On observe également une baisse significative de la fréquence du nombre de déformations effectuées par les opérateurs \myref*{fig-exp4-NombreDeSelectionsParSecondeEffectueesParLesOperateursPourLaDeformationAvecEtSansHaptique}.
-					Le coordinateur est le seul des sujets à ne pas être occupé à déformer la molécule.
-					Il se consacre à évaluer les meilleurs déformations avec une vue globale de la tâche.
-					Avec les outils d'assistance haptique à sa disposition, il peut communiquer plus facilement et plus rapidement ces directives.
-					Ceci a pour effet que les opérateurs effectuent moins d'actions solitaires qui peuvent être brèves car inutiles ou interrompue par une requête du coordinateur.
-					Les séquence de sélection et donc de déformation sont alors plus longues et moins nombreuses.
+					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} et la \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} montrent que ces actions solitaires diminuent avec la présence des outils d'assistance haptique.
+					En effet, on constate sur la \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} que la fréquence des sélections effectuées par les opérateurs diminue avec la présence d'une assistance haptique.
+					Cependant, cette diminution peut être due à deux raisons différentes.
+					Soit les opérateurs ont une tendance à moins travailler avec les outils d'assistance haptique ce qui diminue la fréquence totale; soit ils effectuent des déformations plus longues dans le temps ce qui a pour effet de faire moins de déformations sur le temps total.
+					La \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique}, qui montre que les outils d'assistance haptique allonge la durée des sélections, nous permet de déduire que les opérateurs produisent des déformations plus longues dans le temps.
+					Les outils haptiques proposés ont eu pour effet de diminuer le nombre d'actions courtes dans le temps.
+
+					La réduction de ces actions solitaires permet de mieux respecter une stratégie commune dirigée par le coordinateur.
+					Les séquences de sélection et donc de déformation sont alors plus longues et moins nombreuses.
 					D'ailleurs, la \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} montre que les opérateurs sont plus rapides à atteindre la cible désignée avec l'assistance haptique ce qui leur permet de passer plus de temps à déformer mais moins de temps à chercher des tâches à réaliser.
+
+					Nous avons vu que les outils d'assistance haptique pour la désignation aident le coordinateur à imposer une stratégie commune ce qui a pour effet d'améliorer les performances du groupes sur les tâches les plus complexes.
+					Il semble que quelque soit la stratégie, le travail collaboratif sera plus efficace si tous les membres du groupe sont en accord avec la stratégie à suivre.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-AmeliorationDeLaCommunication]{Amélioration de la communication}
