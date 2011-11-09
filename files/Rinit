@@ -171,8 +171,14 @@ dat.exp3 = read.table("exp3.csv", h=T)
 dat.exp3 = dat.exp3[dat.exp3$molecule != "trp-cage", ]
 dat.exp3$molecule = factor(dat.exp3$molecule)
 
-dat.exp4 = read.table("exp4.csv", h=T)
-# TRP-Cage was the training molecule
+dat.exp4.origin = read.table("exp4.csv", h=T)
+dat.exp4.annotation = read.table("exp4-annotation.csv", h=T)
+dat.exp4 = merge.data.frame( dat.exp4.origin, dat.exp4.annotation, all.x = TRUE, all.y = TRUE )
+# Remove the experimenter for the current analysis
+dat.exp4 = dat.exp4[ dat.exp4$subject.role != "experimenter", ]
+dat.exp4$subject.name = factor(dat.exp4$subject.name)
+dat.exp4$subject.surname = factor(dat.exp4$subject.surname)
+# TRP-CAGE, Prion and TRP-ZIPPER were the training molecule
 dat.exp4 = dat.exp4[dat.exp4$molecule != "trp-cage", ]
 dat.exp4 = dat.exp4[dat.exp4$molecule != "prion", ]
 dat.exp4 = dat.exp4[dat.exp4$molecule != "trp-zipper", ]
