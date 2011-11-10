@@ -3359,8 +3359,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					De plus, la période de \mybrainstorming permet de partitionner le temps de réflexion et le temps de manipulation.
 					En effet, l'analyse des communications verbales permet de constater que les groupes n'ayant pas eu de période de \mybrainstorming (\mycondition{1} et \mycondition{3}) tentent tout de même d'élaborer une stratégie de travail.
-					Cependant, la manipulation créé une charge de travail cognitive importante.
-					Les capacités cognitives des sujets sont alors partagées entre la manipulation et l'élaboration d'une stratégie.
+					Cependant, la manipulation créé une charge de travail importante.
+					Les capacités de travail des sujets sont alors partagées entre la manipulation et l'élaboration d'une stratégie.
 					Les sujets ne sont pas pleinement attentifs à l'élaboration de la stratégie et peuvent en plus ne pas être attentifs en même temps que leurs collègues.
 					La réflexion sur la meilleure stratégie à choisir n'est donc pas optimale.
 
@@ -3453,7 +3453,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour conclure cette section, le \myglos{glo-Meneur} a un rôle crucial dans la dynamique du groupe.
 					C'est lui qui va définir et répartir les tâches : il élabore la stratégie du groupe.
 					Cette répartition permet à chaque sujet de se faire attribuer une tâche bien identifiée.
-					L'identification des rôles est nécessaire pour obtenir de bonne performances et éviter le phénomène de \myglos{glo-ParesseSociale} \myref*{UtiliteDuBrainstormingPourLaCollaboration-exp3-AvantageDuBrainstormingPourLesQuadrinomes}.
+					L'identification des rôles est nécessaire pour obtenir de bonne performances et éviter le phénomène de \myglos{glo-ParesseSociale} \myref*{sse-exp3-UtiliteDuBrainstormingPourLaCollaboration}.
 					Cependant, le \myglos{glo-Meneur} doit être accepté par les autres membres afin d'obtenir une bonne harmonie dans le groupe.
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -3522,6 +3522,39 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Des outils haptiques inconfortables, des détails visuels incohérents, des interactions peu intuitives sont autant de paramètres qui peuvent rendre un système inefficace.
 		\end{mysection}
 		\begin{mysection}[sec-exp4-AssistanceHaptiquePourLaCommunication]{Assistance haptique pour la communication}
+			\begin{mysubsection}[sse-exp4-TravauxExistants]{Travaux existants}
+				Les travaux à l'origine de communication haptique ont principalement été initiés par les résultats de \mycite[author]{Sallnas-2000} avec une expérimentation sur la manipulation synchrone de cube au sein d'un environnement virtuel.
+				Chaque utilisateur avait à sa disposition un interface à retour haptique lui permettant d'exercer une pression sur un cube; seuls deux utilisateurs pouvaient soulever un cube en exercant chacun une pression de chaque côté du cube.
+				Sur le même principe de manipulation synchrone, \mycite[author]{Basdogan-2000} proposent le déplacement d'un anneau autour d'un fil avec pour objectif de ne pas toucher le fil.
+				Dans les deux études, les résultats montrent que les retours haptiques permettent des améliorations significatives de la collaboration entre les partenaires.
+
+				Sur la base de ces résultats, \mycite[author]{Oakley-2001} propose un environnement en \myTwoD pour la création de diagrammes \myacro{acr-UML}.
+				Il fournit aux utilisateurs différents outils haptiques permettant d'agir sur le partenaire ou de ressentir ses actions dont voici la liste :
+				\begin{itemize}
+					\item ressentir le curseur du partenaire avec la possibilité de le pousser;
+					\item attraper et guider le curseur du partenaire vers une position choisie;
+					\item activer à distance un guidage du partenaire vers son propre curseur;
+					\item activer à distance un guidage de son propre curseur vers celui de son partenaire;
+					\item ressentir une viscosité plus importante par la proximité du curseur du partenaire.
+				\end{itemize}
+
+				Dans la continuité des travaux de \mycite[author]{Oakley-2001}, \mycite[author]{Moll-2009} effectuent des expérimentations avec des outils haptiques similaires dans un environnement virtuel de construction par bloc en \myThreeD.
+				Ces études permettent de conclure que la modalité haptique n'apporte pas seulement une perception de l'environnement mais permet également la communication entre des partenaires.
+				En l'occurence, \mycite[author]{Moll-2009} met en évidence l'utilité des retours haptiques pour la désignation de cible en environnement virtuel.
+
+				Le terme \myemph{communication haptique} a pris tout son sens avec les premières tentatives de \myemph{langages haptiques}
+				Tout d'abord, \mycite[author]{Chang-2002} proposent d'augmenter l'information avec un code défini de vibration lors de communication de type \myemph{talkie-walkie}.
+				Puis, \mycite[author]{Enriquez-2006} créé une liste de phonèmes haptiques permettant la communication.
+				Il constate cependant qu'une telle solution nécessite un fort apprentissage ($\approx \mynum[mn]{45}$) pour une utilisation persistente.
+				\mycite[author]{Chan-2008} utilise également des mots haptiques pour aider et assister les contrôles d'accès à un système lors de la réalisation d'une tâche collaborative.
+
+				Finalement, les études concernant la communication haptique ont été destinés à connaître les raisons de ces améliorations de performances.
+				\mycite[author]{Ullah-2011} s'est intéressé plus particulièrement aux influences de l'utilisation de retours haptiques dans la collaboration sur le sentiment de présence et sur la conscience périphérique \myref*{sse-sota-LaCommunicationImpliciteEtExplicite}.
+				Tout d'abord avec des travaux sur la manipulation collaborative d'un bras articulé en environnement virtuel, il montre une amélioration de la conscience périphérique \mycite{Naud-2009}.
+				Puis, une tâche de déplacement d'objet virtuel (une cheville à déplacer dans un trou) que \mycite[author]{Ullah-2010} montre une amélioration significative du sentiment de présence et de la conscience périphérique.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp4-Objectifs]{Objectifs}
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp4-DescriptionDeLaTache]{Description de la tâche}
@@ -3924,7 +3957,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Par exemple, un affichage clignotant de la cible aurait peut-être permis d'obtenir des résultats similaires en terme de temps de réponse mais aurait été beaucoup plus envahissant visuellement, notamment pour le coordinateur qui n'a pas besoin de cette information.
 
 					Cette communication améliorée permet un meilleur rendement de la stratégie proposée par le coordinateur.
-					En effet, on constate sur la \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} que les opérateurs acceptent plus de désignations lorsqu'ils ont ces outils d'assistance à la communication à leur disposition.
+					En effet, la \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} montre que les opérateurs acceptent plus de désignations lorsqu'ils ont ces outils d'assistance à la communication à leur disposition.
 					Ces outils leurs permettent d'être plus attentifs et ainsi de répondre plus rapidement et plus souvent aux requêtes du coordinateur.
 
 					Cette rapidité permet d'ailleurs au coordinateur d'être plus actif \myref*{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique}.
