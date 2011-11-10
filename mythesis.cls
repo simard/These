@@ -34,6 +34,7 @@
 \PassOptionsToClass{fleqn}{book}
 \PassOptionsToClass{12pt}{book}
 \PassOptionsToClass{a4paper}{book}
+\PassOptionsToClass{twoside}{book}
 \LoadClass{book}
 
 \if@myenglish
