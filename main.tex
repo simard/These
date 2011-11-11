@@ -3953,6 +3953,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique} présente la vitesse moyenne du coordinateur avec et sans haptique \myvari{1}.
 					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-speed-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
+						\begin{myps}(-0.425,-75)(2,260)
+							\myaxes(0,2){haptique}(0,250)[50]{temps~(s)}
+							\myboxplot{exp4-annotation-time-haptic.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsDeParoleCumuleDesSujetsAvecEtSansHaptique]{Temps de parole cumulé des sujets avec et sans haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} présente le temps de parole cumulé des sujets \myvard{4} avec et sans haptique \myvari{1}.
+					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
 					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} est un résultat permettant de mettre en avant les améliorations en terme de communication entre les membres du groupe.
