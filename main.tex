@@ -3960,11 +3960,23 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\myaxes(0,2){haptique}(0,250)[50]{temps~(s)}
 							\myboxplot{exp4-annotation-time-haptic.csv}
 						\end{myps}
-						\mycaption[fig-exp4-TempsDeParoleCumuleDesSujetsAvecEtSansHaptique]{Temps de parole cumulé des sujets avec et sans haptique}
+						\mycaption[fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique]{Temps de parole des sujets avec et sans haptique}
 					\end{myfigure}
 
-					La \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} présente le temps de parole cumulé des sujets \myvard{4} avec et sans haptique \myvari{1}.
+					La \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} présente le temps de parole des sujets \myvard{4} avec et sans haptique \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-anova.tex}).
+
+					\begin{myfigure}
+						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
+						\begin{myps}(-0.425,-75)(2,310)
+							\myaxes(0,2){haptique}(0,300)[50]{temps~(s)}
+							\myboxplot{exp4-annotation-time-haptic-last.csv}
+						\end{myps}
+						\mycaption[fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique]{Temps de parole des sujets en fonction de l'ordre de passage de l'assistance haptique}
+					\end{myfigure}
+
+					La \myref{fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique} présente le temps de parole des sujets \myvard{4} en fonction de l'ordre de passage de l'assistance haptique.
+					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-last-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
 					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} est un résultat permettant de mettre en avant les améliorations en terme de communication entre les membres du groupe.

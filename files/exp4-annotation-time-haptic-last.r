@@ -4,8 +4,8 @@ source("Rinit")
 out.file.boxplot = get.outname(commandArgs())
 
 dat = dat.exp4
-bp = boxplot(dat$annotation.time ~ dat$haptic, plot=FALSE)
-colnames(bp$stats) = c("Sans","Avec")
+bp = boxplot(dat$annotation.time ~ dat$haptic.last, plot=FALSE)
+colnames(bp$stats) = c("Sans/Avec","Avec/Sans")
 write.table(bp$stats,
 			file = out.file.boxplot,
 			quote = FALSE,
@@ -15,9 +15,9 @@ write.table(bp$stats,
 			row.names = FALSE,
 			col.names = TRUE)
 
-a = dat[ dat$haptic == "True", ]$annotation.time
-b = dat[ dat$haptic == "False", ]$annotation.time
-wilcox = wilcox.test( dat$annotation.time ~ dat$haptic, paired = TRUE )
+a = dat[ dat$haptic.last == "True", ]$annotation.time
+b = dat[ dat$haptic.last == "False", ]$annotation.time
+wilcox = wilcox.test( dat$annotation.time ~ dat$haptic.last, na.action = "na.pass" )
 out.anova = wilcox2tex(wilcox)
 out.file.anova = gsub(".csv", "-anova.tex", out.file.boxplot)
 write(
