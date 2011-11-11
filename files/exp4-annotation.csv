@@ -1,112 +1,112 @@
-"id" "subject.surname" "subject.name" "molecule" "haptic" "annotation.count" "annotation.time" "annotation.mean.time"
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "ubiquitin" "True" 18 36.159946 2.0088859
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "ubiquitin" "True" 80 228.92009 2.8615012
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "ubiquitin" "True" 45 98.79994 2.1955543
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "ubiquitin" "True" 41 61.119923 1.4907298
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "ubiquitin" "False" 4 8.120023 2.0300057
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "ubiquitin" "False" 21 35.28003 1.6800014
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "ubiquitin" "False" 7 14.519989 2.074284
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "ubiquitin" "False" 13 24.359962 1.8738433
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "ubiquitin" "True" 8 16.359924 2.0449905
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "ubiquitin" "True" 41 69.76005 1.7014645
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "ubiquitin" "True" 25 44.560036 1.7824014
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "ubiquitin" "True" 43 70.239975 1.6334878
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "ubiquitin" "False" 6 11.359953 1.8933254
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "ubiquitin" "False" 89 154.59999 1.7370785
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "ubiquitin" "False" 32 45.12001 1.4100003
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "ubiquitin" "False" 30 59.800034 1.9933344
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "ubiquitin" "True" 4 5.4399757 1.3599939
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "ubiquitin" "True" 67 148.20009 2.2119417
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "ubiquitin" "True" 93 127.59998 1.3720428
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "ubiquitin" "True" 30 46.680008 1.5560002
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "ubiquitin" "False" 4 7.559988 1.889997
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "ubiquitin" "False" 100 170.75998 1.7075998
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "ubiquitin" "False" 61 88.32004 1.4478694
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "ubiquitin" "False" 50 71.440094 1.4288019
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "ubiquitin" "True" 1 6.519989 6.519989
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "ubiquitin" "True" 63 280.92017 4.45905
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "ubiquitin" "True" 40 58.679916 1.4669979
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "ubiquitin" "True" 48 105.40001 2.1958334
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "nuse" "True" 8 22.99998 2.8749976
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "nuse" "True" 68 165.16 2.4288235
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "nuse" "True" 50 125.399895 2.507998
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "nuse" "True" 34 52.399994 1.5411763
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "nuse" "False" 10 27.039991 2.703999
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "nuse" "False" 16 23.519958 1.4699974
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "nuse" "False" 17 32.04005 1.8847089
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "nuse" "False" 31 64.31992 2.0748363
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "nuse" "True" 4 5.720001 1.4300003
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "nuse" "True" 34 58.639885 1.7247025
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "nuse" "True" 24 39.479942 1.6449976
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "nuse" "True" 43 70.11987 1.6306947
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "nuse" "False" 11 28.480011 2.589092
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "nuse" "False" 88 124.44003 1.4140912
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "nuse" "False" 30 44.67993 1.489331
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "nuse" "False" 37 61.680035 1.667028
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "nuse" "True" 2 5.2 2.6
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "nuse" "True" 65 131.15991 2.017845
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "nuse" "True" 85 145.19992 1.7082343
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "nuse" "True" 32 71.99998 2.2499993
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "nuse" "False" 8 15.359985 1.9199982
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "nuse" "False" 93 166.80002 1.7935486
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "nuse" "False" 69 127.91999 1.853913
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "nuse" "False" 55 82.72006 1.5040011
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "nuse" "True" 3 6.2 2.0666666
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "nuse" "True" 59 307.28006 5.2081366
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "nuse" "True" 33 48.520077 1.4703053
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "nuse" "True" 40 102.19995 2.5549989
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "ubiquitin" "False" 7 20.999998 2.9999998
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "ubiquitin" "False" 70 236.44006 3.377715
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "ubiquitin" "False" 27 57.47993 2.1288862
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "ubiquitin" "False" 43 65.91998 1.5330229
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "ubiquitin" "True" 3 4.7199926 1.5733309
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "ubiquitin" "True" 14 22.68003 1.6200022
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "ubiquitin" "True" 3 5.7599926 1.9199976
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "ubiquitin" "True" 11 24.279987 2.2072716
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "ubiquitin" "False" 3 3.6800003 1.2266668
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "ubiquitin" "False" 50 108.8401 2.1768022
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "ubiquitin" "False" 26 42.279987 1.6261533
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "ubiquitin" "False" 49 83.87993 1.7118353
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "ubiquitin" "True" 3 3.0400133 1.0133377
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "ubiquitin" "True" 92 124.28002 1.3508698
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "ubiquitin" "True" 49 57.879917 1.1812228
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "ubiquitin" "True" 59 87.35996 1.4806774
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "ubiquitin" "False" 72 141.36002 1.9633336
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "ubiquitin" "False" 79 104.79992 1.3265812
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "ubiquitin" "False" 36 58.679943 1.6299984
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "ubiquitin" "True" 2 4.04 2.02
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "ubiquitin" "True" 104 202.75983 1.9496137
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "ubiquitin" "True" 73 123.71999 1.6947944
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "ubiquitin" "True" 36 53.640007 1.4900002
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "ubiquitin" "False" 4 8.239998 2.0599995
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "ubiquitin" "False" 66 295.63998 4.4793935
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "ubiquitin" "False" 37 63.520004 1.7167568
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "ubiquitin" "False" 32 63.320114 1.9787536
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "nuse" "False" 1 2.2799988 2.2799988
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "nuse" "False" 62 224.5199 3.6212888
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "nuse" "False" 27 75.60002 2.800001
-"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "nuse" "False" 33 54.680023 1.6569704
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "nuse" "True" 1 1.0 1.0
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "nuse" "True" 3 4.4399986 1.4799995
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "nuse" "True" 8 9.240005 1.1550006
-"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "nuse" "True" 7 7.959995 1.1371421
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "nuse" "False" 5 13.400019 2.6800036
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "nuse" "False" 28 40.71998 1.4542849
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "nuse" "False" 22 62.759964 2.8527257
-"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "nuse" "False" 29 68.04005 2.3462086
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "nuse" "True" 9 13.19998 1.4666644
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "nuse" "True" 90 138.04005 1.5337784
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "nuse" "True" 41 52.92 1.2907317
-"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "nuse" "True" 29 50.11999 1.7282755
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "nuse" "False" 9 17.639988 1.9599986
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "nuse" "False" 69 119.44001 1.7310146
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "nuse" "False" 93 145.00008 1.5591406
-"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "nuse" "False" 34 58.320087 1.7152967
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "nuse" "True" 2 1.9200009 0.96000046
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "nuse" "True" 84 120.44002 1.4338098
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "nuse" "True" 59 135.12003 2.29017
-"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "nuse" "True" 40 58.99996 1.4749991
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "nuse" "False" 3 6.2000065 2.0666687
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "nuse" "False" 57 300.80008 5.2771945
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "nuse" "False" 28 41.959984 1.4985708
-"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "nuse" "False" 30 83.280014 2.7760005
+"id" "subject.surname" "subject.name" "subject.role" "molecule" "haptic" "annotation.count" "annotation.time" "annotation.mean.time"
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 18 36.159946 2.0088859
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "ubiquitin" "True" 80 228.92009 2.8615012
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "ubiquitin" "True" 45 98.79994 2.1955543
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "ubiquitin" "True" 41 61.119923 1.4907298
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 4 8.120023 2.0300057
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "ubiquitin" "False" 21 35.28003 1.6800014
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "ubiquitin" "False" 7 14.519989 2.074284
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "operator" "ubiquitin" "False" 13 24.359962 1.8738433
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 8 16.359924 2.0449905
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "coordinator" "ubiquitin" "True" 41 69.76005 1.7014645
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "operator" "ubiquitin" "True" 25 44.560036 1.7824014
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "operator" "ubiquitin" "True" 43 70.239975 1.6334878
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 6 11.359953 1.8933254
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "coordinator" "ubiquitin" "False" 89 154.59999 1.7370785
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "operator" "ubiquitin" "False" 32 45.12001 1.4100003
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "operator" "ubiquitin" "False" 30 59.800034 1.9933344
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 4 5.4399757 1.3599939
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "coordinator" "ubiquitin" "True" 67 148.20009 2.2119417
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "operator" "ubiquitin" "True" 93 127.59998 1.3720428
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "operator" "ubiquitin" "True" 30 46.680008 1.5560002
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 4 7.559988 1.889997
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "coordinator" "ubiquitin" "False" 100 170.75998 1.7075998
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "operator" "ubiquitin" "False" 61 88.32004 1.4478694
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "operator" "ubiquitin" "False" 50 71.440094 1.4288019
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 1 6.519989 6.519989
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "coordinator" "ubiquitin" "True" 63 280.92017 4.45905
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "operator" "ubiquitin" "True" 40 58.679916 1.4669979
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "operator" "ubiquitin" "True" 48 105.40001 2.1958334
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "experimenter" "nuse" "True" 8 22.99998 2.8749976
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "nuse" "True" 68 165.16 2.4288235
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "nuse" "True" 50 125.399895 2.507998
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "nuse" "True" 34 52.399994 1.5411763
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "nuse" "False" 10 27.039991 2.703999
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "nuse" "False" 16 23.519958 1.4699974
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "nuse" "False" 17 32.04005 1.8847089
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "operator" "nuse" "False" 31 64.31992 2.0748363
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "experimenter" "nuse" "True" 4 5.720001 1.4300003
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "coordinator" "nuse" "True" 34 58.639885 1.7247025
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "operator" "nuse" "True" 24 39.479942 1.6449976
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "operator" "nuse" "True" 43 70.11987 1.6306947
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "experimenter" "nuse" "False" 11 28.480011 2.589092
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "coordinator" "nuse" "False" 88 124.44003 1.4140912
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "operator" "nuse" "False" 30 44.67993 1.489331
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "operator" "nuse" "False" 37 61.680035 1.667028
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "experimenter" "nuse" "True" 2 5.2 2.6
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "coordinator" "nuse" "True" 65 131.15991 2.017845
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "operator" "nuse" "True" 85 145.19992 1.7082343
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "operator" "nuse" "True" 32 71.99998 2.2499993
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "experimenter" "nuse" "False" 8 15.359985 1.9199982
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "coordinator" "nuse" "False" 93 166.80002 1.7935486
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "operator" "nuse" "False" 69 127.91999 1.853913
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "operator" "nuse" "False" 55 82.72006 1.5040011
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "experimenter" "nuse" "True" 3 6.2 2.0666666
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "coordinator" "nuse" "True" 59 307.28006 5.2081366
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "operator" "nuse" "True" 33 48.520077 1.4703053
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "operator" "nuse" "True" 40 102.19995 2.5549989
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 7 20.999998 2.9999998
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "ubiquitin" "False" 70 236.44006 3.377715
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "ubiquitin" "False" 27 57.47993 2.1288862
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "ubiquitin" "False" 43 65.91998 1.5330229
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 3 4.7199926 1.5733309
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "ubiquitin" "True" 14 22.68003 1.6200022
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "ubiquitin" "True" 3 5.7599926 1.9199976
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "operator" "ubiquitin" "True" 11 24.279987 2.2072716
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 3 3.6800003 1.2266668
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "coordinator" "ubiquitin" "False" 50 108.8401 2.1768022
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "operator" "ubiquitin" "False" 26 42.279987 1.6261533
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "operator" "ubiquitin" "False" 49 83.87993 1.7118353
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 3 3.0400133 1.0133377
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "coordinator" "ubiquitin" "True" 92 124.28002 1.3508698
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "operator" "ubiquitin" "True" 49 57.879917 1.1812228
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "operator" "ubiquitin" "True" 59 87.35996 1.4806774
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "coordinator" "ubiquitin" "False" 72 141.36002 1.9633336
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "operator" "ubiquitin" "False" 79 104.79992 1.3265812
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "operator" "ubiquitin" "False" 36 58.679943 1.6299984
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 2 4.04 2.02
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "coordinator" "ubiquitin" "True" 104 202.75983 1.9496137
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "operator" "ubiquitin" "True" 73 123.71999 1.6947944
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "operator" "ubiquitin" "True" 36 53.640007 1.4900002
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 4 8.239998 2.0599995
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "coordinator" "ubiquitin" "False" 66 295.63998 4.4793935
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "operator" "ubiquitin" "False" 37 63.520004 1.7167568
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "operator" "ubiquitin" "False" 32 63.320114 1.9787536
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Jean" "SIMARD" "experimenter" "nuse" "False" 1 2.2799988 2.2799988
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "nuse" "False" 62 224.5199 3.6212888
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "nuse" "False" 27 75.60002 2.800001
+"Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "nuse" "False" 33 54.680023 1.6569704
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "nuse" "True" 1 1.0 1.0
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "nuse" "True" 3 4.4399986 1.4799995
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "nuse" "True" 8 9.240005 1.1550006
+"Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Pierre" "ALBERT" "operator" "nuse" "True" 7 7.959995 1.1371421
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Jean" "SIMARD" "experimenter" "nuse" "False" 5 13.400019 2.6800036
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Marc" "PIUZZI" "coordinator" "nuse" "False" 28 40.71998 1.4542849
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Benoist" "LAURENT" "operator" "nuse" "False" 22 62.759964 2.8527257
+"Marc_PIUZZI.Benoist_LAURENT.Alex_TEK" "Alex" "TEK" "operator" "nuse" "False" 29 68.04005 2.3462086
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Jean" "SIMARD" "experimenter" "nuse" "True" 9 13.19998 1.4666644
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Marc" "REBILLAT" "coordinator" "nuse" "True" 90 138.04005 1.5337784
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "Paul" "LUIZARD" "operator" "nuse" "True" 41 52.92 1.2907317
+"Marc_REBILLAT.Paul_LUIZARD.David_DOUKHAN" "David" "DOUKHAN" "operator" "nuse" "True" 29 50.11999 1.7282755
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Jean" "SIMARD" "experimenter" "nuse" "False" 9 17.639988 1.9599986
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Maxime" "DELORME" "coordinator" "nuse" "False" 69 119.44001 1.7310146
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nadège" "DEVOS" "operator" "nuse" "False" 93 145.00008 1.5591406
+"Maxime_DELORME.Nadege_DEVOS.Nicolas_FEREY" "Nicolas" "FÉREY" "operator" "nuse" "False" 34 58.320087 1.7152967
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Jean" "SIMARD" "experimenter" "nuse" "True" 2 1.9200009 0.96000046
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "LE BEUH" "coordinator" "nuse" "True" 84 120.44002 1.4338098
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Mathieu" "DUBOIS" "operator" "nuse" "True" 59 135.12003 2.29017
+"Sylvain_LE_BEUH.Mathieu_DUBOIS.Sylvain_CAILLOU" "Sylvain" "CAILLOU" "operator" "nuse" "True" 40 58.99996 1.4749991
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Jean" "SIMARD" "experimenter" "nuse" "False" 3 6.2000065 2.0666687
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Tony" "DOAT" "coordinator" "nuse" "False" 57 300.80008 5.2771945
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Lionel" "FEUGÈRES" "operator" "nuse" "False" 28 41.959984 1.4985708
+"Tony_DOAT.Lionel_FEUGERES.Matthieu_COURGEON" "Matthieu" "COURGEON" "operator" "nuse" "False" 30 83.280014 2.7760005
