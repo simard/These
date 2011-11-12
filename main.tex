@@ -3970,36 +3970,52 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
 						\begin{myps}(-0.425,-75)(2,310)
 							\myaxes(0,2){haptique}(0,300)[50]{temps~(s)}
-							\myboxplot{exp4-annotation-time-haptic-last.csv}
+							\myboxplot{exp4-annotation-time-haptic-first.csv}
 						\end{myps}
 						\mycaption[fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique]{Temps de parole des sujets en fonction de l'ordre de passage de l'assistance haptique}
 					\end{myfigure}
 
 					La \myref{fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique} présente le temps de parole des sujets \myvard{4} en fonction de l'ordre de passage de l'assistance haptique.
-					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-last-anova.tex}).
+					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-first-anova.tex}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
-					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} est un résultat permettant de mettre en avant les améliorations en terme de communication entre les membres du groupe.
-					En effet, ce résultat montre la diminution du temps de réaction des opérateurs lorsque le coordinateur propose une désignation.
-					Les outils d'assistance à la communication ont permis aux opérateurs de comprendre l'information concernant la désignation d'une cible plus rapidement.
+					Durant le processus de désignation, deux solutions différentes sont proposées aux opérateurs pour les prévenir qu'une nouvelle désignation vient d'être effectuée; une première solution exclusivement visuelle; une seconde solution visuo-haptique.
+					Pour des désignations exclusivement visuelles, les opérateurs répondent à la désignation soit parce qu'ils ont vu une nouvelle cible en surbrillance, soit parce que le coordinateur leur a communiqué la présence d'une nouvelle cible.
+					Dans le premier cas, le temps de réponse de l'opérateur pour accepter la désignation va dépendre du degré d'attention de celui-ci et de la visibilité de la cible (cible masquée par des atomes ou cible trop éloignée du champ de vision).
+					Dans le second cas, c'est le temps utilisé pour les échanges verbaux et la qualité des explications qui va déterminer le temps de réponse.
+					Dans un cas comme dans l'autre, il faut que l'opérateur soit attentif concernant toute nouvelle désignation ce qui réduit son attention pour les autres événements (conscience périphérique).
 
-					L'information visuelle donnée lors d'une désignation effectuée par le coordinateur est suffisante pour connaître la position de la cible.
-					Cependant, cette seule information ne suffit pas à prévenir les opérateurs qu'une désignation vient d'être réalisée.
-					En effet, si la cible désignée est dissimulée derrière d'autres \myglos*{glo-Residu}, l'opérateur pourra ne pas voir cette désignation tant que le coordinateur ne lui aura pas signaler oralement.
-					Par contre, l'ajout de la modalité haptique pour signaler la présence d'une nouvelle désignation permet aux opérateurs d'être prévenu rapidement et de réagir plus rapidement : soit ils se mettront en recherche active d'une cible signalée visuellement, soit ils interrogeront directement le coordinateur.
-					Ces outils de communication permettent de ne prévenir que les personnes concernées tout en conservant la teneur de l'information de manière visuelle.
-					Par exemple, un affichage clignotant de la cible aurait peut-être permis d'obtenir des résultats similaires en terme de temps de réponse mais aurait été beaucoup plus envahissant visuellement, notamment pour le coordinateur qui n'a pas besoin de cette information.
+					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} nous montre que l'utilisation d'un retour haptique au sein de ce processus de désignation améliore considérablement le temps de réponse.
+					En effet, l'outil d'assistance haptique va signaler directement aux opérateurs qu'une désignation vient d'être effectuée par le coordinateur.
+					Ce moyen de communication permet d'obtenir une réactivité qui ne dépend plus ni du degré d'attention de l'opérateur, ni des interventions verbales du coordinateur.
+					Cela permet de réduire la charge de travail des opérateurs et du coordinateur qu'ils peuvent consacrer à autre chose.
 
-					Cette communication améliorée permet un meilleur rendement de la stratégie proposée par le coordinateur.
-					En effet, la \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} montre que les opérateurs acceptent plus de désignations lorsqu'ils ont ces outils d'assistance à la communication à leur disposition.
-					Ces outils leurs permettent d'être plus attentifs et ainsi de répondre plus rapidement et plus souvent aux requêtes du coordinateur.
+					L'avantage de l'utilisation d'un retour haptique dans ce cas est la possibilité d'informer seulement le ou les sujets concernés par l'information.
+					En utilisant des effets visuels, l'affichage partagé n'aurait pas permis de restreindre l'information aux sujets concernés.
 
-					Cette rapidité permet d'ailleurs au coordinateur d'être plus actif \myref*{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique}.
-					Les opérateurs répondant plus rapidement à ses requêtes, le coordinateur se libère plus rapidement d'un processus de désignation et peut s'occuper de la suite des événements.
-					Il devient lui aussi plus efficace dans la répartition des désignations car il passe moins de temps à attendre que les opérateurs répondent présent.
+					De plus, l'amélioration de la communication permet d'améliorer la coordination de la stratégie.
+					En effet, une meilleure perception des désignations permet aux opérateurs d'être plus réactifs à la stratégie du coordinateur \myref*{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique}.
+					De plus, leur charge de travail étant allégée par l'assistance haptique, ils sont plus aptes à comprendre la stratégie du coordinateur et à en proposer des améliorations pertinentes.
 
-					On constate dans cette section que les outils d'assistance à la communication remplissent leur rôles en améliorant l'efficacité et la qualité de la communication.
+					Étant donné que les opérateurs sont plus rapides à répondre aux désignations, le coordinateur est libéré plus rapidement de chaque requête qu'il créé.
+					Cela lui permet de se consacrer rapidement à la prochaine désignation qu'il effectuera.
+					Cette routine plus rapidement effectuée permet au coordinateur d'avoir un meilleur rendement et de ne pas laisser les opérateurs sans occupation.
+					On constate cette amélioration de rendement par une vitesse moyenne du coordinateur augmentée comme le montre la \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique}.
+
+					Pourtant, la \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} ne montre pas d'évolution du temps de parole lié à la présence ou à l'absence d'une assistance haptique.
+					L'assistance haptique ne semble pas remplacer les canaux de communication oraux mais semble seulement les remplacer.
+					Cependant, la \myref{fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique} montre que l'ordre de passage a une influence forte sur la communication verbale.
+					En effet, les sujets qui commencent par l'utilisation des outils haptiques produisent significativement plus d'échanges verbaux que les sujets qui commencent sans assistance haptique.
+
+					En ce qui concerne les sujets qui commencent sans assistance haptique, ils éprouvent dès le début le besoin de communiquer verbalement puisque qu'aucun autre moyen de communication ou d'assistance à la communication n'est mis à leur disposition.
+					Lorsque dans un second temps, on ajoute un outil haptique de communication, l'apprentissage leur permet de savoir comment utiliser cet outil haptique afin de remplacer certaines phases de communication verbales.
+
+					Par opposition, les sujets qui commencent par l'utilisation des outils haptiques n'ont pas eu l'expérience nécessaire pour optimiser l'utilisation de l'assistance haptique par rapport aux échanges verbaux.
+					De plus, lorsque dans la seconde phase de l'expérimentation, on leur enlève un outil de communication, ils doivent redéfinir les méthodes de travail et compensent naturellement ce manque par une augmentation du temps de parole.
+
+					On constate dans cette section que les outils d'assistance à la communication remplissent leur rôle en améliorant l'efficacité et la qualité de la communication.
 					En effet, en améliorant la qualité de l'information -- signaler directement aux opérateurs qu'une désignation est en cours -- le temps mis par un opérateur pour être opérationnel sur cette désignation est réduit et l'efficacité globale du processus de désignation est augmentée.
+					De plus, l'utilisation de ces outils haptiques se substitue en partie aux échanges verbaux ce qui rend les canaux de communication verbaux et haptiques complémentaires.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-EvaluationQualitative]{Évaluation qualitative}
