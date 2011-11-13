@@ -36,6 +36,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.active.try1
+pop.a = dat[ dat$group.number == 1, ]$mean.diff.active
+pop.b = dat[ dat$group.number == 2, ]$mean.diff.active
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try1.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.active.try2 = dat.exp2[dat.exp2$group.try == 2, ]
 shapiro = shapiro.test(dat.active.try2$mean.diff.active)
 levene = levene.test(dat.active.try2$mean.diff.active, dat.active.try2$group.number)
@@ -45,6 +54,15 @@ out.file.anova = gsub(".csv", "-anova-try2.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+dat = dat.active.try2
+pop.a = dat[ dat$group.number == 1, ]$mean.diff.active
+pop.b = dat[ dat$group.number == 2, ]$mean.diff.active
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try2.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )
 dat.active.try3 = dat.exp2[dat.exp2$group.try == 3, ]
 shapiro = shapiro.test(dat.active.try3$mean.diff.active)
@@ -70,6 +88,12 @@ out.file.anova = gsub(".csv", "-anova-monome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+out.ratio = evolution2tex(grp1, grp3)
+out.file.ratio = gsub(".csv", "-ratio-monome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )
 
 shapiro = shapiro.test(dat.active.binome$mean.diff.active)

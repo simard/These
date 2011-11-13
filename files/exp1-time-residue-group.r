@@ -54,6 +54,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-restricted.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.r6 = dat.exp1[dat.exp1$pattern.number == 6,]
 shapiro = shapiro.test(dat.r6$time.completion)
 dat.r6.levene = na.omit(data.frame(time.completion=dat.r6$time.completion, group.number=dat.r6$group.number))

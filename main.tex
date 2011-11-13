@@ -1802,7 +1802,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp1-TempsDeRealisationParResidu} présente le temps de réalisation \myvard{1} pour l'identification et l'extraction de chaque \myglos{glo-Residu} \myvari{2}.
 					L'analyse montre qu'il y a un effet significatif des \myglos*{glo-Residu} \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-anova.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de réalisation significativement plus longs que les autres \myglos*{glo-Residu}.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} obtiennent des temps de réalisation significativement plus longs de \myratio{exp1-time-residue-ratio.tex} que les autres \myglos*{glo-Residu}.
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
@@ -1816,7 +1816,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
 					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
-					Cependant, en se limitant au groupe des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, l'analyse montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}).
+					Cependant, en se limitant au groupe des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, l'analyse montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}) avec une diminution de \myratio{exp1-time-residue-group-ratio-restricted.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
@@ -1830,9 +1830,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu} présente les temps de recherche et de sélection par \myglos{glo-Residu} \myvari{2}.
 					L'analyse montre un effet significatif des \myglos*{glo-Residu} \myvari{2} sur les temps de recherche (\myanova{exp1-timeaudio-residue-searchselection-anova-search.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} obtiennent des temps de recherche significativement plus longs que les autres \myglos*{glo-Residu}.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} obtiennent des temps de recherche significativement plus longs de \myratio{exp1-timeaudio-residue-searchselection-ratio-search.tex} que les autres \myglos*{glo-Residu}.
 					L'analyse montre également un effet significatif des \myglos*{glo-Residu} \myvari{2} sur les temps de sélection (\myanova{exp1-timeaudio-residue-searchselection-anova-selection.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} obtient un temps de sélection significativement plus long que les autres \myglos*{glo-Residu}.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de déterminer que le \myglos{glo-Residu} \myresidue{6} obtient un temps de sélection significativement plus long de \myratio{exp1-timeaudio-residue-searchselection-ratio-selection.tex} que les autres \myglos*{glo-Residu}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-AmeliorationDesPerformancesEnBinome-AnalyseEtDiscussion]{Analyse et discussion}
 					Les cinq \myglos*{glo-Residu} \myresidue{1}, \myresidue{2}, \myresidue{3}, \myresidue{4} et \myresidue{5} sont au sein de la molécule \myTRPCAGE qui en compte un nombre total relativement limité (\mynum{20}~\myglos*{glo-Residu}).
@@ -2541,7 +2541,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-group-anova.tex}).
+					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-group-anova.tex}) avec une diminution de \myratio{exp2-time-group-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=1.25cm}
@@ -2555,10 +2555,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets} présente la distance passive \myvard{3} et active \myvard{4} entre les \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} (\myanova{exp2-diff-activepassive-group-anova-passive.tex}).
-					Cependant, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}).
+					Cependant, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}) avec une augmentation de \myratio{exp2-diff-activepassive-group-ratio-active.tex}.
 
 					On peut également comparer les distances passive et active en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}).
+					L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}) avec une différence de \myratio{exp2-diff-activepassive-group-ratio-monome.tex}.
 					Par contre, l'analyse ne montre pas d'effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Binome} (\myanova{exp2-diff-activepassive-group-anova-binome.tex}).
 
 					\begin{myfigure}
@@ -2572,9 +2572,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets} présente le nombre de sélections par main dominante/dominée \myvard{2} en fonction du nombre de sujets \myvari{1}.
-					Les \myglos*{glo-Binome} n'utilisant que leur main dominante, il n'y a pas de résultat pour la main dominée.
+					Les \myglos*{glo-Binome} n'utilisant que leur main dominante, il n'y a pas de résultat pour la main dominée; le résultat utilisé est donc la somme des sélections par main dominante des membres du \myglos{glo-Binome}.
 					On constate un déséquilibre du nombre de sélections entre la main dominante et la main dominée pour les \myglos*{glo-Monome}.
-					L'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre total de sélections (somme des mains dominante et dominée pour les \myglos*{glo-Monome}) \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}).
+					En comparant la somme des mains dominée et dominante des \myglos*{glo-Monome} avec le nombre de sélections total des \myglos*{glo-Binome}, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre total de sélections \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}) avec une augmentation de \myratio{exp2-numsel-group-dominant-ratio-cumulative.tex}.
 
 					Le nombre de sélections pour la main dominante comptabilise les sélections des deux sujets du \myglos{glo-Binome} contrairement aux \myglos*{glo-Monome} : ceci explique le nombre plus élevé de sélections en \myglos*{glo-Binome}.
 					Cependant, si on compare le nombre moyen de sélections par sujet (pour la main dominante), l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections de la main dominante \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
@@ -2590,9 +2590,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{5} des \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}).
-					L'analyse montre un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}).
-					L'analyse montre également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}).
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}) avec une augmentation de \myratio{exp2-speed-group-dominant-ratio.tex}.
+					L'analyse montre un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}) avec une différence de \myratio{exp2-speed-group-dominant-ratio-monome.tex}.
+					L'analyse montre également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}) avec une augmentation de \myratio{exp2-speed-group-dominant-ratio-dominant.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDesPerformancesEnBinome-AnalyseEtDiscussion]{Analyse et discussion}
 					Le premier résultat sur la \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} nous permet de confirmer notre hypothèse \myhypothesis{1} : les \myglos*{glo-Binome} sont plus performants que les \myglos*{glo-Monome}.
@@ -2661,7 +2661,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 					En regroupant les scénarios par classe de complexité, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-time-task-group-anova-trpzipper.tex}).
-					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}).
+					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-time-task-group-anova-trpcage.tex}) avec une diminution de \myratio{exp2-time-task-group-ratio-trpcage.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=0.04cm}
@@ -2674,7 +2674,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-numsel-task-group-anova-trpzipper.tex}).
+					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-numsel-task-group-anova-trpzipper.tex}) avec une augmentation de \myratio{exp2-numsel-task-group-ratio-trpzipper.tex}.
 					Cependant, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-numsel-task-group-anova-trpcage.tex}).
 
 					\begin{myfigure}
@@ -2699,8 +2699,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets} présente les distances passives \myvard{3} et actives \myvard{4} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) mais pas d'effet significatif sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
-					Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}).
+					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-passive-task-group-anova-trpzipper.tex}) avec une diminution de \myratio{exp2-passive-task-group-ratio-trpzipper.tex} mais pas d'effet significatif sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-passive-task-group-anova-trpcage.tex}).
+					Cependant, on constate un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-active-task-group-anova-trpzipper.tex}) avec une augmentation de \myratio{exp2-active-task-group-ratio-trpzipper.tex} ainsi que sur les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-active-task-group-anova-trpcage.tex}) avec une augmentation de \myratio{exp2-active-task-group-ratio-trpcage.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
@@ -2713,8 +2713,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-speed-task-group-anova-trpzipper.tex}).
-					De même, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-speed-task-group-anova-trpcage.tex}).
+					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-speed-task-group-anova-trpzipper.tex}) avec une augmentation de \myratio{exp2-speed-task-group-ratio-trpzipper.tex}.
+					De même, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-speed-task-group-anova-trpcage.tex}) avec une augmentation de \myratio{exp2-speed-task-group-ratio-trpcage.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache-AnalyseEtDiscussion]{Analyse et discussion}
 					L'analyse du temps de réalisation des différentes tâches ainsi que la \myref{tab-exp2-ParametresDeComplexiteDesTaches} nous permet de classifier ces tâches par niveau de complexité : les scénarios \myscenario{1a} et \myscenario{2a} sont simples alors que les scénarios \myscenario{1b} et \myscenario{2b} sont complexes.
@@ -2759,7 +2759,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssai} présente le temps de réalisation \myvard{1} des différents essais \myvari{3}.
 					L'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-try-anova.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le deuxième essai ainsi qu'entre le deuxième essai et le troisième.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le deuxième essai (diminution de \myratio{exp2-time-try-ratio-12.tex}) ainsi qu'entre le deuxième essai et le troisième (diminution de \myratio{exp2-time-try-ratio-23.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.0125cm}
@@ -2775,7 +2775,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le deuxième essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
 
 					De plus, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} pour les \myglos*{glo-Monome} (\myanova{exp2-time-try-group-anova-monome.tex}) et pour les \myglos*{glo-Binome} (\myanova{exp2-time-try-group-anova-binome.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative seulement à partir de dernier essai pour les \myglos*{glo-Monome} alors que l'évolution est significative dès le deuxième essai pour les \myglos*{glo-Binome}.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative seulement à partir de dernier essai pour les \myglos*{glo-Monome} avec une diminution de \myratio{exp2-time-try-group-ratio-monome.tex} alors que l'évolution est significative dès le deuxième essai pour les \myglos*{glo-Binome} avec une diminution de \myratio{exp2-time-try-group-ratio-binome.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.04cm}
@@ -2789,11 +2789,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le premier essai (\myanova{exp2-numsel-try-group-anova-try1.tex}) ou le troisième essai (\myanova{exp2-numsel-try-group-anova-try3.tex}).
-					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le deuxième essai (\myanova{exp2-numsel-try-group-anova-try2.tex}).
+					Cependant, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour le deuxième essai (\myanova{exp2-numsel-try-group-anova-try2.tex}) supérieur de \myratio{exp2-numsel-try-group-ratio-try2.tex}.
 
 					De plus, l'analyse montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-try-group-anova-monome.tex}).
 					Cependant, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le nombre de sélections \myvard{2} pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-try-group-anova-binome.tex}).
-					Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une diminution significative du nombre de sélections pour les \myglos*{glo-Binome} entre le premier et le dernier essai.
+					Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une diminution significative du nombre de sélections pour les \myglos*{glo-Binome} entre le premier et le dernier essai avec une diminution de \myratio{exp2-numsel-try-group-ratio-binome.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
@@ -2807,11 +2807,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets} présente la distance active \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					La distance passive n'a pas été prise en considération étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) et pour le deuxième essai (\myanova{exp2-active-try-group-anova-try2.tex}) mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) supérieur de \myratio{exp2-active-try-group-ratio-try1.tex} et pour le deuxième essai (\myanova{exp2-active-try-group-anova-try2.tex}) supérieur de \myratio{exp2-active-try-group-ratio-try2.tex} mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
 
 					De plus, l'analyse montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Binome} (\myanova{exp2-active-try-group-anova-binome.tex}).
 					Cependant, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Monome} (\myanova{exp2-active-try-group-anova-monome.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative entre le premier essai et le troisième essai.
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une augmentation significative de \myratio{exp2-active-try-group-ratio-monome.tex} entre le premier essai et le troisième essai.
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
@@ -2824,10 +2824,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-VitesseMoyennePourChaqueEssaiEnFonctionDuNombreDeSujets} présente la vitesse moyenne \myvard{5} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour le premier essai (\myanova{exp2-speed-try-group-anova-try1.tex}), le second essai (\myanova{exp2-speed-try-group-anova-try2.tex}) et le troisième essai (\myanova{exp2-speed-try-group-anova-try3.tex}).
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour le premier essai (\myanova{exp2-speed-try-group-anova-try1.tex}) supérieur de \myratio{exp2-speed-try-group-ratio-try1.tex}, le second essai (\myanova{exp2-speed-try-group-anova-try2.tex}) supérieur de \myratio{exp2-speed-try-group-ratio-try2.tex} et le troisième essai (\myanova{exp2-speed-try-group-anova-try3.tex}) supérieur de \myratio{exp2-speed-try-group-ratio-try3.tex}.
 
 					De plus, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur la vitesse moyenne \myvard{5} pour les \myglos*{glo-Monome} (\myanova{exp2-speed-try-group-anova-monome.tex}) et les \myglos*{glo-Binome} (\myanova{exp2-speed-try-group-anova-binome.tex}).
-					Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre dans chaque cas (\myglos{glo-Monome} et \myglos{glo-Binome}) une augmentation significative après le premier essai.
+					Le test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre dans chaque cas (\myglos{glo-Monome} et \myglos{glo-Binome}) une augmentation significative après le premier essai (augmentation de \myratio{exp2-speed-try-group-ratio-monome.tex} pour les \myglos*{glo-Monome} et de \myratio{exp2-speed-try-group-ratio-binome.tex} pour les \myglos*{glo-Binome}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDeLApprentissagePourLesBinomes-AnalyseEtDiscussion]{Analyse et discussion}
 					L'observation des temps de réalisation de la tâche \myref*{fig-exp2-TempsDeRealisationDeChaqueEssai} nous permet de caractériser un apprentissage réel sur l'ensemble des trois réalisations de la tâche.
@@ -2889,7 +2889,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La configuration \myglos*{glo-Monomanuel} en \myglos{glo-Monome} (qui n'a pas été testée) a été relativement peu choisie (\mysummary{exp2-evaluation-monome-monomanual.tex}).
 				Les sujets évalués en \myglos{glo-Monome} sont mitigés sur l'intérêt d'une configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome} (\mysummary{exp2-evaluation-binome-monomanual.tex}).
 				De la même façon, les sujets évalués en \myglos{glo-Binome} sont mitigés sur l'intérêt d'une configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome} (\mysummary{exp2-evaluation-monome-bimanual.tex}).
-				Quoiqu'il en soit, ils ont été seulement \mysummary{exp2-evaluation-preference-monome-bimanual.tex} à préférer la configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome} alors qu'ils ont été \mysummary{exp2-evaluation-preference-binome-monomanual.tex} à opter pour la configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
+				Quoiqu'il en soit, ils ont été seulement \myratio{exp2-evaluation-preference-monome-bimanual.tex} à préférer la configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome} alors qu'ils ont été \myratio{exp2-evaluation-preference-binome-monomanual.tex} à opter pour la configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
 				Une majorité des sujets semble préférer la configuration collaborative.
 			\end{mysubsection}
 		\end{mysection}
@@ -3156,7 +3156,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} de chaque scénario \myvari{2}.
-					L'analyse montre un effet significatif des scénarios \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp3-time-molecule-anova.tex}).
+					L'analyse montre un effet significatif des scénarios \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp3-time-molecule-anova.tex}) supérieur de \myratio{exp3-time-molecule-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
@@ -3197,8 +3197,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} présente la vitesse moyenne \myvard{3} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myPrion (\myanova{exp3-speed-molecule-group-anova-prion.tex}).
-					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myUbiquitin (\myanova{exp3-speed-molecule-group-anova-ubiquitin.tex}).
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myPrion (\myanova{exp3-speed-molecule-group-anova-prion.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-prion.tex}.
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myUbiquitin (\myanova{exp3-speed-molecule-group-anova-ubiquitin.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-ubiquitin.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.449438202\textwidth,yunit=0.1cm}
@@ -3211,8 +3211,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} présente le nombre d'échanges verbaux \myvard{5} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myPrion (\myanova{exp3-talk-molecule-group-anova-prion.tex}).
-					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myUbiquitin (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}).
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myPrion (\myanova{exp3-talk-molecule-group-anova-prion.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-prion.tex}.
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myUbiquitin (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-ubiquitin.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					Les deux tâches proposées sont de natures très différentes.
@@ -3263,7 +3263,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-TempsDeRealisationAvecOuSansBrainstorming} présente le temps de réalisation \myvard{1} en fonction des groupes avec ou sans \mybrainstorming \myvari{3}.
-					L'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp3-time-brainstorm-anova.tex}).
+					L'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le temps de réalisation \myvard{1} (\myanova{exp3-time-brainstorm-anova.tex}) inférieur de \myratio{exp3-time-brainstorm-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
@@ -3277,7 +3277,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} présente le temps de réalisation \myvard{1} pour les groupes avec ou sans \mybrainstorming \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du \mybrainstorming \myvari{3} sur le temps de réalisation \myvard{1} des \myglos*{glo-Binome} (\myanova{exp3-time-brainstorm-group-anova-binome.tex}).
-					Cependant, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le temps de réalisation \myvard{1} des \myglos*{glo-Quadrinome} (\myanova{exp3-time-brainstorm-group-anova-quadrinome.tex}).
+					Cependant, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le temps de réalisation \myvard{1} des \myglos*{glo-Quadrinome} (\myanova{exp3-time-brainstorm-group-anova-quadrinome.tex}) inférieur de \myratio{exp3-time-brainstorm-group-ratio-quadrinome.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=10cm}
@@ -3291,7 +3291,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} présente la fréquence de sélection \myvard{2} pour les groupes avec ou sans \mybrainstorming \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du \mybrainstorming \myvari{3} sur la fréquence de sélection \myvard{2} des \myglos*{glo-Binome} (\myanova{exp3-freqsel-brainstorm-group-anova-binome.tex}).
-					Cependant, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur la fréquence de sélection \myvard{2} des \myglos*{glo-Quadrinome} (\myanova{exp3-freqsel-brainstorm-group-anova-quadrinome.tex}).
+					Cependant, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur la fréquence de sélection \myvard{2} des \myglos*{glo-Quadrinome} (\myanova{exp3-freqsel-brainstorm-group-anova-quadrinome.tex}) inférieur de \myratio{exp3-freqsel-brainstorm-group-ratio-quadrinome.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=3cm}
@@ -3318,8 +3318,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-NombreDOrdresVerbauxSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} présente le nombre d'ordres verbaux \myvard{5} pour les groupes avec ou sans \mybrainstorming \myvari{3} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le nombre d'ordres verbaux \myvard{5} des \myglos*{glo-Binome} (\myanova{exp3-communication-brainstorm-group-anova-binome.tex}).
-					De la même façon, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le nombre d'ordres verbaux \myvard{5} des \myglos*{glo-Quadrinome} (\myanova{exp3-communication-brainstorm-group-anova-quadrinome.tex}).
+					L'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le nombre d'ordres verbaux \myvard{5} des \myglos*{glo-Binome} (\myanova{exp3-communication-brainstorm-group-anova-binome.tex}) inférieur de \myratio{exp3-communication-brainstorm-group-ratio-binome.tex}.
+					De la même façon, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur le nombre d'ordres verbaux \myvard{5} des \myglos*{glo-Quadrinome} (\myanova{exp3-communication-brainstorm-group-anova-quadrinome.tex}) inférieur de \myratio{exp3-communication-brainstorm-group-ratio-quadrinome.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-UtiliteDuBrainstormingPourLaCollaboration-AnalyseEtDiscussion]{Analyse et discussion}
 					La \myref{fig-exp3-NombreDOrdresVerbauxSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} nous permet de constater une baisse significative du nombre d'échanges verbaux pour les sujets ayant eu une période de \mybrainstorming.
@@ -3844,7 +3844,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario} présente le temps du score \myglos{acr-RMSD} minimum atteint \myvard{2} avec et sans haptique \myvari{1} pour chaque scénario.
 					L'analyse montre qu'il n'y a pas d'effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour la molécule \myUbiquitin (\myanova{exp4-rmsd-time-molecule-haptic-ubiquitin-anova.tex}).
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour le complexe de molécules \myNusENusG (\myanova{exp4-rmsd-time-molecule-haptic-nuse-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps du score \myacro{acr-RMSD} minimum atteint \myvard{2} pour le complexe de molécules \myNusENusG (\myanova{exp4-rmsd-time-molecule-haptic-nuse-anova.tex}) inférieur de \myratio{exp4-rmsd-time-molecule-haptic-nuse-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.256410256\textwidth,yunit=30cm}
@@ -3856,7 +3856,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} présente le nombre de sélections par seconde effectuées par les opérateurs pour une déformation \myvard{3} avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-freq-button1-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le nombre de sélections \myvard{3} (\myanova{exp4-freq-button1-haptic-anova.tex}) inférieur de \myratio{exp4-freq-button1-haptic-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.175cm}
@@ -3868,7 +3868,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} présente le temps moyen d'une sélection effectuée par un opérateur pour une déformation avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps moyen d'une sélection (\myanova{exp4-meantime-button1-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur le temps moyen d'une sélection (\myanova{exp4-meantime-button1-haptic-anova.tex}) supérieur de \myratio{exp4-meantime-button1-haptic-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.1cm}
@@ -3880,7 +3880,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} présente le temps moyen mis par un opérateur pour atteindre une cible acceptée lors du processus de désignation avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce temps moyen (\myanova{exp4-attract-time-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce temps moyen (\myanova{exp4-attract-time-haptic-anova.tex}) inférieur de \myratio{exp4-attract-time-haptic-ratio.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
@@ -3928,7 +3928,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} présente le temps moyen mis par un opérateur pour accepter une désignation avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce temps moyen (\myanova{exp4-shake-time-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce temps moyen (\myanova{exp4-shake-time-haptic-anova.tex}) inférieur de \myratio{exp4-shake-time-haptic-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.3cm}
@@ -3940,7 +3940,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} présente le nombre de désignations acceptées au cours du processus de désignation avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-accept-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-accept-haptic-anova.tex}) supérieur de \myratio{exp4-accept-haptic-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=4cm}
@@ -3952,7 +3952,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique} présente la vitesse moyenne du coordinateur avec et sans haptique \myvari{1}.
-					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-speed-haptic-anova.tex}).
+					L'analyse montre un effet significatif de la présence d'une assistance haptique \myvari{1} sur ce nombre de sélections (\myanova{exp4-speed-haptic-anova.tex}) supérieur de \myratio{exp4-speed-haptic-ratio.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
@@ -3976,7 +3976,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique} présente le temps de parole des sujets \myvard{4} en fonction de l'ordre de passage de l'assistance haptique.
-					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-first-anova.tex}).
+					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-first-anova.tex}) avec une différence de \myratio{exp4-annotation-time-haptic-first-ratio.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
 					Durant le processus de désignation, deux solutions différentes sont proposées aux opérateurs pour les prévenir qu'une nouvelle désignation vient d'être effectuée; une première solution exclusivement visuelle; une seconde solution visuo-haptique.

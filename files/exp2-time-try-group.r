@@ -71,6 +71,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.ratio = evolution2tex(grp2, grp3)
+out.file.ratio = gsub(".csv", "-ratio-monome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 
 shapiro = shapiro.test(dat.time.binome$time.completion)
 levene = levene.test(dat.time.binome$time.completion, dat.time.binome$group.try)
@@ -85,4 +91,10 @@ out.file.anova = gsub(".csv", "-anova-binome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-binome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

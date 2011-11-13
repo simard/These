@@ -57,6 +57,15 @@ write(
 	  out.anova.active,
 	  file = out.file.anova.active
 	  )
+dat = dat.diff.active
+pop.a = dat[ dat$group.number == 1, ]$mean.diff
+pop.b = dat[ dat$group.number == 2, ]$mean.diff
+out.ratio.active = evolution2tex(pop.a, pop.b)
+out.file.ratio.active = gsub(".csv", "-ratio-active.tex", out.file.boxplot)
+write(
+	  out.ratio.active,
+	  file = out.file.ratio.active
+	  )
 dat.diff = rbind(dat.diff.passive,dat.diff.active)
 dat.diff.monome = dat.diff[dat.diff$group.number == 1, ]
 shapiro = shapiro.test(dat.diff.monome$mean.diff)
@@ -68,6 +77,15 @@ out.file.anova.monome = gsub(".csv", "-anova-monome.tex", out.file.boxplot)
 write(
 	  out.anova.monome,
 	  file = out.file.anova.monome
+	  )
+dat = dat.diff.monome
+pop.a = dat[ dat$is.active == FALSE, ]$mean.diff
+pop.b = dat[ dat$is.active == TRUE, ]$mean.diff
+out.ratio.monome = evolution2tex(pop.a, pop.b)
+out.file.ratio.monome = gsub(".csv", "-ratio-monome.tex", out.file.boxplot)
+write(
+	  out.ratio.monome,
+	  file = out.file.ratio.monome
 	  )
 dat.diff.binome = dat.diff[dat.diff$group.number == 2, ]
 shapiro = shapiro.test(dat.diff.binome$mean.diff)

@@ -22,3 +22,11 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+pop.a = dat[ dat$haptic == "False", ]$freq.pushed.button.1
+pop.b = dat[ dat$haptic == "True", ]$freq.pushed.button.1
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )

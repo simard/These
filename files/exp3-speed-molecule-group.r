@@ -40,6 +40,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-prion.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 
 dat.ubiquitin = dat.exp3[ dat.exp3$molecule == "ubiquitin", ]
 shapiro = shapiro.test(dat.ubiquitin$mean.speed)
@@ -54,4 +60,10 @@ out.file.anova = gsub(".csv", "-anova-ubiquitin.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-ubiquitin.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

@@ -23,3 +23,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.exp3
+pop.a = dat[ dat$brainstorm == "False", ]$time.completion
+pop.b = dat[ dat$brainstorm == "True", ]$time.completion
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )

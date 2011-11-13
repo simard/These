@@ -63,6 +63,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.selection.trpzipper
+pop.a = dat[ dat$group.number == 1, ]$total.selection.number
+pop.b = dat[ dat$group.number == 2, ]$total.selection.number
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-trpzipper.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.selection.trpcage = dat.exp2.trpcage
 shapiro = shapiro.test(dat.selection.trpcage$total.selection.number)
 levene = levene.test(dat.selection.trpcage$total.selection.number, dat.selection.trpcage$group.number)

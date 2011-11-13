@@ -68,6 +68,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.exp2.cumulative
+pop.a = dat[ dat$group.number == 1, ]$total.selection.number
+pop.b = dat[ dat$group.number == 2, ]$total.selection.number
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-cumulative.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.exp2.monome.dominant = data.frame(
 									  total.selection.number=dat.exp2.monome$total.leader.selection.number,
 									  group.number=dat.exp2.monome$group.number

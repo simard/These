@@ -59,6 +59,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.speed.total
+pop.a = dat[ dat$group.number == 1, ]$mean.speed
+pop.b = dat[ dat$group.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.speed.dominant.total = rbind(dat.exp2.monome.dominant, dat.exp2.binome.dominant)
 shapiro = shapiro.test(dat.speed.dominant.total$mean.speed)
 levene = levene.test(dat.speed.dominant.total$mean.speed, dat.speed.dominant.total$group.number)
@@ -70,6 +79,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.speed.dominant.total
+pop.a = dat[ dat$group.number == 1, ]$mean.speed
+pop.b = dat[ dat$group.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-dominant.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.speed.monome = dat.speed[dat.speed$group.number == 1, ]
 shapiro = shapiro.test(dat.speed.monome$mean.speed)
 levene = levene.test(dat.speed.monome$mean.speed, dat.speed.monome$tool.number)
@@ -79,4 +97,13 @@ out.file.anova = gsub(".csv", "-anova-monome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+dat = dat.speed.monome
+pop.a = dat[ dat$tool.number == 1, ]$mean.speed
+pop.b = dat[ dat$tool.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-monome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

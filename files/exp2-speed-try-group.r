@@ -36,6 +36,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.speed.try1
+pop.a = dat[ dat$group.number == 1, ]$mean.speed
+pop.b = dat[ dat$group.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try1.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.speed.try2 = dat.exp2[dat.exp2$group.try == 2, ]
 shapiro = shapiro.test(dat.speed.try2$mean.speed)
 levene = levene.test(dat.speed.try2$mean.speed, dat.speed.try2$group.number)
@@ -46,6 +55,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.speed.try2
+pop.a = dat[ dat$group.number == 1, ]$mean.speed
+pop.b = dat[ dat$group.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try2.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.speed.try3 = dat.exp2[dat.exp2$group.try == 3, ]
 shapiro = shapiro.test(dat.speed.try3$mean.speed)
 levene = levene.test(dat.speed.try3$mean.speed, dat.speed.try3$group.number)
@@ -55,6 +73,15 @@ out.file.anova = gsub(".csv", "-anova-try3.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+dat = dat.speed.try3
+pop.a = dat[ dat$group.number == 1, ]$mean.speed
+pop.b = dat[ dat$group.number == 2, ]$mean.speed
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try3.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )
 
 shapiro = shapiro.test(dat.speed.monome$mean.speed)
@@ -71,6 +98,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-monome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 
 shapiro = shapiro.test(dat.speed.binome$mean.speed)
 levene = levene.test(dat.speed.binome$mean.speed, dat.speed.binome$group.try)
@@ -85,4 +118,10 @@ out.file.anova = gsub(".csv", "-anova-binome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-binome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

@@ -48,3 +48,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.quadrinome
+pop.a = dat[ dat$brainstorm == "False", ]$mean.selection.frequency
+pop.b = dat[ dat$brainstorm == "True", ]$mean.selection.frequency
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-quadrinome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )

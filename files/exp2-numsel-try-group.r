@@ -46,6 +46,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.selection.try2
+pop.a = dat[ dat$group.number == 1, ]$total.selection.number
+pop.b = dat[ dat$group.number == 2, ]$total.selection.number
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-try2.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.selection.try3 = dat.exp2[dat.exp2$group.try == 3, ]
 shapiro = shapiro.test(dat.selection.try3$total.selection.number)
 levene = levene.test(dat.selection.try3$total.selection.number, dat.selection.try3$group.number)
@@ -84,4 +93,10 @@ out.file.anova = gsub(".csv", "-anova-binome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+out.ratio = evolution2tex(grp1, grp3)
+out.file.ratio = gsub(".csv", "-ratio-binome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

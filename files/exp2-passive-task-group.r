@@ -63,6 +63,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.passive.trpzipper
+pop.a = dat[ dat$group.number == 1, ]$mean.diff.passive
+pop.b = dat[ dat$group.number == 2, ]$mean.diff.passive
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-trpzipper.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 dat.passive.trpcage = dat.exp2.trpcage
 shapiro = shapiro.test(dat.passive.trpcage$mean.diff.passive)
 levene = levene.test(dat.passive.trpcage$mean.diff.passive, dat.passive.trpcage$group.number)

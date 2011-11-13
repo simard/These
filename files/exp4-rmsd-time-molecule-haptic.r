@@ -55,3 +55,12 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.n
+pop.a = dat[ dat$haptic == "False", ]$min.rmsd.time
+pop.b = dat[ dat$haptic == "True", ]$min.rmsd.time
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-nuse-ratio.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )

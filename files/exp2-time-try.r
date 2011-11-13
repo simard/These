@@ -28,3 +28,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+out.ratio = evolution2tex(grp1, grp2)
+out.file.ratio = gsub(".csv", "-ratio-12.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
+out.ratio = evolution2tex(grp2, grp3)
+out.file.ratio = gsub(".csv", "-ratio-23.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )

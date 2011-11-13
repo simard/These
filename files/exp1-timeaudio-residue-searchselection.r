@@ -48,6 +48,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.exp1
+pop.a = dat[ dat$pattern.number == 1 | dat$pattern.number == 2 | dat$pattern.number == 3 | dat$pattern.number == 4 | dat$pattern.number == 5 | dat$pattern.number == 6 | dat$pattern.number == 7 | dat$pattern.number == 8, ]$time.search.audio
+pop.b = dat[ dat$pattern.number == 9 | dat$pattern.number == 10, ]$time.search.audio
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-search.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 shapiro = shapiro.test(dat.exp1$time.selection.audio)
 dat.exp1.levene = na.omit(data.frame(time.selection.audio=dat.exp1$time.selection.audio, pattern.number=dat.exp1$pattern.number))
 levene = levene.test(dat.exp1.levene$time.selection.audio, dat.exp1.levene$pattern.number)
@@ -69,4 +78,13 @@ out.file.anova = gsub(".csv", "-anova-selection.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+dat = dat.exp1
+pop.a = dat[ dat$pattern.number == 1 | dat$pattern.number == 2 | dat$pattern.number == 3 | dat$pattern.number == 4 | dat$pattern.number == 5 | dat$pattern.number == 7 | dat$pattern.number == 8 | dat$pattern.number == 9 | dat$pattern.number == 10, ]$time.selection.audio
+pop.b = dat[ dat$pattern.number == 6, ]$time.selection.audio
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-selection.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

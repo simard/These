@@ -37,6 +37,15 @@ write(
 	  out.anova,
 	  file = out.file.anova
 	  )
+dat = dat.binome
+pop.a = dat[ dat$brainstorm == "False", ]$verbal.task
+pop.b = dat[ dat$brainstorm == "True", ]$verbal.task
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-binome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
+	  )
 
 dat.quadrinome = dat.exp3[ dat.exp3$group.number == 4, ]
 shapiro = shapiro.test(dat.quadrinome$verbal.task)
@@ -48,4 +57,13 @@ out.file.anova = gsub(".csv", "-anova-quadrinome.tex", out.file.boxplot)
 write(
 	  out.anova,
 	  file = out.file.anova
+	  )
+dat = dat.quadrinome
+pop.a = dat[ dat$brainstorm == "False", ]$verbal.task
+pop.b = dat[ dat$brainstorm == "True", ]$verbal.task
+out.ratio = evolution2tex(pop.a, pop.b)
+out.file.ratio = gsub(".csv", "-ratio-quadrinome.tex", out.file.boxplot)
+write(
+	  out.ratio,
+	  file = out.file.ratio
 	  )

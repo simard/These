@@ -143,6 +143,12 @@ ratio2tex <- function(ratio) {
 	string
 }
 
+evolution2tex <- function(pop.a, pop.b) {
+	mean.a = mean(pop.a, na.rm = TRUE)
+	mean.b = mean(pop.b, na.rm = TRUE)
+	ratio2tex( (mean.b - mean.a)/mean.a )
+}
+
 dat.exp1 = read.table("exp1.csv", h=T)
 # David was not counter-balanced in binome
 dat.exp1 = dat.exp1[dat.exp1$id != "David", ]
