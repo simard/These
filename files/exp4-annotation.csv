@@ -3,6 +3,9 @@
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "ubiquitin" "True" 80 228.92009 2.8615012
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "ubiquitin" "True" 45 98.79994 2.1955543
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "ubiquitin" "True" 41 61.119923 1.4907298
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Gaëtan" "PARSEIHIAN" "coordinator" "ubiquitin" "True" 75 229.48004 3.0597339
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Simon" "CONAN" "operator" "ubiquitin" "True" 51 60.840065 1.1929425
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Cédric" "ANDRÉ" "operator" "ubiquitin" "True" 49 87.959915 1.7951003
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "ubiquitin" "False" 4 8.120023 2.0300057
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "ubiquitin" "False" 21 35.28003 1.6800014
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "ubiquitin" "False" 7 14.519989 2.074284
@@ -31,6 +34,9 @@
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "nuse" "True" 68 165.16 2.4288235
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "nuse" "True" 50 125.399895 2.507998
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "nuse" "True" 34 52.399994 1.5411763
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Gaëtan" "PARSEIHIAN" "coordinator" "nuse" "True" 62 143.63998 2.316774
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Simon" "CONAN" "operator" "nuse" "True" 34 44.879982 1.3199995
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Cédric" "ANDRÉ" "operator" "nuse" "True" 49 106.27988 2.168977
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "nuse" "False" 10 27.039991 2.703999
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "nuse" "False" 16 23.519958 1.4699974
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "nuse" "False" 17 32.04005 1.8847089
@@ -59,6 +65,9 @@
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "ubiquitin" "False" 70 236.44006 3.377715
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "ubiquitin" "False" 27 57.47993 2.1288862
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "ubiquitin" "False" 43 65.91998 1.5330229
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Gaëtan" "PARSEIHIAN" "coordinator" "ubiquitin" "False" 83 235.2 2.833735
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Simon" "CONAN" "operator" "ubiquitin" "False" 30 46.63997 1.5546657
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Cédric" "ANDRÉ" "operator" "ubiquitin" "False" 32 59.079987 1.8462496
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "ubiquitin" "True" 3 4.7199926 1.5733309
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "ubiquitin" "True" 14 22.68003 1.6200022
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "ubiquitin" "True" 3 5.7599926 1.9199976
@@ -86,6 +95,9 @@
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Florimond" "GUÉNIAT" "coordinator" "nuse" "False" 62 224.5199 3.6212888
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Luc" "PASTUR" "operator" "nuse" "False" 27 75.60002 2.800001
 "Florimond_GUENIAT.Luc_PASTUR.Wietze_HERREMAN" "Wietze" "HERREMAN" "operator" "nuse" "False" 33 54.680023 1.6569704
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Gaëtan" "PARSEIHIAN" "coordinator" "nuse" "False" 74 198.23999 2.6789188
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Simon" "CONAN" "operator" "nuse" "False" 30 54.920044 1.8306681
+"Gaetan_PARSEIHIAN.Simon_CONAN.Cedric_ANDRE" "Cédric" "ANDRÉ" "operator" "nuse" "False" 51 97.35997 1.909019
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jean" "SIMARD" "experimenter" "nuse" "True" 1 1.0 1.0
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Jonathan" "CHABOISSIER" "coordinator" "nuse" "True" 3 4.4399986 1.4799995
 "Jonathan_CHABOISSIER.Yoren_GAFFARY.Pierre_ALBERT" "Yoren" "GAFFARY" "operator" "nuse" "True" 8 9.240005 1.1550006
