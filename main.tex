@@ -235,7 +235,7 @@
 					\mycaption[tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire]{Liste non-exhaustive de solutions logicielles de \myglosnl{glo-DockingMoleculaire}}
 				\end{mytable}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-LeDockingMoleculaireEnEnvironnementVirtuel]{Le \myglosnl{glo-DockingMoleculaire} en environnement virtuel}
+			\begin{mysubsection}[sse-sota-DockingMoleculaireEnEnvironnementVirtuel]{\myGlosnl{glo-DockingMoleculaire} en environnement virtuel}
 				Malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} existantes et se rapprocher toujours plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
 				Devant cette complexité, une approche alternative basée sur l'introduction de l'humain et de ses capacités de décisions au sein du processus de recherche d'une solution par un ordinateur.
 				En effet, bien que moins rapide pour traiter rapidement un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes et d'en rejeter d'autres qui sont aberrantes.
@@ -327,10 +327,54 @@
 					\mycaption[fig-sota-DockingMoleculaireRigideAvecLeVirtuoseDaunay2009]{\myGlosnl{glo-DockingMoleculaire} rigide avec le \myVirtuose \mycite{Daunay-2009}}
 				\end{myfigure}
 			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-PlateformesCollaborativesPourLaBiologieMoleculaire]{Plateformes collaboratives pour la biologie moléculaire}
+				Des applications collaboratives ont commencé à être développées pour répondre au besoin de travailler à plusieurs.
+				L'une des premières application a été proposée par \mycite[author]{Casher-1995} sous le nom de \myEyeChem.
+				Cette application constituée d'une nœud serveur et de nœuds clients sur un réseau interne, permet aux utilisateurs d'éditer et de manipuler une molécule de manière synchrone.
+
+				Sur le même principe, \mycite[author]{Bourne-1998} développent \myMICE (\textit{Molecular Interactive Collaborative Environment}), permettant de visualiser des molécules en collaboration distante.
+				Cette application se distingue par l'utilisation d'\myInternet comme réseau ce qui permet une plus grande souplesse dans le déploiement.
+				\mycite[author]{Tate-2001} étendent les possibilités de \myMICE en permettant l'édition, la manipulation et l'interaction d'une même molécule par plusieurs utilisateurs.
+				Un projet similaire appelé \myChimera, développé par \mycite[author]{Pettersen-2004}, est encore utilisé de nos jours contrairement à \myMICE qui n'est actuellement plus maintenu.
+
+				Puis, basé sur la plateforme de \mycite[author]{Kim-2004b} permettant de faire de la modélisation de molécules par gestes, \mycite[author]{Park-2006} proposent un système distribué de collaboration distante.
+				C'est l'une des premières applications qui aborde le problème du \myglos{glo-DockingMoleculaire}.
+				En effet, les gestes sont effectuées avec des \textit{haptic eggs}, deux petites interfaces tangibles placées dans chaque main de l'utilisateur, chaque \textit{haptic egg} étant l'abstraction d'une molécule.
+				Cependant, le système de communication est déporté dans le temps puisque les utilisateurs ont la possibilité de commenter et de donner des opinions sur la manière de réaliser le \myglos{glo-DockingMoleculaire} à l'aide d'un système de messagerie instantanée.
+				Les décisions sont alors transmises à l'utilisateur qui s'occupe des manipulations en environnement virtuel.
+				Plus récemment, le projet \myeMinerals \mycite{Dove-2005}, illustré sur la \myref{fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005}, fournit une solution plus aboutie pour la collaboration entre biologistes (messagerie instantanée, vidéo-conférence, serveur centralisé, \myetc) mais il s'agit surtout de collaboration distante et asynchrone.
+
+				\begin{myfigure}
+					\myimage{sota-Dove-2005}
+					\mycaption[fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005]{Plateforme de collaboration inter-universités proposée par \mycite{Dove-2005}}
+				\end{myfigure}
+
+				Parmi les applications collaboratives de biologie moléculaire, \mycite[author]{Chastine-2005} sont les premiers à s'intéresser aux problèmes de communication entre les sujets \myref*{sss-sota-LInterReferencement}.
+				À travers l'application \myAMMPVis, il propose des outils pour désigner ou indiquer des zones de l'environnement virtuel.
+				Un point important est la représentation de chaque sujet par une représentation des mains au sein de l'environnement virtuel afin d'améliorer la communication \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
+				Cette plateforme a ensuite été réutilisée sous la forme de \myAMMPEXTN afin d'introduire des procédures de contrôle d'accès aux différentes strates d'informations (paramètres de visualisation, modélisation, modification des données) afin d'éviter les conflits entre les utilisateurs \mycite{Ma-2007,Ma-2007a}.
+
+				\begin{myfigure}
+					\myimage{sota-Chastine-2005}
+					\mycaption[fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005]{Manipulation collaborative de molécule avec représentation des mains des participants \mycite{Chastine-2005}}
+				\end{myfigure}
+
+				Cependant, les applications présentées ne concerne que des application de collaboration distante.
+				La manipulation colocalisée permet de créer un environnement de travail social qui permet une meilleure communication.
+				L'application \myPaulingWorld \mycite{Su-2000,Su-2001} propose une des premières applications de collaboration colocalisée pour la visualisation et l'interaction.
+				La visualisation s'effectue sur un \myWorkBench ce qui permet aux utilisateurs d'avoir un niveau d'interaction similaire dans l'application.
+				Pour améliorer l'expérience d'immersion, \mycite[author]{Kriz-2003} proposent aux utilisateurs une visualisation dans un \myCAVE à l'aide de l'application \myDIVERSE.
+
+				Plusieurs applications ont été développées afin de créer un espace de collaboration pour la modélisation moléculaire et, dans le cas de \mycite[author]{Park-2006}, du \myglos{glo-DockingMoleculaire}.
+				Cependant, la présentation de ces travaux abordent les contraintes techniques nécessaires à la mise en place de tels systèmes sans évoquer les contraintes humaines de la collaboration.
+				Seul \mycite[author]{Chastine-2005} semblent avoir aborder les aspects de communication dans ces applications.
+			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-LeTravailCollaboratif]{Le travail collaboratif}
-			La difficulté de la tâche présentée précédemment nous amène à nous poser la question : quelle solution pouvons-nous proposer afin d'être capable d'appréhender une tâche d'une telle complexité ?
-			Nous allons découvrir dans cette section qu'un certain nombre de chercheurs en psychologie sociale se sont intéressés au travail collaboratif sous la forme d'une distribution cognitive des charges de travail afin de répondre à des problèmes complexes.
+			C'est grâce à la communauté en psychologie sociale que nous allons à présent définir et caractériser les différents aspects d'une collaboration entre humains.
+			Quels sont les avantages d'un travail en collaboration ?
+			Quels en sont les inconvénients ?
+			En quoi le travail collaboratif est-il un choix pertinent pour appréhender des tâches complexes ?
 			\begin{mysubsection}[par-sota-TravailCollaboratifOuTravailCooperatif]{Travail collaboratif ou travail coopératif ?}
 				Tout d'abord, il est nécessaire de faire la distinction entre travail coopératif et travail collaboratif.
 				\mycite[author]{Roschelle-1995} expliquent très bien cette différence.
@@ -1460,8 +1504,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Tous les dispositifs présentés dans le paragraphe précédent sont testés sur des molécules ne contenant que quelques atomes et ayant peu d'intérêt pour les biologistes.
 				Cependant, la sélection sur des tâches pertinentes pour les biologistes est un sujet encore peu exploré.
-				\mycite[author]{Levine-1997} proposent une plateforme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un amarrage de molécules.
-				Cependant, l'amarrage de molécule s'effectue ici sur des corps rigides ce qui simplifie grandement la complexité de l'exploration.
+				\mycite[author]{Levine-1997} proposent une plateforme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un \myglos{glo-DockingMoleculaire}.
+				Cependant, le \myglos{glo-DockingMoleculaire} s'effectue ici sur des corps rigides ce qui simplifie grandement la complexité de l'exploration.
 				On trouve également les travaux de \mycite[author]{Ferey-2008a} mais là encore, il s'agit de corps rigides.
 				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilisent les périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel.
 				L'interface haptique utilisée permet de ressentir les forces en action dans la simulation et ainsi améliorer le processus d'exploration et de sélection.
