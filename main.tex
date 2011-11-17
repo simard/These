@@ -349,7 +349,7 @@
 					\mycaption[fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005]{Plateforme de collaboration inter-universités proposée par \mycite{Dove-2005}}
 				\end{myfigure}
 
-				Parmi les applications collaboratives de biologie moléculaire, \mycite[author]{Chastine-2005} sont les premiers à s'intéresser aux problèmes de communication entre les sujets \myref*{sss-sota-LInterReferencement}.
+				Parmi les applications collaboratives de biologie moléculaire, \mycite[author]{Chastine-2005} sont les premiers à s'intéresser aux problèmes de communication entre les sujets \myref*{sss-sota-LaConscienceDeGroupe}.
 				À travers l'application \myAMMPVis, il propose des outils pour désigner ou indiquer des zones de l'environnement virtuel.
 				Un point important est la représentation de chaque sujet par une représentation des mains au sein de l'environnement virtuel afin d'améliorer la communication \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
 				Cette plateforme a ensuite été réutilisée sous la forme de \myAMMPEXTN afin d'introduire des procédures de contrôle d'accès aux différentes strates d'informations (paramètres de visualisation, modélisation, modification des données) afin d'éviter les conflits entre les utilisateurs \mycite{Ma-2007,Ma-2007a}.
@@ -668,7 +668,109 @@
 				\item[Les artefacts] qui sont les différents composants ou matériels avec lesquels ou sur lesquels la collaboration peut s'appuyer.
 			\end{description}
 			Dans cette section, nous allons décrire les interactions qui ont lieu entre les différents acteurs d'un système collaboratif.
-			\begin{mysubsection}[sse-sota-CommunicationEnEnvironnementVirtuel]{Communication en environnement virtuel}
+			\begin{mysubsection}[sse-sota-OutilsDeLaCommunicationDeGroupe]{Outils de la communication de groupe}
+				À travers tous ces scénarios, certains aspects de la communication sont relativement implicites et difficilement observables.
+				D'autres sont plus concrets mais apportent également leurs contraintes et leurs limites.
+				Cette section s'attarde sur trois notions particulièrement importante dans le travail collaboratif : le \mygrounding, la présence et l'inter-référencement.
+				\begin{mysubsubsection}[sss-sota-LaConscienceDeGroupe]{La conscience de groupe}
+					La conscience de groupe, également appelée \myawareness, a été définie par \mycite[author]{Dourish-1992}.
+					\begin{myquote}[english]
+						\it Awareness is an understanding of the activities of others, which provides a context for your own activity.
+					\end{myquote}
+					traduit en français par \mycite[author]{Betbeder-2004}
+					\begin{myquote}[frenchb]
+						[La conscience de groupe est la] compréhension des activités des autres, qui permet de donner un contexte à sa propre activité.
+					\end{myquote}
+
+					La conscience des autres partenaires peut concerner aussi bien l'action réalisée, la position spatiale (réelle ou virtuelle) ou encore des informations durables sur un collaborateur (âge, sexe, spécialité, culture, \myetc) \mycite{Cockburn-1999}.
+					Cette conscience est bien souvent implicite et de nombreux événements peuvent survenir autour d'un participant sans qu'il n'y prête attention.
+					Parfois, ce manque d'attention est un gain de temps pour la achèvement de la tâche (par exemple, le collaborateur éternue).
+					Cependant, savoir que le collaborateur est parti aux toilettes est plus pertinent car il n'est alors plus question de compter sur son aide pendant quelques minutes.
+
+					\mycite[author]{Cahour-2005} identifient trois avantages d'avoir une bonne conscience de groupe en étudiant la coopération entre serveurs et cuisiniers d'un café-restaurant :
+					\begin{itemize}
+						\item l'économie collective de déplacements et actions, grâce à une vision périphérique des mouvements des collègues;
+						\item le besoin de communications rapides et non intrusives en écoutant sur un mode périphérique les messages oraux adressés dans le brouhaha du café;
+						\item le besoin d'éviter des collisions dans un petit espace partager grâce à des modalités visuelles et kinesthésiques.
+					\end{itemize}
+
+					Cependant, la conscience de groupe est constituée de plusieurs aspects que les sociologues ont cherché à segmenter.
+					\mycite[author]{Gutwin-1996} propose les quatre catégories de conscience suivantes\footnote{Les catégories en anglais sont les suivantes : \textit{informal awareness}, \textit{social awareness}, \textit{group-structural awareness} et \textit{workspace awareness}.} :
+					\begin{description}
+						\item[Conscience informelle] Ce sont les informations générales sur les collègues, le type d'informations que les gens connaissent lorsqu'ils travaillent dans le même bureau (âge, origines culturelles, situation familiale, \myetc);
+						\item[Conscience sociale] Ce sont les informations que chacun établi dans n'importe quelle relation sociale comme l'état émotionnel de l'interlocuteur, son niveau d'attention ou encore son niveau d'intérêt;
+						\item[Conscience de la structure du groupe] C'est la connaissance de la hiérarchie du groupe, les rôles et responsabilités de chacun, leurs assignation sur une tâche ou leur statut;
+						\item[Conscience de l'espace de travail] C'est la conscience des actions et interactions des autre membres du groupes sur et avec l'espace de travail et les artefacts.
+					\end{description}
+
+					Parmi tous ces types de conscience périphérique, seule la conscience de l'espace de travail nécessite une mise à jour en temps-réel des informations environnantes par les membres d'un groupe, surtout dans le cadre d'une collaboration synchrone.
+					Chaque collaborateur diffuse des informations le concernant (action en cours, position du curseur, \myetc) de manière consciente ou inconsciente.
+					Pour les informations diffusées de manière inconsciente, elles seront plus ou moins visibles des autres collaborateurs qui seront attentifs ou non à ces actions.
+					Cependant, lorsqu'un utilisateur souhaite diffuser une information, il faut également qu'il puisse être sûr que l'information a été comprise correctement.
+					Cette notion d'inter-référencement, récemment mise en évidence à travers la plateforme \myAMMPVis \mycite{Chastine-2005,Chastine-2006}, a été définie par \mycite[author]{Chastine-2007} de la manière suivante
+					\begin{myquote}[english]
+						\it The ability for one participant to refer to a set of artifacts in the environment, and for that reference to be correctly interpreted by others.
+					\end{myquote}
+					qu'on traduira par
+					\begin{myquote}[frenchb]
+						La capacité pour un des participants de désigner un ensemble d'artefacts dans l'environnement et que cette désignation soit correctement comprise par les autres collaborateurs.
+					\end{myquote}
+
+					Au travers de ces travaux de thèse, il s'attarde un peu plus sur cette définition en considérant les différents acteurs de l'inter-référencement.
+					Un utilisateur initie une désignation vers un élément de l'environnement.
+					Un (ou plusieurs) autre utilisateur reçoit cette désignation.
+					Cette désignation est caractérisée par plusieurs paramètres :
+					\begin{itemize}
+						\item une technique de sélection;
+						\item un groupe d'éléments sélectionnés;
+						\item une technique de représentation;
+						\item une relation entre l'initiateur et l'élément sélectionné;
+						\item une relation entre le (ou les) receveur et l'élément sélectionné;
+						\item un contexte entre l'initiateur et le (ou les) receveur;
+						\item un moyen d'accuser réception du référencement (optionnel).
+					\end{itemize}
+
+					Afin de résoudre cette problématique, \mycite[author]{Chastine-2007a} se proposent, dans un contexte de collaboration distante, d'utiliser des techniques de réalité augmentée pour désigner les éléments inter-référencés \myref*{fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee}.
+					Dans une étude l'année suivante, \mycite[author]{Chastine-2008} montrent que les techniques qu'ils proposent pour améliorer l'inter-référencement permettent de limiter les ambiguïtés et d'améliorer les performances globales du groupe.
+
+					\begin{myfigure}
+						\myimage{sota-Chastine}
+						\mycaption[fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee]{Inter-référencement visuel proposé par \mycite[author]{Chastine-2007a} à l'aide de techniques de réalité augmentée}
+					\end{myfigure}
+
+					Afin d'effectuer des inter-référencements à un collaborateur, il est nécessaire de savoir si le collaborateur est attentif.
+					Il est nécessaire d'adapter la manière de procéder en fonction des connaissances de ce collaborateur.
+					Cet ensemble de connaissances concernant l'état actuel de chacun des collaborateurs constitue la conscience de groupe et sera définie dans la section suivante.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-LeGrounding]{Le \mygrounding}
+					Cette notion, mise en évidence par \mycite[author]{Clark-1989}, est nécessaire à la collaboration.
+					\mycite[author]{Clark-1991} expliquent ce besoin de \mygrounding par la définition suivante.
+					\begin{myquote}[english]
+						\it [A group] cannot even begin to coordinate on content without assuming a vast amount of shared information or common ground -- that is, mutual knowledge, mutual beliefs, and mutual assumptions.
+					\end{myquote}
+					qu'on pourrait traduire par
+					\begin{myquote}[frenchb]
+						Un groupe ne peut pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
+					\end{myquote}
+
+					Le \mygrounding est nécessaire à la transmission d'information.
+					En effet, toute information transmise suppose déjà de nombreuses informations implicites que l'interlocuteur doit connaître.
+					\mycite[author]{Dillenbourg-1996} étudient ce partage d'informations sur une tâche d'enquête fictive sur un meurtre.
+					Il constate que chaque membre du groupe se construit sa propre représentation de l'environnement dans lequel il se trouve et évolue en fonction des informations que chacun trouve et de sa culture existante \mycite{Baker-1999}.
+
+					Lors d'un travail de collaboration, chaque membre possède déjà sa propre base de connaissances qui peut partiellement recouvrir celle des autres membres mais également être complémentaire.
+					Cependant, durant la réalisation de la tâche, une base de connaissance commune va se créer.
+					\mycite[author]{Hertzum-2008} lie les processus de recherche d'informations et de \mygrounding.
+					En effet, la recherche d'informations mène les membres du groupes à découvrir l'environnement dans lequel ils évoluent pour étoffer leur base de connaissance commune.
+					Cependant, \mycite[author]{Hertzum-2010} met en pratique cette constatation en observant le travail d'un hôpital où plusieurs médecins sont à la recherches de symptômes pour définir un diagnostique et fournir un traitement.
+					Il s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostique.
+
+					Afin de constituer correctement une base de connaissance commune, les membres du groupe doivent communiquer.
+					En particulier, ils doivent continuellement être sûr que les éléments dont ils parlent sont bien les mêmes afin de transmettre l'information.
+					La désignation de ces éléments n'est pas toujours simple et c'est le sujet de la prochaine section.
+				\end{mysubsubsection}
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-MecanismesDeCommunication]{Mécanismes de communication}
 				\mycite[author]{Dix-1997} a proposé de classifier différentes catégories de communication :
 				\begin{description}
 					\item[Communication directe] C'est le moyen de communication le plus naturel.
@@ -676,13 +778,15 @@
 						Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
 					\item[Contrôle et retour sensoriel] C'est l'interaction entre un participant et un artefact.
 						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher, \myetc).
-					\item[\textit{Feedthrough}] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
+					\item[\myFeedthrough] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
 						Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
-						\mycite[author]{Junuzovic-2009} utilisent même le terme \textit{feedthrough} pour une communication indirecte avec un participant en intermédiaire.
+						\mycite[author]{Junuzovic-2009} utilisent même le terme \myfeedthrough pour une communication indirecte avec un participant en intermédiaire.
 					\item[Compréhension partagée] Les participants doivent posséder au moins un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
 						Cette aspect de la communication est inconscient mais est nécessaire pour la collaboration.
 				\end{description}
-				Avec ces différents canaux de communication, conscient pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\textit{feedthrough} et compréhension partagée), il est possible de définir trois scénarios de collaboration différents basé sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-sota-StrategiesDeCollaboration]{Stratégies de collaboration}
+				Avec les différents canaux de communication décrits dans la \myref{sse-sota-MecanismesDeCommunication}, conscients pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myfeedthrough et \mygrounding), il est possible de définir trois scénarios de collaboration différents basés sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
 				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
 					Illustré sur la \myref*{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
 					Chaque participant possède un accès libre aux artefacts et à la possibilité d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts sur les participants.
@@ -696,8 +800,8 @@
 							\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
 							\rput(0,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
 							\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
-							\ncput*[nrot=:U,npos=0.5]{\textit{Feedthrough}}
-							\ncput*[nrot=:U,npos=2.5]{\textit{Feedthrough}}
+							\ncput*[nrot=:U,npos=0.5]{\myFeedthrough}
+							\ncput*[nrot=:U,npos=2.5]{\myFeedthrough}
 							\psclip{%
 								\rput(0,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
 							}
@@ -748,7 +852,7 @@
 							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
 							\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
 							\rput(4,0){\circlenode[style=nodestyle,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
-							\ncput*[nrot=:U,npos=1.5]{\textit{Feedthrough}}
+							\ncput*[nrot=:U,npos=1.5]{\myFeedthrough}
 							\psclip{%
 								\rput(-4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{1}}}
 							}
@@ -825,114 +929,9 @@
 					Les observateurs possède également une charge de travail cognitive beaucoup plus faible et peuvent se consacrer de manière plus importante à l'analyse des données disponibles et à la proposition de solutions pertinentes.
 
 					Cependant, l'activité de l'observateur le mène à indiquer, désigner des objectifs au manipulateur ce qui augmente le besoin de communication.
-					\mycite[author]{Chastine-2007} aborde cette problématique dans ces travaux de thèse : il nomme ce concept inter-référencement \myref*{sss-sota-LInterReferencement}.
+					\mycite[author]{Chastine-2007} aborde cette problématique dans ces travaux de thèse : il nomme ce concept inter-référencement \myref*{sss-sota-LaConscienceDeGroupe}.
 					De plus, un travail récent cherchant à caractériser \og l'intelligence d'un groupe \fg a conclu que l'un des facteurs d'intelligence d'un groupe était une répartition équitable des charges de travails entre les membres du groupe \mycite{Woolley-2010}.
 					Dans ce scénario, l'asymétrie des différents rôles (manipulateur et observateur) semble favoriser un déséquilibre important des charges de travail.
-				\end{mysubsubsection}
-			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-LaCommunicationImpliciteEtExplicite]{La communication implicite et explicite}
-				À travers tous ces scénarios, certains aspects de la communication sont relativement implicites et difficilement observables.
-				D'autres sont plus concrets mais apportent également leurs contraintes et leurs limites.
-				Cette section s'attarde sur trois notions particulièrement importante dans le travail collaboratif : le \mygrounding, la présence et l'inter-référencement.
-				\begin{mysubsubsection}[sss-sota-LeGrounding]{Le \mygrounding}
-					Cette notion, mise en évidence par \mycite[author]{Clark-1989}, est nécessaire à la collaboration.
-					\mycite[author]{Clark-1991} expliquent ce besoin de \mygrounding par la phrase suivante.
-					\begin{myquote}[english]
-						\it [A group] cannot even begin to coordinate on content without assuming a vast amount of shared information or common ground -- that is, mutual knowledge, mutual beliefs, and mutual assumptions.
-					\end{myquote}
-					qu'on pourrait traduire par
-					\begin{myquote}[frenchb]
-						Un groupe ne peut pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
-					\end{myquote}
-
-					Le \mygrounding est nécessaire à la transmission d'information.
-					En effet, toute information transmise suppose déjà de nombreuses informations implicites que l'interlocuteur doit connaître.
-					\mycite[author]{Dillenbourg-1996} étudient ce partage d'informations sur une tâche d'enquête fictive sur un meurtre.
-					Il constate que chaque membre du groupe se construit sa propre représentation de l'environnement dans lequel il se trouve et évolue en fonction des informations que chacun trouve et de sa culture existante \mycite{Baker-1999}.
-
-					Lors d'un travail de collaboration, chaque membre possède déjà sa propre base de connaissances qui peut partiellement recouvrir celle des autres membres mais également être complémentaire.
-					Cependant, durant la réalisation de la tâche, une base de connaissance commune va se créer.
-					\mycite[author]{Hertzum-2008} lie les processus de recherche d'informations et de \mygrounding.
-					En effet, la recherche d'informations mène les membres du groupes à découvrir l'environnement dans lequel ils évoluent pour étoffer leur base de connaissance commune.
-					Cependant, \mycite[author]{Hertzum-2010} met en pratique cette constatation en observant le travail d'un hôpital où plusieurs médecins sont à la recherches de symptômes pour définir un diagnostique et fournir un traitement.
-					Il s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostique.
-
-					Afin de constituer correctement une base de connaissance commune, les membres du groupe doivent communiquer.
-					En particulier, ils doivent continuellement être sûr que les éléments dont ils parlent sont bien les mêmes afin de transmettre l'information.
-					La désignation de ces éléments n'est pas toujours simple et c'est le sujet de la prochaine section.
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-sota-LInterReferencement]{L'inter-référencement}
-					La notion d'inter-référencement est très récente et c'est \mycite[author]{Chastine-2007} qui l'a mise en évidence à travers sa plateforme \myAMMPVis \mycite{Chastine-2005,Chastine-2006}.
-					L'inter-référencement est défini par \mycite[author]{Chastine-2007} comme
-					\begin{myquote}[english]
-						\it The ability for one participant to refer to a set of artifacts in the environment, and for that reference to be correctly interpreted by others.
-					\end{myquote}
-					qu'on traduira par
-					\begin{myquote}[frenchb]
-						La capacité pour un des participants de désigner un ensemble d'artefacts dans l'environnement et que cette désignation soit correctement comprise par les autres collaborateurs.
-					\end{myquote}
-
-					Au travers de ces travaux de thèse, il s'attarde un peu plus sur cette définition en considérant les différents acteurs de l'inter-référencement.
-					Un utilisateur initie une désignation vers un élément de l'environnement.
-					Un (ou plusieurs) autre utilisateur reçoit cette désignation.
-					Cette désignation est caractérisée par plusieurs paramètres :
-					\begin{itemize}
-						\item une technique de sélection;
-						\item un groupe d'éléments sélectionnés;
-						\item une technique de représentation;
-						\item une relation entre l'initiateur et l'élément sélectionné;
-						\item une relation entre le (ou les) receveur et l'élément sélectionné;
-						\item un contexte entre l'initiateur et le (ou les) receveur;
-						\item un moyen d'accuser réception du référencement (optionnel).
-					\end{itemize}
-
-					Afin de résoudre cette problématique, \mycite[author]{Chastine-2007a} se proposent, dans un contexte de collaboration distante, d'utiliser des techniques de réalité augmentée pour désigner les éléments inter-référencés \myref*{fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee}.
-					Dans une étude l'année suivante, \mycite[author]{Chastine-2008} montrent que les techniques qu'ils proposent pour améliorer l'inter-référencement permettent de limiter les ambigüités et d'améliorer les performances globales du groupe.
-
-					\begin{myfigure}
-						\myimage{sota-Chastine}
-						\mycaption[fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee]{Inter-référencement visuel proposé par \mycite[author]{Chastine-2007a} à l'aide de techniques de réalité augmentée}
-					\end{myfigure}
-
-					Afin d'effectuer des inter-référencements à un collaborateur, il est nécessaire de savoir si le collaborateur est attentif.
-					Il est nécessaire d'adapter la manière de procéder en fonction des connaissances de ce collaborateur.
-					Cet ensemble de connaissances concernant l'état actuel de chacun des collaborateurs constitue la conscience de groupe et sera définie dans la section suivante.
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-sota-LaConscienceDeGroupe]{La conscience de groupe}
-					La présence de groupe, également appelée \myawareness, a été définie par \mycite[author]{Dourish-1992}.
-					\begin{myquote}[english]
-						\it Awareness is an understanding of the activities of others, which provides a context for your own activity.
-					\end{myquote}
-					traduit en français par \mycite[author]{Betbeder-2004}
-					\begin{myquote}[frenchb]
-						[La conscience de groupe est la] compréhension des activités des autres, qui permet de donner un contexte à sa propre activité.
-					\end{myquote}
-
-					La conscience des autres partenaires peut concerner aussi bien l'action réalisée, la position actuelle ou encore des informations durables sur un collaborateur (âge, sexe, spécialité, culture, \myetc) \mycite{Cockburn-1999}.
-					Cette conscience est bien souvent implicite et de nombreux événements peuvent survenir autour d'un participant sans qu'il n'y prête attention.
-					Parfois, ce manque d'attention est un gain de temps pour la achèvement de la tâche (par exemple, le collaborateur éternue).
-					Cependant, savoir que le collaborateur est parti aux toilettes est plus pertinent car il n'est alors plus question de compter sur son aide pendant quelques minutes.
-
-					\mycite[author]{Cahour-2005} identifient trois avantages d'avoir une bonne conscience de groupe en étudiant la coopération entre serveurs et cuisiniers d'un café-restaurant :
-					\begin{itemize}
-						\item l'économie collective de déplacements et actions, grâce à une vision périphérique des mouvements des collègues;
-						\item le besoin de communications rapides et non intrusives en écoutant sur un mode périphérique les messages oraux adressés dans le brouhaha du café;
-						\item le besoin d'éviter des collisions dans un petit espace partager grâce à des modalités visuelles et kinesthésiques.
-					\end{itemize}
-
-					Cependant, la conscience de groupe est constituée de plusieurs aspects que les sociologues ont cherché à segmenter.
-					\mycite[author]{Gutwin-1996} propose les quatre catégories de conscience suivantes\footnote{Les catégories en anglais sont les suivantes : \textit{informal awareness}, \textit{social awareness}, \textit{group-structural awareness} et \textit{workspace awareness}.} :
-					\begin{description}
-						\item[Conscience informelle] Ce sont les informations générales sur les collègues, le genre d'informations que les gens connaissent lorsqu'ils travaillent dans le même bureau;
-						\item[Conscience sociale] Ce sont les informations que chacun établi dans n'importe quelle relation sociale comme l'état émotionnel de l'interlocuteur, son niveau d'attention ou encore son niveau d'intérêt;
-						\item[Conscience de la structure du groupe] C'est la connaissance de la hiérarchie du groupe, les rôles et responsabilités de chacun, leurs assignation sur une tâche ou leur statut;
-						\item[Conscience de l'espace de travail] C'est la conscience des actions et interactions des autre membres du groupes sur et avec l'espace de travail et les artefacts.
-					\end{description}
-
-					Attention cependant, il ne faut pas confondre conscience et présence qui sont mélangés parfois dans la littérature.
-					D'après \mycite[author]{Sallnas-2004}, la conscience est une donnée objective (l'individu sait que son collègue est présent, qu'il s'appelle Luke et que c'est son père) alors que la présence est plutôt une donnée subjective.
-					La présence sociale concerne plutôt le sentiment d'être au sein d'un travail de groupe.
-					Ce sentiment a surtout été mis en avant au sein des plateformes de collaboration distante où il n'y avait pas de présence physique des collaborateurs.
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
