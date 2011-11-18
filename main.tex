@@ -61,10 +61,11 @@
 		\begin{mysection}[sec-sota-Introduction]{Introduction}
 		\end{mysection}
 		\begin{mysection}[sec-sota-ContexteDeTravail-LaModelisationMoleculaire]{Contexte de travail : la modélisation moléculaire}
-			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que l'expression \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu utilisée dans la littérature française.} qui fournit un environnement de travail complexe.
-			Cette section présente le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème complexe.
+			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que sa traduction \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu citée dans la littérature française.}.
+			Cette section a pour objectif de présenter le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème.
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
 				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
+				Le \myglos{glo-DockingMoleculaire} permet soit de découvrir de nouvelles molécules (par assemblage de deux ou plusieurs molécules), soit de comprendre la nature d'un complexe de molécules obtenu par cristallographie\footnote{La cristallographie permet de déterminer les molécules présentes dans un complexe de molécules mais ne permet pas de déterminer avec précisions comment elles sont assemblées.}.
 				\mycite[author]{Fischer-1894} illustrent le \myglos{glo-DockingMoleculaire} avec le modèle \og clef-serrure \fg décrit de la façon suivante.
 				\begin{myquote}[ngerman]
 					\it Um ein Bild zu gebrauchen, will ich sagen, da\ss{} Enzym und Glycosid wie Schlo\ss{} und Schlüssel zueinander passen müssen, um eine chemische Wirkung aufeinander ausüben zu können.
@@ -95,15 +96,15 @@
 				\end{myfigure}
 
 				La métaphore s'arrête ici.
-				En effet, s'il suffit simplement de vérifier que la clef ouvre la serrure pour confirmer la correspondance entre les deux objets, l'évaluation d'un complexe de molécules est moins évidente.
-				La stabilité d'un complexe de molécules est évaluée sur deux mesures : la complémentarité géométrique et la complémentarité chimique \myref*{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire}.
-				La complémentarité géométrique, parfois nommée complémentarité structurale \mycite{Church-1977}, consiste à trouver la partie des profils de la molécule qui vont s'imbriquer, comme un puzzle en \myThreeD.
+				En effet, si pour vérifier la concordance d'une clef avec une serrure, il suffit de tester l'ouverture de la serrure, l'évaluation d'un complexe de molécules est moins évidente.
+				La stabilité d'un complexe de molécules est principalement évaluée selon deux critères : la complémentarité géométrique et la complémentarité chimique \myref*{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire}.
+				La complémentarité géométrique, parfois nommée complémentarité structurelle \mycite{Church-1977}, consiste à trouver les parties de chaque molécule qui s'imbriquent le mieux l'une avec l'autre, comme un puzzle en \myThreeD.
+				\mycite[author]{Jiang-2003} montre l'importance de la complémentarité géométrique dans le \myglos{glo-DockingMoleculaire} dans l'évaluation d'un complexe de molécules.
 				La \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteGeometrique} illustre la complémentarité géométrique dans une représentation simplifiée en \myTwoD.
-				\mycite[author]{Jiang-2003} consacre une publication à montrer l'importance de la complémentarité géométrique dans le \myglos{glo-DockingMoleculaire}.
 
-				Cependant, l'évaluation de la stabilité d'un complexe de molécule s'accompagne également d'une évaluation de la complémentarité chimique comme décrit par \mycite[author]{Kessler-1999}.
-				Cette complémentarité s'intéresse aux interactions chimiques entre les molécules comme les charges électrostatiques \mycite{McCoy-1997}, les ponts hydrogènes \mycite{Arunan-2011} ou encore les régions hydrophiles et hydrophobes \mycite{Blalock-1984}.
-				Par exemple, la \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteElectrostatique} illustre la complémentarité électrostatique.
+				Cependant, la stabilité d'un complexe de molécule s'accompagne également d'une évaluation de la complémentarité chimique comme décrit par \mycite[author]{Kessler-1999}.
+				Cette complémentarité tient compte des interactions chimiques entre les molécules comme les charges électrostatiques \mycite{McCoy-1997}, les ponts hydrogènes \mycite{Arunan-2011} ou encore les régions hydrophiles et hydrophobes \mycite{Blalock-1984}.
+				La \myref{fig-sota-MesuresPourLEvaluationDuDockingMoleculaire-ComplementariteElectrostatique} illustre la complémentarité électrostatique.
 
 				\begin{myfigure}
 					\newcommand{\mymolA}{%
@@ -155,38 +156,36 @@
 				\end{myfigure}
 
 				Le nombre de combinaisons géométriques et le nombre de contraintes chimiques font du \myglos{glo-DockingMoleculaire} une tâche de recherche très complexe.
-				Une exploration exhaustive n'est pas envisageable.
-				La section suivante présente les différents solutions logicielles existante pour réaliser un \myglos{glo-DockingMoleculaire}.
+				Une exploration exhaustive de l'espace de recherche est impossible.
+				La section suivante présente les différentes solutions logicielles existante pour tenter de trouver des solutions de \myglos{glo-DockingMoleculaire}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-RechercheDeSolutionsDeDockingMoleculaire]{Recherche de solutions de \myglosnl{glo-DockingMoleculaire}}
-				La recherche de solutions de \myglos{glo-DockingMoleculaire} consiste à trouver les sites de liaisons entre les molécules.
-				Les algorithmes de recherche se basent principalement sur deux principes de base.
-				Tout d'abord, l'algorithme doit être capable d'évaluer une conformation par un score de confiance.
-				Puis, une heuristique est nécessaire afin de converger le plus efficacement possible vers des solutions valides.
+				La recherche de solutions de \myglos{glo-DockingMoleculaire} consiste à trouver les zones de liaisons entre les molécules.
+				Les algorithmes de recherche se basent principalement sur deux éléments : l'évaluation et l'optimisation.
+				L'évaluation consiste à calculer un score pour la conformation trouvée.
+				L'optimisation s'intéresse à l'amélioration et à l'affinage des conformations.
 
 				\mycite[author]{Schulz-Gasch-2004} ou encore \mycite[author]{Leach-2006} proposent un état de l'art sur les moyens d'évaluer un \myglos{glo-DockingMoleculaire}.
-				En général, les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels seulement par complémentarité géométrique.
-				Cette première évaluation permet un filtre important de l'espace des solutions.
-				Puis une évaluation chimique partielle ou complète est éventuellement effectuée par l'algorithme de recherche.
-				Afin de trouver ces sites de liaison, différents types d'algorithmes ont été proposés.
+				Les algorithmes de recherche commencent par identifier les différents sites de liaisons potentiels par complémentarité géométrique.
+				Cette première évaluation permet de filtrer l'espace des solutions.
+				Puis une évaluation chimique partielle ou complète est éventuellement effectuée.
 
-				Parmi les algorithmes les plus utilisés, on peut citer les algorithmes génétiques, les \myacro*{acr-ICM}, la méthode de \myname{Monte-Carlo} ou encore la reconstruction incrémentale autour d'une base protéinique.
+				Parmi les algorithmes d'optimisation les plus utilisés, on peut citer les algorithmes génétiques, les \myacro*{acr-ICM}, la méthode de \myname{Monte-Carlo} ou encore la reconstruction incrémentale autour d'une base protéinique.
 				À chaque algorithme est associé une ou plusieurs solutions logicielles dont les plus référencées selon \mycite[author]{Grosdidier-2007} sont \myAutoDock (\mynum[\%]{27}), \myGOLD (\mynum[\%]{15}), \myFlexX (\mynum[\%]{11}), \myDOCK (\mynum[\%]{6}) ou encore \myICMDocking (\mynum[\%]{6}).
-				La \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} propose une liste non-exhaustive de solutions logicielles de \myglos{glo-DockingMoleculaire}.
+				La \myref{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire} propose une liste de solutions logicielles de \myglos{glo-DockingMoleculaire}.
 
-				Les solutions sont nombreuses mais devant la complexité du problème, aucune de ces solutions logicielles ne semble fournir la solution ultime.
-				De plus, les solutions présentées ci-dessus se basent seulement sur une approximation de l'environnement moléculaire : les molécules sont considérées comme des corps rigides.
-				En effet, une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins : une molécule s'apparente plutôt à un corps flexible.
-				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome (granularité la plus fine) aux molécules en passant par les \myhelice* et \myfeuillet* (granularité intermédiaire).
+				Cependant, les solutions présentées ci-dessus se basent sur une approximation importante de l'environnement moléculaire : les molécules sont considérées comme des corps rigides.
+				En effet, une molécule est constituée d'un ensemble d'atomes possédant chacun une mobilité par rapport à ces voisins; une molécule s'apparente plutôt à un corps flexible.
+				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome aux molécules en passant par les structures secondaires (\myhelice* et \myfeuillet*).
 				On peut distinguer trois niveaux de flexibilité différentes :
 				\begin{description}
-					\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
-						L'objectif est de trouver la meilleure concordance entre les molécules en terme de position et d'orientation.
-					\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
-						L'amarrage de deux molécules (ou plus) introduit de nombreux sites de liaison qui doivent être optimisées en fonction de critères variés (la complémentarité géométrique, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
-						La flexibilité s'organise alors autour de macro-structures telles que les \myhelice* ou les \myfeuillet* \myref*{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta}.
-					\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
-						L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
+					\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire concerne des transformations de grande amplitude sur chaque molécule.
+						Elle permet de trouver la meilleure concordance entre les molécules en terme de position et d'orientation.
+					\item[Niveau intra-moléculaire] Cette déformation est au niveau moléculaire.
+						L'amarrage de deux molécules (ou plus) permet d'obtenir de nombreux sites de liaison qui doivent être optimisées en fonction de critères variés (la complémentarité géométrique, les forces électrostatiques, \myetc).
+						La flexibilité s'organise alors autour de macro-structures telles que les structures secondaires qui font de la molécule une sorte de chaîne articulée \myref*{fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta}.
+					\item[Niveau atomique] Cette déformation très fine va optimiser la position des atomes au niveau du site de liaison en modifiant l'état des \myglos*{glo-Residu} (groupement d'atomes).
+						L'intérêt de cette étape sera portée sur plusieurs types d'interactions chimiques à échelle réduite (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
 				\end{description}
 
 				\begin{myfigure}
@@ -194,22 +193,13 @@
 					\mycaption[fig-sota-IllustrationDUneMoleculeAvecCesHelicesAlphaEtCesFeuilletsBeta]{Illustration d'une molécule avec ces \myhelice* et ces \myfeuillet*}
 				\end{myfigure}
 
-				La complexité induite par la flexibilité rend impossible une exploration totale de l'espace de recherche.
-				Afin de répondre à cette problématique supplémentaire de flexibilité, différentes approches ont été proposées :
+				La complexité induite par la flexibilité rend l'exploration de l'espace de recherche encore plus complexe par rapport aux corps rigides considérés précédemment.
+				Afin de répondre à cette problématique supplémentaire, différentes approches, basées sur des plateforme de \myglos{glo-DockingMoleculaire} \myref*{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire}, ont été proposées afin de réduire l'espace de recherche :
 				\begin{itemize}
 					\item Une partie du complexe de molécules étudié est rendue rigide;
-					\item Utiliser différentes conformations d'une molécule sur des solutions de \myglos{glo-DockingMoleculaire} rigide \mycite{Meagher-2004};
-					\item Découper l'espace de recherche de manière grossière pour améliorer les performances d'évaluation \mycite{Osterberg-2002}.
+					\item Utiliser plusieurs conformations rigides d'une molécule \mycite{Meagher-2004};
+					\item Découper l'espace de recherche avec une granularité plus grossière pour améliorer les performances d'évaluation \mycite{Osterberg-2002}.
 				\end{itemize}
-
-				La flexibilité introduit une complexité importante dans l'évaluation et la recherche de solution en \myglos{glo-DockingMoleculaire}.
-				Par exemple, la complémentarité géométrique fait en partie appel aux algorithmes de détection de collision, problématiques à part entière en interaction temps-réel avec les environnements virtuels.
-				Si on ajoute les informations chimiques, électrostatiques et la flexibilité, le nombre de dimensions du problème est nettement trop important pour pouvoir être traité en temps raisonnable par un ordinateur de manière exhaustive.
-				Cependant, nous allons voir dans la section suivante qu'une approche utilisant les capacités combinées de l'humain et de la machine est possible.
-
-				D'ailleurs, c'est durant la rédaction de cette thèse qu'un résultat important concernant cette approche a été dévoilé.
-				À l'aide de \myFoldIt, un logiciel de \myglos{glo-DockingMoleculaire} vulgarisé et distribué sous forme de jeu vidéo, la solution d'un problème de \myglos{glo-DockingMoleculaire} qui pourrait faire avancer la recherche sur le \mySIDA a été découverte \mycite{Khatib-2011}.
-				Ce logiciel utilise en particulier la capacité d'un humain à sortir de minima locaux rapidement là où un ordinateur serait inefficace.
 
 				\begin{mytable}
 					\begin{mytabular}{^>{\hsize=0.2\textwidth}C->{\hsize=0.3\textwidth}C->{\hsize=0.4\textwidth}C}
@@ -234,47 +224,51 @@
 					\end{mytabular}
 					\mycaption[tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire]{Liste non-exhaustive de solutions logicielles de \myglosnl{glo-DockingMoleculaire}}
 				\end{mytable}
+
+				La flexibilité introduit une complexité importante dans la recherche de solutions en \myglos{glo-DockingMoleculaire}.
+				Cependant, nous allons voir dans la section suivante que l'utilisation des capacités combinées de l'humain et de la machine permet une approche différente face à ce problème complexe.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-DockingMoleculaireEnEnvironnementVirtuel]{\myGlosnl{glo-DockingMoleculaire} en environnement virtuel}
-				Malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} existantes et se rapprocher toujours plus près de conditions biologiques réalistes, la complexité du problème rend la découverte de solutions difficile.
-				Devant cette complexité, une approche alternative basée sur l'introduction de l'humain et de ses capacités de décisions au sein du processus de recherche d'une solution par un ordinateur.
-				En effet, bien que moins rapide pour traiter rapidement un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes et d'en rejeter d'autres qui sont aberrantes.
+				Malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} existantes et se rapprocher toujours plus près de conditions biologiques réalistes, la complexité du problème rend difficile la découverte de solutions pertinentes.
+				Devant cette complexité, une approche alternative basée sur l'introduction de l'humain et de ses capacités de décisions au sein du processus de recherche.
+				En effet, bien que moins rapide pour traiter un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes et les solutions aberrantes.
 
 				L'idée d'immerger un humain au sein du processus de \myglos{glo-DockingMoleculaire} date de $1967$ avec le projet \myGROPE comme l'explique \mycite[author]{Grunwald-2008}.
-				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion à l'aide d'environnements de \myglos{glo-RealiteVirtuelle}.
-				\mycite[author]{Batter-1972} proposent les premières solutions d'immersion grâce à ce projet.
-				
-				L'immersion dans un environnement virtuel avec des molécules pose tout de suite le problème de la représentation des molécules.
-				\mycite[author]{Bergman-1993} proposent la plateforme \myVIEW avec différents rendus graphiques pour représenter les molécules \myref*{fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993}.
-				Quelques années plus tard, les premiers logiciels sont développés et distribués à large échelle comme \myacro{acr-VMD} \mycite{Humphrey-1996} ou \myPyMOL \mycite{DeLano-2002}.
+				L'intervention d'un expert durant le processus de recherche est effectuée par l'immersion dans des environnements de \myglos{glo-RealiteVirtuelle}.
+				\mycite[author]{Batter-1972} proposent les premières solutions d'immersion visuelle grâce à ce projet \myGROPE.
+
+				Avec l'immersion dans un environnement virtuel, le problème de la représentation des molécules se pose rapidement.
+				\mycite[author]{Bergman-1993} proposent la plateforme \myVIEW avec différentes possibilités de rendus graphiques pour représenter une molécule \myref*{fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993}.
+				Les environnement virtuels offrent une certaine souplesse dans la représentation des molécules ce qui a permis d'imaginer différentes manières d'afficher une molécule en fonction des informations à mettre en évidence.
+				Des logiciels dédiés à ce genre de tâche ont alors pu voir le jour comme \myacro{acr-VMD} \mycite{Humphrey-1996} ou \myPyMOL \mycite{DeLano-2002}.
 
 				\begin{myfigure}
 					\myimage{sota-Bergman-1993}
 					\mycaption[fig-sota-RepresentationAvanceesDeMoleculesProposeeParBergman1993]{Représentation avancée proposée par \mycite[author]{Bergman-1993}}
 				\end{myfigure}
 
-				Cependant, les visualisations statiques ne suffisent pas à comprendre les interactions chimiques en action au sein d'une molécule.
-				\mycite[author]{Huitema-2000} fournissent une possibilité de visualiser des trajectoires d'atomes à propos de la dynamique de protéines.
-				Puis \mycite[author]{Klosowski-2002} franchissent une étape supplémentaire en proposant une visualisation temps-réel à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
-				Enfin, afin d'améliorer l'exploration, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} proposent une visualisation multimodale en ajoutant un modèle de force haptique calqué sur les champs de forces électriques d'une molécule \myref*{fig-sota-VisualisationMultimodaleProposeeParDavies2005}.
+				Cependant, la nature statique de ces visualisations ne permet pas de comprendre la dynamique chimique au sein d'une molécule.
+				\mycite[author]{Huitema-2000} proposent un outil pour visualiser des trajectoires d'atomes afin d'appréhender la dynamique des protéines.
+				Puis \mycite[author]{Klosowski-2002} franchissent une étape supplémentaire en proposant une visualisation temps-réel de la dynamique d'une molécule à l'aide du moteur de simulation \myGromacs \mycite{Berendsen-1995,Hess-2008}.
+				Enfin, \mycite[author]{Krenek-1999} puis \mycite[author]{Davies-2005} apporte une visualisation multimodale avec la combinaison des retours visuels et haptiques pour percevoir les champs de force électriques d'une molécule \myref*{fig-sota-VisualisationMultimodaleProposeeParDavies2005}.
 
 				\begin{myfigure}
 					\myimage{sota-Davies-2005}
 					\mycaption[fig-sota-VisualisationMultimodaleProposeeParDavies2005]{Visualisation multimodale proposée par \mycite[author]{Davies-2005}}
 				\end{myfigure}
 
-				D'ailleurs, les retours haptiques sont également utilisés pour la manipulation de molécules.
-				Le projet \myGROPEHaptic qui se place dans la continuité du projet \myGROPE propose une manipulation moléculaire interactive \mycite{Ouh-Young-1988,Brooks-1990}.
-				Puis, la modélisation moléculaire assistée par ordinateur est proposée sur la plateforme \myHIMM (\textit{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}.
-				Afin de manipuler plus intuitivement les molécules, \mycite[author]{Weghorst-2003} propose l'utilisation d'une interface tangible censée représenter la molécule manipulée.
+				L'utilisation de l'haptique dans ce contexte n'est d'ailleurs pas nouveau.
+				En effet, les biologistes ont également cherché à interagir virtuellement avec les molécules afin de pouvoir s'affranchir de la manipulation dans le monde réel nécessitant une procédure plus longue et plus complexe.
+				Le projet \myGROPEHaptic\footnote{Le projet \myGROPEHaptic a été réaliser dans le prolongement du projet \myGROPE.} se propose d'utiliser la modalité haptique pour interagir avec les molécules \mycite{Ouh-Young-1988,Brooks-1990}.
+				Puis, une plateforme pour la modélisation moléculaire assistée par ordinateur est proposée avec \myHIMM (\textit{Highly Immersive Molecular Modeling}) \mycite{Drees-1996,Drees-1998}; l'objectif est de proposer une plateforme immersive et modulable afin de pouvoir facilement changer les différents outils d'interaction.
+				Certains proposent même des interfaces tangibles se substituant aux molécules à manipuler comme \mycite[author]{Weghorst-2003} et \mycite[author]{Kim-2004b}.
 
-				Cependant, les biologistes cherchent à interagir virtuellement avec la dynamique des molécules afin de pouvoir s'affranchir de la difficulté de cette manipulation dans le monde réel.
-				Les interactions proposées se font alors par traction des atomes \mycite{Haan-2002,Koutek-2002}.
-				\mycite[author]{Lee-2004} calquent les interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}, largement adopté par la communauté \myref*{fig-sota-PotentielDeLennardJones1924}.
+				En tenant compte de la flexibilité des molécules, les besoins en interaction se sont affinés; il n'est plus question de modifier la position d'une molécule, on cherche à présent à modifier la position d'un atome ou d'un groupe d'atomes.
+				Le modèle d'interaction proposé est la traction des atomes par un simple modèle masse-ressort \mycite{Haan-2002,Koutek-2002} ce qui permet une déformation des atomes de manière locale.
+				Puis \mycite[author]{Lee-2004} propose de baser les modèles d'interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}; ce modèle de force a l'avantage de permettre une relative stabilité du retour haptique \myref*{fig-sota-PotentielDeLennardJones1924}.
 				\begin{equation}\label{eq-sota-PotentielDeLennardJones}
 					V_{LJ} = 4\varepsilon \left[\left(\frac{\sigma}{r_m}\right)^{12} - \left(\frac{\sigma}{r_m}\right)^6\right]
 				\end{equation}
-				Enfin, la manipulation interactive avec des structures moléculaires flexibles devient possible avec la plateforme proposée par \mycite[author]{Delalande-2009} à laquelle on peut ajouter la possibilité d'interagir avec une interface haptique \mycite{Delalande-2010}.
 
 				\begin{myfigure}
 					\psset{xunit=0.181818182\textwidth,yunit=0.125\textwidth}
@@ -299,28 +293,32 @@
 					\mycaption[fig-sota-PotentielDeLennardJones1924]{Potentiel de \mycite[author]{Lennard-Jones-1924a}}
 				\end{myfigure}
 
-				Ces solutions pour interagir avec les molécules sont en partie utilisées pour l'apprentissage de la dynamique moléculaire.
-				Par exemple, \mycite[author]{Sankaranarayanan-2003} proposent une plateforme interactive avec des interfaces haptiques pour enseigner différents aspects qui constituent la structure moléculaire.
-				Puis \mycite[author]{Wollacott-2007} s'intéressent à la compréhension des interactions chimiques en combinant une interface haptique et l'interface tangible proposée par \mycite[author]{Weghorst-2003}.
-				C'est avec le système \myChemicalForceFeedback (retour haptique des forces chimiques) que l'apprentissage du \myglos{glo-DockingMoleculaire} par l'intermédiaire de la \myglos{glo-RealiteVirtuelle} est abordée \mycite{Bivall-Persson-2007,Bivall-Persson-2008}.
-
+				Les différents outils de manipulation moléculaire se mettant en place, les chercheurs se sont de nouveau orientés vers l'une de leur première problématique : le \myglos{glo-DockingMoleculaire}.
 				Après les projets comme \myGROPE, d'autres projets de \myglos{glo-DockingMoleculaire} comme \mySTALK \mycite{Levine-1997} voient le jour.
 				La communauté haptique commence également à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
-				Par exemple, \mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} afin d'effectuer du \myglos{glo-DockingMoleculaire} rigide \mycite{Lai-Yuen-2006} \myref*{fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006}.
-				Puis, à l'aide d'interfaces haptiques plus largement répandue comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation moléculaire \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du système devient possible.
-				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de forces haptiques adaptés.
+				Par exemple, \mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} \myref*{fig-sota-DockingMoleculaireALAideDUneInterfaceACinqDDLsLaiYuen2006} afin d'effectuer du \myglos{glo-DockingMoleculaire} \mycite{Lai-Yuen-2006}.
+				Puis, à l'aide d'interfaces haptiques comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation moléculaire \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du complexe moléculaire devient possible.
+				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de forces haptiques permettant de ressentir les moments\footnote{Utilisé ici dans le sens mécanique, force autour d'un pivot (moment ou couple).} interviennent au niveau de structures intra-moléculaires ou inter-moléculaires.
+
+				Plus récemment, deux projets ont permis d'aboutir à des plateformes de manipulation haptiques de molécules avec un moteur de simulation en temps-réel.
+				Tout d'abord, \mycite[author]{Redon-2005} développent des algorithmes pour la simulation en temps-réel de corps articulés avec un grand nombre de \myacro*{acr-DDL}.
+				Puis, il adapte son travail pour créer un moteur de simulation moléculaire ce qui lui permet d'obtenir des simulations temps-réel, utilisable pour la manipulation haptique \mycite{Bolopion-2009}.
+				En suivant un cheminement similaire, \mycite[author]{Delalande-2009} proposent un outil permettant d'obtenir des simulations moléculaires en temps-réel.
+				Puis dans un second temps, \mycite[author]{Delalande-2010} rendent possible la manipulation haptique temps-réel de molécules en proposant la déformation au niveau atomique.
 
 				\begin{myfigure}
 					\myimage{sota-Lai-Yuen-2006}
-					\mycaption[fig-sota-DockingMoleculaireRigideALAideDUneInterfaceACinqDDLsLaiYuen2006]{\myGlosnl{glo-DockingMoleculaire} rigide à l'aide d'une interface à cinq \myacronl*{acr-DDL} \mycite{Lai-Yuen-2006}}
+					\mycaption[fig-sota-DockingMoleculaireALAideDUneInterfaceACinqDDLsLaiYuen2006]{\myGlosnl{glo-DockingMoleculaire} à l'aide d'une interface à cinq \myacronl*{acr-DDL} \mycite{Lai-Yuen-2006}}
 				\end{myfigure}
 
-				Les différentes briques permettant d'effectuer du \myglos{glo-DockingMoleculaire} flexible interactif sont présentes.
-				\mycite[author]{Delalande-2010} nous offre la possibilité de manipuler des simulations réalistes en temps-réel.
-				Puis \mycite[author]{Daunay-2009} offrent la possibilité d'évaluer en temps-réel ces simulations.
-				\mycite[author]{Stone-2010} fournissent les interfaces nécessaires sur le logiciel \myacro{acr-VMD} pour accéder à des solutions de \myglos{glo-RealiteVirtuelle}.
+				Les différentes briques techniques et logicielles permettant d'effectuer du \myglos{glo-DockingMoleculaire} flexible interactif existent.
+				\mycite[author]{Bolopion-2009} puis \mycite[author]{Delalande-2010} nous montrent la faisabilité des simulations moléculaires réalistes et interactives.
+				Puis \mycite[author]{Daunay-2009} offrent un moyen d'évaluer en temps-réel ces simulations.
+				Le logiciel \myacro{acr-VMD} offre une plateforme de visualisation moléculaire permettant de connecter des outils haptiques \mycite{Stone-2010}.
 				Des modèles de forces haptiques spécifiques au \myglos{glo-DockingMoleculaire} sont développés \mycite{Hou-2010}.
-				Pourtant, tous ces outils et solutions associés à la complexité que représente la réalisation d'une tâche de \myglos{glo-DockingMoleculaire} semble difficilement accessible à un manipulateur seul.
+
+				En fournissant tous ces outils de visualisation et d'interaction avec des environnement moléculaires virtuels, les possibilités des biologistes sont augmentées.
+				Cependant, la complexité du problème de \myglos{glo-DockingMoleculaire} est tellement importante que nous allons avoir recours à une aide supplémentaire : le travail collaboratif.
 
 				\begin{myfigure}
 					\myimage{sota-Daunay-2009}
@@ -328,31 +326,33 @@
 				\end{myfigure}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-PlateformesCollaborativesPourLaBiologieMoleculaire]{Plateformes collaboratives pour la biologie moléculaire}
-				Des applications collaboratives ont commencé à être développées pour répondre au besoin de travailler à plusieurs.
+				Les applications collaboratives en biologie moléculaire ont commencé à être développées pour répondre au besoin de travailler à plusieurs.
 				L'une des premières application a été proposée par \mycite[author]{Casher-1995} sous le nom de \myEyeChem.
-				Cette application constituée d'une nœud serveur et de nœuds clients sur un réseau interne, permet aux utilisateurs d'éditer et de manipuler une molécule de manière synchrone.
+				Cette application constituée d'une nœud serveur et de nœuds clients sur un réseau interne, permet à plusieurs utilisateurs d'éditer et de manipuler une molécule de manière synchrone.
 
 				Sur le même principe, \mycite[author]{Bourne-1998} développent \myMICE (\textit{Molecular Interactive Collaborative Environment}), permettant de visualiser des molécules en collaboration distante.
 				Cette application se distingue par l'utilisation d'\myInternet comme réseau ce qui permet une plus grande souplesse dans le déploiement.
 				\mycite[author]{Tate-2001} étendent les possibilités de \myMICE en permettant l'édition, la manipulation et l'interaction d'une même molécule par plusieurs utilisateurs.
-				Un projet similaire appelé \myChimera, développé par \mycite[author]{Pettersen-2004}, est encore utilisé de nos jours contrairement à \myMICE qui n'est actuellement plus maintenu.
+				Un projet similaire appelé \myChimera, développé par \mycite[author]{Pettersen-2004}, existe également et propose le même type de fonctionnalités.
 
 				Puis, basé sur la plateforme de \mycite[author]{Kim-2004b} permettant de faire de la modélisation de molécules par gestes, \mycite[author]{Park-2006} proposent un système distribué de collaboration distante.
 				C'est l'une des premières applications qui aborde le problème du \myglos{glo-DockingMoleculaire}.
-				En effet, les gestes sont effectuées avec des \textit{haptic eggs}, deux petites interfaces tangibles placées dans chaque main de l'utilisateur, chaque \textit{haptic egg} étant l'abstraction d'une molécule.
+				Les gestes sont effectuées avec des \textit{haptic eggs}, deux petites interfaces tangibles placées dans chaque main de l'utilisateur, chaque \textit{haptic egg} étant l'abstraction d'une molécule.
 				Cependant, le système de communication est déporté dans le temps puisque les utilisateurs ont la possibilité de commenter et de donner des opinions sur la manière de réaliser le \myglos{glo-DockingMoleculaire} à l'aide d'un système de messagerie instantanée.
 				Les décisions sont alors transmises à l'utilisateur qui s'occupe des manipulations en environnement virtuel.
-				Plus récemment, le projet \myeMinerals \mycite{Dove-2005}, illustré sur la \myref{fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005}, fournit une solution plus aboutie pour la collaboration entre biologistes (messagerie instantanée, vidéo-conférence, serveur centralisé, \myetc) mais il s'agit surtout de collaboration distante et asynchrone.
+				Plus récemment, le projet \myeMinerals \mycite{Dove-2005}, fournit une solution pour la collaboration entre biologistes (messagerie instantanée, vidéo-conférence, serveur centralisé, \myetc) comme on peut le voir sur la \myref{fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005}.
+				Cependant, il s'agit surtout de collaboration distante et permet un travail synchrone ou asynchrone.
 
 				\begin{myfigure}
 					\myimage{sota-Dove-2005}
 					\mycaption[fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005]{Plateforme de collaboration inter-universités proposée par \mycite{Dove-2005}}
 				\end{myfigure}
 
-				Parmi les applications collaboratives de biologie moléculaire, \mycite[author]{Chastine-2005} sont les premiers à s'intéresser aux problèmes de communication entre les sujets \myref*{sss-sota-LaConscienceDeGroupe}.
-				À travers l'application \myAMMPVis, il propose des outils pour désigner ou indiquer des zones de l'environnement virtuel.
-				Un point important est la représentation de chaque sujet par une représentation des mains au sein de l'environnement virtuel afin d'améliorer la communication \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
-				Cette plateforme a ensuite été réutilisée sous la forme de \myAMMPEXTN afin d'introduire des procédures de contrôle d'accès aux différentes strates d'informations (paramètres de visualisation, modélisation, modification des données) afin d'éviter les conflits entre les utilisateurs \mycite{Ma-2007,Ma-2007a}.
+				Parmi les applications collaboratives de biologie moléculaire permettant une interaction synchrone, \mycite[author]{Chastine-2005} sont les premiers à s'intéresser aux problèmes de communication entre les sujets \myref*{sss-sota-LaConscienceDeGroupe}.
+				À travers l'application \myAMMPVis, il propose des outils pour désigner des zones de l'environnement virtuel.
+				Afin d'améliorer la communication, il propose également de modéliser les mains de chaque utilisateur dans l'environnement virtuel pour que chacun ait conscience des agissement des partenaires \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
+				Cette plateforme a ensuite été réutilisée sous la forme de \myAMMPEXTN afin d'introduire des procédures de contrôle d'accès.
+				Pour éviter les conflits entre les utilisateurs, les différentes strates d'informations (paramètres de visualisation, modélisation, modification des données) ont été soumises à différents droits de visualisation et de modification \mycite{Ma-2007,Ma-2007a}.
 
 				\begin{myfigure}
 					\myimage{sota-Chastine-2005}
@@ -363,11 +363,12 @@
 				La manipulation colocalisée permet de créer un environnement de travail social qui permet une meilleure communication.
 				L'application \myPaulingWorld \mycite{Su-2000,Su-2001} propose une des premières applications de collaboration colocalisée pour la visualisation et l'interaction.
 				La visualisation s'effectue sur un \myWorkbench ce qui permet aux utilisateurs d'avoir un niveau d'interaction similaire dans l'application.
-				Pour améliorer l'expérience d'immersion, \mycite[author]{Kriz-2003} proposent aux utilisateurs une visualisation dans un \myCAVE à l'aide de l'application \myDIVERSE.
+				Pour améliorer l'immersion, \mycite[author]{Kriz-2003} proposent aux utilisateurs la visualisation de molécule au travers différents équipements dont un \myCAVE à l'aide de l'application \myDIVERSE.
 
-				Plusieurs applications ont été développées afin de créer un espace de collaboration pour la modélisation moléculaire et, dans le cas de \mycite[author]{Park-2006}, du \myglos{glo-DockingMoleculaire}.
-				Cependant, la présentation de ces travaux abordent les contraintes techniques nécessaires à la mise en place de tels systèmes sans évoquer les contraintes humaines de la collaboration.
+				Nous venons de présenter plusieurs solutions logicielles et matérielles permettant de créer un espace de collaboration pour la modélisation moléculaire et le \myglos{glo-DockingMoleculaire}.
+				Cependant, la présentation de ces travaux abordent surtout les contraintes techniques nécessaires à la mise en place de tels systèmes sans évoquer les contraintes humaines de la collaboration.
 				Seul \mycite[author]{Chastine-2005} semblent avoir aborder les aspects de communication dans ces applications.
+				La prochaine section va nous permettre d'aborder cette problématique.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-ApprocheCollaborativePourLesProblemesComplexes]{Approche collaborative pour les problèmes complexes}
@@ -389,16 +390,9 @@
 			\end{myquote}
 			Les travaux présentés ici concernent le travail collaboratif et ne traiterons pas de travail coopératif, sauf mention contraire.
 			\begin{mysubsection}[sse-sota-LaDistributionCognitiveDesChargesDeTravail]{La distribution cognitive des charges de travail}
-				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmi les premiers a avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources.
-				Par exemple, \mycite[author]{Wegner-1987} s'intéresse à la distribution de la mémoire dans un groupe ce qui permet à chaque individu de se libérer d'une charge cognitive.
-				\mycite[author]{George-1990} souligne également les effets de l'état émotionnel de chacun sur l'état émotionnel du groupe\footnote{\mycite[author]{Yammarino-1992} ont remis en cause les conclusions obtenues mais le travail de \mycite[author]{George-1990} a de nouveau été confirmé par \mycite[author]{George-1993}.}.
-
-				C'est \mycite[author]{Hutchins-1995} qui concrétise la notion de distribution cognitive avec une étude des interactions qui ont lieu dans un cockpit d'avion.
-				L'année suivante, il cristallise ses conclusions autour de ces observations en psychologie sociale et de ses connaissances en anthropologie \mycite{Hutchins-1996} : il fait une distinction entre les propriétés cognitives d'un individu et les propriétés cognitives d'un groupe.
-				Deux communautés se créent; ceux qui considérent que le travail cognitif d'un groupe d'individus est une somme des propriétés cognitives de chaque individu; et ceux qui considèrent que certains aspects cognitifs d'un groupe d'individus sont propres à la collaboration.
-
-				Pour justifier le rejet de l'approche internaliste et individualiste, \mycite[author]{Clark-1998} explique que lorsque notre cognition s'appuie sur une aide externe, elle devient interactive et relationnelle, c'est-à-dire non détachable d'un composant externe présent dans l'environnement.
-				De plus, \mycite[author]{Clark-2001} parle du lien étroit entre la notion d'extension cognitive et les processus cognitifs complexes : les problèmes de nature complexe stimule cette extension cognitive.
+				\mycite[author]{Bandura-1986} puis \mycite[author]{Foushee-1987} sont parmi les premiers à avoir l'intuition que le travail collaboratif apporte plus qu'une simple multiplication des ressources : les interactions entre les individus font émerger des compétences propre au groupe.
+				Par exemple, \mycite[author]{Wegner-1987} s'intéresse à la distribution de mémoire dans un groupe : chaque individu ne détient qu'une partie de l'information mais la capacité mémorielle du groupe dans son ensemble est plus importante.
+				\mycite[author]{George-1990} souligne également que l'état émotionnel de chacun affecte l'état émotionnel du groupe\footnote{\mycite[author]{Yammarino-1992} ont remis en cause les conclusions obtenues mais le travail de \mycite[author]{George-1990} a été de nouveau confirmé par \mycite[author]{George-1993}.}.
 
 				\mycite[author]{Hollan-2000} proposent de définir la distribution cognitive de la façon suivante
 				\begin{myquote}[english]
@@ -408,9 +402,28 @@
 				\begin{myquote}[frenchb]
 					On peut déplacer la frontière de l'unité cognitive d'analyse au-delà de l'enveloppe corporelle de l'individu de façon à inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
 				\end{myquote}
-				Plus récemment, \mycite[author]{Zhang-2006} synthétisent la distribution cognitive en décrivant les groupes d'individus comme des systèmes ayant des interactions externes (avec des matériels) \mycite{Zhang-1994} et des interactions internes (avec des partenaires).
-				En effet, les éléments externes sont également inclus dans le processus de distribution cognitive pour soulager les individus.
-				La \myref{fig-sota-RepresentationDunSystemeCognitivementDistribue} illustre un tel système de distribution cognitive.
+
+				C'est \mycite[author]{Hutchins-1995} qui met en évidence la notion de distribution cognitive des charges de travail avec une étude des interactions qui ont lieu dans un cockpit d'avion.
+				Ces conclusions sont confirmées et explicités grâce à ses observations en psychologie sociale et ses connaissances en anthropologie \mycite{Hutchins-1996} : il fait une distinction entre les propriétés cognitives d'un individu et les propriétés cognitives d'un groupe.
+				Ces travaux donnent lieu à la création de deux communautés; ceux qui considèrent que le travail cognitif d'un groupe d'individus est une somme des propriétés cognitives de chaque individu; et ceux qui considèrent que certains aspects cognitifs d'un groupe d'individus sont propres à la collaboration.
+
+				Pour justifier le rejet de l'approche individualiste, \mycite[author]{Clark-1998} explique que lorsque notre cognition s'appuie sur une aide externe, elle devient interactive et relationnelle, c'est-à-dire non détachable d'un composant externe présent dans l'environnement.
+				De plus, \mycite[author]{Clark-2001} évoque le lien étroit entre la notion d'extension cognitive et les processus cognitifs complexes : les problèmes de nature complexe stimule cette extension cognitive.
+
+				Plus récemment, \mycite[author]{Zhang-2006} synthétisent la distribution cognitive comme des systèmes ayant des interactions externes (avec des matériels) \mycite{Zhang-1994} et des interactions internes (avec des collaborateurs) comme illustré sur la \myref{fig-sota-RepresentationDunSystemeCognitivementDistribue}.
+				Ces éléments externes sont inclus dans le processus de distribution cognitive puisqu'il permettent également de soulager la charge cognitive des individus.
+				D'ailleurs, une liste des propriétés cognitives auxquelles peuvent répondre ces éléments externes est dressées par \mycite[author]{Zhang-1997} :
+				\begin{itemize}
+					\item fournir une aide mémorielle à court ou long terme afin de réduire la charge cognitive;
+					\item améliorer et simplifier la perception de l'information pour la rendre rapidement accessible et appréhendable;
+					\item fournir des connaissances et des compétences qui ne sont pas disponibles en interne;
+					\item aider les opérateurs pour la perception afin qu'ils identifient facilement les caractéristiques et puisse effectuer des déductions;
+					\item structurer et fixer les comportements cognitifs de manière inconsciente;
+					\item changer la nature de la tâche en générant des séquences d'actions plus efficaces;
+					\item arrêter le temps ou permettre des répétitions afin de rendre visible et durables des informations qui ne le sont pas;
+					\item limiter l'abstraction;
+					\item maximiser la précision et minimiser l'effort dans la prise de décisions pour déterminer une stratégie.
+				\end{itemize}
 
 				\begin{myfigure}
 					\psset{unit=0.1\textwidth}
@@ -462,27 +475,16 @@
 					\mycaption[fig-sota-RepresentationDunSystemeCognitivementDistribue]{Représentation d'un système cognitivement distribué}
 				\end{myfigure}
 
-				\mycite[author]{Zhang-1997} dresse une liste des propriétés cognitives auxquelles peuvent répondre ces éléments externes :
-				\begin{itemize}
-					\item fournir une aide mémorielle à court ou long terme afin de réduire la charge cognitive;
-					\item améliorer et simplifier la perception de l'information pour la rendre rapidement accessible et appréhendable;
-					\item fournir des connaissances et des compétences qui ne sont pas disponibles en interne;
-					\item aider la perception des opérateurs pour qu'ils identifient facilement les caractéristiques et puisse effectuer des déductions;
-					\item structure et fixe les comportements cognitifs de manière inconsciente;
-					\item changer la nature de la tâche en générant des séquences d'actions plus efficaces;
-					\item possibilité d'arrêter le temps ou de permettre des répétitions afin de rendre visible et durables des informations qui ne le sont pas;
-					\item permet de limiter l'abstraction;
-					\item maximiser la précision et minimiser l'effort dans la prise de décisions pour déterminer une stratégie.
-				\end{itemize}
-
 				Les éléments externes de la distribution cognitive, que \mycite[author]{Norman-1991} et \mycite[author]{Kirsh-1999} appellent artefact, répondent au besoin d'affordance.
 				Le concept d'affordance a été identifié par \mycite[author]{Gibson-1977}.
-				L'affordance est l'ensemble des possibilités d'actions sur et avec un artefact \mycite{Gibson-1979} mais cette définition s'est par la suite réduite aux seules possibilités dont l'acteur est conscient.
+				L'affordance est l'ensemble des possibilités d'interaction d'un acteur sur et avec un artefact \mycite{Gibson-1979} mais cette définition s'est par la suite réduite aux seules possibilités dont l'acteur est conscient.
 				C'est \mycite[author]{Norman-1988} qui utilise ce terme pour la première fois dans le contexte de la distribution cognitive.
-				Il en fait une description plus précise lorsqu'il se rend compte que ce terme est mal utilisé par la communauté \mycite{Norman-1999}.
+				Il en fait une description très précise lorsqu'il se rend compte que ce terme est parfois mal utilisé par la communauté \mycite{Norman-1999}.
 				Le terme est ensuite utilisé par les fondateurs de la psychologie cognitive sociale \mycite{Patel-2000}.
+				Il est donc nécessaire de prendre en compte l'affordance au sein de la conception de plateformes collaboratives.
 
-				Cependant, \mycite[author]{Foushee-1987} montrent qu'une configuration de travail collaboratif peut amener un gain en efficacité mais peut également amener une perte d'efficacité.
+				Nous venons de voir que la collaboration permet de créer une intelligence de groupe mais cette intelligence permet-elle d'augmenter les performances d'un groupe ?
+				\mycite[author]{Foushee-1987} montrent qu'une configuration de travail collaboratif peut amener un gain en efficacité mais peut également amener une perte d'efficacité.
 				Par exemple, \mycite[author]{Patel-1999} montrent une perte d'efficacité sur une application permettant la collaboration distante.
 				\mycite[author]{Zhang-1998} esquisse une explication dépendant de la répartition des connaissances dans un groupe : si les connaissances sont complémentaires, il y a un gain en efficacité.
 				Nous allons voir dans les sections suivantes que différents phénomènes influent sur les performances d'un groupe.
@@ -492,10 +494,10 @@
 				Il s'est intéressé aux résultats de coureurs cyclistes ayant concouru dans trois conditions différentes :
 				\begin{enumerate}
 					\item Course seul;
-					\item Course avec un meneur (également appelé \myemph{lièvre} dans le jargon);
+					\item Course avec un meneur (également appelé \myemph{lièvre});
 					\item Course dans des conditions de compétition.
 				\end{enumerate}
-				Les résultats \myref*{fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes} montrent que les coureurs en présence d'autres individus sont plus rapides que les coureurs effectuant l'épreuve seuls.
+				Les résultats \myref*{fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes}, largement étudiés par \mycite[author]{Seashore-1899}, montrent que les coureurs en présence d'autres individus sont plus rapides que les coureurs effectuant l'épreuve seuls.
 
 				\begin{myfigure}
 					\psset{xunit=0.298507463\textwidth,yunit=0.05cm}
@@ -509,9 +511,9 @@
 					\mycaption[fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes]{Résultats obtenus par \mycite[author]{Triplett-1898} avec des cyclistes}
 				\end{myfigure}
 
-				Ce phénomène mis en évidence par \mycite[author]{Triplett-1898} a été plus largement discuté par \mycite[author]{Seashore-1899}.
-				Des expérimentations sur des étudiants ont ensuite été menées par \mycite[author]{Mayer-1903} puis par \mycite[author]{Meumann-1904}.
-				\mycite[author]{Mayer-1903} confirme l'amélioration des performances en confrontant les sujets à des spectateurs pendant toute la durée de la réalisation de la tâche (rédaction de dictée ou résolution de problème arithmétique).
+				Suite à ces résultats, des expérimentations ont été menées sur des étudiants par \mycite[author]{Mayer-1903} puis par \mycite[author]{Meumann-1904}.
+				\mycite[author]{Mayer-1903} confronte les étudiants à la réalisation d'une tâche (rédaction de dictée ou résolution de problème arithmétique) sous le regard d'un observateur.
+				Il constate que les étudiants sont plus performants lorsqu'ils sont en présence d'un autre individu.
 				\mycite[author]{Meumann-1904} ajoute une pierre à l'édifice en confirmant avec des tests plus poussés (tests de mémoire, ergographe et dynamomètre) que les étudiants sont toujours moins performants lorsqu'ils sont seuls.
 
 				D'après \mycite[author]{Strauss-2002} qui propose un état de l'art sur le sujet, le terme \myglos{glo-FacilitationSociale} est utilisé pour la première fois par \mycite[author]{Allport-1924}.
@@ -525,17 +527,20 @@
 				\end{myquote}
 
 				\mycite[author]{Allport-1924} aborde ce phénomène par une collaboration où chaque individu effectue la même tâche.
-				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}, qui a étudié les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne, constate également que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances de chacun des membres individuellement.
-				La \myglos{glo-FacilitationSociale} a même été observée sur des animaux comme les cafards \mycite{Zajonc-1969} ou les singes \mycite{Dindo-2009}.
+				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}\footnote{\mycite[author]{Roethlisberger-1939} base ses conclusions sur les travaux non-publiés de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne.} constate que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances individuelles de chacun des membres.
+				La \myglos{glo-FacilitationSociale} a également été observée sur des animaux comme les cafards \mycite{Zajonc-1969} ou les singes \mycite{Dindo-2009}.
 
 				Cependant, des nuances de ce phénomène commencent à être observées.
 				Par exemple, des différences de performances sont observées en fonction de la nature de la tâche.
 				Déjà, \mycite[author]{Yerkes-1908} avait constaté, dans un contexte non-collaboratif, que les performances d'un individu pouvait dépendre de la complexité de la tâche et du niveau de stimulation.
-				Une trop forte motivation a des effets néfastes sur les performances de l'individu lors de la réalisation d'une tâche complexe \myref*{fig-sota-LoiDeYerkesDodsonSurLeLienEntreLaStimulationDesIndividusEtLesPerformances}.
-				\mycite[author]{Zajonc-1965} a fait le lien entre la loi de \mycite[author]{Yerkes-1908} et la \myglos{glo-FacilitationSociale}.
+				Une trop faible ou une trop forte stimulation diminue les performances de l'individu lors de la réalisation d'une tâche complexe \myref*{fig-sota-LoiDeYerkesDodsonSurLeLienEntreLaStimulationDesIndividusEtLesPerformances}.
+				Une trop faible stimulation désintéresse l'individu de la tâche alors qu'une stimulation trop importante génère un stress diminuant les capacités de l'individu.
+
+				\mycite[author]{Zajonc-1965} fait le lien entre la loi de \mycite[author]{Yerkes-1908} et la \myglos{glo-FacilitationSociale}.
 				En effet, la présence de partenaires dans la réalisation d'une tâche permet une stimulation globale du groupe.
 				Dans le cadre d'une tâche simple, chacun des membres est confiant dans ses propres capacités à réaliser la tâche et la présence d'observateurs va stimuler son besoin de bien réussir la tâche.
-				Cependant, la réalisation d'une tâche complexe va être entravée par l'évaluation des membres les uns entre les autres : la tâche n'étant ni habituelle, ni facile, les membres du groupes perdent leur confiance.
+				Les individus ne craignent pas d'être évalué par les collaborateurs sur le travail réalisé.
+				Cependant, l'évaluation par les collaborateurs dans le cadre d'une tâche complexe est différente : la tâche n'étant ni habituelle, ni facile, les membres du groupe perdent leur confiance et craignent un jugement dépréciatif.
 
 				\begin{myfigure}
 					\psset{xunit=0.090909091\textwidth,yunit=0.06\textwidth}
@@ -566,17 +571,24 @@
 				\end{myfigure}
 
 				Malgré cela, \mycite[author]{Castro-1994} montre que la stimulation sociale est meilleure lorsque les participants se connaissent entre eux.
-				En effet, les participants qui se connaissent vont s'affranchir de la peur d'être évalué.
+				En effet, les participants qui se connaissent déjà vont s'affranchir de la peur d'être évalué.
 
 				Dans cette section, nous avons présenté la \myglos{glo-FacilitationSociale}.
-				Ce phénomène permet, par la simple présence ou la participation de plusieurs partenaires, de stimuler un groupe et d'en augmenter les performances.
-				Cependant, nous allons voir dans la section suivante qu'une autre théorie concernant la psychologie sociale s'oppose à celle de la \myglos{glo-FacilitationSociale} : la \myglos{glo-ParesseSociale}.
+				Ce phénomène permet, par la simple présence ou la participation de plusieurs collaborateurs, de stimuler un groupe et d'en augmenter les performances.
+				Cependant, nous allons voir dans la section suivante qu'une autre théorie vient compléter celle de la \myglos{glo-FacilitationSociale} : la \myglos{glo-ParesseSociale}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LaParesseSociale]{La paresse sociale}
-				\mycite[author]{Ringelmann-1913} est le premier à constater le phénomène de \myglos{glo-ParesseSociale}\footnote{Ce phénomène de \myglos{glo-ParesseSociale} est d'ailleurs parfois nommé \og effet de \mycite[author]{Ringelmann-1913} \fg.} dans un rapport technique qui sera signalé quelques années plus tard par \mycite[author]{Moede-1927} puis repris dans la littérature scientifique par \mycite[author]{Kravitz-1986}.
+				\mycite[author]{Ringelmann-1913} est le premier à constater le phénomène de \myglos{glo-ParesseSociale}\footnote{Ce phénomène de \myglos{glo-ParesseSociale} est d'ailleurs parfois nommé \og effet de \mycite[author]{Ringelmann-1913} \fg.} dans un rapport technique qui sera signalé quelques années plus tard par \mycite[author]{Moede-1927} puis repris de manière détaillée dans la littérature scientifique par \mycite[author]{Kravitz-1986}.
 				Il propose une expérience de traction de corde à plusieurs individus et observe la traction totale exercée par le groupe en faisant varier la taille des groupes.
 				La traction totale observée pour un groupe est inférieure à la somme des efforts individuels \myref*{fig-sota-ResultatsObtenusParRingelmannEtPresentesParKravitz}.
-				Cependant, les résultats de \mycite[author]{Ringelmann-1913} ne permettent pas de déterminer si la perte d'efficacité est liée à un effort individuel moindre ou à un manque de coordination entre les membres du groupe \mycite{Steiner-1972}.
+				\mycite[author]{Schermerhorn-2009} définit la \myglos{glo-ParesseSociale} de la manière suivante
+				\begin{myquote}[english]
+					\it The tendency of group members to do less that they are capable of as individuals.
+				\end{myquote}
+				qui peut être traduite par
+				\begin{myquote}[frenchb]
+					Tendance à fournir un effort moindre lorsqu'une tâche est effectuée en groupe plutôt qu'individuellement.
+				\end{myquote}
 
 				\begin{myfigure}
 					\psset{xunit=0.108108108\textwidth,yunit=0.25\textwidth}
@@ -595,22 +607,13 @@
 					\mycaption[fig-sota-ResultatsObtenusParRingelmannEtPresentesParKravitz]{Résultats obtenus par \mycite[author]{Ringelmann-1913} et présentés par \mycite[author]{Kravitz-1986}}
 				\end{myfigure}
 
-				Entre temps, \mycite[author]{Latane-1979} ont recréé l'expérience proposée par \mycite[author]{Ringelmann-1913} en modifiant le protocole expérimental afin de limiter les erreurs de mesure liées aux \myglos*{glo-ConflitDeCoordination}.
-				Bien que les résultats varient légérement, les conclusions sont les mêmes que celles avancées précédemment.
-				Les travaux de \mycite[author]{Kerr-1981} permettent d'apporter des précisions pour définir les raisons de la \myglos{glo-ParesseSociale}.
-				Elle est liée à l'anonymité relative des membres du groupes vis-à-vis de la tâche : tous les membres sont égaux face à la tâche et ne sont pas distinguables.
-				La conséquence est la faible participation de certains membres qui se fient aux autres collaborateurs pour accomplir la tâche.
+				Cependant, les résultats de \mycite[author]{Ringelmann-1913} ne permettent pas de déterminer si la perte d'efficacité est liée à un effort individuel plus faible ou à un manque de coordination entre les membres du groupe \mycite{Steiner-1972}.
+				Entre temps, \mycite[author]{Latane-1979} ont recréé l'expérience proposée par \mycite[author]{Ringelmann-1913} en modifiant le protocole expérimental afin de réduire les erreurs de mesure liées aux \myglos*{glo-ConflitDeCoordination}.
+				Bien que les résultats varient légèrement, les conclusions sont les mêmes que celles avancées précédemment.
+				Les travaux de \mycite[author]{Kerr-1981} permettent d'apporter des précisions pour définir les raisons de cette \myglos{glo-ParesseSociale}.
+				Chaque membre effectuant strictement la même tâche que ses partenaires, il considère que le travail sera effectué par les autres et qu'il n'a pas besoin de s'investir autant que s'il était seul.
 
-				Une définition de la \myglos{glo-ParesseSociale} est donnée par \mycite[author]{Schermerhorn-2009}
-				\begin{myquote}[english]
-					\it The tendency of group members to do less that they are capable of as individuals.
-				\end{myquote}
-				qui peut être traduite par
-				\begin{myquote}[frenchb]
-					Tendance à fournir un effort moindre lorsqu'une tâche est effectuée en groupe plutôt qu'individuellement.
-				\end{myquote}
-
-				Par la suite, les travaux se sont intéressés à l'évolution de la \myglos{glo-ParesseSociale} en fonction du nombre de participants.
+				Par la suite, les travaux de recherche ont tenté de modéliser l'évolution de la \myglos{glo-ParesseSociale} en fonction du nombre de participants.
 				\mycite[author]{Ingham-1974} puis \mycite[author]{Karau-1993} montrent que l'ajout d'un premier puis d'un deuxième collaborateur a des conséquences importantes sur la \myglos{glo-ParesseSociale} mais que l'ajout de collaborateurs supplémentaires provoque une baisse plus modérée.
 				\mycite{Suleiman-2008} proposent une synthèse de la collaboration, illustrée sur la \myref{fig-sota-SyntheseDesEffetsDeLaCollaborationSelonSuleiman}.
 
@@ -643,22 +646,27 @@
 					\mycaption[fig-sota-SyntheseDesEffetsDeLaCollaborationSelonSuleiman]{Synthèse des effets de la collaboration selon \mycite[author]{Suleiman-2008}}
 				\end{myfigure}
 
-				Cependant, différentes études proposent des solutions et deux ressortent particulièrement : l'identification et l'auto-évaluation.
-				Selon \mycite[author]{Kerr-1981}, l'identification est censée éviter l'anonymat relatif qui peut se mettre en place entre les membres du groupe vis-à-vis de la tâche.
+				Cependant, différentes études proposent des solutions pour contrer les effets de la \myglos{glo-ParesseSociale}.
+				Deux propositions ressortent particulièrement : l'identification et l'auto-évaluation.
+				Selon \mycite[author]{Kerr-1981}, l'identification a pour objectif de donner un rôle défini et unique à chaque participants.
+				Cette identification permet de responsabiliser chaque participant.
 				\mycite[author]{Latane-1979} en avaient déjà eu l'intuition puisqu'ils proposent une telle solution dans leurs perspectives.
 				\mycite[author]{Karau-1993} repris par \mycite[author]{Kraut-2003} mettent en avant cette idée d'identification à la suite d'expérimentations.
 
-				D'ailleurs, \mycite[author]{Karau-1993} proposent également le principe d'auto-évaluation pour contrer les effects nocifs de la \myglos{glo-ParesseSociale}.
-				De cette manière, les utilisateurs peuvent s'auto-évaluer et évaluer leurs collaborateurs ce qui créé une pression qui va permettre la \myglos{glo-FacilitationSociale} \mycite{Szymanski-1987,Harkins-1988}.
+				D'ailleurs, \mycite[author]{Karau-1993} ont également proposé le principe d'auto-évaluation pour neutraliser les effets de la \myglos{glo-ParesseSociale}.
+				De cette manière, les utilisateurs peuvent s'auto-évaluer et évaluer leurs collaborateurs ce qui génère une pression sociale pour favoriser la \myglos{glo-FacilitationSociale} \mycite{Szymanski-1987,Harkins-1988}.
 				Dans une étude dans laquelle il compare entre autre une configuration de travail collaboratif distribuée avec une configuration colocalisée, \mycite[author]{Chidambaram-2005} montrent qu'un travail colocalisé permet de faciliter l'auto-évaluation et augmente cette pression sociale.
-				En effet, le travail colocalisé permet d'avoir une meilleur perception des actions de chacun des membres et ainsi d'évaluer de façon plus précise le travail du collaborateur.
-				Cependant, \mycite[author]{Chidambaram-2005} constatent un effet pervers : certains membres du groupes tente simplement de donner l'impression qu'ils travaillent sans être particulièrement effectif.
-				On trouve également les récents travaux de \mycite[author]{Buisine-2011} qui montrent que l'occupation spatiale de l'environnement est importante : un accès limité à l'espace de travail mène à de la \myglos{glo-ParesseSociale}.
-				En effet, si l'environnement de travail est un tableau par exemple, dès qu'un des membres du groupes utilise le tableau, les autres n'y ont pas un accès physique.
-				L'idéal est d'avoir un accès équilibré à l'espace de travail pour tout les membres du groupe (une table ronde par exemple).
+				En effet, le travail colocalisé permet d'avoir une meilleur perception des actions de chacun des membres et ainsi d'évaluer de façon plus précise le travail des collaborateurs.
 
-				La \myglos{glo-ParesseSociale} est un phénomène qui peut restreindre voire neutraliser les avantages du travail de groupe.
-				Cependant, fournir une identification des rôles de chacun est une première réponse à ce problème, l'auto-évaluation étant la seconde et c'est par l'intermédiaire d'un travail colocalisé que ce deuxième point peut être en partie pris en charge.
+				Cependant, \mycite[author]{Chidambaram-2005} constatent un effet parallèle : certains membres du groupe donne simplement l'impression qu'ils travaillent sans être réellement effectif.
+				On trouve également les récents travaux de \mycite[author]{Buisine-2011} qui montrent que l'occupation spatiale de l'environnement est importante : un accès limité à l'espace de travail provoque de la \myglos{glo-ParesseSociale}.
+				En effet, si l'accès à une ressource externe ne permet que la présence d'un seul membre du groupe, les autres membres ne pouvant pas l'utiliser peuvent générer le phénomène de \myglos{glo-ParesseSociale}.
+				Il est donc préférable d'avoir un accès équitable à l'espace de travail pour tous les membres du groupe (une table ronde par exemple).
+
+				La \myglos{glo-ParesseSociale} est un phénomène qui apporte des contraintes importantes au travail de groupe.
+				Cependant, fournir une identification des rôles de chacun est une première réponse à ce problème, l'auto-évaluation étant la seconde.
+				Comme l'a montré \mycite[author]{Chidambaram-2005}, la collaboration colocalisée est une solution appropriée pour survenir aux besoins de l'auto-évaluation.
+				Cependant, la mise en place d'une plateforme collaborative doit également permettre à chaque utilisateur de s'identifier au sein du processus collaboratif.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-CollaborationEnEnvironnementVirtuel]{Collaboration en environnement virtuel}
@@ -668,30 +676,30 @@
 				\item[Les artefacts] qui sont les différents composants ou matériels avec lesquels ou sur lesquels la collaboration peut s'appuyer.
 			\end{description}
 			Dans cette section, nous allons décrire les interactions qui ont lieu entre les différents acteurs d'un système collaboratif.
-			\begin{mysubsection}[sse-sota-OutilsDeLaCommunicationDeGroupe]{Outils de la communication de groupe}
-				À travers tous ces scénarios, certains aspects de la communication sont relativement implicites et difficilement observables.
+			\begin{mysubsection}[sse-sota-MecanismesDeLaCommunicationDeGroupe]{Mécanismes de la communication de groupe}
+				Certains mécanismes de la communication sont relativement implicites et difficilement observables.
 				D'autres sont plus concrets mais apportent également leurs contraintes et leurs limites.
-				Cette section s'attarde sur trois notions particulièrement importante dans le travail collaboratif : le \mygrounding, la présence et l'inter-référencement.
+				Cette section a pour but de décrire les mécanismes que sont la conscience périphérique et le \mygrounding.
 				\begin{mysubsubsection}[sss-sota-LaConscienceDeGroupe]{La conscience de groupe}
-					La conscience de groupe, également appelée \myawareness, a été définie par \mycite[author]{Dourish-1992}.
+					La conscience de groupe, également nommée \myawareness, a été définie par \mycite[author]{Dourish-1992}.
 					\begin{myquote}[english]
 						\it Awareness is an understanding of the activities of others, which provides a context for your own activity.
 					\end{myquote}
 					traduit en français par \mycite[author]{Betbeder-2004}
 					\begin{myquote}[frenchb]
-						[La conscience de groupe est la] compréhension des activités des autres, qui permet de donner un contexte à sa propre activité.
+						[La conscience de groupe est une] compréhension des activités des autres, qui permet de donner un contexte à sa propre activité.
 					\end{myquote}
 
-					La conscience des autres partenaires peut concerner aussi bien l'action réalisée, la position spatiale (réelle ou virtuelle) ou encore des informations durables sur un collaborateur (âge, sexe, spécialité, culture, \myetc) \mycite{Cockburn-1999}.
-					Cette conscience est bien souvent implicite et de nombreux événements peuvent survenir autour d'un participant sans qu'il n'y prête attention.
-					Parfois, ce manque d'attention est un gain de temps pour la achèvement de la tâche (par exemple, le collaborateur éternue).
-					Cependant, savoir que le collaborateur est parti aux toilettes est plus pertinent car il n'est alors plus question de compter sur son aide pendant quelques minutes.
+					La conscience des autres partenaires peut concerner aussi bien la position spatiale (réelle ou virtuelle), des informations durables sur un collaborateur (âge, sexe, spécialité, culture, \myetc) ou encore l'action réalisée par celui-ci \mycite{Cockburn-1999}.
+					Cette conscience est bien souvent inconsciente et de nombreux évènements peuvent survenir autour d'un participant sans qu'il n'y prête attention.
+					Parfois, ce manque d'attention permet un gain de temps dans l'achèvement de la tâche (par exemple, si le collaborateur éternue, cela n'a pas d'influence sur la réalisation de la tâche).
+					Cependant, le fait de savoir qu'un collaborateur s'est absenté (pour aller aux toilettes par exemple) est beaucoup plus pertinent car il n'est alors plus question de compter sur son aide pendant quelques minutes.
 
-					\mycite[author]{Cahour-2005} identifient trois avantages d'avoir une bonne conscience de groupe en étudiant la coopération entre serveurs et cuisiniers d'un café-restaurant :
+					\mycite[author]{Cahour-2005} identifient trois avantages d'avoir une bonne conscience du groupe en étudiant la coopération entre serveurs et cuisiniers d'un café-restaurant :
 					\begin{itemize}
 						\item l'économie collective de déplacements et actions, grâce à une vision périphérique des mouvements des collègues;
 						\item le besoin de communications rapides et non intrusives en écoutant sur un mode périphérique les messages oraux adressés dans le brouhaha du café;
-						\item le besoin d'éviter des collisions dans un petit espace partager grâce à des modalités visuelles et kinesthésiques.
+						\item le besoin d'éviter des collisions dans un petit espace partagé grâce à des modalités visuelles et kinesthésiques.
 					\end{itemize}
 
 					Cependant, la conscience de groupe est constituée de plusieurs aspects que les sociologues ont cherché à segmenter.
@@ -700,13 +708,14 @@
 						\item[Conscience informelle] Ce sont les informations générales sur les collègues, le type d'informations que les gens connaissent lorsqu'ils travaillent dans le même bureau (âge, origines culturelles, situation familiale, \myetc);
 						\item[Conscience sociale] Ce sont les informations que chacun établi dans n'importe quelle relation sociale comme l'état émotionnel de l'interlocuteur, son niveau d'attention ou encore son niveau d'intérêt;
 						\item[Conscience de la structure du groupe] C'est la connaissance de la hiérarchie du groupe, les rôles et responsabilités de chacun, leurs assignation sur une tâche ou leur statut;
-						\item[Conscience de l'espace de travail] C'est la conscience des actions et interactions des autre membres du groupes sur et avec l'espace de travail et les artefacts.
+						\item[Conscience de l'espace de travail] C'est la conscience des actions et interactions des autre membres du groupe sur et avec l'espace de travail et les artefacts.
 					\end{description}
 
-					Parmi tous ces types de conscience périphérique, seule la conscience de l'espace de travail nécessite une mise à jour en temps-réel des informations environnantes par les membres d'un groupe, surtout dans le cadre d'une collaboration synchrone.
-					Chaque collaborateur diffuse des informations le concernant (action en cours, position du curseur, \myetc) de manière consciente ou inconsciente.
-					Pour les informations diffusées de manière inconsciente, elles seront plus ou moins visibles des autres collaborateurs qui seront attentifs ou non à ces actions.
-					Cependant, lorsqu'un utilisateur souhaite diffuser une information, il faut également qu'il puisse être sûr que l'information a été comprise correctement.
+					Parmi tous ces types de conscience, seule la conscience de l'espace de travail nécessite une mise à jour en temps-réel des informations environnantes par les membres du groupe, surtout dans le cadre d'une collaboration synchrone.
+					Chaque collaborateur émet des informations (action en cours, position du curseur, \myetc) de manière consciente ou inconsciente.
+					Pour les informations émises de manière inconsciente, elles seront plus ou moins visibles des autres collaborateurs en fonction de leur attention.
+					Cependant, lorsqu'un utilisateur souhaite émettre une information, il doit également être sûr que l'information a été comprise correctement.
+
 					Cette notion d'inter-référencement, récemment mise en évidence à travers la plateforme \myAMMPVis \mycite{Chastine-2005,Chastine-2006}, a été définie par \mycite[author]{Chastine-2007} de la manière suivante
 					\begin{myquote}[english]
 						\it The ability for one participant to refer to a set of artifacts in the environment, and for that reference to be correctly interpreted by others.
@@ -716,21 +725,20 @@
 						La capacité pour un des participants de désigner un ensemble d'artefacts dans l'environnement et que cette désignation soit correctement comprise par les autres collaborateurs.
 					\end{myquote}
 
-					Au travers de ces travaux de thèse, il s'attarde un peu plus sur cette définition en considérant les différents acteurs de l'inter-référencement.
-					Un utilisateur initie une désignation vers un élément de l'environnement.
-					Un (ou plusieurs) autre utilisateur reçoit cette désignation.
+					Au travers de ces travaux de thèse, \mycite[author]{Chastine-2007} aborde en détail la notion d'inter-référencement.
+					Un utilisateur initie une désignation d'un élément de l'environnement puis un (ou plusieurs) utilisateur(s) reçoit(reçoivent) cette désignation.
 					Cette désignation est caractérisée par plusieurs paramètres :
 					\begin{itemize}
 						\item une technique de sélection;
 						\item un groupe d'éléments sélectionnés;
 						\item une technique de représentation;
 						\item une relation entre l'initiateur et l'élément sélectionné;
-						\item une relation entre le (ou les) receveur et l'élément sélectionné;
-						\item un contexte entre l'initiateur et le (ou les) receveur;
+						\item une relation entre le (ou les) receveur(s) et l'élément sélectionné;
+						\item un contexte entre l'initiateur et le (ou les) receveur(s);
 						\item un moyen d'accuser réception du référencement (optionnel).
 					\end{itemize}
 
-					Afin de résoudre cette problématique, \mycite[author]{Chastine-2007a} se proposent, dans un contexte de collaboration distante, d'utiliser des techniques de réalité augmentée pour désigner les éléments inter-référencés \myref*{fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee}.
+					Afin de résoudre cette problématique, \mycite[author]{Chastine-2007a} se proposent, dans un contexte de collaboration distante, d'utiliser des techniques de réalité augmentée pour désigner les éléments \myref*{fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee}.
 					Dans une étude l'année suivante, \mycite[author]{Chastine-2008} montrent que les techniques qu'ils proposent pour améliorer l'inter-référencement permettent de limiter les ambiguïtés et d'améliorer les performances globales du groupe.
 
 					\begin{myfigure}
@@ -738,9 +746,10 @@
 						\mycaption[fig-sota-InterReferencementVisuelProposeParChastineALAideDeTechniquesDeRealiteAugmentee]{Inter-référencement visuel proposé par \mycite[author]{Chastine-2007a} à l'aide de techniques de réalité augmentée}
 					\end{myfigure}
 
-					Afin d'effectuer des inter-référencements à un collaborateur, il est nécessaire de savoir si le collaborateur est attentif.
-					Il est nécessaire d'adapter la manière de procéder en fonction des connaissances de ce collaborateur.
-					Cet ensemble de connaissances concernant l'état actuel de chacun des collaborateurs constitue la conscience de groupe et sera définie dans la section suivante.
+					L'inter-référencement fait partie du processus d'échange et de communication au sein d'une collaboration synchrone (distante ou colocalisée).
+					Afin d'effectuer des désignations à un collaborateur, il est nécessaire de savoir si le collaborateur est attentif.
+					Il est également nécessaire d'adapter la manière de procéder en fonction des connaissances et des compétences de ce collaborateur.
+					La conscience de groupe prend donc une place importante dans ce processus d'inter-référencement.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-LeGrounding]{Le \mygrounding}
 					Cette notion, mise en évidence par \mycite[author]{Clark-1989}, est nécessaire à la collaboration.
@@ -753,43 +762,50 @@
 						Un groupe ne peut pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
 					\end{myquote}
 
-					Le \mygrounding est nécessaire à la transmission d'information.
-					En effet, toute information transmise suppose déjà de nombreuses informations implicites que l'interlocuteur doit connaître.
-					\mycite[author]{Dillenbourg-1996} étudient ce partage d'informations sur une tâche d'enquête fictive sur un meurtre.
+					Le \mygrounding est nécessaire à la transmission d'informations.
+					En effet, un locuteur qui souhaite transmettre une information doit savoir quel jargon il peut utiliser avec son interlocuteur; il faut également que les deux interlocuteurs aient accès aux mêmes données concernant l'environnement sur lequel ils travaillent.
+					\mycite[author]{Dillenbourg-1996} étudient ce partage d'informations sur une enquête fictive à propos d'un meurtre.
 					Il constate que chaque membre du groupe se construit sa propre représentation de l'environnement dans lequel il se trouve et évolue en fonction des informations que chacun trouve et de sa culture existante \mycite{Baker-1999}.
 
-					Lors d'un travail de collaboration, chaque membre possède déjà sa propre base de connaissances qui peut partiellement recouvrir celle des autres membres mais également être complémentaire.
+					Lors d'un travail de collaboration, chaque membre possède déjà sa propre base de connaissances qui peut être complémentaire ou recouvrir partiellement celle des autres membres.
 					Cependant, durant la réalisation de la tâche, une base de connaissance commune va se créer.
 					\mycite[author]{Hertzum-2008} lie les processus de recherche d'informations et de \mygrounding.
-					En effet, la recherche d'informations mène les membres du groupes à découvrir l'environnement dans lequel ils évoluent pour étoffer leur base de connaissance commune.
-					Cependant, \mycite[author]{Hertzum-2010} met en pratique cette constatation en observant le travail d'un hôpital où plusieurs médecins sont à la recherches de symptômes pour définir un diagnostique et fournir un traitement.
-					Il s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostique.
+					En effet, la recherche d'informations mène les membres du groupe à découvrir l'environnement dans lequel ils évoluent ensemble pour étoffer leur base de connaissance commune.
+					Cependant, en observant le travail d'un hôpital où plusieurs médecins sont à la recherches de symptômes pour diagnostiquer un patient et fournir un traitement approprié, \mycite[author]{Hertzum-2010} s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostic.
 
 					Afin de constituer correctement une base de connaissance commune, les membres du groupe doivent communiquer.
 					En particulier, ils doivent continuellement être sûr que les éléments dont ils parlent sont bien les mêmes afin de transmettre l'information.
-					La désignation de ces éléments n'est pas toujours simple et c'est le sujet de la prochaine section.
+					Fournir des outils appropriés pour l'inter-référencement devrait permettre d'améliorer la constitution de cette base commune de connaissance.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-MecanismesDeCommunication]{Mécanismes de communication}
-				\mycite[author]{Dix-1997} a proposé de classifier différentes catégories de communication :
-				\begin{description}
-					\item[Communication directe] C'est le moyen de communication le plus naturel.
-						La communication se fait de manière orale ou gestuelle principalement.
-						Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
-					\item[Contrôle et retour sensoriel] C'est l'interaction entre un participant et un artefact.
-						Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher, \myetc).
-					\item[\myFeedthrough] C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
-						Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
-						\mycite[author]{Junuzovic-2009} utilisent même le terme \myfeedthrough pour une communication indirecte avec un participant en intermédiaire.
-					\item[Compréhension partagée] Les participants doivent posséder au moins un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
-						Cette aspect de la communication est inconscient mais est nécessaire pour la collaboration.
-				\end{description}
+			\begin{mysubsection}[sse-sota-CommunicationEnEnvironnementVirtuel]{Communication en environnement virtuel}
+				La communication en environnement virtuel est constituée de différentes composantes.
+				Elle inclut la communication entre les collaborateurs et la communication avec ou à travers l'environnement.
+				\mycite[author]{Dix-1997} a proposé de classifier la communication en quatre catégories différentes.
+				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-CommunicationDirecte]{Communication directe}
+					C'est le moyen de communication le plus naturel.
+					La communication se fait de manière orale ou gestuelle principalement.
+					Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-ControleEtRetourSensoriel]{Contrôle et retour sensoriel}
+					C'est l'interaction entre un participant et un artefact.
+					Cette interaction est bidirectionnelle car le participant agit sur l'artefact qui produit un retour sur un ou plusieurs des modalités du participants (vue, ouïe, toucher, \myetc).
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-Feedthrough]{\myFeedthrough}
+					C'est un canal de communication indirect où les participants communiquent entre eux par l'intermédiaire des artefacts \mycite{Dix-2004}.
+					Les actions effectuées par un participant à l'aide et sur l'artefact modifient l'environnement ce qui donne des informations sur les actions et les intentions au collaborateur.
+					\mycite[author]{Junuzovic-2009} utilisent même le terme \myfeedthrough pour une communication indirecte avec un participant en intermédiaire.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-Grounding]{\myGrounding}
+					Les participants doivent posséder au moins un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
+					Cette aspect de la communication est inconscient mais est nécessaire pour la collaboration.
+				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-StrategiesDeCollaboration]{Stratégies de collaboration}
-				Avec les différents canaux de communication décrits dans la \myref{sse-sota-MecanismesDeCommunication}, conscients pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myfeedthrough et \mygrounding), il est possible de définir trois scénarios de collaboration différents basés sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
+				Avec les différents canaux de communication décrits dans la \myref{sse-sota-CommunicationEnEnvironnementVirtuel}, conscients pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myfeedthrough et \mygrounding), il est possible de définir trois scénarios de collaboration différents basés sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
 				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
-					Illustré sur la \myref*{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
-					Chaque participant possède un accès libre aux artefacts et à la possibilité d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts sur les participants.
+					Illustré sur la \myref{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
+					Chaque participant peut accéder librement aux artefacts et possède la possibilité d'analyser l'environnement par l'observation ou par les retours sensoriels des artefacts.
 
 					\begin{myfigure}
 						\let\oldarraystretch\arraystretch
@@ -815,28 +831,28 @@
 							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+							\ncput*[npos=1.5]{\myGrounding}
 						\end{myps}
 						\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
 						\let\arraystretch\oldarraystretch
 					\end{myfigure}
 
-					Ce scénario permet une collaboration d'égal à égal entre les collaborateurs ce qui peut faciliter la communication.
+					Ce scénario permet une collaboration avec un même niveau d'interaction et d'accès aux ressources entre les collaborateurs ce qui peut faciliter la communication.
 					Cependant, nous avons vu dans la \myref{sse-sota-LaParesseSociale} sur la \myglos{glo-ParesseSociale} qu'une identification des rôles était préférable.
-					Ce type de scénarios aura tendance à favoriser la \myglos{glo-ParesseSociale} en proposant des rôles strictement identiques aux utilisateurs.
+					Ce type de scénario aura tendance à favoriser la \myglos{glo-ParesseSociale} en proposant des rôles strictement identiques aux utilisateurs.
 
 					De plus, on notera que tous les participants accèdent aux mêmes artefacts.
 					Si deux collaborateurs accèdent, modifient ou manipulent en même temps un même artefact, cela peut poser des problèmes de cohérence de l'environnement virtuel ou de sécurité de l'information comme l'explique \mycite[author]{Dewan-1998}.
-					\mycite[author]{Dewan-1998} énoncent une liste de conditions à respecter pour limiter les problèmes de concurrences d'accès aux codes sources pour le développement de programmes informatiques.
-					Quelques années plus tard, c'est le projet \mycite[author]{SVN-2011} qui voit le jour pour effectuer du développement informatique en collaboration.
+					\mycite[author]{Dewan-1998} énoncent une liste de conditions à respecter (automatisation, généralisation, médiation totale, privilège minimum, facilité d'utilisation, efficacité) pour limiter les problèmes de concurrences d'accès aux codes sources dans le développement de programmes informatiques.
+					Quelques années plus tard, l'outil de développement informatique collaboratif \mycite[author]{SVN-2011} voit le jour.
 					\mycite[author]{Grasset-2002} sont également confrontés à ce problème d'accès aux ressources sur sa plateforme multi-utilisateurs \myMARE et propose un système de contrôle d'accès aux informations.
-					Toutefois, \mycite[author]{Buisine-2011} soulignent qu'une possibilité d'accès aux artefacts également distribuée entre les utilisateurs permet de réduire la \myglos{glo-ParesseSociale}.
+					Toutefois, \mycite[author]{Buisine-2011} soulignent qu'une possibilité d'accès aux artefacts équitablement distribuée entre les utilisateurs permet de réduire la \myglos{glo-ParesseSociale}.
 					En effet, si un utilisateur ne parvient pas à accéder aux artefacts, il va s'isoler.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
-					Le scénario à plusieurs experts se distingue du scénario à plusieurs utilisateurs par la compétence des membres du groupe : les experts proviennent de spécialités difféntes.
+					Le scénario à plusieurs experts se distingue du scénario à plusieurs utilisateurs par la compétence des membres du groupe : les experts proviennent de spécialités différentes.
 					La médecine est un domaine qui s'adapte très bien à ce type de scénario étant donné le nombre important de spécialités différentes \mycite{Althoff-2007a,Althoff-2007b}.
-					Les experts possédant des connaissances différentes, il est nécessaire pour eux d'avoir des artefacts adaptés à leur besoins \myref*{fig-sota-CollaborationAPlusieursExperts}.
+					Les experts possédant des connaissances différentes, il est nécessaire pour eux d'avoir des artefacts adaptés aux besoins de chacun \myref*{fig-sota-CollaborationAPlusieursExperts}.
 					Si on prend l'exemple du \myglos{glo-DockingMoleculaire}, un biologiste n'aura pas les mêmes besoins en information qu'un chimiste et leurs actions sur la tâche à réaliser seront également de natures différentes.
 					Les artefacts se synchronisent entre eux afin de conserver un environnement virtuel cohérent pour l'ensemble des experts.
 
@@ -872,7 +888,7 @@
 							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+							\ncput*[npos=1.5]{\myGrounding}
 							\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
 							\ncput*[npos=0.5]{Synchronization}
 						\end{myps}
@@ -881,19 +897,19 @@
 					\end{myfigure}
 
 					Certaines tâches sont très adaptées à ce type de collaboration.
-					Elle permet une identification des rôles de chacun et limite ainsi toute \myglos{glo-ParesseSociale} : chaque utilisateur doit se fier à lui-même pour réaliser la tâche.
+					Elle permet une identification des rôles de chacun et limite ainsi la \myglos{glo-ParesseSociale} : chaque utilisateur ne peut se fier qu'à lui-même pour réaliser la tâche.
 					De plus, l'accès aux artefacts devient simplifié puisqu'il n'y a plus d'accès concurrent à un même artefact par deux utilisateurs.
 					Cependant, une synchronisation entre les artefacts est nécessaire afin de conserver une cohérence de l'environnement virtuel pour l'ensemble des utilisateurs ce qui peut poser quelques difficultés techniques.
-					\mycite[author]{Barbic-2007} ainsi que \mycite[author]{Gautier-2008} abordent ces problèmes de synchronisation sur des simulations de déformation d'objets déformables.
+					\mycite[author]{Barbic-2007} ainsi que \mycite[author]{Gautier-2008} abordent ces problèmes de synchronisation sur des simulations d'objets déformables.
 
-					Dans les scénarios à plusieurs experts, la compréhension partagée est difficile car les bases de connaissances des experts peuvent être très différentes.
-					Il est nécessaire de se construire une base de connaissance commune selon \mycite[author]{Bach-2010}, notion déjà identifiée comme le \mygrounding par \mycite[author]{Clark-1991} \myref*{sss-sota-LeGrounding}.
-					Par exemple, le jargon utilisé entre deux experts de spécialités différentes peut être une entrave importante à la communication directe.
+					Dans les scénarios à plusieurs experts, les bases de connaissances sont plutôt complémentaires.
+					Il est nécessaire d'identifier les connaissances communes selon \mycite[author]{Bach-2010}, notion déjà identifiée comme le \mygrounding par \mycite[author]{Clark-1991} \myref*{sss-sota-LeGrounding}.
+					Par exemple, le jargon utilisé entre deux experts de spécialités différentes peut devenir une importante contrainte à la communication directe.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
-					Dans les deux scénarios précédent, il est difficile de synchroniser les actions des différents utilisateurs.
+					Dans les deux scénarios précédents, il est difficile de synchroniser les actions des différents utilisateurs.
 					Dans le scénario à plusieurs utilisateurs, c'est l'accès concurrent aux artefacts qui pose problème; dans le scénario à plusieurs experts, c'est la synchronisation entre les artefacts.
-					Afin de passer outre ces contraintes, le scénario par manipulateur et observateur offre un accès exclusif à un seul utilisateur du groupe, les autres n'ayant que la possibilité d'interagir directement avec cet utilisateur \myref*{fig-sota-CollaborationParManipulateurEtObservateur}.
+					Afin de passer outre ces contraintes, le scénario par manipulateur et observateur propose un accès aux artefacts exclusif à un seul utilisateur du groupe, les autres n'ayant que la possibilité d'interagir directement avec cet utilisateur \myref*{fig-sota-CollaborationParManipulateurEtObservateur}.
 					L'observateur agit alors sur les artefacts par l'intermédiaire du manipulateur.
 
 					\begin{myfigure}
@@ -919,19 +935,19 @@
 							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
 							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
-							\ncput*[npos=1.5]{\begin{tabular}{@{}c@{}}Compréhension\\partagée\end{tabular}}
+							\ncput*[npos=1.5]{\myGrounding}
 						\end{myps}
 						\mycaption[fig-sota-CollaborationParManipulateurEtObservateur]{Collaboration par manipulateur et observateur}
 						\let\arraystretch\oldarraystretch
 					\end{myfigure}
 
 					Ce scénario permet de s'affranchir des contraintes d'accès concurrent aux artefacts ou de synchronisation entre les artefacts.
-					Les observateurs possède également une charge de travail cognitive beaucoup plus faible et peuvent se consacrer de manière plus importante à l'analyse des données disponibles et à la proposition de solutions pertinentes.
+					Les observateurs possèdent également une charge de travail cognitive beaucoup plus faible et peuvent se consacrer de manière plus importante à l'analyse des données disponibles et à la proposition de solutions pertinentes.
 
-					Cependant, l'activité de l'observateur le mène à indiquer, désigner des objectifs au manipulateur ce qui augmente le besoin de communication.
-					\mycite[author]{Chastine-2007} aborde cette problématique dans ces travaux de thèse : il nomme ce concept inter-référencement \myref*{sss-sota-LaConscienceDeGroupe}.
-					De plus, un travail récent cherchant à caractériser \og l'intelligence d'un groupe \fg a conclu que l'un des facteurs d'intelligence d'un groupe était une répartition équitable des charges de travails entre les membres du groupe \mycite{Woolley-2010}.
-					Dans ce scénario, l'asymétrie des différents rôles (manipulateur et observateur) semble favoriser un déséquilibre important des charges de travail.
+					Cependant, l'activité de l'observateur le mène à désigner des objectifs au manipulateur ce qui augmente le besoin de communication.
+					Cette action renvoie aux travaux de \mycite[author]{Chastine-2007} sur l'inter-référencement \myref*{sss-sota-LaConscienceDeGroupe}.
+					De plus, un travail récent cherchant à caractériser \og l'intelligence d'un groupe \fg a conclu que l'un des facteurs d'intelligence d'un groupe était la répartition équitable des charges de travails entre les membres du groupe \mycite{Woolley-2010}.
+					Dans ce scénario, l'asymétrie entre les différents rôles (manipulateur et observateur) semble favoriser un déséquilibre important des charges de travail ce qui n'est pas idéal pour la collaboration.
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
@@ -2142,7 +2158,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						Cette figure montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
 						En effet, les phases de sélection forcent une collaboration étroite (spécificité de la tâche proposée) et favorisent les \myglos*{glo-ConflitDeCoordination}.
 						Cependant, les phases de recherche permettent aux sujets de manipuler de manière distante.
-						Ainsi, ils se définissent leur propre espace de travail mais également leur propre stratégie en fonction des événement locaux à leur espace de travail.
+						Ainsi, ils se définissent leur propre espace de travail mais également leur propre stratégie en fonction des évènement locaux à leur espace de travail.
 						Pourtant, la phase de sélection nécessite une collaboration étroite et si les stratégies sont différentes, il en résulte de mauvaises performances dû au temps important pour se coordonner à nouveau.
 					\end{myparagraph}
 				\end{mysubsubsection}
@@ -2959,7 +2975,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Cette deuxième expérimentation a montré une nouvelle fois le rôle prépondérant de la taille de la molécule dans la complexité de la tâche.
 				Nous verrons que les molécules proposées dans la prochaine étude sont significativement plus importantes que celle utilisées jusqu'à présent.
 
-				L'ajout de sujets supplémentaires va probablement générer des dynamiques de groupes qui n'avait pas de raison d'exister au sein d'un \myglos{glo-Binome}.
+				L'ajout de sujets supplémentaires va probablement générer des dynamiques de groupe qui n'avait pas de raison d'exister au sein d'un \myglos{glo-Binome}.
 				Cette troisième étude permettra l'observation des dynamiques et de les caractériser.
 				L'objectif sera de détecter les limites et les contraintes afin de pouvoir fournir des outils pour répondre aux problématiques soulevées.
 
@@ -3875,7 +3891,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Les séquences de sélection et donc de déformation sont alors plus longues et moins nombreuses.
 					D'ailleurs, la \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} montre que les opérateurs sont plus rapides à atteindre la cible désignée avec l'assistance haptique ce qui leur permet de passer plus de temps à déformer mais moins de temps à chercher des tâches à réaliser.
 
-					Nous avons vu que les outils d'assistance haptique pour la désignation aident le coordinateur à imposer une stratégie commune ce qui a pour effet d'améliorer les performances du groupes sur les tâches les plus complexes.
+					Nous avons vu que les outils d'assistance haptique pour la désignation aident le coordinateur à imposer une stratégie commune ce qui a pour effet d'améliorer les performances du groupe sur les tâches les plus complexes.
 					L'hypothèse~\myhypothesis{1} est confirmée pour la tâche la plus complexe.
 					Il semble que quelque soit la stratégie, le travail collaboratif sera plus efficace si tous les membres du groupe sont en accord avec la stratégie à suivre.
 				\end{mysubsubsection}
@@ -3947,7 +3963,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour des désignations exclusivement visuelles, les opérateurs répondent à la désignation soit parce qu'ils ont vu une nouvelle cible en surbrillance, soit parce que le coordinateur leur a communiqué la présence d'une nouvelle cible.
 					Dans le premier cas, le temps de réponse de l'opérateur pour accepter la désignation va dépendre du degré d'attention de celui-ci et de la visibilité de la cible (cible masquée par des atomes ou cible trop éloignée du champ de vision).
 					Dans le second cas, c'est le temps utilisé pour les échanges verbaux et la qualité des explications qui va déterminer le temps de réponse.
-					Dans un cas comme dans l'autre, il faut que l'opérateur soit attentif concernant toute nouvelle désignation ce qui réduit son attention pour les autres événements (conscience périphérique).
+					Dans un cas comme dans l'autre, il faut que l'opérateur soit attentif concernant toute nouvelle désignation ce qui réduit son attention pour les autres évènements (conscience périphérique).
 
 					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} nous montre que l'utilisation d'un retour haptique au sein de ce processus de désignation améliore considérablement le temps de réponse.
 					En effet, l'outil d'assistance haptique va signaler directement aux opérateurs qu'une désignation vient d'être effectuée par le coordinateur.
