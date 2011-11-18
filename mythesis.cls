@@ -254,22 +254,23 @@
 	\fi%
 }
 
-\pagestyle{fancy}%
-\fancyhead{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0.0pt}
-\renewcommand{\footrulewidth}{0.0pt}
-\fancyfoot[C]{%
-	\ifx\@laboratory\@empty%
-	\else%
+\fancypagestyle{firstpage}{%
+	\fancyhead{}%
+	\fancyfoot{}%
+	\renewcommand{\headrulewidth}{0.0pt}%
+	\renewcommand{\footrulewidth}{0.0pt}%
+	\fancyfoot[C]{%
+		\ifx\@laboratory\@empty%
+		\else%
 		{\footnotesize\it\textcolor{black!70}{Thèse préparée au}\\}%
 		{\footnotesize\textcolor{black!70}{\@laboratory}}%
-	\fi%
-}
+		\fi%
+	}%
+}%
 \def\maketitle{%
 	\begin{titlepage}%
 		\null%
-		\thispagestyle{fancy}%
+		\thispagestyle{firstpage}%
 		\toptitlepage%
 		\vfill%
 		\bodytitlepage%
