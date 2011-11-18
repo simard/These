@@ -159,6 +159,8 @@
 \newcommand{\logoright}[1]{\def\@logoright{#1}}
 \newcommand{\documenttype}[1]{\def\@documenttype{#1}}
 \newcommand{\university}[1]{\def\@university{#1}}
+\newcommand{\laboratory}[1]{\def\@laboratory{#1}}
+\newcommand{\grade}[1]{\def\@grade{#1}}
 \newcommand{\jury}[1]{\def\@jury{#1}}
 \def\jurymember#1#2{%
 	\@ifnextchar[{\jurymember@i{#1}{#2}}{\jurymember@i{#1}{#2}[]}%
@@ -168,8 +170,8 @@
 	\multicolumn{3}{l}{%
 		\hspace{0.33\textwidth}%
 		\setlength{\parskip}{0.25ex plus 0.5ex minus 0.2ex}%
-		\begin{minipage}[t]{0.73\textwidth}%
-			\footnotesize\textcolor{black!70}{#6}%
+		\begin{minipage}[t]{0.655\textwidth}%
+			\scriptsize\textcolor{black!70}{#6}%
 		\end{minipage}%
 		\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}%
 	} \\%
@@ -185,81 +187,97 @@
 %% Redéfinition des différentes parties %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Redéfinition de \maketitle
-\newcommand{\toptitlepage}{
+\newcommand{\toptitlepage}{%
 	\ifx\@logoleft\@empty%
 	\else%
-		\psframebox{\includegraphics[width=3cm]{\@logoleft}}
-	\fi
-	\hspace{\stretch{1}}
+		\psframebox{\includegraphics[width=3cm]{\@logoleft}}%
+	\fi%
+	\hspace{\stretch{1}}%
 	\ifx\@logoright\@empty%
 	\else%
-		\psframebox{\includegraphics[width=3cm]{\@logoright}}
-	\fi\par
+		\psframebox{\includegraphics[width=3cm]{\@logoright}}%
+	\fi\par%
 }
 
-\definecolor{myred}{rgb}{0.7265625,0,0}
-\newcommand{\bodytitlepage}{
-	\normalfont
-	\ifx\@documenttype\@empty
-	\else
-	{\Large\raggedright\textcolor{black!50}{\@documenttype}\par}
-	\fi
+\newcommand{\bodytitlepage}{%
+	\normalfont%
+	\ifx\@university\@empty%
+	\else%
+	{\raggedright\normalsize\textcolor{black!70}{\@university}\par}%
+	\fi%
+	\ifx\@documenttype\@empty%
+	\else%
+	{\raggedright\Large\textcolor{black!70}{\@documenttype}\par}%
+	\fi%
 	{\textcolor{myred}{\rule[0.5ex]{\textwidth}{1pt}}\par}%
-	\ifx\@author\@empty
-	\else
-		{\large\raggedleft \@author\par}
-	\fi
-	\vfill
-	\ifx\@title\@empty
-	\else
-		{\LARGE\centering \@title\par}
-	\fi
-	\ifx\@subtitle\@empty
-	\else
-		{\vspace{0.5cm}\large\centering \begin{otherlanguage}{english}\@subtitle\end{otherlanguage}\par}
-	\fi
-	\ifx\@university\@empty
-	\else
-		{\vspace{1cm}\normalsize\centering\@university\par}
-	\fi
+	\ifx\@author\@empty%
+	\else%
+		{\large\raggedleft \@author\par}%
+	\fi%
+	\vfill%
+	\ifx\@title\@empty%
+	\else%
+		{\LARGE\centering \@title\par}%
+	\fi%
+	\ifx\@subtitle\@empty%
+	\else%
+		{\vspace{0.5cm}\large\centering \begin{otherlanguage}{english}\@subtitle\end{otherlanguage}\par}%
+	\fi%
 }
 
-\newcommand{\bottomtitlepage}{
-	\ifx\@date\@empty
-	\else
-		{\hspace{2cm}\raggedright\normalsize Thèse soutenue le \@date}
-	\fi
-	\ifx\@jury\@empty
-	\else
-		\ifx\@date\@empty
-		{\normalsize\raggedright\hspace{2cm}Jury constitué de\par}
-		\else
-		{en présence de\par}
-		\fi
-		\vspace{1ex}
-		{\normalsize\centering\begin{mytabular}{>{\hsize=0.3\textwidth}R>{\hsize=0.5\textwidth}L>{\hsize=0.2\textwidth}R}
-			\@jury
-		\end{mytabular}\par}
-	\vspace{1cm}
-	\fi
-	\ifx\@signatures\@empty
-	\else
-		{\normalsize\centering\textbf{signatures}\hspace{\stretch{1}}\@signatures\hspace{\stretch{1}}\par}
-	\fi
+\newcommand{\bottomtitlepage}{%
+	\ifx\@date\@empty%
+	\else%
+		{\centering\normalsize Thèse soutenue le \@date\\}%
+		\ifx\@grade\@empty%
+		\else%
+			{\centering\normalsize pour l'obtention du grade de\par}%
+			{\centering\large\bfseries \@grade\par}%
+		\fi%
+	\fi%
+	\ifx\@jury\@empty%
+	\else%
+		\ifx\@date\@empty%
+		{\centering\normalsize\hspace{2cm}Jury constitué de\par}%
+		\else%
+		{\centering\small\it en présence de\par}%
+		\fi%
+		\vspace{1ex}%
+		{\normalsize\centering\begin{mytabular}{>{\hsize=0.3\textwidth}R>{\hsize=0.425\textwidth}L>{\hsize=0.2\textwidth}R}%
+			\@jury%
+		\end{mytabular}\par}%
+	\vspace{1cm}%
+	\fi%
+	\ifx\@signatures\@empty%
+	\else%
+		{\normalsize\centering\textbf{signatures}\hspace{\stretch{1}}\@signatures\hspace{\stretch{1}}\par}%
+	\fi%
 }
 
+\pagestyle{fancy}%
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\fancyfoot[C]{%
+	\ifx\@laboratory\@empty%
+	\else%
+		{\footnotesize\it\textcolor{black!70}{Thèse préparée au}\\}%
+		{\footnotesize\textcolor{black!70}{\@laboratory}}%
+	\fi%
+}
 \def\maketitle{%
-	\begin{titlepage}
-		\null
-		\thispagestyle{empty}
-		\toptitlepage
-		\vfill
-		\bodytitlepage
-		\vfill
-		\bottomtitlepage
-		\null
-	\end{titlepage}
-	\clearpage
+	\begin{titlepage}%
+		\null%
+		\thispagestyle{fancy}%
+		\toptitlepage%
+		\vfill%
+		\bodytitlepage%
+		\vfill%
+		\bottomtitlepage%
+		\null%
+	\end{titlepage}%
+	\clearpage%
 }
 \def\@makechapterhead#1{%
 	\addtocontents{tcs}{\protect\addvspace{10\p@}}%
@@ -296,6 +314,8 @@
 \title{}
 \subtitle{}
 \university{}
+\laboratory{}
+\grade{}
 \date{}
 \jury{}
 \signatures{}
