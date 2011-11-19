@@ -979,7 +979,7 @@
 			Il identifie quatre tâche élémentaires pour segmenter une interaction en environnement virtuel, nommées \myacro*{acr-PCV} par \mycite[author]{Fuchs-2006a}.
 			Les quatre \myacro*{acr-PCV} pour la manipulation moléculaire, illustrée dans la \myref{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes}, sont expliquées ci-dessous :
 			\begin{description}
-				\item[Recherche] Cette tâche concerne la recherche et l'identification d'une cible (atome, \myglos{glo-Residu}, structure secondaire, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
+				\item[Exploration] Cette tâche concerne la recherche et l'identification d'une cible (atome, \myglos{glo-Residu}, structure secondaire, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 				\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
 				\item[Déformation] Cette étape consiste à manipuler la cible précédemment sélectionnée pour déformer la structure moléculaire au niveau atomique, intra-moléculaire ou inter-moléculaire.
 					L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
@@ -993,7 +993,7 @@
 					\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
 				}
 				\begin{myps}(-2.5,-1)(2.5,5)
-					\mynode(0,4)[Search]{Recherche}
+					\mynode(0,4)[Exploration]{Exploration}
 					\mycirclenum(0,4){1}
 					\mynode(0,3)[Selection]{Sélection}
 					\mycirclenum(0,3){2}
@@ -1002,16 +1002,16 @@
 					\mynode(0,1)[Evaluation]{Évaluation}
 					\mycirclenum(0,1){4}
 					\mynode[fillstyle=solid,fillcolor=myblue!25](0,-0.5)[Objective]{Objectif atteint}
-					\ncline{->}{Search}{Selection}
+					\ncline{->}{Exploration}{Selection}
 					\ncline{->}{Selection}{Manipulation}
 					\ncline{->}{Manipulation}{Evaluation}
 					\ncline{->}{Evaluation}{Objective}
-					\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Search}
+					\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Exploration}
 				\end{myps}
 				\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
 			\end{myfigure}
 
-			Sur la base de ces \myacro*{acr-PCV}, nous avons segmenté notre étude en deux parties distinctes; une centrée sur le processus de recherche et de sélection \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule}; la seconde centrée sur les processus de manipulation et d'évaluation \myref*{cha-DeformationCollaborativeDeMolecule}.
+			Sur la base de ces \myacro*{acr-PCV}, nous avons segmenté notre étude en deux parties distinctes; une centrée sur le processus d'exploration et de sélection \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule}; la seconde centrée sur les processus de manipulation et d'évaluation \myref*{cha-DeformationCollaborativeDeMolecule}.
 			Dans un troisième temps, nous avons souhaiter augmenter la taille des groupes étudiés \myref*{cha-LaDynamiqueDeGroupe}.
 		\end{mysection}
 	\end{mychapter}
@@ -1485,28 +1485,28 @@
 	\end{mychapter}
 	\begin{mychapter}[cha-RechercheCollaborativeDeResiduSurUneMolecule]{Recherche collaborative de résidu sur une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
-			L'état de l'art du premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel, décrites par \mycite[author]{Bowman-1999} : les \myacro*{acr-PCV} \mycite{Fuchs-2006a}.
-			Chaque primitive nécessite que la précédente ait été réalisée avec succès; on ne peut pas manipuler tant qu'une sélection n'a pas été effectuée; on ne peut pas sélectionner sans avoir naviguer, explorer et identifier les cibles à sélectionner.
-			Le processus d'exploration et de sélection sont les étapes primordiales à toute manipulation ultérieure.
-			Cependant, la sélection au sein d'une simulation moléculaire est une problématique complexe à part entière \mycite{Delalande-2010}.
-			En effet, les molécules possèdent un nombre importants d'atomes sous la forme d'une longue chaîne carbonée repliée sur elle-même ce qui rend la recherche d'une cible complexe.
-			L'appréhension d'un tel environnement virtuel peut être effectuée par des améliorations visuelles \mycite{Chavent-2011} ou des interfaces d'interactions adaptées \mycite{Delalande-2010} par exemple.
-			Cependant, nous choisissons d'explorer une troisième solution : la distribution des charges cognitives de travail par l'intermédiaire d'une collaboration synchrone colocalisée.
+			L'état de l'art du premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel : les \myacro*{acr-PCV}.
+			Dans cette première étude, nous souhaitons étudier les premières \myacro*{acr-PCV} qui sont l'exploration et la sélection \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes} dans un contexte de manipulation moléculaire collaborative.
+			Le processus d'exploration et de sélection est primordial à toute manipulation ultérieure.
 
-			Dans ce chapitre, nous nous intéressons aux deux premières étapes du processus de déformation : la \myemph{recherche} et la \myemph{sélection} \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes}.
-			Nous étudions tout particulièrement l'influence du travail collaboratif sur ces étapes.
-			Le prétexte de cette étude est la recherche de \myglos*{glo-Residu}.
-			L'étude proposée montre l'intérêt du travail collaboratif sur des tâches de nature complexe.
-			Cependant, nous verrons que les \myglos*{glo-Binome} adoptent des stratégies différentes, menant à des performances hétérogènes.
-			Nous identifions ainsi les avantages de la collaboration mais également les contraintes d'une telle configuration de travail.
+			Dans ce chapitre, nous commencerons par présenter les travaux existants en matière d'exploration et de sélection en environnement virtuel.
+			Puis nous présenterons les objectifs de cette étude pour aboutir sur un protocole expérimental.
+			Les résultats de l'expérimentation seront analysés et discutés dans la dernière partie.
 		\end{mysection}
-		\begin{mysection}[sec-exp1-RechercheEtSelectionCollaborative]{Recherche et sélection collaborative}
+		\begin{mysection}[sec-exp1-ExplorationEtSelectionCollaborative]{Exploration et sélection collaborative}
 			\begin{mysubsection}[sse-exp1-TravauxExistants]{Travaux existants}
-				La sélection en environnement virtuel est une tâche élémentaire relativement peu explorée pour la biologie moléculaire en environnement virtuel.
-				Pourtant, elle est déjà relativement développée pour les \myacro*{acr-AFM} mais les contraintes techniques de cette technologie sont très différentes de nos contraintes en environnement virtuel; nous ne nous étendrons pas sur ce sujet.
+				L'exploration et la sélection en environnement virtuel sont des tâches élémentaires relativement peu explorées en environnement virtuel, notamment dans le domaine de la biologie moléculaire.
+				Pourtant, des travaux en biologie moléculaire existent dans les environnement réels mais les contraintes techniques sont très différentes de celles en environnement virtuel; nous ne nous étendrons pas sur ce sujet.
 
-				La taille et la complexité des molécules nécessite des solutions de sélection adaptées.
-				Les logiciels les plus utilisés tel que \myPyMOL ou \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
+				Actuellement, les tâches d'exploration et de recherche collaborative sont principalement destinées aux applications pour les moteurs de recherche.
+				\mycite[author]{Morris-2007} souligne que la coopération dans ce domaine existe déjà sur \myInternet mais que les échanges entre les utilisateurs sont encore trop peu exploités.
+				Sur cette base, \mycite[author]{Pickens-2007} propose un système pour la recherche collaborative où des utilisateurs à la recherche d'informations peuvent échanger de manière synchrone les résultats intermédiaires afin de progresser plus rapidement.
+
+				En environnement virtuel, \mycite[author]{Wernert-1999} propose simplement une exploration collaborative de l'environnement virtuel; un guide permet à l'utilisateur d'explorer plus efficacement un environnement qu'il ne connait pas.
+				À partir de ce travail, \mycite[author]{Hughes-2002} propose une tâche de recherche basée sur le principe du guidage mais en supprimant la collaboration; le guide est un algorithme qui suggére à l'utilisateur les zones d'intérêt.
+
+				L'objectif premier de l'exploration dans notre cas est de pouvoir sélectionner une zone d'intérêt après l'avoir identifiée.
+				En biologie moléculaire, les logiciels les plus utilisés tel que \myPyMOL ou \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
 				Par exemple, pour sélectionner tous les atomes de type \myatom{C}, \myatom{O}, \myatom{N} ou \myatom{CA}, on utilisera les commandes suivantes dans \myPyMOL
 				\begin{mySource*}[language={}]
 pymol> select mysel, name c+o+n+ca
@@ -1515,57 +1515,60 @@ pymol> select mysel, name c+o+n+ca
 				\begin{mySource*}[language={}]
 vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mySource*}
-				Cette méthode de sélection est seulement efficace dans le cas où la cible à sélectionner est connue à l'avance.
-				Dans le cadre de l'exploration virtuelle d'une molécule en \myThreeD, \myacro{acr-VMD} propose également une sélection par \textit{picking}\footnote{Méthode qui consiste à trouver l'élément pointé par la souris (\myTwoD) dans l'environnement virtuel (\myThreeD).} à l'aide de la souris.
-				Cependant, ce type de méthode atteint ses limites en terme de précision dès que la molécule est de taille trop importante : la perception de la profondeur n'est pas permise avec cette méthode de sélection.
 
-				Depuis déjà plusieurs années, la communauté de la réalité virtuelle s'est intéressé à cette problématique en proposant des périphériques d'interaction pour les environnements virtuels en \myThreeD.
-				\mycite[author]{Pavlovic-1996} ont développé une plateforme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
-				Cependant, les techniques de segmentations pour la reconnaissance des gestes sont encore difficiles à mettre en place, même si l'arrivée récente de la \myKinect de \myMicrosoft a amélioré cette démocratisation.
+				Cependant, ces méthodes de sélection ne s'intègrent dans aucun processus d'exploration : les zones d'intérêt doivent déjà être identifiées avant de procéder à ce type de sélection.
+				\myacro{acr-VMD} propose ce type d'exploration avec une souris et permet la sélection à l'aide d'une méthode de \textit{picking}\footnote{Le \textit{picking} consiste à identifier l'élément pointé par la souris (\myTwoD) dans l'environnement virtuel (\myThreeD).}.
+				Cependant, la sélection par \textit{picking} est limitée par les problèmes de perception de la profondeur.
+
+				Différentes approches non collaboratives ont été étudiées pour la sélection en environnement moléculaire virtuel.
+				Par exemple, \mycite[author]{Pavlovic-1996} propose une plateforme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
+				Cependant, les techniques de segmentations de la parole et des gestes sont encore imprécises.
 				On trouve également les travaux de \mycite[author]{Polys-2004} qui proposent une interaction avec une \textit{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myWorkbench\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
-				Tous ces dispositifs sont relativement lourds à déployer et ne sont pas adaptés pour une utilisation sur un ordinateur de bureau.
+				Ces dispositifs sont relativement difficiles à déployer pour des applications collaboratives (multiplication de matériel, accès aux ressources matérielles, \myetc).
+				De plus, les tâches de manipulation étudiées sont extrêmement simplifiées et n'ont pas d'application réelle en biologie moléculaire.
 
-				Tous les dispositifs présentés dans le paragraphe précédent sont testés sur des molécules ne contenant que quelques atomes et ayant peu d'intérêt pour les biologistes.
-				Cependant, la sélection sur des tâches pertinentes pour les biologistes est un sujet encore peu exploré.
-				\mycite[author]{Levine-1997} proposent une plateforme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un \myglos{glo-DockingMoleculaire}.
-				Cependant, le \myglos{glo-DockingMoleculaire} s'effectue ici sur des corps rigides ce qui simplifie grandement la complexité de l'exploration.
+				Cependant, certains travaux se sont consacrés à la mise en place d'une plateforme pour des tâches pertinentes.
+				Par exemple, \mycite[author]{Levine-1997} proposent une plateforme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un \myglos{glo-DockingMoleculaire}.
+				Cependant, le \myglos{glo-DockingMoleculaire} s'effectue ici sur des corps rigides pour simplifier la complexité de l'exploration.
 				On trouve également les travaux de \mycite[author]{Ferey-2008a} mais là encore, il s'agit de corps rigides.
+				Cependant, \mycite[author]{Delalande-2010} propose une plateforme en utilisant des périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel sur des corps flexibles.
 				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilisent les périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel.
 				L'interface haptique utilisée permet de ressentir les forces en action dans la simulation et ainsi améliorer le processus d'exploration et de sélection.
+
+				Cette brève bibliographie montre que les études manquent concernant les processus d'exploration et de sélection en \myglos{acr-EVC}.
+				Ce chapitre a pour but de proposer une tâche de recherche collaborative dans un environnement moléculaire virtuel afin d'identifier les avantages et les limites de cette approche.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-Objectifs]{Objectifs}
-				Dans ce chapitre, nous abordons les tâches de recherche et de sélection dans un \myacro{acr-EVC}.
-				La recherche au sein d'une simulation moléculaire est une tâche très complexe en raison du grand nombre d'atomes et de la mobilité des atomes.
-				Nous proposons d'étudier l'apport de la distribution des charges de travail par une configuration de travail collaboratif pour la réalisation de cette tâche.
+				Dans ce chapitre, nous abordons les tâches d'exploration et de sélection dans un \myacro{acr-EVC}.
+				La recherche au sein d'une simulation moléculaire est une tâche très complexe en raison du grand nombre d'atomes et de la flexibilité de la molécule.
+				Nous proposons d'étudier la distribution des charges de travail pour la réalisation de cette tâche.
 
-				Les objectifs de cette première partie sont multiples.
+				Les objectifs de cette première étude sont multiples.
 				Tout d'abord, nous souhaitons observer les performances comparées d'un travail autonome face à une configuration de travail collaborative.
 				Notre hypothèse va dans le sens d'une amélioration des performances pour les configurations de travail collaboratives sur des tâches de nature complexe.
 
-				De plus, nous souhaitons observer les stratégies de travail en collaboration.
+				De plus, nous souhaitons observer les stratégies de travail qui pourraient émerger de cette collaboration.
 				Nous supposons que les stratégies vont varier d'un groupe à l'autre en fonction des affinités et des connaissances intrinsèques du groupe.
-				Nous verrons qu'une configuration collaborative permet de mettre en avant des stratégies de travail distinctes en fonction de la communication entre les utilisateurs, des espaces de travail des manipulateurs, de la répartition des tâches, \myetc
 
 				Ensuite, nous nous intéressons plus précisément aux avis des utilisateurs.
 				Nous supposons que la configuration collaborative est plus apprécié des utilisateurs grâce à l'émulsion sociale qui naît des interactions et de la communication entre les manipulateurs.
 
-				Enfin, nous souhaitons valider la plateforme de manipulation proposée.
-				Pour cela, l'évaluation sera confiée aux sujets.
-				En effet, il est nécessaire de prendre en compte l'expérience de l'utilisateur afin d'améliorer l'ergonomie des outils proposés.
-				L'objectif est de vérifier l'utilisabilité de la plateforme afin d'identifier les points faibles et les contraintes.
+				Enfin, nous souhaitons valider l'utilisabilité de la plateforme de manipulation proposée afin d'améliorer l'ergonomie des outils proposés.
+				L'évaluation sera confiée aux sujets.
+				L'objectif est d'identifier les faiblesses pour proposer des solutions dans les versions ultérieures \myShaddock.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp1-PresentationDeLExperimentation]{Présentation de l'expérimentation}
-			Afin de répondre à nos hypothèses de travail, résumées dans la \myref{sse-met-exp1-Hypotheses}, nous mettons en place une expérimentation pour la recherche de \myglos{glo-Residu} au sein d'une molécule à travers une simulation en temps-réel.
-			Cette section est destinée à décrire la tâche proposée puis les spécificités du protocole expérimental.
+			Afin de répondre à nos hypothèses de travail résumées dans la \myref{sse-met-exp1-Hypotheses}, nous décrivons ici la tâche proposée aux sujets pour répondre aux objectifs fixés.
 			\begin{mysubsection}[sse-exp1-DescriptionDeLaTache]{Description de la tâche}
 				La tâche proposée consiste à trouver des \myglos*{glo-Residu} au sein d'une molécule puis à les extraire hors de la molécule.
 				Les \myglos*{glo-Residu} sont des groupes d'atomes s'associant les uns aux autres le long d'une chaîne carbonée pour former une molécule.
 				Trois molécules sont proposées dans le cadre de cette expérimentation.
-				La molécule \myTRPZIPPER sera utilisée pour la procédure d'apprentissage de la plateforme.
+				La molécule \myTRPZIPPER sera utilisée pour la procédure d'apprentissage.
+				Les molécules \myTRPCAGE et \myPrion sont utilisées pour la tâche de recherche et d'extraction de \myglos*{glo-Residu} : \mynum{5}~\myglos*{glo-Residu} à rechercher et à extraire sont proposés sur chaque molécule.
 				Les molécules \myTRPCAGE et \myPrion sont utilisées pour la tâche de recherche et d'extraction de \myglos*{glo-Residu} : chaque molécule possède \mynum{5}~\myglos*{glo-Residu} à extraire.
 				Tous les \myglos*{glo-Residu} à rechercher sont affichés dans la \myref{tab-exp1-ListeDesResidusRecherches}.
-				Pour une description plus précises des molécules, se reporter à la \myref{sec-pro-PresentationsDesMolecules}.
+				Pour une description précise des molécules, se reporter à la \myref{sec-pro-PresentationsDesMolecules}.
 
 				\begin{mytable}
 					\mycaption[tab-exp1-ListeDesResidusRecherches]{Liste des \myglosnl*{glo-Residu} recherchés}
@@ -1604,58 +1607,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mytable}
 
 				La \myref{fig-exp1-RepartitionDesResidusSurLesMolecules} montre la répartition des \myglos*{glo-Residu} sur les deux molécules.
-				Chaque \myglos{glo-Residu} possède ses propres spécificités (position, couleur, \myetc).
-				Les critères de complexité, résumés pour chaque \myglos{glo-Residu} dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}, sont les suivants :
-				\begin{description}
-					\item[Nombre de \myglosnl*{glo-Residu}] Le nombre total de \myglos*{glo-Residu} présents dans la molécule.
-						Un nombre important des \myglos*{glo-Residu} surcharge visuellement l'environnement virtuel et augmente le nombre de cibles potentielles.
-					\item[Position] Le \myglos{glo-Residu} peut se trouver soit à la périphérie de la molécule (position \myemph{externe}) ou au centre de la molécule (position \myemph{interne}).
-						Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour le trouver et l'atteindre contrairement à un \myglos{glo-Residu} en position interne qui sera plus complexe d'accès.
-					\item[Forme] La forme du \myglos{glo-Residu} est un motif graphique plus ou moins complexe à identifier.
-						On distingue trois formes différentes :
-						\begin{description}
-							\item[Chaîne] Une chaîne d'atomes (la plupart du temps carbonés) avec des atomes d'hydrogène de chaque côté.
-							\item[Cycle] Une chaîne fermée d'atomes de carbone ou d'azote.
-							\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (un atome de carbone pour la plupart du temps).
-						\end{description}
-					\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-						Les atomes rares seront donc rapidement identifiés grâce à leur couleur singulière.
-						Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à filtrer à cause de leur fréquence d'apparition élevée.
-					\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
-						Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
-						À cause de cette similarité, les sujets vont mobiliser une partie du temps à identifier des \myglos*{glo-Residu} incorrects.
-				\end{description}
 
-				\begin{mytable}
-					\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
-					\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
-					\begin{mytabular}{^C-C-C-C-C-C}
-						\mytoprule
-						\myrowstyle{\bfseries}
-						\myGlosnl{glo-Residu} & Nombre de \myglosnl*{glo-Residu} & Position & Forme  & Couleurs                                   & Similarité \\
-						\mymiddlerule[\heavyrulewidth]
-						\myresidue{1}         & \mynum{20}                       & Interne  & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non        \\
-						\mymiddlerule
-						\myresidue{2}         & \mynum{20}                       & Interne  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non        \\
-						\mymiddlerule
-						\myresidue{3}         & \mynum{20}                       & Interne  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non        \\
-						\mymiddlerule
-						\myresidue{4}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon                        & Non        \\
-						\mymiddlerule
-						\myresidue{5}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non        \\
-						\mymiddlerule[\heavyrulewidth]
-						\myresidue{6}         & \mynum{112}                      & Interne  & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non        \\
-						\mymiddlerule
-						\myresidue{7}         & \mynum{112}                      & Externe  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non        \\
-						\mymiddlerule
-						\myresidue{8}         & \mynum{112}                      & Externe  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non        \\
-						\mymiddlerule
-						\myresidue{9}         & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon                        & Oui        \\
-						\mymiddlerule
-						\myresidue{10}        & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui        \\
-						\mybottomrule
-					\end{mytabular}
-				\end{mytable}
 				\begin{myfigure}
 					\newcommand{\schemafactor}{0.20}
 					\newlength{\schemaunit}\setlength{\schemaunit}{\schemafactor\textwidth}
@@ -1723,72 +1675,111 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myps}
 				\end{myfigure}
 
+				Chaque \myglos{glo-Residu} possède ses propres caractéristiques (position, couleur, \myetc) offrant des niveaux de complexité différents comme on peut le voir dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}.
+				Les critères de complexité utilisés sont les suivants :
+				\begin{description}
+					\item[Nombre de \myglosnl*{glo-Residu}] Le nombre total de \myglos*{glo-Residu} présents dans la molécule.
+						Un nombre important de \myglos*{glo-Residu} surcharge visuellement l'environnement virtuel et augmente le nombre de cibles potentielles.
+					\item[Position] Le \myglos{glo-Residu} peut se trouver soit à la périphérie de la molécule (position \myemph{externe}) ou au centre de la molécule (position \myemph{interne}).
+						Un \myglos{glo-Residu} en position externe ne nécessite pas de déformer la molécule pour l'identifier et l'atteindre contrairement à un \myglos{glo-Residu} en position interne dont l'accès sera plus complexe.
+					\item[Forme] La forme du \myglos{glo-Residu} est un motif graphique plus ou moins complexe à identifier.
+						On distingue trois formes différentes :
+						\begin{description}
+							\item[Chaîne] Une chaîne d'atomes (la plupart du temps carbonés) avec des atomes d'hydrogène de chaque côté; difficile à identifier par sa forme relativement neutre.
+							\item[Cycle] Une chaîne fermée d'atomes de carbone ou d'azote; facile à identifier par sa forme très spécifique.
+							\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone); assez facile à identifier.
+						\end{description}
+					\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
+						Les atomes \myemph{rares} sont donc facilement  identifiables grâce à leur couleur singulière.
+						Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à identifier à cause de leur fréquence d'apparition élevée.
+					\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
+						Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
+						À cause de cette similarité, les sujets vont mobiliser une partie du temps à identifier des \myglos*{glo-Residu} incorrects.
+				\end{description}
+				\begin{mytable}
+					\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
+					\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
+					\begin{mytabular}{^C-C-C-C-C-C}
+						\mytoprule
+						\myrowstyle{\bfseries}
+						\myGlosnl{glo-Residu} & Nombre de \myglosnl*{glo-Residu} & Position & Forme  & Couleurs                                   & Similarité présente \\
+						\mymiddlerule[\heavyrulewidth]
+						\myresidue{1}         & \mynum{20}                       & Interne  & Cycle  & \mynum{8}~\mycarbon, \mynum{1}~\mynytrogen & Non                 \\
+						\mymiddlerule
+						\myresidue{2}         & \mynum{20}                       & Interne  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non                 \\
+						\mymiddlerule
+						\myresidue{3}         & \mynum{20}                       & Interne  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non                 \\
+						\mymiddlerule
+						\myresidue{4}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon                        & Non                 \\
+						\mymiddlerule
+						\myresidue{5}         & \mynum{20}                       & Externe  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Non                 \\
+						\mymiddlerule[\heavyrulewidth]
+						\myresidue{6}         & \mynum{112}                      & Interne  & Chaîne & \mynum{2}~\mycarbon, \mynum{2}~\mysulfur   & Non                 \\
+						\mymiddlerule
+						\myresidue{7}         & \mynum{112}                      & Externe  & Étoile & \mynum{1}~\mycarbon, \mynum{3}~\mynytrogen & Non                 \\
+						\mymiddlerule
+						\myresidue{8}         & \mynum{112}                      & Externe  & Cycle  & \mynum{6}~\mycarbon, \mynum{1}~\myoxygen   & Non                 \\
+						\mymiddlerule
+						\myresidue{9}         & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon                        & Oui                 \\
+						\mymiddlerule
+						\myresidue{10}        & \mynum{112}                      & Interne  & Chaîne & \mynum{4}~\mycarbon, \mynum{1}~\mynytrogen & Oui                 \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
+
 				La tâche proposée nécessite deux étapes.
-				Selon \mycite[author]{Bowman-1999}, on distingue tout d'abord l'étape de recherche de la cible.
-				Pour explorer la molécule afin d'identifier cette cible, les sujets disposent de l'outil \mytool{grab}.
-				Lorsque la cible recherchée est identifiée, les sujets entrent dans la seconde étape : la sélection.
+				Selon \mycite[author]{Bowman-1999}, on distingue tout d'abord l'étape d'exploration.
+				Pour explorer la molécule afin d'identifier la cible recherchée, les sujets disposent de l'outil \mytool{grab}.
+				Lorsque la cible recherchée est identifiée, les sujets commencent la seconde étape : la sélection.
 				Pour effectuer cette étape de sélection, les sujets disposent de l'outil \mytool{tug}.
 				Les outils \mytool{grab} et \mytool{tug} sont décrits dans la \myref{sse-Shaddock-OutilsExistants}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation est basée sur le dispositif expérimental décrit dans le \myref{cha-pro-DispositifExperimental}.
 				Cependant, certains choix expérimentaux concernant cette expérimentation sont détaillés dans les sections suivantes.
-				Les détails à propos de la méthode expérimentale, présents dans la \myref{sec-met-exp1-PremiereExperimentation}, sont résumés dans la \myref{tab-exp1-SyntheseDeLaMethodeExperimentale}.
-				\begin{mysubsubsection}[sss-exp1-Materiel]{Matériel}
+				La méthode expérimentale, présentée dans la \myref{sec-met-exp1-PremiereExperimentation}, est résumée dans la \myref{tab-exp1-SyntheseDeLaMethodeExperimentale}.
+				\begin{mysubsubsection}[sss-exp1-MaterielUtilise]{Matériel utilisé}
 					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
-					Les sujets disposent déjà de deux outils de déformation \mytool{tug}.
+					Les sujets disposent de deux outils de déformation \mytool{tug}.
 					Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sss-exp1-OutilsDeManipulation}.
-					Ce nouvel outil nécessite l'ajout de quelques matériels.
+					Un outil supplémentaire nécessite quelques modifications logistiques.
 
 					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-OutilsExistants}.
-					L'ajout d'un outil nécessite également l'ajout d'un ordinateur pour faire office de serveur \myacro{acr-VRPN}.
-					Dans ce cas, une machine de faible puissance est suffisante en tant que serveur.
+					L'ajout d'un outil nécessite également l'ajout d'un ordinateur comme serveur \myacro{acr-VRPN}.
 					L'interface est placée devant le sujet en charge de cet outil.
 
-					Durant l'expérimentation, il est demandé aux sujets de chercher des \myglos*{glo-Residu} sur la molécule.
-					Le \myglos{glo-Residu} à rechercher est affiché aux sujets pendant toute la durée de la tâche.
-					Afin de ne pas perturber la scène virtuelle, le \myglos{glo-Residu} n'est pas affiché sur l'écran de vidéoprojection.
-					Un écran \myLCD \mynum[pouces]{17} est donc placé sur la table devant les sujets pour afficher en continu la cible à rechercher.
+					Durant l'expérimentation, le \myglos{glo-Residu} à rechercher est affiché aux sujets pendant toute la durée de la tâche.
+					Afin de ne pas perturber la scène virtuelle, le \myglos{glo-Residu} est affiché sur un écran \myLCD \mynum[pouces]{17} placé sur la table devant les sujets.
 
-					Pour finir, cette première expérimentation est destinée à mettre en évidence les problèmes de communication qui peuvent survenir lors de la réalisation d'une tâche en collaboration.
-					Afin d'analyser la communication entre les différents sujets de l'expérimentation, nous souhaitons enregistrer tous les échanges verbaux.
-					C'est pourquoi, un microphone a été installé sur la table, face aux sujets, afin de capter toutes les communications orales.
+					Pour terminer, cette expérimentation doit nous permettre également d'identifier les contraintes en communication d'une tâche collaborative.
+					C'est pourquoi nous enregistrons tous les échanges oraux entre les sujets à l'aide d'un microphone installé sur la table, face aux sujets.
 					L'enregistrement est assuré par le logiciel \myAudacity.
-					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre plus audibles les enregistrements.
+					Un filtrage du bruit de fond est effectué \myafortiori afin de rendre les enregistrements plus audibles.
 
 					La \myref{fig-exp1-SchemaDuDispositifExperimental} est un schéma récapitulatif de la disposition des tous les éléments dans la salle d'expérimentation.
 					La \myref{fig-exp1-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
 
 					\begin{myfigure}
-						\myimage{exp1-schema}
+						\myimage[width=0.9\textwidth]{exp1-schema}
 						\mycaption[fig-exp1-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp1-photo}
+						\myimage[width=0.9\textwidth]{exp1-photo}
 						\mycaption[fig-exp1-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp1-Visualisation]{Visualisation}
-					Dans cette première expérimentation, c'est la molécule \myPrion qui a été utilisée.
-					Cette molécule est suffisamment volumineuse pour ne pas nécessiter d'atome fixes au niveau de la simulation.
-					La molécule est donc laissée libre de tout mouvement.
-					La \myref{fig-exp1-RepresentationDeLaMoleculePrionPourLExperimentation} est une représentation de cette molécule durant la tâche.
-
-					\begin{myfigure}
-						\myimage{exp1-scenario}
-						\mycaption[fig-exp1-RepresentationDeLaMoleculePrionPourLExperimentation]{Représentation de la molécule \myPrion pour l'expérimentation}
-					\end{myfigure}
+				\begin{mysubsubsection}[sss-exp1-VisualisationEtRepresentation]{Visualisation et représentation}
+					La représentation des molécules utilisées dans cette expérimentation est la représentation classique décrite dans la \myref{sse-pro-RepresentationDesMolecules}.
+					L'illustration des molécules \myTRPCAGE et \myPrion telles qu'elles étaient représentées durant l'expérimentation sont affichées sur la \myref{fig-exp1-RepartitionDesResidusSurLesMolecules}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-OutilsDeManipulation]{Outils de manipulation}
-					Durant cette tâche de recherche, nous donnons aux utilisateurs la possibilté de déformer la molécule à l'aide de l'outil \mytool{tug}.
-					Cependant, afin de fournir un moyen d'explorer la molécule sous tous ses angles, il est nécessaire d'avoir également à sa disposition un moyen d'orienter la scène.
-					Le cas échéant, tout \myglos{glo-Residu} qui se trouverait derrière la molécule ne pourrait être trouvé qu'après une longue et fastidieuse déformation.
-					C'est pourquoi, nous mettons un outil d'orientation de la molécule à disposition des sujets.
+					Durant cette tâche de recherche, nous donnons aux utilisateurs la possibilité de déformer la molécule à l'aide de l'outil \mytool{tug}.
+					Cependant, afin de fournir un moyen d'explorer la molécule sous tous les angles, nous proposons également un outil d'orientation de la molécule.
+					Sans un tel outil, l'accès à tout \myglos{glo-Residu} qui se trouverait derrière la molécule nécessiterait une longue et fastidieuse déformation.
 
 					Cet outil, concrétisé par une interface haptique associé à l'outil \mytool{grab}, permet de sélectionner la molécule puis de la déplacer et de l'orienter.
-					Aucune modification par rapport à l'outil déjà proposé par \myacro{acr-VMD} n'a été ajoutée.
-					Cependant, l'outil n'est pas partagé entre les utilisateurs.
-					En effet, dès le début de l'expérimentation, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation et ceci, tout au long de l'expérimentation.
+					Aucune modification de l'outil proposé par \myacro{acr-VMD} n'a été apportée.
+					Cependant, l'outil n'est pas partagé entre les utilisateurs; au début de l'expérimentation, il est demandé aux sujets de choisir celui qui sera en charge de cet outil de manipulation et ceci, tout au long de l'expérimentation.
 					Ce choix a été fait pour limiter les conflits entre les deux utilisateurs pendant la phase de recherche et de sélection.
 					Il est à noter que pour les \myglos*{glo-Monome}, le sujet n'a accès qu'à un seul outil de déformation et un outil de manipulation.
 				\end{mysubsubsection}
@@ -2230,44 +2221,42 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp1-Synthese]{Synthèse}
+		\begin{mysection}[sec-exp1-Conclusion]{Conclusion}
 			\begin{mysubsection}[sse-exp1-ResumeDesResultats]{Résumé des résultats}
-				Dans ce chapitre, nous avons observé et comparé les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} pendant une tâche de recherche et de sélection sur une simulation moléculaire en temps-réel.
-				L'objectif était de montrer l'intérêt des approches collaboratives pour l'amélioration des performances et d'identifier les différentes stratégies de travail.
+				Dans ce chapitre, nous avons observé et comparé les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} pendant une tâche d'exploration et de sélection sur une simulation moléculaire en temps-réel.
+				L'objectif était de montrer l'intérêt de la distribution des charges de travail pour l'amélioration des performances puis d'identifier les différentes stratégies de travail.
 				De plus, il fallait valider la pertinence de la plateforme mise en place.
 
 				Les approches collaboratives ont prouvé leur intérêt, notamment sur les tâches les plus complexes.
 				Cependant, la complexité d'une tâche est relativement difficile à établir.
 				Au-delà des facteur de position, de couleur ou de forme, le nombre d'atomes de la molécule (et donc le nombre de \myglos*{glo-Residu}) semble jouer un rôle important dans cette complexité.
 				Un grand nombre d'atomes surcharge l'environnement virtuel qui difficile à appréhender.
-				Un deuxième facteur de complexité à prendre en compte est l'amplitude des contraintes physiques de la molécule.
-				Certaines zones de la molécule sont dans un état de stabilité tel qu'il est difficile d'en déformer les \myglos*{glo-Residu}.
-				L'ensemble de ces contraintes rend pertinent une approche collaborative pour la réalisation d'une tâche de nature complexe.
+				Un deuxième facteur de complexité constaté durant l'expérimentation, est l'amplitude des contraintes physiques de la molécule.
+				Certaines parties de la molécule sont dans un état de stabilité suffisamment dense pour qu'il soit difficile d'en déformer les \myglos*{glo-Residu}.
 
-				En observant et en analysant les différentes stratégies de travail, il ressort que les interactions en champ proche et les interactions en champ distant ne sont pas des stratégies très performantes.
-				En effet, le nombre de \myglos*{glo-ConflitDeCoordination} durant les interactions en champ proche est très important alors que le potentiel de la collaboration est perdu dans des interaction en champ distant.
+				En observant et en analysant les différentes stratégies de travail, il ressort que les interactions en champ proche et les interactions en champ distant ne sont pas des stratégies très efficaces.
+				En effet, le nombre de \myglos*{glo-ConflitDeCoordination} durant les interactions en champ proche est trop important alors que le potentiel de la collaboration est perdu dans les interactions en champ distant.
 				Ce sont les interactions en champ voisin qui offre les meilleures performances, générant un bon compromis en terme de communication et de gestion des \myglos*{glo-ConflitDeCoordination}.
 
-				Enfin, il paraît nécessaire d'avoir de bonnes relations sociales avec ces partenaires.
-				Les résultats montrent de façon évidente que tout déséquilibre dans le groupe mène à des performances dégradées.
+				Enfin, les relations sociales entre les différents membres du groupe tiennent une place importante.
+				Les résultats montrent que tout déséquilibre dans le groupe mène à des performances dégradées ce qui rejoint les conclusions de \mycite[author]{Woolley-2010}.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp1-Conclusion]{Conclusion}
+			\begin{mysubsection}[sse-exp1-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Basés sur les résultats précédents, certaines perspectives assez évidentes s'imposent et ont guidé les expérimentations qui suivent.
-				Tout d'abord, il semble nécessaire de proposer des tâches suffisamment complexes pour le travail collaboratif apporte une amélioration des performances.
-				Ceci se traduit soit par des tâches à fortes zones de contraintes \myref*{cha-DeformationCollaborativeDeMolecule} ou par la manipulation de molécules de taille importante \myref*{cha-LaDynamiqueDeGroupe}.
+				Tout d'abord, pour observer en détail le travail collaboratif et ses avantages, il semble nécessaire de proposer des tâches suffisamment complexes; soit des tâches à fortes zones de contraintes \myref*{cha-DeformationCollaborativeDeMolecule}; soit la manipulation de molécules de taille importante \myref*{cha-LaDynamiqueDeGroupe}.
 
 				Les différentes stratégies observées ont permis de mettre en évidence l'intérêt de la collaboration en champ voisin.
 				Il semble nécessaire de favoriser ce type de collaboration par des tâches stimulantes et des outils d'interaction adaptés.
 
 				L'évaluation qualitative par questionnaire apporte également de nombreuses réponses intéressantes.
 				Tout d'abord, les sujets ont mis en avant la communication visuelle dans l'\myacro{acr-EVC} au détriment de la communication gestuelle.
-				Des observations durant les phases expérimentales nous ont permis de constater que ce moyen de communication est principalement utilisé pour des actions de désignation.
-				Fournir des outils adaptés aux contraintes de la désignation en environnement complexe devient une nécessité.
+				Des observations durant les phases expérimentales nous ont permis de constater que ce moyen de communication est principalement utilisé pour effectuer des désignations.
+				Proposer des outils adaptés aux contraintes de la désignation en environnement complexe semble être une réponse pertinente.
 
-				Enfin, ces évaluations qualitatives ont permis de valider l'\myacro{acr-EVC} proposé.
+				Enfin, ces évaluations qualitatives ont permis de confirmer une utilisabilité acceptable de l'\myacro{acr-EVC} \myShaddock.
 				Des améliorations sont cependant nécessaires en ce qui concerne le rendu visuel et les interactions.
-				De nombreux sujets ont par exemple demandé une mise en surbrillance du \myglos{glo-Residu} survolé.
-				Une assistance haptique pour la sélection est également une des améliorations possibles.
+				De nombreux sujets ont par exemple demandé une mise en surbrillance du \myglos{glo-Residu} survolé avec le curseur.
+				Une assistance haptique pour la sélection (en percevant les cibles de manière haptique) est également une des améliorations possibles.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
@@ -2425,7 +2414,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation, basée sur le dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
 				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-SecondeExperimentation}.
-				\begin{mysubsubsection}[sss-exp2-Materiel]{Matériel}
+				\begin{mysubsubsection}[sss-exp2-MaterielUtilise]{Matériel utilisé}
 					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plateforme de base \myref*{sec-pro-MaterielExperimental}.
 					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil d'orientation de la molécule.
 					Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
@@ -2450,15 +2439,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Les \myref{fig-exp2-SchemaDuDispositifExperimental} et \myref{fig-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
 
 					\begin{myfigure}
-						\myimage{exp2-schema}
+						\myimage[width=0.9\textwidth]{exp2-schema}
 						\mycaption[fig-exp2-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp2-photo}
+						\myimage[width=0.9\textwidth]{exp2-photo}
 						\mycaption[fig-exp2-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp2-Visualisation]{Visualisation}
+				\begin{mysubsubsection}[sss-exp2-VisualisationEtRepresentation]{Visualisation et représentation}
 					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
 					Ces molécules sont représentées avec les rendus graphiques de base (\myCPK et \myNewRibbon).
 					Cependant, la tâche nécessite d'afficher la molécule dans son état stable qui est l'objectif que doivent atteindre les sujets.
@@ -2960,7 +2949,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Une majorité des sujets semble préférer la configuration collaborative.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp2-Synthese]{Synthèse}
+		\begin{mysection}[sec-exp2-Conclusion]{Conclusion}
 			\begin{mysubsection}[sse-exp2-ResumeDesResultats]{Résumé des résultats}
 				Dans cette seconde expérimentation, nous avons comparé et étudié les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} sur une tâche de déformation avec un nombre identique de ressources.
 				De plus, nous avons cherché à observer l'apport de la configuration collaborative sur l'apprentissage sur les performances.
@@ -2981,7 +2970,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La complexité de la tâche ainsi que de la plateforme (rendu visuel, outils, \myetc) nécessite un apprentissage important.
 				L'apprentissage accéléré provoqué par une configuration collaborative est donc un avantage permettant d'appréhender plus rapidement la tâche à réaliser.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-Conclusion]{Conclusion}
+			\begin{mysubsection}[sse-exp2-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Cette expérimentation nous a permis de comparer une configuration collaborative à une configuration \myglos*{glo-Bimanuel} possédant chacune le même nombre de ressources.
 				Nous avons vu les avantages d'une configuration collaborative avec des \myglos*{glo-Binome}.
 				L'étape suivante sera l'étude du travail collaboratif sur des groupes de plus de deux sujets.
@@ -3106,7 +3095,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Le dispositif expérimental utilisé, basé sur celui présenté dans le \myref{cha-pro-DispositifExperimental}, a été adapté pour les besoins de l'expérimentation.
 				Les modifications sont présentées dans les sections qui vont suivre.
 				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-TroisiemeExperimentation} avec un résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
-				\begin{mysubsubsection}[sss-exp3-Materiel]{Matériel}
+				\begin{mysubsubsection}[sss-exp3-MaterielUtilise]{Matériel utilisé}
 					Cette expérimentation se focalise sur le travail de groupe et en particulier, sur les \myglos*{glo-Quadrinome}.
 					Il est nécessaire d'ajouter deux outils de déformation supplémentaires à la plateforme \myref*{sec-pro-MaterielExperimental}.
 					Deux \myOmni supplémentaires sont posés sur la table, devant les sujets, de manière à ce que chacun puisse avoir accès à une interface haptique.
@@ -3124,15 +3113,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La \myref{fig-exp3-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
 
 					\begin{myfigure}
-						\myimage{exp3-schema}
+						\myimage[width=0.9\textwidth]{exp3-schema}
 						\mycaption[fig-exp3-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp3-photo}
+						\myimage[width=0.9\textwidth]{exp3-photo}
 						\mycaption[fig-exp3-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp3-Visualisation]{Visualisation}
+				\begin{mysubsubsection}[sss-exp3-VisualisationEtRepresentation]{Visualisation et représentation}
 					Cette expérimentation propose une tâche relativement similaire à la précédente expérimentation.
 					La principale différence concerne la complexité des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation concernant des molécules d'une quinzaine de \myglos*{glo-Residu}.
 					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} \myref*{fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1}; la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} \myref*{fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
@@ -3523,7 +3512,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp3-Synthese]{Synthèse}
+		\begin{mysection}[sec-exp3-Conclusion]{Conclusion}
 			\begin{mysubsection}[sse-exp3-ResumeDesResultats]{Résumé des résultats}
 				Cette expérience a permis d'étudier et de comparer des \myglos*{glo-Binome} en configuration \myglos*{glo-Bimanuel} avec des \myglos*{glo-Quadrinome} en configuration \myglos*{glo-Monomanuel}.
 				L'objectif était d'observer l'évolution des performances en fonction du nombre de participants ainsi que les nouvelles contraintes liées aux dynamiques de groupe.
@@ -3547,7 +3536,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				De plus, cette structure est obtenue avec l'accord de tous les participants ce qui rend légitime le \myglos{glo-Meneur}.
 				Dans le cas contraire, les \myglos*{glo-Suiveur} pourraient ne pas vouloir suivre les indications du \myglos{glo-Meneur} ce qui serait contre-productif.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp3-Conclusion]{Conclusion}
+			\begin{mysubsection}[sse-exp3-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Nous venons de montrer l'intérêt d'avoir un groupe structuré lorsque le nombre de participants excède deux.
 				Notre prochaine et dernière expérimentation aura pour objectif de tester la plateforme avec des experts de la déformation moléculaire.
 				Pour cela, nous allons leur fournir des outils haptiques permettant de faciliter le travail collaboratif.
@@ -3636,7 +3625,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Cinq molécules sont utilisés dans le cadre de cette expérimentation dont trois exclusivement réservées pour l'entraînement.
 				Chaque molécule est présentée dans la \myref{sse-pro-ListeDesMolecules}.
-				L'affichage des molécules est identique à celui de la troisième expérimentation présenté dans la \myref{sss-exp3-Visualisation} : la molécule déformable est représentée en \myCPK et \myNewRibbon alors que la molécule cible est en \myNewRibbon transparent.
+				L'affichage des molécules est identique à celui de la troisième expérimentation présenté dans la \myref{sss-exp3-VisualisationEtRepresentation} : la molécule déformable est représentée en \myCPK et \myNewRibbon alors que la molécule cible est en \myNewRibbon transparent.
 				Les cinq molécules sont utilisés pour les différents scénarios décrits ci-dessous.
 				\begin{description}
 					\item[Entraînement~\myscenario{1}]
@@ -3671,7 +3660,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Les sections suivantes décrivent l'ensemble des modification apportées à la plateforme de base \myref*{cha-pro-DispositifExperimental} et principalement aux outils d'interaction.
 				La méthode expérimentale est exposée dans la \myref{sec-met-exp4-QuatriemeExperimentation}.
 				Un résumé de cette méthode se trouve dans la \myref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
-				\begin{mysubsubsection}[sss-exp4-Materiel]{Matériel}
+				\begin{mysubsubsection}[sss-exp4-MaterielUtilise]{Matériel utilisé}
 					Dans cette quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
 					Les deux opérateurs auront à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sss-exp4-OutilsDInteraction} matérialisés par des \myOmni.
 					Le coordinateur aura à sa disposition trois outils dont deux basés sont des interfaces haptiques : une souris \myUSB pour l'outil d'orientation, un \myOmni pour l'outil de désignation et un \myDesktop pour l'outil de manipulation.
@@ -3685,15 +3674,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La \myref{fig-exp4-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
 
 					\begin{myfigure}
-						\myimage{exp4-schema}
+						\myimage[width=0.9\textwidth]{exp4-schema}
 						\mycaption[fig-exp4-SchemaDuDispositifExperimental]{Schéma du dispositif expérimental}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp4-photo}
+						\myimage[width=0.9\textwidth]{exp4-photo}
 						\mycaption[fig-exp4-PhotographieDuDispositifExperimental]{Photographie du dispositif expérimental}
 					\end{myfigure}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp4-Visualisation]{Visualisation}
+				\begin{mysubsubsection}[sss-exp4-VisualisationEtRepresentation]{Visualisation et représentation}
 					Dans cette quatrième et dernière expérimentation, les molécules étant très importantes, surtout pour le complexe de molécules \myNusENusG, nous avons décidé de donner un rendu secondaire aux atomes.
 					En effet, ils sont à présents rendus de manière transparente.
 					Cependant, nous verrons dans la section suivante que le coordinateur aura la possibilité de colorer les \myglos*{glo-Residu} au besoin.
@@ -4017,7 +4006,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-EvaluationQualitative]{Évaluation qualitative}
 				\begin{mysubsubsection}[sss-exp4-QuestionnaireDUtilisabilite]{Questionnaire d'utilisabilité}
-					Cette dernière expérimentation a été l'occasion d'évaluer l'utilisabilité de la plateforme \myShaddock à l'aide du score \myacro{acr-SUS} décrit dans la \myref{sse-Questionnaires-QuatriemeExperimentation-LeQuestionnaireSUS}.
+					Cette dernière expérimentation a été l'occasion d'évaluer l'utilisabilité de la plateforme \myShaddock à l'aide du score \myacro{acr-SUS} décrit dans la \myref{sse-q-QuatriemeExperimentation-LeQuestionnaireSUS}.
 					L'évaluation par l'ensemble des utilisateurs fournit une note relativement peu élevée (\mysummary{exp4-evaluation-sus.tex})\footnote{Pour rappel, les tests d'utilisabilité \myacronl-{acr-SUS} fournissent des notes comprises entre \mynum{0} et \mynum{100}.}.
 					Cependant, si on restreint ce score aux sujets biologistes, le score augmente (\mysummary{exp4-evaluation-sus-biologists.tex}).
 					La plateforme n'est pas encore suffisante dans l'état actuel selon les utilisateurs.
@@ -4067,7 +4056,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-exp4-Synthese]{Synthèse}
+		\begin{mysection}[sec-exp4-Conclusion]{Conclusion}
 			\begin{mysubsection}[sse-exp4-ResumeDesResultats]{Résumé des résultats}
 				Cette expérimentation avait pour objectif d'évaluer de nouveaux outils de communication entre les membres d'un groupe sur une tâche collaborative étroitement couplée.
 				De plus, nous avons pu confronter la plateforme \myShaddock à des bio-informaticiens, ayant une expertise dans le domaine du \myglos{glo-DockingMoleculaire}.
@@ -4088,7 +4077,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Avec le questionnaire portant sur la conscience périphérique, on constate qu'une grande partie de cette conscience repose exclusivement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques lorsqu'ils sont disponibles.
 				En ce sens, l'haptique est pertinent puisqu'il permet d'améliorer les performances en augmentant la conscience périphérique.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp4-Conclusion]{Conclusion}
+			\begin{mysubsection}[sse-exp4-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Cette dernière expérimentation nous a permis de mettre en avant la pertinence de la communication haptique dans le cadre d'une tâche synchrone colocalisée de collaboration étroite.
 				L'outil haptique proposé ne concerne que le processus de désignation mais d'autres aspects de la communication peuvent être explorés.
 				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose des idées intéressantes sur le sujet.
@@ -4167,10 +4156,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Enfin, pour la dernière expérimentation, un complexe de molécules a été utilisé avec \myNusENusG.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-pro-RepresentationDesMolecules]{Représentation des molécules}
-				La représentation des molécules est un domaine de recherche à part entière.
+				La représentation des molécules est un domaine de recherche à part entière toujours d'actualité \mycite{Chavent-2011}.
 				En effet, la complexité et l'abondance d'informations à visualiser nécessite des rendus graphiques avancés et complémentaires.
 				De plus, la quantité importante d'informations à représenter peut nécessiter une machine puissante afin de générer un rendu en temps-réel.
-				Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sss-Shaddock-RendusGraphiquesSelectionnesPourNotrePlateforme}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
+				Heureusement, \myacro{acr-VMD} possède un moteur de rendu graphique avancé \myref*{sse-Shaddock-ModuleDeVisualisationMoleculaire}, aussi bien en terme de choix de rendu qu'en terme d'accélération graphique.
 
 				Afin d'obtenir un rendu de molécule pertinent, nous avons bénéficié des conseils d'un biologiste.
 				Ensuite, nous avons pu adapter les rendus de molécules en fonction de nos besoins pour les différents scénarios proposés.
@@ -4216,7 +4205,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			On pourra se reporter aux chapitres respectifs pour plus de détails.
 
 			De plus, un outil de manipulation et d'orientation de la molécule sera proposé sous différentes formes au cours des différentes expérimentations.
-			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-Materiel}, par une souris~\myThreeD dans la seconde \myref*{sss-exp2-Materiel} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sss-exp4-Materiel}.
+			Ce sera par l'intermédiaire d'un outil \mytool{grab} dans la première expérimentation \myref*{sss-exp1-MaterielUtilise}, par une souris~\myThreeD dans la seconde \myref*{sss-exp2-MaterielUtilise} puis par une simple souris \myUSB dans la dernière expérimentation \myref*{sss-exp4-MaterielUtilise}.
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-met-MethodeExperimentale]{Méthode expérimentale}
@@ -4224,23 +4213,21 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-met-exp1-Hypotheses]{Hypothèses}
 				Nous émettons plusieurs hypothèses concernant cette première expérimentation.
 				Les hypothèses concernent les performances des \myglos*{glo-Binome} ainsi que leurs stratégies de travail.
-				Deuxièmement, une évaluation de la plateforme est nécessaire.
-				Des hypothèses sont formulées pour noter l'utilisabilité de la plateforme ainsi que la sensation de collaboration des utilisateurs.
+				Nous souhaitons également recueillir les avis des sujets sur l'intérêt qu'ils portent à la collaboration ainsi que sur l'utilisabilité de la plateforme \myShaddock.
 				\begin{myparagraph}[par-met-exp1-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
-					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
-					Les performances seront évaluées en terme de temps de réalisation de la tâche mais aussi en terme de ressources utilisées comme le nombre de sélections.
+					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome} grâce à la distribution des charges de travail.
+					Les performances seront évaluées en terme de temps de réalisation de la tâche mais aussi en terme de ressources utilisées comme le nombre de sélections effectuées.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp1-StrategiesVariablesEnFonctionDesBinomes]{\myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome}}
-					Nous émettons l'hypothèse que les \myglos*{glo-Binome} adopteront des stratégies de collaboration différentes en fonction des affinités des sujets et de leurs espaces de travail respectifs.
-					L'identification des différentes stratégies permettra de les évaluer et de trouver la plus performante.
+					Nous émettons l'hypothèse que les \myglos*{glo-Binome} adopteront des stratégies de collaboration différentes en fonction des affinités entre les sujets et de leurs connaissances respectives.
+					L'identification des différentes stratégies permettra d'identifier celles qui obtiennent les meilleures performances.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp1-LesSujetsPreferentLeTravailEnBinome]{\myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}}
-					Notre troisième hypothèse est de nature qualitative et suppose que les utilisateurs auront une préférence pour le travail en \myglos{glo-Binome} comparé au travail en \myglos{glo-Monome}.
-					Le travail en \myglos{glo-Binome} créé une collaboration sociale qui est préférée en général.
+					Nous émettons l'hypothèse que les sujets préfèrent le travail en collaboration grâce à l'aspect social que celui-ci implique.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp1-LaPlateformeEstApprecieeDesUtilisateurs]{\myhypothesis{4} La plateforme est appréciée des utilisateurs}
-					Notre dernière hypothèse concerne la validation de notre plateforme en terme d'utilisabilité (intuitivité, ergonomie, \myetc).
-					Elle est nécessaire pour la poursuite des études de cette thèse.
+				\begin{myparagraph}[par-met-exp1-BonneUtilisabiliteDeLaPlateforme]{\myhypothesis{4} Bonne utilisabilité de la plateforme}
+					La dernière hypothèse que nous émettons est que notre plateforme est utilisable dans la forme sous laquelle elle est proposée (intuitivité, ergonomie, \myetc).
+					Cependant, nous souhaitons identifier les faiblesses à l'aide d'un questionnaire soumis aux sujets.
 				\end{myparagraph}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp1-Sujets]{Sujets}
@@ -4263,12 +4250,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-met-exp1-Variables]{Variables}
 				\begin{mysubsubsection}[sss-met-exp1-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp1-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						C'est une \myglos{glo-VariableIntraSujets}.
 						\myvari{1} possède deux valeurs possibles : \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
 						\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						C'est une \myglos{glo-VariableIntraSujets}.
 						\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \myref*{tab-exp1-ListeDesResidusRecherches}.
 						Différents niveaux de complexité caractérisent chaque \myglos{glo-Residu} \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
 					\end{myparagraph}
@@ -4279,11 +4266,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						Il n'y a pas de limite de temps pour réaliser la tâche.
 						Ce temps est divisé en deux phases bien distinctes :
 						\begin{description}
-							\item[La recherche] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
-								Cette recherche peut être visuelle en orientant et en déplaçant la molécule.
-								Elle peut aussi amener les sujets à déformer la molécule afin d'explorer les \myglos{glo-Residu} inaccessibles du centre de la molécule.
+							\item[L'exploration] C'est la phase pendant laquelle les sujets cherchent le \myglos{glo-Residu}.
+								Cette exploration peut se limiter à une exploration visuelle en orientant et en déplaçant la molécule.
+								Elle peut aussi s'effectuer par la déformation de la molécule afin d'atteindre les \myglos{glo-Residu} inaccessibles (derrière ou au centre de la molécule).
 							\item[La sélection] La phase de sélection débute dès l'instant où un des deux sujets a identifié visuellement le \myglos{glo-Residu}.
-								Elle est constituée d'une phase de sélection puis d'une phase d'extraction hors de la molécule.
+								Elle est constituée d'une étape de sélection puis d'une étape d'extraction hors de la molécule.
 						\end{description}
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-LaDistanceEntreLesEspacesDeTravail]{\myvard{2} La distance entre les espaces de travail}
@@ -4292,8 +4279,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						L'ordre de grandeur de cette mesure est le centimètre.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-CommunicationsVerbales]{\myvard{3} Communications verbales}
-						L'enregistrement des communications verbales permet de mesurer la durée de parole de chaque sujets pour chaque étape de l'expérimentation.
-						Ces mesures différencie la phase de recherche et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
+						L'enregistrement des communications verbales permet de mesurer la durée de parole de chaque sujet pour chaque étape de l'expérimentation.
+						Ces mesures segmentent la phase d'exploration et la phase de sélection (voir \myvard{1}) comme indiqué plus précisément sur la \myref{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
 
 						\begin{myfigure}
 							\psset{unit=0.1\textwidth} % Fill entirely the page width
@@ -4349,26 +4336,26 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\end{enumerate}
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-ForceMoyenneAppliqueeParLesSujets]{\myvard{5} Force moyenne appliquée par les sujets}
-						Le force appliquée par chaque sujet sur les atomes pendant la simulation est mesurée.
+						La force appliquée par chaque sujet sur les atomes pendant la simulation est mesurée en \myname{Newton}.
 						Une valeur moyenne de cette force est calculée pour être analysée.
 					\end{myparagraph}
-					\begin{myparagraph}[par-met-exp1-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
+					\begin{myparagraph}[par-met-exp1-ReponsesAuQuestionnaire]{\myvard{6} Réponses au questionnaire}
 						Un questionnaire est proposé à tous les sujets.
-						Il est constitué de trois ou quatre parties respectivement destinés aux \myglos*{glo-Monome} et \myglos*{glo-Binome}.
-						Le questionnaire fourni aux sujets est disponible dans la \myref{sec-Questionnaires-PremiereExperimentation}.
+						Il est constitué de trois sections, avec une section supplémentaire pour les \myglos*{glo-Binome} \myref*{sec-q-PremiereExperimentation}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp1-Procedure]{Procédure}
-				L'expérimentation débute par une phase d'apprentissage sur la molécule \myTRPZIPPER.
+				L'expérimentation débute par une phase d'apprentissage avec la molécule \myTRPZIPPER.
+				Un \myglos{glo-Residu} est proposé et doit être identifier et extrait.
 				L'apprentissage est destiné à familiariser les sujets avec la plateforme, les outils de manipulation et la tâche à réaliser.
 				Cette phase dure maximum \mynum[mn]{5}.
 				L'expérimentateur est disponible pour répondre aux questions des sujets.
 
-				Lorsque l'étape d'apprentissage est terminée, nous présentons aux sujets la série de \mynum{10}~\myglos*{glo-Residu} selon la procédure suivante.
+				Lorsque l'étape d'apprentissage est terminée, nous présentons aux sujets une série de \mynum{10}~\myglos*{glo-Residu} selon la procédure suivante.
 				Le premier \myglos{glo-Residu} est affiché sur l'écran \myLCD et les sujets débutent la phase de recherche.
 				Lorsque le \myglos{glo-Residu} est identifié, sélectionné puis extrait hors de la molécule, l'application est arrêtée.
-				Ensuite, un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \mynum{10}~\myglos*{glo-Residu} à indentifier.
+				Ensuite, un second \myglos{glo-Residu} est affiché, l'application est de nouveau démarrée et ainsi de suite pour les \mynum{10}~\myglos*{glo-Residu} à identifier.
 				L'enregistrement audio est démarré à la fin de l'étape d'apprentissage.
 
 				L'ensemble des \myglos*{glo-Residu} est proposé dans un ordre aléatoire afin d'éviter un biais lié à l'apprentissage de la plateforme et de la tâche.
@@ -4380,8 +4367,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item Le \myglos{glo-Binome} \myuser{AB}, puis le \myglos{glo-Monome} \myuser{A}, puis le \myglos{glo-Monome} \myuser{B}.
 				\end{enumerate}
 
-				Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}), un questionnaire leur est proposé.
-				Chaque sujet répond au questionnaire de manière autonome, sans communiquer avec son partenaire.
+				Lorsque les sujets ont réalisé toutes les tâches dans les deux configurations possibles (\myglos{glo-Monome} et \myglos{glo-Binome}), un questionnaire leur est soumis.
+				Chaque sujet répond au questionnaire de manière autonome, sans communication avec son partenaire.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-met-exp2-SecondeExperimentation]{Seconde expérimentation}
@@ -4464,7 +4451,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myparagraph}[par-met-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
 						Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
 						Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
-						Le questionnaire soumis aux sujets est exposé dans la \myref{sec-Questionnaires-SecondeExperimentation}.
+						Le questionnaire soumis aux sujets est exposé dans la \myref{sec-q-SecondeExperimentation}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -4672,7 +4659,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myparagraph}[par-met-exp4-QuestionnaireDUtilisabiliteEtSurLaPresence]{\myvard{10} Questionnaire d'utilisabilité et sur la conscience}
 						Un questionnaire est proposé à tous les sujets.
 						Ce questionnaire est une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
-						La traduction soumise aux sujets est disponible dans la \myref{sec-Questionnaires-QuatriemeExperimentation}.
+						La traduction soumise aux sujets est disponible dans la \myref{sec-q-QuatriemeExperimentation}.
 						Il nous permet d'obtenir un score d'utilisabilité de la plateforme compris entre \mynum{0} et \mynum{100}.
 						De plus, un questionnaire sur la conscience périphérique est proposé après chaque alternance de la variable indépendante \myvard{1}.
 					\end{myparagraph}
@@ -4718,7 +4705,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Les sujets peuvent décider de s'arrêter avant les \mynum[mn]{8} s'ils estiment ne pas pouvoir obtenir un meilleur score.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase6-PremierePartieDuQuestionnaire]{Phase~\mynum{6} : première partie du questionnaire}
-					Lorsque la première étape d'évaluation est terminée, une première partie du questionnaire est proposée aux sujets \myref*{sec-Questionnaires-QuatriemeExperimentation}.
+					Lorsque la première étape d'évaluation est terminée, une première partie du questionnaire est proposée aux sujets \myref*{sec-q-QuatriemeExperimentation}.
 					La section à remplir dépend du premier passage : avec ou sans assistance haptique.
 					Durant cette phase, il est demandé aux sujets de ne pas communiquer entre eux.
 				\end{myparagraph}
@@ -4730,12 +4717,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Seules les phases de déformations de \mynum[mn]{8}, \myUbiquitin puis \myNusENusG, sont proposées.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase8-LeQuestionnaire]{Phase~\mynum{8} : deuxième partie du questionnaire}
-					La seconde partie du questionnaire est similaire à la première partie \myref*{sec-Questionnaires-QuatriemeExperimentation}.
+					La seconde partie du questionnaire est similaire à la première partie \myref*{sec-q-QuatriemeExperimentation}.
 					Les mêmes questions sont abordées mais adaptées pour cette deuxième étape de l'évaluation.
 					Durant cette phase, il est demandé aux sujets de ne pas communiquer entre eux.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase9-LeQuestionnaire]{Phase~\mynum{9} : questionnaire d'utilisabilité}
-					Pour terminer l'expérimentation, les sujets sont invités à remplir un questionnaire d'utilisabilité \myref*{sec-Questionnaires-QuatriemeExperimentation}.
+					Pour terminer l'expérimentation, les sujets sont invités à remplir un questionnaire d'utilisabilité \myref*{sec-q-QuatriemeExperimentation}.
 					Durant cette phase, il est demandé aux sujets de ne pas communiquer entre eux.
 					Des informations permettant de caractériser le sujet (âge, sexe, main dominante, \myetc) sont également demandée à la fin du questionnaire.
 					L'enregistrement vidéo est arrêté à la fin de cette phase.
@@ -4744,18 +4731,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-Questionnaires]{Questionnaires}
-		\begin{mysection}[sec-Questionnaires-PremiereExperimentation]{Première expérimentation}
+		\begin{mysection}[sec-q-PremiereExperimentation]{Première expérimentation}
 			Le questionnaire proposé durant cette expérimentation est constitué de deux parties.
 			La deuxième partie est exclusivement réservée aux \myglos*{glo-Binome} et n'était pas proposée au \myglos*{glo-Monome}.
 			Ce questionnaire contient \mynum[pages]{5} (\mynum[pages]{3} pour les \myglos*{glo-Monome}).
 			Les questions sont évaluées selon une échelle de \mycite[author]{Likert-1932} à cinq niveaux.
 			\myinsertpdf[pdfpages={1-5}]{exp1-questionnaire}
 		\end{mysection}
-		\begin{mysection}[sec-Questionnaires-SecondeExperimentation]{Seconde expérimentation}
+		\begin{mysection}[sec-q-SecondeExperimentation]{Seconde expérimentation}
 			Le questionnaire proposé durant la seconde expérimentation est décliné en deux versions : une version pour les \myglos*{glo-Monome} et une version pour les \myglos*{glo-Binome}.
 			Le questionnaire est soumis aux sujets oralement par l'expérimentateur et les réponses sont directement reportées dans une tableau.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
-			\begin{mysubsection}[sse-Questionnaires-SecondeExperimentation-QuestionnairePourLesMonomes]{Questionnaire pour les \myglosnl*{glo-Monome}}
+			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesMonomes]{Questionnaire pour les \myglosnl*{glo-Monome}}
 				Pour les \myglos*{glo-Monome}, le questionnaire est le suivant :
 				\begin{enumerate}
 					\item Vous êtes-vous senti efficace ?
@@ -4764,7 +4751,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item Quelle solution choisiriez-vous entre les trois configurations ?
 				\end{enumerate}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-Questionnaires-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les \myglosnl*{glo-Binome}}
+			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les \myglosnl*{glo-Binome}}
 				Chaque sujet dans un \myglos{glo-Binome} est interrogé séparement pour éviter que les réponses de l'un influence les réponses de l'autre.
 				Pour les \myglos*{glo-Binome}, le questionnaire est le suivant :
 				\begin{enumerate}
@@ -4787,14 +4774,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-Questionnaires-QuatriemeExperimentation]{Quatrième expérimentation}
+		\begin{mysection}[sec-q-QuatriemeExperimentation]{Quatrième expérimentation}
 			Le questionnaire proposé durant la quatrième et dernière expérimentation contient une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
-			Une explication détaillé de ce questionnaire se trouve dans la \myref{sse-Questionnaires-QuatriemeExperimentation-LeQuestionnaireSUS}.
+			Une explication détaillé de ce questionnaire se trouve dans la \myref{sse-q-QuatriemeExperimentation-LeQuestionnaireSUS}.
 			Le questionnaire est soumis sous un format papier et chaque utilisateur est invité à y répondre seul, sans l'aide de ces partenaires.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
 			\myinsertpdf[pdfpages={1-5}]{exp4-questionnaire}
-			\begin{mysubsection}[sse-Questionnaires-QuatriemeExperimentation-LeQuestionnaireSUS]{Le questionnaire \myacronl-{acr-SUS}}
-				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-LesQuestions]{Les questions}
+			\begin{mysubsection}[sse-q-QuatriemeExperimentation-LeQuestionnaireSUS]{Le questionnaire \myacronl-{acr-SUS}}
+				\begin{mysubsubsection}[sss-q-QuatriemeExperimentation-LesQuestions]{Les questions}
 					Le questionnaire \myacro{acr-SUS} est constitué de \mynum{10}~questions.
 					Chaque question donne lieu à une réponse sur une échelle de \mycite[author]{Likert-1932} à cinq niveaux allant de \og Fortement en désaccord (score de \mynum{1}) \fg à \og Fortement en accord (score de \mynum{5}) \fg.
 					Les questions sont les suivantes :
@@ -4811,14 +4798,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\item J'aurai besoin d'apprendre beaucoup de choses avant de pouvoir utiliser cette plateforme
 					\end{enumerate}
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-EvaluationDuScoreSUS]{Évaluation du score \myacronl-{acr-SUS}}
+				\begin{mysubsubsection}[sss-q-QuatriemeExperimentation-EvaluationDuScoreSUS]{Évaluation du score \myacronl-{acr-SUS}}
 					Afin d'évaluer le score \myacro-{acr-SUS} à partir du questionnaire, chaque question doit avoir une note comprise entre \mynum{0} et \mynum{4}.
 					Concernant les questions \mynum{1}, \mynum{3}, \mynum{5}, \mynum{7} et \mynum{9}, on prend le score compris en \mynum{1} et \mynum{5} auquel on enlève \mynum{1}.
 					Concernant les questions \mynum{2}, \mynum{4}, \mynum{6}, \mynum{8} et \mynum{10}, on soustrait de \mynum{5} le score compris en \mynum{1} et \mynum{5}.
 					Pour terminer, on multiplie par \mynum{2.5} la somme de l'ensemble des scores.
 					Le score final obtenu est une note comprise entre \mynum{0} et \mynum{100}.
 				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-Questionnaires-QuatriemeExperimentation-ExempleDeScoreSUS]{Exemple de score \myacronl-{acr-SUS}}
+				\begin{mysubsubsection}[sss-q-QuatriemeExperimentation-ExempleDeScoreSUS]{Exemple de score \myacronl-{acr-SUS}}
 					Imaginons un questionnaire rempli de la façon suivante :
 					\newcommand{\mySUSplus}[1]{%
 						\fpRegSet{mySUSplus}{1}
