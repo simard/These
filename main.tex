@@ -962,25 +962,28 @@
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-Conclusion]{Conclusion}
-			Le contexte de l'expérimentation est le \myglos{glo-DockingMoleculaire} plus communément nommé \myglos{glo-DockingMoleculaire}.
-			Ce processus implique une analyse et une manipulation complexe reposant sur plusieurs expertises.
-			Il est basé sur une décomposition en trois niveaux de modélisation, traités du niveau le plus grossier au niveau le plus fin :
-			\begin{description}
-				\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire applique des transformations de grande amplitude sur chaque molécule.
-					L'objectif est de trouver la meilleure concordance entre les molécule en terme de position et d'orientation.
-				\item[Niveau intra-moléculaire] Cette déformation au niveau moléculaire fait suite à la déformation inter-moléculaire.
-					L'amarrage de ces deux molécules (ou plus) introduit de nombreuses interfaces qui doivent être optimisées en fonction de critères variés (la complémentarité des surfaces, les forces électrostatiques, les forces de \myname[van der]{Waals} \mycite{Muller-1994}, \myetc).
-				\item[Niveau atomique] Cette déformation très fine va chercher à optimiser la position des atomes au niveau de l'interface.
-					L'intérêt de cette étape sera portée sur plusieurs types d'interaction (les ponts hydrogènes, les zones hydrophobiques et hydrophylliques, les ponts salins, \myetc).
-			\end{description}
+			À travers ce chapitre, nous avons découvert la complexité que représente la tâche de \myglos{glo-DockingMoleculaire}.
+			En proposant des plateformes collaboratives, les scientifiques ont permis d'améliorer les résultats obtenus mais la collaboration reste relativement faiblement couplée (messages textuels ou verbaux, vidéo-conférence, \myetc).
+			Pourtant, de récents développements nous permettent enfin d'envisager d'immerger les scientifiques au sein d'une simulation moléculaire en temps-réel.
+			C'est donc afin de répondre à la complexité du \myglos{glo-DockingMoleculaire} que nous souhaitons proposer une plateforme collaborative synchrone et colocalisée pour la déformation moléculaire interactive et temps-réel.
 
-			Pour chacun de ces différents niveaux, le processus de manipulation est similaire et peut être séparé en tâches élémentaires \myref*{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes} :
+			Dans ce chapitre, nous avons également mis en évidence les avantages et les contraintes de la collaboration.
+			La distribution cognitive des charges de travail permet d'apporter une réponse pertinente à la réalisation d'un problème extrêmement complexe tel que le \myglos{glo-DockingMoleculaire}.
+			Cependant, de nombreux facteurs (\myglos{glo-FacilitationSociale}, \myglos{glo-ParesseSociale}, \mygrounding, conscience de groupe, \myetc) interviennent et influent sur la communication et les interactions entre les acteurs de la collaboration.
+			C'est la raison qui nous encourage à envisager la modalité haptique comme un support supplémentaire adéquat pour améliorer les communications et les interactions entre les collaborateurs.
+
+			Cependant, un tel contexte de travail (collaboration synchrone et colocalisée, manipulation moléculaire temps-réel, interaction avec retour haptique) n'a encore jamais été étudié.
+			Aucune donnée ne permet d'infirmer ou de confirmer les théories sur la collaboration dans ce contexte bien que des hypothèses puisse être formulées.
+
+			Afin d'étudier ce contexte de travail, nous avons souhaiter segmenter les étapes de la déformation moléculaire en nous basant sur les travaux de \mycite[author]{Bowman-1999}.
+			Il identifie quatre tâche élémentaires pour segmenter une interaction en environnement virtuel, nommées \myacro*{acr-PCV} par \mycite[author]{Fuchs-2006a}.
+			Les quatre \myacro*{acr-PCV} pour la manipulation moléculaire, illustrée dans la \myref{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes}, sont expliquées ci-dessous :
 			\begin{description}
-				\item[Recherche] Cette tâche concerne l'identification et la recherche d'une cible (atome, \myglos{glo-Residu}, \myhelice*, \myfeuillet*, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
+				\item[Recherche] Cette tâche concerne la recherche et l'identification d'une cible (atome, \myglos{glo-Residu}, structure secondaire, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 				\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
-				\item[Déformation] La tâche consiste à déformer la structure en manipulant la cible précédemment sélectionnée, que ce soit au niveau inter-moléculaire, intra-moléculaire ou atomique.
+				\item[Déformation] Cette étape consiste à manipuler la cible précédemment sélectionnée pour déformer la structure moléculaire au niveau atomique, intra-moléculaire ou inter-moléculaire.
 					L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
-				\item[Évaluation] Cette dernière partie va évaluer le travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
+				\item[Évaluation] Cette dernière partie concerne l'évaluation du travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
 					En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 			\end{description}
 
@@ -1007,6 +1010,9 @@
 				\end{myps}
 				\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
 			\end{myfigure}
+
+			Sur la base de ces \myacro*{acr-PCV}, nous avons segmenté notre étude en deux parties distinctes; une centrée sur le processus de recherche et de sélection \myref*{cha-RechercheCollaborativeDeResiduSurUneMolecule}; la seconde centrée sur les processus de manipulation et d'évaluation \myref*{cha-DeformationCollaborativeDeMolecule}.
+			Dans un troisième temps, nous avons souhaiter augmenter la taille des groupes étudiés \myref*{cha-LaDynamiqueDeGroupe}.
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Plateforme de manipulation collaborative de molécules}
