@@ -228,10 +228,10 @@
 \newcommand{\bottomtitlepage}{%
 	\ifx\@date\@empty%
 	\else%
-		{\centering\normalsize Thèse soutenue le \@date\\}%
+		{\centering\normalsize Thèse soutenue le \@date\par}%
 		\ifx\@grade\@empty%
 		\else%
-			{\centering\normalsize pour l'obtention du grade de\par}%
+			{\centering\small\it pour l'obtention du grade de\par}%
 			{\centering\large\bfseries \@grade\par}%
 		\fi%
 	\fi%
