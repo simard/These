@@ -42,7 +42,7 @@
 	\PassOptionsToPackage{myenglish}{myref}
 \fi
 \if@myfrancais
-	\PassOptionsToPackage{frenchb}{babel}
+	\PassOptionsToPackage{french}{babel}
 	\PassOptionsToPackage{myfrancais}{myref}
 \fi
 \PassOptionsToPackage{sorting=nyt,hyperref=auto,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=false,date=long,urldate=long,block=space,maxcitenames=2,maxbibnames=99}{biblatex}
