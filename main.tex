@@ -312,7 +312,7 @@
 
 				Plus récemment, deux projets ont permis d'aboutir à des plateformes de manipulation haptiques de molécules avec un moteur de simulation en temps-réel.
 				Tout d'abord, \mycite[author]{Redon-2005} développent des algorithmes pour la simulation en temps-réel de corps articulés avec un grand nombre de \myacro*{acr-DDL}.
-				Puis, il adapte son travail pour créer un moteur de simulation moléculaire ce qui lui permet d'obtenir des simulations temps-réel, utilisable pour la manipulation haptique \mycite{Bolopion-2009}.
+				Puis, il adapte son travail pour créer un moteur de simulation moléculaire ce qui lui permet d'obtenir des simulations temps-réel \mycite{Rossi-2007}, utilisable pour la manipulation haptique \mycite{Bolopion-2009}.
 				En suivant un cheminement similaire, \mycite[author]{Delalande-2009} proposent un outil permettant d'obtenir des simulations moléculaires en temps-réel.
 				Puis dans un second temps, \mycite[author]{Delalande-2010} rendent possible la manipulation haptique temps-réel de molécules en proposant la déformation au niveau atomique.
 
@@ -1821,7 +1821,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\small%
 							\begin{tabular}{^C-C-C}
 								\myrowstyle{\bfseries}
-								Condition \mycondition{1}         & Condition \mycondition{2}         & Condition \mycondition{3}         \\
+								\myconditions{1}{4}               & \myconditions{5}{8}               & \myconditions{9}{10}              \\
 								\mymiddlerule
 								Sujet~\myuser{A}                  & Sujet~\myuser{A}                  & \myGlosnl{glo-Binome}~\myuser{AB} \\
 								\mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} & \mynum{10}~\myglosnl*{glo-Residu} \\
@@ -2262,73 +2262,71 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-DeformationCollaborativeDeMolecule]{Déformation collaborative de molécule}
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
-			La précédente expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont la \myemph{recherche} et la \myemph{sélection}.
-			Afin de compléter notre étude, nous souhaitons à présent nous intéresser à la \myemph{déformation}.
-			En effet, on trouve déjà des environnements virtuels permettant de manipuler des molécules rigides pour effectuer un \myglos{glo-DockingMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
-			Cependant, un \myglos{glo-DockingMoleculaire} nécessite de pouvoir déformer les molécules.
-			Ceci est rendu possible par l'avénement des simulations moléculaires interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997}.
+			La précédente expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont l'exploration et la sélection.
+			Afin de compléter notre étude, nous souhaitons à présent nous intéresser au processus de déformation.
+			En effet, la déformation est une tâche permettant de stimuler les actions coordonnées pour une collaboration étroitement couplée.
+			Actuellement, des environnements virtuels existent pour manipuler des molécules rigides pour effectuer un \myglos{glo-DockingMoleculaire} comme les travaux de \mycite[author]{Levine-1997} ou encore de \mycite[author]{Ferey-2008a}.
+			Cependant, afin d'effectuer un \myglos{glo-DockingMoleculaire} avancé, il est nécessaire de pouvoir déformer la molécule.
+			Ceci est rendu possible par l'avénement des simulations moléculaires interactives en temps-réel, notamment avec \myacro{acr-IMD} développé par \mycite[author]{Stadler-1997} ou encore \mycite[author]{Rossi-2007}.
 			Plus récemment, \mycite[author]{Delalande-2009} ont également amené une pierre à l'édifice avec \myMDDriver pour permettre une simulation moléculaire en temps-réel basée sur différents moteurs de simulation (\myacro{acr-NAMD} ou \myGromacs).
 			Puis, \mycite[author]{Delalande-2010} améliorent la manipulation et la déformation interactive par l'utilisation d'une interface haptique.
 
 			Dans ce chapitre, nous souhaitons étudier la pertinence d'une configuration collaborative pour appréhender la déformation d'une molécule.
 			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
-			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage concernant l'utilisation des outils, de la plateforme ou encore de la tâche à réaliser.
+			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage, que ce soit pour l'utilisation des outils, de la plateforme ou encore pour la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
 				L'utilisation de retours haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
-				\mycite[author]{Shen-2006} proposent déjà une solution pour déformer des objets non-rigides à l'aide de retour haptique.
+				Par exemple, \mycite[author]{Shen-2006} proposent une solution pour déformer des objets non-rigides à l'aide de retour haptique.
 				Les objets concernés sont de faible complexité, comme des sphères par exemple.
-				Puis, \mycite[author]{Peterlik-2009} effectue une thèse sur les déformations de tissus cellulaires.
-				Là encore, les éléments déformables sont de faible complexité et n'ont quasiment pas d'application utile et concrète dans le monde réel.
+				Puis, les travaux de thèse \mycite[author]{Peterlik-2009} abordent les déformations de tissus cellulaires.
+				Là encore, les tâche proposées sont de faible complexité et n'ont pas d'application concrète.
 
-				Cependant, afin d'effectuer des déformations plus complexes, certains se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
-				\mycite[author]{Sumengen-2007} proposent une plateforme permettant la déformation de maillages destinés à des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}.
-				Pour cela, il propose une architecture de type pair-à-pair basée sur le protocole \myacro{acr-UDP}.
+				Cependant, afin d'effectuer des déformations complexes, certains chercheurs se sont intéressés aux processus de déformation collaboratifs dans les \myacro*{acr-EVC}.
+				\mycite[author]{Sumengen-2007} proposent une plateforme permettant la déformation de maillages destinés à des simulations d'objets déformables (tissus, organes, \myetc) dans un \myacro{acr-EVC}; la simulation de l'objet déformable est partitionnée en fonction des zones de travail des différents utilisateurs.
 				De son côté, \mycite[author]{Tang-2010a} proposent une plateforme client/serveur de déformation collaborative de maillages.
-				Ces deux plateformes proposent chacun une plateforme de déformation collaborative mais se focalisent principalement sur les contraintes techniques d'une telle plateforme.
+				La présentation de ces deux plateformes de collaboration distante se focalisent principalement sur les contraintes techniques sans aborder les contraintes de la collaboration.
 				\mycite[author]{Muller-2006} développent le logiciel \myClayWorks, complété plus tard par \mycite[author]{Gorlatch-2009}, permettant la sculpture virtuelle sur glaise.
-				Dans cette étude, les problèmatiques d'accès exclusif à certains objets ou à certaines parties d'un objet sont brièvement évoquées afin de faciliter la coordination des différents acteurs.
+				Dans cette étude, les problématiques d'accès exclusif à certains objets ou à certaines parties d'un objet sont brièvement évoquées afin de faciliter la coordination des différents acteurs.
 
-				Tous les travaux présentés ci-dessus proposent une déformation collaborative distante où chaque utilisateur effectue une déformation localement.
-				Les contraintes liées à la collaboration entre les acteurs n'est pas présentée.
-				En effet, tous les \myacro*{acr-EVC} proposés sont consacrés aux problématiques techniques de la collaboration distante.
+				Tous les travaux présentés ci-dessus proposent une déformation collaborative distante où chaque utilisateur effectue une déformation dans une région restreinte où lui seul peut agir.
+				De cette manière, les contraintes liées à la collaboration entre les acteurs sont en grande partie évitées.
+				Pour cette raison, ce sont principalement les contraintes techniques de la collaboration qui sont abordées mais ni les conflits entre utilisateurs, ni les aspects de communication ne sont évoqués.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
-				Ce chapitre sera l'occasion d'aborder les problématiques de la déformation lors d'une configuration collaborative.
+				Ce chapitre nous permettra d'aborder les problématiques de déformation collaborative.
+				La déformation d'une molécule nécessite de positionner certains éléments de manière précise.
 				La déformation est une tâche nécessitant plus de précision que la recherche car les cibles doivent être déplacées à un endroit défini.
-				Nous souhaitons ainsi comparer les performances sur une tâche complexe nécessitant de la coordination.
+				Nous souhaitons comparer les performances sur une tâche nécessitant de la coordination pour les étapes de déformation.
 
-				L'étude met en jeu un nombre de ressources fixe pour la déformation et compare une distribution des ressources (configuration collaborative) à une mutualisation des ressources (configuration individuelle).
-				En effet, la première étude nous a montré les contraintes d'une configuration collaborative en terme de temps de communication.
-				Paradoxalement, les utilisateurs qui manipulent seuls sont confrontés à une charge cognitive de travail importante.
-				En fournissant les mêmes ressources (deux outils de déformation), nous souhaitons comparer la capacité de coordination d'un \myglos{glo-Binome} aux capacités cognitives de traitement d'un \myglos{glo-Monome} face à une importante charge de travail.
-				Nous supposons que les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} sont plus performants que les \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
+				L'étude met en jeu un nombre de ressources fixe pour la tâche de déformation pour comparer une distribution des ressources (configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome}) à une mutualisation des ressources (configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome}).
+				En effet, la première étude nous a permis de mettre en avant les contraintes d'une configuration collaborative en terme de temps de communication.
+				Paradoxalement, les utilisateurs qui manipulent seuls sont confrontés à une charge de travail importante.
+				En fournissant un nombre de ressources fixe (deux outils de déformation), nous souhaitons comparer la capacité de coordination d'un \myglos{glo-Binome}, aux capacités de traitement d'un \myglos{glo-Monome} face à une importante charge de travail.
+				Dans notre hypothèse, nous pensons que les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} sont plus performants que les \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
 
 				Dans un second temps, nous souhaitons définir un lien entre la complexité de la tâche et le nombre de sujets impliqués.
-				En effet, les tâches complexes fournissent une charge cognitive de travail très importante; plus cette charge de travail est importante et plus les \myglos*{glo-Monome} devraient éprouver des difficultés à traiter l'ensemble des informations.
-				Nous émettons l'hypothèse que les tâches les plus complexes seront plus difficiles à réaliser par les \myglos*{glo-Monome} que par les \myglos*{glo-Binome}.
+				En effet, les tâches complexes fournissent une charge de travail très importante; plus cette charge de travail est importante et plus les \myglos*{glo-Monome} devraient éprouver des difficultés à traiter l'ensemble de cette charge.
+				Nous émettons l'hypothèse que les tâches les plus complexes, représentant la plus grande charge de travail, obtiendront de meilleures performances avec la configuration collaborative.
 
-				Enfin, cette seconde étude est l'occasion d'observer l'effet du travail collaboratif sur l'apprentissage.
+				Enfin, cette seconde étude va nous permettre d'observer l'effet du travail collaboratif sur l'apprentissage.
 				Nous comparons les performances des \myglos*{glo-Monome} et des \myglos*{glo-Binome} concernant la réalisation d'une même tâche répétée plusieurs fois.
-				Nous supposons que la facilitation et l'échange qui a lieu lors d'un travail collaboratif va permettre aux \myglos*{glo-Binome} d'appréhender plus rapidement la plateforme, les outils ou encore la tâche.
+				Nous supposons que la \myglos{glo-FacilitationSociale} \myref*{sse-sota-LaFacilitationSociale} et la communication qui a lieu lors d'un travail collaboratif va permettre aux \myglos*{glo-Binome} d'appréhender plus rapidement la plateforme, les outils ou encore la tâche.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp2-DescriptionDeLaTache]{Description de la tâche}
-				La tâche proposée est la déformation dans un \myacro{acr-EVC} sur des molécules complexes.
-				L'objectif est de modifier la conformation initiale d'une molécule pour atteindre une conformation finale.
-				En effet, la recherche d'un état stable est exactement ce qu'une tâche de \myglos{glo-DockingMoleculaire} cherche à réaliser.
-				De plus, la déformation est une tâche permettant de stimuler les actions coordonnées pour une collaboration étroitement couplée.
+				La tâche proposée est la déformation de molécules complexes dans un \myacro{acr-EVC}.
+				L'objectif est de modifier la conformation initiale d'une molécule pour atteindre une conformation stable, une tâche relativement proche du \myglos{glo-DockingMoleculaire}.
 
 				Trois molécules sont utilisées dans le cadre de cette expérimentation.
 				\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
 				\myTRPZIPPER et \myTRPCAGE seront chacune utilisée dans deux scénarios distincts.
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
-				Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
-				Le score affiché est le \myacro{acr-RMSD} qui permet de mesurer la différence de forme entre deux déformations d'une même molécule en calculant la différence entre chaque paire d'atomes.
-				L'\myref{equ-RMSD} est utilisée pour le calcul de cette différence.
+				Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel en haut de l'écran \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
+				Le score affiché est le \myacro{acr-RMSD} \myref*{equ-RMSD} qui mesure l'écart géométrique entre deux conformations d'une même molécule.
 				\begin{equation}\label{equ-RMSD}
 					\mathrm{RMSD}\left(\mathbf{c},\mathbf{m}\right) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\mynorm{c_i - m_i}^2}
 				\end{equation}
@@ -2347,94 +2345,72 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myps}
 					\mycaption[fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible]{Affichage de la molécule à déformer et de la molécule cible}
 				\end{myfigure}
-				\begin{mysubsubsection}[sss-exp2-DescriptionDesScenarios]{Description des scénarios}
-					Quatre scénarios sont proposés sur deux molécules avec deux niveaux de manipulation différents.
-					Les deux niveaux différents de manipulation sont :
-					\begin{itemize}
-						\item inter-moléculaire (à l'échelle d'un \myglos{glo-Residu}) pour un niveau de déformation avec une granularité élevée;
-						\item intra-moléculaire (à l'échelle d'un atome) pour un niveau de déformation avec une granularité fine.
-					\end{itemize}
 
-					Les paragraphes qui vont suivre décrivent les quatre scénarios basés sur les critères de complexité suivants :
-					\begin{description}
-						\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
-						\item[\myGlosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} de la molécules non fixés dans la simulation;
-						\item[Cassure] Ce sont des angles dans la chaîne principale de la molécule; elles représentent les jonctions entre \myhelice* et/ou les \myfeuillet* et nécessitent deux points d'accroche pour être reformées;
-						\item[Champ de force] C'est l'intensité des forces dans les zones de déformation; il exprime l'énergie minimum nécessaire à déployer pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
-					\end{description}
-					\begin{myparagraph}[par-exp2-Scenario1a]{Scénario~\myscenario{1a}}
+				Les scénarios de distinguent par différents critères de complexité :
+				\begin{description}
+					\item[Niveau de déformation] Deux niveaux de déformation sont proposés : inter-moléculaire et intra-moléculaire \myref*{sse-sota-RechercheDeSolutionsDeDockingMoleculaire};
+					\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
+					\item[\myGlosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} de la molécules non fixés dans la simulation qui sont déformables;
+					\item[Cassure] Elles représentent les jointures entre les structures secondaires, formant des courbures prononcées difficiles à maintenir en place;
+					\item[Champ de force] C'est l'intensité des forces dans les zones de déformation; il exprime l'énergie minimum nécessaire à déployer pour atteindre l'objectif et se traduit par trois niveaux (\myemph{faible}, \myemph{moyen} et \myemph{fort}).
+				\end{description}
+
+				Basé sur ces définitions, quatre scénarios sont proposés dont les critères de complexité sont résumés dans la \myref{tab-exp2-ParametresDeComplexiteDesTaches} :
+				\begin{description}
+					\item[Scénario~\myscenario{1a}]
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
-						Un \myglos{glo-Residu} à l'extrémité\footnote{La molécule forme une chaîne carbonée; il s'agit ici d'une des extrémités de cette chaîne.} est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter d'éventuelles dérives hors du champ visuel.
-						L'intégralité des onze autres \myglos*{glo-Residu} est libre de mouvement ce qui en fait une molécule assez malléable avec un champ de force moyennement contraint.
+						Un \myglos{glo-Residu} à l'extrémité de la chaîne carbonée\footnote{La molécule forme une chaîne carbonée; il s'agit ici d'une des extrémités de cette chaîne carbonée.} est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter que la molécule sorte du champ de vision.
+						Les onze autres \myglos*{glo-Residu} de cette molécule sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force  à contrainte moyenne.
 						La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
 						La difficulté de ce scénario réside dans la nécessité de maintenir les \myglos*{glo-Residu} déjà placés pendant que le reste de la molécule est déformée.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-Scenario1b]{Scénario~\myscenario{1b}}
+					\item[Scénario~\myscenario{1b}]
 						Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
 						Comme le scénario~\myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
-						L'intégralité des dix neuf autres \myglos*{glo-Residu} est libre de mouvement ce qui en fait une molécule assez malléable avec un champ de force moyennement contraint.
+						Les dix-neuf autres \myglos*{glo-Residu} sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force moyennement contraint.
 						La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
 						Ce scénario est plus difficile que le scénario~\myscenario{1a} car le nombre d'atomes à placer est plus élevé et qu'il est nécessaire de maintenir en place deux cassures.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-Scenario2a]{Scénario~\myscenario{2a}}
+					\item[Scénario~\myscenario{2a}]
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
-						Seulement trois \myglos*{glo-Residu} sont laissés libres et tous les autres \myglos*{glo-Residu} sont fixés.
-						Le champ de force au sein de la zone de déformation pour cette molécule est très faible et aucune cassure n'est à reformer.
+						Seulement trois \myglos*{glo-Residu} sont laissés libres et les autres \myglos*{glo-Residu} sont fixés.
+						Le champ de force au sein de la zone de déformation pour cette molécule est très faible et aucune cassure n'est à former.
 						Cependant, la difficulté de ce scénario réside dans la précision de la déformation nécessaire.
-						En effet, plutôt que de modifier la position des \myglos*{glo-Residu}, ce scénario nécessite la modification de l'orientation d'un \myglos*{glo-Residu} donc une précision accrue dans la sélection et la déformation des atomes.
-					\end{myparagraph}
-					\begin{myparagraph}[par-exp2-Scenario2b]{Scénario~\myscenario{2b}}
+						En effet, plutôt que de modifier la position des \myglos*{glo-Residu}, ce scénario nécessite la modification de l'orientation d'un \myglos{glo-Residu} avec une précision accrue dans la sélection et la déformation des atomes.
+					\item[Scénario~\myscenario{2b}]
 						Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle intra-moléculaire.
-						Seulement six \myglos*{glo-Residu} sont laissés libres et tous les autres \myglos*{glo-Residu} sont fixés.
-						Le champ de force au sein de la zone de déformation est très important et l'énergie qu'il est nécessaire de déployer pour réussir cette déformation est importante.
-						Cette déformation ne peut être réalisée qu'avec la manipulation simultanée et coordonnée de deux \myglos*{glo-Residu} : ceci permet de recréer la cassure.
-					\end{myparagraph}
+						Seulement six \myglos*{glo-Residu} sont laissés libres et les autres \myglos*{glo-Residu} sont fixés.
+						Le champ de force au sein de la zone de déformation est très important et l'énergie qu'il est nécessaire de déployer est importante.
+						Cette déformation ne peut être réalisée qu'avec la manipulation simultanée et coordonnée de deux \myglos*{glo-Residu} afin de recréer la cassure.
+				\end{description}
 
-					Un résumé de la complexité des quatre tâches est exposé dans la \myref{tab-exp2-ParametresDeComplexiteDesTaches} selon les critères suivants :
-
-					\begin{mytable}
-						\mycaption[tab-exp2-ParametresDeComplexiteDesTaches]{Paramètres de complexité des tâches}
-						\begin{mytabular}{^>{\bfseries}p{9em}-C-C-C-C}
-							\mytoprule
-							\myrowstyle{\bfseries}
-							Scénario                      & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
-							\mymiddlerule[\heavyrulewidth]
-							Nombre d'atomes               & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
-							\mymiddlerule
-							\myGlosnl*{glo-Residu} libres & \mynum{11}      & \mynum{19}      & \mynum{3}       & \mynum{7}       \\
-							\mymiddlerule
-							Cassure                       & \mynum{1}       & \mynum{2}       & \mynum{0}       & \mynum{1}       \\
-							\mymiddlerule
-							Champ de force                & Moyen           & Moyen           & Faible          & Fort            \\
-							\mybottomrule
-						\end{mytabular}
-					\end{mytable}
-				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-exp2-ParametresDeComplexiteDesTaches]{Paramètres de complexité des tâches}
+					\begin{mytabular}{^>{\bfseries}p{12em}-C-C-C-C}
+						\mytoprule
+						\myrowstyle{\bfseries}
+						Scénario                      & \myscenario{1a} & \myscenario{1b} & \myscenario{2a} & \myscenario{2b} \\
+						\mymiddlerule[\heavyrulewidth]
+						Niveau de déformation         & inter           & inter           & intra           & intra           \\
+						\mymiddlerule
+						Nombre d'atomes               & \mynum{218}     & \mynum{304}     & \mynum{218}     & \mynum{304}     \\
+						\mymiddlerule
+						\myGlosnl*{glo-Residu} libres & \mynum{11}      & \mynum{19}      & \mynum{3}       & \mynum{7}       \\
+						\mymiddlerule
+						Cassure                       & \mynum{1}       & \mynum{2}       & \mynum{0}       & \mynum{1}       \\
+						\mymiddlerule
+						Champ de force                & Moyen           & Moyen           & Faible          & Fort            \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
 				L'expérimentation, basée sur le dispositif expérimental présenté dans le \myref{cha-pro-DispositifExperimental}, a subi quelques modifications qui seront détaillées dans les sections suivantes.
 				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-SecondeExperimentation}.
 				\begin{mysubsubsection}[sss-exp2-MaterielUtilise]{Matériel utilisé}
-					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plateforme de base \myref*{sec-pro-MaterielExperimental}.
-					En effet, suite à la première expérimentation, nous avons beaucoup remis en cause la présence de l'outil d'orientation de la molécule.
-					Cet outil permettant de modifier l'orientation de la molécule est nécessaire.
-					Cependant, la forme sous laquelle il est présenté n'est pas idéale.
-					L'outil d'orientation \mytool{grab} a posé des problèmes manifestes d'interaction à certains sujets qui ne réussissaient pas à s'approprier l'outil.
-
-					Après une discussion avec un bio-informaticien, il est apparu qu'une souris~\myThreeD est un outil plus approprié qu'une interface haptique pour l'orientation de la scène.
-					En effet, le périphérique haptique possède des contraintes mécaniques qui ne permettent pas des rotations complètes de l'objet.
-					Cette contrainte amène des problématiques connues d'interaction avec les objets virtuels : le débrayage \mycite{Dominjon-2006}.
-					La souris~\myThreeD ne souffre pas d'une telle contrainte et peut ainsi être proposée comme outil d'orientation en alternative à l'interface haptique associée à l'outil \mytool{grab}.
-					Une souris~\myThreeD \mySpaceNavigator est placée sur la table entre les deux sujets.
-					Aucune consigne particulière n'est donnée sur l'utilisation de cet outil et chaque sujet peut l'utiliser au moment où il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil.
+					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plateforme de base présentée dans la \myref{sec-pro-MaterielExperimental}.
+					L'outil \mytool{grab} qui était assuré par un \myOmni et permettant d'orienter la molécule a été remplacer par une souris~\myThreeD \mySpaceNavigator.
+					Cette souris ne nécessite pas d'ordinateur supplémentaire et peut être connectée directement à la machine principale sur laquelle \myacro{acr-VMD} est exécuté.
+					Elle est placée sur la table entre les deux sujets et chaque sujet peut l'utiliser comme il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil.
 					L'objectif est de stimuler les interactions.
-
-					En ce qui concerne l'utilisation des outils de déformation en \myglos{glo-Binome}, chaque sujet possède à sa disposition un outil de déformation.
-					La répartition de l'outil d'orientation est laissé à la responsabilités des deux membres du \myglos{glo-Binome}.
-					Pour les \myglos*{glo-Monome}, le sujet peut utiliser les deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
-					Il peut également utiliser l'outil d'orientation mais dans ce cas, il est forcé de lâcher un des deux outils de déformation.
-					Pour des raisons d'équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, l'utilisation de la souris~\myThreeD désactive toutes les sélections effectuées avec un outil de déformation.
-					De cette façon, les membres du \myglos{glo-Binome} ne peuvent pas utiliser l'outil d'orientation en même temps que les outils de déformations (contrainte physique inhérente au \myglos*{glo-Monome}).
 
 					Les \myref{fig-exp2-SchemaDuDispositifExperimental} et \myref{fig-exp2-PhotographieDuDispositifExperimental} illustrent par un schéma et une photographie le dispositif expérimental.
 
@@ -2448,17 +2424,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-VisualisationEtRepresentation]{Visualisation et représentation}
-					Pour cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sss-exp2-DescriptionDesScenarios}.
-					Ces molécules sont représentées avec les rendus graphiques de base (\myCPK et \myNewRibbon).
-					Cependant, la tâche nécessite d'afficher la molécule dans son état stable qui est l'objectif que doivent atteindre les sujets.
-					Cette molécule ne peut pas être représentée avec tous les atomes pour deux raisons.
-					Tout d'abord, l'intégralité des atomes serait une surcharge du rendu visuel.
-					De plus, la précision nécessaire pour les déformations demandées ne nécessite pas un affinement au niveau atomique.
-					C'est pourquoi, la molécule dans son état stable sera discrètement affichée avec un rendu \myNewRibbon en transparence.
+					Dans cette seconde expérimentation, quatre scénarios sont proposés et présentés dans la \myref{sse-exp2-DescriptionDeLaTache}.
+					Les rendus graphiques de base sont utilisés pour afficher les molécules correspondantes \myref*{sse-pro-RepresentationDesMolecules}.
 
-					Des images représentants les différents scénarios dans leurs états initiaux sont présentées.
-					Les scénarios inter-moléculaires \myscenario{1a} et \myscenario{1b} sont respectivement représentés sur la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B}.
-					Les scénarios intra-moléculaires \myscenario{2a} et \myscenario{2b} sont respectivement représentés sur la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B}.
+					Cependant, les sujets doivent également avoir accès aux informations concernant l'objectif : la molécule dans son état stable.
+					Cette molécule est affichée avec un rendu \myNewRibbon transparent et les atomes ne sont pas affichés.
+					Cet affichage très synthétique permet de ne pas surcharger la scène.
+					La \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représentent respectivement les scénarios \myscenario{1a}, \myscenario{1b}, \myscenario{2a} et \myscenario{2b} tels qu'ils sont affichés pour la réalisation de la tâche.
 
 					\begin{myfigure}
 						\myimage[width=0.5\textwidth]{exp2-scenario1A}
@@ -2476,21 +2448,23 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\myimage{exp2-scenario2B}
 						\mycaption[fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
 					\end{myfigure}
+
+					Pour finir, afin d'aider les sujets à trouver l'emplacement final du \myglos{glo-Residu} sélectionné, un affichage du \myglos{glo-Residu} correspondant est effectué sur la molécule stable.
+					Ce \myglos{glo-Residu} est représenté par un rendu \myCPK coloré de la couleur du curseur du sujet concerné comme on peut le voir sur la \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-OutilsDeManipulation]{Outils de manipulation}
-					Concernant l'outil d'orientation de la molécule, maintenant assuré par une souris~\myThreeD, une légére modification a été effectuée.
-					Grâce au choix du matériel qui permet de différencier aisément les translations et les rotations, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
-					En effet, la molécule n'a pas besoin d'être déplacée à l'écran et c'est surtout l'orientation la molécule qui est nécessaire aux sujets.
-					Ceci permet également d'éviter que les molécules ne sortent de l'espace visuel des sujets (scène vidéoprojetée) à cause d'une mauvaise manipulation.
-					De plus, ce choix permet d'enlever une part de la charge cognitive aux manipulateurs.
+					Suite à la première expérimentation, nous avons remis en cause la présence de l'outil d'orientation de la molécule.
+					En effet, bien que nécessaire dans certains cas, certains sujets n'ont pas réussi à s'approprier rapidement l'outil \mytool{grab}.
 
-					En ce qui concerne les outils de déformation, quelques modifications concernant le rendu visuel ont été effectuées.
-					La tâche consiste à reconstituer une molécule dans son état d'équilibre.
-					Pour aider les sujets dans cette tâche, nous avons affiché un rendu visuel en transparence de la molécule dans son état stable.
-					Pour augmenter l'aide visuelle apportée, nous allons également indiquer l'emplacement final d'un \myglos{glo-Residu} sélectionné.
-					En effet, dès qu'un sujet sélectionne un \myglos{glo-Residu}, ce \myglos{glo-Residu} est mis en surbrillance.
-					Le \myglos{glo-Residu} correspondant sur la molécule stable est également mis en surbrillance comme expliqué sur la \myref{fig-exp2-IllustrationDesRendusPourLAffichageDeLaMolecule}.
-					Le \myglos{glo-Residu} de la molécule stable est représenté par un rendu \myCPK coloré de la couleur du curseur du sujet concerné.
+					Un bio-informaticien nous a suggéré l'utilisation d'une souris~\myThreeD, outil plus approprié pour l'orientation d'une molécule.
+					En effet, les contraintes mécaniques de l'interface haptique provoquait une problématique d'interaction connue sous le nom de débrayage \mycite{Dominjon-2006}.
+					La souris~\myThreeD ne souffre pas d'une telle contrainte mécanique.
+
+					Cet outil permettant de différencier facilement les translations et les rotations, nous avons choisi de ne conserver que les \myacro*{acr-DDL} en rotation.
+					Cela évite que les sujets puisse sortir la molécule de l'écran tout en conservant la possibilité de l'observer sous tous les points de vue.
+
+					Les \myglos*{glo-Binome} étant dans une configuration \myglos*{glo-Monomanuel}, ils peuvent accéder à l'outil d'orientation de la molécule sans relâcher l'outil de déformation; ce n'est pas le cas des \myglos*{glo-Monome} en configuration \myglos*{glo-Bimanuel}.
+					Afin de compenser ce désavantage et de conserver une équité entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}, une déformation ne peut pas être effectuée lorsque l'outil d'orientation est utilisé; toutes les sélections en cours sont désactivées.
 
 					\begin{myfigure}
 						\psset{unit=0.08\textwidth}
@@ -2560,15 +2534,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\small%
 							\begin{tabular}{^C-C-C-C}
 								\myrowstyle{\bfseries}
-								Condition \mycondition{1}       & Condition \mycondition{2}       & Condition \mycondition{3} & Condition \mycondition{4} \\
+								\myconditions{1}{3}      & \myconditions{4}{6}      & \myconditions{7}{9}       & \myconditions{10}{12}     \\
 								\mymiddlerule
-								\mynum{1}~sujet                 & \mynum{1}~sujet                 & \mynum{2}~sujets          & \mynum{2}~sujets          \\
-								\myGlosnl{glo-Bimanuel}         & \myGlosnl{glo-Bimanuel}         & Collaboratif              & Collaboratif              \\
+								\mynum{1}~sujet          & \mynum{1}~sujet          & \mynum{2}~sujets          & \mynum{2}~sujets          \\
+								\myGlosnl{glo-Bimanuel}  & \myGlosnl{glo-Bimanuel}  & \myGlosnl{glo-Monomanuel} & \myGlosnl{glo-Monomanuel} \\
 								\mymiddlerule
-								Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}  & Scénario~\myscenario{1b}  \\
-								Scénario~\myscenario{1b}        & Scénario~\myscenario{1a}        & Scénario~\myscenario{1b}  & Scénario~\myscenario{1a}  \\
-								Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}  & Scénario~\myscenario{2b}  \\
-								Scénario~\myscenario{2b}        & Scénario~\myscenario{2a}        & Scénario~\myscenario{2b}  & Scénario~\myscenario{2a}  \\
+								Scénario~\myscenario{1a} & Scénario~\myscenario{1b} & Scénario~\myscenario{1a}  & Scénario~\myscenario{1b}  \\
+								Scénario~\myscenario{1b} & Scénario~\myscenario{1a} & Scénario~\myscenario{1b}  & Scénario~\myscenario{1a}  \\
+								Scénario~\myscenario{2a} & Scénario~\myscenario{2b} & Scénario~\myscenario{2a}  & Scénario~\myscenario{2b}  \\
+								Scénario~\myscenario{2b} & Scénario~\myscenario{2a} & Scénario~\myscenario{2b}  & Scénario~\myscenario{2a}  \\
 							\end{tabular}
 						} \\
 						\mybottomrule
@@ -2633,7 +2607,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					En comparant la somme des mains dominée et dominante des \myglos*{glo-Monome} avec le nombre de sélections total des \myglos*{glo-Binome}, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur le nombre total de sélections \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-cumulative.tex}) avec une augmentation de \myratio{exp2-numsel-group-dominant-ratio-cumulative.tex}.
 
 					Le nombre de sélections pour la main dominante comptabilise les sélections des deux sujets du \myglos{glo-Binome} contrairement aux \myglos*{glo-Monome} : ceci explique le nombre plus élevé de sélections en \myglos*{glo-Binome}.
-					Cependant, si on compare le nombre moyen de sélections par sujet (pour la main dominante), l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections de la main dominante \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
+					Cependant, si on compare le nombre moyen de sélections par sujet seulement pour la main dominante, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} (\myanova{exp2-numsel-group-dominant-anova-dominant.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=2.5cm}
@@ -2645,49 +2619,47 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\mycaption[fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Vitesse moyenne de la main dominante et dominée en fonction du nombre de sujets}
 					\end{myfigure}
 
-					La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{5} des \myglos*{glo-EffecteurTerminal} en fonction du nombre de sujets \myvari{1}.
+					La \myref{fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{5} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} (\myanova{exp2-speed-group-dominant-anova.tex}) avec une augmentation de \myratio{exp2-speed-group-dominant-ratio.tex}.
-					L'analyse montre un déséquilibre de vitesse moyenne entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}) avec une différence de \myratio{exp2-speed-group-dominant-ratio-monome.tex}.
+					L'analyse montre un déséquilibre de vitesse entre la main dominante et dominée des \myglos*{glo-Monome} avec un effet significatif (\myanova{exp2-speed-group-dominant-anova-monome.tex}) pour une différence de \myratio{exp2-speed-group-dominant-ratio-monome.tex}.
 					L'analyse montre également un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} de la main dominante (\myanova{exp2-speed-group-dominant-anova-dominant.tex}) avec une augmentation de \myratio{exp2-speed-group-dominant-ratio-dominant.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDesPerformancesEnBinome-AnalyseEtDiscussion]{Analyse et discussion}
 					Le premier résultat sur la \myref{fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets} nous permet de confirmer notre hypothèse \myhypothesis{1} : les \myglos*{glo-Binome} sont plus performants que les \myglos*{glo-Monome}.
-					Cependant, la suite de l'analyse va permettre de mettre en avant les paramètres précis pour lesquels il y a un gain de performances ainsi que les scénarios les plus adaptés à cette configuration de travail.
+					La suite de l'analyse va mettre en avant les paramètres qui amènent un gain de performances ainsi que les scénarios les plus adaptés à la configuration de travail collaborative.
 
-					Pour commencer, les distances moyennes entre les \myglos*{glo-EffecteurTerminal} nous permet d'observer un désequilibre de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
-					En effet, la distance passive entre les \myglos*{glo-EffecteurTerminal} (distance moyenne sur toute la durée de la tâche) est plus importante pour les \myglos*{glo-Monome} que pour les \myglos*{glo-Binome}.
-					Cependant, la distance active (seulement lorsque les deux \myglos*{glo-EffecteurTerminal} sont en phase de sélection) montre un effet inverse.
-					En effet, la manipulation \myglos*{glo-Bimanuel} (pour les \myglos*{glo-Monome}) constitue une charge de travail cognitive importante.
-					Le sujet doit alors être capable de gérer deux \myglos*{glo-EffecteurTerminal} à chaque instant.
-					Cette configuration a mené la plupart des sujets à utiliser seulement un \myglos{glo-EffecteurTerminal} en laissant le second sur le côté afin que le curseur ne gêne pas à l'écran.
+					Pour commencer, les distances moyennes entre les \myglos*{glo-EffecteurTerminal} nous permettent de constater un désequilibre de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
+					En effet, la distance passive entre les \myglos*{glo-EffecteurTerminal} est plus importante pour les \myglos*{glo-Monome} que pour les \myglos*{glo-Binome}.
+					Cependant, la distance active montre un effet inverse.
+					En effet, la manipulation \myglos*{glo-Bimanuel} (pour les \myglos*{glo-Monome}) constitue une charge de travail importante.
+					Le sujet doit alors être capable de gérer deux \myglos*{glo-EffecteurTerminal} simultanément.
+					Cette configuration a amené la plupart des sujets en \myglos{glo-Monome} à utiliser un seul \myglos{glo-EffecteurTerminal} en laissant le second sur le côté afin que le curseur ne gêne pas à l'écran.
 					La main dominée n'est utilisée que dans les cas où le sujet estime que c'est absolument nécessaire pour achever la tâche.
-					Ceci a pour effet d'augmenter la distance passive moyenne.
-					Cependant, la distance est censée représenter l'espace de travail couvert au sein de l'environnement virtuel.
-					Dans ce cas, elle est incorrecte car bien que la distance soit importante, elle ne représente pas un espace de travail étant donné que le deuxième \myglos{glo-EffecteurTerminal} n'est pas utilisé.
+					Le second outil de déformation étant placé sur le côté de l'écran, la mesure de distance passive mesurée n'est pas représentative de l'espace de travail où le sujet est actif.
 
 					La distance active permet d'éviter ce biais de mesure.
-					En effet, cette mesure ne prend pas en compte les phases d'inactivité d'un \myglos{glo-EffecteurTerminal}.
-					On constate alors que les \myglos*{glo-Binome} couvrent un plus grand espace de travail.
-					Les \myglos*{glo-Monome} couvrent un espace de travail plus restreint car ils peuvent focaliser visuellement sur une seule zone de travail à la fois.
-					Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se trouvent toujours proche de la zone de manipulation, dans la zone de focus du sujet.
+					En effet, cette mesure ne prend en compte que les phases d'activité d'un \myglos{glo-EffecteurTerminal}.
+					On constate alors que les \myglos*{glo-Binome} couvrent un plus grand espace de travail \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
+					Les \myglos*{glo-Monome} couvrent un espace de travail plus restreint car ils ne peuvent pas focaliser visuellement sur plusieurs zone de travail simultanément.
+					Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se trouvent toujours proche de la zone de manipulation, dans la zone de focus visuel du sujet.
 
 					La \myref{fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets} confirme ce déséquilibre.
 					En effet, on constate un nombre total de sélections plus grand pour les \myglos*{glo-Binome} (\myanova{exp2-numsel-group-dominant-mean-binome.tex}~sélections) que pour les \myglos*{glo-Monome} (\myanova{exp2-numsel-group-dominant-mean-monome.tex}~sélections).
-					Là encore, le sujet effectuant la tâche en \myglos{glo-Monome} n'exploite pas pleinement les deux outils en sa possession : la charge de travail cognitive est trop importante.
-					En effet, la \myacro{acr-TRM} \mycite{Wickens-1984} estime que la gestion de plusieurs ressources pour la même modalité est impossible.
+					Là encore, le sujet effectuant la tâche en \myglos{glo-Monome} n'exploite pas pleinement les deux outils en sa possession : la charge de travail est trop importante.
+					En effet, la \myacro{acr-TRM}, proposée par \mycite[author]{Wickens-1984}, considère que la gestion de plusieurs ressources pour la même modalité est impossible.
 					Cependant, les analyses statistiques montre que l'outil utilisé par la main dominante obtient un taux d'utilisation identique entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
 					Les \myglos*{glo-Binome} en configuration \myglos*{glo-Monomanuel} répartissent correctement la charge de travail entre les deux ressources disponibles ce qui n'est pas le cas des \myglos*{glo-Monome}.
 
-					Cependant, l'outil associé à la main dominante est géné par la configuration \myglos*{glo-Bimanuel}.
-					En effet, l'analyse montre une différence significative entre la vitesse moyenne de la main dominante des \myglos*{glo-Monome} et celle des \myglos*{glo-Binome}.
+					Cependant, on constate tout de même que l'outil utilisé par la main dominante n'est pas tout à fait aussi performant chez les \myglos*{glo-Monome} que chez les \myglos*{glo-Binome}.
+					En effet, l'analyse montre une différence significative sur la mesure de la vitesse.
 					La configuration \myglos*{glo-Bimanuel} provoque une séquentialité dans les actions du sujet : il manipule avec un outil, puis avec l'autre mais rarement les deux en même temps.
-					Cette séquentialité a pour effet des pauses alternatives entre les outils ce qui explique une vitesse moyenne plus basse.
+					Cette séquentialité a pour effet des pauses régulières pour chaque outil ce qui explique une vitesse moyenne moins élevée.
 
 					Cette section nous a permis de constater que le travail en \myglos{glo-Binome} permet de meilleures performances que le travail en \myglos{glo-Monome}.
-					Une analyse plus détaillé a mis en avant la difficulté du travail en configuration \myglos*{glo-Bimanuel} : la charge de travail cognitive à assumer avec deux outils est trop importante.
-					Cette difficulté a pour effet de fortement dégrader le taux d'utilisation d'un des deux outils.
-					On constate également une légére baisse de l'utilisation de l'outil associé à la main dominante.
-					Pour résumer, il est préférable de distribuer les ressources disponibles (outils de manipulation dans notre cas) entre différents participants : la configuration \myglos*{glo-Bimanuel} apporte une charge de travail cognitive trop importante.
+					Une analyse plus détaillé a mis en avant la difficulté du travail en configuration \myglos*{glo-Bimanuel} : la charge de travail à assumer avec deux outils est trop importante.
+					Cette difficulté a pour effet de fortement dégrader le taux d'utilisation de l'outil associé à la main dominée.
+					On constate également une légère baisse de l'utilisation de l'outil associé à la main dominante.
+					Pour résumer, il est préférable de distribuer les ressources disponibles (outil de déformation dans notre cas) entre plusieurs sujets.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache]{Évolution des performances en fonction de la complexité de la tâche}
@@ -2701,7 +2673,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\mycaption[fig-exp2-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
 					\end{myfigure}
 
-					La \myref{fig-exp2-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} en fonction de la complexité de la tâche \myvari{2} (temps cumulé des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
+					La \myref{fig-exp2-TempsDeRealisationDesScenarios} présente le temps de réalisation \myvard{1} (temps cumulé des \myglos*{glo-Monome} et des \myglos*{glo-Binome}) en fonction de la complexité de la tâche \myvari{2}.
 					L'analyse montre un effet significatif de la complexité de la tâche \myvari{2} sur le temps de réalisation \myvard{1} (\myanova{exp2-time-task-anova.tex}).
 					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} permet de trier les scénarios en deux classes de complexité : $\left\{\myscenario{1a}, \myscenario{2a}\right\}$ et $\left\{\myscenario{1b}, \myscenario{2b}\right\}$.
 
@@ -2773,31 +2745,32 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					De même, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{5} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-speed-task-group-anova-trpcage.tex}) avec une augmentation de \myratio{exp2-speed-task-group-ratio-trpcage.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache-AnalyseEtDiscussion]{Analyse et discussion}
-					L'analyse du temps de réalisation des différentes tâches ainsi que la \myref{tab-exp2-ParametresDeComplexiteDesTaches} nous permet de classifier ces tâches par niveau de complexité : les scénarios \myscenario{1a} et \myscenario{2a} sont simples alors que les scénarios \myscenario{1b} et \myscenario{2b} sont complexes.
-					En effet, les scénarios \myscenario{1a} et \myscenario{2a} concernent la molécule \myTRPZIPPER contenant peu d'atomes et de \myglos*{glo-Residu} libres.
+					L'analyse du temps de réalisation des différentes tâches ainsi que la \myref{tab-exp2-ParametresDeComplexiteDesTaches} nous permet de classifier ces tâches par niveau de complexité : les scénarios \myscenario{1a} et \myscenario{2a} sont relativement simples alors que les scénarios \myscenario{1b} et \myscenario{2b} sont complexes.
+					En effet, les scénarios \myscenario{1a} et \myscenario{2a} concernent la molécule \myTRPZIPPER contenant peu d'atomes et de \myglos*{glo-Residu} à déformer.
 					Par contre, les scénarios \myscenario{1b} et \myscenario{2b}, dont le nombre d'atomes et de \myglos*{glo-Residu} libres est plus important, est constitué de champ de force à fortes contraintes physiques et nécessité la formation de plusieurs cassures.
 
-					En observant les différences de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur la \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets}, on constate que l'apport du travail collaboratif n'est vrai que dans le cas des tâches complexes.
-					La contrainte des tâches complexes réside dans la nécessité d'avoir recourt aux deux outils pour achever la tâche.
+					En observant les différences de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur la \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets}, on constate que la configuration collaborative n'amélioré ses performances que dans le cas des tâches complexes.
+					Ces tâches ont la particularité de nécessiter une coordination entre les deux outils de déformation.
 					En effet, en observant la \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive}, l'analyse de la distance active montre une différence significative entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} pour les scénarios simples.
-					Sur la base des résultats de la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome}, les \myglos*{glo-Monome} ont tendance à délaisser le deuxième outil à cause de la forte charge cognitive qu'ajoute la configuration \myglos*{glo-Bimanuel}.
+
+					Selon les résultats de la section précédente \myref*{sse-exp2-AmeliorationDesPerformancesEnBinome}, les \myglos*{glo-Monome} ont tendance à délaisser le deuxième outil.
 					L'outil délaissé augmente ainsi la valeur de la distance passive mesurée en étant mis à l'écart.
 					En observant seulement les scénarios simples \myscenario{1a} et \myscenario{2a}, on constate que la distance passive des \myglos*{glo-Monome} est plus importante que celle des \myglos*{glo-Binome}.
-					On en conclue que les \myglos*{glo-Monome} que la complexité de ces scénarios n'a pas nécessité une manipulation \myglos*{glo-Bimanuel} et que la tâche a pu être achevée avec un seul outil de déformation.
-					Il y a donc peu d'intérêt d'effectuer ces tâches peu complexe en collaboration puisqu'il n'y a aucune amélioration significative des performances bien que le nombre de ressources utilisées (les outils de déformation) soit doublé.
+					On en conclue que la complexité de ces scénarios n'oblige pas à effectuer une manipulation \myglos*{glo-Bimanuel} et que la tâche peut être achevée avec un seul outil.
+					Il y a donc peu d'intérêt à effectuer ces tâches peu complexe en configuration collaborative puisqu'aucune amélioration significative des performances n'est constatée.
 
-					Cependant, pour les scénarios complexes, l'analyse ne montre pas de différence significative de la distance passive entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
-					Pour ces scénarios, l'utilisation du deuxième outil est nécessaire et malgré la charge cognitive importante que cela représente pour les \myglos*{glo-Monome},la tâche est réalisée à l'aide des deux outils (configuration \myglos*{glo-Bimanuel}).
-					Dans ce cadre, la configuration \myglos*{glo-Monomanuel} adoptée par les \myglos*{glo-Binome} permet de meilleures performances comme le montre les analyses pour une distance active similaire.
-					En effet, l'espace de travail couvert par les \myglos*{glo-Monome} est identique à celui des \myglos*{glo-Binome} mais leur incapacité à traiter cognitivement cette charge supplémentaire de travail les rend moins performants.
+					Pour les scénarios complexes, l'analyse ne montre pas de différence significative de la distance passive entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
+					Pour ces scénarios, l'utilisation du deuxième outil est nécessaire et malgré la charge de travail importante que cela représente pour les \myglos*{glo-Monome}, la tâche est réalisée à l'aide des deux outils (configuration \myglos*{glo-Bimanuel}).
+					La configuration \myglos*{glo-Monomanuel} adoptée dans ce cas par les \myglos*{glo-Binome} permet de meilleures performances \myref*{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets} pour une distance active similaire \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistanceActive}.
+					En effet, l'espace de travail couvert par les \myglos*{glo-Monome} est identique à celui des \myglos*{glo-Binome} mais leur incapacité à traiter cette charge de travail supplémentaire les rend moins performants.
 
 					L'analyse du nombre de sélections vient appuyer ces conclusions.
 					En effet, les \myglos*{glo-Monome} effectuent moins de sélections que les \myglos*{glo-Binome} dans la réalisation des scénarios simples.
-					Cependant, on comptabilise un nombre de sélections similaires entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} dans les scénarios complexes.
+					Cependant, on comptabilise un nombre de sélections similaire entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur les scénarios complexes avec des performances moins élevées pour les \myglos*{glo-Monome}.
 
 					Dans cette section, nous avons montré que les améliorations de performances des \myglos*{glo-Binome} par rapport aux \myglos*{glo-Monome} étaient très liées à la complexité de la tâche.
-					En effet, sur des tâches de faible complexité, les \myglos*{glo-Monome} obtiennent de bonnes performances (même en configuration \myglos*{glo-Monomanuel}) alors que les \myglos*{glo-Binome} souffrent de \myglos*{glo-ConflitDeCoordination} : les performances sont similaires.
-					Cependant, dans le cas de tâche complexes, les \myglos*{glo-ConflitDeCoordination} ne sont pas suffisamment pénalisants et la collaboration permet d'obtenir de meilleures performances que le travail seul.
+					En effet, sur des tâches de faible complexité, les \myglos*{glo-Monome} obtiennent de bonnes performances (malgré une manipulation \myglos*{glo-Monomanuel}) pendant que les \myglos*{glo-Binome} souffrent de \myglos*{glo-ConflitDeCoordination} : les performances sont similaires.
+					Cependant, dans le cas de tâches complexes, les \myglos*{glo-ConflitDeCoordination} ne sont pas suffisamment préjudiciables et la collaboration permet d'obtenir de meilleures performances que le travail individuel.
 					Dans la section précédente, nous avons montré que la configuration \myglos*{glo-Bimanuel} ne permet pas d'égaler les performances d'un travail en collaboration.
 					Complétons cette conclusion par le fait qu'elle est surtout vraie pour les scénarios complexes.
 				\end{mysubsubsection}
@@ -2830,8 +2803,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} présente le temps de réalisation \myvard{1} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} pour le premier essai (\myanova{exp2-time-try-group-anova-try1.tex}), le deuxième essai (\myanova{exp2-time-try-group-anova-try2.tex}) ou le troisième essai (\myanova{exp2-time-try-group-anova-try3.tex}).
 
-					De plus, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} pour les \myglos*{glo-Monome} (\myanova{exp2-time-try-group-anova-monome.tex}) et pour les \myglos*{glo-Binome} (\myanova{exp2-time-try-group-anova-binome.tex}).
-					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative seulement à partir de dernier essai pour les \myglos*{glo-Monome} avec une diminution de \myratio{exp2-time-try-group-ratio-monome.tex} alors que l'évolution est significative dès le deuxième essai pour les \myglos*{glo-Binome} avec une diminution de \myratio{exp2-time-try-group-ratio-binome.tex}.
+					Cependant, l'analyse montre un effet significatif du numéro de l'essai \myvari{3} sur le temps de réalisation \myvard{1} pour les \myglos*{glo-Monome} (\myanova{exp2-time-try-group-anova-monome.tex}) et pour les \myglos*{glo-Binome} (\myanova{exp2-time-try-group-anova-binome.tex}).
+					Un test post-hoc de \mycite[author]{Mann-1947} avec une correction de \mycite[author]{Holm-1979} montre une évolution significative pour les \myglos*{glo-Monome} à partir de dernier essai avec une diminution de \myratio{exp2-time-try-group-ratio-monome.tex} alors que l'évolution est significative dès le deuxième essai pour les \myglos*{glo-Binome} avec une diminution de \myratio{exp2-time-try-group-ratio-binome.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.04cm}
@@ -2862,7 +2835,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets} présente la distance active \myvard{4} des différents essais \myvari{3} en fonction du nombre de sujets \myvari{1}.
-					La distance passive n'a pas été prise en considération étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}.
+					Étant donné le biais de mesure décrit dans la \myref{sse-exp2-AmeliorationDesPerformancesEnBinome}, la distance passive n'a pas été prise en considération.
 					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} pour le premier essai (\myanova{exp2-active-try-group-anova-try1.tex}) supérieur de \myratio{exp2-active-try-group-ratio-try1.tex} et pour le deuxième essai (\myanova{exp2-active-try-group-anova-try2.tex}) supérieur de \myratio{exp2-active-try-group-ratio-try2.tex} mais pas pour le troisième essai (\myanova{exp2-active-try-group-anova-try3.tex}).
 
 					De plus, l'analyse montre qu'il n'y a pas d'effet significatif du numéro de l'essai \myvari{3} sur la distance active \myvard{4} pour les \myglos*{glo-Binome} (\myanova{exp2-active-try-group-anova-binome.tex}).
@@ -2888,110 +2861,99 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDeLApprentissagePourLesBinomes-AnalyseEtDiscussion]{Analyse et discussion}
 					L'observation des temps de réalisation de la tâche \myref*{fig-exp2-TempsDeRealisationDeChaqueEssai} nous permet de caractériser un apprentissage réel sur l'ensemble des trois réalisations de la tâche.
 					Le détail de l'apprentissage en fonction du nombre de sujets sur la \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} apporte cependant un point important : les \myglos*{glo-Binome} améliorent plus rapidement leurs performances que les \myglos*{glo-Monome}.
-					En effet, on constate une amélioration franche des performances dès le second essai dans le cas des \myglos*{glo-Binome} alors que ce n'est que sur le dernier essai que les \myglos*{glo-Monome} montrent une évolution.
-					L'amélioration plus rapide des performances chez les \myglos*{glo-Binome} suggère un apprentissage plus rapide de la tâche, des outils et de tous les éléments de la plateforme\footnote{On observe une amélioration des performances par apprentissage mais rien ne permet de distinguer quel aspect de la tâche a été intégrée le plus vite.}.
+					En effet, on constate une amélioration significative des performances dès le second essai dans le cas des \myglos*{glo-Binome} alors que ce n'est que sur le dernier essai que les \myglos*{glo-Monome} montrent une évolution.
+					L'amélioration plus rapide des performances chez les \myglos*{glo-Binome} suggère un apprentissage plus efficace de la tâche, des outils ou de la molécule\footnote{On observe une amélioration des performances par apprentissage mais rien ne permet de distinguer sur quels notions de l'expérimentation l'apprentissage a lieu.}.
 
 					En observant l'évolution des variables \myvard{1} (temps de réalisation) et \myvard{2} (nombre de sélections), on constate que les \myglos*{glo-Binome} ont un apprentissage rapide.
 					Le temps de réalisation décroît ainsi que le nombre de sélections ce qui n'est pas le cas des \myglos*{glo-Monome}.
-					En effet, le temps de réalisation des \myglos*{glo-Monome} décroît alors que le nombre de sélections ne décroît pas de manière significative.
-					Au-fur-et-à-mesure des essais, les \myglos*{glo-Monome} apprennent et intègre la manipulation en configuration \myglos*{glo-Bimanuel} : ils augmentent ainsi leurs performances (diminution du temps de réalisation et du nombre de sélections de la main dominante) tout conservant un nombre de sélections relativement constant (par une augmentation du nombre de sélections de la main dominée).
+					En effet, le temps de réalisation des \myglos*{glo-Monome} décroît alors que le nombre de sélections ne décroît pas.
+					Au-fur-et-à-mesure des essais, les \myglos*{glo-Monome} apprennent et intègre la manipulation en configuration \myglos*{glo-Bimanuel} : ils augmentent ainsi leurs performances (diminution du temps de réalisation et du nombre de sélections de la main dominante) tout en conservant un nombre de sélections relativement constant (par une augmentation du nombre de sélections de la main dominée).
 
 					On observe clairement l'apprentissage progressif du deuxième outil mis à disposition des \myglos*{glo-Monome} dans la \myref{fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets}.
 					Alors que l'espace de travail des \myglos*{glo-Binome} reste stable sur l'ensemble des essais, celui des \myglos*{glo-Monome} s'étend au-fur-et-à-mesure des essais jusqu'à atteindre une valeur similaire à celle des \myglos*{glo-Binome}.
-					En effet, seul l'apprentissage permet de s'affranchir en partie de la charge cognitive importante que représente la manipulation \myglos*{glo-Bimanuel} \mycite{Wickens-1984} : avec l'apprentissage, les \myglos*{glo-Monome} sont capables de gérer un espace de travail de plus en plus grand.
-					Le potentiel du deuxième outil n'est pas ignoré et il est utilisé (avec la main dominée) comme un moyen de fixer un \myglos{glo-Residu} déjà déplacé pendant que l'autre outil déforme.
+					En effet, seul l'apprentissage permet de s'affranchir en partie de la charge de travail importante que représente la manipulation \myglos*{glo-Bimanuel} \mycite{Wickens-1984} : avec l'apprentissage, les \myglos*{glo-Monome} sont capables de gérer un espace de travail de plus en plus grand.
+					Le potentiel du deuxième outil n'est pas ignoré et est utilisé (avec la main dominée) comme un moyen de fixer un \myglos{glo-Residu} déjà placé pendant que l'autre outil déforme.
 					Ceci permet de déformer une partie de la molécule tout en conservant la stabilité de la partie déjà déformée.
-					Les \myglos*{glo-Monome} ont la capacité d'adopter une stratégie plus adaptée à la situation car aucune limite de surcharge cognitive ne contraint les sujets.
 
-					En ce qui concerne les vitesses moyennes, les \myglos*{glo-Monome} comme les \myglos*{glo-Binome} s'améliorent en manipulant plus rapidement.
+					En ce qui concerne les vitesses moyennes, les \myglos*{glo-Monome} comme les \myglos*{glo-Binome} s'améliorent en manipulant de plus en plus rapidement.
 					Cependant, les \myglos*{glo-Binome} restent nettement plus rapides que les \myglos*{glo-Monome}.
-					Cette amélioration peut être mise en relation avec l'amélioration des temps de réalisation : la tâche est réalisée plus rapidement car les sujets manipulent plus rapidement.
+					Cette donnée est à mettre en corrélation avec l'évolution des temps de réalisation : plus les sujets déforment rapidement, plus la tâche est réalisée rapidement..
 
-					Dans cette section, nous avons mis en évidence les améliorations en terme d'apprentissage pour les configurations collaboratives sans distinction sur les aspects de l'apprentissage (plateforme, outils, tâche, \myetc).
-					En effet, les \myglos*{glo-Binome} atteignent des performances optimales rapidement tandis que les \myglos*{glo-Monome} ont besoin de plus de temps pour converger vers de bonnes performances.
+					Dans cette section, nous avons mis en évidence les améliorations en terme d'apprentissage pour les configurations collaboratives sans distinguer les notions sur lesquelles s'appliquait l'apprentissage (molécule, outils, tâche, \myetc).
+					En effet, les \myglos*{glo-Binome} atteignent des performances optimales dès le second essau tandis que les \myglos*{glo-Monome} ont besoin de plus d'apprentissage pour converger vers de bonnes performances.
 					La capacité des \myglos*{glo-Binome} à communiquer, échanger et conseiller permet de mutualiser l'apprentissage et de l'accélérer.
-					De plus, un \myglos{glo-Binome} peut bénéficier des connaissances spécifiques ou de l'expérience d'un des membres du \myglos{glo-Binome} et ainsi mutualiser les aptitudes de chacun pour créer une vraie dynamique de groupe.
-					La configuration \myglos*{glo-Bimanuel} offre une alternative de manipulation aux \myglos*{glo-Monome} avec une surcharge de travail trop importante : l'apprentissage est plus difficile.
-					De plus, les \myglos*{glo-Monome} ont probablement atteint les limites de la charge cognitive maximum supportée avec cette configuration : l'ajout de nouvelles fonctionnalités serait probablement inefficace (contrairement aux \myglos*{glo-Binome}).
+					De plus, un \myglos{glo-Binome} peut bénéficier des connaissances spécifiques ou de l'expérience d'un des membres du \myglos{glo-Binome} et ainsi, la mutualisation des aptitudes de chacun crée une dynamique de groupe.
+					La configuration \myglos*{glo-Bimanuel} offre une alternative de manipulation aux \myglos*{glo-Monome} avec une surcharge de travail importante : l'apprentissage est plus long.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-ResultatsQualitatifs]{Résultats qualitatifs}
 				Le questionnaire est destiné à évaluer la collaboration du point du vue de l'utilisateur.
 
-				Tout d'abord, la grande majorité des sujets travaillant en \myglos{glo-Binome} se sont trouvés utiles dans cette tâche de collaboration (\mysummary{exp2-evaluation-help.tex})\footnote{L'échelle de notation est comprise entre \mynum{1} et \mynum{5} mais les moyennes ont été normalisées entre \mynum{0} et \mynum{4}.}.
-				Ce résultat élevé permet de vérifier que les sujets ne se sentent pas mis de côté et participent activement à la réalisation de la tâche.
-				Cette collaboration peut se traduire par une participation active à la déformation ou par une participation plutôt passive (échanges verbaux, conseils, remarques, \myetc).
+				La majorité des sujets travaillant en \myglos{glo-Binome} se sont trouvés utiles dans cette tâche de collaboration (\mysummary{exp2-evaluation-help.tex})\footnote{L'échelle de notation est comprise entre \mynum{1} et \mynum{5} mais les moyennes ont été normalisées entre \mynum{0} et \mynum{4}.}.
+				Ce résultat élevé permet de vérifier que les sujets ne se sentent pas écartés et participent activement à la réalisation de la tâche.
+				La collaboration peut se traduire soit par une participation active à la déformation, soit par une participation plutôt passive (échanges verbaux, conseils, remarques, \myetc).
 				Dans un cas comme dans l'autre, les sujets ne sont pas isolés ce qui permet d'éviter les phénomènes de \myglos{glo-ParesseSociale}.
 
 				Le sentiment d'avoir été \myglos{glo-Meneur} durant la réalisation de la tâche est relativement neutre (\mysummary{exp2-evaluation-leader.tex}).
-				Cependant, cette question semble biaisée.
+				Cependant, cette question semble avoir été posée de manière incorrecte.
 				En effet, les sujets ne souhaitent pas prétendre avoir été \myglos{glo-Meneur} ou chef des opérations par modestie.
 				Paradoxalement, ils ne souhaitent pas non plus avouer avoir été dirigé par quelqu'un d'autre par fierté.
 				D'ailleurs, on observe un écart-type relativement bas concernant cette note ce qui signifie que la majorité des sujets ont répondu de façon neutre.
 
 				L'évaluation de la communication confirme ce qui a été observé dans la précédente expérimentation \myref*{sss-exp1-EvaluationDuTravailEnCollaboration}.
-				En effet, l'importance de la communication verbale a été mise en avant (\mysummary{exp2-evaluation-verbal}).
-				Par opposition, les sujets ont considéré qu'ils n'utilisaient quasiment pas la modalité virtuelle (\mysummary{exp2-evaluation-virtual.tex}) et encore moins la modalité gestuelle (\mysummary{exp2-evaluation-gestural.tex}) pour communiquer.
-				La communication verbale étant la plus naturelle, il n'est pas étonnant d'obtenir un tel score.
-				De la même façon, la communication gestuelle est compliquée étant donné que les sujets sont en train de manipuler une interface haptique.
+				Tout d'abord, l'importance de la communication verbale a été mise en avant (\mysummary{exp2-evaluation-verbal}).
+				Par opposition, les sujets ont considéré qu'ils ne communiquaient pas par le virtuel (\mysummary{exp2-evaluation-virtual.tex}) et encore moins par la gestuelle (\mysummary{exp2-evaluation-gestural.tex}).
+
+				La communication verbale étant la plus naturelle, il n'est pas étonnant d'obtenir de tels scores.
+				La communication gestuelle est difficile étant donné que les sujets sont déjà en train de manipuler avec leurs mains.
 				De plus, leur vision se focalise principalement sur le déroulement de la tâche à l'écran mais pas sur le partenaire ce qui laisse peu de place à la communication gestuelle.
-				Cependant, les sujets estiment ne pas souvent avoir recours aux communications virtuelles.
-				Cette modalité de communication offre des possibilités intéressantes puisqu'elle est intégrée à l'environnement de travail et matérialisée principalement par le curseur.
-				L'expérimentation ne proposant aucun fonctionnalité particulière permettant d'exploiter cette modalité de communication explique probablement ce faible taux d'utilisation.
+
+				Pour finir, l'expérimentation ne proposant aucun outil permettant d'exploiter la modalité de communication virtuelle, cela explique probablement le faible taux d'investissement dans les communications par le virtuel.
 				La dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique} propose des outils de désignation qui vont permettre d'exploiter le potentiel de ce canal de communication.
 
 				Pour finir, les sujets ont été interrogés sur leur configuration de travail préférée.
-				Le questionnaire propose aux sujets d'évaluer une configuration pour laquelle ils n'ont pas testés.
-				La configuration \myglos*{glo-Monomanuel} en \myglos{glo-Monome} (qui n'a pas été testée) a été relativement peu choisie (\mysummary{exp2-evaluation-monome-monomanual.tex}).
+				Le questionnaire propose aux sujets de donner leur avis sur une configuration pour laquelle ils n'ont pas été testés.
+				La configuration \myglos*{glo-Monomanuel} en \myglos{glo-Monome} (qui n'a été testée par aucun sujet) a été relativement peu choisie (\mysummary{exp2-evaluation-monome-monomanual.tex}).
 				Les sujets évalués en \myglos{glo-Monome} sont mitigés sur l'intérêt d'une configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome} (\mysummary{exp2-evaluation-binome-monomanual.tex}).
 				De la même façon, les sujets évalués en \myglos{glo-Binome} sont mitigés sur l'intérêt d'une configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome} (\mysummary{exp2-evaluation-monome-bimanual.tex}).
 				Quoiqu'il en soit, ils ont été seulement \myratio{exp2-evaluation-preference-monome-bimanual.tex} à préférer la configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome} alors qu'ils ont été \myratio{exp2-evaluation-preference-binome-monomanual.tex} à opter pour la configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome}.
-				Une majorité des sujets semble préférer la configuration collaborative.
+				Une petite majorité des sujets semble préférer la configuration collaborative.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp2-Conclusion]{Conclusion}
 			\begin{mysubsection}[sse-exp2-ResumeDesResultats]{Résumé des résultats}
-				Dans cette seconde expérimentation, nous avons comparé et étudié les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome} sur une tâche de déformation avec un nombre identique de ressources.
-				De plus, nous avons cherché à observer l'apport de la configuration collaborative sur l'apprentissage sur les performances.
-				L'objectif était de placer la configuration collaborative dans un contexte de déformation avec de nouvelles contraintes par rapport aux tâches de recherche et de sélection.
+				Dans cette seconde expérimentation, nous avons comparé et étudié les performances de \myglos*{glo-Monome} et de \myglos*{glo-Binome}, possédant un nombre de ressources identiques, sur une tâche de déformation.
+				De plus, nous avons cherché à observer l'apport de la configuration collaborative sur l'apprentissage.
 
-				Il a été montré qu'avec un nombre de ressources déterminées (un outil de manipulation et deux outils de déformation dans notre cas), il est préférable de les répartir sur plusieurs sujets.
-				Cette répartition des ressources permet une meilleure distribution cognitive des charges de travail.
-				En effet, la charge cognitive est trop importante pour un utilisateur seul.
+				Il a été montré qu'avec un nombre de ressources déterminé (un outil d'orientation et deux outils de déformation dans notre cas), il est préférable de répartir les ressources sur plusieurs sujets.
+				Cette répartition des ressources permet une meilleure distribution des charges de travail.
+				En effet, la charge de travail est trop importante pour un utilisateur seul.
 				La configuration collaborative, bien que souffrant de \myglos*{glo-ConflitDeCoordination}, obtient tout de même des meilleures performances.
 
 				Deuxièmement, nous avons montré que la configuration collaborative est particulièrement performante pour les scénarios à forte complexité.
-				En ce qui concerne les scénarios à faible complexité, les performances d'une configuration collaborative ne sont ni meilleures, ni moins bonne que celle d'un seul manipulateur en configuration \myglos*{glo-Bimanuel}.
-				On notera tout de même que les sujets semblent préférer la configuration collaborative.
+				En ce qui concerne les scénarios à faible complexité, les performances d'une configuration collaborative ne sont ni meilleures, ni moins bonnes que celle d'un manipulateur seul en configuration \myglos*{glo-Bimanuel}.
+				On notera tout de même que les sujets semblent légèrement préférer la configuration collaborative.
 
 				Le troisième résultat important concerne l'apprentissage.
 				Nous avons montré que le travail en collaboration a une influence sur l'évolution de l'apprentissage.
-				En effet, l'apprentissage est catalysé par la communication et les échanges entre les sujets.
-				La complexité de la tâche ainsi que de la plateforme (rendu visuel, outils, \myetc) nécessite un apprentissage important.
-				L'apprentissage accéléré provoqué par une configuration collaborative est donc un avantage permettant d'appréhender plus rapidement la tâche à réaliser.
+				L'apprentissage semble être catalysé par la communication et les échanges entre les sujets.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SyntheseEtPerspectives]{Synthèse et perspectives}
-				Cette expérimentation nous a permis de comparer une configuration collaborative à une configuration \myglos*{glo-Bimanuel} possédant chacune le même nombre de ressources.
-				Nous avons vu les avantages d'une configuration collaborative avec des \myglos*{glo-Binome}.
+				Nous avons vu les avantages d'une configuration collaborative sur les \myglos*{glo-Binome}.
 				L'étape suivante sera l'étude du travail collaboratif sur des groupes de plus de deux sujets.
-				Ceci devrait permettre d'augmenter encore le potentiel cognitif du groupe.
+				Ceci devrait permettre d'augmenter encore le potentiel du groupe pour la gestion de charges de travail importantes.
 
 				Pour mener une telle étude, il va falloir proposer des scénarios plus complexes.
 				Cette deuxième expérimentation a montré une nouvelle fois le rôle prépondérant de la taille de la molécule dans la complexité de la tâche.
-				Nous verrons que les molécules proposées dans la prochaine étude sont significativement plus importantes que celle utilisées jusqu'à présent.
-
-				L'ajout de sujets supplémentaires va probablement générer des dynamiques de groupe qui n'avait pas de raison d'exister au sein d'un \myglos{glo-Binome}.
-				Cette troisième étude permettra l'observation des dynamiques et de les caractériser.
-				L'objectif sera de détecter les limites et les contraintes afin de pouvoir fournir des outils pour répondre aux problématiques soulevées.
+				Nous verrons que les molécules proposées dans la prochaine étude sont plus importantes en taille que celle utilisées jusqu'à présent.
 
 				Cette deuxième expérimentation a également permis de remettre en cause la pertinence d'une manipulation en configuration \myglos*{glo-Bimanuel}.
-				D'après les analyses, la charge cognitive qu'apporte la gestion d'un deuxième outil de déformation est trop importante.
-				Cependant, l'outil de déformation est relativement complexe à appréhender.
-				Il ne faut donc pas exclure la possibilité de fournir un outil simple et un outil complexe pour une manipulation en configuration \myglos*{glo-Bimanuel}.
+				D'après les analyses, la charge de travail qu'apporte la gestion d'un deuxième outil de déformation est trop importante; l'outil de déformation est relativement complexe à appréhender.
+				Il ne faut donc pas exclure la possibilité d'obtenir des performances acceptables en fournissant un outil simple et un outil complexe pour une manipulation \myglos*{glo-Bimanuel}.
 				Nous verrons que la configuration de la dernière étude \myref*{cha-TravailCollaboratifAssisteParHaptique} propose une configuration \myglos*{glo-Bimanuel} avec un outil simple de déplacement et un outil plus complexe de désignation.
 
 				Le questionnaire nous a également permis de mettre en avant les lacunes en ce qui concerne l'utilisation de la modalité virtuelle.
-				La dernière expérimentation sera l'occasion d'introduire des nouveaux outils adaptés pour permettre d'utiliser efficacement cette modalité pour la communication et en particulier, un outil de désignation.
+				La dernière expérimentation sera l'occasion d'introduire des outils adaptés afin de permettre l'utilisation efficace de cette modalité pour la communication.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
@@ -4374,24 +4336,22 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-met-exp2-SecondeExperimentation]{Seconde expérimentation}
 			\begin{mysubsection}[sse-met-exp2-Hypotheses]{Hypothèses}
 				Les hypothèses de cette nouvelle étude sont en grande partie basée sur l'étude précédente.
-				Nous souhaitons confirmer l'intérêt du travail collaboratif dans la tâche élémentaire de \myemph{manipulation}, notamment sur les tâches de complexité importante.
-				De plus, cette expérimentation propose d'étudier l'apprentissage de la tâche et d'en observer l'évolution dans le cadre du travail collaboratif.
+				Nous souhaitons confirmer l'intérêt du travail collaboratif dans ce contexte de déformation moléculaire, notamment sur les tâches de forte complexité.
+				De plus, cette expérimentation propose d'étudier l'apprentissage dans le travail collaboratif et d'en observer l'évolution.
 				\begin{myparagraph}[par-met-exp2-AmeliorationDesPerformancesEnBinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}}
-					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome}.
-					Cette hypothèse a pour objectif de confirmer les conclusions obtenues dans la première étude dans un contexte de \myemph{manipulation}.
-					La première hypothèse est une amélioration des performances pour les \myglos*{glo-Binome} en collaboratif comparés aux \myglos*{glo-Monome} en \myglos{glo-Bimanuel}.
+					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome} sur cette tâche de déformation.
+					Cette hypothèse est basée sur les conclusions obtenues dans la première étude.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp2-MeilleurGainDePerformancesSurLesTachesComplexes]{\myhypothesis{2} Meilleur gain de performances sur les tâches complexes}
-					Nous émettons l'hypothèse que plus la tâche est complexe et plus une configuration de travail collaboratif produira un gain significatif de performances comparé à un \myglos{glo-Monome}.
+					Nous émettons l'hypothèse que plus la tâche est complexe et plus la configuration collaborative produira un gain significatif de performances par rapport à la configuration individuelle.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp2-LApprentissageEstPlusPerformantPourLesBinomes]{\myhypothesis{3} L'apprentissage est plus performant pour les \myglosnl*{glo-Binome}}
 					Nous émettons l'hypothèse que le travail en collaboration augmente la vitesse d'apprentissage de la tâche.
-					En effet, nous supposons que l'interaction entre les partenaires va stimuler l'apprentissage et permettre l'échange des connaissances.
+					En effet, nous supposons que l'interaction sociale entre les partenaires va stimuler l'apprentissage et permettre l'échange et le partage de connaissances.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp2-LesSujetsPreferentLeTravailEnCollaboration]{\myhypothesis{4} Les sujets préfèrent le travail en collaboration}
-					Nous souhaitons évaluer auprès des utilisateurs l'intérêt vis-à-vis du travail collaboratif.
-					Notre hypothèse est que les utilisateurs préfèrent le travail collaboratif.
-					En effet, le contact social et la possibilité de communiquer sont des apports appréciés dans le milieu du travail.
+					Nous souhaitons évaluer auprès des utilisateurs l'intérêt vis-à-vis du travail collaboratif dans ce contexte de collaboration étroite, notre hypothèse étant que les utilisateurs préfèrent le travail en collaboration.
+					Rappelons que les sujets ne sont passés que dans une des conditions (\myglos{glo-Monome} ou \myglos{glo-Binome}); leur évaluation est effectuée à l'aveugle.
 				\end{myparagraph}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp2-Sujets]{Sujets}
@@ -4404,59 +4364,57 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{itemize}
 				Ils ont tous le français comme langue principale.
 				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+				Les sujets ne sont pas rémunérés pour l'expérimentation.
 
 				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
-				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
+				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation.
+				Cependant, l'objectif de l'expérimentation n'est pas révélé.
 			\end{mysubsection}
 			\begin{mysubsection}[sec-met-exp2-Variables]{Variables}
 				\begin{mysubsubsection}[sss-met-exp2-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp2-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						La première \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
+						C'est une \myglos{glo-VariableInterSujets}.
 						\myvari{1} possède deux valeurs possibles : \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
 						\mynum{12}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} sont testés.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Deux tâches de déformation sont proposées sur chacune des deux molécules : une déformation au niveau inter-moléculaire et une déformation au niveau intra-moléculaire.
+						C'est une \myglos{glo-VariableIntraSujets}.
+						Quatre scénarios sont proposés, basés sur différents critères de complexité \myref*{sse-exp2-DescriptionDeLaTache}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-LeNiveauDApprentissage]{\myvari{3} Le niveau d'apprentissage}
-						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						Tous les sujets sont confrontés trois fois à la même série de tâches (quatre scénarios) sur trois jours successifs afin d'observer l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
+						C'est une \myglos{glo-VariableIntraSujets}.
+						Tous les sujets sont confrontés trois fois à la même série de tâches (les scénarios \myscenario{1a}, \myscenario{1b}, \myscenario{2a} et \myscenario{2b}) sur trois jours successifs afin d'observer l'effet de l'apprentissage en \myglos{glo-Monome} et en \myglos{glo-Binome}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sec-met-exp2-VariablesDependantes]{Variables dépendantes}
 					\begin{myparagraph}[par-met-exp2-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre la conformation finale.
-						Le temps est limité à \mynum[mn]{10}.
-						Au-delà de cette limite, l'application est arrêtée
+						C'est le temps total pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre la conformation stable.
+						Le temps est limité à \mynum[mn]{10}; au-delà de cette limite, l'application est arrêtée
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
 						C'est le nombre de sélections réalisées durant chaque tâche.
-						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par chacun des deux \myglos{glo-EffecteurTerminal}.
+						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
-						C'est la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} pendant toute la durée de chaque tâche.
-						Mesurée dans l'espace physique de l'utilisateur, elle est de l'ordre du centimètre.
+						Durant chaque tâche, la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} est mesurée.
+						Elle est de l'ordre du centimètre.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-DistanceActiveEntreLesEspacesDeTravail]{\myvard{4} Distance active entre les espaces de travail}
-						Basée sur le même principe que la précédente, elle mesure la distance entre les deux \myglos*{glo-EffecteurTerminal}.
-						Cependant, la moyenne est calculée seulement sur les distances lorsque les deux \myglos*{glo-EffecteurTerminal} sont en phase de sélection, lorsqu'ils sont actifs.
-						Les distances ne sont pas prises en compte lorsque les deux \myglos*{glo-EffecteurTerminal} sont inactifs ou que seulement un des deux est en phase de sélection.
-						Cette moyenne est également de l'ordre du centimètre.
+						Basée sur la même mesure que \myvard{3}, elle n'est mesurée que lorsque les deux \myglos*{glo-EffecteurTerminal} sont en phase de sélection.
+						Lorsqu'au moins un des deux \myglos*{glo-EffecteurTerminal} ne possède pas de sélection active, la distance n'est pas mesurée.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-VitesseMoyenne]{\myvard{5} Vitesse moyenne}
 						Elle mesure la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
 						Elle est calculée par intégration numérique des positions successives en fonction du temps.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-ReponsesQualitatives]{\myvard{6} Réponses qualitatives}
-						Un questionnaire est proposé à tous les sujets (variable en fonction des \myglos*{glo-Monome} et des \myglos*{glo-Binome}).
-						Il se décline en deux versions destinées soit aux \myglos*{glo-Monome}, soit aux \myglos*{glo-Binome}.
-						Le questionnaire soumis aux sujets est exposé dans la \myref{sec-q-SecondeExperimentation}.
+						Un questionnaire est proposé à tous les sujets (différent pour les \myglos*{glo-Monome} et les \myglos*{glo-Binome}).
+						Le questionnaire soumis aux sujets est présenté dans la \myref{sec-q-SecondeExperimentation}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp2-Procedure]{Procédure}
-				L'expérimentation débute par une étape d'entraînement avec la molécule \myPrion.
+				L'expérimentation débute par une étape d'entraînement pendant laquelle les sujets doivent déformer la molécule \myPrion vers son état stable (deux zones à déformer).
 				Pendant cette phase, les outils sont introduits et expliqués un par un.
 				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
@@ -4465,8 +4423,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
 				L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
 
-				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été achevés, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de façon alternée.
-				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint ou lorsque \mynum[mn]{10} de déformation sont dépassées.
+				Dès que les scénarios \myscenario{1a} et \myscenario{1b} ont été achevés, les sujets sont confrontés aux scénarios \myscenario{2a} et \myscenario{2b} également de manière alternée.
+				De la même façon, l'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint ou lorsque les \mynum[mn]{10} sont atteintes.
 
 				Tous les sujets sont confrontés trois fois à l'ensemble des quatre scénarios avec un jour d'intervalle entre chaque confrontation.
 				L'objectif de cette multiple confrontation est l'étude de l'apprentissage en configuration collaborative.
