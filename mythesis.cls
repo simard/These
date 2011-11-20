@@ -301,6 +301,32 @@
 	\vskip 40\p@%
 	}%
 }
+% Define the abstract environment of the document depending on the language
+\newenvironment{myabstract}[1][french]{%
+	\begin{otherlanguage}{#1}%
+	\iflanguage{french}{\def\my@abstract@name{Résumé}}{}%
+	\iflanguage{english}{\def\my@abstract@name{Abstract}}{}%
+	\ifdef{\my@abstract@name}{%
+		\ClassWarning{mythesis}{Unknown language used in 'myabstract' environment}%
+	}{}%
+	\begin{mychapter+}{\my@abstract@name}
+	}{%
+	\end{mychapter+}
+	\end{otherlanguage}%
+	\global\undef{\my@abstract@name}%
+}
+% Define the keywords environment which should appear in the 'myabstract' environement
+\newenvironment{mykeywords}{%
+	\iflanguage{french}{\def\my@keywords@name{Mots-clefs}}{}%
+	\iflanguage{english}{\def\my@keywords@name{Keywords}}{}%
+	\ifdef{\my@keywords@name}{%
+		\ClassWarning{mythesis}{Unknown language used in 'mykeywords' environment}%
+	}{}%
+	\begin{myparagraph}{\my@keywords@name}
+	}{%
+	\end{myparagraph}
+}
+\newrobustcmd{\mykeyword}{\xspace--\xspace}
 
 %% Redéfinition de la mise en page des paragraphes
 \setlength{\parindent}{0cm}
