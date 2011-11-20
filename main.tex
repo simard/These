@@ -560,7 +560,7 @@
 				\end{myquote}
 
 				\mycite[author]{Allport-1924} aborde ce phénomène par une collaboration où chaque individu effectue la même tâche.
-				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}\footnote{\mycite[author]{Roethlisberger-1939} base ses conclusions sur les travaux non-publiés de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne.} constate que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances individuelles de chacun des membres.
+				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}\footnote{\mycite[author]{Roethlisberger-1939} base ses conclusions sur les travaux non-publiés de Elton \myname{Mayo} connus sous le nom de \og l'expérience \textit{Hawthorne} \fg, du nom de l'entreprise \myHawthorne dans laquelle l'expérience a été réalisée.} constate que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances individuelles de chacun des membres.
 				La \myglos{glo-FacilitationSociale} a également été observée sur des animaux comme les cafards \mycite{Zajonc-1969} ou les singes \mycite{Dindo-2009}.
 
 				Cependant, des nuances de ce phénomène commencent à être observées.
@@ -1828,7 +1828,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\mytitlecolumn{4}{Hypothèses}              & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Binome}      \\
 						                                           & \myhypothesis{2} Stratégies variables en fonction des \myglosnl*{glo-Binome} \\
 						                                           & \myhypothesis{3} Les sujets préfèrent le travail en \myglosnl{glo-Binome}    \\
-						                                           & \myhypothesis{4} La plateforme est appréciée des utilisateurs               \\
+						                                           & \myhypothesis{4} Bonne utilisabilité de la plateforme                        \\
 						\mymiddlerule
 						\mytitlecolumn{2}{Variables indépendantes} & \myvari{1} Nombre de sujets                                                  \\
 						                                           & \myvari{2} \myGlosnl{glo-Residu} à chercher                                  \\
@@ -1897,7 +1897,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Residu} \myvari{2} en fonction du nombre de participants \myvari{1}.
 					L'analyse ne montre pas d'effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova.tex}).
-					Cependant, en se limitant au groupe des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, l'analyse montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}) avec une diminution de \myratio{exp1-time-residue-group-ratio-restricted.tex}.
+					Cependant, en se limitant aux groupes des trois \myglos*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10} identifiés précédemment comme significativement plus longs à trouver et extraire, l'analyse montre un effet significatif du nombre de participants \myvari{1} sur le temps de réalisation \myvard{1} (\myanova{exp1-time-residue-group-anova-restricted.tex}) avec une diminution de \myratio{exp1-time-residue-group-ratio-restricted.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
@@ -1976,7 +1976,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.15cm}
 						\begin{myps}(-1.5,-7)(12,22)
-							\myaxes(0,12){groupes}(0,20)[4]{distance~(mm)}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,20)[4]{distance~(mm)}
 							% Once header are readed, they are defined for other barplot
 							% That's why barplots without headers are in first position
 							\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
@@ -1994,12 +1994,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix} présente la distance moyenne entre les espaces de travail \myvard{2} de chaque \myglos{glo-Binome}.
-					Les \myglos*{glo-Binome} peuvent être classés en trois groupes : \myemph{espace distant}, \myemph{espace voisin} et \myemph{espace proche}.
+					Les \myglos*{glo-Binome} peuvent être classés en trois catégories : \myemph{espace distant}, \myemph{espace voisin} et \myemph{espace proche}.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.5cm}
 						\begin{myps}(-1.5,-2)(12,5.5)
-							\myaxes(0,12){groupes}(0,5)[1]{affinité~(\mynum{1}--\mynum{5})}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,5)[1]{affinité~(\mynum{1}--\mynum{5})}
 							\mybarplot{exp1-affinity-groups.csv}
 						\end{myps}
 						\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque \myglosnl{glo-Binome}}
@@ -2007,25 +2007,25 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					La \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} présente les affinités \myvard{4} de chaque \myglos{glo-Binome}.
 					Les notes, comprises entre un et cinq, montre que les \myglos*{glo-Binome} choisis ont des affinités relativement variées.
-					L'affinité entre les sujets du groupe \mygroup{1} est très basse contrairement aux groupes \mygroup{8} et \mygroup{12} pour lesquelles l'affinité est très élevée.
+					L'affinité entre les sujets du \myglos*{glo-Binome} \mygroup{1} est très basse contrairement aux \myglos*{glo-Binome} \mygroup{8} et \mygroup{12} pour lesquelles l'affinité est très élevée.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.01cm}
 						\begin{myps}(-1.5,-110)(12,325)
-							\myaxes(0,12){groupes}(0,300)[50]{temps~(s)}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,300)[50]{temps~(s)}
 							\mybarplot{exp1-time-groups.csv}
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome]{Temps de réalisation entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
 					La \myref{fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome} présente les temps de réalisation \myvard{1} de chaque \myglos{glo-Binome}.
-					Le temps de réalisation de \mygroup{1} est particulièrement important (plus d'une fois et demi les autres groupes les plus longs).
+					Le temps de réalisation de \mygroup{1} est particulièrement important (plus d'une fois et demi les \myglos*{glo-Binome} les plus longs).
 					À l'opposé, on note que \mygroup{2}, \mygroup{3} et \mygroup{4} obtiennent des temps de réalisation extrêmement bas.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.05cm}
 						\begin{myps}(-1.5,-22)(12,75)
-							\myaxes(0,12){groupes}(0,70)[10]{temps~(s)}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,70)[10]{temps~(s)}
 							\mybarplot{exp1-timeaudio-groups.csv}
 						\end{myps}
 						\mycaption[fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome]{Temps de communication verbale entre les sujets pour chaque \myglosnl{glo-Binome}}
@@ -2038,7 +2038,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.03cm}
 						\begin{myps}(-1.5,-35)(12,120)
-							\myaxes(0,12){groupes}(0,100)[25]{temps~(\%)}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,100)[25]{temps~(\%)}
 							\mybarplot{exp1-timeaudio-groups-searchselection.csv}
 							\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
 						\end{myps}
@@ -2054,7 +2054,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=1cm}
 						\begin{myps}(-1.5,-1)(12,3.6)
-							\myaxes(0,12){groupes}(0,3)[1]{force~(N)}
+							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,3)[1]{force~(N)}
 							\mybarplot{exp1-force-groups-meandiff.csv}
 							\mylegend{\myleg{Force moyenne}{myblue}\myand\myleg{Différence de force}{myblue!70}}
 						\end{myps}
@@ -2095,7 +2095,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp1-CollaborationEnChampProche-Communication]{Communication}
 						Les temps de communication verbale sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} montrent une disparité entre les sujets.
-						Les \myglos*{glo-Binome} de ce groupe passent plus de temps à communiquer pendant la phase de recherche que pendant la phase de sélection (excepté pour \mygroup{9}) ce qui met en évidence les difficultés du travail en champ proche liées aux nombreux \myglos*{glo-ConflitDeCoordination} pendant la phase de recherche.
+						Les \myglos*{glo-Binome} passent plus de temps à communiquer pendant la phase de recherche que pendant la phase de sélection (excepté pour \mygroup{9}) ce qui met en évidence les difficultés du travail en champ proche liées aux nombreux \myglos*{glo-ConflitDeCoordination} pendant la phase de recherche.
 						En effet, les \myglos*{glo-Binome} doivent coordonner leurs mouvements de manipulation pour déplacer un \myglos{glo-Residu} et cette coordination nécessite une communication verbale importante.
 						La collaboration est alors étroitement couplée mais il en résulte une perte de temps à cause du temps alloué à la communication.
 						D'ailleurs, l'analyse des communications verbales a permis de mettre en évidence de nombreuses incompréhensions dans l'inter-référencement (\og Pas dans cette direction \fg, \og Pas ici mais ici \fg, \og C'est juste derrière \fg, \myetc).
@@ -2182,7 +2182,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp1-CollaborationEnChampDistant-Communication]{Communication}
 						La \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} montre que le temps de communication verbale est assez important.
-						Cependant, le temps de réalisation étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres groupes \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome}.
+						Cependant, le temps de réalisation étant nettement plus important, le taux de communication verbale est beaucoup plus faible que les autres \myglos*{glo-Binome} \myref*{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome}.
 						En effet, les membres du \myglos{glo-Binome} travaillent à distance et ont peu d'interactions entre eux.
 						Le peu d'interaction permet de limiter le nombre de \myglos*{glo-ConflitDeCoordination} ce qui implique le peu de communication verbale comme on peut le voir sur la \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome}.
 						Cette figure montre également que ce \myglos{glo-Binome} communique plus dans les phases de sélection que dans les phases de recherche.
@@ -2261,8 +2261,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				En effet, le nombre de \myglos*{glo-ConflitDeCoordination} durant les interactions en champ proche est trop important alors que le potentiel de la collaboration est perdu dans les interactions en champ distant.
 				Ce sont les interactions en champ voisin qui offre les meilleures performances, générant un bon compromis en terme de communication et de gestion des \myglos*{glo-ConflitDeCoordination}.
 
-				Enfin, les relations sociales entre les différents membres du groupe tiennent une place importante.
-				Les résultats montrent que tout déséquilibre dans le groupe mène à des performances dégradées ce qui rejoint les conclusions de \mycite[author]{Woolley-2010}.
+				Enfin, les relations sociales entre les différents membres du \myglos{glo-Binome} tiennent une place importante.
+				Les résultats montrent que tout déséquilibre dans le \myglos{glo-Binome} mène à des performances dégradées ce qui rejoint les conclusions de \mycite[author]{Woolley-2010}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp1-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Basés sur les résultats précédents, certaines perspectives assez évidentes s'imposent et ont guidé les expérimentations qui suivent.
@@ -2295,7 +2295,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Puis, \mycite[author]{Delalande-2010} améliorent la manipulation et la déformation interactive par l'utilisation d'une interface haptique.
 
 			Dans ce chapitre, nous souhaitons étudier la pertinence d'une configuration collaborative pour appréhender la déformation d'une molécule.
-			De plus, nous aborderons la question de l'apprentissage au sein d'un groupe.
+			De plus, nous aborderons la question de l'apprentissage au sein d'un \myglos{glo-Binome}.
 			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage, que ce soit pour l'utilisation des outils, de la plateforme ou encore pour la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
@@ -2320,7 +2320,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp2-Objectifs]{Objectifs}
 				Ce chapitre nous permettra d'aborder les problématiques de déformation collaborative.
 				La déformation d'une molécule nécessite de positionner certains éléments de manière précise.
-				La déformation est une tâche nécessitant plus de précision que la recherche car les cibles doivent être déplacées à un endroit défini.
+				Cette tâche nécessite plus de précision que l'exploration et la sélection car les cibles doivent être déplacées vers un endroit défini.
 				Nous souhaitons comparer les performances sur une tâche nécessitant de la coordination pour les étapes de déformation.
 
 				L'étude met en jeu un nombre de ressources fixe pour la tâche de déformation pour comparer une distribution des ressources (configuration \myglos*{glo-Monomanuel} en \myglos{glo-Binome}) à une mutualisation des ressources (configuration \myglos*{glo-Bimanuel} en \myglos{glo-Monome}).
@@ -2963,7 +2963,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp2-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Nous avons vu les avantages d'une configuration collaborative sur les \myglos*{glo-Binome}.
-				L'étape suivante sera l'étude du travail collaboratif sur des groupes de plus de deux sujets.
+				L'étape suivante sera l'étude du travail collaboratif sur des groupes (plus de deux sujets).
 				Ceci devrait permettre d'augmenter encore le potentiel du groupe pour la gestion de charges de travail importantes.
 
 				Pour mener une telle étude, il va falloir proposer des scénarios plus complexes.
@@ -2982,98 +2982,82 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-LaDynamiqueDeGroupe]{La dynamique de groupe}
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
-			À présent, les différentes \myacro*{acr-PCV} ont été étudiées dans un contexte de collaboration étroitement couplée à travers les deux précédents chapitres.
-			Cependant, l'observation du travail collaboratif ne peut être restreint à l'étude des \myglos*{glo-Binome}.
-			En effet, \mycite[author]{Roethlisberger-1939} ont mis en évidence les dynamiques de groupe basés sur les travaux de Elton \myname{Mayo}.
-			Ces dynamiques de groupe montre une collaboration très différente de que ce que nous avons pu observer chez les \myglos*{glo-Binome}.
+			Après avoir étudié les différentes \myacro*{acr-PCV} sur des \myglos*{glo-Binome}, nous souhaitons élargir notre étude à des groupes.
+			Le terme \myemph{groupe} est défini par \mycite[author]{Bales-1950} comme un \og ensemble d'au moins trois individus \fg.
+			Ce travail en groupe implique des processus de communication différents que nous souhaitons étudier.
+			L'augmentation du nombres de manipulateur nous permet également de confronter les utilisateurs à des tâches plus complexes que celles proposées dans les études précédentes.
 
-			Ce chapitre constitue notre première étude sur le travail collaboratif avec des groupes d'utilisateurs\footnote{\mycite[author]{Bales-1950} considère qu'un groupe est constitué au minimum de trois personnes.}.
-			Au regard des travaux existants, une dynamique de groupe devrait émerger.
-			Cependant, notre contexte de travail est différent des précédents travaux sur le sujet : nous nous intéressons aux collaborations étroitement couplées.
-			C'est dans ce contexte que nous allons observer les dynamiques de groupe qui émergent.
-			Nous nous plaçons de nouveau dans un contexte de déformation moléculaire qui fournit un environnement d'étude propice aux collaboration étroitement couplée.
-			De plus, nous souhaitons tester l'utilité du \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé plutôt que le mot \myemph{remue-méninges} car il est plus utilisé dans la littérature.} qui d'après \mycite[author]{Osborn-1963}, améliore les performances de groupe.
+			Selon la littérature en psychologie sociale, le travail en groupe provoque des modifications sur l'organisation et la structure \myref*{sec-sota-ApprocheCollaborativePourLesProblemesComplexes} qu'on nomme \og dynamique de groupe \fg.
+			Cependant, les études sur ce sujet manquent en ce qui concerne la collaboration étroitement couplée.
+			Le but de l'expérimentation exposée dans ce chapitre est d'identifier les contraintes et les stratégies de travail liées à ce type de collaboration.
+
+			De plus, \mycite[author]{Osborn-1963} montre l'importance du \mybrainstorming\footnote{Pour la suite des développements, le mot \mybrainstorming sera utilisé à la place de sa traduction \myemph{remue-méninges} qui est peu utilisée dans la littérature scientifique.} pour améliorer les performances d'un groupe.
+			Nous souhaitons évaluer la mise en place d'un dispositif de \mybrainstorming dans le cadre d'une collaboration étroitement couplée afin d'observer l'évolution des performances de groupe.
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
-				L'ouvrage de \mycite[author]{Mugny-1995} abordent les problématiques de la psychologie sociale dans le cadre général et consacre une partie à la dynamique de groupe.
-				Les premières études sur la dynamique de groupe date de la révolution industrielle entre la fin du \mycentury{18}~siècle et au début du \mycentury{19}~siècle avec en particulier, les travaux de Elton \myname{Mayo} au sein de l'entreprise \myHawthorne.
-				Cette étude, destinée à étudier l'effet des conditions de travail (température, temps de pause, \myetc), a été effectuée entre les années 1927 et 1932.
-				Cependant, l'étude a montré que l'amélioration de la productivité des ouvriers n'était pas liée aux conditions de travail.
-				\mycite[author]{Roethlisberger-1939} expliquent cette amélioration par la stimulation sociale qu'exerce chaque individu sur ses partenaires : c'est la \myglos{glo-FacilitationSociale}.
-				Les résultats de cette étude sur les groupes de taille importante sont actuellement utilisés dans les techniques modernes de \myemph{management} \mycite{Wood-2004,Bruce-2006}.
+				Nous avons déjà vu, dans la \myref{sec-sota-ApprocheCollaborativePourLesProblemesComplexes}, les dynamiques de groupe qui se mettent en place lors d'un travail en collaboration.
+				Pour mémoire, nous avons abordé les phénomènes de \myglos{glo-FacilitationSociale} \mycite{Ringelmann-1913} et de \myglos{glo-ParesseSociale} \mycite{Roethlisberger-1939}.
+				La \myglos{glo-FacilitationSociale} est la tendance des collaborateurs à améliorer les performances lors d'un travail de groupe (motivation, échange de connaissances, partage de mémoire, \myetc).
+				La \myglos{glo-ParesseSociale} est la tendance des collaborateurs ne pas s'impliquer activement dans le travail de groupe (isolation, peur de l'évaluation, \myetc).
+				\mycite[author]{Mugny-1995} propose un état de l'art intéressant concernant la dynamique des groupes.
 
-				Cependant, en parallèle à cette théorie de la dynamique des groupes basée sur la \myglos{glo-FacilitationSociale}, \mycite[author]{Ringelmann-1913} met en évidence une théorie radicalement différente.
-				En effet, à travers un exercice de traction sur une corde, il montre que la somme des efforts individuels est plus importante que l'effort combiné du groupe, chaque sujet se fiant à son voisin pour réaliser la tâche.
-				Ce phénomène, appelé \myglos{glo-ParesseSociale}, s'oppose aux résultats obtenus par \mycite[author]{Roethlisberger-1939} sur la \myglos{glo-FacilitationSociale}.
-				Une étude plus poussée de ce phénomène, effectuée par \mycite[author]{Latane-1979}, confirme les résultats obtenus sur la \myglos{glo-ParesseSociale}.
-				Cependant, \mycite[author]{Latane-1979} proposent de limiter ce problème en renforçant la responsabilité individuelle plutôt que de la diffuser sur le groupe.
-				La responsabilisation par la définition de rôles distincts permet de ne pas se décharger des actions à réaliser sur ses partenaires tout en conservant les effets bénéfiques de la \myglos{glo-FacilitationSociale}.
+				Cependant, \mycite[author]{Bales-1950} identifie une différence entre les groupes de taille importante et les groupes d'une vingtaine d'individus ou moins\footnote{Selon les différentes sources, la définition d'un groupe restreint varie d'une douzaine à une vingtaine d'individus.}, qu'il nomme \og groupe restreint \fg.
+				L'étude qu'il mène sur ces groupes restreints montre que quelque soit la taille du groupe, le groupe sera toujours dominé par un voire deux \myglos*{glo-Meneur}.
 
-				Une part de ces études sur la dynamique de groupe est consacrée aux groupes de petites tailles appelés également groupes restreints.
-				\mycite[author]{Bales-1950} proposent les premières analyses sur ces groupes de trois à une vingtaine de partenaires.
-				Les résultats montrent que quelque soit la taille du groupe, le groupe sera dominé par un voire deux membres du groupe.
-				Cependant, \mycite[author]{Zajonc-1965} montre que les groupes sont performants sur des tâches simples mais peu performants sur des tâches complexes.
-				En effet, les tâches simples sont réalisées sans crainte du jugement ou de l'évaluation par les partenaires.
-				Sur une tâche de nature complexe, l'évaluation et le jugement par les partenaires est un frein et a pour conséquences de faire baisser les performances du groupe.
+				Afin d'améliorer les performances de ces groupes restreints, \mycite[author]{Osborn-1963} propose de mettre en place une séance de \mybrainstorming.
+				L'idée est créer une période de temps où tous les collaborateurs peuvent élaborer une stratégie sur la tâche à réaliser.
+				Selon \mycite[author]{Tuckman-1965}, le \mybrainstorming permet de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
 
-				Au sein des groupes restreints, \mycite[author]{Osborn-1963} propose d'améliorer les performances dans les groupes restreints par l'introduction de la notion de \mybrainstorming.
-				Pourtant, \mycite[author]{Diehl-1987} montrent que le \mybrainstorming apporte moins de bénéfices en groupe que lorsqu'il est effectué individuellement.
-				\mycite[author]{Poole-2005} expliquent que les groupes focalisent en priorité sur les informations qu'ils ont en commun.
-				La peur de l'évaluation négative va empêcher l'émergence de solutions originales.
-				Cependant, \mycite[author]{Tuckman-1965} considère que le \mybrainstorming permet tout de même de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
+				Cependant, \mycite[author]{Diehl-1987} tempère les avantages du \mybrainstorming en groupe.
+				En effet, il montre que cette réflexion pré-opératoire peut également être effectuée de manière individuelle et que les individus seuls profite plus de cette réflexion.
+				De plus, \mycite[author]{Poole-2005} explique que le \mybrainstorming n'est pas toujours utilisé à bon escient.
+				Selon l'étude qu'il propose, les groupes ont tendance à se focaliser sur les connaissances communes à tous les membres du groupe et n'aborde pas les connaissances spécifiques de chacun des membres; de cette manière, le partage des connaissances ne se réalise pas correctement.
 
-				Jusqu'à présent, les études concernant la dynamique des groupes et plus particulièrement celle concernant les groupes restreints sont nombreuses.
-				Cependant, chaque étude proposée concerne des tâches autour d'une collaboration faiblement couplée.
-				Dans ce chapitre, nous étudions la dynamique des groupes autour d'une collaboration fortement couplée afin d'observer les différences avec les configurations précédemment étudiées dans la littérature.
+				Comme le montre l'état de l'art, les études sur la dynamique de groupe concernant les tâches faiblement couplées sont nombreuses.
+				Cependant, la généralisation de ces résultats à des tâches étroitement couplées doit donner lieu à des études plus approfondies.
+				C'est l'objectif de ce chapitre.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-Objectifs]{Objectifs}
-				Dans cette troisième étude, nous souhaitons étudier le travail collaboratif pour les groupes restreints.
-				Jusqu'à présent, nous avons été confrontés à des \myglos*{glo-Binome}.
-				La littérature montre des stratégies propres aux groupes restreints et distinctes de celles adoptées par les \myglos*{glo-Binome}.
-				Nous souhaitons étudier cette dynamique de groupe pour la collaboration étroitement couplée.
+				Dans cette troisième étude, nous souhaitons étudier le travail collaboratif étroitement couplé au sein de groupes restreints.
+				L'objectif est d'identifier les nouvelles contraintes liées à ces groupes et de caractériser les stratégies qui se mettent en place.
 
-				Étant donné les résultats obtenus dans nos précédentes études, nous souhaitons observer une amélioration des performances en fonction du nombre d'utilisateurs pour un scénario de collaboration étroitement couplée.
-				Pourtant, les conclusions de \mycite[author]{Zajonc-1965} montrent que les groupes sont moins performants lorsqu'ils sont confrontés à une tâche complexe.
-				Cependant, étant donné la coordination nécessaire demandée par la tâche, nous pensons que les conclusions obtenues pour la collaboration étroitement couplée seront différentes de celles obtenues par \mycite[author]{Zajonc-1965} dans le cadre d'une tâche à faible couplage.
-				En effet, nous avons vu précédemment que la configuration \myglos*{glo-Bimanuel} menait à une surcharge cognitive difficile à traiter par les sujets; la coordination nécessaire pour les scénarios proposés devrait donner un avantage aux groupes restreints.
+				Dans un premier temps, nous allons étudier l'évolution des performances en fonction du nombre de sujets.
+				Selon le principe de la distribution des charges de travail, nous supposons que les performances d'un groupe seront meilleures que celle d'un \myglos{glo-Binome}, malgré une augmentation du nombre de \myglos*{glo-ConflitDeCoordination}.
 
-				D'après les conclusions de \mycite[author]{Bales-1950}, un groupe est toujours mené par un ou deux utilisateurs, quelque soit la taille du groupe.
-				Nous émettons l'hypothèse que ces \myglos*{glo-Meneur} vont également apparaître dans le cadre d'une collaboration étroitement couplée.
+				De plus, en se basant sur les conclusions de \mycite[author]{Bales-1950}, nous supposons qu'au moins un \myglos{glo-Meneur} va émerger durant la réalisation des tâches de l'expérimentation.
+				Nous allons observer ce phénomène en essayant d'identifier des stratégies de travail différentes entre les membres du groupes.
 
-				Finalement, nous souhaitons proposer une solution pour limiter les \myglos*{glo-ConflitDeCoordination}.
-				\mycite[author]{Bales-1950} a noté que les groupes restreints consacrent du temps pour se connaître (sans rapport avec la tâche à réaliser) puis discutent à propos de la stratégie à adopter.
-				Afin de répondre à ce besoin de se connaître, les groupes choisis dans cette expérimentation sont tous constitués de sujets se connaissant déjà dans le cadre professionnel.
-				Puis, afin d'améliorer l'efficacité d'une discussion à propos de l'élaboration d'une stratégie, nous souhaitons tester la mise en place d'une période de \mybrainstorming au début de la tâche.
-				Nous émettons l'hypothèse que cette période permettra aux groupes de s'organiser et d'élaborer une stratégie afin d'améliorer les performances globales du groupe.
-				De plus, si l'hypothèse précédente se vérifie, le \mybrainstorming devrait permettre d'identifier plus rapidement le ou les \myglos*{glo-Meneur} du groupe.
+				\mycite[author]{Bales-1950} avait également noté que les participants éprouvent le besoin de discuter pour se connaître avant de commencer la tâche.
+				C'est pourquoi, nous souhaitons mettre en place une période de \mybrainstorming pour améliorer les performances du groupe, en accord avec les conclusions obtenues par \mycite[author]{Osborn-1963}.
+				Nous supposons que cette période de temps sera mise à contribution pour faire émerger les \myglos*{glo-Meneur} rapidement.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp3-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp3-DescriptionDeLaTache]{Description de la tâche}
-				La tâche proposée est la déformation de molécules dans un \myacro{acr-EVC}.
-				L'objectif est de rendre une molécule complexe conforme à une molécule modèle.
+				La tâche proposée est de nature similaire à celle exposée dans la seconde expérimentation, il faut modifier la conformation initiale d'une molécule pour atteindre une conformation stable \myref*{sse-exp2-DescriptionDeLaTache}.
+				Cependant, les scénarios proposés dans cette expérimentation sont plus complexes afin de générer plus de difficultés dans la réalisation.
+
 				Dans cette expérimentation, la molécule \myTRPCAGE est utilisée pour la phase d'entraînement.
-				Des molécules plus complexes (\myPrion et \myUbiquitin) sont utilisées pour les scénarios de déformation collaborative.
+				Des molécules de taille importante (\myPrion et \myUbiquitin) sont utilisées pour les scénarios de déformation collaborative.
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 				Le mécanisme de sélection et d'affichage est strictement identique à la seconde expérimentation \myref*{sse-exp2-SpecificitesDuProtocoleExperimental}.
 				De la même façon, le système d'évaluation basé sur le score \myacro{acr-RMSD} est identique.
 				On pourra trouver la description de ces éléments dans la \myref{sse-exp2-DescriptionDeLaTache}.
 
-				Deux scénarios sont proposés : un scénario avec des interactions faiblement couplées et un scénario avec des interactions fortement couplées.
-				Les paragraphes suivants décrivent ces deux scénarios :
+				Deux scénarios sont proposés :
 				\begin{description}
 					\item[Scénario~\myscenario{1}]
-						Basé sur la molécule \myPrion, il nécessite de replacer correctement une chaîne de \mynum{16}~\myglos*{glo-Residu} par rapport à un modèle.
-						Cette chaîne se trouve en périphérie de la molécule et n'est donc pas soumise à de fortes contraintes physiques.
-						Ce scénario est divisible en tâches élémentaires présentant de faibles interactions physiques.
-						L'objectif est d'obtenir une collaboration faiblement couplée.
+						Basé sur la molécule \myPrion, il nécessite de replacer correctement une chaîne de \mynum{16}~\myglos*{glo-Residu} par rapport à un état stable.
+						Cette chaîne se trouve en périphérie de la molécule et est soumise à de faibles contraintes physiques.
+						Ce scénario permet une division en sous-tâches élémentaires présentant de faibles interactions.
+						L'objectif est de proposer un niveau de collaboration faiblement couplée.
 					\item[Scénario~\myscenario{2}]
 						Basé sur la molécule \myUbiquitin, il nécessite de replacer correctement une chaîne de \mynum{19}~\myglos*{glo-Residu} par rapport à un modèle.
-						Cette chaîne se trouve au sein de la molécule où elle est soumise à de fortes contraintes physiques, notamment au milieu de la chaîne; le contrôle précis de la déformation au milieu de la chaîne est complexe.
+						Cette chaîne se trouve au centre de la molécule où elle est soumise à de fortes contraintes physiques, notamment le milieu de la chaîne; le contrôle précis de cette déformation est complexe.
 						La réalisation de ce scénario nécessite plusieurs points de contrôle et une coordination de l'ensemble des sujets.
-						L'objectif est d'obtenir une collaboration étroitement couplée.
+						L'objectif est de proposer un niveau de collaboration étroitement couplée.
 				\end{description}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
@@ -3081,17 +3065,17 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Les modifications sont présentées dans les sections qui vont suivre.
 				Le protocole expérimental est détaillé dans la \myref{sec-met-exp3-TroisiemeExperimentation} avec un résumé dans la \myref{tab-exp3-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp3-MaterielUtilise]{Matériel utilisé}
-					Cette expérimentation se focalise sur le travail de groupe et en particulier, sur les \myglos*{glo-Quadrinome}.
-					Il est nécessaire d'ajouter deux outils de déformation supplémentaires à la plateforme \myref*{sec-pro-MaterielExperimental}.
-					Deux \myOmni supplémentaires sont posés sur la table, devant les sujets, de manière à ce que chacun puisse avoir accès à une interface haptique.
-					Un serveur \myacro{acr-VRPN} exécuté par des machines de faible puissance est ajouté pour chaque nouvel \myOmni.
+					Dans cette expérimentation, des \myglos*{glo-Quadrinome} vont être amenés à manipuler les molécules.
+					Étant donné que la plateforme de base n'est constituée que de deux outils de déformation, nous avons ajouté deux outils de déformations supplémentaires.
+					Ces deux outils sont matérialisés par des \myOmni connectés à des serveurs \myacro{acr-VRPN}.
+					Les outils de déformations sont placés sur la table face aux sujets.
 
-					Chaque sujet d'un \myglos{glo-Quadrinome} possède un outil de déformation à sa disposition.
-					En ce qui concerne les \myglos*{glo-Binome}, chaque sujet possède deux outils pour une configuration \myglos*{glo-Bimanuel}.
+					Dans le cas des \myglos*{glo-Binome}, les sujets seront amenés à manipuler deux outils chacun (configuration \myglos*{glo-Bimanuel}).
+					Pour les \myglos*{glo-Quadrinome}, chaque sujet aura un outil à sa disposition (configuration \myglos*{glo-Monomanuel}).
+					Les outils peuvent être déplacés pour que la position de travail des sujets soit la meilleure possible.
 
-					Cette expérimentation sur le travail collaboratif de groupe est l'occasion d'observer les communications.
-					Afin d'enregistrer ces communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
-					Cet enregistrement permet de conserver toutes les communications orales ainsi que les actions effectuées en parallèle (action virtuelle ou réelle).
+					Afin d'enregistrer les communications, une caméra vidéo \mySony (\textsc{pj50v hd}) a été placée derrière les sujets afin de filmer les sujets de dos et l'écran de vidéoprojection dans un même plan.
+					La caméra enregistre également toutes les communications orales.
 					Ces vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
 
 					La \myref{fig-exp3-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
@@ -3107,8 +3091,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-VisualisationEtRepresentation]{Visualisation et représentation}
-					Cette expérimentation propose une tâche relativement similaire à la précédente expérimentation.
-					La principale différence concerne la complexité des molécules puisque les molécules contiennent une centaine de \myglos*{glo-Residu} contrairement à la précédente expérimentation concernant des molécules d'une quinzaine de \myglos*{glo-Residu}.
+					La visualisation et la représentation des molécules sont identiques à l'expérimentation précédente \myref*{sss-exp2-VisualisationEtRepresentation}.
 					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} \myref*{fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1}; la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} \myref*{fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
 
 					\begin{myfigure}
@@ -3121,14 +3104,12 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-OutilsDeManipulation]{Outils de manipulation}
-					Cette expérimentation fait intervenir des \myglos*{glo-Quadrinome}.
-					Cependant, c'est la première expérimentation pour laquelle aucun outil d'orientation de la molécule n'est fourni aux sujets.
-					En effet, étant donné les observations des précédentes expérimentations, nous avons jugé que la présence de cet outil est générateur de \myglos*{glo-ConflitDeCoordination}.
-					Durant les précédentes expérimentations, le nombre de \myglos*{glo-ConflitDeCoordination} était relativement limités car ils ne concernaient que des \myglos*{glo-Binome}.
-					Avec des \myglos{glo-Quadrinome}, un tel outil pourrait produire beaucoup plus de chaos, ce que nous souhaitons éviter.
+					Cette expérimentation faisant intervenir des \myglos*{glo-Quadrinome}, nous avons décidé d'enlever l'outil d'orientation qui était proposé jusqu'à présent.
+					En effet, étant donné la configuration de la salle d'expérimentation, il est physiquement impossible de placer un outil d'orientation qui soit accessible par tous les sujets comme le préconise \mycite[author]{Buisine-2011}.
+					Les scénarios ont été conçus en tenant compte de cette contrainte et sont réalisables sans avoir besoin de modifier le point de vue.
 
-					En ce qui concerne les outils de déformation, ce sont exactement les mêmes que dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
-					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance à la fois sur la molécule déformable et sur la molécule modèle.
+					Les outils de déformation sont identiques à ceux présentés dans la seconde expérimentation \myref*{sss-exp2-OutilsDeManipulation}.
+					Chaque \myglos{glo-Residu} qu'un sujet sélectionne est mis en surbrillance sur la molécule déformable et sur la molécule stable.
 				\end{mysubsubsection}
 				\begin{mytable}
 					\mycaption[tab-exp3-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -3147,21 +3128,21 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\addtolength{\expthreesecondcolumn}{-4\tabcolsep}
 					\begin{mytabular}{>{\bfseries}p{\expthreefirstcolumn}p{\expthreesecondcolumn}}
 						\mytoprule
-						\mytitlecolumn{1}{Tâche}                   & Déformation d'une molécule en groupe                                                  \\
+						\mytitlecolumn{1}{Tâche}                   & Déformation d'une molécule en groupe                                                   \\
 						\mymiddlerule[\heavyrulewidth]
-						\mytitlecolumn{2}{Hypothèses}              & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}           \\
-						                                           & \myhypothesis{2} Émergence de \myglosnl{glo-Meneur} dans le \myglosnl{glo-Quadrinome} \\
-						                                           & \myhypothesis{3} Le \mybrainstorming structure le \myglosnl{glo-Quadrinome}           \\
+						\mytitlecolumn{3}{Hypothèses}              & \myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}            \\
+						                                           & \myhypothesis{2} Un \myglosnl{glo-Meneur} émerge dans les \myglosnl*{glo-Quadrinome}   \\
+						                                           & \myhypothesis{3} Les \myglosnl*{glo-Quadrinome} se structurent par le \mybrainstorming \\
 						\mymiddlerule
-						\mytitlecolumn{3}{Variables indépendantes} & \myvari{1} Nombre de sujets                                                           \\
-						                                           & \myvari{2} Complexité de la tâche                                                     \\
-						                                           & \myvari{3} Temps alloué pour le \mybrainstorming                                      \\
+						\mytitlecolumn{3}{Variables indépendantes} & \myvari{1} Nombre de sujets                                                            \\
+						                                           & \myvari{2} Complexité de la tâche                                                      \\
+						                                           & \myvari{3} Temps alloué pour le \mybrainstorming                                       \\
 						\mymiddlerule
-						\mytitlecolumn{5}{Variables dépendantes}   & \myvard{1} Temps de réalisation                                                       \\
-						                                           & \myvard{2} Fréquence des sélections                                                   \\
-						                                           & \myvard{3} Vitesse moyenne                                                            \\
-						                                           & \myvard{4} Force moyenne appliquée par les sujets                                     \\
-						                                           & \myvard{5} Communications verbales                                                    \\
+						\mytitlecolumn{5}{Variables dépendantes}   & \myvard{1} Temps de réalisation                                                        \\
+						                                           & \myvard{2} Fréquence des sélections                                                    \\
+						                                           & \myvard{3} Vitesse moyenne                                                             \\
+						                                           & \myvard{4} Force moyenne                                                               \\
+						                                           & \myvard{5} Communications verbales                                                     \\
 						\mymiddlerule[\heavyrulewidth]
 						\multicolumn{2}{c}{%
 							\small%
@@ -3175,6 +3156,20 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 								Pas de \mybrainstorming   & \mynum[mn]{1} de \mybrainstorming & Pas de \mybrainstorming   & \mynum[mn]{1} de \mybrainstorming \\
 								\mymiddlerule
 								Scénario~\myscenario{1}   & Scénario~\myscenario{1}           & Scénario~\myscenario{1}   & Scénario~\myscenario{1}           \\
+							\end{tabular}
+						} \\
+						\mymiddlerule[\heavyrulewidth]
+						\multicolumn{2}{c}{%
+							\small%
+							\begin{tabular}{^C-C-C-C}
+								\myrowstyle{\bfseries}
+								Condition \mycondition{5} & Condition \mycondition{6}         & Condition \mycondition{7} & Condition \mycondition{8}         \\
+								\mymiddlerule
+								\mynum{2}~sujets          & \mynum{2}~sujets                  & \mynum{4}~sujets          & \mynum{4}~sujets                  \\
+								\myGlosnl{glo-Bimanuel}   & \myGlosnl{glo-Bimanuel}           & \myGlosnl{glo-Monomanuel} & \myGlosnl{glo-Monomanuel}         \\
+								\mymiddlerule
+								Pas de \mybrainstorming   & \mynum[mn]{1} de \mybrainstorming & Pas de \mybrainstorming   & \mynum[mn]{1} de \mybrainstorming \\
+								\mymiddlerule
 								Scénario~\myscenario{2}   & Scénario~\myscenario{2}           & Scénario~\myscenario{2}   & Scénario~\myscenario{2}           \\
 							\end{tabular}
 						} \\
@@ -3209,8 +3204,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} présente le temps de réalisation \myvard{1} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} de la molécule \myPrion (\myanova{exp3-time-molecule-group-anova-prion.tex}).
-					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} de la molécule \myUbiquitin (\myanova{exp3-time-molecule-group-anova-ubiquitin.tex}).
+					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} du scénario~\myscenario{1} (\myanova{exp3-time-molecule-group-anova-prion.tex}).
+					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le temps de réalisation \myvard{1} du scénario~\myscenario{2} (\myanova{exp3-time-molecule-group-anova-ubiquitin.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=10cm}
@@ -3223,8 +3218,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants} présente la fréquence de sélection \myvard{2} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} de la molécule \myPrion (\myanova{exp3-freqsel-molecule-group-anova-prion.tex}).
-					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} de la molécule \myUbiquitin (\myanova{exp3-freqsel-molecule-group-anova-ubiquitin.tex}).
+					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} du scénario~\myscenario{1} (\myanova{exp3-freqsel-molecule-group-anova-prion.tex}).
+					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} du scénario~\myscenario{2} (\myanova{exp3-freqsel-molecule-group-anova-ubiquitin.tex}).
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=3cm}
@@ -3237,8 +3232,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} présente la vitesse moyenne \myvard{3} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myPrion (\myanova{exp3-speed-molecule-group-anova-prion.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-prion.tex}.
-					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} de la molécule \myUbiquitin (\myanova{exp3-speed-molecule-group-anova-ubiquitin.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-ubiquitin.tex}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} du scénario~\myscenario{1} (\myanova{exp3-speed-molecule-group-anova-prion.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-prion.tex}.
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur la vitesse moyenne \myvard{3} du scénario~\myscenario{2} (\myanova{exp3-speed-molecule-group-anova-ubiquitin.tex}) supérieur de \myratio{exp3-speed-molecule-group-ratio-ubiquitin.tex}.
 
 					\begin{myfigure}
 						\psset{xunit=0.449438202\textwidth,yunit=0.1cm}
@@ -3251,44 +3246,40 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} présente le nombre d'échanges verbaux \myvard{5} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myPrion (\myanova{exp3-talk-molecule-group-anova-prion.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-prion.tex}.
-					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} de la molécule \myUbiquitin (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-ubiquitin.tex}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{1} (\myanova{exp3-talk-molecule-group-anova-prion.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-prion.tex}.
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{2} (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}) inférieur de \myratio{exp3-talk-molecule-group-ratio-ubiquitin.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					Les deux tâches proposées sont de natures très différentes.
-					Malgré l'apprentissage, la \myref{fig-exp3-TempsDeRealisationDesScenarios} montre que la molécule \myUbiquitin a été la plus longue à réaliser : la tâche collaborative étroitement couplée est plus complexe que la tâche faiblement couplée.
-					Pourtant, les molécules n'ont pas été alternées lors de la procédure expérimentale \myref*{sse-met-exp3-Procedure} : c'est toujours la molécule \myPrion qui a été présentée en premier aux sujets.
+					Malgré l'apprentissage, la \myref{fig-exp3-TempsDeRealisationDesScenarios} montre que la molécule \myUbiquitin a été la plus longue à réaliser malgré l'apprentissage : la tâche collaborative étroitement couplée (scénario~\myscenario{2}) est plus complexe que la tâche faiblement couplée (scénario~\myscenario{1}).
 					De plus, de nombreux groupes ont atteint la limite de \mynum[mn]{10} lors de la réalisation du scénario \myscenario{2} (\myUbiquitin).
-					Nous pouvons en déduire que la collaboration étroitement couplée est plus complexe à appréhender par les sujets.
+					Nous pouvons en déduire que la collaboration étroitement couplée est plus complexe à appréhender.
 
-					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} a montré que les performances sont meilleures lorsque les ressources disponibles (outils de manipulation) sont partagées entre plusieurs utilisateurs.
-					Cependant, cette étude compare deux configurations collaboratives.
-					On constate d'après la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances identiques aux \myglos*{glo-Binome}, indépendamment du scénario.
-					D'ailleurs, les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui confirme ce résultat \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
+					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} a montré que les performances sont meilleures lorsque les ressources disponibles (outils de déformation) sont distribuées entre plusieurs utilisateurs et qu'il est préférable que les utilisateurs manipulent de manière \myglos*{glo-Monomanuel}.
+					Pourtant, on constate sur la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances similaires aux \myglos*{glo-Binome}, indépendamment du scénario.
+					Les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui appuie ce résultat \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
 
-					Pourtant, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} montre des différences significatives entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} concernant la vitesse moyenne des \myglos*{glo-EffecteurTerminal}.
-					L'étude exposée par \mycite[author]{Roethlisberger-1939} a mis en évidence le phénomène de \myglos{glo-FacilitationSociale} : les utilisateurs se motivent entre eux pour réaliser la tâche.
-					Ceci permet aux \myglos*{glo-Quadrinome} d'obtenir une activité intense avec peu de phases de relâchement durant la réalisation de la tâche.
-					La vitesse moyenne est ainsi augmentée de manière significative chez les \myglos*{glo-Quadrinome}.
+					Pourtant, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} montre des différences significatives, en terme de vitesse, entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
+					L'étude exposée par \mycite[author]{Roethlisberger-1939} a mis en évidence ce phénomène de \myglos{glo-FacilitationSociale} : les utilisateurs se motivent entre eux pour réaliser la tâche.
+					Il permet aux \myglos*{glo-Quadrinome} de générer une activité intense avec peu de phases de relâchement.
+					La vitesse moyenne est ainsi augmentée de manière significative sur toute la durée de la tâche.
 
 					Dans l'étude précédente, nous avons également mis en évidence la présence de \myglos*{glo-ConflitDeCoordination} chez les \myglos*{glo-Binome}.
 					Ces \myglos*{glo-ConflitDeCoordination} entravent la progression de la tâche.
 					Cependant, nous avions constaté que les sujets parviennent à résoudre ces conflits grâce à la communication verbale.
 					Dans cette troisième expérimentation, la \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} montre que le nombre d'échanges verbaux en \myglos{glo-Quadrinome} est inférieur à celui en \myglos{glo-Binome}.
-					Ce résultat est surprenant étant donné que le nombre d'interactions possibles entre les sujets (et donc les \myglos*{glo-ConflitDeCoordination}) sont plus nombreux chez les \myglos*{glo-Quadrinome}.
+					Ce résultat est surprenant étant donné que le nombre d'interactions possibles entre les sujets (et donc les \myglos*{glo-ConflitDeCoordination} potentiels) sont plus nombreux chez les \myglos*{glo-Quadrinome}.
 					En effet, un \myglos{glo-ConflitDeCoordination} intervient lorsqu'au moins deux collaborateurs manipulent sur la même zone de travail.
-					Les combinaisons de conflits dans un \myglos{glo-Quadrinome} sont plus nombreuses que dans un \myglos{glo-Binome}.
+					Les combinaisons possibles de conflits dans un \myglos{glo-Quadrinome} sont donc plus nombreuses que dans un \myglos{glo-Binome}.
 
-					Il semble que la différence entre un \myglos{glo-Binome} et un groupe restreint influe sur la manière de communiquer.
-					À partir d'observations effectuées durant la phase expérimentale, nous avons pu constater que certains sujets se montraient relativement silencieux, même en situation de \myglos{glo-ConflitDeCoordination}.
-					Nous verrons dans la \myref{sse-exp3-DefinitionDUnMeneur} que la présence d'un \myglos{glo-Meneur} dans un groupe perturbe la communication verbale au sein d'un groupe.
-					En l'occurrence, le \myglos{glo-Meneur} a tendance à monopoliser la parole et à gérer les \myglos{glo-ConflitDeCoordination}.
+					À partir d'observations effectuées durant la phase expérimentale, nous avons pu constater que certains sujets se montrent relativement silencieux, même en situation de \myglos{glo-ConflitDeCoordination}.
+					La \myref{sse-exp3-DefinitionDUnMeneur} montre que la présence d'un \myglos{glo-Meneur} modifie les processus de communication verbale au sein d'un groupe.
 
 					Dans cette section, nous n'avons constater aucune évolution des performances entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
-					Cependant, malgré un nombre potentiel de \myglos*{glo-ConflitDeCoordination} important et une communication verbale faible, les \myglos*{glo-Quadrinome} obtiennent des performances similaires aux \myglos*{glo-Binome}.
+					Cette conservation des performances est présente malgré un nombre potentiel de \myglos*{glo-ConflitDeCoordination} important et une communication verbale faible chez les \myglos*{glo-Quadrinome}.
 					L'augmentation de la vitesse moyenne, provoquée par le phénomène de \myglos{glo-FacilitationSociale} déjà remarqué par \mycite[author]{Roethlisberger-1939}, permet d'expliquer ces performances.
 					En effet, la \myglos{glo-FacilitationSociale} permet de réduire les phases d'inaction en stimulant l'intérêt des sujets pour la tâche à réaliser.
-					Afin d'améliorer les performances d'un \myglos{glo-Quadrinome}, il faudrait faciliter les communications verbales pour une gestion optimale des \myglos*{glo-ConflitDeCoordination}.
+					Afin d'améliorer les performances d'un \myglos{glo-Quadrinome}, il faudrait faciliter les communications pour une gestion optimale des \myglos*{glo-ConflitDeCoordination}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-UtiliteDuBrainstormingPourLaCollaboration]{Utilité du \mybrainstorming pour la collaboration}
@@ -3372,47 +3363,47 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\item prévisions sur l'évolution de l'environnement.
 					\end{itemize}
 
-					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montrent que le \mybrainstorming est seulement bénéfique pour les \myglos*{glo-Quadrinome}.
-					En effet, les \myglos*{glo-Binome} n'obtiennent aucune évolution significative des performances avec ou sans \mybrainstorming.
+					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montrent que le \mybrainstorming est surtout profitable aux \myglos*{glo-Quadrinome}.
+					En effet, les \myglos*{glo-Binome} n'obtiennent aucune évolution significative des performances avec \mybrainstorming.
 					De même, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montre que la vitesse moyenne de l'\myglos{glo-EffecteurTerminal} des \myglos*{glo-Binome} n'évolue pas.
-					La configuration \myglos*{glo-Bimanuel} est certainement la raison de cette vitesse inférieure.
 
-					Le peu d'intérêt que présente le \mybrainstorming pour les \myglos*{glo-Binome} s'explique par deux raisons.
+					Deux raisons expliquent pourquoi le \mybrainstorming ne permet pas aux \myglos*{glo-Binome} d'améliorer leurs performances.
 					Le \mybrainstorming étant utilisé pour définir une stratégie de travail, il permet de réduire le nombre de \myglos*{glo-ConflitDeCoordination}.
-					Le nombre de \myglos{glo-ConflitDeCoordination} pour les \myglos*{glo-Binome} étant faible par rapport à celui des \myglos*{glo-Quadrinome}, l'intérêt du \mybrainstorming est amoindri.
+					Le nombre de \myglos{glo-ConflitDeCoordination} pour les \myglos*{glo-Binome} étant potentiellement plus faible que celui des \myglos*{glo-Quadrinome}, l'intérêt du \mybrainstorming est amoindri.
 					De plus, nous avons vu que la gestion des \myglos*{glo-ConflitDeCoordination} s'effectue par une communication verbale.
-					La communication en \myglos{glo-Binome} est relativement naturelle alors que la communication dans un groupe de plus de trois sujets s'avère plus compliquée : problème de prise de parole, conversation entre deux sujets monopolisant la parole, \myetc
-					La gestion des \myglos*{glo-ConflitDeCoordination} est quasiment optimale pour les \myglos*{glo-Binome}, même sans \mybrainstorming, ce qui n'est pas le cas pour les \myglos*{glo-Quadrinome}.
+					La communication en \myglos{glo-Binome} est relativement naturelle (simple conversation) alors que la communication dans un groupe de plus de trois sujets s'avère plus complexe : problème de prise de parole, conversation entre deux sujets monopolisant la parole, \myetc
+					Sur ce point, les \myglos*{glo-Binome} ont peu de marge d'amélioration possible liée au \mybrainstorming contrairement aux \myglos*{glo-Quadrinome}.
 
-					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
+					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
 					Nous avons vu dans la \myref{sse-exp3-AmeliorationDesPerformances} que les \myglos*{glo-Quadrinome} éprouvent des difficultés dans la résolution des \myglos*{glo-ConflitDeCoordination}.
 					D'après les figures observées, le \mybrainstorming permet l'élaboration d'une stratégie et la définition des rôles de chacun des sujets.
 					L'élaboration d'une stratégie réduit de façon importante le nombre de \myglos*{glo-ConflitDeCoordination} pendant la réalisation de la tâche et ainsi améliore les performances.
-					De plus, la mise en place de rôles pour chacun des sujets avant le début de la tâche permet de distribuer la tâche ou de l'organiser le cas échéant et ainsi d'éviter le phénomène de \myglos{glo-ParesseSociale} ce qui rejoint les conclusions faites par \mycite[author]{Latane-1979} sur l'identification des rôles.
+					De plus, la définition des rôles de chacun avant le début de la tâche permet de partager la tâche afin d'éviter le phénomène de \myglos{glo-ParesseSociale}.
+					Cette conclusion rejoint la suggestion effectuée par \mycite[author]{Latane-1979} concernant l'identification des rôles.
 
-					Dans le cas de la molécule \myPrion, la tâche comporte un faible niveau d'interaction entre les zones à déformer; elle peut aisément être divisée en quatre tâches élémentaires.
-					D'ailleurs, l'analyse des communications verbales a montré que c'était la stratégie choisie par tous les groupes ayant effectué un \mybrainstorming.
-					La molécule \myUbiquitin comportant un fort niveau d'interaction, nécessite plus de coordination mais peut être divisée en deux tâches élémentaires.
+					Dans le cas du scénario~\myscenario{1} (\myPrion), la tâche comporte un faible niveau d'interaction entre les zones à déformer; elle peut aisément être subdivisée en quatre tâches élémentaires.
+					D'ailleurs, l'analyse des communications verbales lors des \mybrainstorming a montré que c'était la stratégie choisie par tous les groupes.
+
+					Le scénario~\myscenario{2} (\myUbiquitin) comportant un fort niveau d'interaction, nécessite plus de coordination mais peut être subdivisée en deux tâches élémentaires.
 					Dans ce cas, le \mybrainstorming aboutit à une scission du groupe en deux \myglos*{glo-Binome} qui réaliseront chacun une partie de la déformation.
-					Ceci permet d'avoir des gestions de \myglos*{glo-ConflitDeCoordination} locaux et restreint ainsi son effet au \myglos{glo-Binome} concerné.
+					Ceci permet d'avoir des gestions de \myglos*{glo-ConflitDeCoordination} locaux et restreints à deux \myglos*{glo-Binome}.
 
-					De plus, la période de \mybrainstorming permet de partitionner le temps de réflexion et le temps de manipulation.
-					En effet, l'analyse des communications verbales permet de constater que les groupes n'ayant pas eu de période de \mybrainstorming (\mycondition{1} et \mycondition{3}) tentent tout de même d'élaborer une stratégie de travail.
+					La période de \mybrainstorming permet de partitionner le temps de réflexion et le temps de manipulation.
+					En effet, l'analyse des communications verbales permet de constater que les groupes n'ayant pas eu de période de \mybrainstorming tentent d'élaborer une stratégie de travail pendant la manipulation.
 					Cependant, la manipulation créé une charge de travail importante.
 					Les capacités de travail des sujets sont alors partagées entre la manipulation et l'élaboration d'une stratégie.
-					Les sujets ne sont pas pleinement attentifs à l'élaboration de la stratégie et peuvent en plus ne pas être attentifs en même temps que leurs collègues.
-					La réflexion sur la meilleure stratégie à choisir n'est donc pas optimale.
+					Les sujets ne sont pas pleinement attentifs à l'élaboration de la stratégie et peuvent ne pas être attentifs au même instant que leurs collègues.
+					La stratégie élaborée est alors de qualité inférieure.
 
-					Cette section nous a permis de confirmer l'intérêt d'un \mybrainstorming pour structurer les groupes : cette période n'est bénéfique que pour les \myglos*{glo-Quadrinome}.
-					En effet, elle permet d'éviter les problèmes de \myglos{glo-ParesseSociale} évoqués par \mycite[author]{Latane-1979} en stimulant la création de rôles pour chaque manipulateur.
-					Nous verrons dans la section suivante que le groupe va s'organiser autour d'un \myglos{glo-Meneur} et que les autres manipulateurs se placeront plutôt dans un rôle de \myglos*{glo-Suiveur}.
-					L'émergence rapide d'un \myglos{glo-Meneur} va permettre au groupe de se structurer et d'avoir une répartition des tâches plus rapide.
+					Cette section montre l'intérêt d'un \mybrainstorming pour structurer les groupes.
+					En effet, elle permet d'éviter les problèmes de \myglos{glo-ParesseSociale} en stimulant l'identification de rôles pour chaque utilisateur.
+					Nous verrons dans la section suivante que le groupe va s'organiser autour d'un \myglos{glo-Meneur} et que les collaborateurs seront plutôt dans un rôle de \myglos*{glo-Suiveur}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-DefinitionDUnMeneur]{Définition d'un \myglosnl{glo-Meneur}}
 				Cette section va définir les caractéristiques d'un \myglos{glo-Meneur}.
 				Nous utiliserons les données d'un groupe représentatif pour alimenter notre propos.
-				Cependant, étant donné le peu de données d'un seul groupe, aucune analyse de la variance ne sera présentée.
+				Cependant, étant donné le peu de données que représente un seul groupe, aucune analyse de la variance n'est présentée.
 				\begin{mysubsubsection}[sss-exp3-DefinitionDUnMeneur-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.227272727\textwidth,yunit=0.25cm}
@@ -3424,7 +3415,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-NombreDOrdresDonnesParChacunDesSujetsDeG1} présente le nombre d'ordres donnés \myvard{5} en fonction des sujets du groupe \mygroup{1}.
-					On observe que le sujet \mysubject{1} donne beaucoup plus d'ordres que la moyenne (\myanalysis{exp3-g1-talk-subject-analysis.tex} de plus que la moyenne).
+					On observe que le sujet \mysubject{1} donne plus d'ordres que la moyenne (\myanalysis{exp3-g1-talk-subject-analysis.tex} de plus que la moyenne).
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=3cm}
@@ -3436,7 +3427,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{3} en fonction des sujets du groupe \mygroup{1}.
-					On observe que le sujet \mysubject{1} donne plus d'ordres que la moyenne (\myanalysis{exp3-g1-speed-subject-analysis.tex} de plus que la moyenne).
+					On observe que le vitesse du sujet \mysubject{1} est plus élevée que la moyenne (\myanalysis{exp3-g1-speed-subject-analysis.tex} de plus que la moyenne).
 
 					\begin{myfigure}
 						\psset{xunit=0.007017544\textwidth,yunit=1cm}
@@ -3462,38 +3453,36 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion} présente les profils de force \myvard{4} des sujets \mysubject{1} et \mysubject{2} du groupe \mygroup{1}.
-					Chaque période où la force est maintenue représente une sélection \myref*{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS2}.
+					Chaque période où la force est maintenue constante représente une sélection \myref*{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS2}.
 					On constate un profil très chaotique pour le sujet \mysubject{1} avec un grand nombre de sélections (\mynum{11}~sélections).
-					Par opposition, le profil du sujet \mysubject{2} est très peu chaotique avec un petit nombre de sélections (\mynum{4}~sélections $> \mynum[s]{10}$).
+					Par opposition, le profil du sujet \mysubject{2} est très peu chaotique avec un petit nombre de sélections (\mynum{4}~sélections d'un temps supérieur à $\mynum[s]{10}$).
 					De plus, les efforts maximaux produits par le sujet \mysubject{2} sont plus importants que ceux du \mysubject{1} (\mynum[N]{5} pour \mysubject{2} contre \mynum[N]{4} pour \mysubject{1}).
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-DefinitionDUnMeneur-AnalyseEtDiscussion]{Analyse et discussion}
 					Le \myglos{glo-Meneur} est celui qui dirige les opérations.
-					Cependant, les groupes de notre expérimentation sont des groupes sans hiérarchie : aucun chef ou meneur n'est prédéterminé.
-					En effet, nos groupes sont des \myglos*{glo-StructureInformelle} dans lesquelles aucun rôle n'est prédéfini.
-					Dans la précédente section, nous avons identifié l'émergence de rôles, en particulier au cours du \mybrainstorming.
-					Parmi les rôles, on distingue le rôle du \myglos{glo-Meneur}, déjà identifié dans les travaux de \mycite[author]{Bales-1950}.
-					Nous allons à présent définir le rôle du \myglos{glo-Meneur} ainsi que les rôles de \myglos*{glo-Suiveur}.
+					Dans notre population, les groupes ne possèdent \myapriori pas de \myglos{glo-Meneur} : ils sont appelés \og \myglos*{glo-StructureInformelle} \fg \mycite{Roethlisberger-1939}.
+					Dans la précédente section, nous avons identifié l'émergence de rôles, en particulier grâce au \mybrainstorming.
+					Parmi les rôles, on distingue le rôle du \myglos{glo-Meneur}, déjà identifié dans les travaux de \mycite[author]{Bales-1950} et les rôles de \myglos*{glo-Suiveur}.
 
 					La \myref{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} et la \myref{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS1} nous permet de déterminer la stratégie de travail du \myglos{glo-Meneur}.
 					En effet, on constate un grand nombre de sélections ainsi qu'une vitesse élevée.
 					Le \myglos{glo-Meneur} explore l'environnement pour prendre des décisions.
-					Son exploration est constituée de sélections de courte période avec une force appliquée relativement faible.
-					Ces nombreuses sélections ont pour objectif de consulter différentes zones de la molécule pour évaluer le travail restant.
-					Il proposera à un autre sujet d'effectuer à sa place, les déformations qu'il aura jugé nécessaire.
+					Il effectue des sélections de courte durée avec une force relativement faible.
+					Ces nombreuses sélections ont pour objectif d'explorer différentes zones de la molécule pour évaluer le travail à effectuer.
+					Ainsi, il distribue des tâches élémentaires de déformation aux autres sujets en fonction de son analyse.
 
 					Par opposition, les \myglos*{glo-Suiveur} n'explorent pas l'environnement.
 					En effet, la \myref{fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS2} montre un nombre de sélections peu élevées mais des sélections maintenues sur une longue période de temps.
-					Le \myglos{glo-Suiveur} accepte un ordre du \myglos{glo-Meneur} et effectue la déformation jusqu'à atteindre l'objectif fixé.
-					Les manipulations des suiveurs sont plutôt lentes car les déformations nécessite de la précision dans la manipulation.
+					Cette longue période de temps correspond à une déformation d'une cible vers un objectif fixe.
+					La déformation a pu être proposée par le \myglos{glo-Meneur}.
+					Les manipulations des suiveurs sont plutôt longues et lentes \myref*{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} car les déformations nécessitent une manipulation précise.
 					De plus, l'effort déployé est plus important car toute l'attention du \myglos{glo-Suiveur} est portée sur la déformation.
-					Le \myglos{glo-Meneur} ne déploit pas autant d'effort car il n'effectue pas les déformations.
+					Le \myglos{glo-Meneur} de déploie pas autant de force car son objectif est d'explorer l'environnement, pas de déformer.
 
 					Pour conclure cette section, le \myglos{glo-Meneur} a un rôle crucial dans la dynamique du groupe.
 					C'est lui qui va définir et répartir les tâches : il élabore la stratégie du groupe.
 					Cette répartition permet à chaque sujet de se faire attribuer une tâche bien identifiée.
-					L'identification des rôles est nécessaire pour obtenir de bonne performances et éviter le phénomène de \myglos{glo-ParesseSociale} \myref*{sse-exp3-UtiliteDuBrainstormingPourLaCollaboration}.
-					Cependant, le \myglos{glo-Meneur} doit être accepté par les autres membres afin d'obtenir une bonne harmonie dans le groupe.
+					Cette identification est nécessaire pour éviter le phénomène de \myglos{glo-ParesseSociale} \myref*{sse-exp3-UtiliteDuBrainstormingPourLaCollaboration} et permet ainsi d'améliorer les performances.
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
@@ -3506,43 +3495,35 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				En effet, les \myglos*{glo-Quadrinome}, bien que plus rapides dans leurs mouvements grâce au phénomène de \myglos{glo-FacilitationSociale}, obtiennent des performances identiques aux \myglos*{glo-Binome}.
 				Les \myglos*{glo-Quadrinome} perdent du temps dans la résolution des \myglos*{glo-ConflitDeCoordination} qui sont plus nombreux que chez les \myglos*{glo-Binome}.
 
-				Cependant, une analyse basée sur la possibilité d'établir une stratégie de travail au préalable a permis d'approfondir cette conclusion.
-				Le \mybrainstorming permet une organisation préalable du groupe permettant de meilleures performances tout en réduisant le nombre de \myglos*{glo-ConflitDeCoordination}.
-				L'élaboration d'une stratégie de travail est surtout bénéfique pour les \myglos*{glo-Quadrinome} qui sont confrontés à de nombreux de \myglos*{glo-ConflitDeCoordination} en temps normal.
+				Cependant, le \mybrainstorming permet une organisation préalable du groupe permettant de meilleures performances tout en réduisant le nombre de \myglos*{glo-ConflitDeCoordination}.
+				L'élaboration d'une stratégie de travail est surtout profitable aux \myglos*{glo-Quadrinome} qui sont potentiellement confrontés à de nombreux de \myglos*{glo-ConflitDeCoordination}.
 
-				De plus, ce \mybrainstorming permet de faire émerger les rôles rapidement au sein de cette \myglos{glo-StructureInformelle}.
-				L'émergence d'un \myglos{glo-Meneur} est nécessaire pour organiser le groupe, diviser le travail et répartir les tâches.
+				De plus, ce \mybrainstorming permet de faire rapidement émerger les rôles au sein de cette \myglos{glo-StructureInformelle}.
+				L'émergence d'un \myglos{glo-Meneur} est nécessaire pour structurer le groupe, diviser le travail et répartir les tâches.
 				D'un autre côté, les \myglos*{glo-Suiveur} acceptent la présence de ce \myglos{glo-Meneur} et l'assistent dans la réalisation de la tâche.
-				Le \myglos{glo-Meneur} va se distinguer par une exploration plus large et plus rapide de l'environnement afin d'avoir une vision globale de la tâche à réaliser.
-				Les \myglos*{glo-Suiveur} effectuent plutôt des déformations longues et locales.
+				Le \myglos{glo-Meneur} cherche à établir une stratégie globale en explorant continuellement l'environnement.
+				Les \myglos*{glo-Suiveur} effectuent plutôt des déformations locales sur des durées plus importantes.
 
-				Cette expérimentation montre que l'augmentation du nombre d'utilisateurs est bénéfique sous réserve d'une certaine organisation.
-				Un \mybrainstorming préalable à la réalisation de la tâche permet de structurer un groupe.
-				De plus, cette structure est obtenue avec l'accord de tous les participants ce qui rend légitime le \myglos{glo-Meneur}.
-				Dans le cas contraire, les \myglos*{glo-Suiveur} pourraient ne pas vouloir suivre les indications du \myglos{glo-Meneur} ce qui serait contre-productif.
+				Cette expérimentation montre que l'augmentation du nombre d'utilisateurs est bénéfique sous certaines réserves concernant la structure du groupe.
+				Par exemple, un \mybrainstorming, préalable à la réalisation de la tâche, permet de structurer un groupe.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-SyntheseEtPerspectives]{Synthèse et perspectives}
-				Nous venons de montrer l'intérêt d'avoir un groupe structuré lorsque le nombre de participants excède deux.
-				Notre prochaine et dernière expérimentation aura pour objectif de tester la plateforme avec des experts de la déformation moléculaire.
-				Pour cela, nous allons leur fournir des outils haptiques permettant de faciliter le travail collaboratif.
+				Nous venons de montrer l'intérêt de structurer les groupes pour effectuer des tâches collaboratives étroitement couplée.
+				Sur la base des résultats obtenus, nous allons pouvoir proposer une configuration de travail intégrant l'ensemble des facteurs identifiés.
 
-				Pour commencer, nous avons mis en avant la nécessité de faire émerger rapidement le \myglos{glo-Meneur} et les \myglos*{glo-Suiveur}.
-				Ceci permet de coordonner le groupe derrière un seul utilisateur et éviter les \myglos*{glo-ConflitDeCoordination}.
+				Pour commencer, nous avons mis en avant la nécessité de faire émerger rapidement les rôles de \myglos*{glo-Meneur} et de \myglos*{glo-Suiveur}.
+				Le groupe est ainsi coordonné par le \myglos{glo-Meneur} ce qui permet de limiter les \myglos*{glo-ConflitDeCoordination}.
 
 				Cependant, la manière de travailler du \myglos{glo-Meneur} et très différente de celle d'un \myglos{glo-Suiveur}.
-				Des outils haptiques adaptés aux besoins de chacun seront donc proposés afin d'améliorer leur possibilités d'interactions.
-				En l'occurence, le \myglos{glo-Meneur} n'effectue pas réellement de déformation, il semble donc peu nécessaire de lui donner la possibilité de le faire.
-				Ainsi, on le libère d'un partie de sa charge cognitive pour le focaliser sur son rôle de \myglos{glo-Meneur}.
+				Des outils haptiques adaptés aux besoins de chaque rôle seront proposés afin d'améliorer les moyens d'interaction de chacun.
+				En l'occurence, le \myglos{glo-Meneur} n'a pas réellement besoin d'un outil de déformation mais plutôt d'un outil d'exploration.
 
-				En ce qui concerne le \myglos{glo-Suiveur}, il est affecté à la déformation.
-				Il est particulièrement occupé à effectuer des déformations de façon locale.
-				Il faut donc lui laisser la possibilité d'effectuer des déformations locales et précises.
-				Cependant, il faut également lui faciliter la communication avec le \myglos{glo-Meneur} et lui rendant accessible les consignes rapidement.
-				Le \myglos{glo-Meneur} ayant une vision plus globale de la tâche à réaliser, il peut être justifié de donner ponctuellement des outils de déformation plus grossier.
+				En ce qui concerne le \myglos{glo-Suiveur}, il est principalement affecté à la réalisation de déformations locales.
+				Il faut lui fournir un outil permettant d'effectuer des déformations locales et précises.
+				Cependant, il faut également lui faciliter la communication avec le \myglos{glo-Meneur} et lui permettant d'accéder rapidement aux consignes.
 
-				La majorité de ces outils seront implémentés dans la dernière version de la plateforme afin d'effectuer une expérimentation avec des experts de la déformation moléculaire.
+				La majorité de ces fonctionnalités seront implémentées dans la dernière version de la plateforme puis testées, notamment pas des biologistes.
 				Ces outils seront évalués à la fois en terme d'amélioration sur les performances mais également en terme d'utilisabilité.
-				Le \myref{cha-TravailCollaboratifAssisteParHaptique} décrit ces nouveaux outils et l'ensemble de l'expérimentation.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
@@ -4236,7 +4217,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-met-exp1-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp1-NombreDeSujets]{\myvari{1} Nombre de sujets}
 						C'est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux valeurs possibles : \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
+						\myvari{1} possède deux modalités : \og un sujet \fg (\mycf \myemph{\myglos{glo-Monome}}) ou \og deux sujets \fg (\mycf \myemph{\myglos{glo-Binome}}).
 						\mynum{24}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} ont été testés.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
@@ -4365,10 +4346,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Nous émettons l'hypothèse que les performances des \myglos*{glo-Binome} seront meilleures que les performances des \myglos*{glo-Monome} sur cette tâche de déformation.
 					Cette hypothèse est basée sur les conclusions obtenues dans la première étude.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp2-MeilleurGainDePerformancesSurLesTachesComplexes]{\myhypothesis{2} Meilleur gain de performances sur les tâches complexes}
+				\begin{myparagraph}[par-met-exp2-BinomesPlusPerformantsSurLesTachesComplexes]{\myhypothesis{2} \myglosnl*{glo-Binome} plus performants sur les tâches complexes}
 					Nous émettons l'hypothèse que plus la tâche est complexe et plus la configuration collaborative produira un gain significatif de performances par rapport à la configuration individuelle.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp2-LApprentissageEstPlusPerformantPourLesBinomes]{\myhypothesis{3} L'apprentissage est plus performant pour les \myglosnl*{glo-Binome}}
+				\begin{myparagraph}[par-met-exp2-ApprentissagePlusPerformantEnBinome]{\myhypothesis{3} Apprentissage plus performant en \myglosnl{glo-Binome}}
 					Nous émettons l'hypothèse que le travail en collaboration augmente la vitesse d'apprentissage de la tâche.
 					En effet, nous supposons que l'interaction sociale entre les partenaires va stimuler l'apprentissage et permettre l'échange et le partage de connaissances.
 				\end{myparagraph}
@@ -4397,7 +4378,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-met-exp2-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp2-NombreDeSujets]{\myvari{1} Nombre de sujets}
 						C'est une \myglos{glo-VariableInterSujets}.
-						\myvari{1} possède deux valeurs possibles : \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
+						\myvari{1} possède deux modalités : \og un sujet (\mycf \myemph{\myglos{glo-Monome}}) \fg ou \og deux sujets (\mycf \myemph{\myglos{glo-Binome}}) \fg.
 						\mynum{12}~\myglos*{glo-Monome} et \mynum{12}~\myglos*{glo-Binome} sont testés.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
@@ -4455,20 +4436,19 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-met-exp3-TroisiemeExperimentation]{Troisième expérimentation}
 			\begin{mysubsection}[sse-met-exp3-Hypotheses]{Hypothèses}
-				Lors de cette nouvelle étude, nous souhaitons observer les dynamiques de groupe.
-				Nos hypothèses concerneront principalement l'évolution des groupes durant la réalisation de la tâche.
+				Cette nouvelle étude à pour objectif d'identifier les dynamiques de groupe.
+				Nous allons observer l'évolution des performances en fonction du nombre de participants.
 				\begin{myparagraph}[par-met-exp3-AmeliorationDesPerformancesEnQuadrinome]{\myhypothesis{1} Amélioration des performances en \myglosnl{glo-Quadrinome}}
 					Nous émettons l'hypothèse que les performances des \myglos*{glo-Quadrinome} seront meilleures que les performances des \myglos*{glo-Binome}.
-					Cette hypothèse vient contredire les conclusions obtenue par \mycite[author]{Zajonc-1965} concernant les tâches complexes.
-					Cependant, notre contexte est différent puisqu'il concerne la collaboration étroite et nous pensons que dans ce contexte, il est nécessaire d'augmenter le nombre de sujets pour améliorer les performances, même sur une tâche complexe.
+					Cette hypothèse est basée sur les conclusions obtenues dans la seconde étude à propos de la distribution des ressources.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp3-EmergenceDeMeneursDansLeQuadrinome]{\myhypothesis{2} Émergence de \myglos{glo-Meneur} dans le \myglos{glo-Quadrinome}}
-					D'après \mycite[author]{Bales-1950}, les groupes restreints voient émerger un voire deux \myglos*{glo-Meneur}, quelque soit la taille du groupe.
-					Nous émettons l'hypothèse que l'émergence d'un \myglos{glo-Meneur} aura également lieu dans notre contexte de collaboration étroitement couplée.
+				\begin{myparagraph}[par-met-exp3-UnMeneurEmergeDansLesQuadrinomes]{\myhypothesis{2} Un \myglosnl{glo-Meneur} émerge dans les \myglosnl*{glo-Quadrinome}}
+					D'après \mycite[author]{Bales-1950}, les groupes restreints voient émerger au moins un \myglos{glo-Meneur}, quelque soit la taille du groupe.
+					Nous émettons l'hypothèse qu'un \myglos{glo-Meneur} émergera durant une collaboration étroitement couplée.
 				\end{myparagraph}
-				\begin{myparagraph}[par-met-exp3-LeBrainstormingStructureLeQuadrinome]{\myhypothesis{3} Le \mybrainstorming structure le \myglos{glo-Quadrinome}}
-					Dans cette nouvelle expérimentation, nous allons étudier la mise en place d'une période de réflexion, également appelée \mybrainstorming, avant le début de la tâche.
-					Nous émettons l'hypothèse que cette période de réflexion sera principalement utile pour les \myglos*{glo-Quadrinome}.
+				\begin{myparagraph}[par-met-exp3-LesQuadrinomesSeStructurentParLeBrainstorming]{\myhypothesis{3} Les \myglosnl*{glo-Quadrinome} se structurent par le \mybrainstorming}
+					Dans cette expérimentation, nous étudions la mise en place d'une période de \mybrainstorming avant le début de la tâche.
+					Nous émettons l'hypothèse que cette période de réflexion sera surtout mise à profit par les \myglos*{glo-Quadrinome}.
 				\end{myparagraph}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp3-Sujets]{Sujets}
@@ -4481,8 +4461,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{itemize}
 				Ils ont tous le français comme langue principale.
 				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+				Les sujets ne sont pas rémunérés pour l'expérimentation.
+
 				Tous les participants de cette expérimentation ont été choisis car ils ont déjà une expérience sur la plateforme : les participants connaissent déjà les outils de déformation et l'environnement virtuel.
-				Ceci doit permettre d'observer les évolutions de la dynamique de groupe tout en limitant les effets de l'apprentissage.
+				L'objectif est de limiter les évolutions liées à l'apprentissage afin de pouvoir observer les évolutions de la dynamique de groupe.
 
 				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
 				Une explication détaillée de la procédure expérimentale leur est donnée au commencement de l'expérimentation mais en omettant l'objectif de l'étude.
@@ -4490,54 +4472,53 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-met-exp3-Variables]{Variables}
 				\begin{mysubsubsection}[sss-met-exp3-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp3-NombreDeSujets]{\myvari{1} Nombre de sujets}
-						Cette \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux valeurs possibles : \og deux sujet (\mycf \myemph{\myglos{glo-Binome}}) \fg ou \og quatre sujets (\mycf \myemph{\myglos{glo-Quadrinome}}) \fg.
+						C'est une \myglos{glo-VariableIntraSujets}.
+						\myvari{1} possède deux modalités : \og deux sujet (\mycf \myemph{\myglos{glo-Binome}}) \fg ou \og quatre sujets (\mycf \myemph{\myglos{glo-Quadrinome}}) \fg.
 						\mynum{8}~\myglos*{glo-Binome} et \mynum{4}~\myglos*{glo-Quadrinome} sont testés.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-ComplexiteDeLaTache]{\myvari{2} Complexité de la tâche}
-						La seconde \myglos{glo-VariableIndependante} est une \myglos{glo-VariableIntraSujets}.
+						C'est une \myglos{glo-VariableIntraSujets}.
 						Deux tâches de déformation sont proposées et décrites dans la \myref{sse-exp3-DescriptionDeLaTache}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-TempsAllouePourLeBrainstorming]{\myvari{3} Temps alloué pour le \mybrainstorming}
-						La troisième \myglos{glo-VariableIndependante} est une \myglos{glo-VariableInterSujets}.
-						\myvari{3} possède deux valeurs possibles : \og pas de \mybrainstorming \fg ou \og \mynum[mn]{1} de \mybrainstorming \fg.
-						Cette période de \mybrainstorming est allouée avant le début de chaque tâche et permet une réflexion préalable sur la tâche.
+						C'est une \myglos{glo-VariableInterSujets}.
+						\myvari{3} possède deux modalités : \og pas de \mybrainstorming \fg ou \og \mynum[mn]{1} de \mybrainstorming \fg.
+						Cette période de \mybrainstorming est allouée avant le début de chaque tâche et permet une réflexion préalable au commencement de la tâche.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sec-met-exp3-VariablesDependantes]{Variables dépendantes}
 					\begin{myparagraph}[par-met-exp3-TempsDeRealisation]{\myvard{1} Temps de réalisation}
-						C'est le temps total que les sujets ont mis pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
+						C'est le temps total que les sujets mettent pour réaliser la tâche demandée, c'est-à-dire manipuler et déformer la molécule afin d'atteindre l'objectif fixé.
 						Le temps est limité à \mynum[mn]{10}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-FrequenceDeSelections]{\myvard{2} Fréquence des sélections}
-						\myvard{2} représente la fréquence des sélections réalisées durant chaque tâche à réaliser.
-						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}.
-						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal} qui lui-même est associé à un sujet.
-						C'est l'information de fréquence qui est conservée puisqu'elle ne dépend pas du temps total de réalisation de la tâche.
+						C'est la fréquence des sélections réalisées durant chaque tâche.
+						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}, pour chacun des sujets.
+						La fréquence des sélections est le rapport du nombre de sélections par le temps de réalisation.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-VitesseMoyenne]{\myvard{3} Vitesse moyenne}
 						Cette variable est une mesure de la vitesse moyenne de chaque \myglos{glo-EffecteurTerminal}.
 						Elle est calculée par intégration numérique des positions successives en fonction du temps.
 					\end{myparagraph}
-					\begin{myparagraph}[par-met-exp3-ForceMoyenneAppliqueeParLesSujets]{\myvard{4} Force moyenne appliquée par les sujets}
-						La force appliquée sur les atomes durant la simulation par les sujets est mesurée.
-						C'est la force appliquée lorsqu'un atome est sélectionné.
-						La mesure conservée est la valeur moyenne sur l'ensemble de la tâche réalisée.
+					\begin{myparagraph}[par-met-exp3-ForceMoyenne]{\myvard{4} Force moyenne}
+						La force appliquée sur les atomes durant la simulation est mesurée.
+						C'est la force moyenne appliquée par un sujet lorsqu'un atome est sélectionné.
+						Elle est exprimée en \myname{Newton}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-CommunicationsVerbales]{\myvard{5} Communications verbales}
 						L'enregistrement des communications verbales permet de mesurer le nombre d'interventions verbales de chacun des sujets.
 						Deux catégories d'interventions sont distinguées :
 						\begin{description}
-							\item[Les observations] pour indiquer aux autres sujets une intention d'action ou pour informer sur l'état actuel de l'environnement;
+							\item[Les observations] indiquent aux autres sujets une intention d'action ou informent sur l'état actuel de l'environnement;
 							\item[Les ordres] sont donnés aux autres sujets afin qu'ils réalisent une action déterminée.
 						\end{description}
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp3-Procedure]{Procédure}
-				L'expérimentation débute par une étape d'entraînement avec la molécule \myTRPCAGE.
+				L'expérimentation débute par une étape d'entraînement avec pour objectif de déformer la molécule \myTRPCAGE vers un état stable.
 				Pendant cette phase, les outils sont introduits et expliqués un par un.
-				Les sujets ayant déjà réalisé une expérience sur la plateforme, cette phase est effectuée pour se remémorer l'environnement et les outils.
+				Les sujets ayant déjà réalisé une expérience sur la plateforme, cette phase est effectuée pour remémorer l'environnement et les outils.
 				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 
@@ -4548,11 +4529,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Tous les sujets sont confrontés aux deux scénarios deux fois.
 				Une première fois en \myglos{glo-Binome} et une seconde fois en \myglos{glo-Quadrinome}.
-				L'ordre de passage en \myglos{glo-Binome} et en \myglos{glo-Quadrinome} est alterné selon les groupes afin d'éviter les biais d'apprentissage.
+				L'ordre de passage en \myglos{glo-Binome} et en \myglos{glo-Quadrinome} est alterné selon les groupes.
 
 				L'enregistrement vidéo est démarré au début de la phase d'apprentissage pour chaque groupe.
 				Il est arrêté à la fin du second scénario.
-				La phase d'apprentissage est filmée pour des questions de simplicité logistique mais n'est pas utilisée dans les analyses.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-met-exp4-QuatriemeExperimentation]{Quatrième expérimentation}
@@ -4583,6 +4563,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{itemize}
 				Ils ont tous le français comme langue principale à l'exception d'un sujet néerlandais qui parle un français courant.
 				Aucun participant n'a de déficience visuelle (ou corrigée le cas échéant) ni de déficience audio.
+				Les sujets ne sont pas rémunérés pour l'expérimentation.
 
 				Chaque participant est complètement naïf concernant les détails de l'expérimentation.
 				Cependant, tous les sujets sont familiers avec la plateforme \myShaddock ou ont déjà eu l'occasion de manipuler des plateformes de manipulation interactive de molécules.
@@ -4592,7 +4573,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-met-exp4-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp4-PresenceDeLAssistance]{\myvari{1} Présence de l'assistance}
 						C'est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux valeurs possibles : \og sans assistance \fg ou \og avec assistance \fg.
+						\myvari{1} possède deux modalités : \og sans assistance \fg ou \og avec assistance \fg.
 						L'assistance haptique est ajoutée aux outils de manipulation, de désignation et de déformation afin d'améliorer l'interaction et la communication entre les sujets pendant la tâche.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-MoleculesADeformer]{\myvari{2} Molécules à déformer}

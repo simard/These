@@ -5,7 +5,7 @@ out.file.boxplot = get.outname(commandArgs())
 
 dat.binome = dat.exp3[ dat.exp3$group.number == 2, ]
 bp.binome = boxplot(dat.binome$time.completion~dat.binome$molecule, plot=FALSE)
-colnames(bp.binome$stats) = c("Prion","Ubiquitin")
+colnames(bp.binome$stats) = c("\\myscenario{1}","\\myscenario{2}")
 write.table(bp.binome$stats,
 			file = out.file.boxplot,
 			quote = FALSE,
