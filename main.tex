@@ -1544,23 +1544,43 @@
 					\end{description}
 
 					\begin{myfigure}
+						\psset{xunit=0.0245\textwidth,yunit=0.013033172\textwidth}
 						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{designation-normal}
+							\begin{myps}(-10,-10)(10,10)
+								\rput(0,0){\myimage[width=0.49\textwidth]{designation-normal}}
+								\uput{0pt}[45](2,7){\myimage[width=25pt]{designation-red-cursor}}
+								\uput{0pt}[45](-7,6){\myimage[width=25pt]{designation-yellow-cursor}}
+							\end{myps}
 							\mysubcaption[fig-designation-RechercheDUneCible]{Recherche d'une cible}
 						\end{mysubfigure}
 						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{designation-called}
+							\begin{myps}(-10,-10)(10,10)
+								\rput(0,0){\myimage[width=0.49\textwidth]{designation-called}}
+								\uput{0pt}[45](7.6,4.2){\myimage[width=25pt]{designation-red-cursor}}
+								\mypsvibration(7.6,4.2)
+								\uput{0pt}[45](-7,6){\myimage[width=25pt]{designation-yellow-cursor}}
+								\mypsvibration(-7,6)
+							\end{myps}
 							\mysubcaption[fig-designation-CibleDesignee]{Cible désignée}
 						\end{mysubfigure}
 						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{designation-accepted}
+							\begin{myps}(-10,-10)(10,10)
+								\rput(0,0){\myimage[width=0.49\textwidth]{designation-accepted}}
+								\uput{0pt}[45](5,-8){\myimage[width=25pt]{designation-red-cursor}}
+								\uput{0pt}[45](-7,6){\myimage[width=25pt]{designation-yellow-cursor}}
+							\end{myps}
 							\mysubcaption[fig-designation-CibleAcceptee]{Cible acceptée}
 						\end{mysubfigure}
 						\begin{mysubfigure}
-							\myimage[width=0.49\textwidth]{designation-selected}
+							\begin{myps}(-10,-10)(10,10)
+								\rput(0,0){\myimage[width=0.49\textwidth]{designation-selected}}
+								\uput{0pt}[45](5,-8){\myimage[width=25pt]{designation-red-cursor}}
+								\uput{0pt}[45](7.9,8.1){\myimage[width=25pt]{designation-yellow-cursor}}
+								\pscurve[linewidth=3pt,linecolor=myyellowcolor]{->}(-7,6)(-1,10)(6,10)(7.5,8.9)
+							\end{myps}
 							\mysubcaption[fig-designation-CibleSelectionnee]{Cible sélectionnée}
 						\end{mysubfigure}
-						\mycaption[fig-designation-LesQuatreEtapesDeLaDesignation]{Les quatre étapes de la désignation}
+						\mycaption[fig-designation-LesQuatreEtapesDeLaDesignation]{Les quatre étapes de la désignation (utilisateur~\myuser{A} en rouge et utilisateur~\myuser{B} en jaune)}
 					\end{myfigure}
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -3035,8 +3055,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Il ne faut donc pas exclure la possibilité d'obtenir des performances acceptables en fournissant un outil simple et un outil complexe pour une manipulation \myglos*{glo-Bimanuel}.
 				Nous verrons que la configuration de la dernière étude \myref*{cha-TravailCollaboratifAssisteParHaptique} propose une configuration \myglos*{glo-Bimanuel} avec un outil simple de déplacement et un outil plus complexe de désignation.
 
-				Le questionnaire nous a également permis de mettre en avant les lacunes en ce qui concerne l'utilisation de la modalité virtuelle.
-				La dernière expérimentation sera l'occasion d'introduire des outils adaptés afin de permettre l'utilisation efficace de cette modalité pour la communication.
+				Le questionnaire nous a également permis de mettre en avant les lacunes en ce qui concerne l'utilisation de l'environnement virtuel pour la communication.
+				La dernière expérimentation sera l'occasion d'introduire des outils adaptés afin de permettre l'utilisation de cet environnement pour assister la communication.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
@@ -3589,22 +3609,24 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
 		\begin{mysection}[sec-exp4-Introduction]{Introduction}
-			Cette dernière expérimentation a pour objectif d'introduire et de valider des outils de communication haptique dans le cadre d'une tâche de \myglos{glo-DockingMoleculaire}.
-			Sur la base des précédentes expérimentations, nous avons constater que la communication est un point essentiel de la collaboration.
-			Nous souhaitons proposer des outils haptiques pour améliorer les interactions et la communication entre les manipulateurs.
-			Ce chapitre a pour but de tester et d'évaluer ces outils dans un contexte de déformation moléculaire.
+			Sur la base des résultat obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la collaboration entre les utilisateurs dans la réalisation d'un \myglos{glo-DockingMoleculaire}.
+			Nous avons également identifié un certains nombres de paramètres permettant d'améliorer les performances d'un groupe (identification des rôles, \mybrainstorming, présence d'un \myglos{glo-Meneur}, \myetc) afin de les intégrer dans cette dernière expérimentation.
+			Ce chapitre a pour but de tester et d'évaluer les outils proposés et les méthodologies de travail dans un contexte de déformation moléculaire.
 
-			De plus, ce dernier chapitre sera l'occasion de confronter la plateforme \myShaddock à des experts en biologie moléculaire.
-			En effet, il est nécessaire pour cette dernière étape d'avoir l'avis de spécialistes pour évaluer l'utilisabilité de la plateforme et confirmer la validité de ce processus de travail.
+			Ce dernier chapitre sera également l'occasion de confronter la plateforme \myShaddock à des experts en biologie moléculaire.
+			En effet, il est nécessaire pour cette dernière étape d'avoir l'avis de spécialistes afin d'évaluer l'utilisabilité de la plateforme et de confirmer la validité de ce processus de travail.
 		\end{mysection}
 		\begin{mysection}[sec-exp4-AssistanceHaptiquePourLaCommunication]{Assistance haptique pour la communication}
+			Dans cette section, nous commencerons par présenter les travaux existants en terme de communication haptique.
+			Puis nous exposerons les choix qui ont guidés le développement des outils haptiques proposés.
+			Enfin, nous présenterons les objectifs de cette quatrième et dernière expérimentation.
 			\begin{mysubsection}[sse-exp4-TravauxExistants]{Travaux existants}
-				Le concept de communication haptique a été initié par les travaux de \mycite[author]{Sallnas-2000} avec une expérimentation sur la manipulation synchrone de cube au sein d'un environnement virtuel.
-				Chaque utilisateur dispose d'un outil haptique lui permettant d'exercer une pression sur un cube virtuel; deux utilisateurs peuvent alors soulever un cube en exerçant une pression de chaque côté du cube.
-				Sur le même principe de manipulation synchrone, \mycite[author]{Basdogan-2000} proposent de déplacer un anneau autour d'un fil avec pour objectif de ne pas toucher le fil.
-				Dans les deux études, les résultats montrent l'utilisation de l'haptique permet des améliorations significatives de la collaboration entre les partenaires.
+				Le concept de communication haptique a été initié par les travaux de \mycite[author]{Sallnas-2000} avec une étude sur la manipulation synchrone d'objets \myThreeD dans environnement virtuel.
+				Les utilisateurs disposent d'un outil haptique leur permettant d'exercer une pression sur les objets \myThreeD virtuels; il faut alors deux utilisateurs pour soulever un objet en exerçant une pression de chaque côté de l'objet.
+				Sur le même principe de manipulation synchrone, \mycite[author]{Basdogan-2000} proposent le déplacement d'un anneau par une manipulation en \myglos{glo-Binome} coordonnée; l'anneau doit passer autour d'un fil sans le toucher.
+				Les résultats de ces deux études montrent clairement que l'utilisation de la modalité haptique permet des améliorations significatives pour la coordination entre les partenaires.
 
-				Sur la base de ces résultats, \mycite[author]{Oakley-2001} propose un environnement en \myTwoD pour la création de diagrammes \myacro{acr-UML}.
+				Sur la base de ces résultats, \mycite[author]{Oakley-2001} propose de créer des outils haptiques pour la création de diagrammes \myacro{acr-UML} en environnement \myTwoD.
 				Il fournit aux utilisateurs différents outils haptiques permettant d'interagir avec le partenaire :
 				\begin{itemize}
 					\item ressentir le curseur du partenaire avec la possibilité de le pousser;
@@ -3616,7 +3638,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Dans la continuité de \mycite[author]{Oakley-2001}, \mycite[author]{Moll-2009} expérimentent des outils haptiques similaires dans un environnement virtuel de construction par bloc en \myThreeD.
 				Ces deux dernières études prouvent que la communication entre deux partenaires par l'intermédiaire de la modalité haptique est possible.
-				D'ailleurs, \mycite[author]{Moll-2009} mettent en évidence l'utilité des retours haptiques pour la désignation de cible en environnement virtuel.
+				D'ailleurs, \mycite[author]{Moll-2009} soulignent la pertinence des retours haptiques pour la désignation de cibles en environnement virtuel.
 
 				Le terme \myemph{communication haptique} a pris tout son sens avec les premières tentatives de \myemph{langages haptiques}.
 				Tout d'abord, \mycite[author]{Chang-2002} proposent d'augmenter l'information d'une communication par \textit{talkies-walkies} avec différents types de vibrations.
@@ -3624,62 +3646,84 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Il constate cependant qu'une telle solution nécessite un fort apprentissage ($\approx \mynum[mn]{45}$) pour une utilisation persistente.
 				\mycite[author]{Chan-2008} utilise également des mots haptiques pour aider et assister la prise de contrôle d'un système lors de la réalisation d'une tâche collaborative.
 
-				Récemment, \mycite[author]{Ullah-2011} s'est intéressé aux influences de la communication haptique sur le sentiment de présence et sur la conscience périphérique \myref*{sse-sota-LaCommunicationImpliciteEtExplicite}.
-				Tout d'abord avec des travaux sur la manipulation collaborative d'un bras articulé en environnement virtuel, il montre une amélioration de la conscience périphérique \mycite{Naud-2009}.
-				Puis, c'est avec une tâche de déplacement d'objet virtuel coordonné (une cheville à déplacer dans un trou) que \mycite[author]{Ullah-2010} montre une amélioration significative du sentiment de présence et de la conscience périphérique.
+				Récemment, \mycite[author]{Ullah-2011} s'est intéressé à l'influence de la communication haptique sur le sentiment de présence et sur la conscience périphérique \myref*{sse-sota-LaCommunicationImpliciteEtExplicite}.
+				Tout d'abord avec une étude sur la manipulation collaborative d'un bras articulé en environnement virtuel, il montre une amélioration de la conscience périphérique \mycite{Naud-2009}.
+				Puis, en proposant une tâche de déplacement d'objet virtuel coordonné (une cheville à déplacer dans un trou), \mycite[author]{Ullah-2010} montre une amélioration significative du sentiment de présence et de la conscience périphérique.
+			\end{mysubsection}
+			\begin{mysubsection}[sse-exp4-OutilsHaptiquesPourLaCollaboration]{Outils haptiques pour la collaboration}
+				Sur la base de cet état de l'art et des conclusions obtenues au fil des trois études précédentes, plusieurs propositions s'imposent pour le développement d'outils haptiques de collaboration.
+
+				Pour commencer, la présence d'un \myglos{glo-Meneur} répond à deux contraintes identifiées lors de la troisième expérimentation : l'identification des rôles et la coordination des tâches.
+				Afin de forcer une identification des rôles, nous allons proposer un outil spécifique destiné seulement au \myglos{glo-Meneur} et des outils de déformations pour les \myglos*{glo-Suiveur}.
+				De plus, nous avons vu que le \myglos{glo-Meneur} élabore une stratégie en explorant l'environnement virtuel; c'est lui qui aura accès aux outils d'orientation et de manipulation de la molécule.
+
+				Le \myglos{glo-Meneur} aura à sa disposition une période de \mybrainstorming durant laquelle il pourra manipuler la molécule afin de discuter avec ces collaborateurs de la meilleure stratégie à adopter.
+				Durant cette phase de travail, seul l'outil d'orientation, détenu par le \myglos{glo-Meneur}, sera activée.
+
+				Étant donné qu'il détermine les tâches à effectuer par les \myglos*{glo-Suiveur}, il faut également qu'il ait la possibilité d'indiquer des cibles durant la tâche de déformation.
+				Nous avions souligné ce point lors de la première expérimentation et \mycite[author]{Moll-2009} met en avant la pertinence de la modalité haptique pour effectuer une désignation.
+
+				Cette première expérimentation avait également permis d'identifier une stratégie offrant un bon compromis entre la collaboration et les \myglos*{glo-ConflitDeCoordination} : l'interaction en champs voisins.
+				Pour mémoire, les interactions en champs voisins correspondent à la manipulation de deux zones distantes d'environ un \myglos{glo-Residu}.
+				Afin de favoriser ce type de stratégie, les outils proposés agiront de préférence à l'échelle des \myglos*{glo-Residu} en laissant la possibilité le cas échéant, de manipuler au niveau atomique afin d'avoir accès à un niveau de déformation fin..
+
+				Pour finir, la seconde expérimentation a mis en avant la difficulté d'utiliser deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
+				C'est pourquoi, les opérateurs qui seront chargés d'effectuer la déformation seront en configuration \myglos*{glo-Monomanuel} avec à leur disposition un unique outil de déformation.
+				Le \myglos{glo-Meneur}, qui aura à sa disposition des outils moins complexes à utiliser, manipulera en configuration \myglos*{glo-Bimanuel}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-Objectifs]{Objectifs}
-				Les trois précédentes expérimentations nous ont permis de constater un des points critiques de la collaboration synchrone colocalisée : la communication entre les acteurs.
-				Dans cette quatrième et dernière expérimentation, nous proposons des outils haptiques pour assister la communication entre les partenaires et les testons dans le cadre d'une tâche de déformation collaborative de molécule.
+				Dans cette expérimentation, nous proposons des outils haptiques pour assister la communication entre les partenaires et souhaitons les tester dans le cadre d'une tâche de déformation collaborative de molécule.
 
-				\mycite[author]{Moll-2009} a montré la pertinence de la modalité haptique pour la communication et en particulier pour le processus de désignation.
-				Nous souhaitons tester les bénéfices d'un outil de désignation haptique sur les performances globales de réalisation de la tâche et sur la communication entre les sujets.
+				\mycite[author]{Moll-2009} ont montré la pertinence de la modalité haptique pour la communication et en particulier pour le processus de désignation.
+				Sur la base de la configuration collaborative détaillée précédemment \myref*{sse-exp4-OutilsHaptiquesPourLaCollaboration}, nous souhaitons étudier la contribution des outils haptiques proposés pour l'amélioration des performances puis de la communication dans le groupe.
 
-				De plus, cette quatrième et dernière expérimentation menée dans le cadre de cette thèse est l'occasion de confronter la plateforme et les méthodes de travail proposées à des experts susceptibles d'utiliser un tel environnement de travail.
-				C'est pourquoi une partie des sujets évalués sera constituée de biologistes œuvrant dans le domaine de la biologie moléculaire et sensibilisés aux plateformes d'interaction avec les molécules.
-				Ces sujets permettront d'obtenir des avis pertinents sur l'utilité des outils proposés et des propositions d'évolutions.
+				De plus, cette dernière expérimentation est l'occasion de confronter la plateforme et les méthodes de travail proposées à des experts susceptibles d'utiliser un tel environnement de travail.
+				C'est pourquoi une partie des sujets évalués sera constituée de biologistes œuvrant dans le domaine de la biologie moléculaire et sensibilisés aux plateformes d'interaction avec les environnements moléculaires virtuels.
+				Ces sujets permettront d'obtenir des avis pertinents sur l'utilité des outils proposés et sur les évolutions possibles.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp4-DescriptionDeLaTache]{Description de la tâche}
-				La tâche proposée est la déformation de molécules et de complexes de molécules dans un \myacro{acr-EVC}.
-				L'objectif est de la rendre le plus conforme possible au modèle.
+				La tâche proposée est de nature similaire à celle exposée dans la seconde expérimentation et la troisième expérimentation, il faut modifier la conformation initiale d'une molécule pour atteindre une conformation stable \myref*{sse-exp2-DescriptionDeLaTache}.
+				Pour la première fois, ils seront soumis à une tâche de \myglos{glo-DockingMoleculaire} faisant intervenir deux molécules.
 
 				La tâche est proposée à des groupes de trois sujets : les \myglos*{glo-Trinome}.
-				Dans ces \myglos*{glo-Trinome}, un \og coordinateur \fg et deux \og opérateurs \fg ont à leur disposition différents outils.
-				Ils ont la possibilité de communiquer sans restriction de façon orale, gestuelle ou même virtuelle.
+				Dans ces \myglos*{glo-Trinome}, un \og coordinateur \fg et deux \og opérateurs \fg ont à leur disposition différents outils pour l'orientation, la déformation, la désignation ou la manipulation.
+				Le coordinateur jouera le rôle du \myglos{glo-Meneur}.
+				Les sujets ont la possibilité de communiquer sans restriction par différents canaux : oral, gestuel ou virtuel.
 
-				Cinq molécules sont utilisés dans le cadre de cette expérimentation dont trois exclusivement réservées pour l'entraînement.
+				Durant cette expérimentation, nous présentons aux sujets cinq molécules; trois d'entre elles sont utilisées pour l'entraînement.
 				Chaque molécule est présentée dans la \myref{sse-pro-ListeDesMolecules}.
-				L'affichage des molécules est identique à celui de la troisième expérimentation présenté dans la \myref{sss-exp3-VisualisationEtRepresentation} : la molécule déformable est représentée en \myCPK et \myNewRibbon alors que la molécule cible est en \myNewRibbon transparent.
 				Les cinq molécules sont utilisés pour les différents scénarios décrits ci-dessous.
 				\begin{description}
 					\item[Entraînement~\myscenario{1}]
-						Le premier entraînement est destiné à familiariser les sujets avec l'outil de désignation.
+						Le premier entraînement est destiné à familiariser les sujets avec l'outil de désignation ainsi qu'avec la structure du groupe.
 						Cet entraînement se déroule sur la molécule \myTRPCAGE.
-						La tâche est volontairement peu complexe et est surtout destinée à permettre aux sujets d'intégrer les étapes du processus de désignation \myref*{sss-Shaddock-OutilDeDesignation}.
+						La tâche est volontairement peu complexe.
+						Elle est destinée à enseigner aux sujets les étapes du processus de désignation \myref*{sss-Shaddock-OutilDeDesignation}.
 					\item[Entraînement~\myscenario{2}]
 						La seconde phase d'entraînement s'effectue sur la molécule \myPrion qui est de taille plus importante.
-						C'est dans cette phase qu'on introduit les outils de communication haptique pour les phases de désignation.
-						Cet entraînement permet de continuer l'assimilation du processus de désignation sur une tâche plus complexe tout en introduisant l'assistance haptique.
+						C'est dans cette phase que sont introduits les outils de communication haptique pour les phases de désignation.
+						Cet entraînement permet de renforcer l'apprentissage du processus de désignation sur une tâche plus complexe en ajoutant la modalité haptique.
 					\item[Entraînement~\myscenario{3}]
 						La dernière phase d'entraînement s'adresse au coordinateur puisqu'elle introduit l'outil de manipulation qui jusqu'à présent n'a pas été utilisé.
-						La molécule \myTRPZIPPER, de petite taille, a été choisie et est solidaire de l'outil de manipulation.
-						Cette phase d'entraînement permet de découvrir l'ensemble des outils proposés au sein d'un même scénario.
+						La molécule \myTRPZIPPER, de petite taille, a été choisie.
+						La molécule est rendue solidaire de l'outil de manipulation pour que le coordinateur puisse découvrir ce nouvel outil.
 					\item[Scénario~\myscenario{1}]
 						La première tâche à réaliser est la déformation de la molécule \myUbiquitin.
 						La déformation proposée est identique à la déformation proposée dans la troisième expérimentation.
 						En effet, cette tâche s'est révélée très intéressante pour stimuler une collaboration étroite.
-						Dans cette tâche, seuls les outils de désignation, de déformation et d'orientation sont activés; la molécule \myUbiquitin possède des atomes fixes afin de ne pas dériver.
+						Dans cette tâche, seuls les outils de désignation, de déformation et d'orientation sont activés; la molécule \myUbiquitin est ancrée dans l'environnement virtuel à l'aide d'atomes fixes.
 					\item[Scénario~\myscenario{2}]
 						La seconde tâche consiste à reconstituer le complexe de molécules \myNusENusG.
-						La molécule \myNusG est laissé complétement libre de mouvement (pas d'atome fixes) et doit être amarrée à la molécule \myNusE : c'est une tâche de \myglos{glo-DockingMoleculaire} simplifiée.
-						On distingue deux phases dans cette tâche; il faut approcher la molécule \myNusG puis affiner l'amarrage par une déformation interne de \myNusG.
-						Tous les outils (désignation, déformation, orientation et manipulation) sont activés dans ce scénario; la molécule \myNusG est solidaire de l'outil de manipulation et l'ensemble des atomes de la chaîne carbonée principale de la molécule \myNusE sont fixes afin d'éviter que cette dernière ne dérive.
+						La molécule \myNusG est laissée libre de mouvement (pas d'atome fixes) et doit être amarrée à la molécule \myNusE : c'est une tâche de \myglos{glo-DockingMoleculaire} simplifiée.
+						On distingue deux phases dans cette tâche; il faut approcher la molécule \myNusG; puis il faut affiner l'amarrage par une déformation interne de \myNusG.
+						Tous les outils (désignation, déformation, orientation et manipulation) sont activés dans ce scénario; la molécule \myNusG est solidaire de l'outil de manipulation.
+						La molécule \myNusE est ancrée dans l'environnement virtuel à l'aide d'atome fixes (sa chaîne carbonée).
 				\end{description}
 
-				Afin de pouvoir réaliser la tâche demandée, les sujets disposent de deux informations calculées en temps-réel.
-				Une première mesure est le score \myacro{acr-RMSD}, déjà décrit dans la \myref{sse-exp2-DescriptionDeLaTache}.
+				Durant l'expérimentation, les sujets disposent de deux informations calculées en temps-réel.
+				La première mesure est le score \myacro{acr-RMSD}, déjà décrit dans la \myref{sse-exp2-DescriptionDeLaTache}.
 				La seconde mesure est l'énergie totale du système, valeur calculée par \myacro{acr-NAMD} et représentant la synthèse des énergies électriques et des énergies de \myname[van der]{Waals}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-SpecificitesDuProtocoleExperimental]{Spécificités du protocole expérimental}
@@ -3687,14 +3731,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La méthode expérimentale est exposée dans la \myref{sec-met-exp4-QuatriemeExperimentation}.
 				Un résumé de cette méthode se trouve dans la \myref{tab-exp4-SyntheseDeLaProcedureExperimentale}.
 				\begin{mysubsubsection}[sss-exp4-MaterielUtilise]{Matériel utilisé}
-					Dans cette quatrième et dernière expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
-					Les deux opérateurs auront à leur disposition deux outils de déformation adaptés pour le processus de désignation \myref*{sss-exp4-OutilsDInteraction} matérialisés par des \myOmni.
-					Le coordinateur aura à sa disposition trois outils dont deux basés sont des interfaces haptiques : une souris \myUSB pour l'outil d'orientation, un \myOmni pour l'outil de désignation et un \myDesktop pour l'outil de manipulation.
-					Chaque interface haptique est liée à un serveur \myacro{acr-VRPN}.
+					Dans cette expérimentation, nous introduisons de nouveaux outils destinés à améliorer les interactions entre les membres d'un \myglos{glo-Trinome}.
+					Les deux opérateurs auront à leur disposition deux outils de déformation matérialisés par des \myOmni.
+					Le coordinateur aura à sa disposition trois outils :
+					\begin{itemize}
+						\item une souris \myUSB pour l'outil d'orientation;
+						\item un \myOmni pour l'outil de désignation (lié à un serveur \myacro{acr-VRPN});
+						\item un \myDesktop pour l'outil de manipulation (lié à un serveur \myacro{acr-VRPN}).
+					\end{itemize}
 
 					De la même manière que dans la troisième expérimentation, une caméra vidéo \mySony (\textsc{hdr-cx550}) a été installée derrière les sujets afin de filmer à la fois les sujets et l'écran de vidéoprojection.
-					Le son est également enregistré par la caméra.
-					Là encore, les vidéos sont exportées et séquencées \myafortiori à l'aide du logiciel \myiMovie.
+					Le son est également enregistré.
+					Là encore, les vidéos sont exportées et séquencées \myafortiori à l'aide des logiciels \myiMovie et \texttt{ffmpeg}.
 
 					La \myref{fig-exp4-SchemaDuDispositifExperimental} illustre le dispositif expérimental par un schéma.
 					La \myref{fig-exp4-PhotographieDuDispositifExperimental} est une photographie de la salle d'expérimentation.
@@ -3709,10 +3757,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-VisualisationEtRepresentation]{Visualisation et représentation}
-					Dans cette quatrième et dernière expérimentation, les molécules étant très importantes, surtout pour le complexe de molécules \myNusENusG, nous avons décidé de donner un rendu secondaire aux atomes.
-					En effet, ils sont à présents rendus de manière transparente.
-					Cependant, nous verrons dans la section suivante que le coordinateur aura la possibilité de colorer les \myglos*{glo-Residu} au besoin.
-					Pour le reste, le rendu visuel est similaire à celui des expérimentations trois et quatre.
+					L'affichage des molécules est similaire à celui de la troisième expérimentation présenté dans la \myref{sss-exp3-VisualisationEtRepresentation} : la molécule déformable est représentée en \myCPK et \myNewRibbon alors que la molécule cible est en \myNewRibbon transparent.
+					Cependant, les molécules étant de taille importante, nous avons décidé de représenter les atomes en transparence et sans couleur afin d'éviter une surcharge visuelle, surtout dans le cas du complexe de molécules \myNusENusG.
+					Cependant, nous verrons dans la section suivante que l'outil de désignation permet de mettre en évidence les atomes des \myglos*{glo-Residu} désignés par une mise en couleur.
+
 					La \myref{fig-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1} représente la molécule \myUbiquitin et la \myref{fig-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2} représente le complexe de molécules \myNusENusG.
 
 					\begin{myfigure}
@@ -3725,41 +3773,65 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-OutilsDInteraction]{Outils d'interaction}
-					Pour cette expérimentation, des modifications ont été apportés aux différents outils.
+					Pour cette expérimentation, nous avons développé de nouveaux outils héritant des outils de base proposés par \myacro{acr-VMD}.
 					En effet, nous souhaitons apporter une assistance haptique afin d'augmenter la communication sensorielle entre les sujets.
-					Les outils modifiés sont l'outil d'orientation, l'outil de désignation, l'outil de déformation par atome et l'outil de déformation par molécule que nous nommerons outil de manipulation.
-					Ces outils sont décrits dans la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
-					\begin{description}
-						\item[Outil de désignation]
-							Le coordinateur est en charge d'effectuer les désignations envers les opérateurs.
-							Nous souhaitons fournir au coordinateur un moyen de connaître l'état de la désignation à chaque instant.
-							Une vibration est donc générée sur l'outil de désignation lorsque le coordinateur désigne une cible.
-							L'arrêt de la vibration informe le coordinateur que la désignation vient d'être acceptée par un opérateur.
-							Tant que la cible désignée par le coordinateur n'aura pas été acceptée, le coordinateur ne pourra pas désigner une autre cible.
-						\item[Outil de déformation]
-							Un outil de déformation par atome est fourni aux deux opérateurs.
-							Le coordinateur indiquer qu'une nouvelle désignation a été effectuée en émettant une vibration chez les opérateurs.
-							Il est à noter que si les opérateurs sont en train de déformer la molécule, ils ne ressentent pas la vibration mais dès qu'ils relâchent leur sélection, la vibration leur indique qu'une requête est en cours.
-							Les opérateurs ont la possibilité d'accepter ou non la désignation.
-							Lorsque un opérateur accepte la désignation, les vibrations du coordinateur et des opérateurs s'arrêtent.
-							L'opérateur qui a accepté est alors attiré vers la cible à déformer.
-							De plus, sa prochaine déformation lui permettra la déformation d'un \myglos{glo-Residu} ce qui est un gain de potentiel de déformation substantiel.
-							L'objectif de cette augmentation des capacités est de stimuler l'envie d'interagir avec le coordinateur.
-						\item[Outil de manipulation]
-							Un troisième outil, détenu par le coordinateur, permet le déplacement de la molécule (outil de déformation au niveau moléculaire).
-							Cet outil va permettre au coordinateur de déplacer la molécule comme un bloc pour la rapprocher de sa cible finale.
-							Afin d'aider le coordinateur dans cette tâche, nous avons souhaité utiliser les actions des opérateurs pour aider au déplacement de la molécule.
-							Ainsi, lorsque les opérateurs effectuent une déformation, une infime partie de l'effort déployé est reporté sur l'ensemble de la molécule afin de la déplacer avec cette même intention.
-							Les efforts reportés sont relativement faibles pour ne pas perturber la manipulation du coordinateur mais modifient sensiblement le déplacement de la molécule.
-						\item[Outil d'orientation]
-							Pour finir, la souris permettant de modifier l'orientation de la scène est assignée au coordinateur.
-							Cet outil, générateur de \myglos*{glo-ConflitDeCoordination}, a été de nouveau mis à disposition après avoir été enlevé de la troisième expérimentation.
-							Il s'est avéré, lors de la précédente expérimentation, que les sujets sont en demande de cet outil pour certaines situations.
-							La souris associée à cet outil constitue le troisième périphérique destiné au coordinateur.
-							En surchargeant le coordinateur avec un troisième outil, l'objectif est que la souris soit utilisée seulement lorsque c'est réellement nécessaire.
-							En effet, la modification de l'orientation peut perturber les manipulations en cours effectuées par les opérateurs.
-							La souris \myThreeD utilisée dans la seconde expérimentation a été remplacée par une souris \myUSB plus traditionnelle car c'est un périphérique connu de tous les sujets qui ne nécessite pas d'apprentissage.
-					\end{description}
+					Quatre outils sont proposés dont les fonctionnalités sont résumées ci-après.
+					Pour une description technique détaillée de ces outils, se reporter à la \myref{sse-Shaddock-OutilsDeManipulationAvances}.
+					\begin{myparagraph}[par-exp4-OutilDeDesignation]{Outil de désignation}
+						\begin{description}
+							\item[Utilisateur] Coordinateur.
+							\item[Matériel] \myOmni.
+							\item[Fonction] Permet de désigner un \myglos{glo-Residu} aux opérateurs.
+							\item[Fonctionnement]
+								Un des rôles du coordinateur est de désigner des structures (des \myglos*{glo-Residu}) à déformer aux opérateurs.
+								L'opérateur pourra accepter ou non cette désignation.
+								Tant que la cible désignée par le coordinateur n'aura pas été acceptée, le coordinateur pourra modifier la cible courante.
+							\item[Rendu haptique]
+								Lorsque le coordinateur effectue une désignation, une vibration est générée sur son outil.
+								Cette vibration sinusoïdale s'arrête dès qu'un opérateur a accepté la désignation ce qui permet au coordinateur d'être informé que la désignation a été acceptée.
+						\end{description}
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp4-OutilDeDeformation]{Outil de déformation}
+						\begin{description}
+							\item[Utilisateur] Opérateur.
+							\item[Matériel] \myOmni.
+							\item[Fonction] Permet de déformer un ou plusieurs atomes.
+							\item[Fonctionnement]
+								Le rôle principal de l'opérateur est déformer un ou plusieurs atomes dans la molécule.
+								Il a la possibilité de déformer des atomes seuls de manière autonome.
+								S'il accepte une désignation proposée par le coordinateur, il a alors la possibilité de déformer un \myglos{glo-Residu} avec une force de déformation plus importante, l'objectif étant de favoriser l'utilisation de cet outil.
+							\item[Rendu haptique]
+								Lorsque le coordinateur effectue une désignation, l'opérateur est soumis à une vibration sinusoïdale sauf si ce dernier est déjà en train de déformer.
+								S'il décide d'accepter la désignation, la vibration s'arrête et l'opérateur est alors attiré directement vers la cible par une attraction de type masse-ressort.
+						\end{description}
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp4-OutilDeManipulation]{Outil de manipulation}
+						\begin{description}
+							\item[Utilisateur] Coordinateur.
+							\item[Matériel] \myDesktop.
+							\item[Fonction] Permet de déplacer l'ensemble des atomes d'une molécule.
+							\item[Fonctionnement]
+								Cet outil est attaché à une molécule défini pour chaque scénario.
+								Tout mouvement de cet outil permet de déplacer l'ensemble des atomes de la molécule attachée.
+							\item[Rendu haptique]
+								Le retour haptique est un système masse-ressort qui contraint le coordinateur à rester au centre de la molécule attachée.
+								De plus, toute déformation effectuée par un opérateur est reportée, dans une proportion relativement faible, sur cet outil qui influe ainsi le déplacement global de la molécule.
+						\end{description}
+					\end{myparagraph}
+					\begin{myparagraph}[par-exp4-OutilDOrientation]{Outil d'orientation}
+						\begin{description}
+							\item[Utilisateur] Coordinateur.
+							\item[Matériel] Souris \myUSB.
+							\item[Fonction] Permet de modifier le point de vue de la scène.
+							\item[Fonctionnement]
+								Cet outil remplace la souris \myThreeD utilisée dans la seconde expérimentation qui s'est montrée trop peu intuitive pour les utilisateurs.
+								Il permet de modifier l'orientation de la scène.
+								Cet outil modifie l'ensemble de la perception de la scène ce qui peut perturber les opérateurs.
+								C'est pourquoi il est proposé comme un troisième outil afin qu'il ne soit utilisé que lorsque c'est vraiment nécessaire.
+							\item[Rendu haptique]
+								Cet outil ne permet de retour haptique.
+						\end{description}
+					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mytable}
 					\mycaption[tab-exp4-SyntheseDeLaProcedureExperimentale]{Synthèse de la procédure expérimentale}
@@ -3816,7 +3888,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp4-Resultats]{Résultats}
 			Cette section présente et analyse l'ensemble des mesures expérimentales de cette quatrième étude.
-			Les données, qui sont appareillées et en faible nombre, ont été confrontées au test des rangs signés de \mycite[author]{Wilcoxon-1945}.
+			Les données, qui sont appareillées et en faible nombre, ont été analysées par le test des rangs signés de \mycite[author]{Wilcoxon-1945}.
 			\begin{mysubsection}[sse-exp4-AmeliorationDesPerformances]{Amélioration des performances}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
@@ -3894,37 +3966,36 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre un effet significatif de l'assistance haptique \myvari{1} sur ce temps moyen \myvard{6} (\myanova{exp4-attract-time-haptic-anova.tex}) inférieur de \myratio{exp4-attract-time-haptic-ratio.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
-					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
-					L'assistance haptique proposée ne semble pas permettre d'améliorer la collaboration entre les sujets et ne confirme pas l'hypothèse~\myhypothesis{1}.
-					D'ailleurs, la \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} montre que le temps mis pour atteindre ce score ne s'est également pas amélioré.
+					En observant le meilleur score \myacro{acr-RMSD} obtenu par les participants avec et sans assistance haptique, on constate qu'il n'y a pas d'amélioration significative des performances \myref*{fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique}.
+					L'assistance haptique proposée ne semble pas permettre d'améliorer les performances et ne confirme pas l'hypothèse~\myhypothesis{1}.
+					D'ailleurs, la \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} montre que le temps mis pour atteindre ce score n'est également pas amélioré.
 
-					Cependant, une analyse segmentée en fonction des scénarios montre que les outils d'assistance haptique permettent une amélioration sur le complexe de molécules \myNusENusG (scénario~\myscenario{2}) mais pas sur la molécule \myUbiquitin (scénario~\myscenario{1}).
+					Cependant, une analyse en fonction des scénarios montre que les outils d'assistance haptique permettent une amélioration sur le complexe de molécules \myNusENusG (scénario~\myscenario{2}) mais pas sur la molécule \myUbiquitin (scénario~\myscenario{1}).
 					Le complexe de molécules \myNusENusG est la tâche la plus complexe à réaliser notamment à cause du nombre importants de \myglos*{glo-Residu} à déformer.
-					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises une sorte d'abandon face à la complexité de cette tâche : \og On ne fera pas mieux \fg, \og On n'arrivera jamais à améliorer le score \fg, \og Cette molécule est trop difficile \fg, \myetc
+					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises que les groupes abandonnaient avant la fin des \mynum[mn]{8} face à la complexité de cette tâche : \og On ne fera pas mieux \fg, \og On n'arrivera jamais à améliorer le score \fg, \og Cette molécule est trop difficile \fg, \myetc
 					Confrontés à ces difficultés, les sujets ont été plus performants lorsqu'ils étaient assistés par les outils d'assistance haptique.
 
 					Le coordinateur est le seul sujet qui ne peut pas effectuer de déformation.
-					Il se consacre alors à l'évaluation des meilleures stratégies pour la réalisation de la tâche.
+					Il se consacre à la planification des tâches à réaliser.
 					Grâce aux outils d'assistance haptique mis à sa disposition, il peut communiquer plus facilement et plus rapidement ces directives comme expliqué dans la \myref{sse-exp4-AmeliorationDeLaCommunication}.
-					Ces outils permettent d'augmenter l'attention des opérateurs qui vont effectuer moins d'actions solitaires.
-					Une action solitaire est une action que l'opérateur décide, sans concertation avec les autres membres du groupe et potentiellement, en désaccord avec la stratégie globale adoptée par ses partenaires.
-					Ces actions peuvent ainsi être improductives et éventuellement interrompues par une requête du coordinateur.
-					Elles sont en général relativement brèves dans le temps par rapport aux actions proposées et désignées par le coordinateur.
+					Ces outils permettent d'augmenter l'attention des opérateurs qui vont effectuer moins d'actions autonomes.
+					Une action autonome est une action que l'opérateur décide de réaliser sans concertation avec les autres membres du groupe et potentiellement, en désaccord avec la stratégie globale adoptée par ses partenaires.
+					Elles sont en général relativement brèves dans le temps par rapport aux actions proposées et désignées par le coordinateur car elle peut être interrompue à tout moment par une requête du coordinateur.
+					Ces actions peuvent ainsi être relativement improductives.
 
-					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} et la \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} montrent que ces actions solitaires diminuent avec la présence des outils d'assistance haptique.
+					La \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} et la \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} montrent que ces actions autonomes diminuent avec la présence des outils d'assistance haptique.
 					En effet, on constate sur la \myref{fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique} que la fréquence des sélections effectuées par les opérateurs diminue avec la présence d'une assistance haptique.
 					Cependant, cette diminution peut être due à deux raisons différentes.
-					Soit les opérateurs ont une tendance à moins travailler ce qui diminue la fréquence totale; soit ils effectuent des déformations plus longues ce qui diminue le nombre de déformations sur le temps total.
+					Soit les opérateurs ont une tendance à travailler moins ce qui diminue le nombre total de sélections (et donc la fréquence); soit ils effectuent des déformations plus longues (ce qui diminue la fréquence).
 					La \myref{fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique} montre que la présence des outils d'assistance haptique allonge la durée des sélections ce qui nous permet de déduire que les opérateurs produisent des déformations plus longues dans le temps.
-					Les outils haptiques proposés ont eu pour effet de diminuer le nombre d'actions solitaires.
+					Les outils haptiques proposés ont eu pour effet de diminuer le nombre d'actions autonomes.
 
-					La réduction de ces actions solitaires permet de mieux respecter la stratégie commune dirigée par le coordinateur.
+					Si les actions autonomes sont moins nombreuses, alors les opérateurs sont plus disponibles pour respecter la stratégie globale mise en place par le coordinateur.
 					Les séquences de sélection et donc de déformation sont alors plus longues et moins nombreuses.
-					D'ailleurs, la \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} montre que les opérateurs sont plus rapides à atteindre la cible désignée avec l'assistance haptique ce qui leur permet de passer plus de temps à déformer mais moins de temps à chercher des tâches à réaliser.
+					D'ailleurs, la \myref{fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique} montre que les opérateurs sont plus rapides à atteindre la cible désignée grâce à l'assistance haptique ce qui leur permet de passer plus de temps à déformer mais moins de temps à effectuer la sélection.
 
-					Nous avons vu que les outils d'assistance haptique pour la désignation aident le coordinateur à imposer une stratégie commune ce qui a pour effet d'améliorer les performances du groupe sur les tâches les plus complexes.
-					L'hypothèse~\myhypothesis{1} est confirmée pour la tâche la plus complexe.
-					Il semble que quelque soit la stratégie, le travail collaboratif sera plus efficace si tous les membres du groupe sont en accord avec la stratégie à suivre.
+					Nous avons vu que les outils d'assistance haptique pour la désignation aident le coordinateur à imposer une stratégie globale ce qui a pour effet d'améliorer les performances du groupe, surtout sur les tâches les plus complexes.
+					L'hypothèse~\myhypothesis{1} est donc partiellement confirmée pour la tâche la plus complexe.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-AmeliorationDeLaCommunication]{Amélioration de la communication}
@@ -3990,39 +4061,39 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre un effet significatif de l'ordre de passage de l'assistance haptique sur le temps de parole \myvard{4} (\myanova{exp4-annotation-time-haptic-first-anova.tex}) avec une différence de \myratio{exp4-annotation-time-haptic-first-ratio.tex}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-AnalyseEtDiscussion]{Analyse et discussion}
-					Durant le processus de désignation, deux solutions différentes sont proposées aux opérateurs pour les prévenir qu'une nouvelle désignation vient d'être effectuée; une première solution exclusivement visuelle; une seconde solution visuo-haptique.
-					Pour des désignations exclusivement visuelles, les opérateurs répondent à la désignation soit parce qu'ils ont vu une nouvelle cible en surbrillance, soit parce que le coordinateur leur a communiqué la présence d'une nouvelle cible.
-					Dans le premier cas, le temps de réponse de l'opérateur pour accepter la désignation va dépendre du degré d'attention de celui-ci et de la visibilité de la cible (cible masquée par des atomes ou cible trop éloignée du champ de vision).
+					Dans le cas sans assistance haptique, les opérateurs réagissent à une désignation pour deux raisons : soit ils ont vu une nouvelle cible désignée, soit le coordinateur a indiqué oralement la présence d'une nouvelle cible.
+					Dans le premier cas, le temps de réponse de l'opérateur pour accepter la désignation dépend de son degré d'attention et de la visibilité de la cible (cible masquée par des atomes ou cible trop éloignée du champ de vision).
 					Dans le second cas, c'est le temps utilisé pour les échanges verbaux et la qualité des explications qui va déterminer le temps de réponse.
-					Dans un cas comme dans l'autre, il faut que l'opérateur soit attentif concernant toute nouvelle désignation ce qui réduit son attention pour les autres évènements (conscience périphérique).
+					Dans le second cas, le temps de réponse dépend de la quantité et de la qualité des échanges verbaux échangés.
+					Ces deux configurations nécessitent que l'opérateur soit attentif concernant toute nouvelle désignation ce qui réduit son attention pour les autres évènements (conscience périphérique).
 
 					La \myref{fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique} nous montre que l'utilisation d'un retour haptique au sein de ce processus de désignation améliore considérablement le temps de réponse.
-					En effet, l'outil d'assistance haptique va signaler directement aux opérateurs qu'une désignation vient d'être effectuée par le coordinateur.
+					L'outil d'assistance haptique signale aux opérateurs qu'une nouvelle cible a été désignée par le coordinateur.
+
 					Ce moyen de communication permet d'obtenir une réactivité qui ne dépend plus ni du degré d'attention de l'opérateur, ni des interventions verbales du coordinateur.
-					Cela permet de réduire la charge de travail des opérateurs et du coordinateur qu'ils peuvent consacrer à autre chose.
+					Cela permet de réduire la charge de travail des opérateurs et du coordinateur qu'ils peuvent consacrer à la réalisation d'autre tâches.
 
-					L'avantage de l'utilisation d'un retour haptique dans ce cas est la possibilité d'informer seulement le ou les sujets concernés par l'information.
-					En utilisant des effets visuels, l'affichage partagé n'aurait pas permis de restreindre l'information aux sujets concernés.
+					L'utilisation du canal haptique permet d'informer seulement le ou les sujets concernés par la désignation.
+					Notre expérimentation utilisant un écran partagé, le canal visuel ne permet pas d'adresser l'information de manière aussi ciblée.
 
-					De plus, l'amélioration de la communication permet d'améliorer la coordination de la stratégie.
-					En effet, une meilleure perception des désignations permet aux opérateurs d'être plus réactifs à la stratégie du coordinateur \myref*{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique}.
-					De plus, leur charge de travail étant allégée par l'assistance haptique, ils sont plus aptes à comprendre la stratégie du coordinateur et à en proposer des améliorations pertinentes.
+					De plus, on constate sur la \myref{fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique} que le nombre de requêtes acceptées par les opérateurs est significativement supérieur avec l'assistance haptique.
+					Les désignations sont mieux perçues avec l'assistance haptique ce qui permet aux opérateurs d'être plus réactifs.
+					Ainsi, la stratégie proposée par le coordinateur est mieux adoptée par les opérateurs.
 
-					Étant donné que les opérateurs sont plus rapides à répondre aux désignations, le coordinateur est libéré plus rapidement de chaque requête qu'il créé.
-					Cela lui permet de se consacrer rapidement à la prochaine désignation qu'il effectuera.
-					Cette routine plus rapidement effectuée permet au coordinateur d'avoir un meilleur rendement et de ne pas laisser les opérateurs sans occupation.
-					On constate cette amélioration de rendement par une vitesse moyenne du coordinateur augmentée comme le montre la \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique}.
+					Les opérateurs étant plus rapides pour accepter une désignation avec l'assistance haptique, le temps d'attente du coordinateur entre chaque désignation est réduit.
+					De cette manière, la fréquence à laquelle il effectue des désignations est augmentée et sa vitesse moyenne de travail est augmentée \myref*{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique}.
+					Les étapes du processus de désignation étant plus rapides, les opérateurs attendent moins que le coordinateur leur donne une nouvelle tâche à effectuer.
 
-					Pourtant, la \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} ne montre pas d'évolution du temps de parole lié à la présence ou à l'absence d'une assistance haptique.
-					L'assistance haptique ne semble pas remplacer les canaux de communication oraux mais semble seulement les remplacer.
+					La \myref{fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique} ne montre pas d'évolution du temps de parole lié à la présence ou à l'absence d'une assistance haptique.
+					Les canaux visuels et haptiques ne semblent pas substituables mais plutôt complémentaires.
 					Cependant, la \myref{fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique} montre que l'ordre de passage a une influence forte sur la communication verbale.
 					En effet, les sujets qui commencent par l'utilisation des outils haptiques produisent significativement plus d'échanges verbaux que les sujets qui commencent sans assistance haptique.
 
 					En ce qui concerne les sujets qui commencent sans assistance haptique, ils éprouvent dès le début le besoin de communiquer verbalement puisque qu'aucun autre moyen de communication ou d'assistance à la communication n'est mis à leur disposition.
-					Lorsque dans un second temps, on ajoute un outil haptique de communication, l'apprentissage leur permet de savoir comment utiliser cet outil haptique afin de remplacer certaines phases de communication verbales.
+					Lorsqu'on ajoute l'assistance haptique dans la seconde étape de l'expérimentation, les sujets ont déjà pu identifier les problématiques d'interaction et utilisent l'assistance haptique à bon escient qui se substitue aux communications verbales.
 
-					Par opposition, les sujets qui commencent par l'utilisation des outils haptiques n'ont pas eu l'expérience nécessaire pour optimiser l'utilisation de l'assistance haptique par rapport aux échanges verbaux.
-					De plus, lorsque dans la seconde phase de l'expérimentation, on leur enlève un outil de communication, ils doivent redéfinir les méthodes de travail et compensent naturellement ce manque par une augmentation du temps de parole.
+					Par opposition, les sujets commençant par l'utilisation de l'assistance haptique apprennent à utiliser les outils et découvrent les tâches à réaliser dans le même temps.
+					Lorsqu'on supprime l'assistance haptique dans la seconde étape de l'expérimentation, ils doivent redéfinir les méthodes de travail et compensent ce manque par une augmentation des communications verbales.
 
 					On constate dans cette section que les outils d'assistance à la communication remplissent leur rôle en améliorant l'efficacité et la qualité de la communication.
 					Ceci nous permet de valider l'hypothèse~\myhypothesis{2}.
@@ -4031,54 +4102,55 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-EvaluationQualitative]{Évaluation qualitative}
-				\begin{mysubsubsection}[sss-exp4-QuestionnaireDUtilisabilite]{Questionnaire d'utilisabilité}
-					Cette dernière expérimentation a été l'occasion d'évaluer l'utilisabilité de la plateforme \myShaddock à l'aide du score \myacro{acr-SUS} décrit dans la \myref{sse-q-QuatriemeExperimentation-LeQuestionnaireSUS}.
-					L'évaluation par l'ensemble des utilisateurs fournit une note relativement peu élevée (\mysummary{exp4-evaluation-sus.tex})\footnote{Pour rappel, les tests d'utilisabilité \myacronl-{acr-SUS} fournissent des notes comprises entre \mynum{0} et \mynum{100}.}.
-					Cependant, si on restreint ce score aux sujets biologistes, le score augmente (\mysummary{exp4-evaluation-sus-biologists.tex}).
-					La plateforme n'est pas encore suffisante dans l'état actuel selon les utilisateurs.
-					En se basant sur les travaux de \mycite[author]{Bangor-2009}, on peut évaluer notre plateforme comme \og \myemph{OK} \fg ce qui signifie qu'elle se trouve en-dessous de la moyenne globale d'utilisabilité du score d'évaluation \myacro{acr-SUS} mais qu'elle reste une application utilisable.
-					L'hypothèse~\myhypothesis{3} est donc partiellement validé avec ces résultats sont mitigés.
+				\begin{mysubsubsection}[sss-exp4-QuestionnaireSurLaCommunicationEtLaConsciencePeripherique]{Questionnaire sur la communication et la conscience périphérique}
+					Les utilisateurs pensent que la plateforme collaborative leur permet d'être relativement conscients des actions de leurs partenaires puisqu'ils estiment comprendre les requêtes et consignes de leurs collègues rapidement (\mysummary{exp4-evaluation-resume-2.tex}) et qu'ils considèrent, à chaque instant, être conscients de la position spatiale virtuelle des autres collaborateurs (\mysummary{exp4-evaluation-resume-1.tex})\footnote{L'échelle de notation est comprise entre \mynum{1} et \mynum{5} mais les moyennes ont été normalisées entre \mynum{0} et \mynum{4}.}.
+					D'ailleurs, les sujets n'estiment pas nécessaire de signaler leurs actions aux partenaires (\mysummary{exp4-evaluation-resume-3.tex}).
+					Avec cette communication à sens unique, c'est la plateforme et ses outils (système de visualisation, assistance haptique) qui permet aux sujets d'avoir une conscience de groupe.
 
-					Il faut noter que la difficulté de la tâche a amplifié le principal défaut de la plateforme : la visualisation.
-					En effet, la quasi-totalité des utilisateurs se sont plaint d'une grande difficulté à percevoir la dimension de profondeur dans l'environnement virtuel ce qui engendre une contrainte importante pour la réussite de la tâche.
-					Plusieurs utilisateurs ont évoqué le besoin d'avoir un système de visualisation en \myThreeD stéréoscopique.
+					Pourtant, les sujets participent inconsciemment au processus de communication pour supporter la conscience de groupe (\mysummary{exp4-evaluation-resume-4.tex}).
+					En effet, les annotations vidéos ont permis de relever, à plusieurs reprises, le besoin d'informer les partenaires sur l'état actuel de l'environnement virtuel (les désignations en cours, les déformations à effectuer, l'évolution du score \myacro{acr-RMSD}, \myetc).
+					Nous pouvons citer par exemple les cas où un coordinateur indique oralement une cible désignée à un opérateur qui ne l'aurait pas vu ou encore un opérateur qui indique au coordinateur un \myglos{glo-Residu} nécessitant une déformation.
 
-					La présence de biologistes dans le panel de sujets a également permis de relever plusieurs remarques et conseils pour des développements futurs.
-					En particulier, ils auraient souhaité pouvoir stabiliser un \myglos{glo-Residu} dans sa position finale ou encore pouvoir déformer des structures moléculaires de taille plus importante que les \myglos*{glo-Residu} tels que les \myhelice* et les \myfeuillet*.
-					Cependant, ce dernier point a été abordé dans la \myref{sss-Shaddock-DeformationParGroupeDAtomes}.
-				\end{mysubsubsection}
-				\begin{mysubsubsection}[sss-exp4-QuestionnaireSurLaConsciencePeripherique]{Questionnaire sur la conscience périphérique}
-					Les utilisateurs pensent être relativement conscients des actions de leurs partenaires puisqu'ils estiment comprendre les requêtes et consignes de leurs collègues rapidement (\mysummary{exp4-evaluation-resume-2.tex}) et qu'ils considèrent être conscients à chaque instant de la position des autres collaborateurs (\mysummary{exp4-evaluation-resume-1.tex})\footnote{L'échelle de notation est comprise entre \mynum{1} et \mynum{5} mais les moyennes ont été normalisées entre \mynum{0} et \mynum{4}.}.
-					D'ailleurs, ils pensent que leurs partenaires font de même puisqu'ils n'éprouvent pas le besoin de se signaler (\mysummary{exp4-evaluation-resume-3.tex}).
-					La communication nécessaire à la conscience périphérique semble être à sens unique : chaque utilisateur va chercher les informations dont il a besoin pour connaître la position et les agissements de ces partenaires mais il ne cherche pas à signaler ses propres actions.
-					La conscience périphérique repose essentiellement sur les dispositifs de la plateforme, à savoir les affichages visuels et les outils de communication haptique lorsqu'ils sont disponibles.
-
-					Cependant, il y a tout de même un cas pour lequel les utilisateurs éprouvent le besoin de se signaler : l'acceptation d'une requête ou d'une consigne (\mysummary{exp4-evaluation-resume-4.tex}).
-					Pourtant, les sujets participent à la conscience périphérique collective malgré eux sans le faire ressortir dans le questionnaire.
-					En effet, les annotations vidéos ont permis de relever, à plusieurs reprises, le besoin d'informer les partenaires sur l'état actuel de l'environnement virtuel.
-					Par exemple, le coordinateur indique oralement une cible qu'il a désigné mais qu'un opérateur n'aurait pas vu, ou encore un opérateur peut signaler au coordinateur un \myglos{glo-Residu} ayant besoin d'être rapidement déplacé.
-
-					Les sujets sont acteurs de la conscience périphérique en commentant verbalement l'environnement virtuel mais ils ne cherchent pas à être particulièrement visibles et remarqués dans cet environnement.
-					Ils souhaitent surtout que les actions qu'ils réalisent soient clarifiées en cas d'incompréhension ou de litige.
-					Dans ce cas, l'assistance haptique qui leur est proposée ne semble être d'aucune aide.
-					En effet, un test de \mycite[author]{Wilcoxon-1945} montre qu'il n'y a aucun effet significatif des outils de communication haptique sur :
+					Les sujets participent et soutiennent, par leurs actions, la conscience de groupe.
+					Cependant, ce soutien est souvent inconscient car les sujets ne font pas souvent l'effort de signaler explicitement leurs propres actions ou leur propre situation dans l'environnement virtuel.
+					Seuls les cas d'incompréhension ou de litiges donnent lieu à des précisions verbales des sujets concernés.
+					Il semble que l'assistance haptique ne soit pas utilisée dans ce cas.
+					En effet, un test de \mycite[author]{Wilcoxon-1945} montre qu'il n'y a aucun effet significatif de l'assistance haptique \myvari{1} sur :
 					\begin{itemize}
 						\item la compréhension rapide des actions effectuées par les collègues (\myanova{exp4-evaluation-resume-2-anova.tex});
-						\item le besoin de se signaler (\myanova{exp4-evaluation-resume-3-anova.tex});
-						\item le signalement lors de l'acceptation d'une consigne (\myanova{exp4-evaluation-resume-4-anova.tex}).
+						\item le besoin de signaler ses propres actions (\myanova{exp4-evaluation-resume-3-anova.tex});
+						\item le besoin d'informer les partenaires lors de l'acceptation d'une requête du coordinateur (\myanova{exp4-evaluation-resume-4-anova.tex}).
 					\end{itemize}
 
-					Cependant, on note que les sujets estiment que les consignes peuvent plus souvent se passer d'une communication verbale lorsque les outils de communication haptique sont présents (\mysummary{exp4-evaluation-resume-5.tex}).
-					Un test de \mycite[author]{Wilcoxon-1945} montre un résultat assez proche du seuil de significativité (\myanova{exp4-evaluation-resume-5-anova.tex}).
-					Les outils d'assistance haptique ont été développés afin de communiquer plus rapidement et sur différentes modalités sensorielles lors de la soumission d'une désignation.
-					Les utilisateurs font ressortir à travers le questionnaire, de façon modérée, une meilleure communication avec assistance haptique (\mysummary{exp4-evaluation-resume-5-true.tex}) que sans assistance haptique (\mysummary{exp4-evaluation-resume-5-false.tex}).
-					Ce résultat mitigé peut s'expliquer par le fait que toutes les consignes ne sont pas assistées par des retours haptiques : seules les consignes de désignation sont assistées.
+					Cependant, les sujets estiment que les outils d'assistance haptique permettent souvent de se passer de communication verbale (\mysummary{exp4-evaluation-resume-5.tex}).
+					Un test de \mycite[author]{Wilcoxon-1945} montre un effet significatif de l'assistance haptique sur le besoin des sujets à utiliser la communication verbale (\myanova{exp4-evaluation-resume-5-anova.tex}).
+					Les outils d'assistance haptique ont été développés pour améliorer la communication pour le processus de désignation.
+					À travers le questionnaire, les sujets pensent, de manière modérée, avoir une meilleure communication entre eux avec l'assistance haptique (\mysummary{exp4-evaluation-resume-5-true.tex}) que sans assistance haptique (\mysummary{exp4-evaluation-resume-5-false.tex}).
+					On peut expliquer ce résultat mitigé par le fait que le processus de désignation n'occupe qu'une portion du temps total de réalisation de la tâche; le reste du temps, les moyens habituels de communication sont utilisés par les sujets.
 
-					De plus, le rôle de l'assistance haptique s'est montré particulièrement utile dans la conscience de la position des autres utilisateurs (\myanova{exp4-evaluation-resume-1-anova.tex}).
-					En effet, les sujets ont estimé connaître les zones de travail des partenaires de manière modérée sans assistance haptique (\mysummary{exp4-evaluation-resume-1-false.tex}) alors que la présence de retours haptiques semble améliorer cette perception (\mysummary{exp4-evaluation-resume-1-true.tex}).
+					De plus, le rôle de l'assistance haptique s'est montré particulièrement utile dans la conscience de la position spatiale virtuelle des partenaires (\myanova{exp4-evaluation-resume-1-anova.tex}).
+					Les sujets estiment mieux connaître la position spatiale virtuelle de leurs partenaires avec l'assistance haptique (\mysummary{exp4-evaluation-resume-1-true.tex}) que sans l'assistance haptique (\mysummary{exp4-evaluation-resume-1-false.tex}).
 					Pourtant, les outils d'assistance haptique n'indique en rien la position mais plutôt le statut des partenaires (en cours d'acceptation, en cours de déformation, \myetc).
-					Ce résultat nous permet de supposer que certains statuts fournissent une information suffisante pour ne pas avoir besoin de connaître la position.
-					De cette manière, les sujets ont une conscience adaptée à la situation mais suffisante.
+					On peut supposer que les sujets souhaitent parfois connaître le statut (en cours de déformation, en recherche d'une tâche à effectuer, \myetc) de leur partenaire et que cette information ne nécessite pas d'être accompagnée de la position spatiale virtuelle des partenaires concernés; les sujets cherchent seulement les informations dont ils ont besoin pour obtenir une conscience de groupe adaptée à la situation.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-exp4-QuestionnaireDUtilisabilite]{Questionnaire d'utilisabilité}
+					Cette dernière expérimentation a été l'occasion d'évaluer l'utilisabilité de la plateforme \myShaddock à l'aide du score \myacro{acr-SUS} décrit dans la \myref{sse-q-QuatriemeExperimentation-LeQuestionnaireSUS}.
+					Cette évaluation, menée sur des sujets dont un quart de biologistes, permet d'obtenir un score d'utilisabilité de l'application (\mysummary{exp4-evaluation-sus.tex})\footnote{Pour rappel, les tests d'utilisabilité \myacronl-{acr-SUS} fournissent des scores compris entre \mynum{0} et \mynum{100}.}.
+					\mycite[author]{Bangor-2009} a conduit une étude sur \mynum{3500}~enquêtes menées avec ce test pour obtenir une moyenne : le score moyen est de \mynum{68}.
+					Cependant, si on restreint notre étude de l'utilisabilité aux sujets biologistes, le score augmente (\mysummary{exp4-evaluation-sus-biologists.tex}).
+
+					D'après les utilisateurs, notre plateforme est encore considérée comme incomplète.
+					\mycite[author]{Bangor-2009} propose également de noter les applications évaluées avec le score \myacro{acr-SUS} sur une échelle à sept niveaux : \textit{Worst imaginable}, \textit{Awful}, \textit{Poor}, \textit{Ok}, \textit{Good}, \textit{Excellent} et \textit{Best imaginable}.
+					Selon ce score, \myShaddock se place dans la catégorie \textit{Ok} ce qui en fait un application utilisable en l'état mais pour laquelle des améliorations sont nécessaires.
+					L'hypothèse~\myhypothesis{3} n'est pas validée avec ces résultats mitigés.
+
+					Une limite importante de la plateforme concerne le système de visualisation.
+					En effet, une proportion importante des utilisateurs se sont plaint d'une grande difficulté à percevoir la dimension de profondeur dans l'environnement virtuel.
+					Plusieurs utilisateurs ont évoqué le besoin d'avoir un système de visualisation en \myThreeD stéréoscopique.
+
+					La présence de biologistes dans le panel de sujets a également permis de mettre en évidence différents points critiques à prendre en compte pour les développements futurs.
+					En particulier, ils auraient souhaité pouvoir stabiliser un \myglos{glo-Residu} dans sa position finale ou encore pouvoir déformer des structures moléculaires de taille plus importante que les \myglos*{glo-Residu} tels que les structures secondaires (\myhelice* et \myfeuillet*).
+					Ce dernier point a été abordé dans la \myref{sss-Shaddock-DeformationParGroupeDAtomes}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 		\end{mysection}
@@ -4088,31 +4160,31 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				De plus, nous avons pu confronter la plateforme \myShaddock à des bio-informaticiens, ayant une expertise dans le domaine du \myglos{glo-DockingMoleculaire}.
 
 				Il ressort de cette expérimentation que les outils d'assistance à la communication permettent d'améliorer significativement la communication entre les membres du groupe avec pour conséquence une amélioration des performances, notamment dans les tâches les plus complexes.
-				L'utilisation de l'haptique à bon escient permet de diminuer les temps de réponse lors des communications tout en adressant les informations à transmettre directement aux membres concernés.
-				De plus, la distribution de cette communication sur différentes modalités permet de distribuer la charge de travail pour chaque utilisateur.
+				L'utilisation de l'haptique à bon escient permet de diminuer les temps de réponse lors des communications tout en adressant directement les informations à transmettre aux membres concernés.
+				De plus, la répartition de la communication sur différentes canaux sensoriels permet de soulager de la charge cognitive de travail pour chaque utilisateur.
 
 				Les questionnaires d'utilisabilité ont également permis de montrer que la plateforme souffre d'un défaut important : la visualisation, notamment les problèmes liés à la perception de la profondeur.
 				Cependant, un système de visualisation stéréoscopique devrait permettre de résoudre en grande partie ce problème.
-				Pour les autres aspects de la plateforme, les biologistes se sont principalement montrés enthousiastes.
-				Cependant, ils ont suggéré différents outils qui, selon leur propre expérience, seraient nécessaires à une utilisation plus pertinente de cette plateforme.
-				En particulier, ils ont émis le désir de pouvoir bloquer la position des atomes après les avoir déplacés dans une position finale.
-				Le second outil dont ils auraient aimé disposer est la déformation de blocs tels que les \myhelice* ou les \myfeuillet*.
-				Un tel outil a été discuté dans la \myref{sss-Shaddock-DeformationParGroupeDAtomes} mais les contraintes de manipulation d'un tel ensemble d'atomes entraînerait des modifications importantes sur les métaphores de manipulation.
-				Globalement, la plateforme a séduit les utilisateurs mais a montré quelques faiblesses importantes qui la rende encore trop instable dans l'état actuel.
 
-				Avec le questionnaire portant sur la conscience périphérique, on constate qu'une grande partie de cette conscience repose exclusivement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques lorsqu'ils sont disponibles.
-				En ce sens, l'haptique est pertinent puisqu'il permet d'améliorer les performances en augmentant la conscience périphérique.
+				Avec le questionnaire portant sur la conscience de groupe, on constate qu'une grande partie de cette conscience repose exclusivement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques, lorsqu'ils sont disponibles.
+				En ce sens, la communication haptique est pertinente puisqu'elle permet d'améliorer les performances en augmentant la conscience périphérique.
+				Par exemple, elle permet d'indiquer rapidement l'action d'un partenaire ou elle guide rapidement les utilisateurs les uns vers les autres.
+
+				En ce qui concerne les autres aspects de la plateforme \myShaddock, les biologistes se sont montrés enthousiastes.
+				Ils ont tout de même suggéré différents outils qui, selon leur propre expérience, seraient nécessaires à une utilisation plus pertinente de cette plateforme.
+				En particulier, ils ont émis le désir de pouvoir stabiliser la position des atomes après les avoir placés dans une position finale.
+				Le second outil dont ils auraient aimé disposer est la déformation de blocs tels que les structures secondaires.
+				Cependant, les contraintes de manipulation d'un tel ensemble d'atomes, exposée dans la \myref{sss-Shaddock-DeformationParGroupeDAtomes}, entraînerait des modifications importantes sur les métaphores de manipulation.
+				Globalement, la plateforme a séduit les utilisateurs mais a montré quelques faiblesses importantes qui la rende encore trop instable dans l'état actuel.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-SyntheseEtPerspectives]{Synthèse et perspectives}
-				Cette dernière expérimentation nous a permis de mettre en avant la pertinence de la communication haptique dans le cadre d'une tâche synchrone colocalisée de collaboration étroite.
+				Cette dernière expérimentation nous a permis de mettre en avant la pertinence de la communication haptique dans le cadre d'une tâche de collaboration étroitement couplée.
 				L'outil haptique proposé ne concerne que le processus de désignation mais d'autres aspects de la communication peuvent être explorés.
-				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose des idées intéressantes sur le sujet.
-				Notons par exemple la possibilité de ressentir le curseur de ses partenaires, métaphores qui devrait permettre d'améliorer encore la conscience périphérique.
-				La possibilité d'\myemph{attraper} un curseur puis de le \myemph{tirer} vers une cible peut également se montrer pertinente.
+				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose plusieurs métaphores sur le sujet comme par exemple la possibilité de ressentir la position du curseur des partenaires, métaphores qui devrait permettre d'améliorer la conscience de groupe ou encore la possibilité d'\myemph{attraper} un curseur puis de le \myemph{tirer} vers une cible.
 
 				En ce qui concerne les améliorations de la plateforme \myShaddock, de nombreuses propositions ont été suggérées par les bio-informaticiens.
-				Quelques-unes seront intégrées dans un futur proche, d'autres nécessite une réflexion plus approfondie sur la pertinence et sur la faisabilité.
-				Quoiqu'il en soit, devant l'enthousiasme général des sujets pour cette expérimentation relativement longue ($\approx \mynum[mn]{75}$), \myShaddock semble fournir les bases suffisantes pour une plateforme consistante de déformation interactive de molècules en temps-réel.
+				Quelques-unes seront intégrées dans un futur proche, d'autres nécessitent une réflexion plus approfondie sur la pertinence et sur la faisabilité.
+				Quoiqu'il en soit, devant l'enthousiasme des sujets pour cette expérimentation relativement longue ($\approx \mynum[mn]{75}$), \myShaddock semble fournir les bases suffisantes pour une plateforme pertinente de déformation interactive de molécules en temps-réel.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
@@ -4598,18 +4670,16 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\begin{mysection}[sec-met-exp4-QuatriemeExperimentation]{Quatrième expérimentation}
 			\begin{mysubsection}[sse-met-exp4-Hypotheses]{Hypothèses}
 				\begin{myparagraph}[par-met-exp4-PerformancesAmelioreesParLAssitanceHaptique]{\myhypothesis{1} Performances améliorées par l'assistance haptique}
-					Nous émettons l'hypothèse que les performances de groupe seront meilleures lorsque l'assistance haptique sera mise à disposition des utilisateurs.
-					Les performances sont principalement évaluées sur la qualité de la solution.
-					En effet, dans un cadre de déformation moléculaire avec des experts, la qualité du résultat final prend une place plus importante que le temps mis pour l'atteindre.
+					Nous émettons l'hypothèse que les performances de groupe seront meilleures lorsque les outils d'assistance haptique seront mis à disposition des utilisateurs.
+					Les performances sont évaluées sur la qualité de la solution fournie.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-LAssistanceHaptiqueAmelioreLaCommunication]{\myhypothesis{2} L'assistance haptique améliore la communication}
-					Dans cette dernière expérimentation, nous introduisons de nouveaux outils pour assister la communication entre les utilisateurs en utilisant la modalité haptique.
-					Nous émettons l'hypothèse que la communication sera améliorée grâce à ces outils.
+					Nous émettons l'hypothèse que la communication et la coordination sera améliorée grâce aux nouveaux outils d'assistance haptique.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-LaPlateformeEstApprecieeDesExperts]{\myhypothesis{3} La plateforme est appréciée des experts}
 					Lors de cette expérimentation, nous effectuons une analyse de l'utilisabilité du système.
 					Nous émettons l'hypothèse que cette plateforme répondra à des critères minimum d'utilisabilité.
-					Le test d'utilisabilité est basé sur l'échelle de notation proposée par \mycite[author]{Brooke-1996}.
+					Le test d'utilisabilité est basé sur l'échelle de notation \myacro{acr-SUS} proposée par \mycite[author]{Brooke-1996}.
 				\end{myparagraph}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp4-Sujets]{Sujets}
@@ -4633,39 +4703,38 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-met-exp4-VariablesIndependantes]{Variables indépendantes}
 					\begin{myparagraph}[par-met-exp4-PresenceDeLAssistance]{\myvari{1} Présence de l'assistance}
 						C'est une \myglos{glo-VariableIntraSujets}.
-						\myvari{1} possède deux modalités : \og sans assistance \fg ou \og avec assistance \fg.
+						\myvari{1} possède deux modalités : \og sans assistance haptique \fg ou \og avec assistance haptique \fg.
 						L'assistance haptique est ajoutée aux outils de manipulation, de désignation et de déformation afin d'améliorer l'interaction et la communication entre les sujets pendant la tâche.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-MoleculesADeformer]{\myvari{2} Molécules à déformer}
 						C'est une \myglos{glo-VariableIntraSujets}.
 						\myvari{2} concerne les cinq molécules ou complexes de molécules à assembler : \og \myTRPCAGE \fg, \og \myPrion \fg, \og \myUbiquitin \fg, \og \myTRPZIPPER \fg et \og \myNusENusG \fg.
-						Parmi ces molécules, seules \myUbiquitin et \myNusENusG sont utilisées pour les tâches expérimentales.
+						Parmi ces molécules, seules \myUbiquitin et \myNusENusG sont utilisées pour les mesures expérimentales.
 						Les autres molécules sont  utilisées au cours de l'entraînement.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sec-met-exp4-VariablesDependantes]{Variables dépendantes}
 					\begin{myparagraph}[par-met-exp4-ScoreRMSDMinimum]{\myvard{1} Score \myacronl-{acr-RMSD} minimum}
 						Un score \myacro{acr-RMSD} est calculé en temps-réel de la même façon que dans la seconde et la troisième expérimentation.
-						Le score minimum atteint est enregistré : il représente la meilleure solution trouvé au cours de la manipulation.
+						Le score minimum atteint est étudié : il représente la meilleure solution trouvé au cours de la manipulation.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsDuScoreRMSDMinimum]{\myvard{2} Temps du score \myacronl-{acr-RMSD} minimum}
 						Les sujets ont \mynum[mn]{8} pour réaliser le meilleur score \myacro{acr-RMSD} possible.
-						Cependant, c'est le temps mis pour atteindre ce score minimum qui est enregistré.
+						Cette variable représente le temps mis pour atteindre ce score minimum.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-NombreDeSelections]{\myvard{3} Nombre de sélections}
-						\myvard{3} représente le nombre de sélections réalisées durant chaque tâche à réaliser.
+						\myvard{3} représente le nombre de sélections réalisées par les sujets.
 						Une sélection est comptabilisée lorsque un atome est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
-						Un compteur est affecté pour chacun des \myglos*{glo-EffecteurTerminal}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsMoyenDUneSelection]{\myvard{4} Temps moyen d'une sélection}
-						C'est le temps moyen que dure une sélection effectuée par un opérateur.
-						Il est calculé en fonction du nombre de sélections de cet opérateur et du temps total de la tâche.
+						C'est le rapport entre le temps total et le nombre total de sélections réalisées durant la tâche.
+						Il représente le temps moyen que dure une sélection effectuée par un opérateur.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsMoyenPourAccepterUneCible]{\myvard{5} Temps moyen pour accepter une cible}
-						C'est le temps mesurée entre le moment où le coordinateur effectue une désignation et le moment où l'opérateur accepte la désignation.
+						C'est le temps mesuré entre le moment où le coordinateur effectue une désignation et le moment où l'opérateur accepte la désignation.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsMoyenPourAtteindreUneCibleAcceptee]{\myvard{6} Temps moyen pour atteindre une cible acceptée}
-						Lorsqu'un cible est acceptée par un opérateur, cette mesure représente le temps que met l'opérateur pour atteindre et sélectionner le \myglos{glo-Residu} désigné.
+						Lorsqu'une cible est acceptée par un opérateur, cette mesure représente le temps que met l'opérateur pour atteindre et sélectionner le \myglos{glo-Residu} désigné.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-NombreDeDesignationsAcceptees]{\myvard{7} Nombre de désignations acceptées}
 						Parmi toutes les désignations proposées par le coordinateur, cette mesure comptabilise seulement celles qui ont donné lieu à une acceptation et donc à une déformation.
@@ -4676,14 +4745,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsDesCommunicationsVerbalesParSujet]{\myvard{9} Temps des communications verbales par sujet}
 						L'enregistrement audio permet de mesurer la quantité de temps de parole pendant chaque tâche de l'expérimentation.
-						De plus, la vidéo permet de mettre en relation les différentes phases de l'expérimentation (déformation, désignation, modification du point de vue de la scène, \myetc) avec la quantité de temps de parole.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-QuestionnaireDUtilisabiliteEtSurLaPresence]{\myvard{10} Questionnaire d'utilisabilité et sur la conscience}
-						Un questionnaire est proposé à tous les sujets.
-						Ce questionnaire est une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
-						La traduction soumise aux sujets est disponible dans la \myref{sec-q-QuatriemeExperimentation}.
-						Il nous permet d'obtenir un score d'utilisabilité de la plateforme compris entre \mynum{0} et \mynum{100}.
-						De plus, un questionnaire sur la conscience périphérique est proposé après chaque alternance de la variable indépendante \myvard{1}.
+						Un questionnaire \myacro{acr-SUS} est proposé à tous les sujets \myref*{sec-q-QuatriemeExperimentation}.
+						Il nous permet d'obtenir un score d'utilisabilité compris entre \mynum{0} et \mynum{100}.
+						De plus, un questionnaire sur la conscience périphérique est proposé après chaque modalité de la variable \myvard{1}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -4691,7 +4757,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				La procédure expérimentale se déroule en neuf phases bien distinctes.
 				\begin{myparagraph}[par-met-exp4-Phase1-RepartitionDesRoles]{Phase~\mynum{1} : répartition des rôles}
 					Pour commencer, avant de pénétrer dans la salle d'expérimentation, il est demandé aux sujets de choisir leurs rôles.
-					Nous nous plaçons dans le cadre d'une \myglos{glo-StructureInformelle} dans laquelle un des sujets sera le coordinateur et les deux autres seront les opérateurs.
+					Ce groupe qui est au début, une \myglos{glo-StructureInformelle}, doit se structurer avec un coordinateur et deux opérateurs.
 					Les rôles sont expliqués de manières claires mais concise à ce stade de l'expérimentation.
 					Chaque rôle est important et l'expérimentateur insiste sur ce point pour qu'aucun des rôles ne soit choisi par dépit.
 					Puis les sujets sont amenés à se répartir les rôles entre eux.
@@ -4700,29 +4766,27 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{myparagraph}[par-met-exp4-Phase2-PresentationDesOutils]{Phase~\mynum{2} : présentation des outils}
 					Avant de commencer cette phase, l'enregistrement vidéo est activé.
 					La seconde phase est une phase d'entraînement sur la molécule \myTRPCAGE.
-					Elle a pour objectif premier de présenter les outils de désignation et de déformation.
-					De plus, les sujets sont amenés à se familiariser avec l'interface, la tâche à effectuer, les différentes informations visuelles ainsi que des moyens d'évaluation de leur travail.
+					Elle a pour objectif de présenter les outils de désignation et de déformation.
+					Cette tâche relativement simple permet aux sujets de se familiariser avec les outils, la tâche à effectuer, les différentes informations visuelles ainsi que les outils d'évaluation (score \myacro{acr-RMSD}).
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase3-IntroductionDeLHaptique]{Phase~\mynum{3} : introduction de l'haptique}
-					Cette troisième phase est également une phase d'entraînement sur la molécule \myPrion.
-					L'entraînement porte sur l'introduction des assistances haptiques (présentées dans la \myref{sss-exp4-DescriptionDesOutils}) sur les outils de désignation et de déformation.
-					De plus, cette seconde molécule d'entraînement permet de familiariser les sujets avec une tâche de nature complexe.
+					Cette troisième phase est une phase d'entraînement sur la molécule \myPrion.
+					L'entraînement porte sur l'introduction des assistances haptiques (présentées dans la \myref{sss-exp4-OutilsDInteraction}) pour les outils de désignation et de déformation.
+					De plus, cette seconde molécule d'entraînement permet de familiariser les sujets avec une tâche de nature plus complexe que la précédente.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase4-OutilDeManipulation]{Phase~\mynum{4} : outil de manipulation}
-					Cette nouvelle phase d'entraînement sur la molécule \myTRPZIPPER est destinée à introduire l'outil de manipulation.
-					C'est principalement le coordinateur qui s'entraîne durant cette phase.
+					Cette nouvelle phase d'entraînement sur la molécule \myTRPZIPPER est destinée à introduire l'outil de manipulation qui sera utilisé par le coordinateur.
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase5-PremiereEtapeDEvaluation]{Phase~\mynum{5} : première étape d'évaluation}
 					Cette première étape d'évaluation concerne les deux scénarios à réaliser (scénario~\myscenario{1} et scénario~\myscenario{2}) sur la molécule \myUbiquitin et le complexe de molécules \myNusENusG.
-					L'évaluation s'effectue en deux étapes, avec et sans assistance haptique.
-					En fonction des groupes et afin de contrebalancer la variable \myvari{1}, la première étape d'évaluation s'effectue avec ou sans haptique.
+					En fonction des groupes et afin de contrebalancer la variable \myvari{1}, la première étape d'évaluation s'effectue avec ou sans assistance haptique.
 
 					On présente le scénario~\myscenario{1} puis le scénario~\myscenario{2} toujours dans cet ordre.
 					Pour le scénario~\myscenario{1}, seuls les outils d'orientation, de désignation et de déformation sont présents.
-					Tous les outils disponibles sont proposés pour le scénario~\myscenario{2}.
+					Tous les outils sont proposés pour le scénario~\myscenario{2}.
 
-					Au début de chaque scénario, une période de \mynum[mn]{1} de \mybrainstorming est laissée aux sujets pendant laquelle ils peuvent visualiser et explorer la molécule non soumise à la simulation.
-					Ensuite, la phase de déformation est proposée.
+					Au début de chaque scénario, une période de \mynum[mn]{1} de \mybrainstorming est proposée aux sujets pendant laquelle ils peuvent visualiser et explorer la molécule non soumise à la simulation.
+					Ensuite, la phase de déformation avec simulation est exécutée.
 					L'objectif est d'atteindre le score \myacro{acr-RMSD} le plus petit possible dans un temps limité à \mynum[mn]{8}.
 					Les sujets peuvent décider de s'arrêter avant les \mynum[mn]{8} s'ils estiment ne pas pouvoir obtenir un meilleur score.
 				\end{myparagraph}
@@ -4736,7 +4800,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Si les sujets ont été confrontés à une assistance haptique dans la première étape, alors la seconde étape s'effectuera sans assistance haptique et réciproquement.
 
 					Durant cette deuxième étape, il n'y a pas de phase exploratoire étant donné que les sujets connaissent déjà la molécule.
-					Seules les phases de déformations de \mynum[mn]{8}, \myUbiquitin puis \myNusENusG, sont proposées.
+					Seules les phases de déformation de \mynum[mn]{8} sont proposées (\myUbiquitin puis \myNusENusG).
 				\end{myparagraph}
 				\begin{myparagraph}[par-met-exp4-Phase8-LeQuestionnaire]{Phase~\mynum{8} : deuxième partie du questionnaire}
 					La seconde partie du questionnaire est similaire à la première partie \myref*{sec-q-QuatriemeExperimentation}.

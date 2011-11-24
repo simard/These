@@ -134,6 +134,14 @@
 \newcommand{\myPremium}{\myPHANToM Premium\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\myPrion}{Prion\xspace}
 \newcommand{\myPSF}{\textsc{psf}\xspace}
+\def\mypsvibration(#1,#2){%
+	\psarc[linewidth=0.1pt](#1,#2){1}{21}{32}
+	\psarc[linewidth=0.1pt](#1,#2){1.05}{24}{29}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.8,-0.6)(0.6,1.1)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.6,-0.1)(0.4,1.1)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.6,-1)(1.6,0.6)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.4,-1.1)(1.4,0.2)}
+}
 \newcommand{\myPtwoP}{\textsc{p2p}\xspace}
 \newcommand{\mypvalue}{$p$-value\xspace}
 \newcommand{\myPyMOL}{\textsc{p}y\textsc{mol}\xspace}
