@@ -390,7 +390,7 @@
 				La communauté haptique commence également à s'intéresser à cette problématique \mycite{Subasi-2006a,Subasi-2006b,Subasi-2008}.
 				Par exemple, \mycite[author]{Lai-Yuen-2005} proposent une interface haptique avec cinq \myacro*{acr-DDL} \myref*{fig-sota-DockingMoleculaireALAideDUneInterfaceACinqDDLsLaiYuen2006} afin d'effectuer du \myglos{glo-DockingMoleculaire} \mycite{Lai-Yuen-2006}.
 				Puis, à l'aide d'interfaces haptiques comme le \myVirtuose (six \myacro*{acr-DDL}), la manipulation moléculaire \mycite{Daunay-2007} puis le \myglos{glo-DockingMoleculaire} \mycite{Daunay-2009} accompagné d'une évaluation temps-réel de l'énergie du complexe moléculaire devient possible.
-				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de forces haptiques permettant de ressentir les moments\footnote{Utilisé ici dans le sens mécanique, force autour d'un pivot (moment ou couple).} interviennent au niveau de structures intra-moléculaires ou inter-moléculaires.
+				Le \myglos{glo-DockingMoleculaire} faisant intervenir des champs de force spécifiques, \mycite[author]{Hou-2010} proposent des modèles de retours haptiques permettant de ressentir les moments\footnote{Utilisé ici dans le sens mécanique, force autour d'un pivot (moment ou couple).} interviennent au niveau de structures intra-moléculaires ou inter-moléculaires.
 
 				Plus récemment, deux projets ont permis d'aboutir à des plateformes de manipulation haptiques de molécules avec un moteur de simulation en temps-réel.
 				Tout d'abord, \mycite[author]{Redon-2005} développent des algorithmes pour la simulation en temps-réel de corps articulés avec un grand nombre de \myacro*{acr-DDL}.
@@ -1058,7 +1058,7 @@
 			Aucune donnée ne permet d'infirmer ou de confirmer les théories sur la collaboration dans ce contexte bien que des hypothèses puisse être formulées.
 
 			Afin d'étudier ce contexte de travail, nous avons souhaiter segmenter les étapes de la déformation moléculaire en nous basant sur les travaux de \mycite[author]{Bowman-1999}.
-			Il identifie quatre tâche élémentaires pour segmenter une interaction en environnement virtuel, nommées \myacro*{acr-PCV} par \mycite[author]{Fuchs-2006a}.
+			Il identifie quatre tâches élémentaires pour segmenter une interaction en environnement virtuel, nommées \myacro*{acr-PCV} par \mycite[author]{Fuchs-2006a}.
 			Les quatre \myacro*{acr-PCV} pour la manipulation moléculaire, illustrée dans la \myref{fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes}, sont expliquées ci-dessous :
 			\begin{description}
 				\item[Exploration] Cette tâche concerne la recherche et l'identification d'une cible (atome, \myglos{glo-Residu}, structure secondaire, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
@@ -3259,6 +3259,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp3-Resultats]{Résultats}
 			\begin{mysubsection}[sse-exp3-AmeliorationDesPerformances]{Amélioration des performances}
+				Dans cette section, nous cherchons à étudier l'évolution des performances en fonction du nombre de sujets impliqués dans la collaboration en commençant par présenter les graphiques et les analyses statistiques.
 				\begin{mysubsubsection}[sss-exp3-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
@@ -3354,7 +3355,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					À partir d'observations effectuées durant la phase expérimentale, nous avons pu constater que certains sujets se montrent relativement silencieux, même en situation de \myglos{glo-ConflitDeCoordination}.
 					La \myref{sse-exp3-DefinitionDUnMeneur} montre que la présence d'un \myglos{glo-Meneur} modifie les processus de communication verbale au sein d'un groupe.
 
-					Dans cette section, nous n'avons constater aucune évolution des performances entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
+					Dans cette section, nous n'avons constaté aucune évolution des performances entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
 					Cette conservation des performances est présente malgré un nombre potentiel de \myglos*{glo-ConflitDeCoordination} important et une communication verbale faible chez les \myglos*{glo-Quadrinome}.
 					L'augmentation de la vitesse moyenne, provoquée par le phénomène de \myglos{glo-FacilitationSociale} déjà remarqué par \mycite[author]{Roethlisberger-1939}, permet d'expliquer ces performances.
 					En effet, la \myglos{glo-FacilitationSociale} permet de réduire les phases d'inaction en stimulant l'intérêt des sujets pour la tâche à réaliser.
@@ -3362,6 +3363,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp3-UtiliteDuBrainstormingPourLaCollaboration]{Utilité du \mybrainstorming pour la collaboration}
+				Cette section nous permettra d'étudier l'effet du \mybrainstorming sur les performances des sujets.
+				Nous présentons tout d'abord les analyses statistiques accompagnées de graphiques puis nous discuterons ces résultats.
 				\begin{mysubsubsection}[sss-exp3-UtiliteDuBrainstormingPourLaCollaboration-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
@@ -3693,7 +3696,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Durant cette expérimentation, nous présentons aux sujets cinq molécules; trois d'entre elles sont utilisées pour l'entraînement.
 				Chaque molécule est présentée dans la \myref{sse-pro-ListeDesMolecules}.
-				Les cinq molécules sont utilisés pour les différents scénarios décrits ci-dessous.
+				Les cinq molécules sont utilisées pour les différents scénarios décrits ci-dessous.
 				\begin{description}
 					\item[Entraînement~\myscenario{1}]
 						Le premier entraînement est destiné à familiariser les sujets avec l'outil de désignation ainsi qu'avec la structure du groupe.
