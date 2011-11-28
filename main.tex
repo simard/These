@@ -619,7 +619,7 @@
 				\end{myquote}
 
 				\mycite[author]{Allport-1924} aborde ce phénomène par une collaboration où chaque individu effectue la même tâche.
-				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}\footnote{\mycite[author]{Roethlisberger-1939} base ses conclusions sur les travaux non-publiés de Elton \myname{Mayo} connus sous le nom de \og l'expérience \textit{Hawthorne} \fg, du nom de l'entreprise \myHawthorne dans laquelle l'expérience a été réalisée.} constate que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances individuelles de chacun des membres.
+				Dans ce même contexte, \mycite[author]{Roethlisberger-1939}\footnote{\mycite[author]{Roethlisberger-1939} basent leurs conclusions sur les travaux non-publiés de Elton \myname{Mayo} connus sous le nom de \og l'étude \textit{Hawthorne} \fg, du nom de l'entreprise \myHawthorne dans laquelle l'étude a été réalisée.} constate que le travail en groupe génère une stimulation qui augmente les performances du groupe : les performances du groupe sont meilleures que la somme des performances individuelles de chacun des membres.
 				La \myglos{glo-FacilitationSociale} a également été observée sur des animaux comme les cafards \mycite{Zajonc-1969} ou les singes \mycite{Dindo-2009}.
 
 				Cependant, des nuances de ce phénomène commencent à être observées.
@@ -1792,7 +1792,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\item[Étoile] Séries de chaînes d'atomes toutes reliées sur un atome central (la plupart du temps, un atome de carbone); assez facile à identifier.
 						\end{description}
 					\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
-						Les atomes \myemph{rares} sont donc facilement  identifiables grâce à leur couleur singulière.
+						Les atomes \myemph{rares} sont donc facilement identifiables grâce à leur couleur singulière.
 						Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à identifier à cause de leur fréquence d'apparition élevée.
 					\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
 						Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
@@ -2464,7 +2464,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item[Scénario~\myscenario{1a}]
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
 						Un \myglos{glo-Residu} à l'extrémité de la chaîne carbonée\footnote{La molécule forme une chaîne carbonée; il s'agit ici d'une des extrémités de cette chaîne carbonée.} est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter que la molécule sorte du champ de vision.
-						Les onze autres \myglos*{glo-Residu} de cette molécule sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force  à contrainte moyenne.
+						Les onze autres \myglos*{glo-Residu} de cette molécule sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force à contrainte moyenne.
 						La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
 						La difficulté de ce scénario réside dans la nécessité de maintenir les \myglos*{glo-Residu} déjà placés pendant que le reste de la molécule est déformée.
 					\item[Scénario~\myscenario{1b}]
@@ -4205,6 +4205,48 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 	\end{mychapter}
 	\begin{mychapter+}{Conclusion et perspectives}
+		Tout au long de ce travail de thèse, nous avons étudié le travail collaboratif dans le contexte particulier de la collaboration étroitement couplée pour la résolution de tâches complexes, en l'occurence, le \myglos{glo-DockingMoleculaire}.
+		Cette conclusion va nous permettre de mettre en avant les similitudes entre les travaux existants sur la collaboration et nos résultats, mais également certaines distinctions importantes.
+
+		Tout d'abord, nous avons pu constater le gain en performances lié à la distribution cognitive des charges de travail, notamment dans la seconde étude \myref*{cha-DeformationCollaborativeDeMolecule} dans laquelle nous comparons deux distributions différentes d'un même nombre de ressources; ces conclusions vont dans le même sens que les études actuelles sur la collaboration.
+		Cependant, une différence importante par rapport aux travaux existants a été relevée durant les différentes études.
+		En effet, la collaboration étroitement couplée provoque d'avantage d'interactions entre les utilisateurs (accès à une zone, besoin de coordination, \myetc) ce qui entraîne d'avantage de \myglos*{glo-ConflitDeCoordination}.
+		La troisième étude nous a permis de constater que ces \myglos*{glo-ConflitDeCoordination} avaient pour effet de réduire considérablement voire d'annuler complétement les gains en performances.
+
+		Nous avons également pu constater les effets de la \myglos{glo-FacilitationSociale} semblent particulièrement présents dans ce type de configuration synchrone et colocalisée.
+		Cet effet semble également présent dans le cas de tâches complexes, contrairement aux conclusions de \mycite[author]{Zajonc-1965} obtenues pour des collaborations faiblement couplées.
+		Les tâches complexes générant une collaboration étroitement couplée et les interactions fortes entre utilisateurs qui en découle semble les stimuler.
+		Cependant, modérons ce propos car les tâches proposées sont toujours, dans l'esprit du sujet, des tâches réalisables.
+		Il n'est pas certain que les sujets soient autant motivés s'ils étaient confrontés à des tâches dont on ne connaît pas la faisabilité \myapriori.
+
+		Au cours de la troisième étude \myref*{cha-LaDynamiqueDeGroupe}, nous avons également pu arriver à des conclusions similaires à celles obtenues par \mycite[author]{Bales-1950} concernant l'apparition de membres dominants au sein d'un groupe.
+		Ce point avait besoin d'être validé dans le contexte particulier de la collaboration étroitement couplée car les mécanismes de communication et les interactions entre les utilisateurs sont différents : cette forme de structuration automatique du groupe aurait pu ne pas se réaliser de la même manière.
+
+		L'ensemble de ces conclusions nous a mené à la réalisation d'un outil haptique pour assister la communication et plus particulièrement, la tâche élémentaire de désignation.
+		L'utilité de cet outil a été confirmée lors de la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique} dans laquelle une évolution significative en terme de communication a été observée.
+		Cette expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique} nous a permis d'apporter une réponse à la proposition de \mycite[author]{Moll-2009} d'utiliser l'haptique comme moyen de désignation : la modalité haptique est pertinente pour la désignation.
+		Plus généralement, cette expérimentation permet de montrer l'utilité de la modalité haptique dans le processus de communication pour les collaborations étroitement couplées en environnements complexes.
+
+		L'étude et l'amélioration des interactions en environnement collaboratifs a déjà donné lieu à quelques travaux.
+		Par exemple, les travaux de thèse de \mycite[author]{Ullah-2011} s'intéressent à l'utilisation d'une assistance multi-modale en environnement collaboratif.
+		De mes travaux découle également le projet de thèse, actuellement mené par Adrien \myname{Girard}, concernant la proposition d'outils haptiques pour assister la collaboration, particulièrement en ce qui concerne les aspects de conscience périphérique et de présence.
+
+		Pour aller plus loin, une première piste concerne la mise en collaboration de plusieurs experts provenant de spécialités différentes.
+		En effet, nou avons pu voir que le \myglos{glo-DockingMoleculaire} fait appel à des spécialités diverses.
+		La collaboration multi-experts amènera de nouvelles contraintes de collaboration.
+		Notre dernière expérimentation n'a fait qu'effleurer le sujet en proposant des niveaux de collaboration différents (coordinateur ou opérateur) mais l'intervention de différents experts pourrait nécessiter des modifications de l'environnement plus profondes (environnements de visualisation privés, outils adaptés à la spécialité, \myetc).
+
+		Le besoin de travailler à distance est également très présent à travers les différentes applications collaboratives comme on a pu le voir tout au long de l'étude bibliographique \myref*{cha-sota-EtudeBibliographique}.
+		La collaboration à distance entraîne de nouvelles contraintes, en ce qui concerne les contraintes techniques mais surtout en ce qui concerne la communication.
+		Nous avons délibéremment restreints nos travaux de thèse à un environnement colocalisé afin de bénéficier de moyens de communication optimaux : audio, visuel, gestuels, tactiles, \myetc
+
+		Un aspect plus théorique de notre travail doit également être abordé.
+		Tout au long de notre travail, nous avons pu mettre en évidence différents \myglos*{glo-ConflitDeCoordination}.
+		Cependant, nous avons eu des difficultés pour mesurer, quantifier ou même qualifier ces \myglos*{glo-ConflitDeCoordination}.
+		Il est nécessaire de définir des mesures objectives permettant de répondre à cette problématique.
+
+		De nombreuses pistes restent à explorer.
+		Cependant, ce travail de thèse permet de fournir les premières pistes pour la communication haptique en environnement complexe.
 	\end{mychapter+}
 	\mybiblio%
 	\myglossary
@@ -4726,7 +4768,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						C'est une \myglos{glo-VariableIntraSujets}.
 						\myvari{2} concerne les cinq molécules ou complexes de molécules à assembler : \og \myTRPCAGE \fg, \og \myPrion \fg, \og \myUbiquitin \fg, \og \myTRPZIPPER \fg et \og \myNusENusG \fg.
 						Parmi ces molécules, seules \myUbiquitin et \myNusENusG sont utilisées pour les mesures expérimentales.
-						Les autres molécules sont  utilisées au cours de l'entraînement.
+						Les autres molécules sont utilisées au cours de l'entraînement.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sec-met-exp4-VariablesDependantes]{Variables dépendantes}
