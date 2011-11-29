@@ -3625,9 +3625,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
 		\begin{mysection}[sec-exp4-Introduction]{Introduction}
-			Sur la base des résultat obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la collaboration entre les utilisateurs dans la réalisation d'un \myglos{glo-DockingMoleculaire}.
-			Nous avons également identifié un certains nombres de paramètres permettant d'améliorer les performances d'un groupe (identification des rôles, \mybrainstorming, présence d'un \myglos{glo-Meneur}, \myetc) afin de les intégrer dans cette dernière expérimentation.
-			Ce chapitre a pour but de tester et d'évaluer les outils proposés et les méthodologies de travail dans un contexte de déformation moléculaire.
+			Sur la base des résultat obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la communication et la coordination des actions entre les utilisateurs durant la réalisation d'un \myglos{glo-DockingMoleculaire} collaboratif.
+			Nous avons également identifié un certains nombres de facteurs permettant d'améliorer les performances d'un groupe (identification des rôles, \mybrainstorming, présence d'un \myglos{glo-Meneur}, \myetc).
+			Ce chapitre a pour but de proposer et d'évaluer une configuration de travail ainsi que des outils permettant d'améliorer la communication et la coordination durant une tâche de déformation moléculaire.
 
 			Ce dernier chapitre sera également l'occasion de confronter la plateforme \myShaddock à des experts en biologie moléculaire.
 			En effet, il est nécessaire pour cette dernière étape d'avoir l'avis de spécialistes afin d'évaluer l'utilisabilité de la plateforme et de confirmer la validité de ce processus de travail.
@@ -3668,62 +3668,68 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-OutilsHaptiquesPourLaCollaboration]{Outils haptiques pour la collaboration}
 				Sur la base de cet état de l'art et des conclusions obtenues au fil des trois études précédentes, plusieurs propositions s'imposent pour le développement d'outils haptiques de collaboration.
+				\begin{mysubsubsection}[sss-ConfigurationCollaborative]{Configuration collaborative}
+					Pour commencer, la présence d'un coordinateur répond à deux contraintes identifiées lors de la troisième expérimentation : l'identification des rôles et la coordination des tâches \myref*{sse-exp3-DefinitionDUnMeneur}.
+					En effet, nous avons identifié le rôle du \myglos{glo-Meneur} dans la précédente expérimentation qui permettait de coordonner les actions du groupe.
+					Afin de répondre à ce besoin, nous allons proposer des outils spécifiques aux différents membres du groupe qui seront soit coordinateur, soit opérateur afin de créer naturellement une identification de rôles distincts.
 
-				Pour commencer, la présence d'un \myglos{glo-Meneur} répond à deux contraintes identifiées lors de la troisième expérimentation : l'identification des rôles et la coordination des tâches.
-				Afin de forcer une identification des rôles, nous allons proposer un outil spécifique destiné seulement au \myglos{glo-Meneur} et des outils de déformations pour les \myglos*{glo-Suiveur}.
-				De plus, nous avons vu que le \myglos{glo-Meneur} élabore une stratégie en explorant l'environnement virtuel; c'est lui qui aura accès aux outils d'orientation et de manipulation de la molécule.
+					Nous avons vu que le \myglos{glo-Meneur} élabore surtout une stratégie grâce à une exploration de l'environnement virtuel puis qu'il expose sa stratégie aux \myglos*{glo-Suiveur}.
+					Dans cette expérimentation, le coordinateur est doté d'outils d'exploration et de désignation alors que les opérateurs sont dotés d'outils de déformation.
 
-				Le \myglos{glo-Meneur} aura à sa disposition une période de \mybrainstorming durant laquelle il pourra manipuler la molécule afin de discuter avec ces collaborateurs de la meilleure stratégie à adopter.
-				Durant cette phase de travail, seul l'outil d'orientation, détenu par le \myglos{glo-Meneur}, sera activée.
+					De plus, la précédente expérimentation nous a permi de constater l'utilité d'un \mybrainstorming pour améliorer les performances.
+					Nous introduisons une période de \mybrainstorming dans cette expérimentation durant laquelle nous donnons la possibilité d'explorer, mais pas de déformer, les structures moléculaires; c'est le coordinateur qui est en charge de cette tâche.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-OutilPourLeCoordinateur]{Outils pour le coordinateur}
+					Durant le \mybrainstorming, un outil d'orientation est mis à la disposition du coordinateur.
+					Cet outil, décrit dans la  \myref{par-exp4-OutilDOrientation}, lui permet d'observer la molécule avec différents points de vue afin d'élaborer une stratégie avec l'aide des opérateurs.
 
-				Étant donné qu'il détermine les tâches à effectuer par les \myglos*{glo-Suiveur}, il faut également qu'il ait la possibilité d'indiquer des cibles durant la tâche de déformation.
-				Nous avions souligné ce point lors de la première expérimentation et \mycite[author]{Moll-2009} met en avant la pertinence de la modalité haptique pour effectuer une désignation.
+					Puis, le coordinateur va désigner des cibles durant la réalisation de la tâche afin d'appliquer la stratégie élaborée.
+					Nous avions souligné ce point lors de la première expérimentation et \mycite[author]{Moll-2009} met en avant la pertinence de la modalité haptique pour effectuer une désignation.
+					L'outil de désignation, présenté dans la \myref{par-exp4-OutilDeDesignation}, a été développé afin de permettre au coordinateur d'indiquer des cibles aux opérateurs.
+				\end{mysubsubsection}
+				\begin{mysubsubsection}[sss-OutilPourLesOperateurs]{Outils pour les opérateurs}
+					La première expérimentation avait également permis d'identifier une stratégie offrant un bon compromis entre la collaboration et les \myglos*{glo-ConflitDeCoordination} : l'interaction en champs voisins.
+					Pour mémoire, les interactions en champs voisins correspondent à la manipulation de deux zones distantes d'environ un \myglos{glo-Residu}.
+					Afin de favoriser ce type de stratégie, les outils proposés agiront de préférence à l'échelle des \myglos*{glo-Residu} en laissant la possibilité le cas échéant, de manipuler au niveau atomique afin d'avoir accès à un niveau de déformation fin.
 
-				Cette première expérimentation avait également permis d'identifier une stratégie offrant un bon compromis entre la collaboration et les \myglos*{glo-ConflitDeCoordination} : l'interaction en champs voisins.
-				Pour mémoire, les interactions en champs voisins correspondent à la manipulation de deux zones distantes d'environ un \myglos{glo-Residu}.
-				Afin de favoriser ce type de stratégie, les outils proposés agiront de préférence à l'échelle des \myglos*{glo-Residu} en laissant la possibilité le cas échéant, de manipuler au niveau atomique afin d'avoir accès à un niveau de déformation fin..
-
-				Pour finir, la seconde expérimentation a mis en avant la difficulté d'utiliser deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
-				C'est pourquoi, les opérateurs qui seront chargés d'effectuer la déformation seront en configuration \myglos*{glo-Monomanuel} avec à leur disposition un unique outil de déformation.
-				Le \myglos{glo-Meneur}, qui aura à sa disposition des outils moins complexes à utiliser, manipulera en configuration \myglos*{glo-Bimanuel}.
+					Pour finir, la seconde expérimentation a mis en avant la difficulté d'utiliser deux outils de déformation en configuration \myglos*{glo-Bimanuel}.
+					C'est pourquoi, les opérateurs qui seront chargés d'effectuer la déformation seront en configuration \myglos*{glo-Monomanuel} avec à leur disposition un unique outil de déformation.
+				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-exp4-Objectifs]{Objectifs}
-				Dans cette expérimentation, nous proposons des outils haptiques pour assister la communication entre les partenaires et souhaitons les tester dans le cadre d'une tâche de déformation collaborative de molécule.
+				Dans cette expérimentation, nous proposons des outils haptiques pour assister la communication entre les partenaires et souhaitons les évaluer dans le cadre d'une tâche de déformation collaborative de molécule.
 
-				\mycite[author]{Moll-2009} ont montré la pertinence de la modalité haptique pour la communication et en particulier pour le processus de désignation.
 				Sur la base de la configuration collaborative détaillée précédemment \myref*{sse-exp4-OutilsHaptiquesPourLaCollaboration}, nous souhaitons étudier la contribution des outils haptiques proposés pour l'amélioration des performances puis de la communication dans le groupe.
+				Notre hypothèse liée à ces outils est double : nous pensons que l'assistance haptique permettra d'améliorer les performances et que cette amélioration sera due à une amélioration de la communication.
 
 				De plus, cette dernière expérimentation est l'occasion de confronter la plateforme et les méthodes de travail proposées à des experts susceptibles d'utiliser un tel environnement de travail.
-				C'est pourquoi une partie des sujets évalués sera constituée de biologistes œuvrant dans le domaine de la biologie moléculaire et sensibilisés aux plateformes d'interaction avec les environnements moléculaires virtuels.
-				Ces sujets permettront d'obtenir des avis pertinents sur l'utilité des outils proposés et sur les évolutions possibles.
+				Nous supposons que la plateforme sera évaluée positivement par les utilisateurs.
 
 				Les objectifs sont résumés sous forme d'hypothèses dans la \myref{sse-met-exp4-Hypotheses}.
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-exp4-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp4-DescriptionDeLaTache]{Description de la tâche}
-				La tâche proposée est de nature similaire à celle exposée dans la seconde expérimentation et la troisième expérimentation, il faut modifier la conformation initiale d'une molécule pour atteindre une conformation stable \myref*{sse-exp2-DescriptionDeLaTache}.
-				Pour la première fois, ils seront soumis à une tâche de \myglos{glo-DockingMoleculaire} faisant intervenir deux molécules.
+				La tâche étudiée est constituée d'une tâche de déformation, telle que celle abordée dans les deux expérimentations précédentes \myref*{sse-exp2-DescriptionDeLaTache}, et d'une tâche d'assemblage; les deux tâches abordées permettent de créer un scénario de \myglos{glo-DockingMoleculaire} complet.
 
-				La tâche est proposée à des groupes de trois sujets : les \myglos*{glo-Trinome}.
-				Dans ces \myglos*{glo-Trinome}, un \og coordinateur \fg et deux \og opérateurs \fg ont à leur disposition différents outils pour l'orientation, la déformation, la désignation ou la manipulation.
-				Le coordinateur jouera le rôle du \myglos{glo-Meneur}.
-				Les sujets ont la possibilité de communiquer sans restriction par différents canaux : oral, gestuel ou virtuel.
+				La tâche est proposée à des groupes de trois sujets appelés \myglos*{glo-Trinome}.
+				Dans ces \myglos*{glo-Trinome}, un \og coordinateur \fg et deux \og opérateurs \fg ont à leur disposition différents outils pour l'orientation, la déformation, la désignation ou la manipulation qui seront décrits dans la \myref{sss-exp4-OutilsDInteraction}.
+				Les sujets ont la possibilité de communiquer sans restriction par différents canaux : oral, gestuel ou virtuel (à travers l'utilisation des curseurs et de l'environnement virtuel).
 
 				Durant cette expérimentation, nous présentons aux sujets cinq molécules; trois d'entre elles sont utilisées pour l'entraînement.
 				Chaque molécule est présentée dans la \myref{sse-pro-ListeDesMolecules}.
 				Les cinq molécules sont utilisées pour les différents scénarios décrits ci-dessous.
 				\begin{description}
-					\item[Entraînement~\myscenario{1}]
+					\item[Étape d'entraînement~\myscenario{1}]
 						Le premier entraînement est destiné à familiariser les sujets avec l'outil de désignation ainsi qu'avec la structure du groupe.
 						Cet entraînement se déroule sur la molécule \myTRPCAGE.
 						La tâche est volontairement peu complexe.
 						Elle est destinée à enseigner aux sujets les étapes du processus de désignation \myref*{sss-Shaddock-OutilDeDesignation}.
-					\item[Entraînement~\myscenario{2}]
+					\item[Étape d'entraînement~\myscenario{2}]
 						La seconde phase d'entraînement s'effectue sur la molécule \myPrion qui est de taille plus importante.
 						C'est dans cette phase que sont introduits les outils de communication haptique pour les phases de désignation.
 						Cet entraînement permet de renforcer l'apprentissage du processus de désignation sur une tâche plus complexe en ajoutant la modalité haptique.
-					\item[Entraînement~\myscenario{3}]
+					\item[Étape d'entraînement~\myscenario{3}]
 						La dernière phase d'entraînement s'adresse au coordinateur puisqu'elle introduit l'outil de manipulation qui jusqu'à présent n'a pas été utilisé.
 						La molécule \myTRPZIPPER, de petite taille, a été choisie.
 						La molécule est rendue solidaire de l'outil de manipulation pour que le coordinateur puisse découvrir ce nouvel outil.
@@ -3815,9 +3821,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\item[Matériel] \myOmni.
 							\item[Fonction] Permet de déformer un ou plusieurs atomes.
 							\item[Fonctionnement]
-								Le rôle principal de l'opérateur est déformer un ou plusieurs atomes dans la molécule.
-								Il a la possibilité de déformer des atomes seuls de manière autonome.
-								S'il accepte une désignation proposée par le coordinateur, il a alors la possibilité de déformer un \myglos{glo-Residu} avec une force de déformation plus importante, l'objectif étant de favoriser l'utilisation de cet outil.
+								Le rôle principal de l'opérateur est de déformer les structures moléculaire en manipulant un ou plusieurs atomes de la molécule selon deux niveaux de déformation.
+								Soit il choisi de déformer de manière autonome; dans ce cas, il ne peut manipuler qu'un atome à la fois.
+								Soit il accepte une désignation proposée par le coordinateur; dans ce cas, il peut manipuler un \myglos{glo-Residu}.
+								Dans ce dernier cas, une force de déformation plus importante est fournie à l'opérateur, l'objectif étant de favoriser l'utilisation de cet outil.
 							\item[Rendu haptique]
 								Lorsque le coordinateur effectue une désignation, l'opérateur est soumis à une vibration sinusoïdale sauf si ce dernier est déjà en train de déformer.
 								S'il décide d'accepter la désignation, la vibration s'arrête et l'opérateur est alors attiré directement vers la cible par une attraction de type masse-ressort.
@@ -3827,13 +3834,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\begin{description}
 							\item[Utilisateur] Coordinateur.
 							\item[Matériel] \myDesktop.
-							\item[Fonction] Permet de déplacer l'ensemble des atomes d'une molécule.
+							\item[Fonction] Permet de déplacer une molécule.
 							\item[Fonctionnement]
-								Cet outil est attaché à une molécule défini pour chaque scénario.
+								Cet outil est attaché à une molécule (le ligand ou le récepteur) prédéfinie pour chaque scénario.
+								Le coordinateur peut ainsi translater la molécule afin de l'amarrer correctement avec la seconde molécule.
 								Tout mouvement de cet outil permet de déplacer l'ensemble des atomes de la molécule attachée.
 							\item[Rendu haptique]
-								Le retour haptique est un système masse-ressort qui contraint le coordinateur à rester au centre de la molécule attachée.
-								De plus, toute déformation effectuée par un opérateur est reportée, dans une proportion relativement faible, sur cet outil qui influe ainsi le déplacement global de la molécule.
+								Le retour haptique est un système masse-ressort contraignant le coordinateur à rester lié à l'inertie de la molécule attachée.
+								De plus, afin d'améliorer la coordination entre les opérateurs et le coordinateur, nous proposons de communiquer les déformations effectuées par les opérateurs au mouvement global de la molécule, dans une proportion relativement faible.
+								Concrétement, lorsqu'un opérateur effectue une déformation, la molécule aura tendance à se déplacer faiblement dans la même direction; cette fonctionnalité est additionnée au mouvement du coordinateur.
 						\end{description}
 					\end{myparagraph}
 					\begin{myparagraph}[par-exp4-OutilDOrientation]{Outil d'orientation}
@@ -3842,10 +3851,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\item[Matériel] Souris \myUSB.
 							\item[Fonction] Permet de modifier le point de vue de la scène.
 							\item[Fonctionnement]
-								Cet outil remplace la souris \myThreeD utilisée dans la seconde expérimentation qui s'est montrée trop peu intuitive pour les utilisateurs.
 								Il permet de modifier l'orientation de la scène.
-								Cet outil modifie l'ensemble de la perception de la scène ce qui peut perturber les opérateurs.
-								C'est pourquoi il est proposé comme un troisième outil afin qu'il ne soit utilisé que lorsque c'est vraiment nécessaire.
+								Cependant, les curseurs ne sont pas soumis à cette transformation ce qui peu créer des incohérences visuelles, surtout pour les opérateurs qui ne sont pas en charge de cet outil.
+								C'est pourquoi ce troisième outil est présenté comme secondaire au coordinateur afin qu'il ne soit utilisé que lorsque c'est vraiment nécessaire.
 							\item[Rendu haptique]
 								Cet outil ne permet de retour haptique.
 						\end{description}
@@ -4187,15 +4195,15 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				L'utilisation de l'haptique à bon escient permet de diminuer les temps de réponse lors des communications tout en adressant directement les informations à transmettre aux membres concernés.
 				De plus, la répartition de la communication sur différentes canaux sensoriels permet de soulager de la charge cognitive de travail pour chaque utilisateur.
 
-				Les questionnaires d'utilisabilité ont également permis de montrer que la plateforme souffre d'un défaut important : la visualisation, notamment les problèmes liés à la perception de la profondeur.
-				Cependant, un système de visualisation stéréoscopique devrait permettre de résoudre en grande partie ce problème.
-
-				Avec le questionnaire portant sur la conscience de groupe, on constate qu'une grande partie de cette conscience repose exclusivement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques, lorsqu'ils sont disponibles.
+				Avec le questionnaire portant sur la conscience de groupe, on constate que la conscience repose principalement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques, lorsqu'ils sont disponibles.
 				En ce sens, la communication haptique est pertinente puisqu'elle permet d'améliorer les performances en augmentant la conscience périphérique.
 				Par exemple, elle permet d'indiquer rapidement l'action d'un partenaire ou elle guide rapidement les utilisateurs les uns vers les autres.
 
-				En ce qui concerne les autres aspects de la plateforme \myShaddock, les biologistes se sont montrés enthousiastes.
-				Ils ont tout de même suggéré différents outils qui, selon leur propre expérience, seraient nécessaires à une utilisation plus pertinente de cette plateforme.
+				Les questionnaires d'utilisabilité ont également permis de montrer que la plateforme souffre d'un défaut important : la visualisation, notamment les problèmes liés à la perception de la profondeur.
+				Cependant, un système de visualisation stéréoscopique devrait permettre de résoudre en grande partie ce problème.
+
+				En ce qui concerne les autres aspects de la plateforme \myShaddock, les biologistes ont commentés la plateforme de manière relativement positive excepté pour les problèmes de visualisation.
+				Ils ont tout de même suggéré des outils qui, selon leur propre expérience, seraient nécessaires à une utilisation plus pertinente de cette plateforme.
 				En particulier, ils ont émis le désir de pouvoir stabiliser la position des atomes après les avoir placés dans une position finale.
 				Le second outil dont ils auraient aimé disposer est la déformation de blocs tels que les structures secondaires.
 				Cependant, les contraintes de manipulation d'un tel ensemble d'atomes, exposée dans la \myref{sss-Shaddock-DeformationParGroupeDAtomes}, entraînerait des modifications importantes sur les métaphores de manipulation.
@@ -4204,11 +4212,11 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp4-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Cette dernière expérimentation nous a permis de mettre en avant la pertinence de la communication haptique dans le cadre d'une tâche de collaboration étroitement couplée.
 				L'outil haptique proposé ne concerne que le processus de désignation mais d'autres aspects de la communication peuvent être explorés.
-				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose plusieurs métaphores sur le sujet comme par exemple la possibilité de ressentir la position du curseur des partenaires, métaphores qui devrait permettre d'améliorer la conscience de groupe ou encore la possibilité d'\myemph{attraper} un curseur puis de le \myemph{tirer} vers une cible.
+				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose plusieurs métaphores sur le sujet qui devrait permettre d'améliorer la conscience de groupe comme l'ajout de la perception haptique entre les utilisateurs au sein de l'environnement virtuel ou encore la possibilité d'emmener le curseur d'un partenaire pour le guider vers une cible.
 
 				En ce qui concerne les améliorations de la plateforme \myShaddock, de nombreuses propositions ont été suggérées par les bio-informaticiens.
 				Quelques-unes seront intégrées dans un futur proche, d'autres nécessitent une réflexion plus approfondie sur la pertinence et sur la faisabilité.
-				Quoiqu'il en soit, devant l'enthousiasme des sujets pour cette expérimentation relativement longue ($\approx \mynum[mn]{75}$), \myShaddock semble fournir les bases suffisantes pour une plateforme pertinente de déformation interactive de molécules en temps-réel.
+				Quoiqu'il en soit, devant l'enthousiasme des sujets pour cette expérimentation relativement longue ($\approx \mynum[mn]{75}$), \myShaddock semble fournir les bases suffisantes pour une plateforme pertinente de \myglos{glo-DockingMoleculaire} en temps-réel.
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
