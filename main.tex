@@ -47,14 +47,14 @@
 	\mylot
 	\begin{myabstract}[french]
 		Le \myglos{glo-DockingMoleculaire} consiste à comprendre comment deux molécules s'assemblent pour former un complexe de molécules.
-		C'est un problème complexe pour lequel les algorithmes existants permettent seulement d'obtenir des solutions approximatives.
+		C'est un problème complexe pour lequel les approches existantes permettent seulement d'obtenir des solutions approximatives.
 
 		Récemment, des systèmes collaboratifs ont émergé pour tenter de résoudre ce problème de manière robuste.
 		Dans ce mémoire, nous allons plus loin dans la collaboration avec un environnement de manipulation moléculaire synchrone et colocalisé.
-		L'objectif est de favoriser la communication pour profiter de la distribution des charges de travail et du partage de connaissances.
+		L'objectif est de favoriser différents moyens de communication pour profiter de la distribution des charges de travail et du partage de connaissances.
 
 		Dans cette optique, la plateforme \myShaddock a été développée à l'aide de modules de visualisation et de simulation moléculaire largement utilisés par les biologistes.
-		Elle immerge les utilisateurs dans une simulation moléculaire en temps-réel et permet l'interaction avec des interfaces haptiques.
+		Elle immerge plusieurs utilisateurs dans une simulation moléculaire en temps-réel et permet l'interaction haptique.
 
 		Dans un premier temps, nous étudions différentes configurations de travail collaboratif étroitement couplé à travers trois expérimentations.
 		L'objectif est d'identifier les contraintes d'une telle configuration de travail et de caractériser les stratégies adoptées par les utilisateurs.
@@ -105,7 +105,7 @@
 		Ce problème, le \myglos{glo-DockingMoleculaire}, consiste à comprendre comment des molécules peuvent s'assembler afin d'en former une nouvelle.
 		L'avènement de l'informatique a permis à de nombreux chercheurs de proposer des algorithmes toujours plus évolués les uns que les autres mais aucun ne permet d'obtenir une solution robuste et fiable dans un temps raisonnable.
 
-		Afin de donner un nouveau souffle à ce domaine de recherche, l'aptitude des humains à décider de manière intelligente a été introduit dans le processus de recherche.
+		Afin de donner un nouveau souffle à ce domaine de recherche, l'aptitude des humains à décider de manière intelligente a été introduite dans le processus de recherche.
 		Cependant, un biologiste seul peut difficilement appréhender un problème d'une telle complexité.
 		C'est pourquoi, des systèmes collaboratifs permettant le partage de connaissances ont commencé à émerger.
 
@@ -891,6 +891,7 @@
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-StrategiesDeCollaboration]{Stratégies de collaboration}
 				Avec les différents canaux de communication décrits dans la \myref{sse-sota-CommunicationEnEnvironnementVirtuel}, conscients pour certains (communication directe, contrôle et retour sensoriel) et inconscients pour d'autres (\myfeedthrough et \mygrounding), il est possible de définir trois scénarios de collaboration différents basés sur les travaux de \mycite[author]{Dix-2004} et de \mycite[author]{Grasset-2004}.
+				Les trois scénarios exposés dans les sections qui suivent sont résumés dans la \myref{tab-sota-SyntheseDesStrategiesCollaboratives}.
 				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
 					Illustré sur la \myref{fig-sota-CollaborationAPlusieursUtilisateurs}, ce scénario place tous les utilisateurs au même niveau, sans distinction hiérarchique liée à la configuration.
 					Chaque membre peut ainsi explorer l'environnement ou interagir avec l'environnement sur un même niveau d'accès que ses partenaires.
@@ -1033,11 +1034,30 @@
 					Ce scénario permet de s'affranchir des contraintes d'accès concurrent aux artefacts ou de synchronisation entre les artefacts.
 					De plus, les utilisateurs restreints au rôle d'observateur possèdent une charge de travail plus faible; ils peuvent ainsi se consacrer de manière plus importante à l'analyse des données disponibles et à la proposition de solutions pertinentes.
 
-					Cependant, en cherchant à caractériser le quotient intellectuel de groupe, \mycite[author]{Wooley-2010} concluent que le principal facteur d'intelligence de groupe est une répartition équitable des charges de travail entre les membres du groupe.
+					Cependant, en cherchant à caractériser le quotient intellectuel de groupe, \mycite[author]{Woolley-2010} concluent que le principal facteur d'intelligence de groupe est une répartition équitable des charges de travail entre les membres du groupe.
 					Dans ce scénario, l'asymétrie entre les différents rôles (manipulateur et observateur) semble favoriser un déséquilibre important des charges de travail ce qui n'est pas idéal pour la collaboration.
 					De plus, une grande partie de l'attention des observateurs est reportée sur le canal de communication directe avec le manipulateur.
 					C'est à travers ce canal qu'il va pouvoir désigner des objectifs, renvoyant ainsi aux problématiques d'inter-référencement abordés dans la \myref{sss-sota-LaConscienceDeGroupe}.
 				\end{mysubsubsection}
+				\begin{mytable}
+					\mycaption[tab-sota-SyntheseDesStrategiesCollaboratives]{Synthèse des stratégies collaboratives}
+					\begin{mytabular}{^C-C-C}
+						\mytoprule
+						\myrowstyle{\bfseries}
+						Multi-utilisateurs & Multi-experts & Accès exclusif \\
+						\mymiddlerule[\heavyrulewidth]
+						Niveau d'interaction identique & Niveau d'interaction équivalent & Niveau d'interaction asymétrique \\
+						\mymiddlerule
+						Accès concurrentiel aux artefacts & Accès libre aux artefacts & Accès libre aux artefacts \\
+						\mymiddlerule
+						Rôles identiques & Identification des rôles & Identification des rôles \\
+						\mymiddlerule
+						Communication normale & Communication difficile entre experts & Communication massive et inter-référencement \\
+						\mymiddlerule
+						Artefact unique & Synchronisation des artefacts & Artefact unique \\
+						\mybottomrule
+					\end{mytabular}
+				\end{mytable}
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-sota-Conclusion]{Conclusion}
@@ -1159,7 +1179,7 @@
 								}%
 							}
 							\rput(5,1){%
-								\myumlnode<PHANToM1>[\myOmni]{Interface : Interface haptique~\mynum{1}}%
+								\myumlnode<PHANToM1>[\myOmni]{Périphérique : Interface~\mynum{1}}%
 							}
 							\rput(5,-0.5){\Huge$\vdots$}
 							\rput(5,-3){%
@@ -1168,7 +1188,7 @@
 								}%
 							}
 							\rput(5,-6){%
-								\myumlnode<PHANToMn>[\myOmni]{Interface : Interface haptique~$n$}%
+								\myumlnode<PHANToMn>[\myOmni]{Périphérique : Interface~$n$}%
 							}
 							\rput(0,-5){%
 								\myumlnode<VideoProjecteur>[vue partagée]{Affichage : Vidéoprojecteur}
@@ -4236,7 +4256,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		En effet, la collaboration étroitement couplée provoque d'avantage d'interactions entre les utilisateurs (accès à une zone, besoin de coordination, \myetc) ce qui entraîne d'avantage de \myglos*{glo-ConflitDeCoordination}.
 		La troisième étude nous a permis de constater que ces \myglos*{glo-ConflitDeCoordination} avaient pour effet de réduire considérablement voire d'annuler complétement les gains en performances.
 
-		Nous avons également pu constater les effets de la \myglos{glo-FacilitationSociale} semblent particulièrement présents dans ce type de configuration synchrone et colocalisée.
+		Nous avons également pu constater que les effets de la \myglos{glo-FacilitationSociale} semblent particulièrement présents dans ce type de configuration synchrone et colocalisée.
 		Cet effet semble également présent dans le cas de tâches complexes, contrairement aux conclusions de \mycite[author]{Zajonc-1965} obtenues pour des collaborations faiblement couplées.
 		Les tâches complexes générant une collaboration étroitement couplée et les interactions fortes entre utilisateurs qui en découle semble les stimuler.
 		Cependant, modérons ce propos car les tâches proposées sont toujours, dans l'esprit du sujet, des tâches réalisables.
@@ -4255,9 +4275,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		De mes travaux découle également le projet de thèse, actuellement mené par Adrien \myname{Girard}, concernant la proposition d'outils haptiques pour assister la collaboration, particulièrement en ce qui concerne les aspects de conscience périphérique et de présence.
 
 		Pour aller plus loin, une première piste concerne la mise en collaboration de plusieurs experts provenant de spécialités différentes.
-		En effet, nou avons pu voir que le \myglos{glo-DockingMoleculaire} fait appel à des spécialités diverses.
+		En effet, nous avons pu voir que le \myglos{glo-DockingMoleculaire} fait appel à des spécialités diverses.
 		La collaboration multi-experts amènera de nouvelles contraintes de collaboration.
-		Notre dernière expérimentation n'a fait qu'effleurer le sujet en proposant des niveaux de collaboration différents (coordinateur ou opérateur) mais l'intervention de différents experts pourrait nécessiter des modifications de l'environnement plus profondes (environnements de visualisation privés, outils adaptés à la spécialité, \myetc).
+		Notre dernière expérimentation n'a fait qu'effleurer le sujet en proposant des niveaux de collaboration différents (coordinateur ou opérateur) mais l'intervention de différents experts pourrait nécessiter des modifications plus profondes de l'environnement de travail (environnements de visualisation privés, outils adaptés à la spécialité, \myetc).
 
 		Le besoin de travailler à distance est également très présent à travers les différentes applications collaboratives comme on a pu le voir tout au long de l'étude bibliographique \myref*{cha-sota-EtudeBibliographique}.
 		La collaboration à distance entraîne de nouvelles contraintes, en ce qui concerne les contraintes techniques mais surtout en ce qui concerne la communication.
