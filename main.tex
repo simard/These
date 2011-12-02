@@ -2568,19 +2568,71 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B}, la \myref{fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A} et la \myref{fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B} représentent respectivement les scénarios \myscenario{1a}, \myscenario{1b}, \myscenario{2a} et \myscenario{2b} tels qu'ils sont affichés pour la réalisation de la tâche.
 
 					\begin{myfigure}
-						\myimage[width=0.5\textwidth]{exp2-scenario1A}
+						\psset{xunit=0.027006961\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[width=0.4\textheight,angle=90]{exp2-scenario1A}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(-4,7)[exp2-1a-fixed-label]{mygray}{Structure fixe}
+							\pnode(-1,2.7){exp2-1a-fixed}
+							\ncdiagg[angleA=-90,linecolor=mygray]{c->}{exp2-1a-fixed-label}{exp2-1a-fixed}
+							\myexptwolabel(-1,-9.5)[exp2-1a-deformed-label]{myred}{Structure à déformer}
+							\pnode(-1,-4.6){exp2-1a-deformed}
+							\ncdiagg[angleA=90,linecolor=myred]{c->}{exp2-1a-deformed-label}{exp2-1a-deformed}
+							\myexptwolabel(-7,-8.5)[exp2-1a-stable-label]{myblue}{Structure stable}
+							\pnode(-7,-3){exp2-1a-stable}
+							\ncdiagg[angleA=90,linecolor=myblue]{c->}{exp2-1a-stable-label}{exp2-1a-stable}
+						\end{myps}
 						\mycaption[fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario1A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{1A}}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage[width=0.5\textwidth]{exp2-scenario1B}
+						\psset{xunit=0.029285714\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[width=0.4\textheight,angle=90]{exp2-scenario1B}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(-7,9)[exp2-1b-fixed-label]{mygray}{Structure fixe}
+							\pnode(-7,0.8){exp2-1b-fixed}
+							\ncdiagg[angleA=-90,linecolor=mygray]{c->}{exp2-1b-fixed-label}{exp2-1b-fixed}
+							\myexptwolabel(6,-7)[exp2-1b-deformed-label]{myred}{Structure à déformer}
+							\pnode(6,-1){exp2-1b-deformed}
+							\ncdiagg[angleA=90,linecolor=myred]{c->}{exp2-1b-deformed-label}{exp2-1b-deformed}
+							\myexptwolabel(5.25,4.5)[exp2-1b-stable-label]{myblue}{Structure stable}
+							\pnode(4.2,2){exp2-1b-stable}
+							\ncdiagg[angleA=-90,linecolor=myblue]{c->}{exp2-1b-stable-label}{exp2-1b-stable}
+						\end{myps}
 						\mycaption[fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario1B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{1B}}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp2-scenario2A}
+						\psset{xunit=0.021117647\textheight,yunit=0.02\textheight}
+						\begin{myps}(-11,-10)(10,10)
+							\rput(0,0){\myimage[height=0.4\textheight]{exp2-scenario2A}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(-8.75,5.5)[exp2-2a-fixed-label]{mygray}{\myGlosnl{glo-Residu} fixe}
+							\pnode(-7.4,8.2){exp2-2a-fixed}
+							\ncdiagg[angleA=90,linecolor=mygray]{c->}{exp2-2a-fixed-label}{exp2-2a-fixed}
+							\myexptwolabel(6,7.5)[exp2-2a-deformed-label]{myred}{Structure à déformer}
+							\pnode(6.4,0){exp2-2a-deformed}
+							\ncdiagg[angleA=-90,offsetA=30pt,armA=75pt,linecolor=myred]{c->}{exp2-2a-deformed-label}{exp2-2a-deformed}
+							\myexptwolabel(-4,-9.5)[exp2-2a-stable-label]{myblue}{Structure stable}
+							\pnode(-4,-7.8){exp2-2a-stable}
+							\ncdiagg[angleA=90,linecolor=myblue]{c->}{exp2-2a-stable-label}{exp2-2a-stable}
+						\end{myps}
 						\mycaption[fig-exp2-RepresentationDeLaMoleculeTRPZIPPERPourLeScenario2A]{Représentation de la molécule \myTRPZIPPER pour le scénario~\myscenario{2A}}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp2-scenario2B}
+						\psset{xunit=0.035694444\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[height=0.4\textheight]{exp2-scenario2B}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(-7.5,9.5)[exp2-2b-fixed-label]{mygray}{\myGlosnl{glo-Residu} fixe}
+							\pnode(-8.7,6.4){exp2-2b-fixed}
+							\ncdiagg[angleA=-90,armA=20pt,linecolor=mygray]{c->}{exp2-2b-fixed-label}{exp2-2b-fixed}
+							\myexptwolabel(7,-6)[exp2-2b-deformed-label]{myred}{Structure à déformer}
+							\pnode(7,-1.4){exp2-2b-deformed}
+							\ncdiagg[angleA=90,linecolor=myred]{c->}{exp2-2b-deformed-label}{exp2-2b-deformed}
+							\myexptwolabel(-6,-9.5)[exp2-2b-stable-label]{myblue}{Structure stable}
+							\pnode(-6,-6.4){exp2-2b-stable}
+							\ncdiagg[angleA=90,linecolor=myblue]{c->}{exp2-2b-stable-label}{exp2-2b-stable}
+						\end{myps}
 						\mycaption[fig-exp2-RepresentationDeLaMoleculeTRPCAGEPourLeScenario2B]{Représentation de la molécule \myTRPCAGE pour le scénario~\myscenario{2B}}
 					\end{myfigure}
 
@@ -2603,7 +2655,6 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{unit=0.08\textwidth}
-						\def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
 						\begin{myps}(0,0)(11,8.5)
 							\rput[bl](1,0){\myimage{exp2-trp-zipper}}
 							\myexptwolabel(9.4,2.6)[deformed-label]{myred}{Molécule à déformer}
@@ -3216,11 +3267,37 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La molécule \myPrion est utilisée pour le scénario~\myscenario{1} \myref*{fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1}; la molécule \myUbiquitin est utilisée pour le scénario~\myscenario{2} \myref*{fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2}.
 
 					\begin{myfigure}
-						\myimage{exp3-scenario1}
+						\psset{xunit=0.026034156\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[height=0.4\textheight]{exp3-scenario1}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(-7,-9.5)[exp3-1-fixed-label]{mygray}{Structure fixe}
+							\pnode(-7,-6.2){exp3-1-fixed}
+							\ncdiagg[angleA=90,linecolor=mygray]{c->}{exp3-1-fixed-label}{exp3-1-fixed}
+							\myexptwolabel(6.5,9.5)[exp3-1-deformed-label]{myred}{Structure à déformer}
+							\pnode(5.4,7.5){exp3-1-deformed}
+							\ncdiagg[angleA=-90,linecolor=myred]{c->}{exp3-1-deformed-label}{exp3-1-deformed}
+							\myexptwolabel(-5,6)[exp3-1-stable-label]{myblue}{Structure stable}
+							\pnode(-3.4,3.2){exp3-1-stable}
+							\ncdiagg[angleA=-90,linecolor=myblue]{c->}{exp3-1-stable-label}{exp3-1-stable}
+						\end{myps}
 						\mycaption[fig-exp3-RepresentationDeLaMoleculePrionPourLeScenario1]{Représentation de la molécule \myPrion pour le scénario~\myscenario{1}}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp3-scenario2}
+						\psset{xunit=0.025884544\textheight,yunit=0.02\textheight}
+						\begin{myps}(-11,-10)(11,10)
+							\rput(0,0){\myimage[height=0.4\textheight]{exp3-scenario2}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(7,8)[exp3-2-fixed-label]{mygray}{Structure fixe}
+							\pnode(2.6,5.4){exp3-2-fixed}
+							\ncdiagg[angleA=-90,linecolor=mygray]{c->}{exp3-2-fixed-label}{exp3-2-fixed}
+							\myexptwolabel(7.5,-8.5)[exp3-2-deformed-label]{myred}{Structure à déformer}
+							\pnode(4.3,-6){exp3-2-deformed}
+							\ncdiagg[angleA=90,linecolor=myred]{c->}{exp3-2-deformed-label}{exp3-2-deformed}
+							\myexptwolabel(-8.5,7)[exp3-2-stable-label]{myblue}{Structure stable}
+							\pnode(-8.5,-1.2){exp3-2-stable}
+							\ncdiagg[angleA=-90,linecolor=myblue]{c->}{exp3-2-stable-label}{exp3-2-stable}
+						\end{myps}
 						\mycaption[fig-exp3-RepresentationDeLaMoleculeUbiquitinPourLeScenario2]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{2}}
 					\end{myfigure}
 				\end{mysubsubsection}
@@ -3816,11 +3893,37 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La \myref{fig-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1} représente la molécule \myUbiquitin et la \myref{fig-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2} représente le complexe de molécules \myNusENusG.
 
 					\begin{myfigure}
-						\myimage{exp4-scenario1}
+						\psset{xunit=0.026337761\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[height=0.4\textheight]{exp4-scenario1}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(7,8)[exp3-2-fixed-label]{mygray}{Structure fixe}
+							\pnode(2.6,5.4){exp3-2-fixed}
+							\ncdiagg[angleA=-90,linecolor=mygray]{c->}{exp3-2-fixed-label}{exp3-2-fixed}
+							\myexptwolabel(7.5,-8.5)[exp3-2-deformed-label]{myred}{Structure à déformer}
+							\pnode(4.3,-6){exp3-2-deformed}
+							\ncdiagg[angleA=90,linecolor=myred]{c->}{exp3-2-deformed-label}{exp3-2-deformed}
+							\myexptwolabel(-8.5,7)[exp3-2-stable-label]{myblue}{Structure stable}
+							\pnode(-8.5,-1.2){exp3-2-stable}
+							\ncdiagg[angleA=-90,linecolor=myblue]{c->}{exp3-2-stable-label}{exp3-2-stable}
+						\end{myps}
 						\mycaption[fig-exp4-RepresentationDeLaMoleculeUbiquitinPourLeScenario1]{Représentation de la molécule \myUbiquitin pour le scénario~\myscenario{1}}
 					\end{myfigure}
 					\begin{myfigure}
-						\myimage{exp4-scenario2}
+						\psset{xunit=0.021854975\textheight,yunit=0.02\textheight}
+						\begin{myps}(-10,-10)(10,10)
+							\rput(0,0){\myimage[width=0.4\textheight,angle=-90]{exp4-scenario2}}
+							\psset{nodesepA=3pt,linewidth=1pt,linearc=0.1,arrowinset=.2,arrowsize=1pt 3}
+							\myexptwolabel(7,5)[exp3-2-nuse-stable-label]{myblue}{\myNusE stable}
+							\pnode(7,1.5){exp3-2-nuse-stable}
+							\ncdiagg[angleA=-90,linecolor=myblue]{c->}{exp3-2-nuse-stable-label}{exp3-2-nuse-stable}
+							\myexptwolabel(3,9.5)[exp3-2-nusg-deformed-label]{myred}{\myNusG à déformer}
+							\pnode(-0.6,6.6){exp3-2-nusg-deformed}
+							\ncdiagg[angleA=-90,linecolor=myred]{c->}{exp3-2-nusg-deformed-label}{exp3-2-nusg-deformed}
+							\myexptwolabel(-7,-8)[exp3-2-nusg-stable-label]{myblue}{\myNusG stable}
+							\pnode(-6,-5.6){exp3-2-nusg-stable}
+							\ncdiagg[angleA=90,linecolor=myblue]{c->}{exp3-2-nusg-stable-label}{exp3-2-nusg-stable}
+						\end{myps}
 						\mycaption[fig-exp4-RepresentationDeLaMoleculeNusENusGPourLeScenario2]{Représentation de la molécule \myNusENusG pour le scénario~\myscenario{2}}
 					\end{myfigure}
 				\end{mysubsubsection}
