@@ -80,15 +80,20 @@
 % This command introduce a border frame for draft compilation
 \def\myps(#1,#2)(#3,#4){%
 	\pspicture(#1,#2)(#3,#4)%
+	\def\my@ne{#1}%
+	\def\mytw@{#2}%
+	\def\mythr@@{#3}%
+	\def\myf@ur{#4}%
+}
+\def\endmyps{%
 	\ifdraft%
 	{%
 		% To delimit the border of figure
-		%\psframe[shadow=false,framearc=0,fillstyle=none,linestyle=solid,linewidth=1pt,linecolor=myred](#1,#2)(#3,#4)
-		\psframe[shadow=false,framearc=0,fillstyle=none,linestyle=solid,linewidth=1pt,linecolor=myred](#1,#2)(#3,#4)
+		\psframe[shadow=false,framearc=0,fillstyle=none,linestyle=solid,linewidth=1pt,linecolor=myred](\my@ne,\mytw@)(\mythr@@,\myf@ur)%
 	}{%
 	}%
+	\endpspicture%
 }
-\def\endmyps{\endpspicture}
 
 % Create an additionnal 'chartstyle'
 % cluster, stack, block, boxplot
