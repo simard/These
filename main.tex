@@ -104,43 +104,42 @@
 	\begin{mychapter+}{Introduction générale}
 		En biologie moléculaire, il est un problème vieux de plus d'un siècle qui n'a toujours pas trouvé de solution optimale.
 		Ce problème, le \myglos{glo-DockingMoleculaire}, consiste à comprendre comment des molécules peuvent s'assembler afin d'en former une nouvelle.
-		L'avènement de l'informatique a permis à de nombreux chercheurs de proposer des algorithmes toujours plus évolués les uns que les autres mais aucun ne permet d'obtenir une solution robuste et fiable dans un temps raisonnable.
+		L'avènement de l'informatique a permis à de nombreux chercheurs de proposer des algorithmes, de plus en plus optimisés mais sans jamais parvenir à obtenir une solution robuste et fiable dans un temps raisonnable.
 
-		Afin de donner un nouveau souffle à ce domaine de recherche, l'aptitude des humains à décider de manière intelligente a été introduite dans le processus de recherche.
-		Cependant, un biologiste seul peut difficilement appréhender un problème d'une telle complexité.
-		C'est pourquoi, des systèmes collaboratifs permettant le partage de connaissances ont commencé à émerger.
+		Pour répondre à ces problématiques de temps, de robustesse et de fiabilité, les biologistes ont associé l'intelligence de l'humain à la puissance de traitement des algorithmes au sein du processus de recherche.
+		C'est avec la réalité virtuelle que les biologistes accèdent à la manipulation des molécules avec l'aide de logiciels de visualisation, de moteurs de simulations ou encore de périphériques d'interaction.
 
-		Parallèlement à ces nouvelles approches, les biologistes souhaitent avoir la possibilité de manipuler les molécules.
-		Les contraintes physiques et techniques d'une telle manipulation ont amenés certains d'entre eux à s'orienter vers une modélisation puis une numérisation du comportement des molécules.
-		Des moteurs de simulation sont alors développés pour permettre d'explorer virtuellement les comportements de ces molécules.
+		Puis, la complexité du \myglos{glo-DockingMoleculaire} amène les biologistes à proposer des solutions collaboratives.
+		La collaboration permet de distribuer la charge de travail ou de tirer parti de différentes expertises.
+		Des \myacro*{acr-EVC}, distants ou colocalisés, ont été proposées mais ce sont principalement les aspects techniques ou technologiques qui sont présentés; l'aspect social de la collaboration est peu abordé.
+		De plus, la grande majorité des \myacro*{acr-EVC} étudiés proposent des collaborations faiblement couplées limitant ainsi une partie du potentiel collaboratif (communication instantanée, interaction immédiate, \myetc).
 
-		Puis, afin de pouvoir interagir avec ces simulations, certains biologistes se sont orientés vers les technologies utilisées dans la réalité virtuelle, notamment les interfaces haptiques.
-		Ces interfaces permettent de percevoir et d'interagir avec les forces d'interactions entre les structures moléculaires.
-
-		C'est dans ce contexte que les travaux de cette thèse prennent place.
-		Nous proposons aux biologistes de manipuler et d'interagir de manière collaborative et en temps-réel avec des structures moléculaires à l'aide d'interfaces haptiques.
-		Nous souhaitons identifier les contraintes liées à cette collaboration étroitement couplée (synchrone et colocalisée) puis nous proposerons des solutions exploitant le canal haptique pour améliorer la communication et la coordination entre les partenaires.
+		Sur la base de ces éléments, nous avons souhaité étudier dans ce travail de thèse, les apports, les limites et les contraintes de différents configurations de collaboration étroitement couplée afin de fournir des solutions haptiques appropriées.
+		Nous définissons la collaboration étroitement couplée comme la
+		\begin{myquote}[francais]
+			Collaboration durant laquelle chaque action d'un membre du groupe modifie la zone de travail des autres membres avec pour conséquence un fort besoin de communication et de coordination.
+		\end{myquote}
 
 		Le mémoire qui va suivre s'organise de la manière suivante.
 		Dans un premier temps, nous présenterons de manière précise dans le \myref{cha-sota-EtudeBibliographique}, le contexte dans lequel s'inscrit notre travail.
-		Nous commencerons par y présenter le \myglos{glo-DockingMoleculaire} et la complexité que représente ce problème.
+		Nous commencerons par y présenter le \myglos{glo-DockingMoleculaire} et la complexité que représente ce problème ainsi que les différentes plateformes, collaboratives ou non, qui ont contribué à faire avancer le domaine.
 		Puis nous nous intéresserons à la psychologie sociale du travail collaboratif en soulignant les avantages et les limites d'une telle approche.
 		Enfin, nous reviendrons sur les particularités de la collaboration en environnement virtuel.
 
-		Dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}, nous allons présenter la plateforme \myShaddock qui a été développée dans le cadre de cette thèse pour répondre aux problématiques de collaboration et de manipulation moléculaire en temps-réel.
-		Nous justifierons les choix architecturaux et les modules utilisés.
-		La dernière section sera consacrée à la présentation des outils haptiques développés pour répondre aux différentes contraintes de manipulation.
+		Dans le \myref{cha-Shaddock-ManipulationCollaborativeDeMolecules}, nous présenterons la plateforme \myShaddock développée dans le cadre de cette thèse pour répondre aux contraintes identifiées au cours de l'étude bibliographique.
+		Nous justifierons les choix architecturaux et les modules utilisés pour la création de cette plateforme de déformation moléculaire en temps-réel.
+		Les outils haptiques développés pour répondre aux différentes contraintes de manipulation identifiées seront également exposés.
 
 		Sur la base de la plateforme \myShaddock, nous présentons ensuite trois études de cas afin d'étudier la collaboration étroitement couplée.
-		Le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} s'intéresse aux processus d'exploration et de sélection collaborative.
-		Puis, le \myref{cha-DeformationCollaborativeDeMolecule} propose de comparer différentes répartitions des ressources entre les utilisateurs sur une tâche de déformation.
-		Ces deux études ne proposant des manipulations que de manière individuelle ou en couple, le \myref{cha-LaDynamiqueDeGroupe} abordera les contraintes liées à la déformation de molécules sur des groupes de quatre utilisateurs.
+		Le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} s'intéresse aux processus d'exploration et de sélection collaborative de structures moléculaires afin d'identifier des stratégies de groupe et d'étudier l'évolution des performances.
+		Puis, le \myref{cha-DeformationCollaborativeDeMolecule} propose de comparer les performances de différentes répartitions des ressources entre les utilisateurs sur une tâche de déformation moléculaire.
+		Enfin, la dernière étude exposée dans le \myref{cha-LaDynamiqueDeGroupe} étudie différentes configurations collaboratives pour observer les phénomènes de groupe apparaissant lors d'une déformation coordonnée de molécule.
 
-		Sur la base des résultats de ces trois études de cas, nous proposons, dans le \myref{cha-TravailCollaboratifAssisteParHaptique}, des outils haptiques permettant d'améliorer le processus de collaboration.
-		Ces outils seront testés, entre autre par des biologistes, afin d'évaluer leur pertinence et leur utilité dans ce contexte de déformation moléculaire.
+		Sur la base des résultats de ces trois études de cas, le \myref{cha-TravailCollaboratifAssisteParHaptique} expose une nouvelle configuration de travail assistée par de nouveaux outils haptiques destinés à améliorer le processus de coordination et de communication.
+		Une expérimentation, à laquelle des biologistes ont participé, a été mise en place afin d'évaluer ces solutions innovantes.
 
 		Pour finir, nous présenterons la synthèse des travaux effectués dans le cadre de cette thèse.
-		Puis nous proposerons des perspectives à plus ou moins long terme concernant les poursuites possibles de ce travail.
+		Puis nous proposerons des perspectives à court et moyen terme.
 	\end{mychapter+}
 	\begin{mychapter}[cha-sota-EtudeBibliographique]{Étude bibliographique}
 		\begin{mysection}[sec-sota-Introduction]{Introduction}
