@@ -279,6 +279,7 @@
 		\null%
 	\end{titlepage}%
 	\clearpage%
+	\thispagestyle{empty}%
 }
 \def\@makechapterhead#1{%
 	\addtocontents{tcs}{\protect\addvspace{10\p@}}%
@@ -306,10 +307,10 @@
 	\begin{otherlanguage}{#1}%
 	\iflanguage{french}{\def\my@abstract@name{Résumé}}{}%
 	\iflanguage{english}{\def\my@abstract@name{Abstract}}{}%
-	\ifdef{\my@abstract@name}{%
+	\ifundef{\my@abstract@name}{%
 		\ClassWarning{mythesis}{Unknown language used in 'myabstract' environment}%
 	}{}%
-	\begin{mychapter+}{\my@abstract@name}
+	\begin{mychapter+}[cha-abstract-\languagename]{\my@abstract@name}
 	}{%
 	\end{mychapter+}
 	\end{otherlanguage}%
@@ -319,10 +320,10 @@
 \newenvironment{mykeywords}{%
 	\iflanguage{french}{\def\my@keywords@name{Mots-clefs}}{}%
 	\iflanguage{english}{\def\my@keywords@name{Keywords}}{}%
-	\ifdef{\my@keywords@name}{%
+	\ifundef{\my@keywords@name}{%
 		\ClassWarning{mythesis}{Unknown language used in 'mykeywords' environment}%
 	}{}%
-	\begin{myparagraph}{\my@keywords@name}
+	\begin{myparagraph}[par-keywords-\languagename]{\my@keywords@name}
 	}{%
 	\end{myparagraph}
 }
