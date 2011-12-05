@@ -120,11 +120,12 @@
 	\phantomsection%
 	\part*{#1}%
 }{}
-\newenvironment{mypart+}[1]{%
+\newenvironment{mypart+}[2][]{%
 	\cleardoublepage%
 	\phantomsection%
-	\addcontentsline{toc}{part}{#1}%
-	\part*{#1}%
+	\addcontentsline{toc}{part}{#2}%
+	\part*{#2}%
+	\label{#1}%
 }{}
 \newenvironment{mychapter}[2][]{%
 	\cleardoublepage%
@@ -144,12 +145,13 @@
 }{
 	\adjustmtc%
 }
-\newenvironment{mychapter+}[1]{%
+\newenvironment{mychapter+}[2][]{%
 	\cleardoublepage%
 	\phantomsection%
-	\addcontentsline{toc}{chapter}{#1}%
-	\chapter*{#1}%
-	\markboth{#1}{#1}%
+	\addcontentsline{toc}{chapter}{#2}%
+	\chapter*{#2}%
+	\label{#1}%
+	\markboth{#2}{#2}%
 }{
 	\adjustmtc%
 }
@@ -163,11 +165,12 @@
 	\section*{#1}%
 	\markboth{#1}{#1}%
 }{}
-\newenvironment{mysection+}[1]{%
+\newenvironment{mysection+}[2][]{%
 	\phantomsection%
-	\addcontentsline{toc}{section}{#1}%
-	\section*{#1}%
-	\markboth{#1}{#1}%
+	\addcontentsline{toc}{section}{#2}%
+	\section*{#2}%
+	\label{#1}%
+	\markboth{#2}{#2}%
 }{}
 \newenvironment{mysubsection}[2][]{%
 	\phantomsection%
@@ -180,10 +183,11 @@
 }{
 	\adjustmtc%
 }
-\newenvironment{mysubsection+}[1]{%
+\newenvironment{mysubsection+}[2][]{%
 	\phantomsection%
-	\addcontentsline{toc}{subsection}{#1}%
-	\subsection*{#1}%
+	\addcontentsline{toc}{subsection}{#2}%
+	\subsection*{#2}%
+	\label{#1}%
 }{
 	\adjustmtc%
 }
@@ -198,10 +202,11 @@
 }{
 	\adjustmtc%
 }
-\newenvironment{mysubsubsection+}[1]{%
+\newenvironment{mysubsubsection+}[2][]{%
 	\phantomsection%
-	\addcontentsline{toc}{subsubsection}{#1}%
-	\subsubsection*{#1}%
+	\addcontentsline{toc}{subsubsection}{#2}%
+	\subsubsection*{#2}%
+	\label{#1}%
 }{
 	\adjustmtc%
 }
