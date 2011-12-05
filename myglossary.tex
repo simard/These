@@ -3,26 +3,20 @@
 \mynewglos{glo-Bimanuel}%
 {%
 	name={bimanuel},%
-	description={Qui se fait avec les deux mains},%
+	description={À deux mains},%
 	plural={bimanuelle}%
 }
 \mynewglos{glo-Binome}%
 {%
 	name={binôme},%
-	description={Groupe constitué de \mynum{2}~personnes},%
+	description={Entité constituée de \mynum{2}~personnes (voir \myglos{glo-Monome}, \myglos{glo-Trinome} et \myglos{glo-Quadrinome})},%
 	plural={binômes}%
 }
 % CCC
-\mynewacro{acr-CAO}%
-{%
-	name={\textsc{cao}},%
-	first={conception assistée par ordinateur (\textsc{cao})},%
-	description={La \textsc{cao} permet de concevoir et de tester virtuellement, à l'aide d'outils informatique, des produits manufacturés}%
-}
 \mynewglos{glo-ConflitDeCoordination}%
 {%
 	name={conflit de coordination},%
-	description={Conflit entre deux sujets qui peut survenir lorsque les deux sujets tente d'accéder ou de déformer un objet au même instant},%
+	description={Conflit entre deux sujets qui peut survenir lorsque les deux sujets tente d'accéder ou d'agir sur un même espace de travail},
 	plural={conflits de coordination}%
 }
 \mynewacro{acr-CUDA}%
@@ -34,29 +28,29 @@
 \mynewglos{glo-Curseur}%
 {%
 	name={curseur},%
-	description={Élément virtuel associé à un élément physique que le sujet manipule; il est lié à l'\myglos{glo-EffecteurTerminal}},%
+	description={Élément virtuel associé à l'\myglos{glo-EffecteurTerminal} que le sujet manipule},%
 	plural={curseurs}%
 }
 % DDD
 \mynewacro{acr-DDL}%
 {%
-	name={\textsc{ddl}},%
-	first={Degré De Liberté (\textsc{ddl})},%
+	name={\textsc{d}d\textsc{l}},%
+	first={Degré de Liberté (\textsc{d}d\textsc{l})},%
 	plural={\textsc{ddl}},%
-	firstplural={Degrés De Liberté (\textsc{ddl})},%
+	firstplural={Degrés de Liberté (\textsc{d}d\textsc{l})},%
 	description={Mouvements relatifs indépendants d'un solide par rapport à un autre}%
 }
 \mynewglos{glo-DockingMoleculaire}%
 {%
 	name={\myemph{docking} moléculaire},%
-	description={Méthode permettant de déterminer l'orientation et la déformation optimale de \mynum{2}~molécules afin qu'elle s'assemble pour former un complexe de molécules stable},%
+	description={Méthode permettant de déterminer l'orientation et la déformation optimale de \mynum{2}~molécules afin qu'elles s'assemblent pour former un complexe de molécules stable},%
 	plural={\myemph{docking} moléculaires}%
 }
 % EEE
 \mynewglos{glo-EffecteurTerminal}%
 {%
 	name={effecteur terminal},%
-	description={Élément physique que le sujet manipule; il est lié au \myglos{glo-Curseur} du monde virtuel},%
+	description={Élément physique manipulé par un sujet lié à un élément virtuel (voir \myglos{glo-Curseur})},%
 	plural={effecteurs terminaux}%
 }
 \mynewacro{acr-EVC}%
@@ -65,13 +59,20 @@
 	first={Environnement Virtuel Collaboratif (\textsc{evc})},%
 	plural={\textsc{evc}},%
 	firstplural={Environnements Virtuels Collaboratifs (\textsc{evc})},%
-	description={Ensemble logiciel et matériel permettant de faire interagir plusieurs utilisateurs au sein d'un même environnement; ils jouent un rôle important dans le développement de nouvelles méthodes de travail collaboratives}%
+	description={Ensemble logiciel et matériel permettant de faire interagir plusieurs utilisateurs au sein d'un même environnement; ces environnements jouent un rôle essentiel dans le développement de nouvelles méthodes de travail collaboratives}%
+}
+% FFF
+\mynewglos{glo-FacilitationSociale}%
+{%
+	name={facilitation sociale},%
+	description={En anglais, \myemph{social facilitation}, phénomène de groupe défini dans la \myref{sse-sota-LaFacilitationSociale}},
+	plural={facilitation sociale}%
 }
 % HHH
 \mynewglos{glo-Homoscedasticite}%
 {%
 	name={homoscedasticité},%
-	description={Équivalent à homogénéité des variances; permet de comparer des variables aléatoires possédant des variances similaires},%
+	description={Équivalent à homogénéité des variances; défini si la variances de plusieurs population sont de même ordre et donc comparables},
 	plural={homoscedasticités}%
 }
 % III
@@ -87,13 +88,13 @@
 	first={\textsc{icm} (\myemph{Iterated Conditional Modes})},%
 	plural={\textsc{icm}},
 	firstplural={\textsc{icm} (\myemph{Iterated Conditional Modes})},%
-	description={Méthode de recherche dans un espace de solutions similaire à une descente de gradient}
+	description={Méthode de recherche dans un espace de solutions, similaire à une descente de gradient}
 }
 \mynewacro{acr-IMD}%
 {%
 	name={\textsc{imd}},%
 	first={\textsc{imd} (\myemph{Interactive Molecular Dynamics})},%
-	description={Programme permettant de connecter le logiciel de visualisation moléculaire \myacro-{acr-VMD} avec le logiciel de simulation \myacro-{acr-NAMD} pour une simulation interactive en temps-réel \mycite{Stadler-1997}}%
+	description={Logiciel permettant de connecter le logiciel de visualisation moléculaire \myacro-{acr-VMD} avec le logiciel de simulation \myacro-{acr-NAMD} pour une simulation interactive en temps-réel \mycite{Stadler-1997}}%
 }
 \mynewacro{acr-ITAP}%
 {%
@@ -112,45 +113,39 @@
 \mynewglos{glo-Meneur}%
 {%
 	name={meneur},%
-	description={En anglais \myemph{leader}, personne qui dirige un groupe afin d'atteindre des objectifs communs à ce groupe; c'est celui qui prend les décisions (voir aussi \myglos{glo-Suiveur})},%
+	description={En anglais, \myemph{leader}, personne qui prend les décisions dans un groupe afin d'atteindre des objectifs communs (voir \myglos{glo-Suiveur})},%
 	plural={meneurs}%
 }
 \mynewglos{glo-Monomanuel}%
 {%
 	name={monomanuel},%
-	description={Qui se fait avec une main},%
+	description={À une main},%
 	plural={monomanuelle}%
 }
 \mynewglos{glo-Monome}%
 {%
 	name={monôme},%
-	description={\myemph{Groupe} constitué d'une unique personne},%
+	description={Entité constituée d'un unique individu (voir \myglos{glo-Binome}, \myglos{glo-Trinome} et \myglos{glo-Quadrinome})},%
 	plural={monômes}%
-}
-\mynewglos{glo-FacilitationSociale}%
-{%
-	name={facilitation sociale},%
-	description={En anglais \myemph{social facilitation} \mycite{Triplett-1900}, phénomène de groupe où les personnes fournissent plus d'efforts grâce à la présence de partenaires},%
-	plural={facilitation sociale}%
 }
 \mynewacro{acr-TRM}%
 {%
 	name={\textsc{trm}},
 	first={Théorie des Ressources Multiples (\textsc{trm})},%
-	description={Cette théorie, élaborée par \mycite[author]{Wickens-1984} (\textsc{mrt} pour \myemph{Multiple Resource Theory}), propose un modèle pour la gestion des charges de travail pour un humain}
+	description={La théorie \textsc{mrt} (pour \myemph{Multiple Resource Theory}), élaborée par \mycite[author]{Wickens-1984}, propose un modèle pour la gestion des charges de travail d'un humain}
 }
 % NNN
 \mynewacro{acr-NAMD}%
 {%
 	name={\textsc{namd}},%
 	first={\textsc{namd} (\myemph{Scalable Molecular Dynamics})},%
-	description={Programme de simulation pour la dynamique moléculaire \mycite{Phillips-2005}}%
+	description={Logiciel de simulation pour la dynamique moléculaire \mycite{Phillips-2005}}%
 }
 % PPP
 \mynewglos{glo-ParesseSociale}%
 {%
 	name={paresse sociale},%
-	description={En anglais \myemph{social loafing} \mycite{Ringelmann-1913}, phénomène de groupe où les personnes fournissent moins d'effort pour la réalisation d'une tâche que s'ils effectuaient la tâche seuls},%
+	description={En anglais, \myemph{social loafing}, phénomène de groupe défini dans la \myref{sse-sota-LaParesseSociale}},
 	plural={paresse sociale}%
 }
 \mynewacro{acr-PCV}%
@@ -159,20 +154,20 @@
 	first={Primitive Comportementale Virtuelle (\textsc{pcv})},%
 	plural={\textsc{pcv}},
 	firstplural={Primitives Comportementales Virtuelles (\textsc{pcv})},%
-	description={Dans une application de réalité virtuelle, les activités d'un sujet peuvent toujours être décomposées en quatre comportements de base, appelés \myacro+{acr-PCV}, qui sont : observer, se déplacer, agir et communiquer \mycite{Fuchs-2006a}}
+	description={Dans une application de réalité virtuelle, les activités d'un sujet peuvent être décomposées en quatre comportements de base, appelés \myacro+{acr-PCV}, qui sont : observer, se déplacer, agir et communiquer \mycite{Fuchs-2006a}}
 }
 % QQQ
 \mynewglos{glo-Quadrinome}%
 {%
 	name={quadrinôme},%
-	description={Groupe constitué de \mynum{4}~personnes},%
+	description={Entité constituée de \mynum{4}~personnes (voir \myglos{glo-Monome}, \myglos{glo-Binome} et \myglos{glo-Trinome})},%
 	plural={quadrinômes}%
 }
 % RRR
 \mynewglos{glo-RealiteVirtuelle}%
 {%
 	name={réalité virtuelle},%
-	description={C'est une simulation informatique interactive qui immerge un ou plusieurs utilisateurs dans un environnement multimodal}%
+	description={Simulation informatique interactive qui immerge un ou plusieurs utilisateurs dans un environnement multimodal}%
 }
 \mynewglos{glo-Residu}%
 {%
@@ -184,19 +179,19 @@
 {%
 	name={\textsc{rmsd}},%
 	first={\myemph{Root Mean Square Deviation} (\textsc{rmsd})},%
-	description={Appelé Écart Quadratique Moyen en français, il permet -- dans le cadre de la biologie moléculaire -- de mesurer la différence entre deux déformations d'une même molécule}%
+	description={Appelé Écart Quadratique Moyen en français, il permet -- dans le cadre de la biologie moléculaire -- de mesurer la différence entre deux conformations d'une même molécule}%
 }
 % SSS
 \mynewglos{glo-StructureInformelle}%
 {%
 	name={structure informelle},%
-	description={Groupe de personnes sans structures ni hiérarchie},%
+	description={Groupe de personnes sans structure ni hiérarchie},%
 	plural={structures informelles}%
 }
 \mynewglos{glo-Suiveur}%
 {%
 	name={suiveur},%
-	description={En anglais \myemph{follower}, personne qui se laisse diriger dans un groupe afin d'atteindre des objectifs communs à ce groupe; c'est une personne qui ne prend pas de décision (voir aussi \myglos{glo-Meneur})},%
+	description={En anglais, \myemph{follower}, personne qui se laisse diriger dans un groupe afin d'atteindre des objectifs communs (voir \myglos{glo-Meneur})},%
 	plural={suiveurs}%
 }
 \mynewacro{acr-SUS}%
@@ -215,7 +210,7 @@
 \mynewglos{glo-Trinome}%
 {%
 	name={trinôme},%
-	description={Groupe constitué de \mynum{3}~personnes},%
+	description={Entité constituée de \mynum{3}~personnes (voir \myglos{glo-Monome}, \myglos{glo-Binome} et \myglos{glo-Quadrinome})},%
 	plural={trinômes}%
 }
 % UUU
@@ -223,7 +218,7 @@
 {%
 	name={\textsc{uml}},%
 	first={\textsc{uml} (\myemph{Unified Modeling Language})},%
-	description={C'est un langage graphique de modélisation utilisé principalement en génie logiciel}%
+	description={Langage graphique de modélisation utilisé principalement en génie logiciel}%
 }
 % VVV
 \mynewglos{glo-VariableDependante}%
@@ -254,7 +249,7 @@
 {%
 	name={\textsc{vmd}},%
 	first={\textsc{vmd} (\myemph{Visual Molecular Dynamics})},%
-	description={Programme de visualisation moléculaire \mycite{Humphrey-1996}}%
+	description={Logiciel de visualisation moléculaire \mycite{Humphrey-1996}}%
 }
 \mynewacro{acr-VRPN}%
 {%
