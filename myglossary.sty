@@ -20,15 +20,12 @@
 \ProcessOptions
 
 %% Options to pass to packages
-\PassOptionsToPackage{francais}{minitoc}
 \if@myenglish
 	\PassOptionsToPackage{xindy={language=english,codepage=utf8}}{glossaries}
-	\PassOptionsToPackage{english}{minitoc}
 	\PassOptionsToPackage{english}{translator}
 \fi
 \if@myfrancais
 	\PassOptionsToPackage{xindy={language=french,codepage=utf8}}{glossaries}
-	\PassOptionsToPackage{francais}{minitoc}
 	\PassOptionsToPackage{french}{translator}
 \fi
 \if@acronym
@@ -45,8 +42,6 @@
 \RequirePackage[toc=true,style=altlist]{glossaries}
 % Improve the bookmarks in the PDF
 \RequirePackage[dvips]{bookmark}
-% Import the '\adjustmtc' command for toc
-\RequirePackage{minitoc}
 % To translate titles in 'glossaries' package
 \RequirePackage{translator}
 
