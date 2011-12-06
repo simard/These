@@ -155,7 +155,7 @@
 		\begin{mysection}[sec-sota-ContexteDeTravail-LaModelisationMoleculaire]{Contexte de travail : la modélisation moléculaire}
 			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que sa traduction \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu citée dans la littérature française.}.
 			Cette section a pour objectif de présenter le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème.
-			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \myglosnl{glo-DockingMoleculaire}}
+			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \textit{docking} moléculaire}
 				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
 				Le \myglos{glo-DockingMoleculaire} permet soit de découvrir de nouvelles molécules (par assemblage de deux ou plusieurs molécules), soit de comprendre la nature d'un complexe de molécules obtenu par cristallographie\footnote{La cristallographie permet de déterminer les molécules présentes dans un complexe de molécules mais ne permet pas de déterminer avec précisions comment elles sont assemblées.}.
 				\mycite[author]{Fischer-1894} illustrent le \myglos{glo-DockingMoleculaire} avec le modèle \og clef-serrure \fg décrit de la façon suivante.
@@ -251,7 +251,7 @@
 				Une exploration exhaustive de l'espace de recherche est impossible.
 				La section suivante présente les différentes solutions logicielles existante pour tenter de trouver des solutions de \myglos{glo-DockingMoleculaire}.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-RechercheDeSolutionsDeDockingMoleculaire]{Recherche de solutions de \myglosnl{glo-DockingMoleculaire}}
+			\begin{mysubsection}[sse-sota-RechercheDeSolutionsDeDockingMoleculaire]{Recherche de solutions de \textit{docking} moléculaire}
 				La recherche de solutions de \myglos{glo-DockingMoleculaire} consiste à trouver les zones de liaisons entre les molécules.
 				Les algorithmes de recherche se basent principalement sur deux éléments : l'évaluation et l'optimisation.
 				L'évaluation consiste à calculer un score pour la conformation trouvée.
@@ -320,7 +320,7 @@
 				La flexibilité introduit une complexité importante dans la recherche de solutions en \myglos{glo-DockingMoleculaire}.
 				Cependant, nous allons voir dans la section suivante que l'utilisation des capacités combinées de l'humain et de la machine permet une approche différente face à ce problème complexe.
 			\end{mysubsection}
-			\begin{mysubsection}[sse-sota-DockingMoleculaireEnEnvironnementVirtuel]{\myGlosnl{glo-DockingMoleculaire} en environnement virtuel}
+			\begin{mysubsection}[sse-sota-DockingMoleculaireEnEnvironnementVirtuel]{\textit{Docking} moléculaire en environnement virtuel}
 				Malgré une communauté scientifique très active pour améliorer les solutions de \myglos{glo-DockingMoleculaire} existantes et se rapprocher toujours plus près de conditions biologiques réalistes, la complexité du problème rend difficile la découverte de solutions robustes.
 				Devant cette complexité, une approche alternative basée sur l'introduction de l'humain et de ses capacités de décisions au sein du processus de recherche.
 				En effet, bien que moins rapide pour traiter un grand nombre de données, un expert est capable de classer plus intelligemment les solutions pertinentes et les solutions aberrantes.
@@ -786,7 +786,7 @@
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-Grounding]{\myGrounding}
 					Les participants doivent posséder un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
-					Cette aspect de la communication, discuté dans la \myref*{sss-sota-LeGrounding}, est inconscient mais nécessaire pour la collaboration.
+					Cette aspect de la communication est inconscient mais nécessaire pour la collaboration \myref*{sss-sota-LeGrounding}.
 				\end{mysubsubsection}
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-MecanismesDeLaCommunicationDeGroupe]{Mécanismes de la communication de groupe}
@@ -1978,7 +1978,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Il est à noter que les données comparées entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} ne sont pas du même ordre de grandeur (\mynum{24}~\myglos*{glo-Monome} face à \mynum{12}~\myglos*{glo-Binome}).
 			Afin de pouvoir effectuer une comparaison du même ordre de grandeur, les données des sujets ayant fait partie d'un même \myglos{glo-Binome} ont été moyennées.
 			Ainsi, pour chaque variable correspond une donnée en \myglos{glo-Monome} et une donnée en \myglos{glo-Binome}.
-			\begin{mysubsection}[sse-exp1-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
+			\begin{mysubsection}[sse-exp1-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en binôme}
 				Dans cette section, nous étudions l'évolution des performances en présentant les données et les analyses statistiques dans un premier temps, puis une discussion critique de ces résultats dans un second temps.
 				\begin{mysubsubsection}[sss-exp1-AmeliorationDesPerformancesEnBinome-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
@@ -2745,7 +2745,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\item test de \mycite[author]{Friedman-1940} pour les \myglos*{glo-VariableIntraSujets} non-paramètriques;
 				\item test de \mycite[author]{Kruskal-1952} pour les \myglos*{glo-VariableInterSujets} non-paramètriques.
 			\end{itemize}
-			\begin{mysubsection}[sse-exp2-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en \myglosnl{glo-Binome}}
+			\begin{mysubsection}[sse-exp2-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en binôme}
 				Tout d'abord, nous présentons les données accompagnées des analyses statistiques.
 				Puis nous discuterons l'évolution des performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} pour la réalisation de cette tâche.
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDesPerformancesEnBinome-DonneesEtStatistiques]{Données et statistiques}
@@ -2966,7 +2966,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Complétons cette conclusion par le fait qu'elle est surtout vraie pour les scénarios complexes.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les \myglosnl*{glo-Binome}}
+			\begin{mysubsection}[sse-exp2-AmeliorationDeLApprentissagePourLesBinomes]{Amélioration de l'apprentissage pour les binômes}
 				Nous étudions l'effet du nombre de sujets sur l'apprentissage dans cette section.
 				Les graphiques accompagnés d'analyses statistiques sont présentés puis discutés dans un second temps.
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDeLApprentissagePourLesBinomes-DonneesEtStatistiques]{Données et statistiques}
@@ -3601,7 +3601,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Nous verrons dans la section suivante que le groupe va s'organiser autour d'un \myglos{glo-Meneur} et que les collaborateurs seront plutôt dans un rôle de \myglos*{glo-Suiveur}.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp3-DefinitionDUnMeneur]{Définition d'un \myglosnl{glo-Meneur}}
+			\begin{mysubsection}[sse-exp3-DefinitionDUnMeneur]{Définition d'un meneur}
 				Cette section va définir les caractéristiques d'un \myglos{glo-Meneur}.
 				Nous utiliserons les données d'un groupe représentatif pour alimenter notre propos.
 				Cependant, étant donné le peu de données que représente un seul groupe, aucune analyse de la variance n'est présentée.
@@ -5037,7 +5037,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Le questionnaire proposé durant la seconde expérimentation est décliné en deux versions : une version pour les \myglos*{glo-Monome} et une version pour les \myglos*{glo-Binome}.
 			Le questionnaire est soumis aux sujets oralement par l'expérimentateur et les réponses sont directement reportées dans une tableau.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
-			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesMonomes]{Questionnaire pour les \myglosnl*{glo-Monome}}
+			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesMonomes]{Questionnaire pour les monômes}
 				Pour les \myglos*{glo-Monome}, le questionnaire est le suivant :
 				\begin{enumerate}
 					\item Vous êtes-vous senti efficace ?
@@ -5046,7 +5046,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item Quelle solution choisiriez-vous entre les trois configurations ?
 				\end{enumerate}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les \myglosnl*{glo-Binome}}
+			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les binôme}
 				Chaque sujet dans un \myglos{glo-Binome} est interrogé séparement pour éviter que les réponses de l'un influence les réponses de l'autre.
 				Pour les \myglos*{glo-Binome}, le questionnaire est le suivant :
 				\begin{enumerate}
@@ -5075,7 +5075,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Le questionnaire est soumis sous un format papier et chaque utilisateur est invité à y répondre seul, sans l'aide de ces partenaires.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
 			\myinsertpdf[pdfpages={1-5}]{exp4-questionnaire}
-			\begin{mysubsection}[sse-q-QuatriemeExperimentation-LeQuestionnaireSUS]{Le questionnaire \myacronl-{acr-SUS}}
+			\begin{mysubsection}[sse-q-QuatriemeExperimentation-LeQuestionnaireSUS]{Le questionnaire \textsc{sus}}
 				\begin{mysubsubsection}[sss-q-QuatriemeExperimentation-LesQuestions]{Les questions}
 					Le questionnaire \myacro{acr-SUS} est constitué de \mynum{10}~questions.
 					Chaque question donne lieu à une réponse sur une échelle de \mycite[author]{Likert-1932} à cinq niveaux allant de \og Fortement en désaccord (score de \mynum{1}) \fg à \og Fortement en accord (score de \mynum{5}) \fg.
