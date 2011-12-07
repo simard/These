@@ -8,7 +8,7 @@ ifeq ($(IN),)
 	IN=main
 endif
 ifeq ($(OUT),)
-	OUT=Thesis
+	OUT=Memoir
 endif
 
 # Compilators
