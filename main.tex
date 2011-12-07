@@ -85,7 +85,7 @@
 		The Shaddock platform has been developed for this purpose.
 		Based on software modules used by biologists, this synchronous and colocated platform immerses users in an interactive molecular simulation environment.
 
-		At first, we study different closely-coupled collaborative configurations through three experiments.
+		First of all, we study different closely-coupled collaborative configurations through three experiments.
 		We indentify the contributions and constraints of such a configuration and then characterize the working strategies.
 		The results highlights many communication issues related to coordination conflicts.
 
@@ -156,7 +156,7 @@
 			Dans le cadre de ce travail de thèse, nous allons nous intéresser à la modélisation moléculaire et plus précisément au \myglos{glo-DockingMoleculaire}\footnote{Pour la suite des développements, l'expression \og \myglos{glo-DockingMoleculaire} \fg sera utilisée plutôt que sa traduction \og amarrage moléculaire \fg \mycite{Nurisso-2010} qui est peu citée dans la littérature française.}.
 			Cette section a pour objectif de présenter le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème.
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \textit{docking} moléculaire}
-				Dans le domaine de la modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
+				En modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
 				Le \myglos{glo-DockingMoleculaire} permet soit de découvrir de nouvelles molécules (par assemblage de deux ou plusieurs molécules), soit de comprendre la nature d'un complexe de molécules obtenu par cristallographie\footnote{La cristallographie permet de déterminer les molécules présentes dans un complexe de molécules mais ne permet pas de déterminer avec précisions comment elles sont assemblées.}.
 				\mycite[author]{Fischer-1894} illustrent le \myglos{glo-DockingMoleculaire} avec le modèle \og clef-serrure \fg décrit de la façon suivante.
 				\begin{myquote}[ngerman]
@@ -168,7 +168,7 @@
 				\end{myquote}
 
 				\begin{myfigure}
-					\psset{xunit=0.066666667\textwidth,yunit=0.05\textwidth}
+					\psset{xunit=0.06666666\textwidth,yunit=0.05\textwidth}
 					\def\mycircleletter(#1,#2)#3{%
 						\rput(#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
 					}
@@ -271,7 +271,7 @@
 				La flexibilité d'une molécule peut être vue à différents niveaux de granularité, de l'atome aux molécules en passant par les structures secondaires (\myhelice* et \myfeuillet*).
 				On peut distinguer trois niveaux de flexibilité différentes :
 				\begin{description}
-					\item[Niveau inter-moléculaire] Cette déformation au niveau macro-moléculaire concerne des transformations de grande amplitude sur chaque molécule.
+					\item[Niveau inter-moléculaire] Cette déformation macro-moléculaire concerne des transformations de grande amplitude sur chaque molécule.
 						Elle permet de trouver la meilleure concordance entre les molécules en terme de position et d'orientation.
 					\item[Niveau intra-moléculaire] Cette déformation est au niveau moléculaire.
 						L'amarrage de deux molécules (ou plus) permet d'obtenir de nombreux sites de liaison qui doivent être optimisées en fonction de critères variés (la complémentarité géométrique, les forces électrostatiques, \myetc).
@@ -288,8 +288,8 @@
 				La complexité induite par la flexibilité rend l'exploration de l'espace de recherche encore plus complexe par rapport aux corps rigides considérés précédemment.
 				Afin de répondre à cette problématique supplémentaire, différentes approches, basées sur des plateforme de \myglos{glo-DockingMoleculaire} \myref*{tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire}, ont été proposées afin de réduire l'espace de recherche :
 				\begin{itemize}
-					\item Une partie du complexe de molécules étudié est rendue rigide;
-					\item Utiliser plusieurs conformations rigides d'une molécule \mycite{Meagher-2004};
+					\item Rendre rigide une partie du complexe de molécules étudié;
+					\item Utiliser différentes conformations rigides d'une molécule \mycite{Meagher-2004};
 					\item Découper l'espace de recherche avec une granularité plus grossière pour améliorer les performances d'évaluation \mycite{Osterberg-2002}.
 				\end{itemize}
 
@@ -299,19 +299,19 @@
 						\myrowstyle{\bfseries}
 						Logiciel & Algorithme & Références \\
 						\mymiddlerule[\heavyrulewidth]
-						\myAutoDock & Algorithme génétique & \mycite{Morris-1998}\newline\mycite{Osterberg-2002} \\
+						\myAutoDock & Algorithme génétique & \mycite{Morris-1998} \mycite{Osterberg-2002} \\
 						\mymiddlerule
 						\myDOCK & Reconstruction incrémentale & \mycite{Ewing-2001} \\
 						\mymiddlerule
-						\myICMDocking & Méthode \myacro{acr-ICM} & \mycite{Abagyan-1994a}\newline\mycite{Abagyan-1994b} \\
+						\myICMDocking & Méthode \myacro{acr-ICM} & \mycite{Abagyan-1994a} \mycite{Abagyan-1994b} \\
 						\mymiddlerule
 						\myGOLD & Algorithme génétique & \mycite{Jones-1997} \\
 						\mymiddlerule
-						\myFlexX & Reconstruction incrémentale & \mycite{Rarey-1997}\newline\mycite{Rarey-1999} \\
+						\myFlexX & Reconstruction incrémentale & \mycite{Rarey-1997} \mycite{Rarey-1999} \\
 						\mymiddlerule
-						\myGlide & Méthode de \myname{Monte-Carlo} & \mycite{Friesner-2004}\newline\mycite{Halgren-2004} \\
+						\myGlide & Méthode de \myname{Monte-Carlo} & \mycite{Friesner-2004} \mycite{Halgren-2004} \\
 						\mymiddlerule
-						\myBoxSearch & Méthode de \myname{Monte-Carlo} & \mycite{Hart-1992}\newline\mycite{Cummings-1995} \\
+						\myBoxSearch & Méthode de \myname{Monte-Carlo} & \mycite{Hart-1992} \mycite{Cummings-1995} \\
 						\mybottomrule
 					\end{mytabular}
 					\mycaption[tab-sota-ListeNonExhaustiveDeSolutionsLogiciellesDeDockingMoleculaire]{Liste non-exhaustive de solutions logicielles de \myglosnl{glo-DockingMoleculaire}}
@@ -428,17 +428,17 @@
 				C'est l'une des premières applications qui aborde le problème du \myglos{glo-DockingMoleculaire} en collaboration.
 				La manipulation des molécules est effectuée avec des \textit{haptic eggs}, deux petites interfaces tangibles placées dans chaque main de l'utilisateur, chaque \textit{haptic egg} étant l'abstraction d'une molécule.
 				Cependant, un seul utilisateur effectue les manipulations dans l'environnement virtuel en communiquant avec les autres utilisateurs par l'intermédiaire d'un système de messagerie instantanée.
-				Plus récemment, le projet \myeMinerals de \mycite[author]{Dove-2005} fournit une solution pour la collaboration entre biologistes (messagerie instantanée, vidéo-conférence, serveur centralisé, \myetc) comme on peut le voir sur la \myref{fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005}.
+				Plus récemment, le projet \myeMinerals de \mycite[author]{Dove-2005} fournit une solution pour la collaboration entre biologistes (messagerie instantanée, vidéo-conférence, serveur centralisé, \myetc) comme on peut le voir sur la \myref{fig-sota-PlateformePourLaCollaborationEntreUniversiteProposeeParDove2005}.
 				Cependant, cette plateforme permet une collaboration distante suivant un mode synchrone ou asynchrone.
 
 				\begin{myfigure}
 					\myimage{sota-Dove-2005}
-					\mycaption[fig-sota-PlateformeDeCollaborationInterUniversiteProposeeParDove2005]{Plateforme de collaboration inter-universités proposée par \mycite{Dove-2005}}
+					\mycaption[fig-sota-PlateformePourLaCollaborationEntreUniversiteProposeeParDove2005]{Plateforme pour la collaboration entre universités proposée par \mycite{Dove-2005}}
 				\end{myfigure}
 
 				\mycite[author]{Chastine-2005} sont parmis les premiers à identifier les problématiques de communication entre les sujets au sein des applications collaboratives et interactives \myref*{sss-sota-LaConscienceDeGroupe}.
 				À travers l'application \myAMMPVis, ils proposent des outils pour désigner des zones d'intérêt sur des molécules.
-				Afin d'améliorer la communication, ils représentent les mains de chaque utilisateur dans l'environnement virtuel pour que chacun ait conscience des actions des partenaires \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
+				Afin d'améliorer la communication, les mains de chaque utilisateur sont représentées dans l'environnement virtuel pour que chacun ait conscience des actions des partenaires \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
 				Une version améliorée \myAMMPEXTN de la plateforme a été développée par la suite en intégrant des procédures de contrôle d'accès.
 				Pour éviter les conflits entre les utilisateurs (accès simultané, modification d'un même élément, \myetc), les différentes strates d'informations (paramètres de visualisation, modélisation, modification des données) ont été soumises à différents droits de visualisation et de modification \mycite{Ma-2007,Ma-2007a}.
 
@@ -458,8 +458,8 @@
 				La prochaine section va nous permettre d'aborder cette problématique.
 			\end{mysubsection}
 		\end{mysection}
-		\begin{mysection}[sec-sota-ApprocheCollaborativePourLaResolutionDesTachesComplexes]{Approche collaborative pour la résolution des tâches complexes}
-			Commençons par définir le terme collaboration afin de le distinguer du terme coopération avec lequel on l'assimile souvent.
+		\begin{mysection}[sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes]{Configuration collaborative pour la résolution des tâches complexes}
+			Commençons par définir le terme collaboration pour le distinguer du terme coopération avec lequel il est souvent substitué.
 			Pour distinguer ces deux termes, nous nous appuierons sur la définition proposée par \mycite[author]{Roschelle-1995}.
 			\begin{myquote}[english]
 				\it Cooperative work is accomplished by the division of labour among participants, as an activity where each person is responsible for a portion of the problem solving.
@@ -785,7 +785,7 @@
 					\mycite[author]{Junuzovic-2009} utilisent même le terme \myfeedthrough pour une communication indirecte avec un participant en intermédiaire.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-Grounding]{\myGrounding}
-					Les participants doivent posséder un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre \mycite{Dix-2004}.
+					Selon \mycite[author]{Dix-2004}, les participants doivent posséder un niveau de compréhension commun (même langue parlée, même base culturelle, même jargon, \myetc) afin de se comprendre.
 					Cette aspect de la communication est inconscient mais nécessaire pour la collaboration \myref*{sss-sota-LeGrounding}.
 				\end{mysubsubsection}
 			\end{mysubsection}
@@ -871,7 +871,7 @@
 					\end{myquote}
 					qu'on pourrait traduire par
 					\begin{myquote}[french]
-						Un groupe ne peut pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
+						Un groupe ne peut même pas commencer à se coordonner sur une tâche sans supposer une quantité importante d'informations partagées ou d'une base commune -- c'est-à-dire des connaissances mutuelles, des convictions communes et des hypothèses communes.
 					\end{myquote}
 
 					Le \mygrounding est nécessaire à la communication.
@@ -1806,7 +1806,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myps}
 				\end{myfigure}
 
-				Chaque \myglos{glo-Residu} possède ses propres caractéristiques (position, couleur, \myetc) offrant des niveaux de complexité différents comme on peut le voir dans la \myref{tab-exp1-ParametresDeComplexiteDesResidus}.
+				Chaque \myglos{glo-Residu} possède ses propres caractéristiques (position, couleur, \myetc) offrant des niveaux de complexité différents comme on peut le voir dans la \myref{tab-exp1-CriteresDeComplexiteDesResidus}.
 				Les critères de complexité utilisés sont les suivants :
 				\begin{description}
 					\item[Nombre de \myglosnl*{glo-Residu}] Le nombre total de \myglos*{glo-Residu} présents dans la molécule.
@@ -1823,13 +1823,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item[Couleurs] Les atomes sont colorés en fonction de leur nature (rouge pour l'oxygène, blanc pour l'hydrogène, \myetc).
 						Les atomes \myemph{rares} sont donc facilement identifiables grâce à leur couleur singulière.
 						Par contre, les atomes nombreux (comme les hydrogènes ou les carbones) seront plus difficiles à identifier à cause de leur fréquence d'apparition élevée.
-					\item[Similarité] Certains \myglos*{glo-Residu} à chercher sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
+					\item[Similarité] Certains \myglos*{glo-Residu} cherchés sont très similaires à d'autres \myglos*{glo-Residu} également présents sur la molécule.
 						Les \myglos*{glo-Residu} similaires possèdent un atome de moins ou de plus par rapport au \myglos{glo-Residu} recherché.
 						À cause de cette similarité, les sujets vont mobiliser une partie du temps à identifier des \myglos*{glo-Residu} incorrects.
 				\end{description}
 				\begin{mytable}
 					\newcommand{\myatomincolor}[3]{\csname my#1\endcsname{}{}#2 en \myemph{#3}}
-					\mycaption[tab-exp1-ParametresDeComplexiteDesResidus]{Paramètres de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
+					\mycaption[tab-exp1-CriteresDeComplexiteDesResidus]{Critères de complexité des \myglosnl*{glo-Residu} -- \myatomincolor{carbon}{arbone}{cyan}, \myatomincolor{nytrogen}{zote}{bleu}, \myatomincolor{oxygen}{xygène}{rouge} et \myatomincolor{sulfur}{oufre}{jaune}}
 					\begin{mytabular}{^C-C-C-C-C-C}
 						\mytoprule
 						\myrowstyle{\bfseries}
@@ -2046,7 +2046,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					Comme développé dans la procédure expérimentale, le temps de réalisation de la tâche peut être séparé en deux parties : le temps de recherche et le temps de sélection \myref*{fig-exp1-EtapesDeLaCommunicationVerbalePourLaRechercheDUnResidu}.
 					Les \myglos*{glo-Residu} \myresidue{9} et \myresidue{10} se distinguent par un temps de recherche significativement plus long que les autres \myglos*{glo-Residu} (excepté \myresidue{6}).
-					En effet, ces deux \myglos*{glo-Residu} sont en présence d'autres \myglos*{glo-Residu} similaires au sein de la même molécule \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
+					En effet, ces deux \myglos*{glo-Residu} sont en présence d'autres \myglos*{glo-Residu} similaires au sein de la même molécule \myref*{tab-exp1-CriteresDeComplexiteDesResidus}.
 					Ces similarités ont pour effet de monopoliser l'attention des sujets ce qui provoque une hausse significative du temps de recherche du \myglos{glo-Residu} au sein de la molécule.
 
 					De la même façon, le \myglos{glo-Residu} \myresidue{6} se distingue par un temps de sélection significativement plus long que les autres \myglos*{glo-Residu} (excepté \myresidue{9} et \myresidue{10}).
@@ -2327,7 +2327,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cependant, les sujets considèrent qu'ils ne se sont imposés ni en \myglos{glo-Meneur} ou ni en \myglos{glo-Suiveur} (\mysummary{exp1-evaluation-leader.tex}).
 					En effet, des questions supplémentaires ont permis de mettre en évidence que chaque sujet a tendance à surestimer le rôle du partenaire ($\approx\mynum[\%]{70}$).
 
-					Concernant la communication, les participants estiment qu'ils exploitent principalement la communication verbale (\mysummary{exp1-evaluation-verbal.tex}) et, dans une proportion plus faible mais tout de même importante, virtuelle (\mysummary{exp1-evaluation-virtual.tex}).
+					À propos de la communication, les participants estiment qu'ils exploitent principalement la communication verbale (\mysummary{exp1-evaluation-verbal.tex}) et, dans une proportion plus faible mais tout de même importante, virtuelle (\mysummary{exp1-evaluation-virtual.tex}).
 					En ce qui concerne la communication gestuelle, ils la considèrent quasiment inexistante (\mysummary{exp1-evaluation-gestural.tex}).
 
 					La communication gestuelle n'est pas ou peu utilisée.
@@ -2408,7 +2408,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			De plus, nous aborderons la question de l'apprentissage au sein d'un \myglos{glo-Binome}.
 			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage, que ce soit pour l'utilisation des outils, de la plateforme ou encore pour la tâche à réaliser.
 		\end{mysection}
-		\begin{mysection}[sec-exp2-DeformationCollaborativeEnEnvironnementVirtuel]{Déformation collaborative en environnement virtuel}
+		\begin{mysection}[sec-exp2-DeformationCollaborativeDansUnEnvironnementVirtuel]{Déformation collaborative dans un environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
 				L'utilisation de retours haptiques pour la déformation d'objets flexibles n'est pas une idée nouvelle.
 				Par exemple, \mycite[author]{Shen-2006} proposent une solution pour déformer des objets non-rigides à l'aide de retour haptique.
@@ -2483,7 +2483,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Les scénarios de distinguent par différents critères de complexité :
 				\begin{description}
-					\item[Niveau de déformation] Deux niveaux de déformation sont proposés : inter-moléculaire et intra-moléculaire \myref*{sse-sota-RechercheDeSolutionsDeDockingMoleculaire};
+					\item[Niveau de déformation] Deux niveaux différents de déformation sont proposés : inter-moléculaire et intra-moléculaire \myref*{sse-sota-RechercheDeSolutionsDeDockingMoleculaire};
 					\item[Nombre d'atomes] C'est le nombre total d'atomes que contient la molécule à manipuler;
 					\item[\myGlosnl{glo-Residu} libre] C'est le nombre de \myglos*{glo-Residu} de la molécules non fixés dans la simulation qui sont déformables;
 					\item[Cassure] Elles représentent les jointures entre les structures secondaires, formant des courbures prononcées difficiles à maintenir en place;
@@ -2742,8 +2742,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Cependant, un test de \mycite[author]{Brown-1974} permet de confirmer l'\myglos{glo-Homoscedasticite}.
 			L'analyse de la variance est alors pratiquée avec différents tests statistiques suivant les cas :
 			\begin{itemize}
-				\item test de \mycite[author]{Friedman-1940} pour les \myglos*{glo-VariableIntraSujets} non-paramètriques;
-				\item test de \mycite[author]{Kruskal-1952} pour les \myglos*{glo-VariableInterSujets} non-paramètriques.
+				\item test de \mycite[author]{Friedman-1940} sur les \myglos*{glo-VariableIntraSujets} non-paramètriques;
+				\item test de \mycite[author]{Kruskal-1952} sur les \myglos*{glo-VariableInterSujets} non-paramètriques.
 			\end{itemize}
 			\begin{mysubsection}[sse-exp2-AmeliorationDesPerformancesEnBinome]{Amélioration des performances en binôme}
 				Tout d'abord, nous présentons les données accompagnées des analyses statistiques.
@@ -2850,7 +2850,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour résumer, il est préférable de distribuer les ressources disponibles (outil de déformation dans notre cas) entre plusieurs sujets.
 				\end{mysubsubsection}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache]{Évolution des performances en fonction de la complexité de la tâche}
+			\begin{mysubsection}[sse-exp2-EvolutionDesPerformancesEnFonctionDesCriteresDeComplexiteDeLaTache]{Évolution des performances en fonction des critères de complexité de la tâche}
 				Dans cette section, nous nous intéressons plus précisément à la complexité de la tâche et à son influence sur le nombre de sujets.
 				Les données et les analyses statistiques, présentées en premier, sont discutées par la suite.
 				\begin{mysubsubsection}[sss-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache-DonneesEtStatistiques]{Données et statistiques}
@@ -2888,10 +2888,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\myboxplot{exp2-numsel-task-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque scénario en fonction du nombre de sujets}
+						\mycaption[fig-exp2-NombreDeSelectionsPourChaqueScenarioEnFonctionDuNombreDeSujets]{Nombre de sélections pour chaque scénario en fonction du nombre de sujets}
 					\end{myfigure}
 
-					La \myref{fig-exp2-NombreDeSelectionsDeChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
+					La \myref{fig-exp2-NombreDeSelectionsPourChaqueScenarioEnFonctionDuNombreDeSujets} présente le nombre de sélections \myvard{2} des différents scénarios \myvari{2} en fonction du nombre de sujets \myvari{1}.
 					En regroupant les scénarios par classe de complexité, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1a} et \myscenario{2a} (\myanova{exp2-numsel-task-group-anova-trpzipper.tex}); le nombre de sélections est supérieur de \myratio{exp2-numsel-task-group-ratio-trpzipper.tex} pour les \myglos*{glo-Binome}.
 					Cependant, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur le nombre de sélections \myvard{2} pour les scénarios \myscenario{1b} et \myscenario{2b} (\myanova{exp2-numsel-task-group-anova-trpcage.tex}).
 
@@ -3157,7 +3157,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Ce travail en groupe implique des processus de communication différents que nous souhaitons étudier.
 			L'augmentation du nombres de manipulateur nous permet également de confronter les utilisateurs à des tâches plus complexes que celles proposées dans les études précédentes.
 
-			Selon la littérature en psychologie sociale, le travail en groupe provoque des modifications sur l'organisation et la structure \myref*{sec-sota-ApprocheCollaborativePourLaResolutionDesTachesComplexes} qu'on nomme \og dynamique de groupe \fg.
+			Selon la littérature en psychologie sociale, le travail en groupe provoque des modifications sur l'organisation et la structure \myref*{sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes} qu'on nomme \og dynamique de groupe \fg.
 			Cependant, les études sur ce sujet manquent en ce qui concerne la collaboration étroitement couplée.
 			Le but de l'expérimentation exposée dans ce chapitre est d'identifier les contraintes et les stratégies de travail liées à ce type de collaboration.
 
@@ -3166,7 +3166,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp3-CollaborationDeGroupe]{Collaboration de groupe}
 			\begin{mysubsection}[sse-exp3-TravauxExistants]{Travaux existants}
-				Nous avons déjà vu, dans la \myref{sec-sota-ApprocheCollaborativePourLaResolutionDesTachesComplexes}, les dynamiques de groupe qui se mettent en place lors d'un travail en collaboration.
+				Nous avons déjà vu, dans la \myref{sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes}, les dynamiques de groupe qui se mettent en place lors d'un travail en collaboration.
 				Pour mémoire, nous avons abordé les phénomènes de \myglos{glo-FacilitationSociale} \mycite{Ringelmann-1913} et de \myglos{glo-ParesseSociale} \mycite{Roethlisberger-1939}.
 				La \myglos{glo-FacilitationSociale} est la tendance des collaborateurs à améliorer les performances lors d'un travail de groupe (motivation, échange de connaissances, partage de mémoire, \myetc).
 				La \myglos{glo-ParesseSociale} est la tendance des collaborateurs ne pas s'impliquer activement dans le travail de groupe (isolation, peur de l'évaluation, \myetc).
@@ -3175,7 +3175,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Cependant, \mycite[author]{Bales-1950} identifie une différence entre les groupes de taille importante et les groupes d'une vingtaine d'individus ou moins\footnote{Selon les différentes sources, la définition d'un groupe restreint varie d'une douzaine à une vingtaine d'individus.}, qu'il nomme \og groupe restreint \fg.
 				L'étude qu'il mène sur ces groupes restreints montre que quelque soit la taille du groupe, le groupe sera toujours dominé par un voire deux \myglos*{glo-Meneur}.
 
-				Afin d'améliorer les performances de ces groupes restreints, \mycite[author]{Osborn-1963} propose de mettre en place une séance de \mybrainstorming.
+				\mycite[author]{Osborn-1963} propose de mettre en place une séance de \mybrainstorming afin d'améliorer les performances de ces groupes restreints.
 				L'idée est créer une période de temps où tous les collaborateurs peuvent élaborer une stratégie sur la tâche à réaliser.
 				Selon \mycite[author]{Tuckman-1965}, le \mybrainstorming permet de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
 
@@ -3413,10 +3413,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\myboxplot{exp3-freqsel-molecule-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants]{Fréquence des sélections sur les scénarios en fonction du nombre de participants}
+						\mycaption[fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDuNombreDeParticipants]{Fréquence des sélections pour les scénarios en fonction du nombre de participants}
 					\end{myfigure}
 
-					La \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants} présente la fréquence de sélection \myvard{2} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
+					La \myref{fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDuNombreDeParticipants} présente la fréquence de sélection \myvard{2} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} du scénario~\myscenario{1} (\myanova{exp3-freqsel-molecule-group-anova-prion.tex}).
 					De la même façon, l'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la fréquence de sélection \myvard{2} du scénario~\myscenario{2} (\myanova{exp3-freqsel-molecule-group-anova-ubiquitin.tex}).
 
@@ -3456,7 +3456,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					L'étude précédente présentée dans le \myref{cha-RechercheCollaborativeDeResiduSurUneMolecule} a montré que les performances sont meilleures lorsque les ressources disponibles (outils de déformation) sont distribuées entre plusieurs utilisateurs et qu'il est préférable que les utilisateurs manipulent de manière \myglos*{glo-Monomanuel}.
 					Pourtant, on constate sur la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants} que les \myglos*{glo-Quadrinome} obtiennent des performances similaires aux \myglos*{glo-Binome}, indépendamment du scénario.
-					Les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui appuie ce résultat \myref*{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDuNombreDeParticipants}.
+					Les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome} ont également effectué des fréquences de sélections similaires ce qui appuie ce résultat \myref*{fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDuNombreDeParticipants}.
 
 					Pourtant, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants} montre des différences significatives, en terme de vitesse, entre les \myglos*{glo-Binome} et les \myglos*{glo-Quadrinome}.
 					L'étude exposée par \mycite[author]{Roethlisberger-1939} a mis en évidence ce phénomène de \myglos{glo-FacilitationSociale} : les utilisateurs se motivent entre eux pour réaliser la tâche.
@@ -3518,10 +3518,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\myboxplot{exp3-freqsel-brainstorm-group.csv}
 							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
 						\end{myps}
-						\mycaption[fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Fréquence des sélections sur les scénarios en fonction des groupes avec ou sans \mybrainstorming}
+						\mycaption[fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Fréquence des sélections pour les scénarios en fonction des groupes avec ou sans \mybrainstorming}
 					\end{myfigure}
 
-					La \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} présente la fréquence de sélection \myvard{2} pour les groupes avec ou sans \mybrainstorming \myvari{3} en fonction du nombre de sujets \myvari{1}.
+					La \myref{fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} présente la fréquence de sélection \myvard{2} pour les groupes avec ou sans \mybrainstorming \myvari{3} en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il n'y a pas d'effet significatif du \mybrainstorming \myvari{3} sur la fréquence de sélection \myvard{2} des \myglos*{glo-Binome} (\myanova{exp3-freqsel-brainstorm-group-anova-binome.tex}).
 					Cependant, l'analyse montre un effet significatif du \mybrainstorming \myvari{3} sur la fréquence de sélection \myvard{2} des \myglos*{glo-Quadrinome} (\myanova{exp3-freqsel-brainstorm-group-anova-quadrinome.tex}); la fréquence des sélections est diminuée de \myratio{exp3-freqsel-brainstorm-group-ratio-quadrinome.tex} avec le \mybrainstorming.
 
@@ -3564,7 +3564,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\item prévisions sur l'évolution de l'environnement.
 					\end{itemize}
 
-					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montrent que le \mybrainstorming est surtout profitable aux \myglos*{glo-Quadrinome}.
+					Cependant, la \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montrent que le \mybrainstorming est surtout profitable aux \myglos*{glo-Quadrinome}.
 					En effet, les \myglos*{glo-Binome} n'obtiennent aucune évolution significative des performances avec \mybrainstorming.
 					De même, la \myref{fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} montre que la vitesse moyenne de l'\myglos{glo-EffecteurTerminal} des \myglos*{glo-Binome} n'évolue pas.
 
@@ -3575,7 +3575,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La communication en \myglos{glo-Binome} est relativement naturelle (simple conversation) alors que la communication dans un groupe de plus de trois sujets s'avère plus complexe : problème de prise de parole, conversation entre deux sujets monopolisant la parole, \myetc
 					Sur ce point, les \myglos*{glo-Binome} ont peu de marge d'amélioration possible liée au \mybrainstorming contrairement aux \myglos*{glo-Quadrinome}.
 
-					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
+					La \myref{fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} et la \myref{fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming} mettent en évidence l'amélioration des performances pour les \myglos*{glo-Quadrinome}.
 					Nous avons vu dans la \myref{sse-exp3-AmeliorationDesPerformances} que les \myglos*{glo-Quadrinome} éprouvent des difficultés dans la résolution des \myglos*{glo-ConflitDeCoordination}.
 					D'après les figures observées, le \mybrainstorming permet l'élaboration d'une stratégie et la définition des rôles de chacun des sujets.
 					L'élaboration d'une stratégie réduit de façon importante le nombre de \myglos*{glo-ConflitDeCoordination} pendant la réalisation de la tâche et ainsi améliore les performances.
@@ -3742,7 +3742,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Puis nous exposerons les choix qui ont guidés le développement des outils haptiques proposés.
 			Enfin, nous présenterons les objectifs de cette quatrième et dernière expérimentation.
 			\begin{mysubsection}[sse-exp4-TravauxExistants]{Travaux existants}
-				Le concept de communication haptique a été initié par les travaux de \mycite[author]{Sallnas-2000} avec une étude sur la manipulation synchrone d'objets \myThreeD dans environnement virtuel.
+				Le concept de communication haptique apparaît dans les travaux de \mycite[author]{Sallnas-2000} avec une étude sur la manipulation synchrone d'objets \myThreeD dans environnement virtuel.
 				Les utilisateurs disposent d'un outil haptique leur permettant d'exercer une pression sur les objets \myThreeD virtuels; il faut alors deux utilisateurs pour soulever un objet en exerçant une pression de chaque côté de l'objet.
 				Sur le même principe de manipulation synchrone, \mycite[author]{Basdogan-2000} proposent le déplacement d'un anneau par une manipulation en \myglos{glo-Binome} coordonnée; l'anneau doit passer autour d'un fil sans le toucher.
 				Les résultats de ces deux études montrent clairement que l'utilisation de la modalité haptique permet des améliorations significatives pour la coordination entre les partenaires.
@@ -3767,7 +3767,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Il constate cependant qu'une telle solution nécessite un fort apprentissage ($\approx \mynum[mn]{45}$) pour une utilisation persistente.
 				\mycite[author]{Chan-2008} utilise également des mots haptiques pour aider et assister la prise de contrôle d'un système lors de la réalisation d'une tâche collaborative.
 
-				Récemment, \mycite[author]{Ullah-2011} s'est intéressé à l'influence de la communication haptique sur le sentiment de présence et sur la conscience périphérique \myref*{sec-sota-ApprocheCollaborativePourLaResolutionDesTachesComplexes}.
+				Récemment, \mycite[author]{Ullah-2011} s'est intéressé à l'influence de la communication haptique sur le sentiment de présence et sur la conscience périphérique \myref*{sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes}.
 				Tout d'abord avec une étude sur la manipulation collaborative d'un bras articulé en environnement virtuel, il montre une amélioration de la conscience périphérique \mycite{Naud-2009}.
 				Puis, en proposant une tâche de déplacement d'objet virtuel coordonné (une cheville à déplacer dans un trou), \mycite[author]{Ullah-2010} montre une amélioration significative du sentiment de présence et de la conscience périphérique.
 			\end{mysubsection}
@@ -3815,7 +3815,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-exp4-PresentationDeLExperimentation]{Présentation de l'expérimentation}
 			\begin{mysubsection}[sse-exp4-DescriptionDeLaTache]{Description de la tâche}
-				La tâche étudiée est constituée d'une tâche de déformation, telle que celle abordée dans les deux expérimentations précédentes \myref*{sse-exp2-DescriptionDeLaTache}, et d'une tâche d'assemblage; les deux tâches abordées permettent de créer un scénario de \myglos{glo-DockingMoleculaire} complet.
+				La tâche étudiée est constituée d'une tâche de déformation, telle que celle abordée dans les expérimentations précédentes \myref*{sse-exp2-DescriptionDeLaTache}, et d'une tâche d'assemblage; les deux tâches abordées permettent de créer un scénario de \myglos{glo-DockingMoleculaire} complet.
 
 				La tâche est proposée à des groupes de trois sujets appelés \myglos*{glo-Trinome}.
 				Dans ces \myglos*{glo-Trinome}, un \og coordinateur \fg et deux \og opérateurs \fg ont à leur disposition différents outils pour l'orientation, la déformation, la désignation ou la manipulation qui seront décrits dans la \myref{sss-exp4-OutilsDInteraction}.
@@ -4368,7 +4368,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		De plus, le cadre expérimental dans lequel se placent nos études proposent toujours des tâches avec des objectifs atteignables (il faut atteindre un seuil).
 		Dans le cadre du \myglos{glo-DockingMoleculaire}, les objectifs ne sont pas forcément atteignables et il est possible que cela entraîne un niveau de motivation du groupe différent.
 
-		Au cours de la troisième étude \myref*{cha-LaDynamiqueDeGroupe}, nous avons également pu arriver à des conclusions similaires à celles obtenues par \mycite[author]{Bales-1950} concernant l'apparition de membres dominants au sein d'un groupe.
+		Au cours de la troisième étude \myref*{cha-LaDynamiqueDeGroupe}, nous avons pu arriver à des conclusions similaires à celles obtenues par \mycite[author]{Bales-1950} concernant l'apparition de membres dominants au sein d'un groupe.
 		Ce point avait besoin d'être validé dans le contexte particulier de la collaboration étroitement couplée car les mécanismes de communication et les interactions entre les utilisateurs sont différents.
 
 		L'ensemble de ces conclusions nous a mené à l'établissement d'une nouvelle configuration de travail (\myglos{glo-Meneur} et \myglos*{glo-Suiveur}) et à fournir des outils haptiques adaptés à chacun des rôles pour améliorer la coordination et la communication.
@@ -4419,7 +4419,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Cet ordinateur est destiné à l'application cliente \myacro{acr-VMD} : c'est donc cette machine qui s'occupe du calcul pour les rendus visuels.
 			La seconde machine~\mycomputer{B} est dédiée au moteur de simulation \myacro{acr-NAMD} : elle communique avec la machine~\mycomputer{A} par une connexion \myTCPIP.
 
-			L'affichage de l'environnement virtuel est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
+			L'affichage de la scène virtuelle est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
 			Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
 			L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
 			Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels, \myetc).
@@ -4564,7 +4564,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myparagraph}[par-met-exp1-ResiduRecherche]{\myvari{2} \myGlosnl{glo-Residu} recherché}
 						C'est une \myglos{glo-VariableIntraSujets}.
 						\myvari{2} concerne les \myglos*{glo-Residu} recherchés qui sont au nombre de \mynum{10} répartis à part égale dans deux molécules \myref*{tab-exp1-ListeDesResidusRecherches}.
-						Différents niveaux de complexité caractérisent chaque \myglos{glo-Residu} \myref*{tab-exp1-ParametresDeComplexiteDesResidus}.
+						Différents niveaux de complexité caractérisent chaque \myglos{glo-Residu} \myref*{tab-exp1-CriteresDeComplexiteDesResidus}.
 					\end{myparagraph}
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-met-exp1-VariablesDependantes]{Variables dépendantes}
@@ -5064,13 +5064,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item Quelle solution choisiriez-vous entre les trois configurations ?
 				\end{enumerate}
 
-				Concernant les taux de communication, les communications verbales concernent tous les échanges, dialogues exposés par la voix.
+				Les taux de communication mesurés sont toutes les conversations verbales échangées.
 				La communication gestuelle représente les gestes que les sujets peuvent effectuer dans le monde réel pour expliquer, désigner ou pour tout autre explication à son partenaire.
 				Enfin, la communication virtuelle concerne les informations données au partenaire par l'intermédiaire de l'environnement virtuel (par exemple, une désignation avec le curseur).
 			\end{mysubsection}
 		\end{mysection}
 		\begin{mysection}[sec-q-QuatriemeExperimentation]{Quatrième expérimentation}
-			Le questionnaire proposé durant la quatrième et dernière expérimentation contient une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
+			Le questionnaire proposé durant la quatrième expérimentation contient une traduction en français du questionnaire \myacro{acr-SUS} proposé par \mycite[author]{Brooke-1996}.
 			Une explication détaillé de ce questionnaire se trouve dans la \myref{sse-q-QuatriemeExperimentation-LeQuestionnaireSUS}.
 			Le questionnaire est soumis sous un format papier et chaque utilisateur est invité à y répondre seul, sans l'aide de ces partenaires.
 			Il est constitué de plusieurs questions notées sur échelle de \mycite[author]{Likert-1932} à cinq niveaux.
