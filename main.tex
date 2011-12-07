@@ -46,12 +46,12 @@
 	\mylof
 	\mylot
 	\begin{myabstract}[french]
-		Le \myglos{glo-DockingMoleculaire} consiste à comprendre comment deux molécules s'assemblent pour former une nouvelle molécule.
-		Les approches existantes pour résoudre ce problème complexe sont longues, peu robustes et approximatives.
+		Le \myglos{glo-DockingMoleculaire} consiste à assembler deux molécules pour former une structure stable.
+		Les approches existantes de ce problème complexe nécessitent des temps de traitement importants pour des résultats peu robustes.
 
-		Récemment, l'humain est introduit dans le processus de recherche grâce à la réalité virtuelle pour tenter d'améliorer ces problématiques.
-		Puis, des solutions collaboratives sont développées pour répondre aux nouvelles contraintes (collaboration distante, multi-expertise, répartition du travail).
-		Cependant, les configurations collaboratives proposées sont faiblement couplées.
+		Récemment, les biologistes introduisent l'humain dans le processus de recherche grâce à la réalité virtuelle pour répondre à ces problématiques.
+		Par la suite, des solutions collaboratives permettent d'associer plusieurs partenaires dans un même environnement de travail.
+		Cependant, ces configurations collaboratives présentent un faible niveau d'interaction entre les partenaires.
 
 		Ces travaux de thèse ont pour but d'étudier la collaboration étroitement couplée dans ce contexte de travail.
 		La plateforme modulaire \myShaddock a été développée dans ce but.
@@ -74,12 +74,12 @@
 		\end{mykeywords}
 	\end{myabstract}
 	\begin{myabstract}[english]
-		Molecular docking tries to predicts the binding of two or more molecules to form a new molecule.
-		It is a complex problem for which the existing approaches are long, not robust and approximate.
+		Molecular docking is the bind of two molecules in a stable structure.
+		Existing approach of this complex problem require long process with not very robust results.
 
-		Recently, the human is introduced into the research process using virtual reality, trying to improve these issues.
-		Then, collaborative solutions are developed to meet the new constrains (remote collaboration, multi-expertise, workloads distribution).
-		However, the proposed collaborative configurations are weakly-coupled.
+		Recently, the biologists introduce human into the research process using virtual reality, trying to improve these issues.
+		Then, collaborative solutions can involve several partners in a same working space.
+		However, the proposed collaborative configurations have a low interaction level between partners.
 
 		This thesis aims to study the closely-coupled collaboration in this work context.
 		The Shaddock platform has been developed for this purpose.
@@ -1362,7 +1362,7 @@
 			Le module de simulation choisi est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
 
 			Cependant, les moteurs de simulation ne sont pas conçus pour effectuer des simulations en temps-réel, et encore moins des simulations interactives en temps-réel.
-			Pourtant, afin de proposer une dynamique moléculaire interactive et temps-réel aux utilisateurs, un module présenté dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel} permet de faire communiquer le module de visualisation avec le module de simulation.
+			Afin de proposer une dynamique moléculaire interactive et temps-réel aux utilisateurs, un module présenté dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel} permet de faire communiquer le module de visualisation avec le module de simulation.
 
 			\begin{mysubsection}[sse-Shaddock-ModuleDeVisualisationMoleculaire]{Module de visualisation moléculaire}
 				Les outils de visualisation moléculaire disponibles sont relativement nombreux.
@@ -1562,7 +1562,7 @@
 						\item[Désignation d'une cible] Une fois la cible trouvée, l'utilisateur~\myuser{A} la désigne à son partenaire~\myuser{B};
 							la cible est alors mise en surbrillance de façon à être vue des autres utilisateurs \myref*{fig-designation-CibleDesignee}.
 						\item[Acceptation d'une cible] L'utilisateur~\myuser{B} peut alors accepter ou non cette désignation;
-							s'il accepte la désignation, la cible est alors colorée de la couleur du curseur de l'utilisateur~\myuser{B} qui a accepté \myref*{fig-designation-CibleAcceptee};
+							s'il accepte la désignation, la cible est colorée de la couleur du curseur de l'utilisateur~\myuser{B} \myref*{fig-designation-CibleAcceptee};
 							tant qu'elle n'est pas acceptée, la \myglos{glo-Residu} reste en surbrillance jusqu'à ce que la requête soit accepté ou modifiée par l'utilisateur~\myuser{A}.
 						\item[Sélection d'une cible] L'utilisateur~\myuser{B} ayant accepté doit maintenant sélectionner la cible pour achever le processus de désignation;
 							tant que l'utilisateur~\myuser{B} n'a pas sélectionné le \myglos{glo-Residu} ciblé, le processus ne peut pas être considéré comme terminé et l'effet de surbrillance reste actif;
