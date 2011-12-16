@@ -1,7 +1,7 @@
 *.swp
 *.spl
 build
-images/*.eps
-images/*.ps
-files/*.csv
-files/*.tex
+*.eps
+*.ps
+*.csv
+*.tex
