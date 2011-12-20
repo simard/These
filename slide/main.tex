@@ -1,11 +1,72 @@
-\documentclass[french,dvips]{mybeamer}
-\usepackage{mymacro}
+\documentclass[english,french,dvips]{mybeamer}
+\usepackage{my}
 \usepackage{mydate}
-\title{Collaboration haptique étroitement couplée\\pour la déformation moléculaire interactive}
+\usepackage{mycolor}
+\usepackage{myfloat}
+\usepackage[biblatex]{mybib}
+\usepackage{myps}
+\input{mymacro}
+\title{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
 \author{Jean \myname{Simard}}
 \date{\mydate[datestyle=long]{01/02/2012}}
 \begin{document}
 	\begin{frame}
 		\titlepage
+	\end{frame}
+	\begin{frame}{Sommaire}
+		\tableofcontents[hideallsubsections]
+	\end{frame}
+	\section{Introduction}
+	\subsection{Étapes de la thèse}
+	\begin{frame}{Déroulement}
+		\begin{myfigure}
+			\psset{xunit=1cm,yunit=1.1cm}
+			\begin{myps}(-2.5,-0.5)(2.5,5)
+				\transfade<2->[duration=0.2]
+				\only<1>{
+					\mynode[fillstyle=solid,fillcolor=myred!25](0,4)[Search]{Recherche}
+					\mycirclenumber(0,4){1}
+				}
+				\only<2>{
+					\mynode[fillstyle=solid,fillcolor=myred!25](0,3)[Selection]{Sélection}
+					\mycirclenumber(0,3){2}
+				}
+				\only<3>{
+					\mynode[fillstyle=solid,fillcolor=myred!25](0,2)[Manipulation]{Déformation}
+					\mycirclenumber(0,2){3}
+				}
+				\only<4>{
+					\mynode[fillstyle=solid,fillcolor=myred!25](0,1)[Evaluation]{Évaluation}
+					\mycirclenumber(0,1){4}
+				}
+				\only<5>{
+					\mycirclenumber[180](0,2.5){5}
+				}
+				\only<5->{
+					\mynode(0,1)[Evaluation]{Évaluation}
+				}
+				\only<4->{
+					\mynode(0,2)[Manipulation]{Déformation}
+					\ncline{->}{Manipulation}{Evaluation}
+				}
+				\only<3->{
+					\mynode(0,3)[Selection]{Sélection}
+					\ncline{->}{Selection}{Manipulation}
+				}
+				\only<2->{
+					\mynode(0,4)[Search]{Recherche}
+					\ncline{->}{Search}{Selection}
+				}
+				\only<5->{
+					\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05,armA=0.2]{->}{Evaluation}{Search}
+				}
+				\only<6>{
+					\mynode[fillstyle=solid,fillcolor=myred!25](0,0)[Objective]{Objectif atteint}
+					\mycirclenumber(0,0){6}
+					\ncline{->}{Evaluation}{Objective}
+				}
+			\end{myps}
+			\mycaption[fig-ProcessusDeDeformationMoleculaire]{Processus de déformation moléculaire}
+		\end{myfigure}
 	\end{frame}
 \end{document}
