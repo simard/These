@@ -18,6 +18,29 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	\section{Introduction}
+	\section{Contexte}
+	\subsection{\protect\textit{Docking} moléculaire}
+	\begin{frame}{Définition}
+		\begin{block}{\textit{Docking} moléculaire}
+			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.
+		\end{block}
+		\begin{myfigure}
+			\psset{unit=1cm}
+			\begin{myps}(-5,-2)(6,2)
+				\rput(-3,1){\myimage[width=0.120518359\paperwidth]{sota-docking-molecule-A}}
+				\mycircleletter(-4.5,1){A}
+				\rput(-3,-1){\myimage[width=0.1\paperwidth,angle=90]{sota-docking-molecule-B}}
+				\mycircleletter(-4.5,-1){B}
+				\rput(-3,0){\Huge\bfseries +}
+				\rput(3,0){\myimage[width=0.186177106\paperwidth]{sota-docking-complex-AB}}
+				\psline[linewidth=10pt,linecolor=myblue!70]{->}(-1,0)(1,0)
+				\mycircleletter(5,0.75){A}
+				\rput(5,0){\Large\bfseries +}
+				\mycircleletter(5,-0.75){B}
+			\end{myps}
+			\mycaption[fig-IllustrationDeLAmarrageMoleculaire]{Illustration de l'amarrage moléculaire}
+		\end{myfigure}
+	\end{frame}
 	\subsection{Étapes de la thèse}
 	\begin{frame}{Déroulement}
 		\begin{myfigure}
