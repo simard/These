@@ -69,4 +69,70 @@
 			\mycaption[fig-ProcessusDeDeformationMoleculaire]{Processus de déformation moléculaire}
 		\end{myfigure}
 	\end{frame}
+	\section{Recherche collaborative}
+	\subsection{Synthèse}
+	\begin{frame}<1-3>[label=fra-synthesis]{Synthèse}
+		\begin{myfigure}
+			\psset{xunit=0.95cm,yunit=0.8cm}
+			\begin{myps}(-6,-3)(6,4)
+				\uput[-90](-2.5,4){\textcolor{black!50}{\Large Problématiques}}
+				\uput[-90](2.5,4){\textcolor{black!50}{\Large Solutions}}
+				\psset{arrowlength=1}
+				\onslide<1->{%
+					\myunode[0][shadowcolor=myred](-5,2.5)[complexe-problem]{\onslide<2->{\onslide<4-9>{\color{black!25}}Complexité de la tâche}}[4cm]
+					\myunode[0][shadowcolor=myred](-5,1.5)[strategy-problem]{\onslide<3->{\onslide<4-9>{\color{black!25}}Stratégie de travail}}[4cm]
+					\psbrace*[linecolor=myred,ref=lC,nodesepA=-1pt](-5,3)(-5,1){\rotateright{\textcolor{myred}{\tiny Étude~1}}}%
+				}
+				\onslide<4->{%
+					\myunode[0][shadowcolor=mygreen](-5,0.5)[distribution-problem]{\onslide<5->{\onslide<7-9>{\color{black!25}}Charge de travail}}[4cm]
+					\myunode[0][shadowcolor=mygreen](-5,-0.5)[conflict-problem]{\onslide<6->{\onslide<7-9>{\color{black!25}}Conflits de coordination}}[4cm]
+					\psbrace*[linecolor=mygreen,ref=lC,nodesepA=-1pt](-5,1)(-5,-1){\rotateright{\textcolor{mygreen}{\tiny Étude~2}}}%
+				}
+				\onslide<7->{%
+					\myunode[0][shadowcolor=myblue](-5,-1.5)[identification-problem]{\onslide<8->{Paresse sociale}}[4cm]
+					\myunode[0][shadowcolor=myblue](-5,-2.5)[brainstorming-problem]{\onslide<9->{\textit{Brainstorming}}}[4cm]
+					\psbrace*[linecolor=myblue,ref=lC,nodesepA=-1pt](-5,-1)(-5,-3){\rotateright{\textcolor{myblue}{\tiny Étude~3}}}%
+				}
+				\onslide<10->{%
+					\psbrace*[linecolor=black!50,ref=lC,nodesepA=1pt](5,-3)(5,3){\rotateright{\textcolor{black!50}{\tiny Étude~4}}}
+				}
+				\onslide<11->{%
+					\myunode[180][shadowcolor=black!50](5,2.5)[complexe-solution]{Tâche de \textit{docking}}[4cm]%
+					\ncline[linewidth=4pt,linecolor=myred!25]{->}{complexe-problem}{complexe-solution}
+				}
+				\onslide<12->{%
+					\myunode[180][shadowcolor=black!50](5,1.5)[strategy-solution]{Manipulation de résidu}[4cm]%
+					\ncline[linewidth=4pt,linecolor=myred!25]{->}{strategy-problem}{strategy-solution}
+				}
+				\onslide<13->{%
+					\myunode[180][shadowcolor=black!50](5,0.5)[distribution-solution]{Distribuer les rôles}[4cm]%
+					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{distribution-problem}{distribution-solution}
+				}
+				\onslide<14->{%
+					\myunode[180][shadowcolor=black!50](5,-0.5)[conflict-solution]{Solutions haptiques}[4cm]%
+					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{conflict-problem}{conflict-solution}
+				}
+				\onslide<15->{%
+					\myunode[180][shadowcolor=black!50](5,-1.5)[identification-solution]{Identifier les rôles}[4cm]%
+					\ncline[linewidth=4pt,linecolor=myblue!25]{->}{identification-problem}{identification-solution}
+				}
+				\onslide<16->{%
+					\myunode[180][shadowcolor=black!50](5,-2.5)[brainstorming-solution]{Phase exploratoire}[4cm]%
+					\ncline[linewidth=4pt,linecolor=myblue!25]{->}{brainstorming-problem}{brainstorming-solution}
+				}
+			\end{myps}
+			\mycaption[fig-SyntheseDesProblematiques]{Synthèse des problématiques}
+		\end{myfigure}
+	\end{frame}
+	\section{Déformation collaborative}
+	\subsection{Synthèse}
+	\againframe<4-6>{fra-synthesis}
+	\section{Dynamique de groupe}
+	\subsection{Synthèse}
+	\againframe<7-9>{fra-synthesis}
+	\section{Assistance haptique}
+	\subsection{Synthèse}
+	\againframe<10->{fra-synthesis}
+	\begin{frame}{Conclusion}
+	\end{frame}
 \end{document}
