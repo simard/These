@@ -10,6 +10,7 @@
 \author{Jean \myname{Simard}}
 \date{\mydate[datestyle=long]{01/02/2012}}
 \begin{document}
+	\transfade[duration=0.1]
 	\begin{frame}
 		\titlepage
 	\end{frame}
@@ -22,7 +23,6 @@
 		\begin{myfigure}
 			\psset{xunit=1cm,yunit=1.1cm}
 			\begin{myps}(-2.5,-0.5)(2.5,5)
-				\transfade<2->[duration=0.2]
 				\only<1>{
 					\mynode[fillstyle=solid,fillcolor=myred!25](0,4)[Search]{Recherche}
 					\mycirclenumber(0,4){1}
