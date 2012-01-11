@@ -1,4 +1,4 @@
-\documentclass[english,french,dvips]{mybeamer}
+\documentclass[english,french,dvips,trans]{mybeamer}
 \usepackage{my}
 \usepackage{mydate}
 \usepackage{mycolor}
@@ -11,9 +11,9 @@
 \institute{\mytextsc{cnrs-limsi}}
 \school{Université de \myname{Paris}-Sud}
 \logo{%
-	\myimage[height=0.5cm]{logo-ups}%
+	\myimage[height=1cm]{logo-ups}%
 	\hspace{1em}%
-	\myimage[height=0.5cm]{logo-limsi}%
+	\myimage[height=1cm]{logo-limsi}%
 }
 \date{\mydate[datestyle=long]{01/02/2012}}
 \begin{document}
@@ -21,6 +21,7 @@
 	\begin{frame}
 		\titlepage
 	\end{frame}
+	\logo{}
 	\begin{frame}{Sommaire}
 		\tableofcontents[hideallsubsections]
 	\end{frame}
@@ -102,77 +103,90 @@
 	\end{frame}
 	\section{\myShaddock}
 	\section{Étude du travail collaboratif}
-	\subsection{Recherche collaborative}
+	\subsection{Étude~\mynum{1} -- Recherche collaborative}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Travail collaboratif}
-			\begin{itemize}
-				\item Étudier le travail collaboratif
+		\begin{block}{Objectif principal}
+			Observer les contraintes liées au travail collaboratif et souligner les avantages
+		\end{block}
+		\begin{block}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en binôme
 					\begin{itemize}
-						\item Valider l'intérêt du travail collaboratif
-						\item Identifier les conflits de collaboration (interaction, communication\dots{})
-						\item Identifier des stratégies de travail
+						\item Comparer les performances en collaboration et seul
+						\item Valider le contexte de travail (tâche complexe)
 					\end{itemize}
-				\item Valider le contexte (tâche complexe)
-			\end{itemize}
-		\end{block}
-		\begin{block}{Plate-forme}
-			\begin{itemize}
-				\item Valider la plate-forme
-				\item Identifier les faiblesses
-			\end{itemize}
-		\end{block}
-	\end{frame}
-	\subsubsection{Synthèse}
-	\subsection{Déformation collaborative}
-	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
-		\begin{block}{Tâche fortement couplée}
-			\begin{itemize}
-				\item Confirmer l'intérêt du travail collaboratif sur une tâche de déformation
-				\item Proposer une tâche fortement couplée
-			\end{itemize}
-		\end{block}
-		\begin{block}{Apprentissage}
-			\begin{itemize}
-				\item Observer l'apprentissage sur le travail collaboratif
-			\end{itemize}
-		\end{block}
-		\begin{block}{Plate-forme}
-			\begin{itemize}
-				\item Valider les améliorations de la plate-forme
-			\end{itemize}
+				\item Stratégies de travail dépendantes de la personnalité
+					\begin{itemize}
+						\item Identifier et caractériser les stratégies de travail
+						\item Identifier les conflits de coordination et de communication
+					\end{itemize}
+				\item Bonne utilisabilité de la plate-forme
+					\begin{itemize}
+						\item Évaluer les outils proposés
+						\item Identifier les faiblesses
+					\end{itemize}
+			\end{enumerate}
 		\end{block}
 	\end{frame}
 	\subsubsection{Synthèse}
-	\subsection{Dynamique de groupe}
+	\subsection{Étude~\mynum{2} -- Déformation collaborative}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Travail de groupe}
-			\begin{itemize}
-				\item Augmenter le nombre de sujets intervenants dans la collaboration
-				\item Confirmer les problèmes de conflits (interaction, communication\dots{})
-				\item Observer les spécificités d'un groupe ($>2$)
-			\end{itemize}
+		\begin{block}{Objectif principal}
+			Proposer une tâche suffisamment complexe pour quantifier et qualifier les conflits de coordination
 		\end{block}
-		\begin{block}{Communication verbale}
-			\begin{itemize}
-				\item Identifier des rôles parmi les sujets
-				\item Qualifier et quantifier les types de communication verbale
-				\item Tester la préparation à la tâche (pré-élaboration d'une stratégie)
-			\end{itemize}
+		\begin{block}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en binôme pour la déformation
+					\begin{itemize}
+						\item Coordination étroitement couplée
+					\end{itemize}
+				\item Binômes plus performants sur les tâches complexes
+					\begin{itemize}
+						\item Tâches de difficulté variable
+						\item Identifier les tâches nécessitant une collaboration
+					\end{itemize}
+				\item Évaluation du travail collaboratif par les sujets
+					\begin{itemize}
+						\item Questionnaire pour valider les améliorations de la plate-forme
+						\item Évaluation de la configuration de travail collaboratif
+					\end{itemize}
+			\end{enumerate}
 		\end{block}
-		\begin{block}{Plate-forme}
-			\begin{itemize}
-				\item Tester la robustesse sur une mise en œuvre plus complexe
-			\end{itemize}
+	\end{frame}
+	\subsubsection{Synthèse}
+	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
+	\subsubsection{Objectifs}
+	\begin{frame}{Objectifs}
+		\begin{block}{Objectif principal}
+			Observer la dynamique de groupe lors d'une coordination étroitement couplée
+		\end{block}
+		\begin{block}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en quadrinôme
+					\begin{itemize}
+						\item Variation de la taille d'un groupe
+						\item Quantification des conflits dans des groupes
+					\end{itemize}
+				\item Émergence d'un meneur
+					\begin{itemize}
+						\item Observer la dynamique des groupes
+						\item Caractériser les différents rôles
+					\end{itemize}
+				\item Le \textit{brainstorming} améliore les performances
+					\begin{itemize}
+						\item Période pour organiser le travail
+						\item Limiter les conflits \textit{a priori}
+					\end{itemize}
+			\end{enumerate}
 		\end{block}
 	\end{frame}
 	\subsubsection{Synthèse}
 	\section{Aide au travail collaboratif}
-	\subsection{Assistance haptique et stratégie de travail}
+	\subsection{Étude~\mynum{4} -- Assistance haptique et stratégie de travail}
 	\subsubsection{Synthèse des études effectuées}
-	\begin{frame}<1-9>[label=fra-synthesis]{Synthèse}
+	\begin{frame}{Synthèse des études effectuées et solutions}
 		\begin{myfigure}
 			\psset{xunit=0.95cm,yunit=0.8cm}
 			\begin{myps}(-6,-3)(6,4)
@@ -225,27 +239,29 @@
 			\mycaption[fig-SyntheseDesProblematiques]{Synthèse des problématiques}
 		\end{myfigure}
 	\end{frame}
-	\subsubsection{Solutions proposées}
-	\againframe<10->{fra-synthesis}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Communication et coordination}
-			\begin{itemize}
-				\item Améliorer la coordination
-				\item Réduire la communication de gestion de conflits
-			\end{itemize}
+		\begin{block}{Objectif principal}
+			Proposer et évaluer des outils haptiques pour assister la coordination
 		\end{block}
-		\begin{block}{Stratégie de travail}
-			\begin{itemize}
-				\item Valider la configuration de travail
-				\item Obtenir une répartition équitable du travail
-			\end{itemize}
-		\end{block}
-		\begin{block}{Ergonomie}
-			\begin{itemize}
-				\item Valider les outils haptiques utilisés
-				\item Évaluer l'outil auprès des utilisateurs
-			\end{itemize}
+		\begin{block}{Hypothèses}
+			\begin{enumerate}
+				\item Performances améliorées par l'assistance haptique
+					\begin{itemize}
+						\item Rapidité d'exécution
+						\item Qualité de la solution atteinte
+					\end{itemize}
+				\item L'assistance haptique améliore la communication
+					\begin{itemize}
+						\item Temps de réaction réduits
+						\item Meilleure compréhension des intentions de chacun
+					\end{itemize}
+				\item Les experts sont satisfaits des outils proposés
+					\begin{itemize}
+						\item Évaluer les outils proposés
+						\item Identifier les faiblesses
+					\end{itemize}
+			\end{enumerate}
 		\end{block}
 	\end{frame}
 	\subsubsection{Synthèse}
