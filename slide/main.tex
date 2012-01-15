@@ -363,6 +363,36 @@
 			\end{column}
 		\end{columns}
 	\end{frame}
+	\subsubsection{Protocole expérimental}
+	\begin{frame}{La plate-forme}
+		\psset{xunit=0.666666666667\textwidth,yunit=0.4\textwidth}
+		\begin{myfigure}
+			\begin{myps}(0,0)(1,1)
+				\only<1>{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
+				}
+				\only<2->{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-illustration}}
+					\pnode(0.59,0.6){grab}
+					\pnode(0.69,0.7){grab-from}
+					\ncline[linewidth=5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}
+				}
+			\end{myps}
+			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale2]{Illustration de la plate-forme expérimentale}
+		\end{myfigure}
+		\only<1>{
+			\begin{itemize}
+				\item Utilisation de la première plate-forme modifiée
+			\end{itemize}
+		}
+		\only<2>{
+			\begin{itemize}
+				\item Outil pour tourner la molécule (SpaceTraveler de 3dconnexion\myregistered{})
+			\end{itemize}
+		}
+	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
 		\begin{myblock}{Objectif principal}
