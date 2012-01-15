@@ -365,7 +365,7 @@
 	\end{frame}
 	\subsubsection{Protocole expérimental}
 	\begin{frame}{La plate-forme}
-		\psset{xunit=0.666666666667\textwidth,yunit=0.4\textwidth}
+		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
 		\begin{myfigure}
 			\begin{myps}(0,0)(1,1)
 				\only<1>{
@@ -486,6 +486,55 @@
 				\item Aucune étude de dynamique de groupe sur des tâches avec une interaction étroitement couplée
 			\end{itemize}
 		\end{myminusblock}
+	\end{frame}
+	\subsubsection{Protocole expérimental}
+	\begin{frame}{La plate-forme}
+		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
+		\begin{myfigure}
+			\begin{myps}(0,0)(1,1)
+				\only<1>{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-illustration}}
+				}
+				\only<2->{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-illustration}}
+					\pnode(0.52,0.675){tug1}
+					\pnode(0.62,0.775){tug1-from}
+					\pnode(0.55,0.65){tug2}
+					\pnode(0.65,0.75){tug2-from}
+					\pnode(0.58,0.63){tug3}
+					\pnode(0.68,0.73){tug3-from}
+					\pnode(0.62,0.61){tug4}
+					\pnode(0.72,0.71){tug4-from}
+					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
+					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
+					\ncline[linewidth=5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
+					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
+				}
+			\end{myps}
+			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale3]{Illustration de la plate-forme expérimentale}
+		\end{myfigure}
+		\only<1>{
+			\begin{itemize}
+				\item Utilisation de la seconde plate-forme modifiée
+			\end{itemize}
+		}
+		\only<2>{
+			\begin{itemize}
+				\item Outil de déformation de la molécule (Omni de SensAble\myregistered{})
+			\end{itemize}
+		}
+		\only<3>{
+			\begin{itemize}
+				\item Pas d'outil de déplacement ou de rotation de la molécule
+			\end{itemize}
+		}
+		\only<4>{
+			\begin{itemize}
+				\item Utilisation de la troisième plate-forme
+			\end{itemize}
+		}
 	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
