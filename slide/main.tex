@@ -16,6 +16,9 @@
 	pdfsubject={Soutenance de thèse en informatique}%
 }
 
+\newcommand{\schemafactor}{1}
+\newlength{\schemaunit}
+
 \setbeamercolor*{progressbar primary}{fg=myred}
 \setbeamercolor*{structure}{fg=myred}
 \setbeamercolor*{example text}{fg=white,bg=myred}
@@ -228,6 +231,70 @@
 				\item Stratégie de travail libre
 			\end{itemize}
 		}
+	\end{frame}
+	\begin{frame}{La tâche}
+		\renewcommand{\schemafactor}{0.1125}
+		\setlength{\schemaunit}{\schemafactor\paperwidth}
+		\psset{unit=\schemaunit}
+		\begin{myfigure}
+			\begin{myps}(-4,-2.3)(4,2.3)
+				\rput(-1.75,0){%
+					\myimage[height=2\schemaunit]{trp-cage}}
+				\rput(1.25,0){%
+					\myimage[height=2\schemaunit]{prion}}
+				\rput(-3.5,0){%
+					\myimage[height=\schemaunit]{pattern1}}
+				\rput(-1,1.5){%
+					\myimage[width=\schemaunit]{pattern3-8}}
+				\rput(1,1.5){%
+					\myimage[width=\schemaunit]{pattern2-7}}
+				\rput(-1,-1.5){%
+					\myimage[width=\schemaunit]{pattern4-9}}
+				\rput(1,-1.5){%
+					\myimage[width=\schemaunit]{pattern5-10}}
+				\rput(3.5,0){%
+					\myimage[height=\schemaunit]{pattern6}}
+
+				\psset{framesize=1 1}
+				\fnode(-3.5,0){P1}
+				\uput[90](-3.5,0.5){Residue~1}
+				\fnode(-1,1.5){P38}
+				\uput[90](-1,2){Residue~3 and 8}
+				\fnode(1,1.5){P27}
+				\uput[90](1,2){Residue~2 and 7}
+				\fnode(-1,-1.5){P49}
+				\uput[-90](-1,-2){Residue~4 and 9}
+				\fnode(1,-1.5){P510}
+				\uput[-90](1,-2){Residue~5 and 10}
+				\fnode(3.5,0){P6}
+				\uput[90](3.5,0.5){Residue~6}
+
+				\psset{linecolor=myred}
+				\cnode(-1.5,0.3){0.2}{TRPP1}
+				\cnode(-2,0.15){0.2}{TRPP38}
+				\cnode(-1.25,-0.1){0.2}{TRPP27}
+				\cnode(-2.2,-0.5){0.2}{TRPP49}
+				\cnode(-1.25,-0.65){0.2}{TRPP510}
+				\ncline{-}{P1}{TRPP1}
+				\ncline{-}{P38}{TRPP38}
+				\ncline{-}{P27}{TRPP27}
+				\ncline{-}{P49}{TRPP49}
+				\ncline{-}{P510}{TRPP510}
+
+				\psset{linecolor=myblue}
+				\cnode(-0.2,0.4){0.2}{PrionP38}
+				\cnode(2.8,0.6){0.2}{PrionP27}
+				\cnode(0.8,0.2){0.2}{PrionP49}
+				\cnode(1.7,-0.7){0.2}{PrionP510}
+				\cnode(1.4,0.0){0.2}{PrionP6}
+				\ncline{-}{P38}{PrionP38}
+				\ncline{-}{P27}{PrionP27}
+				\ncline{-}{P49}{PrionP49}
+				\ncline{-}{P510}{PrionP510}
+				\ncline{-}{P6}{PrionP6}
+			\end{myps}
+			\mycaption[fig-RepartitionDesResiduesSurLesMoleculesTRPCageEtPrion]{Répartitions des \emph{residues} sur les molécules (TRP-Cage et Prion)}
+		\end{myfigure}
 	\end{frame}
 	\begin{frame}{Protocole}
 		\begin{myblock}{Sujets}
