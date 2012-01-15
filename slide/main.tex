@@ -172,6 +172,63 @@
 			\end{column}
 		\end{columns}
 	\end{frame}
+	\subsubsection{Protocole expérimental}
+	\begin{frame}{La plate-forme}
+		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
+		\begin{myfigure}
+			\begin{myps}(0,0)(1,1)
+				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
+				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
+				\pnode(0.54,0.65){tug1}
+				\pnode(0.64,0.75){tug1-from}
+				\pnode(0.64,0.59){tug2}
+				\pnode(0.74,0.69){tug2-from}
+				\pnode(0.59,0.62){grab}
+				\pnode(0.69,0.72){grab-from}
+				\only<2>{
+					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
+					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
+				}
+				\only<3>{
+					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}
+				}
+				\only<4>{
+					\pspolygon[linewidth=4pt,linecolor=myred](0.6,0.69)(0.61,0.99)(0.87,0.93)(0.83,0.57)
+				}
+			\end{myps}
+			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale1]{Illustration de la plate-forme expérimentale}
+		\end{myfigure}
+		\only<1>{
+			\begin{itemize}
+				\item Configuration \alert{colocalisée} et \alert{synchrone}
+			\end{itemize}
+		}
+		\only<2>{
+			\begin{itemize}
+				\item Outil de déformation de la molécule (Omni de SensAble\myregistered)
+			\end{itemize}
+		}
+		\only<3>{
+			\begin{itemize}
+				\item Outil pour déplacer la molécule (Omni de SensAble\myregistered)
+			\end{itemize}
+		}
+		\only<4>{
+			\begin{itemize}
+				\item Vue monoscopique, unique, publique et vidéoprojetée
+			\end{itemize}
+		}
+		\only<5>{
+			\begin{itemize}
+				\item Communication orale et gestuelle autorisée
+			\end{itemize}
+		}
+		\only<6>{
+			\begin{itemize}
+				\item Stratégie de travail libre
+			\end{itemize}
+		}
+	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
 		\begin{myblock}{Objectif principal}
