@@ -5,7 +5,49 @@
 \usepackage{myfloat}
 \usepackage[biblatex]{mybib}
 \usepackage{myps}
+
 \input{mymacro}
+
+\hypersetup{%
+	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
+	pdfauthor={Jean SIMARD},%
+	pdfkeywords={collaboration,haptique,environnement virtuel,simulation moléculaire},%
+	pdflang={FR-fr},%
+	pdfsubject={Soutenance de thèse en informatique}%
+}
+
+\setbeamercolor*{progressbar primary}{fg=myred}
+\setbeamercolor*{structure}{fg=myred}
+\setbeamercolor*{example text}{fg=white,bg=myred}
+\setbeamercolor*{section in head/foot}{parent=palette primary,fg=black}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary,fg=myred}
+\setbeamercolor*{alerted text}{fg=myred}
+\setbeamercolor*{block title}{fg=white,bg=mygreen}
+\setbeamercolor*{block body}{bg=black!20}
+\setbeamercolor*{block title alerted}{fg=white,bg=myred}
+\setbeamercolor*{block body alerted}{bg=black!20}
+\setbeamercolor*{block title example}{fg=white,bg=mygreen}
+\setbeamercolor*{block body example}{bg=black!20}
+\newenvironment<>{myblock}[1]{%
+	\begin{alertblock}{#1}%
+}{%
+	\end{alertblock}%
+}
+\newenvironment<>{myplusblock}[1]{%
+	\setbeamercolor*{structure}{fg=mygreen}
+	\begin{block}{#1}%
+}{%
+	\end{block}%
+	\setbeamercolor*{structure}{fg=myred}
+}
+\newenvironment<>{myminusblock}[1]{%
+	\begin{alertblock}{#1}%
+}{%
+	\end{alertblock}%
+}
+
+\addglobalbib[datatype=bibtex]{biblio.bib}
+
 \title{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
 \author[J. \myname{Simard}]{Jean \myname{Simard}}
 \institute{\mytextsc{cnrs-limsi}}
@@ -16,6 +58,7 @@
 	\myimage[height=1cm]{logo-limsi}%
 }
 \date{\mydate[datestyle=long]{01/02/2012}}
+
 \begin{document}
 	\transfade[duration=0.1]
 	\begin{frame}
@@ -28,9 +71,9 @@
 	\section{Introduction}
 	\subsection{\protect\textit{Docking} moléculaire}
 	\begin{frame}{Définition}
-		\begin{block}{\textit{Docking} moléculaire}
+		\begin{myblock}{\textit{Docking} moléculaire}
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.
-		\end{block}
+		\end{myblock}
 		\begin{myfigure}
 			\psset{unit=1cm}
 			\begin{myps}(-5,-2)(6,2)
@@ -104,12 +147,37 @@
 	\section{\myShaddock}
 	\section{Étude du travail collaboratif}
 	\subsection{Étude~\mynum{1} -- Recherche collaborative}
+	\subsubsection{Travaux existants}
+	\begin{frame}{Travaux existants}
+		\begin{columns}
+			\begin{column}{0.6\paperwidth}
+				\begin{myplusblock}{Sélection moléculaire}
+					\begin{itemize}
+						\item Logiciels de visualisation \mycite{Humphrey-1996,Delano-2002}
+						\item Solution de réalité virtuelle \mycite{Polys-2004}
+						\item Manipulation moléculaire interactive \mycite{Delalande-2010}
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Problématique}
+					\begin{itemize}
+						\item Pas d'exploration collaborative dans un environnement moléculaire temps-réel
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.3\paperwidth}
+				\begin{myfigure}
+					\myimage[width=0.3\paperwidth]{exp1-delalande-2010}
+					\mycaption[fig-PlateformeFVNANO]{Plateforme \textsc{fvnano}}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
+	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Objectif principal}
+		\begin{myblock}{Objectif principal}
 			Observer les contraintes liées au travail collaboratif et souligner les avantages
-		\end{block}
-		\begin{block}{Hypothèses}
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances en binôme
 					\begin{itemize}
@@ -127,16 +195,40 @@
 						\item Identifier les faiblesses
 					\end{itemize}
 			\end{enumerate}
-		\end{block}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
 	\subsection{Étude~\mynum{2} -- Déformation collaborative}
+	\subsubsection{Travaux existants}
+	\begin{frame}{Travaux existants}
+		\begin{columns}
+			\begin{column}{0.6\paperwidth}
+				\begin{myplusblock}{Déformation moléculaire}
+					\begin{itemize}
+						\item Tissus cellulaires \mycite{Peterlik-2009}
+						\item Sculpture sur glaise \mycite{Muller-2006,Gorlatch-2009}
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Problématique}
+					\begin{itemize}
+						\item Pas de déformation collaborative dans un environnement moléculaire temps-réel
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.3\paperwidth}
+				\begin{myfigure}
+					\myimage[width=0.3\paperwidth]{exp2-peterlik-2009}
+					\mycaption[fig-DeformationDeTissusCellulaires]{Déformation de tissus cellulaires}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
+	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Objectif principal}
+		\begin{myblock}{Objectif principal}
 			Proposer une tâche suffisamment complexe pour quantifier et qualifier les conflits de coordination
-		\end{block}
-		\begin{block}{Hypothèses}
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances en binôme pour la déformation
 					\begin{itemize}
@@ -153,16 +245,31 @@
 						\item Évaluation de la configuration de travail collaboratif
 					\end{itemize}
 			\end{enumerate}
-		\end{block}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
 	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
+	\subsubsection{Travaux existants}
+	\begin{frame}{Travaux existants}
+		\begin{myplusblock}{Dynamique de groupe}
+			\begin{itemize}
+				\item facilitation sociale \mycite{Ringelmann-1913}
+				\item paresse sociale \mycite{Roethlisberger-1939}
+				\item brainstorming \mycite{Osborn-1963,Tuckman-1965}
+			\end{itemize}
+		\end{myplusblock}
+		\begin{myminusblock}{Problématique}
+			\begin{itemize}
+				\item Aucune étude de dynamique de groupe sur des tâches avec une interaction étroitement couplée
+			\end{itemize}
+		\end{myminusblock}
+	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Objectif principal}
+		\begin{myblock}{Objectif principal}
 			Observer la dynamique de groupe lors d'une coordination étroitement couplée
-		\end{block}
-		\begin{block}{Hypothèses}
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances en quadrinôme
 					\begin{itemize}
@@ -180,7 +287,7 @@
 						\item Limiter les conflits \textit{a priori}
 					\end{itemize}
 			\end{enumerate}
-		\end{block}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
 	\section{Aide au travail collaboratif}
@@ -241,10 +348,10 @@
 	\end{frame}
 	\subsubsection{Objectifs}
 	\begin{frame}{Objectifs}
-		\begin{block}{Objectif principal}
+		\begin{myblock}{Objectif principal}
 			Proposer et évaluer des outils haptiques pour assister la coordination
-		\end{block}
-		\begin{block}{Hypothèses}
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
 				\item Performances améliorées par l'assistance haptique
 					\begin{itemize}
@@ -262,7 +369,7 @@
 						\item Identifier les faiblesses
 					\end{itemize}
 			\end{enumerate}
-		\end{block}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
 	\begin{frame}{Conclusion}
@@ -272,5 +379,9 @@
 	\subsection{Perspectives}
 	\begin{frame}{Questions}
 		Merci pour votre attention
+	\end{frame}
+	\begin{frame}{Références}
+		\defbibfilter{all}{\keyword{Simard}}
+		\printbibliography[filter=all]
 	\end{frame}
 \end{document}
