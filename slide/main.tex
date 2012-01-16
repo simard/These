@@ -80,7 +80,7 @@
 \setbeamercolor*{section in head/foot}{parent=palette primary,fg=black}
 \setbeamercolor*{subsection in head/foot}{parent=palette primary,fg=myred}
 \setbeamercolor*{alerted text}{fg=myred}
-\setbeamercolor*{block title}{fg=white,bg=myred}
+\setbeamercolor*{block title}{fg=white,bg=mygreen}
 \setbeamercolor*{block body}{bg=black!20}
 \setbeamercolor*{block title alerted}{fg=white,bg=myred}
 \setbeamercolor*{block body alerted}{bg=black!20}
@@ -1044,6 +1044,40 @@
 				\item[Tâche différente] 2~molécules (1~déformation et 1~docking moléculaire)
 				\item[Assistance] Avec ou sans assistance haptique
 			\end{description}
+		\end{myblock}
+	\end{frame}
+	\subsubsection{Résultats}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
+			\begin{myps}(-0.425,-150)(2,575)
+				\myaxes(0,2){scénario}(0,500)[100]{temps~(s)}
+				\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
+				\mylegend{\myleg{Sans assistance}{myblue}\myand\myleg{Avec assistance}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario]{Temps pour atteindre le score \myRMSD minimum avec et sans haptique pour chaque scénario}
+		\end{myfigure}
+		\begin{myblock}{Assistance haptique}
+			\begin{itemize}
+				\item Pas de différences sur les tâches simples
+				\item Apport important sur les tâches complexes
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.274914089\textwidth,yunit=0.25cm}
+			\begin{myps}(-0.425,-3)(2,10.25)
+				\myaxes(0,2){haptique}(0,10)[2]{temps~(s)}
+				\myboxplot{exp4-shake-time-haptic.csv}
+			\end{myps}
+			\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique]{Temps moyen d'acceptation d'une désignation avec et sans haptique}
+		\end{myfigure}
+		\begin{myblock}{Communication haptique}
+			\begin{itemize}
+				\item Amélioration du temps de réaction
+				\item Communication haptique et non verbale
+			\end{itemize}
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
