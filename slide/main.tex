@@ -6,6 +6,60 @@
 \usepackage[biblatex]{mybib}
 \usepackage{myps}
 
+\makeatletter
+\def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
+%	% For legend
+	\gdef\my@ps@legendminx{#2}%
+	\gdef\my@ps@legendmaxx{#3}%
+	\gdef\my@ps@legendminy{#5}%
+	\gdef\my@ps@legendmaxy{#6}%
+	\gdef\my@ps@legend{\myand{}}%
+%	\ifstrempty{#7}%
+%		{%
+%			\ifstrempty{#1}%
+%				{\psaxes[labels=y,ticks=y](#2,#5)(#3,#6)}%
+%				{\psaxes[labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+%		}{%
+%			\ifstrempty{#1}%
+%				{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
+%				{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
+%		}%
+	% Middle of the x-axis
+	\fpDiv{\my@ps@xmiddle}{#3}{2}%
+	% Set to the height of the x axis label
+	\settoheight{\my@ps@xoffset}{#3}%
+	\settodepth{\my@ps@temp@xoffset}{#3}
+	\addtolength{\my@ps@xoffset}{\my@ps@temp@xoffset}
+	% Label separations
+	\addtolength{\my@ps@xoffset}{2\pslabelsep}%
+	% Additional space
+	\addtolength{\my@ps@xoffset}{0.5ex}%
+	% x-label
+	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){\textit{#4}}%
+	% Middle of the y-axis
+	\fpDiv{\my@ps@ymiddle}{#6}{2}%
+	% Set to the width of the wider number of y axis
+	\settowidth{\my@ps@yoffset}{#6}
+	% Add label separations
+	\addtolength{\my@ps@yoffset}{2\pslabelsep}%
+	% Additional space
+	\addtolength{\my@ps@yoffset}{0.5ex}%
+	% y-label
+	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
+	\ifstrempty{#7}%
+		{}{%
+		\fpDiv{\temp}{#6}{#7}%
+		\fpRound{\iterations}{\temp}{0}%
+		\multido{\i=1+1}{\iterations}{%
+			\fpMul{\ylineoffset}{\i}{#7}
+			\ifstrempty{#1}%
+				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
+				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
+			}%
+		}%
+}
+\makeatother
+
 \input{mymacro}
 
 \hypersetup{%
@@ -338,6 +392,129 @@
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.0889\textwidth,yunit=0.0075cm}
+			\begin{myps}(-1.25,-115)(10,460)
+				\myaxes(0,10){Résidu}(0,400)[100]{temps~(s)}
+				\myboxplot{exp1-time-residue-group.csv}
+				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-TempsDExecutionEntreLesSujetsSeulsEtLesCouples]{Temps d'exécution entre les sujets seuls et les couples}
+		\end{myfigure}
+		\begin{myblock}{Travail collaboratif}
+			\begin{itemize}
+				\item Le travail collaboratif confirme son intérêt pour les tâches complexes
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.074\textwidth,yunit=0.12cm}
+			\begin{myps}(-1.5,-7)(12,22)
+				\myaxes(0,12){Binôme}(0,20)[4]{distance~(mm)}
+				% Once header are readed, they are defined for other barplot
+				% That's why barplots without headers are in first position
+				\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
+				\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
+				\mybarplot[barstyle=first-barstyle]{exp1-diff-groups1.csv}
+				\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
+				\psline(0,14)(12,14)
+				\psline(0,8)(12,8)
+				\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
+				\uput[180](12,5){\pscharpath{\LARGE\bf\sffamily Champ proche}}
+				\uput[180](12,11){\pscharpath{\LARGE\bf\sffamily Champ voisin}}
+				\uput[180](12,17){\pscharpath{\LARGE\bf\sffamily Champ distant}}
+			\end{myps}
+			\mycaption[fig-DistanceMoyenneEntreLeCurseurDesSujets]{Distance moyenne entre le curseur des sujets}
+		\end{myfigure}
+		\begin{myblock}{Les groupes}
+			\begin{itemize}
+				\item Stratégies de travail différentes
+				\item Dépendance de la personnalité
+				\item Des conflits d'interaction (dans les \emph{mêmes régions})
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myblock}{La communication verbale}
+			\begin{itemize}
+				\item<2-> Séparation entre temps de recherche et de sélection
+				\item<3-> Mesure du temps de communication verbale
+			\end{itemize}
+		\end{myblock}
+		\begin{myfigure}
+			\begin{myps}(0,-0.5)(10,2)
+				\psset{linewidth=1pt,linecolor=black}%
+				\psframe(0,-0.5)(10,0.5)%
+				\only<1>{%
+					\psbrace[ref=lC,rot=-90,nodesepA=-5,nodesepB=-1ex](10,0.5)(0,0.5){%
+						\parbox{10\psxunit}{\centering\textcolor{black}{Temps de la tâche}}%
+					}%
+				}%
+				\psset{fillstyle=solid}%
+				\only<2->{%
+					\psframe[fillcolor=myblue!70](0,-0.5)(6,0.5)%
+					\psframe[fillcolor=myred!70](6,-0.5)(10,0.5)%
+				}%
+				\only<2>{%
+					\psset{ref=lC,rot=-90}%
+					\psbrace[nodesepA=-3](6,0.5)(0,0.5){%
+						\parbox{6\psxunit}{\centering\textcolor{myblue}{Temps de recherche}}%
+					}%
+					\psbrace[nodesepA=-2](10,0.5)(6,0.5){%
+						\parbox{4\psxunit}{\centering\textcolor{myred}{Temps de sélection}}%
+					}%
+				}%
+				\only<3->{
+					\psframe[fillcolor=myblue](1,-0.5)(1.5,0.5)
+					\psframe[fillcolor=myblue](3,-0.5)(4.5,0.5)
+					\psframe[fillcolor=myblue](4.8,-0.5)(5,0.5)
+					\psframe[fillcolor=myred](6.5,-0.5)(7.5,0.5)
+					\psframe[fillcolor=myred](8,-0.5)(8.25,0.5)
+				}
+				\only<3>{
+					\pnode(1.25,0.5){verbal1}
+					\pnode(3.75,0.5){verbal2}
+					\pnode(4.9,0.5){verbal3}
+					\pnode(7,0.5){verbal4}
+					\pnode(8.125,0.5){verbal5}
+					\rput(5,1.5){\Rnode{verbal}{\psframebox[linestyle=none]{\centering Communication verbale}}}
+					\psset{linearc=0.1,angleA=90}
+					\ncdiagg{<-}{verbal1}{verbal}
+					\ncdiagg{<-}{verbal2}{verbal}
+					\ncdiagg{<-}{verbal3}{verbal}
+					\ncdiagg{<-}{verbal4}{verbal}
+					\ncdiagg{<-}{verbal5}{verbal}
+				}
+			\end{myps}
+			\mycaption[fig-SchemaDeLaCommunicationVerbale]{Schéma de la communication verbale}
+		\end{myfigure}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\psset{xunit=0.06\textwidth,yunit=0.02cm}
+		\begin{myfigure}
+			\begin{myps}(-1.5,-35)(12,120)
+				\myaxes(0,12){Binôme}(0,100)[25]{temps~(\%)}
+				\mybarplot{exp1-timeaudio-groups-searchselection.csv}
+				\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
+			\end{myps}
+%			\begin{myps}(-2.5,-60)(14,170)
+%				\axes{10}{\#~residue}{160}{temps~(s)}{40}
+%				\hist{exp1-com-group-type}{3}
+%				\uput[90](10.25,100){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Dark-Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Total}}
+%				\uput[90](10.25,50){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Recherche}}
+%				\uput[90](10.25,0){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Light-Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Selection}}
+%			\end{myps}
+			\mycaption[fig-TempsDeCommunication]{Temps de communication}
+		\end{myfigure}
+		\begin{myblock}{Travail collaboratif}
+			\begin{itemize}
+				\item La communication prend une place importante
+				\item Des conflits de communication (incompréhension, prise de parole\dots{})
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
 	\subsection{Étude~\mynum{2} -- Déformation collaborative}
 	\subsubsection{Travaux existants}
 	\begin{frame}{Travaux existants}
