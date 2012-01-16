@@ -1,10 +1,11 @@
-\documentclass[english,french,dvips]{mybeamer}
+\documentclass[english,french,dvips,trans]{mybeamer}
 \usepackage{my}
 \usepackage{mydate}
 \usepackage{mycolor}
 \usepackage{myfloat}
 \usepackage[biblatex]{mybib}
 \usepackage{myps}
+\usepackage{myuml}
 
 \makeatletter
 \def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
@@ -202,6 +203,80 @@
 		\end{myfigure}
 	\end{frame}
 	\section{\myShaddock}
+	\begin{frame}{\myShaddock}
+		\begin{myfigure}
+			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
+			\psset{framearc=.1,shadow=true,blur=true}
+			\begin{myps}(-7.5,-5)(7.5,6)
+				\rput(0,3){%
+					\myumlnode*<PCUtilisateur>{\footnotesize Nœud principal}{%
+						\myumlcomponent<VMD>[\scriptsize application]{\footnotesize\myVMD}%
+					}%
+				}
+				\rput(-5,0){%
+					\myumlnode*<ServeurNAMD>{\footnotesize Nœud \myNAMD}{%
+						\begin{psmatrix}[rowsep=1]%
+							\myumlcomponent<NAMD>[\scriptsize programme]{{\footnotesize\texttt{namd2}}} \\%
+							\myumlcomponent<FichierSimulation>[\scriptsize fichier]{%
+								\\[-1ex]%
+									\begin{psmatrix}[rowsep=0]%
+										\footnotesize Données de\\\footnotesize simulation%
+									\end{psmatrix}%
+								}
+							\end{psmatrix}%
+						}%
+					}
+					\rput(5,3){%
+						\myumlnode*<ServeurVRPN1>{\footnotesize Nœud \myVRPN}{%
+							\myumlcomponent<VRPN1>[\scriptsize programme]{{\footnotesize\texttt{vrpn\_server}}}%
+						}%
+					}
+					\rput(5,-2){%
+						\myumlnode<PHANToM1>[\scriptsize\myOmni]{Interface}%
+					}
+					\rput(5,-4){\Huge$\vdots$}
+					\rput(0,-2){%
+						\myumlnode<VideoProjecteur>[\scriptsize vue partagée]{\footnotesize Vidéoprojecteur}
+					}
+					\psset{shadow=false}
+
+					\myumlrealization[angleA=-90,angleB=90]{NAMD}{FichierSimulation}[nccurve]%
+					\myumlrealization[angleA=-90,angleB=90]{VRPN1}{PHANToM1}[nccurve]%
+					\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
+					\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
+					\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
+				\end{myps}
+				\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
+			\end{myfigure}
+	\end{frame}
+	\begin{frame}{\myVMD}
+		\begin{myfigure}
+			\psset{unit=0.05\textwidth}
+			\begin{myps}(-10,-5)(8,5)
+				\rput(0,0){%
+					\myumlcomponent*[framesep=10pt,framearc=0,shadow=false]<VMD>[application]{\myVMD}{%
+						\psset{framesep=5pt,framearc=.1,shadow=true,blur=true}%
+						\psframebox[linestyle=none,fillstyle=none,shadow=false]{%
+							\begin{psmatrix}[rowsep=1]%
+								\myumlcomponent<IMD>[extension]{\myIMD}%
+								\hspace{3em}%
+								\myumlcomponent<VRPNclient>[fonction]{Client \myVRPN} \\%
+								\myumlcomponent<Renderer>[fonction]{Moteur de rendus}%
+							\end{psmatrix}%
+						}%
+					}%
+				}
+
+				\psset{fillstyle=none,shadow=false}
+				\myumlrealization[angleA=90,angleB=-90]{Renderer}{IMD}[nccurve]%
+				\myumlrelation[angleA=180,angleB=0,offsetA=8pt]{VRPNclient}[-135]<*>{IMD}[-45]<*>[nccurve]%
+				\myumlinterface[angleA=180,angleB=180,outAngleB=0,offsetA=8pt,ArrowInside={}]{IMD}{VMD}[nccurve]
+				\myumlinterface[angleA=0,angleB=0,outAngleB=180,ArrowInside={}]{VRPNclient}{VMD}[nccurve]
+				\myumlinterface[angleA=-90,angleB=-90,outAngleB=90,offsetA=8pt,ArrowInside={}]{Renderer}{VMD}[nccurve]
+			\end{myps}
+			\mycaption[fig-Shaddock-DiagrammeDeComposantUMLDuNoeudVMD]{Diagramme de composant \myUML du nœud \myVMD}
+		\end{myfigure}
+	\end{frame}
 	\section{Étude du travail collaboratif}
 	\subsection{Étude~\mynum{1} -- Recherche collaborative}
 	\subsubsection{Travaux existants}
@@ -814,7 +889,7 @@
 	\subsubsection{Résultats}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+			\psset{xunit=0.444444444\textwidth,yunit=0.0035cm}
 			\begin{myps}(-0.25,-220)(2,720)
 				\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
 				\myboxplot{exp3-time-molecule-group.csv}
@@ -831,7 +906,7 @@
 	\end{frame}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+			\psset{xunit=0.444444444\textwidth,yunit=0.003cm}
 			\begin{myps}(-0.25,-220)(2,720)
 				\myaxes(0,2){\textit{brainstorming}}(0,600)[100]{temps~(s)}
 				\myboxplot{exp3-time-brainstorm-group.csv}
