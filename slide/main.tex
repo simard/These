@@ -1,4 +1,4 @@
-\documentclass[english,french,dvips,trans]{mybeamer}
+\documentclass[english,french,dvips]{mybeamer}
 \usepackage{my}
 \usepackage{mydate}
 \usepackage{mycolor}
@@ -79,7 +79,7 @@
 \setbeamercolor*{section in head/foot}{parent=palette primary,fg=black}
 \setbeamercolor*{subsection in head/foot}{parent=palette primary,fg=myred}
 \setbeamercolor*{alerted text}{fg=myred}
-\setbeamercolor*{block title}{fg=white,bg=mygreen}
+\setbeamercolor*{block title}{fg=white,bg=myred}
 \setbeamercolor*{block body}{bg=black!20}
 \setbeamercolor*{block title alerted}{fg=white,bg=myred}
 \setbeamercolor*{block body alerted}{bg=black!20}
@@ -391,7 +391,7 @@
 			\end{enumerate}
 		\end{myblock}
 	\end{frame}
-	\subsubsection{Synthèse}
+	\subsubsection{Résultats}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
 			\psset{xunit=0.0889\textwidth,yunit=0.0075cm}
@@ -515,6 +515,7 @@
 			\end{itemize}
 		\end{myblock}
 	\end{frame}
+	\subsubsection{Synthèse}
 	\subsection{Étude~\mynum{2} -- Déformation collaborative}
 	\subsubsection{Travaux existants}
 	\begin{frame}{Travaux existants}
@@ -647,6 +648,61 @@
 			\end{enumerate}
 		\end{myblock}
 	\end{frame}
+	\subsubsection{Résultats}
+	\begin{frame}{Analyse}
+		\begin{mytable}
+			\begin{tabular}{cp{7cm}c}
+				\hline
+				Difficulté & Description & Exemple \\
+				\hline
+				\hline
+				\multirow{2}*{Simple} & -- 1~outil est nécessaire & \multirow{2}*{Tâche~1a} \\
+				& -- 1~manipulation \\
+				\hline
+				\multirow{2}*{Avancé} & -- 1~outil est nécessaire mais 2~outils est mieux & \multirow{2}*{Tâche~2a, 2b} \\
+				& -- 2~manipulations peuvent être simultanées \\
+				\hline
+				\multirow{2}*{Expert} 	& -- 2~outils sont nécessaires & \multirow{2}*{Tâche~1b} \\
+				& -- 2~manipulations \alert{doivent} être simultanées \\
+				\hline
+			\end{tabular}
+			\mycaption[tab-ClassificationDesTaches]{Classification des tâches}
+		\end{mytable}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.222222222\textwidth,yunit=0.008cm}
+			\begin{myps}(-0.5,-90)(4,300)
+				\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+				\myboxplot{exp2-time-task-group.csv}
+				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
+		\end{myfigure}
+		\begin{myblock}{Travail collaboratif}
+			\begin{itemize}
+				\item Les conflits détériorent l'efficacité de la collaboration
+				\item Tâches fortement couplées exclusives pour le travail collaboratif
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.285714286\textwidth,yunit=0.01cm}
+			\begin{myps}(-0.45,-90)(3,250)
+				\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
+				\myboxplot{exp2-time-try-group.csv}
+				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
+		\end{myfigure}
+		\begin{myblock}{Apprentissage}
+			\begin{itemize}
+				\item Apprentissage plus rapide en couple
+				\item Manque de donnée pour une conclusion définitive
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
 	\subsubsection{Synthèse}
 	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
 	\subsubsection{Travaux existants}
@@ -753,6 +809,42 @@
 						\item Limiter les conflits \textit{a priori}
 					\end{itemize}
 			\end{enumerate}
+		\end{myblock}
+	\end{frame}
+	\subsubsection{Résultats}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+			\begin{myps}(-0.25,-220)(2,720)
+				\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+				\myboxplot{exp3-time-molecule-group.csv}
+				\mylegend{\myleg{Binome}{myblue}\myand\myleg{Quadrinôme}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants]{Temps de réalisation des scénarios en fonction du nombre de participants}
+		\end{myfigure}
+		\begin{myblock}{Travail collaboratif}
+			\begin{itemize}
+				\item Pas de différences entre couples et groupes
+				\item Conflits très importants dans les groupes
+			\end{itemize}
+		\end{myblock}
+	\end{frame}
+	\begin{frame}{Analyse}
+		\begin{myfigure}
+			\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
+			\begin{myps}(-0.25,-220)(2,720)
+				\myaxes(0,2){\textit{brainstorming}}(0,600)[100]{temps~(s)}
+				\myboxplot{exp3-time-brainstorm-group.csv}
+				\mylegend{\myleg{Binôme}{myblue}\myand\myleg{Quadrinôme}{myblue!70}}
+			\end{myps}
+			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Temps de réalisation des scénarios en fonction des groupes avec ou sans \textit{brainstorming}}
+		\end{myfigure}
+		\begin{myblock}{Pré-élaboration d'une stratégie}
+			\begin{itemize}
+				\item La pré-élaboration d'une stratégie est nécessaire pour un groupe
+				\item L'organisation dans un couple n'apporte rien
+				\item Sans stratégie, la perte d'efficacité est due aux conflits
+			\end{itemize}
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Synthèse}
