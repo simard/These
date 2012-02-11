@@ -1,0 +1,111 @@
+\makeatletter
+% Modify the bibliography style
+\newcounter{mymaxcitenames}
+\AtBeginDocument{%
+	\setcounter{mymaxcitenames}{\value{maxnames}}%
+}
+\renewbibmacro{begentry}{%
+	\printtext[brackets]{%
+		\defcounter{maxnames}{\value{mymaxcitenames}}%
+		\printnames{labelname}~\usebibmacro{cite:labelyear+extrayear}%
+	}%
+	\newline%
+}
+% BBB
+\let\myoldbarplot\mybarplot
+\def\mybarplot{\pst@object{mybarplote}}
+\def\mybarplote@i#1{%
+	\bgroup
+	\use@par%
+	\myoldbarplot[shadow=true,shadowangle=45,blur=true]{#1}%
+	\egroup
+}
+\let\myoldboxplot\myboxplot
+\def\myboxplot{\pst@object{myboxplote}}
+\def\myboxplote@i#1{%
+	\use@par%
+	\myoldboxplot[shadow=true,shadowangle=45,blur=true]{#1}%
+}
+% CCC
+\def\mycircleletter{%
+	\@testopt{\mycircleletter@i}0%
+}
+\def\mycircleletter@i[#1](#2,#3)#4{%
+	\rput[#1](#2,#3){%
+		\pscirclebox*[fillcolor=myred]{\white #4}%
+	}%
+}
+\def\mycirclenumber{%
+	\@testopt{\mycirclenumber@i}0%
+}
+\def\mycirclenumber@i[#1](#2,#3)#4{%
+	\uput{5em}[#1](#2,#3){%
+		\pscirclebox*[fillcolor=myred]{\white #4}%
+	}%
+}
+\newcommand{\myCUDA}{\textsc{cuda}\xspace}
+% GGG
+\newcommand{\mygroup}[1]{$\mathcal{G}_{#1}$\xspace}
+% HHH
+\newcommand{\myhypothesis}[1]{$\mathcal{H}_{#1}$\xspace}
+% III
+\newcommand{\myIMD}{\textsc{imd}\xspace}
+% LLL
+\newcommand{\myLinux}{Linux\xspace}
+% MMM
+\newcommand{\myMacOS}{Mac~\textsc{os}\xspace}
+% NNN
+\newcommand{\myNAMD}{\textsc{namd}\xspace}
+\def\mynode{%
+	\@testopt{\mynode@i}{style=nodestyle}%
+}
+\def\mynode@i[#1](#2,#3)[#4]#5{%
+	\rput(#2,#3){\Rnode{#4}{\psframebox[style=nodestyle,#1]{\vphantom{pÉ}#5}}}%
+}
+\def\myunode{%
+	\@testopt{\myunode@i}{0}%
+}
+\def\myunode@i[#1]{%
+	\@testopt{\myunode@ii[#1]}{style=nodestyle}%
+}
+\def\myunode@ii[#1][#2](#3,#4)[#5]#6{%
+	\@testopt{\myunode@iii[#1][#2](#3,#4)[#5]#6}{}%
+}
+\def\myunode@iii[#1][#2](#3,#4)[#5]#6[#7]{%
+	\uput[#1](#3,#4){%
+		\Rnode{#5}{%
+			\psframebox[style=nodestyle,#2]{%
+				\vphantom{pÉ}%
+				\ifstrempty{#7}{%
+					#6%
+				}{%
+					\parbox{#7}{\centering #6}%
+				}%
+			}%
+		}%
+	}%
+}
+% OOO
+\newcommand{\myOmni}{\myPHANToM Omni\myregistered}% No '\xspace' because of already one in '\myregistered'
+% PPP
+\newcommand{\myPHANToM}{\textsc{phant}o\textsc{m}\xspace}
+% RRR
+\newcommand{\myresidue}[1]{$\mathcal{R}_{#1}$\xspace}
+\newcommand{\myRMSD}{\textsc{rmsd}\xspace}
+% SSS
+\newcommand{\myscenario}[1]{\textsc{#1}}
+\newcommand{\myShaddock}{Shaddock\xspace}
+% TTT
+\newcommand{\myTCPIP}{\textsc{tcp/ip}\xspace}
+% UUU
+\newcommand{\myUML}{\textsc{uml}\xspace}
+% VVV
+\newcommand{\myVGA}{\textsc{vga}\xspace}
+\newcommand{\myVMD}{\textsc{vmd}\xspace}
+\newcommand{\myVRPN}{\textsc{vrpn}\xspace}
+% WWW
+\newcommand{\myWindows}{Windows\xspace}
+% PSTricks style
+\newpsstyle{legendstyle}{linestyle=none,fillstyle=solid,fillcolor=black!5,framearc=0.25,shadow=true,blur=true,shadowangle=45}
+\newpsstyle{nodestyle}{framearc=0.25,shadow=true,shadowcolor=myred,blur=true,linewidth=1pt,linecolor=black,linestyle=solid,fillstyle=solid,fillcolor=white}
+\makeatother

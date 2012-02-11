@@ -1,4 +1,4 @@
-\documentclass[english,french,dvips,trans]{mybeamer}
+\documentclass[english,french,dvips,10pt]{mybeamer}
 \usepackage{my}
 \usepackage{mydate}
 \usepackage{mycolor}
@@ -6,60 +6,7 @@
 \usepackage[biblatex]{mybib}
 \usepackage{myps}
 \usepackage{myuml}
-
-\makeatletter
-\def\my@ps@axes@ii[#1](#2,#3)#4(#5,#6)[#7]#8{%
-%	% For legend
-	\gdef\my@ps@legendminx{#2}%
-	\gdef\my@ps@legendmaxx{#3}%
-	\gdef\my@ps@legendminy{#5}%
-	\gdef\my@ps@legendmaxy{#6}%
-	\gdef\my@ps@legend{\myand{}}%
-%	\ifstrempty{#7}%
-%		{%
-%			\ifstrempty{#1}%
-%				{\psaxes[labels=y,ticks=y](#2,#5)(#3,#6)}%
-%				{\psaxes[labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
-%		}{%
-%			\ifstrempty{#1}%
-%				{\psaxes[Dy=#7,labels=y,ticks=y](#2,#5)(#3,#6)}%
-%				{\psaxes[Dy=#7,labels=y,ticks=y,#1](#2,#5)(#3,#6)}%
-%		}%
-	% Middle of the x-axis
-	\fpDiv{\my@ps@xmiddle}{#3}{2}%
-	% Set to the height of the x axis label
-	\settoheight{\my@ps@xoffset}{#3}%
-	\settodepth{\my@ps@temp@xoffset}{#3}
-	\addtolength{\my@ps@xoffset}{\my@ps@temp@xoffset}
-	% Label separations
-	\addtolength{\my@ps@xoffset}{2\pslabelsep}%
-	% Additional space
-	\addtolength{\my@ps@xoffset}{0.5ex}%
-	% x-label
-	\uput{\my@ps@xoffset}[-90](\my@ps@xmiddle,0){\textit{#4}}%
-	% Middle of the y-axis
-	\fpDiv{\my@ps@ymiddle}{#6}{2}%
-	% Set to the width of the wider number of y axis
-	\settowidth{\my@ps@yoffset}{#6}
-	% Add label separations
-	\addtolength{\my@ps@yoffset}{2\pslabelsep}%
-	% Additional space
-	\addtolength{\my@ps@yoffset}{0.5ex}%
-	% y-label
-	\uput{\my@ps@yoffset}[180](0,\my@ps@ymiddle){\rotateleft{\textit{#8}}}%
-	\ifstrempty{#7}%
-		{}{%
-		\fpDiv{\temp}{#6}{#7}%
-		\fpRound{\iterations}{\temp}{0}%
-		\multido{\i=1+1}{\iterations}{%
-			\fpMul{\ylineoffset}{\i}{#7}
-			\ifstrempty{#1}%
-				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt](0,\ylineoffset)(#3,\ylineoffset)}%
-				{\psline[linestyle=dashed,dash=2pt 5pt,linewidth=0.5pt,#1](0,\ylineoffset)(#3,\ylineoffset)}%
-			}%
-		}%
-}
-\makeatother
+\usepackage{verbatim}
 
 \input{mymacro}
 
@@ -108,7 +55,7 @@
 
 \title{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
 \author[J. \myname{Simard}]{Jean \myname{Simard}}
-\institute{\mytextsc{cnrs-limsi}}
+\institute{\textsc{cnrs-limsi}}
 \school{Université de \myname{Paris}-Sud}
 \logo{%
 	\myimage[height=1cm]{logo-ups}%
@@ -212,46 +159,52 @@
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
 			\begin{myps}(-7.5,-5)(7.5,6)
-				\rput(0,3){%
-					\myumlnode*<PCUtilisateur>{\footnotesize Nœud principal}{%
-						\myumlcomponent<VMD>[\scriptsize application]{\footnotesize\myVMD}%
+				\psframe*[linecolor=mygreen!5,shadow=false](-7.4,-5)(-2.6,6)
+				\psframe*[linecolor=myblue!5,shadow=false](-2.4,-5)(2.4,6)
+				\psframe*[linecolor=myred!5,shadow=false](2.6,-5)(7.4,6)
+				\uput[-90](-5,6){\large\textcolor{mygreen!25}{Simulation}}
+				\uput[-90](0,6){\large\textcolor{myblue!25}{Visualisation}}
+				\uput[-90](5,6){\large\textcolor{myred!25}{Interaction}}
+				\uput[-90](0,5){%
+					\myumlnode*<PCUtilisateur>{\vphantom{pÉ}\scriptsize Nœud principal}{%
+						\myumlcomponent<VMD>[\tiny application]{\scriptsize\myVMD}%
 					}%
 				}
-				\rput(-5,0){%
-					\myumlnode*<ServeurNAMD>{\footnotesize Nœud \myNAMD}{%
+				\uput[-90](-5,5){%
+					\myumlnode*<ServeurNAMD>{\vphantom{pÉ}\scriptsize Nœud \myNAMD}{%
 						\begin{psmatrix}[rowsep=1]%
-							\myumlcomponent<NAMD>[\scriptsize programme]{{\footnotesize\texttt{namd2}}} \\%
-							\myumlcomponent<FichierSimulation>[\scriptsize fichier]{%
+							\myumlcomponent<NAMD>[\tiny programme]{{\scriptsize\texttt{namd2}}} \\%
+							\myumlcomponent<FichierSimulation>[\tiny fichier]{%
 								\\[-1ex]%
-									\begin{psmatrix}[rowsep=0]%
-										\footnotesize Données de\\\footnotesize simulation%
-									\end{psmatrix}%
-								}
-							\end{psmatrix}%
-						}%
-					}
-					\rput(5,3){%
-						\myumlnode*<ServeurVRPN1>{\footnotesize Nœud \myVRPN}{%
-							\myumlcomponent<VRPN1>[\scriptsize programme]{{\footnotesize\texttt{vrpn\_server}}}%
-						}%
-					}
-					\rput(5,-2){%
-						\myumlnode<PHANToM1>[\scriptsize\myOmni]{Interface}%
-					}
-					\rput(5,-4){\Huge$\vdots$}
-					\rput(0,-2){%
-						\myumlnode<VideoProjecteur>[\scriptsize vue partagée]{\footnotesize Vidéoprojecteur}
-					}
-					\psset{shadow=false}
+								\begin{psmatrix}[rowsep=0]%
+									\scriptsize Données de\\\scriptsize simulation%
+								\end{psmatrix}%
+							}
+						\end{psmatrix}%
+					}%
+				}
+				\uput[-90](5,5){%
+					\myumlnode*<ServeurVRPN1>{\vphantom{pÉ}\scriptsize Nœud \myVRPN}{%
+						\myumlcomponent<VRPN1>[\tiny programme]{{\scriptsize\texttt{vrpn\_server}}}%
+					}%
+				}
+				\uput[-90](5,0){%
+					\myumlnode<PHANToM1>[\tiny\myOmni]{\vphantom{pÉ}\scriptsize Interface}%
+				}
+				\rput(5,-4){\Large$\vdots$}
+				\uput[-90](0,0){%
+					\myumlnode<VideoProjecteur>[\tiny vue partagée]{\scriptsize Vidéoprojecteur}
+				}
+				\psset{shadow=false}
 
-					\myumlrealization[angleA=-90,angleB=90]{NAMD}{FichierSimulation}[nccurve]%
-					\myumlrealization[angleA=-90,angleB=90]{VRPN1}{PHANToM1}[nccurve]%
-					\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
-					\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
-					\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
-				\end{myps}
-				\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
-			\end{myfigure}
+				\myumlrealization[angleA=-90,angleB=90]{NAMD}{FichierSimulation}[nccurve]%
+				\myumlrealization[angleA=-90,angleB=90]{VRPN1}{PHANToM1}[nccurve]%
+				\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.5]{VMD}{VideoProjecteur}[nccurve]
+				\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.4]{NAMD}{VMD}[nccurve]
+				\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.6]{VRPN1}{VMD}[nccurve]
+			\end{myps}
+			\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
+		\end{myfigure}
 	\end{frame}
 	\subsection{Structure du module principal}
 	\begin{frame}{\myVMD}
@@ -311,6 +264,31 @@
 				\end{myfigure}
 			\end{column}
 		\end{columns}
+	\end{frame}
+	\subsubsection{Objectifs}
+	\begin{frame}{Objectifs}
+		\begin{myblock}{Objectif principal}
+			Observer les contraintes liées au travail collaboratif et souligner les avantages
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en binôme
+					\begin{itemize}
+						\item Comparer les performances en collaboration et seul
+						\item Valider le contexte de travail (tâche complexe)
+					\end{itemize}
+				\item Stratégies de travail dépendantes de la personnalité
+					\begin{itemize}
+						\item Identifier et caractériser les stratégies de travail
+						\item Identifier les conflits de coordination et de communication
+					\end{itemize}
+				\item Bonne utilisabilité de la plate-forme
+					\begin{itemize}
+						\item Évaluer les outils proposés
+						\item Identifier les faiblesses
+					\end{itemize}
+			\end{enumerate}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
 	\begin{frame}{La plate-forme}
@@ -449,40 +427,16 @@
 			\end{description}
 		\end{myblock}
 	\end{frame}
-	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
-		\begin{myblock}{Objectif principal}
-			Observer les contraintes liées au travail collaboratif et souligner les avantages
-		\end{myblock}
-		\begin{myblock}{Hypothèses}
-			\begin{enumerate}
-				\item Amélioration des performances en binôme
-					\begin{itemize}
-						\item Comparer les performances en collaboration et seul
-						\item Valider le contexte de travail (tâche complexe)
-					\end{itemize}
-				\item Stratégies de travail dépendantes de la personnalité
-					\begin{itemize}
-						\item Identifier et caractériser les stratégies de travail
-						\item Identifier les conflits de coordination et de communication
-					\end{itemize}
-				\item Bonne utilisabilité de la plate-forme
-					\begin{itemize}
-						\item Évaluer les outils proposés
-						\item Identifier les faiblesses
-					\end{itemize}
-			\end{enumerate}
-		\end{myblock}
-	\end{frame}
 	\subsubsection{Résultats}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.0889\textwidth,yunit=0.0075cm}
-			\begin{myps}(-1.25,-115)(10,460)
-				\myaxes(0,10){Résidu}(0,400)[100]{temps~(s)}
+			\mylegend{%
+				\myleg{Monôme}{myblue}%
+				\myleg{Binôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(10,0.9\textwidth)[100]{résidu}(500,3cm){temps~(s)}
 				\myboxplot{exp1-time-residue-group.csv}
-				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-TempsDExecutionEntreLesSujetsSeulsEtLesCouples]{Temps d'exécution entre les sujets seuls et les couples}
 		\end{myfigure}
 		\begin{myblock}{Travail collaboratif}
@@ -494,13 +448,12 @@
 	\begin{frame}{Analyse}
 		\begin{myfigure}
 			\psset{xunit=0.074\textwidth,yunit=0.12cm}
-			\begin{myps}(-1.5,-7)(12,22)
-				\myaxes(0,12){Binôme}(0,20)[4]{distance~(mm)}
+			\begin{myboxgraph}(12,0.9\textwidth)[4]{binôme}(22,3cm){distance~(mm)}
 				% Once header are readed, they are defined for other barplot
 				% That's why barplots without headers are in first position
 				\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
 				\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
-				\mybarplot[barstyle=first-barstyle]{exp1-diff-groups1.csv}
+				\mybarplot[header=true,barstyle=first-barstyle]{exp1-diff-groups1.csv}
 				\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
 				\psline(0,14)(12,14)
 				\psline(0,8)(12,8)
@@ -508,7 +461,7 @@
 				\uput[180](12,5){\pscharpath{\LARGE\bf\sffamily Champ proche}}
 				\uput[180](12,11){\pscharpath{\LARGE\bf\sffamily Champ voisin}}
 				\uput[180](12,17){\pscharpath{\LARGE\bf\sffamily Champ distant}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-DistanceMoyenneEntreLeCurseurDesSujets]{Distance moyenne entre le curseur des sujets}
 		\end{myfigure}
 		\begin{myblock}{Les groupes}
@@ -575,20 +528,14 @@
 		\end{myfigure}
 	\end{frame}
 	\begin{frame}{Analyse}
-		\psset{xunit=0.06\textwidth,yunit=0.02cm}
 		\begin{myfigure}
-			\begin{myps}(-1.5,-35)(12,120)
-				\myaxes(0,12){Binôme}(0,100)[25]{temps~(\%)}
+			\mylegend{%
+				\myleg{Recherche}{myblue}%
+				\myleg{Sélection}{myblue!70}%
+			}
+			\begin{myboxgraph}(12,0.9\textwidth)[25]{binôme}(100,3cm){temps~(\%)}
 				\mybarplot{exp1-timeaudio-groups-searchselection.csv}
-				\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
-			\end{myps}
-%			\begin{myps}(-2.5,-60)(14,170)
-%				\axes{10}{\#~residue}{160}{temps~(s)}{40}
-%				\hist{exp1-com-group-type}{3}
-%				\uput[90](10.25,100){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Dark-Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Total}}
-%				\uput[90](10.25,50){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Recherche}}
-%				\uput[90](10.25,0){\psset{unit=0.0016\textwidth}\psframe[fillstyle=solid,fillcolor=Light-Blue,linewidth=0.5pt,linecolor=black,framearc=0.25](20,20)\uput[0](20,10){Selection}}
-%			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-TempsDeCommunication]{Temps de communication}
 		\end{myfigure}
 		\begin{myblock}{Travail collaboratif}
@@ -626,6 +573,30 @@
 				\end{myfigure}
 			\end{column}
 		\end{columns}
+	\end{frame}
+	\subsubsection{Objectifs}
+	\begin{frame}{Objectifs}
+		\begin{myblock}{Objectif principal}
+			Proposer une tâche suffisamment complexe pour quantifier et qualifier les conflits de coordination
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en binôme pour la déformation
+					\begin{itemize}
+						\item Coordination étroitement couplée
+					\end{itemize}
+				\item Binômes plus performants sur les tâches complexes
+					\begin{itemize}
+						\item Tâches de difficulté variable
+						\item Identifier les tâches nécessitant une collaboration
+					\end{itemize}
+				\item Évaluation du travail collaboratif par les sujets
+					\begin{itemize}
+						\item Questionnaire pour valider les améliorations de la plate-forme
+						\item Évaluation de la configuration de travail collaboratif
+					\end{itemize}
+			\end{enumerate}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
 	\begin{frame}{La plate-forme}
@@ -692,7 +663,6 @@
 			\end{myps}
 			\mycaption[fig-LaMoleculeTRPZipperDeformee]{La molécule TRP-Zipper déformée}
 		\end{myfigure}
-		\psset{unit=1cm}
 	\end{frame}
 	\begin{frame}{Protocole}
 		\begin{myblock}{Sujets}
@@ -708,30 +678,6 @@
 				\item[Complexité de la molécule] 2~molécules (1~petite et 1~grande)
 				\item[Outil de déformation] 2~configuration de déformation (\emph{atom} et \emph{residue})
 			\end{description}
-		\end{myblock}
-	\end{frame}
-	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
-		\begin{myblock}{Objectif principal}
-			Proposer une tâche suffisamment complexe pour quantifier et qualifier les conflits de coordination
-		\end{myblock}
-		\begin{myblock}{Hypothèses}
-			\begin{enumerate}
-				\item Amélioration des performances en binôme pour la déformation
-					\begin{itemize}
-						\item Coordination étroitement couplée
-					\end{itemize}
-				\item Binômes plus performants sur les tâches complexes
-					\begin{itemize}
-						\item Tâches de difficulté variable
-						\item Identifier les tâches nécessitant une collaboration
-					\end{itemize}
-				\item Évaluation du travail collaboratif par les sujets
-					\begin{itemize}
-						\item Questionnaire pour valider les améliorations de la plate-forme
-						\item Évaluation de la configuration de travail collaboratif
-					\end{itemize}
-			\end{enumerate}
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Résultats}
@@ -757,12 +703,13 @@
 	\end{frame}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.222222222\textwidth,yunit=0.008cm}
-			\begin{myps}(-0.5,-90)(4,300)
-				\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+			\mylegend{%
+				\myleg{Monôme}{myblue}%
+				\myleg{Binôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(4,0.9\textwidth)[50]{scénario}(300,3cm){temps~(s)}
 				\myboxplot{exp2-time-task-group.csv}
-				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
 		\end{myfigure}
 		\begin{myblock}{Travail collaboratif}
@@ -774,12 +721,13 @@
 	\end{frame}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.285714286\textwidth,yunit=0.01cm}
-			\begin{myps}(-0.45,-90)(3,250)
-				\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
+			\mylegend{%
+				\myleg{Monôme}{myblue}%
+				\myleg{Binôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(3,0.9\textwidth)[50]{essai}(200,3cm){temps~(s)}
 				\myboxplot{exp2-time-try-group.csv}
-				\mylegend{\myleg{Monôme}{myblue}\myand\myleg{Binôme}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
 		\end{myfigure}
 		\begin{myblock}{Apprentissage}
@@ -808,6 +756,31 @@
 				\item Aucune étude de dynamique de groupe sur des tâches avec une interaction étroitement couplée
 			\end{itemize}
 		\end{myminusblock}
+	\end{frame}
+	\subsubsection{Objectifs}
+	\begin{frame}{Objectifs}
+		\begin{myblock}{Objectif principal}
+			Observer la dynamique de groupe lors d'une coordination étroitement couplée
+		\end{myblock}
+		\begin{myblock}{Hypothèses}
+			\begin{enumerate}
+				\item Amélioration des performances en quadrinôme
+					\begin{itemize}
+						\item Variation de la taille d'un groupe
+						\item Quantification des conflits dans des groupes
+					\end{itemize}
+				\item Émergence d'un meneur
+					\begin{itemize}
+						\item Observer la dynamique des groupes
+						\item Caractériser les différents rôles
+					\end{itemize}
+				\item Le \textit{brainstorming} améliore les performances
+					\begin{itemize}
+						\item Période pour organiser le travail
+						\item Limiter les conflits \textit{a priori}
+					\end{itemize}
+			\end{enumerate}
+		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
 	\begin{frame}{La plate-forme}
@@ -875,40 +848,16 @@
 			\end{description}
 		\end{myblock}
 	\end{frame}
-	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
-		\begin{myblock}{Objectif principal}
-			Observer la dynamique de groupe lors d'une coordination étroitement couplée
-		\end{myblock}
-		\begin{myblock}{Hypothèses}
-			\begin{enumerate}
-				\item Amélioration des performances en quadrinôme
-					\begin{itemize}
-						\item Variation de la taille d'un groupe
-						\item Quantification des conflits dans des groupes
-					\end{itemize}
-				\item Émergence d'un meneur
-					\begin{itemize}
-						\item Observer la dynamique des groupes
-						\item Caractériser les différents rôles
-					\end{itemize}
-				\item Le \textit{brainstorming} améliore les performances
-					\begin{itemize}
-						\item Période pour organiser le travail
-						\item Limiter les conflits \textit{a priori}
-					\end{itemize}
-			\end{enumerate}
-		\end{myblock}
-	\end{frame}
 	\subsubsection{Résultats}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.444444444\textwidth,yunit=0.0035cm}
-			\begin{myps}(-0.25,-220)(2,720)
-				\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+			\mylegend{%
+				\myleg{Binome}{myblue}%
+				\myleg{Quadrinôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.6\textwidth)[200]{scénario}(900,3cm){temps~(s)}
 				\myboxplot{exp3-time-molecule-group.csv}
-				\mylegend{\myleg{Binome}{myblue}\myand\myleg{Quadrinôme}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants]{Temps de réalisation des scénarios en fonction du nombre de participants}
 		\end{myfigure}
 		\begin{myblock}{Travail collaboratif}
@@ -920,12 +869,13 @@
 	\end{frame}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.444444444\textwidth,yunit=0.003cm}
-			\begin{myps}(-0.25,-220)(2,720)
-				\myaxes(0,2){\textit{brainstorming}}(0,600)[100]{temps~(s)}
+			\mylegend{%
+				\myleg{Binôme}{myblue}%
+				\myleg{Quadrinôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.6\textwidth)[200]{\textit{brainstorming}}(900,3cm){temps~(s)}
 				\myboxplot{exp3-time-brainstorm-group.csv}
-				\mylegend{\myleg{Binôme}{myblue}\myand\myleg{Quadrinôme}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Temps de réalisation des scénarios en fonction des groupes avec ou sans \textit{brainstorming}}
 		\end{myfigure}
 		\begin{myblock}{Pré-élaboration d'une stratégie}
@@ -1066,12 +1016,13 @@
 	\subsubsection{Résultats}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
-			\begin{myps}(-0.425,-150)(2,575)
-				\myaxes(0,2){scénario}(0,500)[100]{temps~(s)}
+			\mylegend{%
+				\myleg{Sans assistance}{myblue}%
+				\myleg{Avec assistance}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.9\textwidth)[100]{scénario}(575,3cm){temps~(s)}
 				\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
-				\mylegend{\myleg{Sans assistance}{myblue}\myand\myleg{Avec assistance}{myblue!70}}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario]{Temps pour atteindre le score \myRMSD minimum avec et sans haptique pour chaque scénario}
 		\end{myfigure}
 		\begin{myblock}{Assistance haptique}
@@ -1083,11 +1034,9 @@
 	\end{frame}
 	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.274914089\textwidth,yunit=0.25cm}
-			\begin{myps}(-0.425,-3)(2,10.25)
-				\myaxes(0,2){haptique}(0,10)[2]{temps~(s)}
+			\begin{myboxgraph}(2,0.6\textwidth)[2]{haptique}(12,3cm){temps~(s)}
 				\myboxplot{exp4-shake-time-haptic.csv}
-			\end{myps}
+			\end{myboxgraph}
 			\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique]{Temps moyen d'acceptation d'une désignation avec et sans haptique}
 		\end{myfigure}
 		\begin{myblock}{Communication haptique}
@@ -1124,11 +1073,13 @@
 			\begin{itemize}
 				\item Collaboration distante
 				\item Collaboration multi-experts
+				\item Apprentissage en collaboration
 			\end{itemize}
 		\end{myblock}
-		\begin{myblock}{Communication}
+		\begin{myblock}{Expérimenter le travail collaboratif}
 			\begin{itemize}
 				\item Comment mesurer les conflits de coordination et de communication ?
+				\item Comment définir un protocole expérimental pour le collaboratif ?
 			\end{itemize}
 		\end{myblock}
 	\end{frame}
