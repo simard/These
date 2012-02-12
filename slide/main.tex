@@ -74,9 +74,10 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	\section{Introduction}
+	\begin{comment}
 	\subsection{\protect\textit{Docking} moléculaire}
-	\begin{frame}{Définition}%
-		\begin{myplusblock}{\textit{Docking} moléculaire}%
+	\begin{frame}{\protect\textit{Docking} moléculaire}%
+		\begin{myplusblock}{Définition}%
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
 		\end{myplusblock}%
 
@@ -184,9 +185,80 @@
 			\end{column}%
 		\end{columns}%
 	\end{frame}
-	\begin{comment}
+	\end{comment}
 	\subsection{Distribution des charges de travail}
-	\subsection{Collaboration en environnement virtuel}
+	\begin{frame}{Distribution des charges de travail}
+		\begin{myplusblock}{Définition}
+			Étendre la capacité cognitive d'analyse d'un individu pour inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
+		\end{myplusblock}
+
+		\begin{columns}[T]
+			\begin{column}{0.5\textwidth}
+				\begin{myfigure}
+					\psset{unit=0.11\textwidth}
+					\definecolor{mylightestredblue}{rgb}{0.875 0.705 0.79328125}
+					\begin{myps}(-5,-2.5)(5,4)
+						\footnotesize%
+						\pspolygon*[linearc=0.5,linecolor=mylightestred](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
+						\pspolygon*[linearc=0.5,linecolor=mylightestblue](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
+						\psclip{%
+							\pscustom[linestyle=none]{%
+								\pspolygon*[linearc=0.5](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
+							}%
+							\pscustom[linestyle=none]{%
+								\pspolygon*[linearc=0.5](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
+							}%
+						}%
+						\psframe*[linecolor=mylightestredblue](-5,-2.5)(5,4)%
+						\endpsclip%
+						\psset{fillcolor=white}%
+						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,0)(-0.5,4)%
+						\rput(-2.5,3.75){\textcolor{black!70}{Espace interne}}%
+						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](4.5,0)(0.5,4)%
+						\rput(2.5,3.75){\textcolor{black!70}{Espace externe}}%
+						\psframe[linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,-2.5)(4.5,-0.5)%
+						\mynode(-2,3.15)[individu1]{\textcolor{myblue}{Individu~\mynum{1}}}%
+						\mynode(-3,2)[individu2]{\textcolor{myred}{Individu~\mynum{2}}}%
+						\mynode(-2,0.85)[individu3]{\textcolor{mygreen}{Individu~\mynum{3}}}%
+						\mynode(2.5,2.75)[artefact1]{Artefact~\mynum{1}}%
+						\mynode(2.5,1.25)[artefact2]{Artefact~\mynum{2}}%
+						\psellipse[fillstyle=solid,fillcolor=white](0,-1.25)(1,0.5)%
+						\rput(0,-1.25){Tâche}%
+						\rput(0,-2.25){\textcolor{black!70}{Abstraction de l'espace de travail}}%
+						\psset{linewidth=0.5pt}
+						\psset{arrows={<->}}%
+						\ncline{individu1}{individu2}%
+						\ncline{individu2}{individu3}%
+						\ncline[offset=8pt]{individu1}{individu3}%
+						\psset{arrows={-}}%
+						\ncline{artefact1}{artefact2}%
+						\psset{arrows={<->}}%
+						\psset{linecolor=myblue}%
+						\ncline{individu1}{artefact1}%
+						\ncline{individu1}{artefact2}%
+						\psset{linecolor=myred}%
+						\ncline{individu2}{artefact1}%
+						\ncline{individu2}{artefact2}%
+						\psset{linecolor=mygreen}%
+						\ncline{individu3}{artefact1}%
+						\ncline{individu3}{artefact2}%
+					\end{myps}
+					\mycaption[fig-sota-SystemeCognitifDistribue]{Système cognitif distribué}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.45\textwidth}
+				\begin{myblock}{Travaux sur la collaboration}
+					\begin{itemize}
+						\item<2-> manipulation colocalisée \mycite{Kriz-2003}
+						\item<3-> un manipulateur guidé par deux partenaires \mycite{Park-2006}
+						\item<4-> inter-référencement \mycite{Chastine-2007}
+						\item<5-> gestion des droits \mycite{Ma-2007}
+					\end{itemize}
+				\end{myblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{comment}
 	\subsection{Synthèse}
 	\begin{frame}{Déroulement}
 		\begin{myfigure}
