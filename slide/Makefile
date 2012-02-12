@@ -63,6 +63,10 @@ final: clean img stats
 	$(MAKE) -B $(BUILD)/$(OUT).dvi
 	$(MAKE) -B pdf
 
+render: img
+	@cp $(IN).tex $(BUILD)/$(IN).tex
+	$(MAKE) -B pdf
+
 # To create a draft version of the document.
 # It execute a faster compilation without images.
 # This is the default target, called by 'all'
