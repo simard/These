@@ -27,12 +27,12 @@
 	\myoldboxplot[shadow=true,shadowangle=45,blur=true]{#1}%
 }
 % CCC
-\def\mycircleletter{%
-	\@testopt{\mycircleletter@i}0%
-}
-\def\mycircleletter@i[#1](#2,#3)#4{%
-	\rput[#1](#2,#3){%
-		\pscirclebox*[fillcolor=myred]{\white #4}%
+\def\mycircleletter{\pst@object{mycircleletter}}%
+\def\mycircleletter@i(#1,#2)#3{%
+	\psset{fillcolor=myred}%
+	\use@par%
+	\rput(#1,#2){%
+		\pscirclebox*{\white #3}%
 	}%
 }
 \def\mycirclenumber{%
@@ -54,6 +54,50 @@
 \newcommand{\myLinux}{Linux\xspace}
 % MMM
 \newcommand{\myMacOS}{Mac~\textsc{os}\xspace}
+\newcommand{\mymolAd}{%
+	\psclip{%
+		\pscustom[linestyle=none]{%
+			\psline[linestyle=none](5,2)(5,3)(-5,3)(-5,2)%
+			\pscurve[linestyle=none](-5,2)(-5,1)(-3,0)(0,0.5)(1,0)(2,1)(2.5,0)(5,1.5)(5,2)%
+		}%
+	}%
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myblue,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,-10)}](-5,-0.5)(5,3)%
+	\endpsclip%
+	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,2)(-5,1)(-3,0)(0,0.5)(1,0)(2,1)(2.5,0)(5,1.5)(5,2)%
+}
+\newcommand{\mymolA}{%
+	\psclip{%
+		\pscustom[linestyle=none]{%
+			\psline[linestyle=none](5,2)(5,3)(-5,3)(-5,2)%
+			\pscurve[linestyle=none](-5,2)(-5,1.5)(-3,0)(0,0.5)(1,-0.5)(2,1)(3,0)(5,1.5)(5,2)%
+		}%
+	}%
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myblue,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,-10)}](-5,-0.5)(5,3)%
+	\endpsclip%
+	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,2)(-5,1.5)(-3,0)(0,0.5)(1,-0.5)(2,1)(3,0)(5,1.5)(5,2)%
+}
+\newcommand{\mymolBd}{%
+	\psclip{%
+		\pscustom[linestyle=none]{%
+			\psline[linestyle=none](5,-2)(5,-3)(-5,-3)(-5,-2)%
+			\pscurve[linestyle=none](-5,-2)(-5,-1.5)(-3,-0.5)(-1,0)(1,-1)(2.5,0.5)(3,-0.5)(5,-1.5)(5,-2)
+		}%
+	}
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myred,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,10)}](-5,0.5)(5,-3)
+	\endpsclip
+	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,-2)(-5,-1.5)(-3,-0.5)(-1,0)(1,-1)(2.5,0.5)(3,-0.5)(5,-1.5)(5,-2)
+}
+\newcommand{\mymolB}{%
+	\psclip{%
+		\pscustom[linestyle=none]{%
+			\psline[linestyle=none](5,-2)(5,-3)(-5,-3)(-5,-2)%
+			\pscurve[linestyle=none](-5,-2)(-5,-1.5)(-3,-0.5)(0,0)(1,-1)(2,0.5)(3,-0.5)(5,-1.5)(5,-2)
+		}%
+	}
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myred,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,10)}](-5,0.5)(5,-3)
+	\endpsclip
+	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,-2)(-5,-1.5)(-3,-0.5)(0,0)(1,-1)(2,0.5)(3,-0.5)(5,-1.5)(5,-2)
+}
 % NNN
 \newcommand{\myNAMD}{\textsc{namd}\xspace}
 \def\mynode{%

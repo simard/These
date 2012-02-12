@@ -62,7 +62,7 @@
 	\hspace{1em}%
 	\myimage[height=1cm]{logo-limsi}%
 }
-\date{\mydate[datestyle=long]{01/02/2012}}
+\date{\mydate[datestyle=long]{12/03/2012}}
 
 \begin{document}
 	\transfade[duration=0.1]
@@ -75,27 +75,116 @@
 	\end{frame}
 	\section{Introduction}
 	\subsection{\protect\textit{Docking} moléculaire}
-	\begin{frame}{Définition}
-		\begin{myblock}{\textit{Docking} moléculaire}
-			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.
-		\end{myblock}
-		\begin{myfigure}
-			\psset{unit=1cm}
-			\begin{myps}(-5,-2)(6,2)
-				\rput(-3,1){\myimage[width=0.120518359\paperwidth]{sota-docking-molecule-A}}
-				\mycircleletter(-4.5,1){A}
-				\rput(-3,-1){\myimage[width=0.1\paperwidth,angle=90]{sota-docking-molecule-B}}
-				\mycircleletter(-4.5,-1){B}
-				\rput(-3,0){\Huge\bfseries +}
-				\rput(3,0){\myimage[width=0.186177106\paperwidth]{sota-docking-complex-AB}}
-				\psline[linewidth=10pt,linecolor=myblue!70]{->}(-1,0)(1,0)
-				\mycircleletter(5,0.75){A}
-				\rput(5,0){\Large\bfseries +}
-				\mycircleletter(5,-0.75){B}
-			\end{myps}
-			\mycaption[fig-IllustrationDeLAmarrageMoleculaire]{Illustration de l'amarrage moléculaire}
-		\end{myfigure}
+	\begin{frame}{Définition}%
+		\begin{myplusblock}{\textit{Docking} moléculaire}%
+			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
+		\end{myplusblock}%
+
+		\begin{columns}[T]%
+			\begin{column}{0.6\textwidth}%
+				\begin{myfigure}%
+					\psset{xunit=0.045\textwidth,yunit=0.4cm}%
+					\begin{myps}(-10,-5)(10,5)%
+						\only<1-3>{%
+							\rput(-5,3){\myimage[width=0.15\paperwidth]{sota-docking-deformed-A}}%
+							\only<1-2>{%
+								\rput(-5,-3){\myimage[width=0.15\paperwidth,angle=180]{sota-docking-deformed-B}}%
+							}%
+							\only<3>{%
+								\rput(-5,-3){\myimage[width=0.15\paperwidth]{sota-docking-deformed-B}}%
+							}%
+						}%
+						\only<2-3>{%
+							\rput(5,2.5){\mymolAd}%
+							\only<2>{%
+								\rput{180}(5,-2.5){\mymolBd}%
+								\psarcn[linewidth=2pt,linecolor=mygreen,arrowsize=2pt 4,arrowlength=0.75]{->}(5,-2.5){0.3}{90}{135}%
+								\uput{2ex}[-90](5,-2.5){\textcolor{mygreen}{réorientation}}%
+							}%
+							\only<3>{%
+								\rput(5,-2.5){\mymolBd}%
+								\rput(5,0){\rnode{deformation}{\vphantom{pÉ}\textcolor{mygreen}{déformation}}}%
+								\pnode(6,2.5){A}
+								\pnode(4,-2.5){B}
+								\pnode(7.5,-2){C}
+								\ncline[linecolor=mygreen]{->}{deformation}{A}
+								\ncline[linecolor=mygreen]{->}{deformation}{B}
+								\ncline[linecolor=mygreen]{->}{deformation}{C}
+							}%
+						}%
+						\only<4-5>{%
+							\rput(-5,3){\myimage[width=0.15\paperwidth]{sota-docking-molecule-A}}%
+							\rput(-5,-3){\myimage[width=0.15\paperwidth]{sota-docking-molecule-B}}%
+							\rput(5,2.5){%
+								\mymolA%
+								\only<4>{%
+									\rput(0,2.5){\textcolor{mygreen}{propriétés chimiques}}%
+								}
+								\only<5>{%
+									\rput(-3,0.5){\textbf{\textcolor{white}{+}}}%
+									\rput(-0.5,0.75){\textbf{\textcolor{white}{--}}}%
+									\rput(2,1.5){\textbf{\textcolor{white}{+}}}%
+									\psline[linewidth=4pt,linecolor=mygreen]{->}(0,-0.25)(0,-2)%
+								}%
+							}%
+							\rput(5,-2.5){%
+								\mymolB%
+								\only<4>{%
+									\rput(0,-2.5){\textcolor{mygreen}{propriétés chimiques}}%
+								}
+								\only<5>{%
+									\rput(-3,-1){\textbf{\textcolor{white}{--}}}%
+									\rput(-0.5,-0.5){\textbf{\textcolor{white}{+}}}%
+									\rput(2,-0.25){\textbf{\textcolor{white}{--}}}%
+									\psline[linewidth=4pt,linecolor=mygreen]{->}(0,0.25)(0,2)%
+								}%
+							}%
+						}%
+						\only<5>{%
+							\rput(5,0){\vphantom{pÉ}\textcolor{mygreen}{amarrage}}%
+						}%
+						\only<6>{%
+							\rput(-5,0){\myimage[width=0.175\paperwidth]{sota-docking-complex-AB}}%
+							\rput(5,0){%
+								\mymolA%
+								\rput(-3,0.5){\textbf{\textcolor{white}{+}}}%
+								\rput(-0.5,0.75){\textbf{\textcolor{white}{--}}}%
+								\rput(2,1.5){\textbf{\textcolor{white}{+}}}%
+							}%
+							\rput(5,0){%
+								\mymolB%
+								\rput(-3,-1){\textbf{\textcolor{white}{--}}}%
+								\rput(-0.5,-0.5){\textbf{\textcolor{white}{+}}}%
+								\rput(2,-0.25){\textbf{\textcolor{white}{--}}}%
+							}%
+						}%
+						\mycircleletter[fillcolor=myblue](-9.5,2.5){A}%
+						\mycircleletter(-9.5,-2.5){B}%
+						\only<6>{%
+							\rput(-9.5,0){\Huge\bfseries +}%
+						}
+					\end{myps}%
+					\mycaption[fig-DockingMoleculaire]{\textit{Docking} moléculaire}%
+				\end{myfigure}%
+			\end{column}%
+			\begin{column}{0.35\textwidth}%
+				\begin{myblock}{Facteurs de complexité}%
+					\begin{itemize}%
+						\item<2-> Nombreux atomes%
+						\item<3-> Orientation%
+						\item<4-> Flexibilité%
+						\item<5-> Facteurs chimiques
+						\item<6-> Complémentarité%
+							\begin{itemize}%
+								\item géométrique%
+								\item électrostatique%
+							\end{itemize}%
+					\end{itemize}%
+				\end{myblock}%
+			\end{column}%
+		\end{columns}%
 	\end{frame}
+	\begin{comment}
 	\subsection{Distribution des charges de travail}
 	\subsection{Collaboration en environnement virtuel}
 	\subsection{Synthèse}
@@ -1092,4 +1181,5 @@
 		\defbibfilter{all}{\keyword{Simard}}
 		\printbibliography[filter=all]
 	\end{frame}
+\end{comment}
 \end{document}
