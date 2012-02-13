@@ -23,31 +23,32 @@
 \newlength{\schemaunit}
 
 \setbeamercolor*{progressbar primary}{fg=myred}
-\setbeamercolor*{structure}{fg=myred}
-\setbeamercolor*{example text}{fg=white,bg=myred}
+\setbeamercolor*{structure}{fg=myblue}
+\setbeamercolor*{example text}{fg=white,bg=myblue}
 \setbeamercolor*{section in head/foot}{parent=palette primary,fg=black}
 \setbeamercolor*{subsection in head/foot}{parent=palette primary,fg=myred}
 \setbeamercolor*{alerted text}{fg=myred}
-\setbeamercolor*{block title}{fg=white,bg=mygreen}
+\setbeamercolor*{block title}{fg=white,bg=myblue!75}
 \setbeamercolor*{block body}{bg=black!20}
-\setbeamercolor*{block title alerted}{fg=white,bg=myred}
+\setbeamercolor*{block title alerted}{fg=white,bg=myred!75}
 \setbeamercolor*{block body alerted}{bg=black!20}
-\setbeamercolor*{block title example}{fg=white,bg=mygreen}
+\setbeamercolor*{block title example}{fg=white,bg=mygreen!75}
 \setbeamercolor*{block body example}{bg=black!20}
 \newenvironment<>{myblock}[1]{%
-	\begin{alertblock}{#1}%
-}{%
-	\end{alertblock}%
-}
-\newenvironment<>{myplusblock}[1]{%
-	\setbeamercolor*{structure}{fg=mygreen}
 	\begin{block}{#1}%
+		\setbeamercolor{local structure}{fg=myblue!75}
 }{%
 	\end{block}%
-	\setbeamercolor*{structure}{fg=myred}
+}
+\newenvironment<>{myplusblock}[1]{%
+	\begin{exampleblock}{#1}%
+		\setbeamercolor{local structure}{fg=mygreen!75}
+}{%
+	\end{exampleblock}%
 }
 \newenvironment<>{myminusblock}[1]{%
 	\begin{alertblock}{#1}%
+		\setbeamercolor{local structure}{fg=myred!75}
 }{%
 	\end{alertblock}%
 }
@@ -79,7 +80,7 @@
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{frame}
 	\subsection{\protect\textit{Docking} moléculaire}
-	\begin{frame}{\protect\textit{Docking} moléculaire}%
+	\begin{frame}{\protect\textit{Docking} moléculaire}
 		\begin{myplusblock}{Définition}%
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
 		\end{myplusblock}%
@@ -278,12 +279,40 @@
 			\end{enumerate}
 		\end{myplusblock}
 	\end{frame}
-	\section{\myShaddock}
+	\section{Plateforme de manipulation moléculaire \myShaddock}
 	\begin{frame}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{frame}
-	\subsection{Structure globale}
-	\begin{frame}{\myShaddock}
+	\subsection{Cahier des charges}
+	\begin{frame}{Cahier des charges}
+		\begin{myblock}{Objectif}
+			Élaborer une plateforme pour étudier le travail collaboratif dans le contexte de la manipulation interactive de molécules.
+		\end{myblock}
+		\begin{columns}[T]
+			\begin{column}{0.475\textwidth}
+				\begin{myminusblock}{Contraintes}
+					\begin{itemize}
+						\item Travail en collaboration
+						\item Interaction temps-réel avec des molécules
+						\item Manipulation à l'aide d'interface haptique
+						\item Simulation temps-réel de la dynamique des molécules
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\begin{myplusblock}{Solutions}
+					\begin{itemize}
+						\item Modularité
+						\item Composant logiciels existants en biologie
+						\item Modules dédiés à la réalité virtuelle
+						\item Développement de nouveaux outils
+					\end{itemize}
+				\end{myplusblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\subsection{Organisation logicielle de la plateforme \myShaddock}
+	\begin{frame}[label=current]{Organisation logicielle de la plateforme \myShaddock}
 		\begin{myfigure}
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
@@ -336,7 +365,63 @@
 		\end{myfigure}
 	\end{frame}
 	\subsection{Structure du module principal}
-	\begin{frame}{\myVMD}
+	\begin{frame}{La plate-forme}
+		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
+		\begin{myfigure}
+			\begin{myps}(0,0)(1,1)
+				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
+				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
+				\pnode(0.54,0.65){tug1}
+				\pnode(0.64,0.75){tug1-from}
+				\pnode(0.64,0.59){tug2}
+				\pnode(0.74,0.69){tug2-from}
+				\pnode(0.59,0.62){grab}
+				\pnode(0.69,0.72){grab-from}
+				\only<2>{
+					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
+					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
+				}
+				\only<3>{
+					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}
+				}
+				\only<4>{
+					\pspolygon[linewidth=4pt,linecolor=myred](0.6,0.69)(0.61,0.99)(0.87,0.93)(0.83,0.57)
+				}
+			\end{myps}
+			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale1]{Illustration de la plate-forme expérimentale}
+		\end{myfigure}
+		\only<1>{
+			\begin{itemize}
+				\item Configuration \alert{colocalisée} et \alert{synchrone}
+			\end{itemize}
+		}
+		\only<2>{
+			\begin{itemize}
+				\item Outil de déformation de la molécule (Omni de SensAble\myregistered)
+			\end{itemize}
+		}
+		\only<3>{
+			\begin{itemize}
+				\item Outil pour déplacer la molécule (Omni de SensAble\myregistered)
+			\end{itemize}
+		}
+		\only<4>{
+			\begin{itemize}
+				\item Vue monoscopique, unique, publique et vidéoprojetée
+			\end{itemize}
+		}
+		\only<5>{
+			\begin{itemize}
+				\item Communication orale et gestuelle autorisée
+			\end{itemize}
+		}
+		\only<6>{
+			\begin{itemize}
+				\item Stratégie de travail libre
+			\end{itemize}
+		}
+	\end{frame}
+	\begin{comment}{\myVMD}
 		\begin{myfigure}
 			\psset{unit=0.05\textwidth}
 			\begin{myps}(-10,-5)(8,5)
@@ -363,7 +448,7 @@
 			\end{myps}
 			\mycaption[fig-Shaddock-DiagrammeDeComposantUMLDuNoeudVMD]{Diagramme de composant \myUML du nœud \myVMD}
 		\end{myfigure}
-	\end{frame}
+	\end{comment}
 	\section{Étude du travail collaboratif}
 	\subsection{Synthèse}
 	\begin{frame}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
@@ -496,62 +581,6 @@
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{La plate-forme}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)
-				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
-				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
-				\pnode(0.54,0.65){tug1}
-				\pnode(0.64,0.75){tug1-from}
-				\pnode(0.64,0.59){tug2}
-				\pnode(0.74,0.69){tug2-from}
-				\pnode(0.59,0.62){grab}
-				\pnode(0.69,0.72){grab-from}
-				\only<2>{
-					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
-					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
-				}
-				\only<3>{
-					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}
-				}
-				\only<4>{
-					\pspolygon[linewidth=4pt,linecolor=myred](0.6,0.69)(0.61,0.99)(0.87,0.93)(0.83,0.57)
-				}
-			\end{myps}
-			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale1]{Illustration de la plate-forme expérimentale}
-		\end{myfigure}
-		\only<1>{
-			\begin{itemize}
-				\item Configuration \alert{colocalisée} et \alert{synchrone}
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Outil de déformation de la molécule (Omni de SensAble\myregistered)
-			\end{itemize}
-		}
-		\only<3>{
-			\begin{itemize}
-				\item Outil pour déplacer la molécule (Omni de SensAble\myregistered)
-			\end{itemize}
-		}
-		\only<4>{
-			\begin{itemize}
-				\item Vue monoscopique, unique, publique et vidéoprojetée
-			\end{itemize}
-		}
-		\only<5>{
-			\begin{itemize}
-				\item Communication orale et gestuelle autorisée
-			\end{itemize}
-		}
-		\only<6>{
-			\begin{itemize}
-				\item Stratégie de travail libre
-			\end{itemize}
-		}
-	\end{frame}
 	\begin{frame}{La tâche}
 		\renewcommand{\schemafactor}{0.1125}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
