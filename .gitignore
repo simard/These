@@ -4,4 +4,4 @@ build
 *.eps
 *.ps
 *.csv
-*.tex
+*/files/*.tex
