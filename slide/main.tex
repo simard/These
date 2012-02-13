@@ -9,6 +9,7 @@
 \usepackage{verbatim}
 
 \input{mymacro}
+\includeonlyframes{current}
 
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
@@ -74,15 +75,17 @@
 		\tableofcontents[hideallsubsections]
 	\end{frame}
 	\section{Introduction}
-	\begin{comment}
+	\begin{frame}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
+	\end{frame}
 	\subsection{\protect\textit{Docking} moléculaire}
 	\begin{frame}{\protect\textit{Docking} moléculaire}%
 		\begin{myplusblock}{Définition}%
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
 		\end{myplusblock}%
 
-		\begin{columns}%
-			\begin{column}[T]{0.6\textwidth}%
+		\begin{columns}[T]%
+			\begin{column}{0.6\textwidth}%
 				\begin{myfigure}%
 					\psset{xunit=0.045\textwidth,yunit=0.4cm}%
 					\begin{myps}(-10,-5)(10,5)%
@@ -191,10 +194,10 @@
 			Étendre la capacité cognitive d'analyse d'un individu pour inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
 		\end{myplusblock}
 
-		\begin{columns}
-			\begin{column}[T]{0.5\textwidth}
-				\begin{myfigure}
-					\psset{unit=0.11\textwidth}
+		\begin{columns}[T]%
+			\begin{column}{0.55\textwidth}%
+				\begin{myfigure}%
+					\psset{unit=0.105\textwidth}%
 					\definecolor{mylightestredblue}{rgb}{0.875 0.705 0.79328125}
 					\begin{myps}(-5,-2.5)(5,4)
 						\footnotesize%
@@ -245,7 +248,7 @@
 					\mycaption[fig-sota-SystemeCognitifDistribue]{Système cognitif distribué}
 				\end{myfigure}
 			\end{column}
-			\begin{column}{0.45\textwidth}
+			\begin{column}{0.4\textwidth}
 				\begin{myblock}{Travaux sur la collaboration}
 					\begin{itemize}
 						\item<2-> manipulation colocalisée \mycite{Kriz-2003}
@@ -361,81 +364,88 @@
 			\mycaption[fig-Shaddock-DiagrammeDeComposantUMLDuNoeudVMD]{Diagramme de composant \myUML du nœud \myVMD}
 		\end{myfigure}
 	\end{frame}
-	\end{comment}
 	\section{Étude du travail collaboratif}
 	\subsection{Synthèse}
-	\begin{frame}{Les étapes de l'étude}
+	\begin{frame}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
 		\begin{columns}[T]
 			\begin{column}{0.45\textwidth}
 				\begin{myfigure}
 					\psset{xunit=1cm,yunit=1.1cm}
-					\begin{myps}(-2.5,-0.5)(2.5,5)
-						\only<1,3->{
-							\mynode(0,4)[Search]{Recherche}
-						}
-						\only<2>{
-							\mynode[fillstyle=solid,fillcolor=myred!25](0,4)[Search]{Recherche}
-							\mycirclenumber(0,4){1}
-						}
-						\only<1-2,4->{
-							\mynode(0,3)[Selection]{Sélection}
-						}
-						\only<3>{
-							\mynode[fillstyle=solid,fillcolor=myred!25](0,3)[Selection]{Sélection}
-							\mycirclenumber(0,3){2}
-						}
-						\only<1-3,5->{
-							\mynode(0,2)[Manipulation]{Manipulation}
-						}
-						\only<4>{
-							\mynode[fillstyle=solid,fillcolor=myred!25](0,2)[Manipulation]{Manipulation}
-							\mycirclenumber(0,2){3}
-						}
-						\only<1-4,6->{
-							\mynode(0,1)[Evaluation]{Évaluation}
-						}
-						\only<5>{
-							\mynode[fillstyle=solid,fillcolor=myred!25](0,1)[Evaluation]{Évaluation}
-							\mycirclenumber(0,1){4}
-						}
-						\ncline{->}{Search}{Selection}
-						\ncline{->}{Selection}{Manipulation}
-						\ncline{->}{Manipulation}{Evaluation}
-						\only<6->{
-							\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05,armA=0.2]{->}{Evaluation}{Search}
-						}
-						\only<6>{
-							\mycirclenumber[180](0,2.5){5}
-						}
-						\only<7>{
-							\mynode[fillstyle=solid,fillcolor=myred!25](0,0)[Objective]{Objectif atteint}
-							\mycirclenumber(0,0){6}
-							\ncline{->}{Evaluation}{Objective}
-						}
+					\begin{myps}(-2.5,-0.5)(2.5,5)%
+						\only<1,3-7,9>{%
+							\mynode(0,4)[Search]{Recherche}%
+						}%
+						\only<2,8>{%
+							\mynode[fillstyle=solid,fillcolor=myred!25](0,4)[Search]{Recherche}%
+							\mycirclenumber(0,4){1}%
+						}%
+						\only<1-2,4-7,9>{%
+							\mynode(0,3)[Selection]{Sélection}%
+						}%
+						\only<3,8>{%
+							\mynode[fillstyle=solid,fillcolor=myred!25](0,3)[Selection]{Sélection}%
+							\mycirclenumber(0,3){2}%
+						}%
+						\only<1-3,5-8>{%
+							\mynode(0,2)[Manipulation]{Manipulation}%
+						}%
+						\only<4,9>{%
+							\mynode[fillstyle=solid,fillcolor=myred!25](0,2)[Manipulation]{Manipulation}%
+							\mycirclenumber(0,2){3}%
+						}%
+						\only<1-4,6-8>{%
+							\mynode(0,1)[Evaluation]{Évaluation}%
+						}%
+						\only<5,9>{%
+							\mynode[fillstyle=solid,fillcolor=myred!25](0,1)[Evaluation]{Évaluation}%
+							\mycirclenumber(0,1){4}%
+						}%
+						\ncline{->}{Search}{Selection}%
+						\ncline{->}{Selection}{Manipulation}%
+						\ncline{->}{Manipulation}{Evaluation}%
+						\only<6->{%
+							\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05,armA=0.2]{->}{Evaluation}{Search}%
+						}%
+						\only<6>{%
+							\mycirclenumber[180](0,2.5){5}%
+						}%
+						\only<7>{%
+							\mynode[fillstyle=solid,fillcolor=myred!25](0,0)[Objective]{Objectif atteint}%
+							\mycirclenumber(0,0){6}%
+						}%
+						\only<8->{%
+							\mynode(0,0)[Objective]{Objectif atteint}%
+						}%
+						\only<7->{%
+							\ncline{->}{Evaluation}{Objective}%
+						}%
 					\end{myps}
 					\mycaption[fig-ManipulationMoleculaire]{Manipulation moléculaire}
 				\end{myfigure}
 			\end{column}
-			\begin{column}{0.5\textwidth}
-				\begin{myblock}{Description}
-					Basé sur les PCV de \mycite[author]{Fuchs-2006}
-					\begin{description}
-						\item<2->[Recherche] Identifier une tâche élémentaire
-						\item<3->[Sélection] Sélectionner une structure moléculaire (atome, résidue, \dots)
-						\item<4->[Manipulation] Déplacer ou déformer la molécule
-						\item<5->[Évaluation] Évaluer l'équilibre physico-chimique de la molécule
-						\item<6->[Recommencer] Si l'évaluation n'est pas satisfaisante
-					\end{description}
-				\end{myblock}
-			\end{column}
+			\only<1-7>{%
+				\begin{column}{0.5\textwidth}%
+					\begin{myblock}{Description}%
+						Basé sur les PCV de \mycite[author]{Fuchs-2006}%
+						\begin{description}%
+							\item<2->[Recherche] Identifier une tâche élémentaire%
+							\item<3->[Sélection] Sélectionner une structure moléculaire (atome, résidue, \dots)%
+							\item<4->[Manipulation] Déplacer ou déformer la molécule%
+							\item<5->[Évaluation] Évaluer l'équilibre physico-chimique de la molécule%
+							\item<6->[Recommencer] Si l'évaluation n'est pas satisfaisante%
+						\end{description}%
+					\end{myblock}%
+				\end{column}%
+			}
 		\end{columns}
 	\end{frame}
-	\begin{comment}
 	\subsection{Étude~\mynum{1} -- Recherche collaborative}
 	\begin{frame}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{frame}
 	\subsubsection{Travaux existants}
+	\againframe<8>{fra-sota-LesEtapesDeLEtude}
+
 	\begin{frame}{Travaux existants}
 		\begin{columns}
 			\begin{column}{0.6\paperwidth}
@@ -746,6 +756,8 @@
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{frame}
 	\subsubsection{Travaux existants}
+	\againframe<9>{fra-sota-LesEtapesDeLEtude}
+
 	\begin{frame}{Travaux existants}
 		\begin{columns}
 			\begin{column}{0.6\paperwidth}
@@ -1287,5 +1299,4 @@
 		\defbibfilter{all}{\keyword{Simard}}
 		\printbibliography[filter=all]
 	\end{frame}
-\end{comment}
 \end{document}
