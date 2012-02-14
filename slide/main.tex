@@ -312,7 +312,7 @@
 		\end{columns}
 	\end{frame}
 	\subsection{Organisation logicielle de la plateforme \myShaddock}
-	\begin{frame}[label=current]{Organisation logicielle de la plateforme \myShaddock}
+	\begin{frame}{Organisation logicielle de la plateforme \myShaddock}
 		\begin{myfigure}
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
@@ -364,31 +364,74 @@
 			\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
 		\end{myfigure}
 	\end{frame}
-	\subsection{Structure du module principal}
-	\begin{frame}{La plate-forme}
+	\subsection{Organisation matérielle de la plateforme \myShaddock}
+	\begin{frame}{Organisation matérielle de la plateforme \myShaddock}
 		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
 		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)
-				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
-				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
-				\pnode(0.54,0.65){tug1}
-				\pnode(0.64,0.75){tug1-from}
-				\pnode(0.64,0.59){tug2}
-				\pnode(0.74,0.69){tug2-from}
-				\pnode(0.59,0.62){grab}
-				\pnode(0.69,0.72){grab-from}
-				\only<2>{
-					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
-					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
+			\begin{myps}(0,0)(1,1)%
+				\only<1-6>{%
+				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}%
+				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-photo}}%
+				\pnode(0.52,0.66){tug1}%
+				\pnode(0.62,0.76){tug1-from}%
+				\pnode(0.62,0.60){tug2}%
+				\pnode(0.72,0.70){tug2-from}%
+				\pnode(0.57,0.63){grab}%
+				\pnode(0.67,0.73){grab-from}%
+			}%
+				\only<3>{%
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
+					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
+				}%
+				\only<4>{%
+					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
+				}%
+				\only<5>{%
+					\pspolygon[linewidth=4pt,linecolor=myred](0.60,0.68)(0.61,0.93)(0.86,0.88)(0.83,0.57)%
+				}%
+				\only<6>{%
+					\pspolygon[linewidth=2pt,linecolor=myred](0.64,0.63)(0.65,0.69)(0.71,0.665)(0.70,0.60)%
+				}%
+				\only<7>{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-photo}}
+					\pnode(0.59,0.6){grab}
+					\pnode(0.69,0.7){grab-from}
+					\ncline[linewidth=2.5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}
 				}
-				\only<3>{
-					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}
+				\only<8>{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-photo}}
+					\pnode(0.52,0.675){tug1}
+					\pnode(0.62,0.775){tug1-from}
+					\pnode(0.55,0.65){tug2}
+					\pnode(0.65,0.75){tug2-from}
+					\pnode(0.58,0.63){tug3}
+					\pnode(0.68,0.73){tug3-from}
+					\pnode(0.62,0.61){tug4}
+					\pnode(0.72,0.71){tug4-from}
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
+					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
+					\ncline[linewidth=2.5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
+					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
 				}
-				\only<4>{
-					\pspolygon[linewidth=4pt,linecolor=myred](0.6,0.69)(0.61,0.99)(0.87,0.93)(0.83,0.57)
+				\only<9>{
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp4-schema}}
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp4-photo}}
+					\pnode(0.51,0.67){tug1a}
+					\pnode(0.54,0.65){tug1b}
+					\pnode(0.61,0.775){tug1-from}
+					\pnode(0.58,0.63){tug3}
+					\pnode(0.68,0.73){tug3-from}
+					\pnode(0.63,0.61){tug4}
+					\pnode(0.73,0.71){tug4-from}
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1a}
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1b}
+					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
+					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
 				}
 			\end{myps}
-			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale1]{Illustration de la plate-forme expérimentale}
+			\mycaption[fig-PlateFormeExperimentale1]{Plate-forme expérimentale}
 		\end{myfigure}
 		\only<1>{
 			\begin{itemize}
@@ -397,27 +440,42 @@
 		}
 		\only<2>{
 			\begin{itemize}
-				\item Outil de déformation de la molécule (Omni de SensAble\myregistered)
+				\item \alert{Communication} orale et gestuelle autorisée
 			\end{itemize}
 		}
 		\only<3>{
 			\begin{itemize}
-				\item Outil pour déplacer la molécule (Omni de SensAble\myregistered)
+				\item Outil de \alert{déformation} de la molécule (Omni de SensAble\myregistered)
 			\end{itemize}
 		}
 		\only<4>{
 			\begin{itemize}
-				\item Vue monoscopique, unique, publique et vidéoprojetée
+				\item Outil pour \alert{déplacer} la molécule (Omni de SensAble\myregistered)
 			\end{itemize}
 		}
 		\only<5>{
 			\begin{itemize}
-				\item Communication orale et gestuelle autorisée
+				\item Vue monoscopique, unique, \alert{publique} et vidéoprojetée
 			\end{itemize}
 		}
 		\only<6>{
 			\begin{itemize}
-				\item Stratégie de travail libre
+				\item Affichage \alert{déporté} des objectifs
+			\end{itemize}
+		}
+		\only<7>{
+			\begin{itemize}
+				\item Outil pour \alert{orienter} la molécule (SpaceTraveler de 3\textsc{d}connexion\myregistered{})
+			\end{itemize}
+		}
+		\only<8>{
+			\begin{itemize}
+				\item Nombre d'outils quasiment \alert{illimité}
+			\end{itemize}
+		}
+		\only<9>{
+			\begin{itemize}
+				\item Collaboration \alert{asymétrique} entre les participants
 			\end{itemize}
 		}
 	\end{frame}
@@ -835,35 +893,6 @@
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{La plate-forme}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)
-				\only<1>{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-illustration}}
-				}
-				\only<2->{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-illustration}}
-					\pnode(0.59,0.6){grab}
-					\pnode(0.69,0.7){grab-from}
-					\ncline[linewidth=5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}
-				}
-			\end{myps}
-			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale2]{Illustration de la plate-forme expérimentale}
-		\end{myfigure}
-		\only<1>{
-			\begin{itemize}
-				\item Utilisation de la première plate-forme modifiée
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Outil pour tourner la molécule (SpaceTraveler de 3dconnexion\myregistered{})
-			\end{itemize}
-		}
-	\end{frame}
 	\begin{frame}[label={fra-exp2-LaTache}]{La tâche}
 		\renewcommand{\schemafactor}{0.055}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
@@ -1019,54 +1048,6 @@
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{La plate-forme}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)
-				\only<1>{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-illustration}}
-				}
-				\only<2->{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-illustration}}
-					\pnode(0.52,0.675){tug1}
-					\pnode(0.62,0.775){tug1-from}
-					\pnode(0.55,0.65){tug2}
-					\pnode(0.65,0.75){tug2-from}
-					\pnode(0.58,0.63){tug3}
-					\pnode(0.68,0.73){tug3-from}
-					\pnode(0.62,0.61){tug4}
-					\pnode(0.72,0.71){tug4-from}
-					\ncline[linewidth=5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
-					\ncline[linewidth=5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
-					\ncline[linewidth=5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
-					\ncline[linewidth=5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
-				}
-			\end{myps}
-			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale3]{Illustration de la plate-forme expérimentale}
-		\end{myfigure}
-		\only<1>{
-			\begin{itemize}
-				\item Utilisation de la seconde plate-forme modifiée
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Outil de déformation de la molécule (Omni de SensAble\myregistered{})
-			\end{itemize}
-		}
-		\only<3>{
-			\begin{itemize}
-				\item Pas d'outil de déplacement ou de rotation de la molécule
-			\end{itemize}
-		}
-		\only<4>{
-			\begin{itemize}
-				\item Utilisation de la troisième plate-forme
-			\end{itemize}
-		}
-	\end{frame}
 	\againframe{fra-exp2-LaTache}
 	\begin{frame}{Protocole}
 		\begin{myblock}{Sujets}
@@ -1208,31 +1189,6 @@
 		\end{myblock}
 	\end{frame}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{La plate-forme}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)
-				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp4-schema}}
-				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp4-illustration}}
-			\end{myps}
-			\mycaption[fig-IllustrationDeLaPlateFormeExperimentale4]{Illustration de la plate-forme expérimentale}
-		\end{myfigure}
-		\only<1>{
-			\begin{itemize}
-				\item Outil de déformation de la molécule (Omni de SensAble\myregistered{})
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Outil de désignation
-			\end{itemize}
-		}
-		\only<3>{
-			\begin{itemize}
-				\item Outil de déplacement ou de rotation de la molécule
-			\end{itemize}
-		}
-	\end{frame}
 	\begin{frame}{Protocole}
 		\begin{myblock}{Sujets}
 			\begin{itemize}
