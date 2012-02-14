@@ -479,34 +479,73 @@
 			\end{itemize}
 		}
 	\end{frame}
-	\begin{comment}{\myVMD}
-		\begin{myfigure}
-			\psset{unit=0.05\textwidth}
-			\begin{myps}(-10,-5)(8,5)
-				\rput(0,0){%
-					\myumlcomponent*[framesep=10pt,framearc=0,shadow=false]<VMD>[application]{\myVMD}{%
-						\psset{framesep=5pt,framearc=.1,shadow=true,blur=true}%
-						\psframebox[linestyle=none,fillstyle=none,shadow=false]{%
-							\begin{psmatrix}[rowsep=1]%
-								\myumlcomponent<IMD>[extension]{\myIMD}%
-								\hspace{3em}%
-								\myumlcomponent<VRPNclient>[fonction]{Client \myVRPN} \\%
-								\myumlcomponent<Renderer>[fonction]{Moteur de rendus}%
-							\end{psmatrix}%
-						}%
-					}%
-				}
+	\subsection{Outils supplémentaires proposés}
+	\begin{frame}[label=current]{Outils supplémentaires proposés}
+		\begin{myblock}{Objectif}
+			Faciliter le processus de sélection dans l'application \myVMD
+		\end{myblock}
 
-				\psset{fillstyle=none,shadow=false}
-				\myumlrealization[angleA=90,angleB=-90]{Renderer}{IMD}[nccurve]%
-				\myumlrelation[angleA=180,angleB=0,offsetA=8pt]{VRPNclient}[-135]<*>{IMD}[-45]<*>[nccurve]%
-				\myumlinterface[angleA=180,angleB=180,outAngleB=0,offsetA=8pt,ArrowInside={}]{IMD}{VMD}[nccurve]
-				\myumlinterface[angleA=0,angleB=0,outAngleB=180,ArrowInside={}]{VRPNclient}{VMD}[nccurve]
-				\myumlinterface[angleA=-90,angleB=-90,outAngleB=90,offsetA=8pt,ArrowInside={}]{Renderer}{VMD}[nccurve]
+		\begin{myfigure}
+			\psset{xunit=0.6\textwidth,yunit=0.365838509\textwidth}
+			\begin{myps}(0,0)(1,1)%
+				\rput(0.5,0.5){%
+					\only<1-2>{%
+						\myimage[width=0.6\textwidth]{select-molecule}%
+					}%
+					\only<3>{%
+						\myimage[width=0.6\textwidth]{select-atom-target}%
+					}%
+					\only<4>{%
+						\myimage[width=0.6\textwidth]{select-residue-target}%
+					}%
+					\only<5>{%
+						\myimage[width=0.6\textwidth]{select-residue-select}%
+					}%
+				}%
+				\only<2>{%
+					\psarc{c-c}(0.88,0.86){0.13}{-45}{45}%
+					\psarc{c-c}(0.88,0.86){0.20}{-45}{45}%
+					\psarc{c-c}(0.88,0.86){0.30}{-45}{45}%
+					\psarc{c-c}(0.88,0.86){0.45}{-45}{45}%
+					\uput{0pt}[15](1.1,0.92){%
+						\myimage[width=40pt]{red-cursor}%
+					}%
+					\psline[linewidth=2pt,linecolor=mygreen]{c->}(1.075,0.86)(0.95,0.86)
+				}%
+				\only<3->{%
+					\uput{0pt}[15](0.91,0.92){%
+						\myimage[width=40pt]{red-cursor}%
+					}%
+				}%
 			\end{myps}
-			\mycaption[fig-Shaddock-DiagrammeDeComposantUMLDuNoeudVMD]{Diagramme de composant \myUML du nœud \myVMD}
+			\mycaption[fig-OutilDeSelectionAmeliore]{Outil de sélection amélioré}
 		\end{myfigure}
-	\end{comment}
+		\only<1>{
+			\begin{itemize}
+				\item Pointage d'une cible difficile
+			\end{itemize}
+		}
+		\only<2>{
+			\begin{itemize}
+				\item Modèle haptique d'attraction sur les atomes
+			\end{itemize}
+		}
+		\only<3>{
+			\begin{itemize}
+				\item Possibilité de pointer un atome\dots{}
+			\end{itemize}
+		}
+		\only<4>{
+			\begin{itemize}
+				\item \dots{} ou un résidue (ou d'autres structures moléculaires)
+			\end{itemize}
+		}
+		\only<5>{
+			\begin{itemize}
+				\item Pour enfin le sélectionner
+			\end{itemize}
+		}
+	\end{frame}
 	\section{Étude du travail collaboratif}
 	\subsection{Synthèse}
 	\begin{frame}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
