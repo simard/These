@@ -8,7 +8,7 @@
 \usepackage{myuml}
 
 \input{mymacro}
-%\includeonlyframes{current}
+\includeonlyframes{current}
 
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
@@ -804,8 +804,45 @@
 			\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque binômes}
 		\end{myfigure}
 	\end{myframe}
-	\subsubsection{Synthèse}
-	\subsection{Étude~\mynum{2} -- Déformation collaborative de molécule}
+	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{1}}
+	\begin{myframe}{Synthèse de l'étude~\mynum{1}}
+		\begin{columns}[t]
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=myred](0,0)[complexe-problem]{Complexité de la tâche}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Amélioration des performances sur les tâches complexes
+						\item Distribution des charges de travail dépendante de la nature de la tâche
+					\end{itemize}
+				\end{myplusblock}
+				\vfill
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item La complexité de la tâche influe-t-elle sur les performances ?
+						\item Comment définir une tâche \myemph{complexe} ?
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=myred](0,0)[strategy-problem]{Stratégie de travail}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Trois stratégies différentes
+						\item Meilleurs résultats avec une stratégie en champs voisins
+					\end{itemize}
+				\end{myplusblock}
+				\vfill
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item Modification du comportement naturel des groupes
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+		\end{columns}
+	\end{myframe}
+	\subsection{Étude~\mynum{2} -- Déformation collaborative de molécules}
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
@@ -951,7 +988,41 @@
 			\mycaption[tab-ClassificationDesTaches]{Classification des tâches}
 		\end{mytable}
 	\end{myframe}
-	\subsubsection{Synthèse}
+	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{2}}
+	\begin{myframe}{Synthèse de l'étude~\mynum{2}}
+		\begin{columns}[t]
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=mygreen](0,0)[distribution-problem]{Charge de travail}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Gestion d'un espace de travail plus grand
+						\item Meilleur rendement des ressources disponibles
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item Comment répartir équitablement la charge de travail ?
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=mygreen](0,0)[conflict-problem]{Conflits de coordination}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Différentes complexité pour la manipulation collaborative
+						\item Certaines manipulations nécessitent une coordination
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item La coordination est plus efficace en individuel
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+		\end{columns}
+	\end{myframe}
 	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
@@ -1015,44 +1086,91 @@
 		\end{myblock}
 	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{myframe}{Analyse}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{binome}{myblue}%
-				\myleg{quadrinôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(2,0.6\textwidth)[200]{scénario}(900,3cm){temps~(s)}
-				\myboxplot{exp3-time-molecule-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants]{Temps de réalisation des scénarios en fonction du nombre de participants}
-		\end{myfigure}
-		\begin{myblock}{Travail collaboratif}
-			\begin{itemize}
-				\item Pas de différences entre couples et groupes
-				\item Conflits très importants dans les groupes
-			\end{itemize}
-		\end{myblock}
-	\end{myframe}
-	\begin{myframe}{Analyse}
+	\begin{myframe}{Amélioration des performances}
 		\begin{myfigure}
 			\mylegend{%
 				\myleg{binôme}{myblue}%
 				\myleg{quadrinôme}{myblue!70}%
 			}
-			\begin{myboxgraph}(2,0.6\textwidth)[200]{\textit{brainstorming}}(900,3cm){temps~(s)}
+			\begin{myboxgraph}(2,0.6\textwidth)[0.5]{scénario}(1.75,2cm){vitesse~(mm/s)}
+				\myboxplot{exp3-speed-molecule-group.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp3-VitesseMoyenne]{Vitesse moyenne}
+		\end{myfigure}
+		\begin{myfigure}
+			\mylegend{%
+				\myleg{binôme}{myblue}%
+				\myleg{quadrinôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.6\textwidth)[10]{scénario}(40,2cm){échanges~(nb)}
+				\myboxplot{exp3-talk-molecule-group.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp3-NombreDEchangeVerbaux]{Nombre d'échanges verbaux}
+		\end{myfigure}
+	\end{myframe}
+	\begin{myframe}[label=current]{Influence du \textit{brainstorming}}
+		\begin{myfigure}
+			\mylegend{%
+				\myleg{binôme}{myblue}%
+				\myleg{quadrinôme}{myblue!70}%
+			}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.6\textwidth)[300]{\textit{brainstorming}}(1100,2cm){temps~(s)}
 				\myboxplot{exp3-time-brainstorm-group.csv}
 			\end{myboxgraph}
-			\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Temps de réalisation des scénarios en fonction des groupes avec ou sans \textit{brainstorming}}
+			\mycaption[fig-exp3-TempsDeRealisation]{Temps de réalisation}
 		\end{myfigure}
-		\begin{myblock}{Pré-élaboration d'une stratégie}
-			\begin{itemize}
-				\item La pré-élaboration d'une stratégie est nécessaire pour un groupe
-				\item L'organisation dans un couple n'apporte rien
-				\item Sans stratégie, la perte d'efficacité est due aux conflits
-			\end{itemize}
-		\end{myblock}
+		\begin{myfigure}
+			\mylegend{%
+				\myleg{binôme}{myblue}%
+				\myleg{quadrinôme}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.6\textwidth)[0.1]{\textit{brainstorming}}(0.45,2cm){sélections~(nb/s)}
+				\myboxplot{exp3-freqsel-brainstorm-group.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp3-FrequenceDesSelections]{Fréquence des sélections}
+		\end{myfigure}
 	\end{myframe}
-	\subsubsection{Synthèse}
+	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{3}}
+	\begin{myframe}{Synthèse de l'étude~\mynum{3}}
+		\begin{columns}[t]
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=myblue](0,0)[identification-problem]{Paresse sociale}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Déséquilibre important dans la répartition des charges de travail
+							\begin{itemize}
+								\item Spécialisation
+								\item Paresse
+								\item Personnalité
+							\end{itemize}
+						\item Potentiel collaboratif non-exploité au maximum
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item Comment redonner de l'importance à chaque membre du groupe ?
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\centering
+				\myunode[90][shadowcolor=myblue](0,0)[brainstorming-problem]{\textit{Brainstorming}}[4cm]
+				\begin{myplusblock}{Résultats}
+					\begin{itemize}
+						\item Amélioration importante des performances
+						\item Conflits de communication pendant le \textit{brainstorming}
+						\item Réduit les conflits de coordination
+					\end{itemize}
+				\end{myplusblock}
+				\begin{myminusblock}{Limites}
+					\begin{itemize}
+						\item Comment optimiser cette étape ?
+					\end{itemize}
+				\end{myminusblock}
+			\end{column}
+		\end{columns}
+	\end{myframe}
 	\section{Aide au travail collaboratif}
 	\subsection{Étude~\mynum{4} -- Assistance haptique et stratégie de travail}
 	\begin{myframe}{Sommaire}
