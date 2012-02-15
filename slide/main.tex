@@ -6,10 +6,9 @@
 \usepackage[biblatex]{mybib}
 \usepackage{myps}
 \usepackage{myuml}
-\usepackage{verbatim}
 
 \input{mymacro}
-\includeonlyframes{current}
+%\includeonlyframes{current}
 
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
@@ -22,18 +21,6 @@
 \newcommand{\schemafactor}{1}
 \newlength{\schemaunit}
 
-\setbeamercolor*{progressbar primary}{fg=myred}
-\setbeamercolor*{structure}{fg=myblue}
-\setbeamercolor*{example text}{fg=white,bg=myblue}
-\setbeamercolor*{section in head/foot}{parent=palette primary,fg=black}
-\setbeamercolor*{subsection in head/foot}{parent=palette primary,fg=myred}
-\setbeamercolor*{alerted text}{fg=myred}
-\setbeamercolor*{block title}{fg=white,bg=myblue!75}
-\setbeamercolor*{block body}{bg=black!20}
-\setbeamercolor*{block title alerted}{fg=white,bg=myred!75}
-\setbeamercolor*{block body alerted}{bg=black!20}
-\setbeamercolor*{block title example}{fg=white,bg=mygreen!75}
-\setbeamercolor*{block body example}{bg=black!20}
 \newenvironment<>{myblock}[1]{%
 	\begin{block}{#1}%
 		\setbeamercolor{local structure}{fg=myblue!75}
@@ -65,22 +52,33 @@
 	\myimage[height=1cm]{logo-limsi}%
 }
 \date{\mydate[datestyle=long]{12/03/2012}}
+\newenvironment<>{myframe}[2][environment=myframe]{%
+	\iflanguage{french}{%
+		\shorthandoff{!}%
+	}{}%
+	\begin{frame}#3[#1]{#2}%
+}{%
+	\end{frame}%
+	\iflanguage{french}{%
+		\shorthandon{!}%
+	}{}%
+}
 
 \begin{document}
 	\transfade[duration=0.1]
-	\begin{frame}
+	\begin{myframe}
 		\titlepage
-	\end{frame}
+	\end{myframe}
 	\logo{}
-	\begin{frame}{Sommaire}
+	\begin{myframe}{Sommaire}
 		\tableofcontents[hideallsubsections]
-	\end{frame}
+	\end{myframe}
 	\section{Introduction}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\subsection{\protect\textit{Docking} moléculaire}
-	\begin{frame}{\protect\textit{Docking} moléculaire}
+	\begin{myframe}{\protect\textit{Docking} moléculaire}
 		\begin{myplusblock}{Définition}%
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
 		\end{myplusblock}%
@@ -188,9 +186,9 @@
 				\end{myblock}%
 			\end{column}%
 		\end{columns}%
-	\end{frame}
+	\end{myframe}
 	\subsection{Distribution des charges de travail}
-	\begin{frame}{Distribution des charges de travail}
+	\begin{myframe}{Distribution des charges de travail}
 		\begin{myplusblock}{Définition}
 			Étendre la capacité cognitive d'analyse d'un individu pour inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
 		\end{myplusblock}
@@ -260,8 +258,9 @@
 				\end{myblock}
 			\end{column}
 		\end{columns}
-	\end{frame}
-	\begin{frame}{Objectifs de la thèse}
+	\end{myframe}
+	\subsection{Objectifs de la thèse}
+	\begin{myframe}{Objectifs de la thèse}
 		\begin{myminusblock}{Problématique}
 			\begin{itemize}
 				\item Quels sont les avantages du travail en collaboration ?
@@ -278,13 +277,13 @@
 				\item Évaluer ces solutions en situation réelle
 			\end{enumerate}
 		\end{myplusblock}
-	\end{frame}
+	\end{myframe}
 	\section{Plateforme de manipulation moléculaire \myShaddock}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\subsection{Cahier des charges}
-	\begin{frame}{Cahier des charges}
+	\begin{myframe}{Cahier des charges}
 		\begin{myblock}{Objectif}
 			Élaborer une plateforme pour étudier le travail collaboratif dans le contexte de la manipulation interactive de molécules.
 		\end{myblock}
@@ -310,9 +309,9 @@
 				\end{myplusblock}
 			\end{column}
 		\end{columns}
-	\end{frame}
+	\end{myframe}
 	\subsection{Organisation logicielle de la plateforme \myShaddock}
-	\begin{frame}{Organisation logicielle de la plateforme \myShaddock}
+	\begin{myframe}{Organisation logicielle de la plateforme \myShaddock}
 		\begin{myfigure}
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
@@ -363,9 +362,9 @@
 			\end{myps}
 			\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
 		\end{myfigure}
-	\end{frame}
+	\end{myframe}
 	\subsection{Organisation matérielle de la plateforme \myShaddock}
-	\begin{frame}{Organisation matérielle de la plateforme \myShaddock}
+	\begin{myframe}{Organisation matérielle de la plateforme \myShaddock}
 		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
 		\begin{myfigure}
 			\begin{myps}(0,0)(1,1)%
@@ -478,9 +477,9 @@
 				\item Collaboration \alert{asymétrique} entre les participants
 			\end{itemize}
 		}
-	\end{frame}
+	\end{myframe}
 	\subsection{Outils supplémentaires proposés}
-	\begin{frame}[label=current]{Outils supplémentaires proposés}
+	\begin{myframe}{Outils supplémentaires proposés}
 		\begin{myblock}{Objectif}
 			Faciliter le processus de sélection dans l'application \myVMD
 		\end{myblock}
@@ -545,10 +544,9 @@
 				\item Pour enfin le sélectionner
 			\end{itemize}
 		}
-	\end{frame}
+	\end{myframe}
 	\section{Étude du travail collaboratif}
-	\subsection{Synthèse}
-	\begin{frame}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
+	\begin{myframe}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
 		\begin{columns}[T]
 			\begin{column}{0.45\textwidth}
 				\begin{myfigure}
@@ -620,65 +618,39 @@
 				\end{column}%
 			}
 		\end{columns}
-	\end{frame}
-	\subsection{Étude~\mynum{1} -- Recherche collaborative}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
-	\subsubsection{Travaux existants}
+	\end{myframe}
+	\subsection{Étude~\mynum{1} -- Recherche collaborative de résidus}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\againframe<8>{fra-sota-LesEtapesDeLEtude}
-
-	\begin{frame}{Travaux existants}
-		\begin{columns}
-			\begin{column}{0.6\paperwidth}
-				\begin{myplusblock}{Sélection moléculaire}
-					\begin{itemize}
-						\item Logiciels de visualisation \mycite{Humphrey-1996,Delano-2002}
-						\item Solution de réalité virtuelle \mycite{Polys-2004}
-						\item Manipulation moléculaire interactive \mycite{Delalande-2010}
-					\end{itemize}
-				\end{myplusblock}
-				\begin{myminusblock}{Problématique}
-					\begin{itemize}
-						\item Pas d'exploration collaborative dans un environnement moléculaire temps-réel
-					\end{itemize}
-				\end{myminusblock}
-			\end{column}
-			\begin{column}{0.3\paperwidth}
-				\begin{myfigure}
-					\myimage[width=0.3\paperwidth]{exp1-delalande-2010}
-					\mycaption[fig-PlateformeFVNANO]{Plateforme \textsc{fvnano}}
-				\end{myfigure}
-			\end{column}
-		\end{columns}
-	\end{frame}
 	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
+	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
-			Observer les contraintes liées au travail collaboratif et souligner les avantages
+			Étudier la contribution et les contraintes de la collaboration dans une tâche de recherche de structures moléculaires dans un environnement complexe
 		\end{myblock}
-		\begin{myblock}{Hypothèses}
+		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
-				\item Amélioration des performances en binôme
+				\item Amélioration des performances (individuel $\rightarrow$ collaboratif)
 					\begin{itemize}
 						\item Comparer les performances en collaboration et seul
 						\item Valider le contexte de travail (tâche complexe)
 					\end{itemize}
-				\item Stratégies de travail dépendantes de la personnalité
+				\item Identifier les stratégies de travail
 					\begin{itemize}
 						\item Identifier et caractériser les stratégies de travail
 						\item Identifier les conflits de coordination et de communication
 					\end{itemize}
-				\item Bonne utilisabilité de la plate-forme
+				\item Utilisabilité de la plate-forme
 					\begin{itemize}
 						\item Évaluer les outils proposés
 						\item Identifier les faiblesses
 					\end{itemize}
 			\end{enumerate}
-		\end{myblock}
-	\end{frame}
+		\end{myplusblock}
+	\end{myframe}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{La tâche}
+	\begin{myframe}{La tâche}
 		\renewcommand{\schemafactor}{0.1125}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
 		\psset{unit=\schemaunit}
@@ -741,8 +713,8 @@
 			\end{myps}
 			\mycaption[fig-RepartitionDesResiduesSurLesMoleculesTRPCageEtPrion]{Répartitions des \emph{residues} sur les molécules (TRP-Cage et Prion)}
 		\end{myfigure}
-	\end{frame}
-	\begin{frame}{Protocole}
+	\end{myframe}
+	\begin{myframe}{Protocole}
 		\begin{myblock}{Sujets}
 			\begin{itemize}
 				\item 24~participants
@@ -757,168 +729,99 @@
 				\item[Caractéristiques du \emph{residue}] Forme, nature, position, similarités\dots{}
 			\end{description}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{frame}{Analyse}
+	\begin{myframe}{Amélioration des performances en collaboration}
 		\begin{myfigure}
 			\mylegend{%
-				\myleg{Monôme}{myblue}%
-				\myleg{Binôme}{myblue!70}%
+				\myleg{monôme}{myblue}%
+				\myleg{binôme}{myblue!70}%
 			}
-			\begin{myboxgraph}(10,0.9\textwidth)[100]{résidu}(500,3cm){temps~(s)}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,2cm){temps~(s)}
 				\myboxplot{exp1-time-residue-group.csv}
+				\only<2>{%
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,200)
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,200)
+				}
+				\only<3>{%
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,300)
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)
+				}
 			\end{myboxgraph}
-			\mycaption[fig-TempsDExecutionEntreLesSujetsSeulsEtLesCouples]{Temps d'exécution entre les sujets seuls et les couples}
+			\mycaption[fig-TempsDeRealisationDeLaTache]{Temps de réalisation de la tâche}
 		\end{myfigure}
-		\begin{myblock}{Travail collaboratif}
-			\begin{itemize}
-				\item Le travail collaboratif confirme son intérêt pour les tâches complexes
-			\end{itemize}
-		\end{myblock}
-	\end{frame}
-	\begin{frame}{Analyse}
 		\begin{myfigure}
-			\psset{xunit=0.074\textwidth,yunit=0.12cm}
-			\begin{myboxgraph}(12,0.9\textwidth)[4]{binôme}(22,3cm){distance~(mm)}
+			\mylegend{%
+				\myleg{recherche}{myblue}%
+				\myleg{sélection}{myblue!70}%
+			}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,2cm){temps~(s)}
+				\myboxplot{exp1-timeaudio-residue-searchselection.csv}
+				\only<2>{%
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,100)
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,100)
+				}
+				\only<3>{%
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,250)
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)
+				}
+			\end{myboxgraph}
+			\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionCompares]{Temps de recherche et de sélection comparés}
+		\end{myfigure}
+	\end{myframe}
+	\begin{myframe}{Stratégies de travail}
+		\begin{myfigure}
+			\begin{myboxgraph}[lly=-5ex,xAxisLabelPos={c,-5ex}](12,0.75\textwidth)[4]{binôme}(24,2cm){distance~(mm)}
+				\psframe*[linecolor=myred!25,dimen=inner](0,0)(12,8)
+				\psframe*[linecolor=mygreen!25](0,8)(12,14)
+				\psframe*[linecolor=myblue!25](0,14)(12,20)
+				\psline[linewidth=0.5pt,linestyle=dashed,arrows=-](0,4)(12,4)
+				\psline[linewidth=0.5pt,linestyle=dashed,arrows=-](0,8)(12,8)
+				\psline[linewidth=0.5pt,linestyle=dashed,arrows=-](0,12)(12,12)
+				\psline[linewidth=0.5pt,linestyle=dashed,arrows=-](0,16)(12,16)
+				\psline[linewidth=0.5pt,linestyle=dashed,arrows=-](0,20)(12,20)
 				% Once header are readed, they are defined for other barplot
 				% That's why barplots without headers are in first position
 				\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
 				\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
 				\mybarplot[header=true,barstyle=first-barstyle]{exp1-diff-groups1.csv}
-				\psset{linecolor=myred,linewidth=1pt,linestyle=solid}
-				\psline(0,14)(12,14)
-				\psline(0,8)(12,8)
 				\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
-				\uput[180](12,5){\pscharpath{\LARGE\bf\sffamily Champ proche}}
-				\uput[180](12,11){\pscharpath{\LARGE\bf\sffamily Champ voisin}}
-				\uput[180](12,17){\pscharpath{\LARGE\bf\sffamily Champ distant}}
+				\uput[180](12,5){\pscharpath{\Large\bf\sffamily Champ proche}}
+				\psset{fillcolor=mygreen}
+				\uput[180](12,11){\pscharpath{\Large\bf\sffamily Champ voisin}}
+				\psset{fillcolor=myblue}
+				\uput[180](12,17){\pscharpath{\Large\bf\sffamily Champ distant}}
 			\end{myboxgraph}
 			\mycaption[fig-DistanceMoyenneEntreLeCurseurDesSujets]{Distance moyenne entre le curseur des sujets}
 		\end{myfigure}
-		\begin{myblock}{Les groupes}
-			\begin{itemize}
-				\item Stratégies de travail différentes
-				\item Dépendance de la personnalité
-				\item Des conflits d'interaction (dans les \emph{mêmes régions})
-			\end{itemize}
-		\end{myblock}
-	\end{frame}
-	\begin{frame}{Analyse}
-		\begin{myblock}{La communication verbale}
-			\begin{itemize}
-				\item<2-> Séparation entre temps de recherche et de sélection
-				\item<3-> Mesure du temps de communication verbale
-			\end{itemize}
-		\end{myblock}
 		\begin{myfigure}
-			\begin{myps}(0,-0.5)(10,2)
-				\psset{linewidth=1pt,linecolor=black}%
-				\psframe(0,-0.5)(10,0.5)%
-				\only<1>{%
-					\psbrace[ref=lC,rot=-90,nodesepA=-5,nodesepB=-1ex](10,0.5)(0,0.5){%
-						\parbox{10\psxunit}{\centering\textcolor{black}{Temps de la tâche}}%
-					}%
-				}%
-				\psset{fillstyle=solid}%
-				\only<2->{%
-					\psframe[fillcolor=myblue!70](0,-0.5)(6,0.5)%
-					\psframe[fillcolor=myred!70](6,-0.5)(10,0.5)%
-				}%
-				\only<2>{%
-					\psset{ref=lC,rot=-90}%
-					\psbrace[nodesepA=-3](6,0.5)(0,0.5){%
-						\parbox{6\psxunit}{\centering\textcolor{myblue}{Temps de recherche}}%
-					}%
-					\psbrace[nodesepA=-2](10,0.5)(6,0.5){%
-						\parbox{4\psxunit}{\centering\textcolor{myred}{Temps de sélection}}%
-					}%
-				}%
-				\only<3->{
-					\psframe[fillcolor=myblue](1,-0.5)(1.5,0.5)
-					\psframe[fillcolor=myblue](3,-0.5)(4.5,0.5)
-					\psframe[fillcolor=myblue](4.8,-0.5)(5,0.5)
-					\psframe[fillcolor=myred](6.5,-0.5)(7.5,0.5)
-					\psframe[fillcolor=myred](8,-0.5)(8.25,0.5)
-				}
-				\only<3>{
-					\pnode(1.25,0.5){verbal1}
-					\pnode(3.75,0.5){verbal2}
-					\pnode(4.9,0.5){verbal3}
-					\pnode(7,0.5){verbal4}
-					\pnode(8.125,0.5){verbal5}
-					\rput(5,1.5){\Rnode{verbal}{\psframebox[linestyle=none]{\centering Communication verbale}}}
-					\psset{linearc=0.1,angleA=90}
-					\ncdiagg{<-}{verbal1}{verbal}
-					\ncdiagg{<-}{verbal2}{verbal}
-					\ncdiagg{<-}{verbal3}{verbal}
-					\ncdiagg{<-}{verbal4}{verbal}
-					\ncdiagg{<-}{verbal5}{verbal}
-				}
-			\end{myps}
-			\mycaption[fig-SchemaDeLaCommunicationVerbale]{Schéma de la communication verbale}
-		\end{myfigure}
-	\end{frame}
-	\begin{frame}{Analyse}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{Recherche}{myblue}%
-				\myleg{Sélection}{myblue!70}%
-			}
-			\begin{myboxgraph}(12,0.9\textwidth)[25]{binôme}(100,3cm){temps~(\%)}
-				\mybarplot{exp1-timeaudio-groups-searchselection.csv}
+			\begin{myboxgraph}[lly=-5ex,xAxisLabelPos={c,-5ex}](12,0.75\textwidth){binôme}(6,2cm){affinité~(\mynum{1}--\mynum{5})}
+				\mybarplot{exp1-affinity-groups.csv}
+				\psframe[linecolor=myblue,linewidth=2pt,framearc=0.25](0,0)(1,-1.75)
+				\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25](1,0)(4,-1.75)
+				\psframe[linecolor=myred,linewidth=2pt,framearc=0.25](4,0)(12,-1.75)
 			\end{myboxgraph}
-			\mycaption[fig-TempsDeCommunication]{Temps de communication}
+			\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque binômes}
 		\end{myfigure}
-		\begin{myblock}{Travail collaboratif}
-			\begin{itemize}
-				\item La communication prend une place importante
-				\item Des conflits de communication (incompréhension, prise de parole\dots{})
-			\end{itemize}
-		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Synthèse}
-	\subsection{Étude~\mynum{2} -- Déformation collaborative}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
-	\subsubsection{Travaux existants}
+	\subsection{Étude~\mynum{2} -- Déformation collaborative de molécule}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\againframe<9>{fra-sota-LesEtapesDeLEtude}
-
-	\begin{frame}{Travaux existants}
-		\begin{columns}
-			\begin{column}{0.6\paperwidth}
-				\begin{myplusblock}{Déformation moléculaire}
-					\begin{itemize}
-						\item Tissus cellulaires \mycite{Peterlik-2009}
-						\item Sculpture sur glaise \mycite{Muller-2006,Gorlatch-2009}
-					\end{itemize}
-				\end{myplusblock}
-				\begin{myminusblock}{Problématique}
-					\begin{itemize}
-						\item Pas de déformation collaborative dans un environnement moléculaire temps-réel
-					\end{itemize}
-				\end{myminusblock}
-			\end{column}
-			\begin{column}{0.3\paperwidth}
-				\begin{myfigure}
-					\myimage[width=0.3\paperwidth]{exp2-peterlik-2009}
-					\mycaption[fig-DeformationDeTissusCellulaires]{Déformation de tissus cellulaires}
-				\end{myfigure}
-			\end{column}
-		\end{columns}
-	\end{frame}
 	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
+	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
-			Proposer une tâche suffisamment complexe pour quantifier et qualifier les conflits de coordination
+			Quantifier et qualifier les conflits de coordination en fonction de la complexité de la tâche
 		\end{myblock}
-		\begin{myblock}{Hypothèses}
+		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
-				\item Amélioration des performances en binôme pour la déformation
+				\item Amélioration des performances (individuel $\rightarrow$ collaboration)
 					\begin{itemize}
 						\item Coordination étroitement couplée
 					\end{itemize}
-				\item Binômes plus performants sur les tâches complexes
+				\item La complexité de la tâche influence différemment les performances individuelles et collaboratives
 					\begin{itemize}
 						\item Tâches de difficulté variable
 						\item Identifier les tâches nécessitant une collaboration
@@ -929,10 +832,10 @@
 						\item Évaluation de la configuration de travail collaboratif
 					\end{itemize}
 			\end{enumerate}
-		\end{myblock}
-	\end{frame}
+		\end{myplusblock}
+	\end{myframe}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}[label={fra-exp2-LaTache}]{La tâche}
+	\begin{myframe}<1>[label={fra-exp2-LaTache}]{La tâche}
 		\renewcommand{\schemafactor}{0.055}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
 		\psset{unit=\schemaunit}
@@ -940,17 +843,17 @@
 			\begin{myps}(-1,0)(12,9)
 				\rput[bl](1,0){\myimage[width=10\schemaunit]{TRP-ZIPPER}}
 				\pnode(6.8,3.6){deformed}
-				\rput(8.8,2.6){\rnode{deformed-label}{\textcolor{myred}{Deformed molecule}}}
+				\rput(9.2,2.6){\rnode{deformed-label}{\textcolor{myred}{molécule courante}}}
 				\pnode(1.8,4){ghost}
-				\rput(1.3,5.5){\rnode{ghost-label}{\textcolor{myred}{Ghost molecule}}}
+				\rput(0.8,5.5){\rnode{ghost-label}{\textcolor{myred}{molécule cible}}}
 				\psset{linecolor=myblue}
 				\cnode(6.2,4.9){1.0}{deformed-residue}
-				\rput(7.1,7.0){\rnode{deformed-residue-label}{\textcolor{myblue}{Deformed residue}}}
+				\rput(7.1,7.0){\rnode{deformed-residue-label}{\textcolor{myblue}{résidue courant}}}
 				\cnode(2.3,1.6){0.8}{ghost-residue}
-				\rput(1.2,2.75){\rnode{ghost-residue-label}{\textcolor{myblue}{Ghost residue}}}
+				\rput(1,2.75){\rnode{ghost-residue-label}{\textcolor{myblue}{résidue cible}}}
 				\psset{linecolor=gray}
 				\cnode(2.0,6.6){0.8}{fixed-residue}
-				\rput(4.0,7.75){\rnode{fixed-residue-label}{\textcolor{gray}{fixed residue}}}
+				\rput(4.0,7.75){\rnode{fixed-residue-label}{\textcolor{gray}{résidu fixe}}}
 				\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=0.5pt 3,arrowinset=.2,nodesepA=3pt}
 				\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
 				\psset{nodesepB=0pt}
@@ -959,16 +862,27 @@
 				\ncdiagg[angleA=-90]{c->}{deformed-residue-label}{deformed-residue}
 				\ncdiagg[angleA=-90]{c->}{ghost-residue-label}{ghost-residue}
 				\ncdiagg[angleA=180,linecolor=gray]{c->}{fixed-residue-label}{fixed-residue}
-				\ncline[linewidth=10pt,linecolor=mygreen]{c->}{deformed-residue}{ghost-residue}
-				\psframe*[linecolor=green](-1,8.5)(5,9)
-				\psframe*[linecolor=red](5,8.5)(12,9)
-				\rput(5.5,8.75){\textcolor{white}{\bf\textsc{rmsd} score indicator}}
-				\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
+				\ncline[linewidth=10pt,linecolor=mygreen]{C->}{deformed-residue}{ghost-residue}
+				\only<1>{%
+					\psframe*[linecolor=green](-1,8.5)(5,9)
+					\psframe*[linecolor=red](5,8.5)(12,9)
+					\rput(5.5,8.75){\textcolor{white}{\bf score \textsc{rmsd}}}
+					\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
+				}
+				\only<2>{%
+					\psframe*[linecolor=blue](11.25,0)(12,2)
+					\psline[linecolor=blue](11,2)(11.25,2)
+					\uput{1pt}[180](11,2){\tiny\textcolor{blue}{RMSD courant}}
+					\psframe*[linecolor=orange](11.45,0)(11.8,1)
+					\psline[linecolor=orange](11,1)(11.45,1)
+					\uput{1pt}[180](11,1){\tiny\textcolor{orange}{RMSD minimum}}
+					\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
+				}
 			\end{myps}
-			\mycaption[fig-LaMoleculeTRPZipperDeformee]{La molécule TRP-Zipper déformée}
+			\mycaption[fig-TacheDeDeformation]{Tâche de déformation}
 		\end{myfigure}
-	\end{frame}
-	\begin{frame}{Protocole}
+	\end{myframe}
+	\begin{myframe}{Protocole}
 		\begin{myblock}{Sujets}
 			\begin{itemize}
 				\item 36~participants (12~couples et 12~sujets seuls)
@@ -983,71 +897,67 @@
 				\item[Outil de déformation] 2~configuration de déformation (\emph{atom} et \emph{residue})
 			\end{description}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{frame}{Analyse}
+	\begin{myframe}{Amélioration des performances}
+		\begin{myfigure}
+				\mylegend{%
+					\myleg{monôme}{myblue}%
+					\myleg{binôme}{myblue!70}%
+				}
+			\begin{myboxgraph}(2,0.75\textwidth){distance}(3.25,2cm){distance~(mm)}
+				\myboxplot{exp2-diff-activepassive-group.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp2-DistancePassiveEtActive]{Distances passive et active}
+		\end{myfigure}
+		\begin{myfigure}
+			\mylegend{%
+				\myleg{main dominante}{myblue}%
+				\myleg{main dominée}{myblue!70}%
+			}
+			\begin{myboxgraph}(2,0.75\textwidth)[10]{nombre de sujets}(50,2cm){sélections~(nb)}
+				\myboxplot{exp2-numsel-group-dominant.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp2-NombreDeSelectionsParMainDominanteDominee]{Nombre de sélections par main dominante/dominée}
+		\end{myfigure}
+	\end{myframe}
+	\begin{myframe}{Influence de la complexité de la tâche}
+		\begin{myfigure}
+			\mylegend{%
+				\myleg{monôme}{myblue}%
+				\myleg{binôme}{myblue!70}%
+			}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](4,0.75\textwidth)[100]{scénario}(350,1.75cm){temps~(s)}
+				\myboxplot{exp2-time-task-group.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios}
+		\end{myfigure}
 		\begin{mytable}
 			\begin{tabular}{cp{7cm}c}
 				\hline
 				Difficulté & Description & Exemple \\
 				\hline
 				\hline
-				\multirow{2}*{Simple} & -- 1~outil est nécessaire & \multirow{2}*{Tâche~1a} \\
-				& -- 1~manipulation \\
+				\multirow{2}*{Simple} & -- \mynum{1}~outil est nécessaire & \multirow{2}*{Tâche~1a} \\
+				& -- \mynum{1}~manipulation \\
 				\hline
-				\multirow{2}*{Avancé} & -- 1~outil est nécessaire mais 2~outils est mieux & \multirow{2}*{Tâche~2a, 2b} \\
-				& -- 2~manipulations peuvent être simultanées \\
+				\multirow{2}*{Avancé} & -- \mynum{1}~outil est suffisant mais \mynum{2} sont préférables & \multirow{2}*{Tâche~2a, 2b} \\
+				& -- \mynum{2}~manipulations peuvent être coordonnées \\
 				\hline
-				\multirow{2}*{Expert} 	& -- 2~outils sont nécessaires & \multirow{2}*{Tâche~1b} \\
-				& -- 2~manipulations \alert{doivent} être simultanées \\
+				\multirow{2}*{Expert} 	& -- \mynum{2}~outils sont nécessaires & \multirow{2}*{Tâche~1b} \\
+				& -- \mynum{2}~manipulations \alert{doivent} être coordonnées \\
 				\hline
 			\end{tabular}
 			\mycaption[tab-ClassificationDesTaches]{Classification des tâches}
 		\end{mytable}
-	\end{frame}
-	\begin{frame}{Analyse}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{Monôme}{myblue}%
-				\myleg{Binôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(4,0.9\textwidth)[50]{scénario}(300,3cm){temps~(s)}
-				\myboxplot{exp2-time-task-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
-		\end{myfigure}
-		\begin{myblock}{Travail collaboratif}
-			\begin{itemize}
-				\item Les conflits détériorent l'efficacité de la collaboration
-				\item Tâches fortement couplées exclusives pour le travail collaboratif
-			\end{itemize}
-		\end{myblock}
-	\end{frame}
-	\begin{frame}{Analyse}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{Monôme}{myblue}%
-				\myleg{Binôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(3,0.9\textwidth)[50]{essai}(200,3cm){temps~(s)}
-				\myboxplot{exp2-time-try-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
-		\end{myfigure}
-		\begin{myblock}{Apprentissage}
-			\begin{itemize}
-				\item Apprentissage plus rapide en couple
-				\item Manque de donnée pour une conclusion définitive
-			\end{itemize}
-		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Synthèse}
 	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\subsubsection{Travaux existants}
-	\begin{frame}{Travaux existants}
+	\begin{myframe}{Travaux existants}
 		\begin{myplusblock}{Dynamique de groupe}
 			\begin{itemize}
 				\item facilitation sociale \mycite{Ringelmann-1913}
@@ -1060,13 +970,13 @@
 				\item Aucune étude de dynamique de groupe sur des tâches avec une interaction étroitement couplée
 			\end{itemize}
 		\end{myminusblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
+	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
 			Observer la dynamique de groupe lors d'une coordination étroitement couplée
 		\end{myblock}
-		\begin{myblock}{Hypothèses}
+		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances en quadrinôme
 					\begin{itemize}
@@ -1084,11 +994,11 @@
 						\item Limiter les conflits \textit{a priori}
 					\end{itemize}
 			\end{enumerate}
-		\end{myblock}
-	\end{frame}
+		\end{myplusblock}
+	\end{myframe}
 	\subsubsection{Protocole expérimental}
-	\againframe{fra-exp2-LaTache}
-	\begin{frame}{Protocole}
+	\againframe<2>{fra-exp2-LaTache}
+	\begin{myframe}{Protocole}
 		\begin{myblock}{Sujets}
 			\begin{itemize}
 				\item 16~participants
@@ -1103,13 +1013,13 @@
 				\item[Stratégie] Possibilité ou non d'établir une stratégie
 			\end{description}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{frame}{Analyse}
+	\begin{myframe}{Analyse}
 		\begin{myfigure}
 			\mylegend{%
-				\myleg{Binome}{myblue}%
-				\myleg{Quadrinôme}{myblue!70}%
+				\myleg{binome}{myblue}%
+				\myleg{quadrinôme}{myblue!70}%
 			}
 			\begin{myboxgraph}(2,0.6\textwidth)[200]{scénario}(900,3cm){temps~(s)}
 				\myboxplot{exp3-time-molecule-group.csv}
@@ -1122,12 +1032,12 @@
 				\item Conflits très importants dans les groupes
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
-	\begin{frame}{Analyse}
+	\end{myframe}
+	\begin{myframe}{Analyse}
 		\begin{myfigure}
 			\mylegend{%
-				\myleg{Binôme}{myblue}%
-				\myleg{Quadrinôme}{myblue!70}%
+				\myleg{binôme}{myblue}%
+				\myleg{quadrinôme}{myblue!70}%
 			}
 			\begin{myboxgraph}(2,0.6\textwidth)[200]{\textit{brainstorming}}(900,3cm){temps~(s)}
 				\myboxplot{exp3-time-brainstorm-group.csv}
@@ -1141,15 +1051,15 @@
 				\item Sans stratégie, la perte d'efficacité est due aux conflits
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Synthèse}
 	\section{Aide au travail collaboratif}
 	\subsection{Étude~\mynum{4} -- Assistance haptique et stratégie de travail}
-	\begin{frame}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
-	\end{frame}
+	\begin{myframe}{Sommaire}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+	\end{myframe}
 	\subsubsection{Synthèse des études effectuées}
-	\begin{frame}{Synthèse des études effectuées et solutions}
+	\begin{myframe}{Synthèse des études effectuées et solutions}
 		\begin{myfigure}
 			\psset{xunit=0.95cm,yunit=0.8cm}
 			\begin{myps}(-6,-3)(6,4)
@@ -1201,9 +1111,9 @@
 			\end{myps}
 			\mycaption[fig-SyntheseDesProblematiques]{Synthèse des problématiques}
 		\end{myfigure}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Objectifs}
-	\begin{frame}{Objectifs}
+	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
 			Proposer et évaluer des outils haptiques pour assister la coordination
 		\end{myblock}
@@ -1226,9 +1136,9 @@
 					\end{itemize}
 			\end{enumerate}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Protocole expérimental}
-	\begin{frame}{Protocole}
+	\begin{myframe}{Protocole}
 		\begin{myblock}{Sujets}
 			\begin{itemize}
 				\item 24~participants
@@ -1243,13 +1153,13 @@
 				\item[Assistance] Avec ou sans assistance haptique
 			\end{description}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{frame}{Analyse}
+	\begin{myframe}{Analyse}
 		\begin{myfigure}
 			\mylegend{%
-				\myleg{Sans assistance}{myblue}%
-				\myleg{Avec assistance}{myblue!70}%
+				\myleg{sans assistance}{myblue}%
+				\myleg{avec assistance}{myblue!70}%
 			}
 			\begin{myboxgraph}(2,0.9\textwidth)[100]{scénario}(575,3cm){temps~(s)}
 				\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
@@ -1262,8 +1172,8 @@
 				\item Apport important sur les tâches complexes
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
-	\begin{frame}{Analyse}
+	\end{myframe}
+	\begin{myframe}{Analyse}
 		\begin{myfigure}
 			\begin{myboxgraph}(2,0.6\textwidth)[2]{haptique}(12,3cm){temps~(s)}
 				\myboxplot{exp4-shake-time-haptic.csv}
@@ -1276,10 +1186,10 @@
 				\item Communication haptique et non verbale
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsubsection{Synthèse}
 	\section{Conclusion et perspectives}
-	\begin{frame}{Conclusion}
+	\begin{myframe}{Conclusion}
 		\begin{myblock}{Travail collaboratif}
 			\begin{itemize}
 				\item Adapté pour l'appréhension de tâches très complexes
@@ -1298,8 +1208,8 @@
 				\item Des améliorations sont encore nécessaires
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
-	\begin{frame}{Perspectives}
+	\end{myframe}
+	\begin{myframe}{Perspectives}
 		\begin{myblock}{Travail collaboratif}
 			\begin{itemize}
 				\item Collaboration distante
@@ -1313,14 +1223,14 @@
 				\item Comment définir un protocole expérimental pour le collaboratif ?
 			\end{itemize}
 		\end{myblock}
-	\end{frame}
+	\end{myframe}
 	\subsection{Synthèse}
 	\subsection{Perspectives}
-	\begin{frame}{Questions}
+	\begin{myframe}{Questions}
 		Merci pour votre attention
-	\end{frame}
-	\begin{frame}{Références}
+	\end{myframe}
+	\begin{myframe}{Références}
 		\defbibfilter{all}{\keyword{Simard}}
 		\printbibliography[filter=all]
-	\end{frame}
+	\end{myframe}
 \end{document}
