@@ -8,7 +8,7 @@
 \usepackage{myuml}
 
 \input{mymacro}
-\includeonlyframes{current}
+%\includeonlyframes{current}
 
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
@@ -632,22 +632,16 @@
 		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances (individuel $\rightarrow$ collaboratif)
-					\begin{itemize}
-						\item Comparer les performances en collaboration et seul
-						\item Valider le contexte de travail (tâche complexe)
-					\end{itemize}
 				\item Identifier les stratégies de travail
-					\begin{itemize}
-						\item Identifier et caractériser les stratégies de travail
-						\item Identifier les conflits de coordination et de communication
-					\end{itemize}
 				\item Utilisabilité de la plate-forme
-					\begin{itemize}
-						\item Évaluer les outils proposés
-						\item Identifier les faiblesses
-					\end{itemize}
 			\end{enumerate}
 		\end{myplusblock}
+		\begin{myblock}{Variables}
+			\begin{description}
+				\item[Nombre de sujets] monôme (\mynum{24}~sujets) ou binôme (\mynum{12}~couples)
+				\item[Complexité du \emph{residue}] Forme, nature, position, similarités\dots{}
+			\end{description}
+		\end{myblock}
 	\end{myframe}
 	\subsubsection{Protocole expérimental}
 	\begin{myframe}{La tâche}
@@ -713,22 +707,6 @@
 			\end{myps}
 			\mycaption[fig-RepartitionDesResiduesSurLesMoleculesTRPCageEtPrion]{Répartitions des \emph{residues} sur les molécules (TRP-Cage et Prion)}
 		\end{myfigure}
-	\end{myframe}
-	\begin{myframe}{Protocole}
-		\begin{myblock}{Sujets}
-			\begin{itemize}
-				\item 24~participants
-				\item Différents niveaux d'expertise
-				\item Étude intra-population
-			\end{itemize}
-		\end{myblock}
-		\begin{myblock}{Variables}
-			\begin{description}
-				\item[Nombre de participants] un (24~sujets) ou deux (12~couples)
-				\item[Taille de la molécule] une petite (TRP-Cage) et une grande (Prion)
-				\item[Caractéristiques du \emph{residue}] Forme, nature, position, similarités\dots{}
-			\end{description}
-		\end{myblock}
 	\end{myframe}
 	\subsubsection{Résultats}
 	\begin{myframe}{Amélioration des performances en collaboration}
@@ -855,21 +833,17 @@
 		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
 				\item Amélioration des performances (individuel $\rightarrow$ collaboration)
-					\begin{itemize}
-						\item Coordination étroitement couplée
-					\end{itemize}
 				\item La complexité de la tâche influence différemment les performances individuelles et collaboratives
-					\begin{itemize}
-						\item Tâches de difficulté variable
-						\item Identifier les tâches nécessitant une collaboration
-					\end{itemize}
 				\item Évaluation du travail collaboratif par les sujets
-					\begin{itemize}
-						\item Questionnaire pour valider les améliorations de la plate-forme
-						\item Évaluation de la configuration de travail collaboratif
-					\end{itemize}
 			\end{enumerate}
 		\end{myplusblock}
+		\begin{myblock}{Variables}
+			\begin{description}
+				\item[Nombre de sujets] monôme (\mynum{12}~sujets) ou binôme (\mynum{12}~couples)
+				\item[Complexité de la molécule] \mynum{2}~molécules de taille différente
+				\item[Outil de déformation] 2~configuration de déformation (\emph{atom} et \emph{residue})
+			\end{description}
+		\end{myblock}
 	\end{myframe}
 	\subsubsection{Protocole expérimental}
 	\begin{myframe}<1>[label={fra-exp2-LaTache}]{La tâche}
@@ -918,22 +892,6 @@
 			\end{myps}
 			\mycaption[fig-TacheDeDeformation]{Tâche de déformation}
 		\end{myfigure}
-	\end{myframe}
-	\begin{myframe}{Protocole}
-		\begin{myblock}{Sujets}
-			\begin{itemize}
-				\item 36~participants (12~couples et 12~sujets seuls)
-				\item Sujets avec différents niveaux d'expertise
-				\item Couples choisis pour leurs affinités
-				\item Étude inter-population
-			\end{itemize}
-		\end{myblock}
-		\begin{myblock}{Variables}
-			\begin{description}
-				\item[Complexité de la molécule] 2~molécules (1~petite et 1~grande)
-				\item[Outil de déformation] 2~configuration de déformation (\emph{atom} et \emph{residue})
-			\end{description}
-		\end{myblock}
 	\end{myframe}
 	\subsubsection{Résultats}
 	\begin{myframe}{Amélioration des performances}
@@ -1049,42 +1007,21 @@
 		\end{myblock}
 		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
-				\item Amélioration des performances en quadrinôme
-					\begin{itemize}
-						\item Variation de la taille d'un groupe
-						\item Quantification des conflits dans des groupes
-					\end{itemize}
-				\item Émergence d'un meneur
-					\begin{itemize}
-						\item Observer la dynamique des groupes
-						\item Caractériser les différents rôles
-					\end{itemize}
-				\item Le \textit{brainstorming} améliore les performances
-					\begin{itemize}
-						\item Période pour organiser le travail
-						\item Limiter les conflits \textit{a priori}
-					\end{itemize}
+				\item Amélioration des performances en fonction du nombre de sujets
+				\item Analyse des rôles dans le groupe
+				\item Influence d'une étape de \textit{brainstorming} sur les performances
 			\end{enumerate}
 		\end{myplusblock}
-	\end{myframe}
-	\subsubsection{Protocole expérimental}
-	\againframe<2>{fra-exp2-LaTache}
-	\begin{myframe}{Protocole}
-		\begin{myblock}{Sujets}
-			\begin{itemize}
-				\item 16~participants
-				\item Sujets avec expérience sur la plate-forme
-				\item Étude intra-population
-			\end{itemize}
-		\end{myblock}
 		\begin{myblock}{Variables}
 			\begin{description}
-				\item[Nombre de participants] 8~couples et 4~groupes
-				\item[Tâche différente] 2~molécules (1~faiblement et 1~fortement couplée)
-				\item[Stratégie] Possibilité ou non d'établir une stratégie
+				\item[Nombre de participants] \mynum{8}~couples et \mynum{4}~groupes
+				\item[Tâche différente] \mynum{2}~molécules (tâche faiblement et fortement couplées)
+				\item[Stratégie] Étape de \textit{brainstorming}
 			\end{description}
 		\end{myblock}
 	\end{myframe}
+	\subsubsection{Protocole expérimental}
+	\againframe<2>{fra-exp2-LaTache}
 	\subsubsection{Résultats}
 	\begin{myframe}{Amélioration des performances}
 		\begin{myfigure}
@@ -1108,7 +1045,7 @@
 			\mycaption[fig-exp3-NombreDEchangeVerbaux]{Nombre d'échanges verbaux}
 		\end{myfigure}
 	\end{myframe}
-	\begin{myframe}[label=current]{Influence du \textit{brainstorming}}
+	\begin{myframe}{Influence du \textit{brainstorming}}
 		\begin{myfigure}
 			\mylegend{%
 				\myleg{binôme}{myblue}%
@@ -1237,75 +1174,56 @@
 		\end{myblock}
 		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
-				\item Performances améliorées par l'assistance haptique
-					\begin{itemize}
-						\item Rapidité d'exécution
-						\item Qualité de la solution atteinte
-					\end{itemize}
-				\item L'assistance haptique améliore la communication
-					\begin{itemize}
-						\item Temps de réaction réduits
-						\item Meilleure compréhension des intentions de chacun
-					\end{itemize}
-				\item Les experts sont satisfaits des outils proposés
-					\begin{itemize}
-						\item Évaluer les outils proposés
-						\item Identifier les faiblesses
-					\end{itemize}
+				\item Influence des propositions sur les performances
+				\item Influence des propositions sur la communication
+				\item Évaluations des propositions par des experts
 			\end{enumerate}
-		\end{myblock}
-	\end{myframe}
-	\subsubsection{Protocole expérimental}
-	\begin{myframe}{Protocole}
-		\begin{myblock}{Sujets}
-			\begin{itemize}
-				\item 24~participants
-				\item Sujets avec expérience sur la plate-forme
-				\item Étude intra-population
-			\end{itemize}
 		\end{myblock}
 		\begin{myblock}{Variables}
 			\begin{description}
-				\item[Nombre de participants] 8~trinômes
-				\item[Tâche différente] 2~molécules (1~déformation et 1~docking moléculaire)
-				\item[Assistance] Avec ou sans assistance haptique
+				\item[Nombre de participants] \mynum{8}~trinômes
+				\item[Tâche] \mynum{2}~molécules (tâche faiblement et fortement couplée)
+				\item[Assistance haptique] Avec ou sans assistance
 			\end{description}
 		\end{myblock}
 	\end{myframe}
 	\subsubsection{Résultats}
-	\begin{myframe}{Analyse}
+	\begin{myframe}{Efficacité de la collaboration}
 		\begin{myfigure}
 			\mylegend{%
 				\myleg{sans assistance}{myblue}%
 				\myleg{avec assistance}{myblue!70}%
 			}
-			\begin{myboxgraph}(2,0.9\textwidth)[100]{scénario}(575,3cm){temps~(s)}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.9\textwidth)[200]{scénario}(700,2cm){temps~(s)}
 				\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
 			\end{myboxgraph}
-			\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario]{Temps pour atteindre le score \myRMSD minimum avec et sans haptique pour chaque scénario}
+			\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimum]{Temps pour atteindre le score \myRMSD minimum}
 		\end{myfigure}
-		\begin{myblock}{Assistance haptique}
-			\begin{itemize}
-				\item Pas de différences sur les tâches simples
-				\item Apport important sur les tâches complexes
-			\end{itemize}
-		\end{myblock}
-	\end{myframe}
-	\begin{myframe}{Analyse}
 		\begin{myfigure}
-			\begin{myboxgraph}(2,0.6\textwidth)[2]{haptique}(12,3cm){temps~(s)}
+			\mylegend{%
+				\myleg{sans assistance}{myblue}%
+				\myleg{avec assistance}{myblue!70}%
+			}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.9\textwidth)[0.05]{scénario}(0.125,2cm){fréquence~(nb/s)}
+				\myboxplot{exp4-freq-molecule-haptic.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateur]{Nombre de sélections par seconde effectuées par un opérateur}
+		\end{myfigure}
+	\end{myframe}
+	\begin{myframe}{Amélioration de la communication}
+		\begin{myfigure}
+			\begin{myboxgraph}[llx=-2em,yAxisLabelPos={-2em,c}](2,0.6\textwidth)[2]{haptique}(10,2cm){temps~(s)}
 				\myboxplot{exp4-shake-time-haptic.csv}
 			\end{myboxgraph}
-			\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique]{Temps moyen d'acceptation d'une désignation avec et sans haptique}
+			\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignation]{Temps moyen d'acceptation d'une désignation}
 		\end{myfigure}
-		\begin{myblock}{Communication haptique}
-			\begin{itemize}
-				\item Amélioration du temps de réaction
-				\item Communication haptique et non verbale
-			\end{itemize}
-		\end{myblock}
+		\begin{myfigure}
+			\begin{myboxgraph}(2,0.6\textwidth)[5]{haptique}(17.5,2cm){sélections~(nb)}
+				\myboxplot{exp4-accept-haptic.csv}
+			\end{myboxgraph}
+			\mycaption[fig-exp4-NombreDeDesignationsAcceptees]{Nombre de désignations acceptées}
+		\end{myfigure}
 	\end{myframe}
-	\subsubsection{Synthèse}
 	\section{Conclusion et perspectives}
 	\begin{myframe}{Conclusion}
 		\begin{myblock}{Travail collaboratif}
@@ -1328,14 +1246,14 @@
 		\end{myblock}
 	\end{myframe}
 	\begin{myframe}{Perspectives}
-		\begin{myblock}{Travail collaboratif}
+		\begin{myblock}{Plus loin dans l'étude du travail collaboratif\dots}
 			\begin{itemize}
 				\item Collaboration distante
 				\item Collaboration multi-experts
 				\item Apprentissage en collaboration
 			\end{itemize}
 		\end{myblock}
-		\begin{myblock}{Expérimenter le travail collaboratif}
+		\begin{myblock}{Comment expérimenter le travail collaboratif ?}
 			\begin{itemize}
 				\item Comment mesurer les conflits de coordination et de communication ?
 				\item Comment définir un protocole expérimental pour le collaboratif ?
