@@ -28,7 +28,7 @@ BTEXOPT=
 INDEXOPT=
 GLOSSOPT=--language french --codepage utf8 --input-markup xindy
 ACROOPT=--language french --codepage utf8 --input-markup xindy
-DVIPSOPT=-R0 -Ppdf
+DVIPSOPT=-R0 -Ppdf -G0
 PS2PDFOPT=
 ROPT=--vanilla
 

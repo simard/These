@@ -1,31 +1,30 @@
 \makeatletter
-% Modify the bibliography style
-\newcounter{mymaxcitenames}
-\AtBeginDocument{%
-	\setcounter{mymaxcitenames}{\value{maxnames}}%
-}
-\renewbibmacro{begentry}{%
-	\printtext[brackets]{%
-		\defcounter{maxnames}{\value{mymaxcitenames}}%
-		\printnames{labelname}~\usebibmacro{cite:labelyear+extrayear}%
-	}%
-	\newline%
-}
+\definecolor{myyellowcolor}{rgb}{0.761 0.804 0.263}
 % BBB
+\def\mybarlabel{\pst@object{mybarlabel}}%
+\def\mybarlabel@i(#1,#2){%
+	\@testopt{\mybarlabel@ii(#1,#2)}{0}%
+}
+\def\mybarlabel@ii(#1,#2)[#3]#4{%
+	\use@par%
+	\uput{1pt}[-90](#1,#2){\footnotesize\bfseries\textcolor{white}{#4}}%
+}
 \let\myoldbarplot\mybarplot
 \def\mybarplot{\pst@object{mybarplote}}
 \def\mybarplote@i#1{%
 	\bgroup
 	\use@par%
-	\myoldbarplot[shadow=true,shadowangle=45,blur=true]{#1}%
+	\myoldbarplot[shadow=true,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
 	\egroup
 }
 \let\myoldboxplot\myboxplot
 \def\myboxplot{\pst@object{myboxplote}}
 \def\myboxplote@i#1{%
 	\use@par%
-	\myoldboxplot[shadow=true,shadowangle=45,blur=true]{#1}%
+	\myoldboxplot[shadow=true,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
 }
+\newcommand{\mybrainstorming}{\protect\textit{brainstorming}\xspace}
+\newcommand{\myBrainstorming}{\protect\textit{Brainstorming}\xspace}
 % CCC
 \def\mycircleletter{\pst@object{mycircleletter}}%
 \def\mycircleletter@i(#1,#2)#3{%
@@ -44,6 +43,9 @@
 	}%
 }
 \newcommand{\myCUDA}{\textsc{cuda}\xspace}
+% DDD
+\newcommand{\mydocking}{\protect\textit{docking}\xspace}
+\newcommand{\myDocking}{\protect\textit{Docking}\xspace}
 % GGG
 \newcommand{\mygroup}[1]{$\mathcal{G}_{#1}$\xspace}
 % HHH
@@ -138,12 +140,22 @@
 \newcommand{\myRMSD}{\textsc{rmsd}\xspace}
 % SSS
 \newcommand{\myscenario}[1]{\textsc{#1}}
-\newcommand{\myShaddock}{Shaddock\xspace}
+\newcommand{\myShaddock}{\protect\textit{Shaddock}\xspace}
 % TTT
 \newcommand{\myTCPIP}{\textsc{tcp/ip}\xspace}
+\newcommand{\myTRPCAGE}{\textsc{trp-cage}\xspace}
+\newcommand{\myTRPZIPPER}{\textsc{trp-zipper}\xspace}
 % UUU
 \newcommand{\myUML}{\textsc{uml}\xspace}
 % VVV
+\def\mypsvibration(#1,#2){%
+	\psarc[linewidth=0.1pt](#1,#2){1}{21}{32}
+	\psarc[linewidth=0.1pt](#1,#2){1.05}{24}{29}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.8,-0.6)(0.6,1.1)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.6,-0.1)(0.4,1.1)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.6,-1)(1.6,0.6)}
+	\uput{10pt}[30](#1,#2){\psline[linewidth=0.1pt](-0.4,-1.1)(1.4,0.2)}
+}
 \newcommand{\myVGA}{\textsc{vga}\xspace}
 \newcommand{\myVMD}{\textsc{vmd}\xspace}
 \newcommand{\myVRPN}{\textsc{vrpn}\xspace}

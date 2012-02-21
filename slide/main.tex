@@ -1,14 +1,49 @@
-\documentclass[english,french,dvips,10pt]{mybeamer}
+\documentclass[english,french,dvips,10pt,notes]{mybeamer}
 \usepackage{my}
 \usepackage{mydate}
 \usepackage{mycolor}
 \usepackage{myfloat}
-\usepackage[biblatex]{mybib}
 \usepackage{myps}
 \usepackage{myuml}
+\usepackage{pgfpages}
+\usepackage{csquotes}
+\usepackage[sorting=ydnt,hyperref=true,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=true,date=short,urldate=short,block=space,maxcitenames=2,maxbibnames=99]{biblatex}
+\usepackage{filecontents}
+\begin{filecontents*}{data.dat}
+30 3.55358
+30 3.53549
+100 3.52737
+400 3.52774
+500 3.52127
+600 3.52125
+\end{filecontents*}
+
+%\setbeameroption{show notes on second screen}
+\includeonlyframes{current}
 
 \input{mymacro}
-%\includeonlyframes{current}
+\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
+\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
+\DeclareNameFormat{sortname}{% 
+	\begingroup%
+	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
+	\ifdefequal{\highlightname}{\currentsignature}%
+	{\let\mkbibnamefirst=\textbf\color{myblue}%
+		\let\mkbibnamelast=\textbf\color{myblue}%
+		\let\mkbibnameprefix=\textbf\color{myblue}%
+		\let\mkbibnameaffix=\textbf\color{myblue}}%
+	{}%
+	\ifnum\value{listcount}=1\relax%
+	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
+	\ifblank{#3#5}%
+	{}%
+	{\usebibmacro{name:revsdelim}}%
+	\else%
+	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+	\fi%
+	\endgroup%
+	\usebibmacro{name:andothers}%
+}
 
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
@@ -18,9 +53,40 @@
 	pdfsubject={Soutenance de thèse en informatique}%
 }
 
+\bibliography{biblio.bib}
+\makeatletter
+\newcommand{\mycite}[1]{\cite{#1}}
+\newcommand{\firstname}{Jean}
+\newcommand{\lastname}{Simard}
+\DeclareBibliographyCategory{myrefs}
+\DeclareIndexNameFormat{myrefs}{% Test could be refined
+	\ifboolexpr{%
+		test {\ifdefstring{\lastname}{#1}}
+	}{%
+		\addtocategory{myrefs}{\thefield{entrykey}}%
+	}{}%
+}
+\AtDataInput{%
+	\indexnames[myrefs]{author}%
+}
+
 \newcommand{\schemafactor}{1}
 \newlength{\schemaunit}
+\setbeamersize{text margin right=3em}
 
+\newenvironment<>{myframe}[2][environment=myframe]{%
+	\iflanguage{french}{%
+		\shorthandoff{!}%
+	}{}%
+	\begin{frame}#3[#1]{#2}%
+	\gdef\beamer@noteitems{}%
+	\gdef\beamer@notes{{}}%
+}{%
+	\end{frame}%
+	\iflanguage{french}{%
+		\shorthandon{!}%
+	}{}%
+}
 \newenvironment<>{myblock}[1]{%
 	\begin{block}{#1}%
 		\setbeamercolor{local structure}{fg=myblue!75}
@@ -39,11 +105,17 @@
 }{%
 	\end{alertblock}%
 }
+\def\mymultiline#1{\begin{psmatrix}[rowsep=0pt]#1\end{psmatrix}}
+\makeatother
 
-\addglobalbib[datatype=bibtex]{biblio.bib}
+%\addglobalbib[datatype=bibtex]{biblio.bib}
 
-\title{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
-\author[J. \myname{Simard}]{Jean \myname{Simard}}
+\title{Collaboration haptique étroitement couplée pour la manipulation moléculaire interactive}
+\author[J. \myname{Simard}]{%
+	{\normalsize Jean \myname{Simard}}\\[1ex]
+	sous la direction de Philippe \myname{Tarroux}\\
+	et l'encadrement scientifique de Mehdi \myname{Ammi}
+}
 \institute{\textsc{cnrs-limsi}}
 \school{Université de \myname{Paris}-Sud}
 \logo{%
@@ -52,19 +124,16 @@
 	\myimage[height=1cm]{logo-limsi}%
 }
 \date{\mydate[datestyle=long]{12/03/2012}}
-\newenvironment<>{myframe}[2][environment=myframe]{%
-	\iflanguage{french}{%
-		\shorthandoff{!}%
-	}{}%
-	\begin{frame}#3[#1]{#2}%
-}{%
-	\end{frame}%
-	\iflanguage{french}{%
-		\shorthandon{!}%
-	}{}%
-}
 
 \begin{document}
+	\nocite{Simard-2009}
+	\nocite{Simard-2010a}
+	\nocite{Simard-2010b}
+	\nocite{Simard-2010c}
+	\nocite{Simard-2011a}
+	\nocite{Simard-2011b}
+	\nocite{Simard-2012a}
+	\nocite{Simard-2012b}
 	\transfade[duration=0.1]
 	\begin{myframe}
 		\titlepage
@@ -75,10 +144,10 @@
 	\end{myframe}
 	\section{Introduction}
 	\begin{myframe}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
-	\subsection{\protect\textit{Docking} moléculaire}
-	\begin{myframe}{\protect\textit{Docking} moléculaire}
+	\subsection{\myDocking moléculaire}
+	\begin{myframe}{\myDocking moléculaire}
 		\begin{myplusblock}{Définition}%
 			ou \myemph{amarrage moléculaire}, consiste à trouver l'orientation et la conformation optimale permettant d'assembler \mynum{2}~molécules.%
 		\end{myplusblock}%
@@ -167,17 +236,17 @@
 							\rput(-9.5,0){\Huge\bfseries +}%
 						}
 					\end{myps}%
-					\mycaption[fig-DockingMoleculaire]{\textit{Docking} moléculaire}%
+					\mycaption[fig-DockingMoleculaire]{\myDocking moléculaire}%
 				\end{myfigure}%
 			\end{column}%
 			\begin{column}{0.35\textwidth}%
 				\begin{myblock}{Facteurs de complexité}%
 					\begin{itemize}%
-						\item<2-> Nombreux atomes%
-						\item<3-> Orientation%
-						\item<4-> Flexibilité%
-						\item<5-> Facteurs chimiques
-						\item<6-> Complémentarité%
+						\item<1-> Nombreux atomes%
+						\item<2-> Orientation et déplacement%
+						\item<3-> Flexibilité%
+						\item<4-> Facteurs chimiques
+						\item<5-> Complémentarité%
 							\begin{itemize}%
 								\item géométrique%
 								\item électrostatique%
@@ -187,131 +256,186 @@
 			\end{column}%
 		\end{columns}%
 	\end{myframe}
+	\subsection{Approches centrées sur l'humain}
+	\begin{myframe}{Approches centrées sur l'humain}
+		\begin{columns}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.45\textwidth]{sota-Davies-2005}
+					\mycaption[fig-sota-VisualisationMultimodaleDavies2005]{Visualisation multimodale \mycite{Davies-2005}}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.45\textwidth]{sota-Lai-Yuen-2006}
+					\mycaption[fig-sota-InterfaceHaptiqueA5DDLPourLeDockingLaiYuen2006]{Interface haptique à \mynum[\textsc{ddl}]{5} pour le \mydocking \mycite{Lai-Yuen-2006}}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
+		\begin{columns}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.45\textwidth]{sota-Daunay-2009}
+					\mycaption[fig-sota-DockingMoleculaireRigide]{\myDocking moléculaire rigide \mycite{Daunay-2009}}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.45\textwidth]{sota-Hou-2010}
+					\mycaption[fig-sota-ModeleHaptiquePourLeManipulationMoleculaire]{Modèle haptique pour la manipulation moléculaire \mycite{Hou-2010}}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
+		\onslide<2>{%
+			\hspace{\stretch{1}}L'outil \alert{haptique} s'impose comme outil de manipulation moléculaire\hspace{\stretch{1}}
+		}
+	\end{myframe}
 	\subsection{Distribution des charges de travail}
 	\begin{myframe}{Distribution des charges de travail}
-		\begin{myplusblock}{Définition}
+		\begin{myplusblock}{Définition \mycite{Conein-2004}}
 			Étendre la capacité cognitive d'analyse d'un individu pour inclure le matériel et l'environnement social comme composant d'un système cognitif plus étendu.
 		\end{myplusblock}
 
-		\begin{columns}[T]%
-			\begin{column}{0.55\textwidth}%
-				\begin{myfigure}%
-					\psset{unit=0.105\textwidth}%
-					\definecolor{mylightestredblue}{rgb}{0.875 0.705 0.79328125}
-					\begin{myps}(-5,-2.5)(5,4)
-						\footnotesize%
-						\pspolygon*[linearc=0.5,linecolor=mylightestred](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
-						\pspolygon*[linearc=0.5,linecolor=mylightestblue](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
-						\psclip{%
-							\pscustom[linestyle=none]{%
-								\pspolygon*[linearc=0.5](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
-							}%
-							\pscustom[linestyle=none]{%
-								\pspolygon*[linearc=0.5](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
-							}%
-						}%
-						\psframe*[linecolor=mylightestredblue](-5,-2.5)(5,4)%
-						\endpsclip%
-						\psset{fillcolor=white}%
-						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,0)(-0.5,4)%
-						\rput(-2.5,3.75){\textcolor{black!70}{Espace interne}}%
-						\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](4.5,0)(0.5,4)%
-						\rput(2.5,3.75){\textcolor{black!70}{Espace externe}}%
-						\psframe[linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,-2.5)(4.5,-0.5)%
-						\mynode(-2,3.15)[individu1]{\textcolor{myblue}{Individu~\mynum{1}}}%
-						\mynode(-3,2)[individu2]{\textcolor{myred}{Individu~\mynum{2}}}%
-						\mynode(-2,0.85)[individu3]{\textcolor{mygreen}{Individu~\mynum{3}}}%
-						\mynode(2.5,2.75)[artefact1]{Artefact~\mynum{1}}%
-						\mynode(2.5,1.25)[artefact2]{Artefact~\mynum{2}}%
-						\psellipse[fillstyle=solid,fillcolor=white](0,-1.25)(1,0.5)%
-						\rput(0,-1.25){Tâche}%
-						\rput(0,-2.25){\textcolor{black!70}{Abstraction de l'espace de travail}}%
-						\psset{linewidth=0.5pt}
-						\psset{arrows={<->}}%
-						\ncline{individu1}{individu2}%
-						\ncline{individu2}{individu3}%
-						\ncline[offset=8pt]{individu1}{individu3}%
-						\psset{arrows={-}}%
-						\ncline{artefact1}{artefact2}%
-						\psset{arrows={<->}}%
-						\psset{linecolor=myblue}%
-						\ncline{individu1}{artefact1}%
-						\ncline{individu1}{artefact2}%
-						\psset{linecolor=myred}%
-						\ncline{individu2}{artefact1}%
-						\ncline{individu2}{artefact2}%
-						\psset{linecolor=mygreen}%
-						\ncline{individu3}{artefact1}%
-						\ncline{individu3}{artefact2}%
-					\end{myps}
-					\mycaption[fig-sota-SystemeCognitifDistribue]{Système cognitif distribué}
+		\begin{myfigure}%
+			\psset{unit=0.06\textwidth}%
+			\definecolor{mylightestredblue}{rgb}{0.875 0.705 0.79328125}
+			\begin{myps}(-5,-2.5)(5,4)
+				\footnotesize%
+				\pspolygon*[linearc=0.5,linecolor=mylightestred](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
+				\pspolygon*[linearc=0.5,linecolor=mylightestblue](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
+				\psclip{%
+					\pscustom[linestyle=none]{%
+						\pspolygon*[linearc=0.5](-0.5,4)(-4.5,4)(-4.5,0)(-0.5,-1.7)(1.15,-1.6)%
+					}%
+					\pscustom[linestyle=none]{%
+						\pspolygon*[linearc=0.5](0.5,4)(4.5,4)(4.5,0)(0.5,-1.7)(-1.15,-1.6)%
+					}%
+				}%
+				\psframe*[linecolor=mylightestredblue](-5,-2.5)(5,4)%
+				\endpsclip%
+				\psset{fillcolor=white}%
+				\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,0)(-0.5,4)%
+				\rput(-2.5,3.75){\textcolor{black!70}{Espace interne}}%
+				\psframe[fillstyle=solid,linecolor=black!70,linestyle=dashed,framearc=0.25](4.5,0)(0.5,4)%
+				\rput(2.5,3.75){\textcolor{black!70}{Espace externe}}%
+				\psframe[linecolor=black!70,linestyle=dashed,framearc=0.25](-4.5,-2.5)(4.5,-0.5)%
+				\mynode(-2,3.15)[individu1]{\textcolor{myblue}{Individu~\mynum{1}}}%
+				\mynode(-3,2)[individu2]{\textcolor{myred}{Individu~\mynum{2}}}%
+				\mynode(-2,0.85)[individu3]{\textcolor{mygreen}{Individu~\mynum{3}}}%
+				\mynode(2.5,2.75)[artefact1]{Artefact~\mynum{1}}%
+				\mynode(2.5,1.25)[artefact2]{Artefact~\mynum{2}}%
+				\psellipse[fillstyle=solid,fillcolor=white](0,-1.25)(1,0.5)%
+				\rput(0,-1.25){Tâche}%
+				\rput(0,-2.25){\textcolor{black!70}{Abstraction de l'espace de travail}}%
+				\psset{linewidth=0.5pt}
+				\psset{arrows={<->}}%
+				\ncline{individu1}{individu2}%
+				\ncline{individu2}{individu3}%
+				\ncline[offset=8pt]{individu1}{individu3}%
+				\psset{arrows={-}}%
+				\ncline{artefact1}{artefact2}%
+				\psset{arrows={<->}}%
+				\psset{linecolor=myblue}%
+				\ncline{individu1}{artefact1}%
+				\ncline{individu1}{artefact2}%
+				\psset{linecolor=myred}%
+				\ncline{individu2}{artefact1}%
+				\ncline{individu2}{artefact2}%
+				\psset{linecolor=mygreen}%
+				\ncline{individu3}{artefact1}%
+				\ncline{individu3}{artefact2}%
+			\end{myps}
+			\mycaption[fig-sota-SystemeCognitifDistribue]{Système cognitif distribué}
+		\end{myfigure}
+	\end{myframe}
+	\subsection{Approches collaboratives}
+	\begin{myframe}{Approches collaboratives}
+		\begin{columns}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.6\textwidth]{sota-Kriz-2003}
+					\mycaption[fig-sota-ManipulationSynchroneKriz2003]{Manipulation synchrone \mycite{Kriz-2003}}
 				\end{myfigure}
 			\end{column}
-			\begin{column}{0.4\textwidth}
-				\begin{myblock}{Travaux sur la collaboration}
-					\begin{itemize}
-						\item<2-> manipulation colocalisée \mycite{Kriz-2003}
-						\item<3-> un manipulateur guidé par deux partenaires \mycite{Park-2006}
-						\item<4-> inter-référencement \mycite{Chastine-2007}
-						\item<5-> gestion des droits \mycite{Ma-2007}
-					\end{itemize}
-				\end{myblock}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.6\textwidth]{sota-Park-2006}
+					\mycaption[fig-sota-ManipulationAsymetriqueGuideeParDesExpertsPark2006]{Manipulation asymétrique guidée par des experts \mycite{Park-2006}}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
+		\begin{columns}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.6\textwidth]{sota-Chastine-2007}
+					\mycaption[fig-sota-InterReferencementChastine2007]{Inter-référencement \mycite{Chastine-2007}}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\begin{myfigure}
+					\myimage[width=0.6\textwidth]{sota-Ma-2007}
+					\mycaption[fig-sota-GestionDesDroitsDAcces]{Gestion des droits d'accès \mycite{Ma-2007}}
+				\end{myfigure}
 			\end{column}
 		\end{columns}
 	\end{myframe}
 	\subsection{Objectifs de la thèse}
 	\begin{myframe}{Objectifs de la thèse}
-		\begin{myminusblock}{Problématique}
+		\begin{myminusblock}{Problématiques}
 			\begin{itemize}
-				\item Quels sont les avantages du travail en collaboration ?
-				\item Quelles problématiques supplémentaires la collaboration apporte-t-elle ?
+				\item Quels sont les avantages du travail en collaboration étroitement couplée ?
+					\note[item]{Quelles sont les influences d'une collaboration nécessitant une forte coordination entre les collaborateurs ?}
+				\item Quelles problématiques la collaboration apporte-t-elle ?
 				\item Comment améliorer la collaboration dans un environnement de travail complexe ?
 			\end{itemize}
 		\end{myminusblock}
-		\begin{myplusblock}{Objectifs}
-			Analyser le travail collaboratif dans le contexte du \textit{docking} moléculaire pour proposer des outils haptique adaptés.
+		\begin{myplusblock}{Démarche}
 			\begin{enumerate}
-				\item Étudier le travail collaboratif dans les tâches de manipulation moléculaire
-				\item Identifier les faiblesses de cette configuration de travail
-				\item Proposer des solutions appropriées pour assister le travail
-				\item Évaluer ces solutions en situation réelle
+				\item Étudier et analyser le travail collaboratif étroitement couplé
+				\item Identifier les limites et les contraintes
+				\item Proposer des solutions haptiques pour améliorer cette configuration
+				\item Évaluer ces solutions dans une tâche de \mydocking moléculaire
 			\end{enumerate}
 		\end{myplusblock}
 	\end{myframe}
 	\section{Plateforme de manipulation moléculaire \myShaddock}
 	\begin{myframe}{Sommaire}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
 	\subsection{Cahier des charges}
 	\begin{myframe}{Cahier des charges}
+		\note{Il n'existe pas de plateforme appropriée qui répondent à nos besoins.}
+		\note[item]{Pas de manipulation colocalisée}
+		\note[item]{Manipulation de molécules simples}
 		\begin{myblock}{Objectif}
-			Élaborer une plateforme pour étudier le travail collaboratif dans le contexte de la manipulation interactive de molécules.
+			Élaborer une plateforme permettant la collaboration étroitement couplée pour la manipulation moléculaire
 		\end{myblock}
 		\begin{columns}[T]
 			\begin{column}{0.475\textwidth}
-				\begin{myminusblock}{Contraintes}
+				\begin{myminusblock}{Contraintes à respecter}
 					\begin{itemize}
-						\item Travail en collaboration
-						\item Interaction temps-réel avec des molécules
+						\item Interaction synchrone sur des molécules
+						\item Simulation de la dynamique moléculaire
 						\item Manipulation à l'aide d'interface haptique
-						\item Simulation temps-réel de la dynamique des molécules
+						\item Plusieurs outils différents
 					\end{itemize}
 				\end{myminusblock}
 			\end{column}
 			\begin{column}{0.475\textwidth}
-				\begin{myplusblock}{Solutions}
+				\begin{myplusblock}{Solutions proposées}
 					\begin{itemize}
-						\item Modularité
-						\item Composant logiciels existants en biologie
-						\item Modules dédiés à la réalité virtuelle
+						\item Modularité logicielle
+						\item Modularité matérielle
+						\item Développement basé sur des logiciels de biologie existants
+						\item Utilisation de modules dédiés à la réalité virtuelle
 						\item Développement de nouveaux outils
 					\end{itemize}
 				\end{myplusblock}
 			\end{column}
 		\end{columns}
 	\end{myframe}
-	\subsection{Organisation logicielle de la plateforme \myShaddock}
-	\begin{myframe}{Organisation logicielle de la plateforme \myShaddock}
+	\subsection{Organisation logicielle}
+	\begin{myframe}{Organisation logicielle}
 		\begin{myfigure}
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
@@ -323,34 +447,34 @@
 				\uput[-90](0,6){\large\textcolor{myblue!25}{Visualisation}}
 				\uput[-90](5,6){\large\textcolor{myred!25}{Interaction}}
 				\uput[-90](0,5){%
-					\myumlnode*<PCUtilisateur>{\vphantom{pÉ}\scriptsize Nœud principal}{%
-						\myumlcomponent<VMD>[\tiny application]{\scriptsize\myVMD}%
+					\myumlnode*<PCUtilisateur>{\vphantom{pÉ}\footnotesize Nœud principal}{%
+						\myumlcomponent<VMD>[\textcolor{myblue!50}{\scriptsize application}]{\footnotesize\myVMD}%
 					}%
 				}
 				\uput[-90](-5,5){%
-					\myumlnode*<ServeurNAMD>{\vphantom{pÉ}\scriptsize Nœud \myNAMD}{%
+					\myumlnode*<ServeurNAMD>{\vphantom{pÉ}\footnotesize Nœud \myNAMD}{%
 						\begin{psmatrix}[rowsep=1]%
-							\myumlcomponent<NAMD>[\tiny programme]{{\scriptsize\texttt{namd2}}} \\%
-							\myumlcomponent<FichierSimulation>[\tiny fichier]{%
+							\myumlcomponent<NAMD>[\textcolor{myblue!50}{\scriptsize programme}]{{\footnotesize\texttt{namd2}}} \\%
+							\myumlcomponent<FichierSimulation>[\textcolor{myblue!50}{\scriptsize fichier}]{%
 								\\[-1ex]%
 								\begin{psmatrix}[rowsep=0]%
-									\scriptsize Données de\\\scriptsize simulation%
+									\footnotesize Données de\\\footnotesize simulation%
 								\end{psmatrix}%
 							}
 						\end{psmatrix}%
 					}%
 				}
 				\uput[-90](5,5){%
-					\myumlnode*<ServeurVRPN1>{\vphantom{pÉ}\scriptsize Nœud \myVRPN}{%
-						\myumlcomponent<VRPN1>[\tiny programme]{{\scriptsize\texttt{vrpn\_server}}}%
+					\myumlnode*<ServeurVRPN1>{\vphantom{pÉ}\footnotesize Nœud \myVRPN}{%
+						\myumlcomponent<VRPN1>[\textcolor{myblue!50}{\scriptsize programme}]{{\footnotesize\texttt{vrpn\_server}}}%
 					}%
 				}
 				\uput[-90](5,0){%
-					\myumlnode<PHANToM1>[\tiny\myOmni]{\vphantom{pÉ}\scriptsize Interface}%
+					\myumlnode<PHANToM1>[\textcolor{myblue!50}{\scriptsize\myOmni}]{\vphantom{pÉ}\footnotesize Interface}%
 				}
 				\rput(5,-4){\Large$\vdots$}
 				\uput[-90](0,0){%
-					\myumlnode<VideoProjecteur>[\tiny vue partagée]{\scriptsize Vidéoprojecteur}
+					\myumlnode<VideoProjecteur>[\textcolor{myblue!50}{\scriptsize vue partagée}]{\footnotesize Dispositif d'affichage}
 				}
 				\psset{shadow=false}
 
@@ -362,76 +486,13 @@
 			\end{myps}
 			\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
 		\end{myfigure}
+		\note{Cette plateforme a donné lieu à un travail d'intégration important.}
+		\note[item]{Le nœud \myNAMD nécessite une configuration importante pour la simulation}
+		\note[item]{Le nœud \myVRPN a nécessité une modification qui a été soumise et intégrée par les développeurs dans les nouvelles versions}
+		\note[item]{C'est au niveau de \myVMD que le plus gros développement a été effectué avec l'ajout de nouveaux outils dédiés pour améliorer la manipulation interactive}
 	\end{myframe}
-	\subsection{Organisation matérielle de la plateforme \myShaddock}
-	\begin{myframe}{Organisation matérielle de la plateforme \myShaddock}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)%
-				\only<1-6>{%
-				\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}%
-				\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-photo}}%
-				\pnode(0.52,0.66){tug1}%
-				\pnode(0.62,0.76){tug1-from}%
-				\pnode(0.62,0.60){tug2}%
-				\pnode(0.72,0.70){tug2-from}%
-				\pnode(0.57,0.63){grab}%
-				\pnode(0.67,0.73){grab-from}%
-			}%
-				\only<3>{%
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
-					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
-				}%
-				\only<4>{%
-					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
-				}%
-				\only<5>{%
-					\pspolygon[linewidth=4pt,linecolor=myred](0.60,0.68)(0.61,0.93)(0.86,0.88)(0.83,0.57)%
-				}%
-				\only<6>{%
-					\pspolygon[linewidth=2pt,linecolor=myred](0.64,0.63)(0.65,0.69)(0.71,0.665)(0.70,0.60)%
-				}%
-				\only<7>{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-photo}}
-					\pnode(0.59,0.6){grab}
-					\pnode(0.69,0.7){grab-from}
-					\ncline[linewidth=2.5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}
-				}
-				\only<8>{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-photo}}
-					\pnode(0.52,0.675){tug1}
-					\pnode(0.62,0.775){tug1-from}
-					\pnode(0.55,0.65){tug2}
-					\pnode(0.65,0.75){tug2-from}
-					\pnode(0.58,0.63){tug3}
-					\pnode(0.68,0.73){tug3-from}
-					\pnode(0.62,0.61){tug4}
-					\pnode(0.72,0.71){tug4-from}
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}
-					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}
-					\ncline[linewidth=2.5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
-					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
-				}
-				\only<9>{
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp4-schema}}
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp4-photo}}
-					\pnode(0.51,0.67){tug1a}
-					\pnode(0.54,0.65){tug1b}
-					\pnode(0.61,0.775){tug1-from}
-					\pnode(0.58,0.63){tug3}
-					\pnode(0.68,0.73){tug3-from}
-					\pnode(0.63,0.61){tug4}
-					\pnode(0.73,0.71){tug4-from}
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1a}
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1b}
-					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug3-from}{tug3}
-					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}
-				}
-			\end{myps}
-			\mycaption[fig-PlateFormeExperimentale1]{Plate-forme expérimentale}
-		\end{myfigure}
+	\subsection{Organisation matérielle}
+	\begin{myframe}{Organisation matérielle}
 		\only<1>{
 			\begin{itemize}
 				\item Configuration \alert{colocalisée} et \alert{synchrone}
@@ -439,69 +500,126 @@
 		}
 		\only<2>{
 			\begin{itemize}
-				\item \alert{Communication} orale et gestuelle autorisée
+				\item Communication \alert{orale} et \alert{gestuelle} autorisée
 			\end{itemize}
 		}
 		\only<3>{
 			\begin{itemize}
-				\item Outil de \alert{déformation} de la molécule (Omni de SensAble\myregistered)
+				\item Vue \alert{partagée}
 			\end{itemize}
 		}
 		\only<4>{
 			\begin{itemize}
-				\item Outil pour \alert{déplacer} la molécule (Omni de SensAble\myregistered)
+				\item Outil pour la \alert{déformation} ou le \alert{déplacement} de molécule (\myOmni)
 			\end{itemize}
 		}
 		\only<5>{
 			\begin{itemize}
-				\item Vue monoscopique, unique, \alert{publique} et vidéoprojetée
+				\item Outil pour l'\alert{orientation} de la molécule (SpaceTraveler de 3\textsc{d}connexion\myregistered{})
 			\end{itemize}
 		}
 		\only<6>{
 			\begin{itemize}
-				\item Affichage \alert{déporté} des objectifs
-			\end{itemize}
-		}
-		\only<7>{
-			\begin{itemize}
-				\item Outil pour \alert{orienter} la molécule (SpaceTraveler de 3\textsc{d}connexion\myregistered{})
-			\end{itemize}
-		}
-		\only<8>{
-			\begin{itemize}
 				\item Nombre d'outils quasiment \alert{illimité}
 			\end{itemize}
 		}
-		\only<9>{
-			\begin{itemize}
-				\item Collaboration \alert{asymétrique} entre les participants
-			\end{itemize}
-		}
+		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
+		\begin{myfigure}
+			\begin{myps}(0,0)(1,1)%
+				\only<1-6>{%
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}%
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-photo}}%
+					\pnode(0.52,0.66){tug1}%
+					\pnode(0.62,0.76){tug1-from}%
+					\pnode(0.62,0.60){tug2}%
+					\pnode(0.72,0.70){tug2-from}%
+					\pnode(0.57,0.63){grab}%
+					\pnode(0.67,0.73){grab-from}%
+				}%
+				\only<3>{%
+					\pspolygon[linewidth=4pt,linecolor=myred](0.60,0.68)(0.61,0.93)(0.86,0.88)(0.83,0.57)%
+				}%
+				\only<4>{%
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
+					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
+					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
+				}%
+				\only<5>{%
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}%
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-photo}}%
+					\pnode(0.59,0.6){grab}%
+					\pnode(0.69,0.7){grab-from}%
+					\ncline[linewidth=2.5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
+				}%
+				\only<6>{%
+					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}%
+					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-photo}}%
+					\pnode(0.52,0.675){tug1}%
+					\pnode(0.62,0.775){tug1-from}%
+					\pnode(0.55,0.65){tug2}%
+					\pnode(0.65,0.75){tug2-from}%
+					\pnode(0.58,0.63){tug3}%
+					\pnode(0.68,0.73){tug3-from}%
+					\pnode(0.62,0.61){tug4}%
+					\pnode(0.72,0.71){tug4-from}%
+					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
+					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
+					\ncline[linewidth=2.5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}%
+					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}%
+				}%
+			\end{myps}
+			\mycaption[fig-PlateFormeExperimentale1]{Plate-forme expérimentale}
+		\end{myfigure}
 	\end{myframe}
 	\subsection{Outils supplémentaires proposés}
 	\begin{myframe}{Outils supplémentaires proposés}
 		\begin{myblock}{Objectif}
-			Faciliter le processus de sélection dans l'application \myVMD
+			Faciliter le processus de sélection d'une structure moléculaire dans \myVMD
 		\end{myblock}
 
+		\only<1>{
+			\begin{itemize}
+				\item Sélection difficile (nombre d'atomes important, cibles en mouvement, \dots)
+			\end{itemize}
+		}
+		\only<2-3>{
+			\begin{itemize}
+				\item Attraction haptique sur les structures (champ de potentiel \mycite{Simard-2009})
+			\end{itemize}
+		}
+		\only<4>{
+			\begin{itemize}
+				\item Possibilité de pointer un atome\dots{}
+			\end{itemize}
+		}
+		\only<5>{
+			\begin{itemize}
+				\item \dots{} ou un résidue (ou d'autres structures moléculaires)
+			\end{itemize}
+		}
+		\only<6>{
+			\begin{itemize}
+				\item Pour enfin le sélectionner
+			\end{itemize}
+		}
 		\begin{myfigure}
 			\psset{xunit=0.6\textwidth,yunit=0.365838509\textwidth}
 			\begin{myps}(0,0)(1,1)%
 				\rput(0.5,0.5){%
-					\only<1-2>{%
+					\only<1-3>{%
 						\myimage[width=0.6\textwidth]{select-molecule}%
 					}%
-					\only<3>{%
+					\only<4>{%
 						\myimage[width=0.6\textwidth]{select-atom-target}%
 					}%
-					\only<4>{%
+					\only<5>{%
 						\myimage[width=0.6\textwidth]{select-residue-target}%
 					}%
-					\only<5>{%
+					\only<6>{%
 						\myimage[width=0.6\textwidth]{select-residue-select}%
 					}%
 				}%
-				\only<2>{%
+				\only<2-3>{%
 					\psarc{c-c}(0.88,0.86){0.13}{-45}{45}%
 					\psarc{c-c}(0.88,0.86){0.20}{-45}{45}%
 					\psarc{c-c}(0.88,0.86){0.30}{-45}{45}%
@@ -509,9 +627,23 @@
 					\uput{0pt}[15](1.1,0.92){%
 						\myimage[width=40pt]{red-cursor}%
 					}%
-					\psline[linewidth=2pt,linecolor=mygreen]{c->}(1.075,0.86)(0.95,0.86)
 				}%
-				\only<3->{%
+				\only<3>{%
+					\psline[linewidth=2pt,linecolor=mygreen]{c->}(1.075,0.86)(0.95,0.86)
+					\uput{0pt}[-45](0.8,0.75){%
+						\psframebox*[fillcolor=black!5,framearc=0.25,boxsep=true,framesep=5pt]{%
+							\begin{psmatrix}[colsep=0pt,rowsep=2ex]
+								\textbf{Champ de force}\\%
+								{\small$\displaystyle F(d)=\phi\frac{d}{\sigma}\exp\left[\frac{\sigma^2-d^2}{2\sigma^2}\right]$}\\%
+								\begin{mygraph}[labels=none,ticks=none,xAxisLabel={distance},xAxisLabelPos={c,-1ex},llx={-1ex},yAxisLabel={force},yAxisLabelPos={-1ex,c},lly={-1ex}]{->}(4.5,2.5){3cm}{1cm}%
+									\newcommand{\E}{2.828182845904523536028747135266249 }%
+									\psplot[linecolor=red,linewidth=0.5pt,plotpoints=500,arrows=c-c]{0}{4}{2 \E 1 2 div exp x \E 0 x 2 exp 2 div sub exp mul mul mul}%
+								\end{mygraph}%
+							\end{psmatrix}
+						}%
+					}%
+				}%
+				\only<4->{%
 					\uput{0pt}[15](0.91,0.92){%
 						\myimage[width=40pt]{red-cursor}%
 					}%
@@ -519,34 +651,9 @@
 			\end{myps}
 			\mycaption[fig-OutilDeSelectionAmeliore]{Outil de sélection amélioré}
 		\end{myfigure}
-		\only<1>{
-			\begin{itemize}
-				\item Pointage d'une cible difficile
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Modèle haptique d'attraction sur les atomes
-			\end{itemize}
-		}
-		\only<3>{
-			\begin{itemize}
-				\item Possibilité de pointer un atome\dots{}
-			\end{itemize}
-		}
-		\only<4>{
-			\begin{itemize}
-				\item \dots{} ou un résidue (ou d'autres structures moléculaires)
-			\end{itemize}
-		}
-		\only<5>{
-			\begin{itemize}
-				\item Pour enfin le sélectionner
-			\end{itemize}
-		}
 	\end{myframe}
 	\section{Étude du travail collaboratif}
-	\begin{myframe}<1-7>[label={fra-sota-LesEtapesDeLEtude}]{Les étapes de l'étude}
+	\begin{myframe}<1-7>[label={fra-sota-PrimitivesComportementales}]{Primitives Comportementales (PC)}
 		\begin{columns}[T]
 			\begin{column}{0.45\textwidth}
 				\begin{myfigure}
@@ -606,12 +713,13 @@
 			\only<1-7>{%
 				\begin{column}{0.5\textwidth}%
 					\begin{myblock}{Description}%
-						Basé sur les PCV de \mycite[author]{Fuchs-2006}%
+						Basé sur les PC Virtuelles \mycite{Fuchs-2006}%
 						\begin{description}%
-							\item<2->[Recherche] Identifier une tâche élémentaire%
-							\item<3->[Sélection] Sélectionner une structure moléculaire (atome, résidue, \dots)%
-							\item<4->[Manipulation] Déplacer ou déformer la molécule%
-							\item<5->[Évaluation] Évaluer l'équilibre physico-chimique de la molécule%
+							\item<2->[Recherche] Identifier une cible (atome, résidue, \dots)%
+							\item<3->[Sélection] Sélectionner la structure moléculaire identifiée%
+							\item<4->[Manipulation] Déplacer ou orienter la structure moléculaire%
+								\note[item]<4->{Ceci a pour effet de déformer la molécule qui peut être considéré comme un corps articulé.}%
+							\item<5->[Évaluation] Évaluer l'équilibre physico-chimique%
 							\item<6->[Recommencer] Si l'évaluation n'est pas satisfaisante%
 						\end{description}%
 					\end{myblock}%
@@ -623,15 +731,15 @@
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
-	\againframe<8>{fra-sota-LesEtapesDeLEtude}
+	\againframe<8>{fra-sota-PrimitivesComportementales}
 	\subsubsection{Objectifs}
 	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
-			Étudier la contribution et les contraintes de la collaboration dans une tâche de recherche de structures moléculaires dans un environnement complexe
+			Étudier la contribution et les contraintes de la collaboration dans une tâche de recherche et de sélection de structures moléculaires
 		\end{myblock}
 		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
-				\item Amélioration des performances (individuel $\rightarrow$ collaboratif)
+				\item Amélioration des performances (individuel \myvs collaboratif)
 				\item Identifier les stratégies de travail
 				\item Utilisabilité de la plate-forme
 			\end{enumerate}
@@ -639,12 +747,12 @@
 		\begin{myblock}{Variables}
 			\begin{description}
 				\item[Nombre de sujets] monôme (\mynum{24}~sujets) ou binôme (\mynum{12}~couples)
-				\item[Complexité du \emph{residue}] Forme, nature, position, similarités\dots{}
+				\item[Complexité de la tâche] Forme, nature, position, similarités\dots{}
 			\end{description}
 		\end{myblock}
 	\end{myframe}
-	\subsubsection{Protocole expérimental}
-	\begin{myframe}{La tâche}
+	\subsubsection{Présentation de la tâche proposée}
+	\begin{myframe}{Présentation de la tâche proposée}
 		\renewcommand{\schemafactor}{0.1125}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
 		\psset{unit=\schemaunit}
@@ -715,40 +823,56 @@
 				\myleg{monôme}{myblue}%
 				\myleg{binôme}{myblue!70}%
 			}
-			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,2cm){temps~(s)}
-				\myboxplot{exp1-time-residue-group.csv}
+			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,3cm){temps~(s)}
+				\myboxplot{exp1-time-residue-group.csv}%
 				\only<2>{%
-					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,200)
-					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,200)
-				}
-				\only<3>{%
-					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,300)
-					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)
-				}
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,200)%
+					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,200)%
+				}%
+				\only<3,5>{%
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,300)%
+				}%
+				\only<3-4>{%
+					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)%
+				}%
+				\only<4>{%
+					\uput[90](9,450){\textcolor{mygreen}{Recherche}}%
+				}%
+				\only<5>{%
+					\uput[90](5.5,300){\textcolor{mygreen}{Sélection}}%
+					\note[item]<5>{C'est cette constatation qui nous a amené à améliorer les outils de sélection.}
+				}%
 			\end{myboxgraph}
 			\mycaption[fig-TempsDeRealisationDeLaTache]{Temps de réalisation de la tâche}
 		\end{myfigure}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{recherche}{myblue}%
-				\myleg{sélection}{myblue!70}%
-			}
-			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,2cm){temps~(s)}
-				\myboxplot{exp1-timeaudio-residue-searchselection.csv}
-				\only<2>{%
-					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,100)
-					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,100)
-				}
-				\only<3>{%
-					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,250)
-					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)
-				}
-			\end{myboxgraph}
-			\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionCompares]{Temps de recherche et de sélection comparés}
-		\end{myfigure}
+		\begin{myblock}{Synthèse}
+			\begin{itemize}
+				\item<2-> Pas d'évolution sur les tâches simples
+				\item<3-> Une amélioration significative de la collaboration sur les tâches complexes
+			\end{itemize}
+		\end{myblock}
+%		\begin{myfigure}
+%			\mylegend{%
+%				\myleg{recherche}{myblue}%
+%				\myleg{sélection}{myblue!70}%
+%			}
+%			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](10,0.75\textwidth)[100]{résidu}(500,2cm){temps~(s)}
+%				\myboxplot{exp1-timeaudio-residue-searchselection.csv}
+%				\only<2>{%
+%					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](0,0)(5,100)
+%					\psframe[linecolor=myred,linewidth=2pt,framearc=0.25,dimen=inner](6,0)(8,100)
+%				}
+%				\only<3>{%
+%					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](5,0)(6,250)
+%					\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25,dimen=inner](8,0)(10,450)
+%				}
+%			\end{myboxgraph}
+%			\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionCompares]{Temps de recherche et de sélection comparés}
+%		\end{myfigure}
 	\end{myframe}
 	\begin{myframe}{Stratégies de travail}
 		\begin{myfigure}
+			\readdata{\data}{data.dat}
 			\begin{myboxgraph}[lly=-5ex,xAxisLabelPos={c,-5ex}](12,0.75\textwidth)[4]{binôme}(24,2cm){distance~(mm)}
 				\psframe*[linecolor=myred!25,dimen=inner](0,0)(12,8)
 				\psframe*[linecolor=mygreen!25](0,8)(12,14)
@@ -763,6 +887,17 @@
 				\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
 				\mybarplot[header=false,barstyle=second-barstyle]{exp1-diff-groups2.csv}
 				\mybarplot[header=true,barstyle=first-barstyle]{exp1-diff-groups1.csv}
+				\psaxes[linecolor=myred,xAxis=false,Dy=4,labels=none,yAxisLabelPos={2em,c},yticksize=0pt 3pt]{->}(12,0)(0,24)
+				\uput[0](12,0){\textcolor{myred}{0}}
+				\uput[0](12,4){\textcolor{myred}{1}}
+				\uput[0](12,8){\textcolor{myred}{2}}
+				\uput[0](12,12){\textcolor{myred}{3}}
+				\uput[0](12,16){\textcolor{myred}{4}}
+				\uput[0](12,20){\textcolor{myred}{5}}
+				\uput{1.5em}[0](12,10){\rotateright{\textcolor{myred}{affinité~(1--5)}}}
+				\pstScalePoints(1,4){}{}
+				\readdata{\affinitygroupsdata}{files/exp1-affinity-groups.csv}
+				\listplot[linecolor=myred,linewidth=2pt,showpoints=true,shadow=false]{\affinitygroupsdata}
 				\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
 				\uput[180](12,5){\pscharpath{\Large\bf\sffamily Champ proche}}
 				\psset{fillcolor=mygreen}
@@ -772,18 +907,17 @@
 			\end{myboxgraph}
 			\mycaption[fig-DistanceMoyenneEntreLeCurseurDesSujets]{Distance moyenne entre le curseur des sujets}
 		\end{myfigure}
-		\begin{myfigure}
-			\begin{myboxgraph}[lly=-5ex,xAxisLabelPos={c,-5ex}](12,0.75\textwidth){binôme}(6,2cm){affinité~(\mynum{1}--\mynum{5})}
-				\mybarplot{exp1-affinity-groups.csv}
-				\psframe[linecolor=myblue,linewidth=2pt,framearc=0.25](0,0)(1,-1.75)
-				\psframe[linecolor=mygreen,linewidth=2pt,framearc=0.25](1,0)(4,-1.75)
-				\psframe[linecolor=myred,linewidth=2pt,framearc=0.25](4,0)(12,-1.75)
-			\end{myboxgraph}
-			\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque binômes}
-		\end{myfigure}
+		\begin{myblock}{Synthèse}
+			Trois stratégies liée à l'affinité entre les collaborateurs
+			\begin{description}
+				\item[Champs distants] Peu de collaboration avec peu de conflits de coordination
+				\item[Champs voisins] Bonne collaboration avec conflits de coordination
+				\item[Champs proches] Forte collaboration mais conflits de coordination importants
+			\end{description}
+		\end{myblock}
 	\end{myframe}
-	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{1}}
-	\begin{myframe}{Synthèse de l'étude~\mynum{1}}
+	\subsubsection{Synthèse}
+	\begin{myframe}{Synthèse}
 		\begin{columns}[t]
 			\begin{column}{0.475\textwidth}
 				\centering
@@ -797,8 +931,9 @@
 				\vfill
 				\begin{myminusblock}{Limites}
 					\begin{itemize}
-						\item La complexité de la tâche influe-t-elle sur les performances ?
 						\item Comment définir une tâche \myemph{complexe} ?
+						\item La complexité de la tâche influe-t-elle sur les performances ?
+							\note[item]{L'analyse de l'influence de la complexité de la tâche sur les performances sera l'un des objets de la prochaine étude.}
 					\end{itemize}
 				\end{myminusblock}
 			\end{column}
@@ -815,6 +950,8 @@
 				\begin{myminusblock}{Limites}
 					\begin{itemize}
 						\item Modification du comportement naturel des groupes
+						\item Conflits de coordination en champs voisins
+							\note[item]{Dans la prochaine étude, nous allons également tenter de mettre en évidence les conflits de coordination.}
 					\end{itemize}
 				\end{myminusblock}
 			\end{column}
@@ -824,7 +961,7 @@
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
-	\againframe<9>{fra-sota-LesEtapesDeLEtude}
+	\againframe<9>{fra-sota-PrimitivesComportementales}
 	\subsubsection{Objectifs}
 	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
@@ -832,89 +969,137 @@
 		\end{myblock}
 		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
-				\item Amélioration des performances (individuel $\rightarrow$ collaboration)
+				\item Amélioration des performances (bimanuel \myvs collaboratif)
 				\item La complexité de la tâche influence différemment les performances individuelles et collaboratives
-				\item Évaluation du travail collaboratif par les sujets
 			\end{enumerate}
 		\end{myplusblock}
 		\begin{myblock}{Variables}
 			\begin{description}
 				\item[Nombre de sujets] monôme (\mynum{12}~sujets) ou binôme (\mynum{12}~couples)
-				\item[Complexité de la molécule] \mynum{2}~molécules de taille différente
+				\item[Complexité de la molécule] \mynum{2}~molécules (\myTRPZIPPER et \myTRPCAGE)
 				\item[Outil de déformation] 2~configuration de déformation (\emph{atom} et \emph{residue})
+					\note[item]{L'objectif des différents outil de déformation est d'étudier différents niveaux de coordination pour qualifier et quantifier les conflits de coordination en fonction de la situation.}
 			\end{description}
 		\end{myblock}
 	\end{myframe}
-	\subsubsection{Protocole expérimental}
-	\begin{myframe}<1>[label={fra-exp2-LaTache}]{La tâche}
-		\renewcommand{\schemafactor}{0.055}
-		\setlength{\schemaunit}{\schemafactor\paperwidth}
-		\psset{unit=\schemaunit}
-		\begin{myfigure}
-			\begin{myps}(-1,0)(12,9)
-				\rput[bl](1,0){\myimage[width=10\schemaunit]{TRP-ZIPPER}}
-				\pnode(6.8,3.6){deformed}
-				\rput(9.2,2.6){\rnode{deformed-label}{\textcolor{myred}{molécule courante}}}
-				\pnode(1.8,4){ghost}
-				\rput(0.8,5.5){\rnode{ghost-label}{\textcolor{myred}{molécule cible}}}
-				\psset{linecolor=myblue}
-				\cnode(6.2,4.9){1.0}{deformed-residue}
-				\rput(7.1,7.0){\rnode{deformed-residue-label}{\textcolor{myblue}{résidue courant}}}
-				\cnode(2.3,1.6){0.8}{ghost-residue}
-				\rput(1,2.75){\rnode{ghost-residue-label}{\textcolor{myblue}{résidue cible}}}
-				\psset{linecolor=gray}
-				\cnode(2.0,6.6){0.8}{fixed-residue}
-				\rput(4.0,7.75){\rnode{fixed-residue-label}{\textcolor{gray}{résidu fixe}}}
-				\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=0.5pt 3,arrowinset=.2,nodesepA=3pt}
-				\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
-				\psset{nodesepB=0pt}
-				\ncdiagg[angleA=-90,angleB=135]{c->}{ghost-label}{ghost}
-				\psset{linecolor=myblue}
-				\ncdiagg[angleA=-90]{c->}{deformed-residue-label}{deformed-residue}
-				\ncdiagg[angleA=-90]{c->}{ghost-residue-label}{ghost-residue}
-				\ncdiagg[angleA=180,linecolor=gray]{c->}{fixed-residue-label}{fixed-residue}
-				\ncline[linewidth=10pt,linecolor=mygreen]{C->}{deformed-residue}{ghost-residue}
-				\only<1>{%
-					\psframe*[linecolor=green](-1,8.5)(5,9)
-					\psframe*[linecolor=red](5,8.5)(12,9)
-					\rput(5.5,8.75){\textcolor{white}{\bf score \textsc{rmsd}}}
-					\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
-				}
-				\only<2>{%
-					\psframe*[linecolor=blue](11.25,0)(12,2)
-					\psline[linecolor=blue](11,2)(11.25,2)
-					\uput{1pt}[180](11,2){\tiny\textcolor{blue}{RMSD courant}}
-					\psframe*[linecolor=orange](11.45,0)(11.8,1)
-					\psline[linecolor=orange](11,1)(11.45,1)
-					\uput{1pt}[180](11,1){\tiny\textcolor{orange}{RMSD minimum}}
-					\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
-				}
-			\end{myps}
-			\mycaption[fig-TacheDeDeformation]{Tâche de déformation}
-		\end{myfigure}
+	\subsubsection{Présentation de la tâche proposée}
+	\begin{myframe}<1>[label={fra-exp2-PresentationDeLaTacheProposee}]{Présentation de la tâche proposée}
+		\begin{columns}[t]
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Scénarios}
+					\begin{itemize}
+						\item \mynum{2}~niveaux de complexité
+							\note[item]{Afin d'observer les variations de performances en fonction de la complexité, nous proposons deux niveaux différents de complexité.
+								Le seul facteur actuel de complexité que nous avons constaté concerne le nombre d'atomes.}
+							\begin{itemize}
+								\item Nombre d'atomes
+								\item Cassures
+								\item Champ de force
+							\end{itemize}
+						\item \mynum{2}~niveaux de manipulation
+							\note[item]{Les deux niveaux de manipulation vont nous permettre d'observer différentes situation de conflits de coordination afin de mieux les qualifier et de les quantifier.}
+							\begin{itemize}
+								\item Atomique
+								\item Résiduel
+							\end{itemize}
+					\end{itemize}
+				\end{myblock}
+			\end{column}
+			\begin{column}{0.65\textwidth}
+				\renewcommand{\schemafactor}{0.045}
+				\setlength{\schemaunit}{\schemafactor\paperwidth}
+				\psset{unit=\schemaunit}
+				\begin{myfigure}
+					\begin{myps}(-1,0)(12,9)
+						\rput[bl](1,0){\myimage[width=10\schemaunit]{TRP-ZIPPER}}
+						\pnode(6.8,3.6){deformed}
+						\rput(9.5,2.45){\rnode{deformed-label}{\textcolor{myred}{\mymultiline{molécule\\courante}}}}
+						\pnode(1.8,4){ghost}
+						\rput(0.5,5.25){\rnode{ghost-label}{\textcolor{myred}{\mymultiline{molécule\\cible}}}}
+						\psset{linecolor=myblue}
+						\cnode(6.2,4.9){1.0}{deformed-residue}
+						\rput(7.7,7.4){\rnode{deformed-residue-label}{\textcolor{myblue}{résidue courant}}}
+						\cnode(2.3,1.6){0.8}{ghost-residue}
+						\rput(0.5,2.75){\rnode{ghost-residue-label}{\textcolor{myblue}{\mymultiline{résidue\\cible}}}}
+						\psset{linecolor=gray}
+						\cnode(2.0,6.6){0.8}{fixed-residue}
+						\rput(4.0,8){\rnode{fixed-residue-label}{\textcolor{gray}{résidu fixe}}}
+						\psset{linewidth=1pt,linecolor=myred,linearc=.1,arrowsize=0.5pt 3,arrowinset=.2,nodesepA=3pt}
+						\ncangle[angleA=90,angleB=0]{c->}{deformed-label}{deformed}
+						\psset{nodesepB=0pt}
+						\ncdiagg[angleA=-90,angleB=135]{c->}{ghost-label}{ghost}
+						\psset{linecolor=myblue}
+						\ncdiagg[angleA=-90]{c->}{deformed-residue-label}{deformed-residue}
+						\ncdiagg[angleA=-90]{c->}{ghost-residue-label}{ghost-residue}
+						\ncdiagg[angleA=180,linecolor=gray]{c->}{fixed-residue-label}{fixed-residue}
+						\ncline[linewidth=8pt,linecolor=mygreen]{C->}{deformed-residue}{ghost-residue}
+						\only<1>{%
+							\psframe*[linecolor=green](-1,8.5)(5,9)
+							\psframe*[linecolor=red](5,8.5)(12,9)
+							\rput(5.5,8.75){\textcolor{white}{\bf score \textsc{rmsd}}}
+							\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
+						}
+						\only<2>{%
+							\psframe*[linecolor=blue](11.25,0)(12,2)
+							\psline[linecolor=blue](11,2)(11.25,2)
+							\uput{1pt}[180](11,2){\tiny\textcolor{blue}{RMSD courant}}
+							\psframe*[linecolor=orange](11.45,0)(11.8,1)
+							\psline[linecolor=orange](11,1)(11.45,1)
+							\uput{1pt}[180](11,1){\tiny\textcolor{orange}{RMSD minimum}}
+							\psframe[linewidth=1pt,linecolor=black](-1,0)(12,9)
+						}
+					\end{myps}
+					\mycaption[fig-TacheDeDeformation]{Tâche de déformation}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
 	\end{myframe}
 	\subsubsection{Résultats}
 	\begin{myframe}{Amélioration des performances}
-		\begin{myfigure}
-				\mylegend{%
-					\myleg{monôme}{myblue}%
-					\myleg{binôme}{myblue!70}%
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{monôme}{myblue}%
+						\myleg{binôme}{myblue!70}%
+					}
+					\begin{myboxgraph}[llx=-2em,yAxisLabelPos={-2em,c}](2,0.8\textwidth){distance}(3.5,1.9cm){distance~(mm)}
+						\myboxplot{exp2-diff-activepassive-group.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp2-DistancePassiveEtActive]{Distances passive et active}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\note{%
+					Nous avons constaté avec surprise que la manipulation bimanuelle permettait d'obtenir des espaces de travail plus important qu'en monomanuel : en d'autres termes, une personne seule couvre une plus grande surface qu'un binôme.
+					En corrélant les observations durant l'expérimentation avec ce résultat, nous avons compris que la distance ne représente pas une mesure fiable.
+					En effet, les manipulateurs seuls n'utilisent pas toujours les deux outils à leur disposition; dans le cas où ils n'en utilisent qu'un seul, le second est laissé sur le côté ce qui a pour effet de gonfler la mesure de distance bien qu'un des outils soit passif (d'où le nom de distance passive).
+					Nous avons donc introduit la mesure de distance active qui ne mesure la distance que lorsque les deux outils sont en action (ils ont sélectionné une structure moléculaire).
 				}
-			\begin{myboxgraph}(2,0.75\textwidth){distance}(3.25,2cm){distance~(mm)}
-				\myboxplot{exp2-diff-activepassive-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp2-DistancePassiveEtActive]{Distances passive et active}
-		\end{myfigure}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{main dominante}{myblue}%
-				\myleg{main dominée}{myblue!70}%
-			}
-			\begin{myboxgraph}(2,0.75\textwidth)[10]{nombre de sujets}(50,2cm){sélections~(nb)}
-				\myboxplot{exp2-numsel-group-dominant.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp2-NombreDeSelectionsParMainDominanteDominee]{Nombre de sélections par main dominante/dominée}
-		\end{myfigure}
+				\begin{myblock}{Synthèse}
+					Manipulation plus efficace en monomanuel
+				\end{myblock}
+			\end{column}
+		\end{columns}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{main dominante}{myblue}%
+						\myleg{main dominée}{myblue!70}%
+					}
+					\begin{myboxgraph}(2,0.8\textwidth)[10]{nombre de sujets}(50,1.9cm){sélections~(nb)}
+						\myboxplot{exp2-numsel-group-dominant.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp2-NombreDeSelections]{Nombre de sélections}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Meilleure utilisation des ressources disponibles
+				\end{myblock}
+			\end{column}
+		\end{columns}
 	\end{myframe}
 	\begin{myframe}{Influence de la complexité de la tâche}
 		\begin{myfigure}
@@ -945,9 +1130,11 @@
 			\end{tabular}
 			\mycaption[tab-ClassificationDesTaches]{Classification des tâches}
 		\end{mytable}
+		\note[item]{La distinction entre les scénario \myemph{simple} et les scénarios \myemph{avancés} réside dans les cassures à réaliser qui s'effectuent de manière plus efficaces avec \mynum{2}~outils de manipulation.}
+		\note[item]{Les scénarios de type expert possèdent des champs de force trop important pour être appréhendés à l'aide d'un seul outil.}
 	\end{myframe}
-	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{2}}
-	\begin{myframe}{Synthèse de l'étude~\mynum{2}}
+	\subsubsection{Synthèse}
+	\begin{myframe}{Synthèse}
 		\begin{columns}[t]
 			\begin{column}{0.475\textwidth}
 				\centering
@@ -975,30 +1162,60 @@
 				\end{myplusblock}
 				\begin{myminusblock}{Limites}
 					\begin{itemize}
-						\item La coordination est plus efficace en individuel
+						\item La coordination est plus efficace en individuel mais\dots
+							\begin{itemize}
+								\item \dots{}nombre réduit de tâches élémentaires en parallèle
+									\note[item]{Le contexte proposé dans cette étude est encore de taille et de complexité relativement réduite comparé aux besoins réels; on peut aisément imaginer des tâches plus complexe impliquant de nombreuses tâches élémentaires à réaliser.}
+								\item \dots{}espace de travail restreint
+									\note[item]{Dans un environnement complexe, nous souhaitons pouvoir effectuer des manipulations avec plus de \mynum{2}~tâches élémentaires ce qui implique aussi de pouvoir couvrir un espace de travail plus grand.}
+							\end{itemize}
 					\end{itemize}
 				\end{myminusblock}
 			\end{column}
 		\end{columns}
+		\note[item]{La prochaine étude nous permet d'analyser des environnements plus complexes en introduisant plus de participants dans la collaboration; notre intuition est une augmentation des conflits de coordination liés à la difficulté de communication dans un groupe de plus de \mynum{2}~personnes.}
 	\end{myframe}
 	\subsection{Étude~\mynum{3} -- Dynamique de groupe}
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
-	\subsubsection{Travaux existants}
-	\begin{myframe}{Travaux existants}
-		\begin{myplusblock}{Dynamique de groupe}
-			\begin{itemize}
-				\item facilitation sociale \mycite{Ringelmann-1913}
-				\item paresse sociale \mycite{Roethlisberger-1939}
-				\item brainstorming \mycite{Osborn-1963,Tuckman-1965}
-			\end{itemize}
-		\end{myplusblock}
-		\begin{myminusblock}{Problématique}
-			\begin{itemize}
-				\item Aucune étude de dynamique de groupe sur des tâches avec une interaction étroitement couplée
-			\end{itemize}
-		\end{myminusblock}
+	\subsubsection{Notions importantes sur la dynamique de groupe}
+	\begin{myframe}{Notions importantes sur la dynamique de groupe}
+		\begin{columns}[T]
+			\begin{column}{0.475\textwidth}
+				\begin{myblock}{Facilitation sociale \mycite{Triplett-1898}}
+					Une action collaborative préparée ou en progression possède une réponse; la stimulation sociale provoque une augmentation de cette réponse par la perception de collaborateurs effectuant les mêmes mouvements.
+				\end{myblock}
+				\begin{myfigure}
+					\begin{myboxgraph}(3,0.8\textwidth)[10]{condition}(60,2cm){vitesse~(km/h)}
+						\mybarplot{exp3-triplett.csv}
+						\mybarlabel(0.5,38.650022682){\mynum[km/h]{39}}
+						\mybarlabel(1.5,50.161371429){\mynum[km/h]{50}}
+						\mybarlabel(2.5,52.502386951){\mynum[km/h]{52}}
+					\end{myboxgraph}
+					\mycaption[fig-sota-PerformancesDeCyclistes]{Performances de cyclistes}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.475\textwidth}
+				\begin{myblock}{Paresse sociale \mycite{Ringelmann-1913}}
+					Tendance à fournir un effort moindre lorsqu'une tâche est effectuée en groupe plutôt que de manière individuelle.
+				\end{myblock}
+				\begin{myfigure}
+					\begin{myboxgraph}(8,0.8\textwidth)[0.2]{taille du groupe}(1,2cm){performance}
+						\mybarplot{exp3-ringelmann.csv}
+						\mybarlabel(0.5,1.00){\rotateleft{\mynum[\%]{100}}}
+						\mybarlabel(1.5,0.93){\rotateleft{\mynum[\%]{93}}}
+						\mybarlabel(2.5,0.85){\rotateleft{\mynum[\%]{85}}}
+						\mybarlabel(3.5,0.77){\rotateleft{\mynum[\%]{77}}}
+						\mybarlabel(4.5,0.70){\rotateleft{\mynum[\%]{70}}}
+						\mybarlabel(5.5,0.63){\rotateleft{\mynum[\%]{63}}}
+						\mybarlabel(6.5,0.56){\rotateleft{\mynum[\%]{56}}}
+						\mybarlabel(7.5,0.49){\rotateleft{\mynum[\%]{49}}}
+					\end{myboxgraph}
+					\mycaption[fig-sota-PerformanceAuTirALaCorde]{Performances au tir à la corde}
+				\end{myfigure}
+			\end{column}
+		\end{columns}
 	\end{myframe}
 	\subsubsection{Objectifs}
 	\begin{myframe}{Objectifs}
@@ -1009,66 +1226,107 @@
 			\begin{enumerate}
 				\item Amélioration des performances en fonction du nombre de sujets
 				\item Analyse des rôles dans le groupe
-				\item Influence d'une étape de \textit{brainstorming} sur les performances
+				\item Influence d'une étape de \mybrainstorming sur les performances
 			\end{enumerate}
 		\end{myplusblock}
 		\begin{myblock}{Variables}
 			\begin{description}
 				\item[Nombre de participants] \mynum{8}~couples et \mynum{4}~groupes
-				\item[Tâche différente] \mynum{2}~molécules (tâche faiblement et fortement couplées)
-				\item[Stratégie] Étape de \textit{brainstorming}
+				\item[Tâches différentes] \mynum{2}~molécules (tâche faiblement et fortement couplées)
+				\item[Stratégie de travail] Étape de \mybrainstorming
 			\end{description}
 		\end{myblock}
 	\end{myframe}
 	\subsubsection{Protocole expérimental}
-	\againframe<2>{fra-exp2-LaTache}
+	\againframe<2>{fra-exp2-PresentationDeLaTacheProposee}
 	\subsubsection{Résultats}
 	\begin{myframe}{Amélioration des performances}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{binôme}{myblue}%
-				\myleg{quadrinôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(2,0.6\textwidth)[0.5]{scénario}(1.75,2cm){vitesse~(mm/s)}
-				\myboxplot{exp3-speed-molecule-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp3-VitesseMoyenne]{Vitesse moyenne}
-		\end{myfigure}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{binôme}{myblue}%
-				\myleg{quadrinôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(2,0.6\textwidth)[10]{scénario}(40,2cm){échanges~(nb)}
-				\myboxplot{exp3-talk-molecule-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp3-NombreDEchangeVerbaux]{Nombre d'échanges verbaux}
-		\end{myfigure}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{binôme}{myblue}%
+						\myleg{quadrinôme}{myblue!70}%
+					}
+					\begin{myboxgraph}(2,0.8\textwidth)[0.5]{scénario}(1.75,1.9cm){vitesse~(mm/s)}
+						\myboxplot{exp3-speed-molecule-group.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp3-VitesseMoyenne]{Vitesse moyenne}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Une vitesse moyenne de travail supérieur : phénomène de facilitation sociale
+				\end{myblock}
+			\end{column}
+		\end{columns}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{binôme}{myblue}%
+						\myleg{quadrinôme}{myblue!70}%
+					}
+					\begin{myboxgraph}(2,0.8\textwidth)[10]{scénario}(40,1.9cm){échanges~(nb)}
+						\myboxplot{exp3-talk-molecule-group.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp3-NombreDEchangeVerbaux]{Nombre d'échanges verbaux}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Paresse sociale
+					\begin{itemize}
+						\item Spécialisation
+						\item Personnalité
+						\item Paresse
+					\end{itemize}
+				\end{myblock}
+			\end{column}
+		\end{columns}
 	\end{myframe}
-	\begin{myframe}{Influence du \textit{brainstorming}}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{binôme}{myblue}%
-				\myleg{quadrinôme}{myblue!70}%
-			}
-			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.6\textwidth)[300]{\textit{brainstorming}}(1100,2cm){temps~(s)}
-				\myboxplot{exp3-time-brainstorm-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp3-TempsDeRealisation]{Temps de réalisation}
-		\end{myfigure}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{binôme}{myblue}%
-				\myleg{quadrinôme}{myblue!70}%
-			}
-			\begin{myboxgraph}(2,0.6\textwidth)[0.1]{\textit{brainstorming}}(0.45,2cm){sélections~(nb/s)}
-				\myboxplot{exp3-freqsel-brainstorm-group.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp3-FrequenceDesSelections]{Fréquence des sélections}
-		\end{myfigure}
+	\begin{myframe}{Influence du \mybrainstorming}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{binôme}{myblue}%
+						\myleg{quadrinôme}{myblue!70}%
+					}
+					\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.8\textwidth)[300]{\mybrainstorming}(1100,1.9cm){temps~(s)}
+						\myboxplot{exp3-time-brainstorm-group.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp3-TempsDeRealisation]{Temps de réalisation}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Le \mybrainstorming permet l'élaboration d'une stratégie : gain en performances
+				\end{myblock}
+			\end{column}
+		\end{columns}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{binôme}{myblue}%
+						\myleg{quadrinôme}{myblue!70}%
+					}
+					\begin{myboxgraph}(2,0.8\textwidth)[0.1]{\mybrainstorming}(0.45,1.9cm){sélections~(nb/s)}
+						\myboxplot{exp3-freqsel-brainstorm-group.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp3-FrequenceDesSelections]{Fréquence des sélections}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Meilleur rendement des actions effectuées
+				\end{myblock}
+			\end{column}
+		\end{columns}
 	\end{myframe}
-	\subsubsection[Synthèse]{Synthèse de l'étude~\mynum{3}}
-	\begin{myframe}{Synthèse de l'étude~\mynum{3}}
+	\subsubsection{Synthèse}
+	\begin{myframe}{Synthèse}
 		\begin{columns}[t]
 			\begin{column}{0.475\textwidth}
 				\centering
@@ -1092,11 +1350,11 @@
 			\end{column}
 			\begin{column}{0.475\textwidth}
 				\centering
-				\myunode[90][shadowcolor=myblue](0,0)[brainstorming-problem]{\textit{Brainstorming}}[4cm]
+				\myunode[90][shadowcolor=myblue](0,0)[brainstorming-problem]{\myBrainstorming}[4cm]
 				\begin{myplusblock}{Résultats}
 					\begin{itemize}
 						\item Amélioration importante des performances
-						\item Conflits de communication pendant le \textit{brainstorming}
+						\item Conflits de communication pendant le \mybrainstorming
 						\item Réduit les conflits de coordination
 					\end{itemize}
 				\end{myplusblock}
@@ -1122,68 +1380,127 @@
 				\uput[-90](2.5,4){\textcolor{black!50}{\Large Solutions}}
 				\psset{arrowlength=1}
 				\onslide<1->{%
-					\myunode[0][shadowcolor=myred](-5,2.5)[complexe-problem]{\onslide<2->{\onslide<4-9>{\color{black!25}}Complexité de la tâche}}[4cm]
-					\myunode[0][shadowcolor=myred](-5,1.5)[strategy-problem]{\onslide<3->{\onslide<4-9>{\color{black!25}}Stratégie de travail}}[4cm]
+					\myunode[0][shadowcolor=myred](-5,2.5)[complexe-problem]{\onslide<2-3>{\color{black!25}}Complexité de la tâche}[4cm]
+					\myunode[0][shadowcolor=myred](-5,1.5)[strategy-problem]{\onslide<2-3>{\color{black!25}}Stratégie de travail}[4cm]
 					\psbrace*[linecolor=myred,ref=lC,nodesepA=-1pt](-5,3)(-5,1){\rotateright{\textcolor{myred}{\tiny Étude~1}}}%
 				}
-				\onslide<4->{%
-					\myunode[0][shadowcolor=mygreen](-5,0.5)[distribution-problem]{\onslide<5->{\onslide<7-9>{\color{black!25}}Charge de travail}}[4cm]
-					\myunode[0][shadowcolor=mygreen](-5,-0.5)[conflict-problem]{\onslide<6->{\onslide<7-9>{\color{black!25}}Conflits de coordination}}[4cm]
+				\onslide<2->{%
+					\myunode[0][shadowcolor=mygreen](-5,0.5)[distribution-problem]{\onslide<3>{\color{black!25}}Charge de travail}[4cm]
+					\myunode[0][shadowcolor=mygreen](-5,-0.5)[conflict-problem]{\onslide<3>{\color{black!25}}Conflits de coordination}[4cm]
 					\psbrace*[linecolor=mygreen,ref=lC,nodesepA=-1pt](-5,1)(-5,-1){\rotateright{\textcolor{mygreen}{\tiny Étude~2}}}%
 				}
-				\onslide<7->{%
-					\myunode[0][shadowcolor=myblue](-5,-1.5)[identification-problem]{\onslide<8->{Paresse sociale}}[4cm]
-					\myunode[0][shadowcolor=myblue](-5,-2.5)[brainstorming-problem]{\onslide<9->{\textit{Brainstorming}}}[4cm]
+				\onslide<3->{%
+					\myunode[0][shadowcolor=myblue](-5,-1.5)[identification-problem]{Paresse sociale}[4cm]
+					\myunode[0][shadowcolor=myblue](-5,-2.5)[brainstorming-problem]{\myBrainstorming}[4cm]
 					\psbrace*[linecolor=myblue,ref=lC,nodesepA=-1pt](-5,-1)(-5,-3){\rotateright{\textcolor{myblue}{\tiny Étude~3}}}%
 				}
-				\onslide<10->{%
+				\onslide<4->{%
 					\psbrace*[linecolor=black!50,ref=lC,nodesepA=1pt](5,-3)(5,3){\rotateright{\textcolor{black!50}{\tiny Étude~4}}}
-				}
-				\onslide<11->{%
-					\myunode[180][shadowcolor=black!50](5,2.5)[complexe-solution]{Tâche de \textit{docking}}[4cm]%
+					\myunode[180][shadowcolor=black!50](5,2.5)[complexe-solution]{Tâche de \mydocking}[4cm]%
 					\ncline[linewidth=4pt,linecolor=myred!25]{->}{complexe-problem}{complexe-solution}
 				}
-				\onslide<12->{%
+				\onslide<5->{%
 					\myunode[180][shadowcolor=black!50](5,1.5)[strategy-solution]{Manipulation de résidu}[4cm]%
 					\ncline[linewidth=4pt,linecolor=myred!25]{->}{strategy-problem}{strategy-solution}
 				}
-				\onslide<13->{%
+				\onslide<6->{%
 					\myunode[180][shadowcolor=black!50](5,0.5)[distribution-solution]{Distribuer les rôles}[4cm]%
 					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{distribution-problem}{distribution-solution}
 				}
-				\onslide<14->{%
-					\myunode[180][shadowcolor=black!50](5,-0.5)[conflict-solution]{Solutions haptiques}[4cm]%
-					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{conflict-problem}{conflict-solution}
-				}
-				\onslide<15->{%
+				\onslide<8->{%
 					\myunode[180][shadowcolor=black!50](5,-1.5)[identification-solution]{Identifier les rôles}[4cm]%
 					\ncline[linewidth=4pt,linecolor=myblue!25]{->}{identification-problem}{identification-solution}
 				}
-				\onslide<16->{%
+				\onslide<9->{%
 					\myunode[180][shadowcolor=black!50](5,-2.5)[brainstorming-solution]{Phase exploratoire}[4cm]%
 					\ncline[linewidth=4pt,linecolor=myblue!25]{->}{brainstorming-problem}{brainstorming-solution}
+				}
+				\onslide<7-9>{%
+					\myunode[180][shadowcolor=black!50](5,-0.5)[conflict-solution]{Solutions haptiques}[4cm]%
+					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{conflict-problem}{conflict-solution}
+				}
+				\onslide<10>{%
+					\myunode[180][fillstyle=solid,fillcolor=myred!25,shadowcolor=black!50](5,-0.5)[conflict-solution]{Solutions haptiques}[4cm]%
+					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{conflict-problem}{conflict-solution}
 				}
 			\end{myps}
 			\mycaption[fig-SyntheseDesProblematiques]{Synthèse des problématiques}
 		\end{myfigure}
 	\end{myframe}
+	\subsubsection{Présentation des solutions proposées}
+	\begin{myframe}{Présentation des solutions proposées}
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\begin{myfigure}
+					\renewcommand{\schemafactor}{0.025}
+					\setlength{\schemaunit}{\schemafactor\paperwidth}
+					\psset{xunit=\schemaunit,yunit=0.531966204\schemaunit}
+					\begin{myps}(-10,-10)(10,10)
+						\only<1-2>{%
+							\rput(0,0){\myimage[width=20\schemaunit]{designation-normal}}
+							\uput{0pt}[45](-7,6){\myimage[width=2.75\schemaunit]{designation-yellow-cursor}}
+						}
+						\only<1>{%
+							\uput{0pt}[45](2,7){\myimage[width=2.75\schemaunit]{designation-red-cursor}}
+						}
+						\only<3>{%
+							\rput(0,0){\myimage[width=20\schemaunit]{designation-called}}
+						}
+						\only<2-3>{%
+							\uput{0pt}[45](7.8,4){\myimage[width=2.75\schemaunit]{designation-red-cursor}}
+							\uput{0pt}[45](-7,6){\myimage[width=2.75\schemaunit]{designation-yellow-cursor}}
+						}
+						\only<3>{%
+							\mypsvibration(7.8,4)
+							\mypsvibration(-7,6)
+						}
+						\only<4-5>{%
+							\rput(0,0){\myimage[width=20\schemaunit]{designation-accepted}}
+							\pscurve[linewidth=2pt,linecolor=mygreen]{->}(-7,6)(-1,10)(6,10)(7.5,8.9)
+							\uput{0pt}[45](5,-8){\myimage[width=2.75\schemaunit]{designation-red-cursor}}
+						}
+						\only<4>{%
+							\uput{0pt}[45](-7,6){\myimage[width=2.75\schemaunit]{designation-yellow-cursor}}
+						}
+						\only<6>{%
+							\rput(0,0){\myimage[width=20\schemaunit]{designation-selected}}
+						}
+						\only<5-6>{%
+							\uput{0pt}[45](8.25,8.1){\myimage[width=2.75\schemaunit]{designation-yellow-cursor}}
+						}
+					\end{myps}
+					\mycaption[fig-OutilDeDesignation]{Outil de désignation}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.35\textwidth}
+				\begin{myblock}{Étapes de la désignation}
+					\begin{enumerate}
+						\item<2-> Recherche d'une structure à manipuler (coordinateur)
+						\item<3-> Désignation de la structure (coordinateur)
+						\item<4-> Acceptation par le manipulateur
+						\item<6-> Sélection par le manipulateur
+					\end{enumerate}
+				\end{myblock}
+			\end{column}
+		\end{columns}
+	\end{myframe}
 	\subsubsection{Objectifs}
-	\begin{myframe}{Objectifs}
+	\begin{myframe}[label=current]{Objectifs}
 		\begin{myblock}{Objectif principal}
 			Proposer et évaluer des outils haptiques pour assister la coordination
 		\end{myblock}
 		\begin{myblock}{Hypothèses}
 			\begin{enumerate}
-				\item Influence des propositions sur les performances
+				\item Influence de l'outil proposé associé à la configuration
 				\item Influence des propositions sur la communication
-				\item Évaluations des propositions par des experts
+				\item Évaluations des propositions par des bio-informaticiens
 			\end{enumerate}
 		\end{myblock}
 		\begin{myblock}{Variables}
 			\begin{description}
 				\item[Nombre de participants] \mynum{8}~trinômes
-				\item[Tâche] \mynum{2}~molécules (tâche faiblement et fortement couplée)
-				\item[Assistance haptique] Avec ou sans assistance
+				\item[Tâches différentes] \mynum{2}~molécules (tâche faiblement et fortement couplée)
+				\item[Métaphore haptique] Avec ou sans assistance
 			\end{description}
 		\end{myblock}
 	\end{myframe}
@@ -1225,6 +1542,7 @@
 		\end{myfigure}
 	\end{myframe}
 	\section{Conclusion et perspectives}
+	\subsection{Conclusions}
 	\begin{myframe}{Conclusion}
 		\begin{myblock}{Travail collaboratif}
 			\begin{itemize}
@@ -1245,6 +1563,7 @@
 			\end{itemize}
 		\end{myblock}
 	\end{myframe}
+	\subsection{Perspectives}
 	\begin{myframe}{Perspectives}
 		\begin{myblock}{Plus loin dans l'étude du travail collaboratif\dots}
 			\begin{itemize}
@@ -1257,16 +1576,19 @@
 			\begin{itemize}
 				\item Comment mesurer les conflits de coordination et de communication ?
 				\item Comment définir un protocole expérimental pour le collaboratif ?
+				\item Comment mesure la charge de travail de chaque collaborateur ?
 			\end{itemize}
 		\end{myblock}
 	\end{myframe}
-	\subsection{Synthèse}
-	\subsection{Perspectives}
+	\subsection{Références}
+	\begin{myframe}{Journaux internationaux}
+		\printbibliography[type=article,category=myrefs]
+	\end{myframe}
+	\begin{myframe}{Conférences internationales}
+		\printbibliography[type=inproceedings,category=myrefs]
+	\end{myframe}
+	\subsection{Questions}
 	\begin{myframe}{Questions}
 		Merci pour votre attention
-	\end{myframe}
-	\begin{myframe}{Références}
-		\defbibfilter{all}{\keyword{Simard}}
-		\printbibliography[filter=all]
 	\end{myframe}
 \end{document}
