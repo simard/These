@@ -8,18 +8,9 @@
 \usepackage{pgfpages}
 \usepackage{csquotes}
 \usepackage[sorting=ydnt,hyperref=true,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=true,date=short,urldate=short,block=space,maxcitenames=2,maxbibnames=99]{biblatex}
-\usepackage{filecontents}
-\begin{filecontents*}{data.dat}
-30 3.55358
-30 3.53549
-100 3.52737
-400 3.52774
-500 3.52127
-600 3.52125
-\end{filecontents*}
 
-%\setbeameroption{show notes on second screen}
-\includeonlyframes{current}
+\setbeameroption{show notes on second screen}
+%\includeonlyframes{current}
 
 \input{mymacro}
 \newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
@@ -135,7 +126,7 @@
 	\nocite{Simard-2012a}
 	\nocite{Simard-2012b}
 	\transfade[duration=0.1]
-	\begin{myframe}
+	\begin{myframe}{}
 		\titlepage
 	\end{myframe}
 	\logo{}
