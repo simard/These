@@ -7,7 +7,7 @@
 \usepackage{myuml}
 \usepackage{pgfpages}
 \usepackage{csquotes}
-\usepackage[sorting=ydnt,hyperref=true,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=true,date=short,urldate=short,block=space,maxcitenames=2,maxbibnames=99]{biblatex}
+\usepackage[sorting=ydnt,hyperref=true,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=true,date=short,urldate=short,block=space,maxcitenames=1,maxbibnames=99]{biblatex}
 
 \setbeameroption{show notes on second screen}
 %\includeonlyframes{current}
@@ -22,8 +22,8 @@
 	{\let\mkbibnamefirst=\textbf\color{myblue}%
 		\let\mkbibnamelast=\textbf\color{myblue}%
 		\let\mkbibnameprefix=\textbf\color{myblue}%
-		\let\mkbibnameaffix=\textbf\color{myblue}}%
-	{}%
+		\let\mkbibnameaffix=\textbf\color{myblue}%
+	}{}%
 	\ifnum\value{listcount}=1\relax%
 	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
 	\ifblank{#3#5}%
@@ -182,11 +182,11 @@
 								\mymolA%
 								\only<4>{%
 									\rput(0,2.5){\textcolor{mygreen}{propriétés chimiques}}%
-								}
-								\only<5>{%
 									\rput(-3,0.5){\textbf{\textcolor{white}{+}}}%
 									\rput(-0.5,0.75){\textbf{\textcolor{white}{--}}}%
 									\rput(2,1.5){\textbf{\textcolor{white}{+}}}%
+								}
+								\only<5>{%
 									\psline[linewidth=4pt,linecolor=mygreen]{->}(0,-0.25)(0,-2)%
 								}%
 							}%
@@ -236,11 +236,11 @@
 						\item<1-> Nombreux atomes%
 						\item<2-> Orientation et déplacement%
 						\item<3-> Flexibilité%
-						\item<4-> Facteurs chimiques
+						\item<4-> Physico-chimie
 						\item<5-> Complémentarité%
 							\begin{itemize}%
 								\item géométrique%
-								\item électrostatique%
+								\item physico-chimie
 							\end{itemize}%
 					\end{itemize}%
 				\end{myblock}%
@@ -259,7 +259,7 @@
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
 					\myimage[width=0.45\textwidth]{sota-Lai-Yuen-2006}
-					\mycaption[fig-sota-InterfaceHaptiqueA5DDLPourLeDockingLaiYuen2006]{Interface haptique à \mynum[\textsc{ddl}]{5} pour le \mydocking \mycite{Lai-Yuen-2006}}
+					\mycaption[fig-sota-InterfaceHaptiqueA5DDLLeDockingLaiYuen2006]{Interface haptique à \mynum[\textsc{ddl}]{5} \mycite{Lai-Yuen-2006}}
 				\end{myfigure}
 			\end{column}
 		\end{columns}
@@ -273,7 +273,7 @@
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
 					\myimage[width=0.45\textwidth]{sota-Hou-2010}
-					\mycaption[fig-sota-ModeleHaptiquePourLeManipulationMoleculaire]{Modèle haptique pour la manipulation moléculaire \mycite{Hou-2010}}
+					\mycaption[fig-sota-ModeleHaptiqueMoleculaireHou2010]{Modèle haptique moléculaire \mycite{Hou-2010}}
 				\end{myfigure}
 			\end{column}
 		\end{columns}
@@ -351,7 +351,7 @@
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
 					\myimage[width=0.6\textwidth]{sota-Park-2006}
-					\mycaption[fig-sota-ManipulationAsymetriqueGuideeParDesExpertsPark2006]{Manipulation asymétrique guidée par des experts \mycite{Park-2006}}
+					\mycaption[fig-sota-ManipulationGuideeParDesExpertsPark2006]{Manipulation guidée par des experts \mycite{Park-2006}}
 				\end{myfigure}
 			\end{column}
 		\end{columns}
@@ -501,12 +501,12 @@
 		}
 		\only<4>{
 			\begin{itemize}
-				\item Outil pour la \alert{déformation} ou le \alert{déplacement} de molécule (\myOmni)
+				\item Outil pour la \alert{déformation} ou le \alert{déplacement} de molécule
 			\end{itemize}
 		}
 		\only<5>{
 			\begin{itemize}
-				\item Outil pour l'\alert{orientation} de la molécule (SpaceTraveler de 3\textsc{d}connexion\myregistered{})
+				\item Outil pour l'\alert{orientation} de la molécule
 			\end{itemize}
 		}
 		\only<6>{
@@ -704,7 +704,7 @@
 			\only<1-7>{%
 				\begin{column}{0.5\textwidth}%
 					\begin{myblock}{Description}%
-						Basé sur les PC Virtuelles \mycite{Fuchs-2006}%
+						Basé sur les PC Virtuelles \mycite{Fuchs-2006a}%
 						\begin{description}%
 							\item<2->[Recherche] Identifier une cible (atome, résidue, \dots)%
 							\item<3->[Sélection] Sélectionner la structure moléculaire identifiée%
@@ -718,7 +718,7 @@
 			}
 		\end{columns}
 	\end{myframe}
-	\subsection{Étude~\mynum{1} -- Recherche collaborative de résidus}
+	\subsection{Étude~\mynum{1} -- Recherche et sélection collaborative de résidus}
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
@@ -744,7 +744,7 @@
 	\end{myframe}
 	\subsubsection{Présentation de la tâche proposée}
 	\begin{myframe}{Présentation de la tâche proposée}
-		\renewcommand{\schemafactor}{0.1125}
+		\renewcommand{\schemafactor}{0.11}
 		\setlength{\schemaunit}{\schemafactor\paperwidth}
 		\psset{unit=\schemaunit}
 		\begin{myfigure}
@@ -863,7 +863,6 @@
 	\end{myframe}
 	\begin{myframe}{Stratégies de travail}
 		\begin{myfigure}
-			\readdata{\data}{data.dat}
 			\begin{myboxgraph}[lly=-5ex,xAxisLabelPos={c,-5ex}](12,0.75\textwidth)[4]{binôme}(24,2cm){distance~(mm)}
 				\psframe*[linecolor=myred!25,dimen=inner](0,0)(12,8)
 				\psframe*[linecolor=mygreen!25](0,8)(12,14)
@@ -888,7 +887,7 @@
 				\uput{1.5em}[0](12,10){\rotateright{\textcolor{myred}{affinité~(1--5)}}}
 				\pstScalePoints(1,4){}{}
 				\readdata{\affinitygroupsdata}{files/exp1-affinity-groups.csv}
-				\listplot[linecolor=myred,linewidth=2pt,showpoints=true,shadow=false]{\affinitygroupsdata}
+				\listplot[arrows={-},linecolor=myred,linewidth=2pt,showpoints=true,shadow=false]{\affinitygroupsdata}
 				\psset{linewidth=0.1pt,linecolor=white,fillstyle=solid,fillcolor=myred}
 				\uput[180](12,5){\pscharpath{\Large\bf\sffamily Champ proche}}
 				\psset{fillcolor=mygreen}
@@ -977,24 +976,35 @@
 	\begin{myframe}<1>[label={fra-exp2-PresentationDeLaTacheProposee}]{Présentation de la tâche proposée}
 		\begin{columns}[t]
 			\begin{column}{0.3\textwidth}
-				\begin{myblock}{Scénarios}
-					\begin{itemize}
-						\item \mynum{2}~niveaux de complexité
-							\note[item]{Afin d'observer les variations de performances en fonction de la complexité, nous proposons deux niveaux différents de complexité.
-								Le seul facteur actuel de complexité que nous avons constaté concerne le nombre d'atomes.}
-							\begin{itemize}
-								\item Nombre d'atomes
-								\item Cassures
-								\item Champ de force
-							\end{itemize}
-						\item \mynum{2}~niveaux de manipulation
-							\note[item]{Les deux niveaux de manipulation vont nous permettre d'observer différentes situation de conflits de coordination afin de mieux les qualifier et de les quantifier.}
-							\begin{itemize}
-								\item Atomique
-								\item Résiduel
-							\end{itemize}
-					\end{itemize}
-				\end{myblock}
+				\only<1>{%
+					\begin{myblock}{Scénarios}
+						\begin{itemize}
+							\item \mynum{2}~niveaux de manipulation
+								\note[item]{Les deux niveaux de manipulation vont nous permettre d'observer différentes situation de conflits de coordination afin de mieux les qualifier et de les quantifier.}
+								\begin{itemize}
+									\item Résiduel
+									\item Atomique
+								\end{itemize}
+							\item \mynum{4}~niveaux de complexité
+								\note[item]{Afin d'observer les variations de performances en fonction de la complexité, nous proposons deux niveaux différents de complexité.
+									Le seul facteur actuel de complexité que nous avons constaté concerne le nombre d'atomes.}
+								\begin{itemize}
+									\item Nombre d'atomes
+									\item Cassures
+									\item Champ de force
+								\end{itemize}
+						\end{itemize}
+					\end{myblock}
+				}
+				\only<2>{%
+					\begin{myblock}{Scénarios}
+						\mynum{2}~niveaux de complexité
+						\begin{itemize}
+							\item faiblement couplé
+							\item fortement couplé
+						\end{itemize}
+					\end{myblock}
+				}
 			\end{column}
 			\begin{column}{0.65\textwidth}
 				\renewcommand{\schemafactor}{0.045}
@@ -1147,7 +1157,6 @@
 				\myunode[90][shadowcolor=mygreen](0,0)[conflict-problem]{Conflits de coordination}[4cm]
 				\begin{myplusblock}{Résultats}
 					\begin{itemize}
-						\item Différentes complexité pour la manipulation collaborative
 						\item Certaines manipulations nécessitent une coordination
 					\end{itemize}
 				\end{myplusblock}
@@ -1155,10 +1164,10 @@
 					\begin{itemize}
 						\item La coordination est plus efficace en individuel mais\dots
 							\begin{itemize}
-								\item \dots{}nombre réduit de tâches élémentaires en parallèle
-									\note[item]{Le contexte proposé dans cette étude est encore de taille et de complexité relativement réduite comparé aux besoins réels; on peut aisément imaginer des tâches plus complexe impliquant de nombreuses tâches élémentaires à réaliser.}
 								\item \dots{}espace de travail restreint
 									\note[item]{Dans un environnement complexe, nous souhaitons pouvoir effectuer des manipulations avec plus de \mynum{2}~tâches élémentaires ce qui implique aussi de pouvoir couvrir un espace de travail plus grand.}
+								\item \dots{}nombre réduit de tâches élémentaires en parallèle
+									\note[item]{Le contexte proposé dans cette étude est encore de taille et de complexité relativement réduite comparé aux besoins réels; on peut aisément imaginer des tâches plus complexe impliquant de nombreuses tâches élémentaires à réaliser.}
 							\end{itemize}
 					\end{itemize}
 				\end{myminusblock}
@@ -1303,7 +1312,7 @@
 						\myleg{binôme}{myblue}%
 						\myleg{quadrinôme}{myblue!70}%
 					}
-					\begin{myboxgraph}(2,0.8\textwidth)[0.1]{\mybrainstorming}(0.45,1.9cm){sélections~(nb/s)}
+					\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.8\textwidth)[0.1]{\mybrainstorming}(0.45,1.9cm){sélections~(nb/s)}
 						\myboxplot{exp3-freqsel-brainstorm-group.csv}
 					\end{myboxgraph}
 					\mycaption[fig-exp3-FrequenceDesSelections]{Fréquence des sélections}
@@ -1325,11 +1334,6 @@
 				\begin{myplusblock}{Résultats}
 					\begin{itemize}
 						\item Déséquilibre important dans la répartition des charges de travail
-							\begin{itemize}
-								\item Spécialisation
-								\item Paresse
-								\item Personnalité
-							\end{itemize}
 						\item Potentiel collaboratif non-exploité au maximum
 					\end{itemize}
 				\end{myplusblock}
@@ -1395,7 +1399,7 @@
 					\ncline[linewidth=4pt,linecolor=myred!25]{->}{strategy-problem}{strategy-solution}
 				}
 				\onslide<6->{%
-					\myunode[180][shadowcolor=black!50](5,0.5)[distribution-solution]{Distribuer les rôles}[4cm]%
+					\myunode[180][shadowcolor=black!50](5,0.5)[distribution-solution]{Identifier les rôles}[4cm]%
 					\ncline[linewidth=4pt,linecolor=mygreen!25]{->}{distribution-problem}{distribution-solution}
 				}
 				\onslide<8->{%
@@ -1476,17 +1480,17 @@
 		\end{columns}
 	\end{myframe}
 	\subsubsection{Objectifs}
-	\begin{myframe}[label=current]{Objectifs}
+	\begin{myframe}{Objectifs}
 		\begin{myblock}{Objectif principal}
 			Proposer et évaluer des outils haptiques pour assister la coordination
 		\end{myblock}
-		\begin{myblock}{Hypothèses}
+		\begin{myplusblock}{Hypothèses}
 			\begin{enumerate}
 				\item Influence de l'outil proposé associé à la configuration
 				\item Influence des propositions sur la communication
 				\item Évaluations des propositions par des bio-informaticiens
 			\end{enumerate}
-		\end{myblock}
+		\end{myplusblock}
 		\begin{myblock}{Variables}
 			\begin{description}
 				\item[Nombre de participants] \mynum{8}~trinômes
@@ -1497,44 +1501,86 @@
 	\end{myframe}
 	\subsubsection{Résultats}
 	\begin{myframe}{Efficacité de la collaboration}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{sans assistance}{myblue}%
-				\myleg{avec assistance}{myblue!70}%
-			}
-			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.9\textwidth)[200]{scénario}(700,2cm){temps~(s)}
-				\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimum]{Temps pour atteindre le score \myRMSD minimum}
-		\end{myfigure}
-		\begin{myfigure}
-			\mylegend{%
-				\myleg{sans assistance}{myblue}%
-				\myleg{avec assistance}{myblue!70}%
-			}
-			\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.9\textwidth)[0.05]{scénario}(0.125,2cm){fréquence~(nb/s)}
-				\myboxplot{exp4-freq-molecule-haptic.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateur]{Nombre de sélections par seconde effectuées par un opérateur}
-		\end{myfigure}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{sans assistance}{myblue}%
+						\myleg{avec assistance}{myblue!70}%
+					}
+					\begin{myboxgraph}[llx=-3em,yAxisLabelPos={-3em,c}](2,0.8\textwidth)[200]{scénario}(700,1.9cm){temps~(s)}
+						\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimum]{Temps pour atteindre le score \myRMSD minimum}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Manipulation plus efficace sur le scénario le plus complexe
+				\end{myblock}
+			\end{column}
+		\end{columns}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\mylegend{%
+						\myleg{sans assistance}{myblue}%
+						\myleg{avec assistance}{myblue!70}%
+					}
+					\begin{myboxgraph}[llx=-3.5em,yAxisLabelPos={-3.5em,c}](2,0.8\textwidth)[0.05]{scénario}(0.125,1.9cm){fréquence~(nb/s)}
+						\myboxplot{exp4-freq-molecule-haptic.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateur]{Nombre de sélections par seconde effectuées par un opérateur}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Meilleur rendement pour l'utilisation des ressources
+				\end{myblock}
+			\end{column}
+		\end{columns}
 	\end{myframe}
 	\begin{myframe}{Amélioration de la communication}
-		\begin{myfigure}
-			\begin{myboxgraph}[llx=-2em,yAxisLabelPos={-2em,c}](2,0.6\textwidth)[2]{haptique}(10,2cm){temps~(s)}
-				\myboxplot{exp4-shake-time-haptic.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignation]{Temps moyen d'acceptation d'une désignation}
-		\end{myfigure}
-		\begin{myfigure}
-			\begin{myboxgraph}(2,0.6\textwidth)[5]{haptique}(17.5,2cm){sélections~(nb)}
-				\myboxplot{exp4-accept-haptic.csv}
-			\end{myboxgraph}
-			\mycaption[fig-exp4-NombreDeDesignationsAcceptees]{Nombre de désignations acceptées}
-		\end{myfigure}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\begin{myboxgraph}[llx=-2em,yAxisLabelPos={-2em,c}](2,0.6\textwidth)[2]{haptique}(10,1.9cm){temps~(s)}
+						\myboxplot{exp4-shake-time-haptic.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp4-TempsDAcceptationDUneDesignation]{Temps d'acceptation d'une désignation}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Communication haptique plus rapide que la communication verbale
+				\end{myblock}
+			\end{column}
+		\end{columns}
+		\begin{columns}[T]
+			\begin{column}{0.65\textwidth}
+				\begin{myfigure}
+					\begin{myboxgraph}(2,0.6\textwidth)[5]{haptique}(17.5,1.9cm){sélections~(nb)}
+						\myboxplot{exp4-accept-haptic.csv}
+					\end{myboxgraph}
+					\mycaption[fig-exp4-NombreDeDesignationsAcceptees]{Nombre de désignations acceptées}
+				\end{myfigure}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+				\begin{myblock}{Synthèse}
+					Meilleur taux d'acceptation pour les désignations du coordinateur
+				\end{myblock}
+			\end{column}
+		\end{columns}
 	\end{myframe}
 	\section{Conclusion et perspectives}
 	\subsection{Conclusions}
 	\begin{myframe}{Conclusion}
+		\begin{myblock}{Plateforme \myShaddock}
+			\begin{itemize}
+				\item Plateforme validée
+				\item Des améliorations sont encore nécessaires
+			\end{itemize}
+		\end{myblock}
 		\begin{myblock}{Travail collaboratif}
 			\begin{itemize}
 				\item Adapté pour l'appréhension de tâches très complexes
@@ -1545,12 +1591,6 @@
 			\begin{itemize}
 				\item Remplace la communication verbale dans certains cas
 				\item Plus efficace et plus rapide
-			\end{itemize}
-		\end{myblock}
-		\begin{myblock}{Plateforme \myShaddock}
-			\begin{itemize}
-				\item Plateforme validée
-				\item Des améliorations sont encore nécessaires
 			\end{itemize}
 		\end{myblock}
 	\end{myframe}
