@@ -7,99 +7,30 @@
 \usepackage{myuml}
 \usepackage{pgfpages}
 \usepackage{csquotes}
-\usepackage[sorting=ydnt,hyperref=true,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=true,date=short,urldate=short,block=space,maxcitenames=1,maxbibnames=99]{biblatex}
+\usepackage[%
+	sorting=ydnt,%
+	hyperref=true,%
+	backend=biber,%
+	style=authoryear,%
+	citestyle=mycitestyle,%
+	bibstyle=mybibliographystyle,%
+	dashed=false,
+	abbreviate=false,%
+	date=short,%
+	urldate=short,%
+	block=space,%
+	maxcitenames=1,%
+	maxbibnames=99]{biblatex}
 
-\setbeameroption{show notes on second screen}
-%\includeonlyframes{current}
+	\captionsetup{figurename={},font={bf,color=myblue}}
 
 \input{mymacro}
-\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
-\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
-\DeclareNameFormat{sortname}{% 
-	\begingroup%
-	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
-	\ifdefequal{\highlightname}{\currentsignature}%
-	{\let\mkbibnamefirst=\textbf\color{myblue}%
-		\let\mkbibnamelast=\textbf\color{myblue}%
-		\let\mkbibnameprefix=\textbf\color{myblue}%
-		\let\mkbibnameaffix=\textbf\color{myblue}%
-	}{}%
-	\ifnum\value{listcount}=1\relax%
-	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
-	\ifblank{#3#5}%
-	{}%
-	{\usebibmacro{name:revsdelim}}%
-	\else%
-	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
-	\fi%
-	\endgroup%
-	\usebibmacro{name:andothers}%
-}
 
-\hypersetup{%
-	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
-	pdfauthor={Jean SIMARD},%
-	pdfkeywords={collaboration,haptique,environnement virtuel,simulation moléculaire},%
-	pdflang={FR-fr},%
-	pdfsubject={Soutenance de thèse en informatique}%
-}
+%\setbeameroption{show notes on second screen}
+\includeonlyframes{current}
 
-\bibliography{biblio.bib}
 \makeatletter
-\newcommand{\mycite}[1]{\cite{#1}}
-\newcommand{\firstname}{Jean}
-\newcommand{\lastname}{Simard}
-\DeclareBibliographyCategory{myrefs}
-\DeclareIndexNameFormat{myrefs}{% Test could be refined
-	\ifboolexpr{%
-		test {\ifdefstring{\lastname}{#1}}
-	}{%
-		\addtocategory{myrefs}{\thefield{entrykey}}%
-	}{}%
-}
-\AtDataInput{%
-	\indexnames[myrefs]{author}%
-}
-
-\newcommand{\schemafactor}{1}
-\newlength{\schemaunit}
-\setbeamersize{text margin right=3em}
-
-\newenvironment<>{myframe}[2][environment=myframe]{%
-	\iflanguage{french}{%
-		\shorthandoff{!}%
-	}{}%
-	\begin{frame}#3[#1]{#2}%
-	\gdef\beamer@noteitems{}%
-	\gdef\beamer@notes{{}}%
-}{%
-	\end{frame}%
-	\iflanguage{french}{%
-		\shorthandon{!}%
-	}{}%
-}
-\newenvironment<>{myblock}[1]{%
-	\begin{block}{#1}%
-		\setbeamercolor{local structure}{fg=myblue!75}
-}{%
-	\end{block}%
-}
-\newenvironment<>{myplusblock}[1]{%
-	\begin{exampleblock}{#1}%
-		\setbeamercolor{local structure}{fg=mygreen!75}
-}{%
-	\end{exampleblock}%
-}
-\newenvironment<>{myminusblock}[1]{%
-	\begin{alertblock}{#1}%
-		\setbeamercolor{local structure}{fg=myred!75}
-}{%
-	\end{alertblock}%
-}
-\def\mymultiline#1{\begin{psmatrix}[rowsep=0pt]#1\end{psmatrix}}
 \makeatother
-
-%\addglobalbib[datatype=bibtex]{biblio.bib}
 
 \title{Collaboration haptique étroitement couplée pour la manipulation moléculaire interactive}
 \author[J. \myname{Simard}]{%
@@ -116,15 +47,9 @@
 }
 \date{\mydate[datestyle=long]{12/03/2012}}
 
+\bibliography{biblio.bib}
+
 \begin{document}
-	\nocite{Simard-2009}
-	\nocite{Simard-2010a}
-	\nocite{Simard-2010b}
-	\nocite{Simard-2010c}
-	\nocite{Simard-2011a}
-	\nocite{Simard-2011b}
-	\nocite{Simard-2012a}
-	\nocite{Simard-2012b}
 	\transfade[duration=0.1]
 	\begin{myframe}{}
 		\titlepage
@@ -1180,7 +1105,7 @@
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
 	\subsubsection{Notions importantes sur la dynamique de groupe}
-	\begin{myframe}{Notions importantes sur la dynamique de groupe}
+	\begin{myframe}[label=current]{Notions importantes sur la dynamique de groupe}
 		\begin{columns}[T]
 			\begin{column}{0.475\textwidth}
 				\begin{myblock}{Facilitation sociale \mycite{Triplett-1898}}
@@ -1612,10 +1537,22 @@
 		\end{myblock}
 	\end{myframe}
 	\subsection{Références}
-	\begin{myframe}{Journaux internationaux}
+	\nocite{Simard-2009}
+	\nocite{Simard-2010a}
+	\nocite{Simard-2010b}
+	\nocite{Simard-2010c}
+	\nocite{Simard-2011a}
+	\nocite{Simard-2011b}
+	\nocite{Simard-2012a}
+	\nocite{Simard-2012b}
+	\nocite{Simard-2012c}
+	\nocite{Simard-2012d}
+	\nocite{Girard-2012a}
+	\nocite{Girard-2012b}
+	\begin{myframe}{Publications internationales}
+		\defbibheading{bibliography}[Journaux internationaux avec comité de relecture]{Journaux internationaux avec comité de relecture\par}
 		\printbibliography[type=article,category=myrefs]
-	\end{myframe}
-	\begin{myframe}{Conférences internationales}
+		\defbibheading{bibliography}[Conférences internationales avec comité de relecture]{Journaux internationaux avec comité de relecture\par}
 		\printbibliography[type=inproceedings,category=myrefs]
 	\end{myframe}
 	\subsection{Questions}

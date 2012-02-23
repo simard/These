@@ -1,5 +1,66 @@
 \makeatletter
+% New color
 \definecolor{myyellowcolor}{rgb}{0.761 0.804 0.263}
+% To scale the schemas
+\newcommand{\schemafactor}{1}
+\newlength{\schemaunit}
+% For the problem of notes outside the frame
+\setbeamersize{text margin right=3em}
+% hyperref setup
+\hypersetup{%
+	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
+	pdfauthor={Jean SIMARD},%
+	pdfkeywords={collaboration,haptique,environnement virtuel,simulation moléculaire},%
+	pdflang={FR-fr},%
+	pdfsubject={Soutenance de thèse en informatique}%
+}
+%% For the biblio
+\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
+\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
+\DeclareNameFormat{sortname}{% 
+	\begingroup%
+	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
+	\ifdefequal{\highlightname}{\currentsignature}%
+	{\let\mkbibnamefirst=\textbf\color{myblue}%
+		\let\mkbibnamelast=\textbf\color{myblue}%
+		\let\mkbibnameprefix=\textbf\color{myblue}%
+		\let\mkbibnameaffix=\textbf\color{myblue}%
+	}{}%
+	\ifnum\value{listcount}=1\relax%
+	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
+	\ifblank{#3#5}%
+	{}%
+	{\usebibmacro{name:revsdelim}}%
+	\else%
+	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+	\fi%
+	\endgroup%
+	\usebibmacro{name:andothers}%
+}
+\DeclareCiteCommand{\mycite}[\mkbibbrackets]{%
+	\usebibmacro{cite:init}%
+	\usebibmacro{prenote}%
+}{%
+	\usebibmacro{citeindex}%
+	\usebibmacro{cite}%
+}{}{%
+	\usebibmacro{postnote}%
+}
+\newcommand{\mylastname}{Simard}
+\newcommand{\myadrienname}{Girard}
+\DeclareBibliographyCategory{myrefs}
+\DeclareIndexNameFormat{myrefs}{% Test could be refined
+	\ifboolexpr{%
+		test {\ifdefstring{\mylastname}{#1}} or test {\ifdefstring{\myadrienname}{#1}}
+	}{%
+		\addtocategory{myrefs}{\thefield{entrykey}}%
+	}{}%
+}
+\AtDataInput{%
+	\indexnames[myrefs]{author}%
+}
+
+
 % BBB
 \def\mybarlabel{\pst@object{mybarlabel}}%
 \def\mybarlabel@i(#1,#2){%
@@ -16,6 +77,24 @@
 	\use@par%
 	\myoldbarplot[shadow=true,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
 	\egroup
+}
+\newenvironment<>{myblock}[1]{%
+	\begin{block}{#1}%
+		\setbeamercolor{local structure}{fg=myblue!75}
+}{%
+	\end{block}%
+}
+\newenvironment<>{myplusblock}[1]{%
+	\begin{exampleblock}{#1}%
+		\setbeamercolor{local structure}{fg=mygreen!75}
+}{%
+	\end{exampleblock}%
+}
+\newenvironment<>{myminusblock}[1]{%
+	\begin{alertblock}{#1}%
+		\setbeamercolor{local structure}{fg=myred!75}
+}{%
+	\end{alertblock}%
 }
 \let\myoldboxplot\myboxplot
 \def\myboxplot{\pst@object{myboxplote}}
@@ -46,6 +125,20 @@
 % DDD
 \newcommand{\mydocking}{\protect\textit{docking}\xspace}
 \newcommand{\myDocking}{\protect\textit{Docking}\xspace}
+% FFF
+\newenvironment<>{myframe}[2][environment=myframe]{%
+	\iflanguage{french}{%
+		\shorthandoff{!}%
+	}{}%
+	\begin{frame}#3[#1]{#2}%
+	\gdef\beamer@noteitems{}%
+	\gdef\beamer@notes{{}}%
+}{%
+	\end{frame}%
+	\iflanguage{french}{%
+		\shorthandon{!}%
+	}{}%
+}
 % GGG
 \newcommand{\mygroup}[1]{$\mathcal{G}_{#1}$\xspace}
 % HHH
@@ -100,6 +193,7 @@
 	\endpsclip
 	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,-2)(-5,-1.5)(-3,-0.5)(0,0)(1,-1)(2,0.5)(3,-0.5)(5,-1.5)(5,-2)
 }
+\def\mymultiline#1{\begin{psmatrix}[rowsep=0pt]#1\end{psmatrix}}
 % NNN
 \newcommand{\myNAMD}{\textsc{namd}\xspace}
 \def\mynode{%
