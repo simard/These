@@ -22,12 +22,13 @@
 	maxcitenames=1,%
 	maxbibnames=99]{biblatex}
 
-	\captionsetup{figurename={},font={bf,color=myblue}}
+	\captionsetup{figurename={},justification=centering,font={bf,color=black!75}}
 
 \input{mymacro}
+\newlength{\myfiguresize}
 
-%\setbeameroption{show notes on second screen}
-\includeonlyframes{current}
+\setbeameroption{show notes on second screen}
+%\includeonlyframes{current}
 
 \makeatletter
 \makeatother
@@ -86,8 +87,11 @@
 							\rput(5,2.5){\mymolAd}%
 							\only<2>{%
 								\rput{180}(5,-2.5){\mymolBd}%
+								\psline[linewidth=2pt,linecolor=mygreen,arrowsize=2pt 4,arrowlength=0.75]{<->}(3.5,3)(6.5,3)
+								\psline[linewidth=2pt,linecolor=mygreen,arrowsize=2pt 4,arrowlength=0.75]{<->}(5,4)(5,2)
+								\uput{3ex}[90](5,3){\textcolor{mygreen}{déplacement}}%
 								\psarcn[linewidth=2pt,linecolor=mygreen,arrowsize=2pt 4,arrowlength=0.75]{->}(5,-2.5){0.3}{90}{135}%
-								\uput{2ex}[-90](5,-2.5){\textcolor{mygreen}{réorientation}}%
+								\uput{3ex}[-90](5,-2.5){\textcolor{mygreen}{orientation}}%
 							}%
 							\only<3>{%
 								\rput(5,-2.5){\mymolBd}%
@@ -105,11 +109,11 @@
 							\rput(-5,-3){\myimage[width=0.15\paperwidth]{sota-docking-molecule-B}}%
 							\rput(5,2.5){%
 								\mymolA%
+								\rput(-3,0.5){\textbf{\textcolor{white}{+}}}%
+								\rput(-0.5,0.75){\textbf{\textcolor{white}{--}}}%
+								\rput(2,1.5){\textbf{\textcolor{white}{+}}}%
 								\only<4>{%
-									\rput(0,2.5){\textcolor{mygreen}{propriétés chimiques}}%
-									\rput(-3,0.5){\textbf{\textcolor{white}{+}}}%
-									\rput(-0.5,0.75){\textbf{\textcolor{white}{--}}}%
-									\rput(2,1.5){\textbf{\textcolor{white}{+}}}%
+									\rput(0,2.5){\textcolor{mygreen}{facteurs physico-chimiques}}%
 								}
 								\only<5>{%
 									\psline[linewidth=4pt,linecolor=mygreen]{->}(0,-0.25)(0,-2)%
@@ -117,13 +121,13 @@
 							}%
 							\rput(5,-2.5){%
 								\mymolB%
+								\rput(-3,-1){\textbf{\textcolor{white}{--}}}%
+								\rput(-0.5,-0.5){\textbf{\textcolor{white}{+}}}%
+								\rput(2,-0.25){\textbf{\textcolor{white}{--}}}%
 								\only<4>{%
-									\rput(0,-2.5){\textcolor{mygreen}{propriétés chimiques}}%
+									\rput(0,-2.5){\textcolor{mygreen}{facteurs physico-chimiques}}%
 								}
 								\only<5>{%
-									\rput(-3,-1){\textbf{\textcolor{white}{--}}}%
-									\rput(-0.5,-0.5){\textbf{\textcolor{white}{+}}}%
-									\rput(2,-0.25){\textbf{\textcolor{white}{--}}}%
 									\psline[linewidth=4pt,linecolor=mygreen]{->}(0,0.25)(0,2)%
 								}%
 							}%
@@ -159,7 +163,7 @@
 				\begin{myblock}{Facteurs de complexité}%
 					\begin{itemize}%
 						\item<1-> Nombreux atomes%
-						\item<2-> Orientation et déplacement%
+						\item<2-> Déplacement et orientation%
 						\item<3-> Flexibilité%
 						\item<4-> Physico-chimie
 						\item<5-> Complémentarité%
@@ -174,37 +178,39 @@
 	\end{myframe}
 	\subsection{Approches centrées sur l'humain}
 	\begin{myframe}{Approches centrées sur l'humain}
+		\deflength{\myfiguresize}{0.275\textwidth}
 		\begin{columns}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.45\textwidth]{sota-Davies-2005}
-					\mycaption[fig-sota-VisualisationMultimodaleDavies2005]{Visualisation multimodale \mycite{Davies-2005}}
+					\myimage[width=\myfiguresize]{sota-Lai-Yuen-2006}
+					\mycaption[fig-sota-InterfaceHaptiqueA5DDLLeDockingLaiYuen2006]{Interface haptique à \mynum{5}~\textsc{ddl} \mycite{Lai-Yuen-2006}}
 				\end{myfigure}
 			\end{column}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.45\textwidth]{sota-Lai-Yuen-2006}
-					\mycaption[fig-sota-InterfaceHaptiqueA5DDLLeDockingLaiYuen2006]{Interface haptique à \mynum[\textsc{ddl}]{5} \mycite{Lai-Yuen-2006}}
+					\myimage[width=\myfiguresize]{sota-Ferey-2009}
+					\mycaption[fig-sota-VisualisationMultimodaleFerey2009]{Visualisation multimodale \mycite{Ferey-2009}}
 				\end{myfigure}
 			\end{column}
 		\end{columns}
+		\vspace{-3ex}
 		\begin{columns}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.45\textwidth]{sota-Daunay-2009}
+					\myimage[width=\myfiguresize]{sota-Daunay-2009}
 					\mycaption[fig-sota-DockingMoleculaireRigide]{\myDocking moléculaire rigide \mycite{Daunay-2009}}
 				\end{myfigure}
 			\end{column}
 			\begin{column}{0.475\textwidth}
-				\begin{myfigure}
-					\myimage[width=0.45\textwidth]{sota-Hou-2010}
-					\mycaption[fig-sota-ModeleHaptiqueMoleculaireHou2010]{Modèle haptique moléculaire \mycite{Hou-2010}}
-				\end{myfigure}
+				\begin{myblock}{Synthèse}
+					Haptique souvent utilisé pour la manipulation moléculaire mais\dots{}
+					\begin{itemize}
+						\item molécules simples
+						\item \mydocking rigide
+					\end{itemize}
+				\end{myblock}
 			\end{column}
 		\end{columns}
-		\onslide<2>{%
-			\hspace{\stretch{1}}L'outil \alert{haptique} s'impose comme outil de manipulation moléculaire\hspace{\stretch{1}}
-		}
 	\end{myframe}
 	\subsection{Distribution des charges de travail}
 	\begin{myframe}{Distribution des charges de travail}
@@ -266,32 +272,33 @@
 	\end{myframe}
 	\subsection{Approches collaboratives}
 	\begin{myframe}{Approches collaboratives}
+		\deflength{\myfiguresize}{0.35\textwidth}
 		\begin{columns}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.6\textwidth]{sota-Kriz-2003}
+					\myimage[width=\myfiguresize]{sota-Kriz-2003}
 					\mycaption[fig-sota-ManipulationSynchroneKriz2003]{Manipulation synchrone \mycite{Kriz-2003}}
 				\end{myfigure}
 			\end{column}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.6\textwidth]{sota-Park-2006}
+					\myimage[width=\myfiguresize]{sota-Park-2006}
 					\mycaption[fig-sota-ManipulationGuideeParDesExpertsPark2006]{Manipulation guidée par des experts \mycite{Park-2006}}
 				\end{myfigure}
 			\end{column}
 		\end{columns}
+		\vspace{-3ex}
 		\begin{columns}
 			\begin{column}{0.475\textwidth}
 				\begin{myfigure}
-					\myimage[width=0.6\textwidth]{sota-Chastine-2007}
+					\myimage[width=\myfiguresize]{sota-Chastine-2007}
 					\mycaption[fig-sota-InterReferencementChastine2007]{Inter-référencement \mycite{Chastine-2007}}
 				\end{myfigure}
 			\end{column}
 			\begin{column}{0.475\textwidth}
-				\begin{myfigure}
-					\myimage[width=0.6\textwidth]{sota-Ma-2007}
-					\mycaption[fig-sota-GestionDesDroitsDAcces]{Gestion des droits d'accès \mycite{Ma-2007}}
-				\end{myfigure}
+				\begin{myblock}{Synthèse}
+					Peu de travaux sur la communication dans les approches collaboratives
+				\end{myblock}
 			\end{column}
 		\end{columns}
 	\end{myframe}
@@ -299,17 +306,17 @@
 	\begin{myframe}{Objectifs de la thèse}
 		\begin{myminusblock}{Problématiques}
 			\begin{itemize}
-				\item Quels sont les avantages du travail en collaboration étroitement couplée ?
+				\item Quels sont les avantages de la collaboration étroitement couplée ?
 					\note[item]{Quelles sont les influences d'une collaboration nécessitant une forte coordination entre les collaborateurs ?}
-				\item Quelles problématiques la collaboration apporte-t-elle ?
-				\item Comment améliorer la collaboration dans un environnement de travail complexe ?
+				\item Quelles problématiques la collaboration pose-t-elle ?
+				\item Comment améliorer la collaboration dans un environnement complexe ?
 			\end{itemize}
 		\end{myminusblock}
 		\begin{myplusblock}{Démarche}
 			\begin{enumerate}
-				\item Étudier et analyser le travail collaboratif étroitement couplé
+				\item Étudier et caractériser les approches collaboratives étroitement couplée
 				\item Identifier les limites et les contraintes
-				\item Proposer des solutions haptiques pour améliorer cette configuration
+				\item Proposer des solutions haptiques pour améliorer la collaboration
 				\item Évaluer ces solutions dans une tâche de \mydocking moléculaire
 			\end{enumerate}
 		\end{myplusblock}
@@ -330,10 +337,10 @@
 			\begin{column}{0.475\textwidth}
 				\begin{myminusblock}{Contraintes à respecter}
 					\begin{itemize}
-						\item Interaction synchrone sur des molécules
+						\item Collaboration interactive synchrone avec des molécules
 						\item Simulation de la dynamique moléculaire
-						\item Manipulation à l'aide d'interface haptique
-						\item Plusieurs outils différents
+						\item Manipulation à l'aide de plusieurs interfaces haptiques
+						\item Différents outils pour la manipulation moléculaire
 					\end{itemize}
 				\end{myminusblock}
 			\end{column}
@@ -342,11 +349,81 @@
 					\begin{itemize}
 						\item Modularité logicielle
 						\item Modularité matérielle
-						\item Développement basé sur des logiciels de biologie existants
+						\item Plateforme basée sur des logiciels de biologistes
 						\item Utilisation de modules dédiés à la réalité virtuelle
 						\item Développement de nouveaux outils
 					\end{itemize}
 				\end{myplusblock}
+			\end{column}
+		\end{columns}
+	\end{myframe}
+	\subsection{Organisation matérielle}
+	\begin{myframe}{Organisation matérielle}
+		\begin{columns}
+			\begin{column}{0.35\textwidth}
+				\begin{myplusblock}{Fonctionnalités}
+					\begin{itemize}
+						\item<1-> Colocalisé synchrone
+						\item<1-> Communication orale et gestuelle
+						\item<2-> Vue partagée
+						\item<3-> Différents outils
+							\begin{itemize}
+								\item déplacement
+								\item orientation
+								\item déformation
+							\end{itemize}
+						\item<5-> Multiples interfaces
+					\end{itemize}
+				\end{myplusblock}
+			\end{column}
+			\begin{column}{0.6\textwidth}
+				\begin{myfigure}
+					\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
+					\begin{myps}(0,0)(1,1)%
+						\only<1-4>{%
+							\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}%
+							\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-photo}}%
+							\pnode(0.52,0.66){tug1}%
+							\pnode(0.62,0.76){tug1-from}%
+							\pnode(0.62,0.60){tug2}%
+							\pnode(0.72,0.70){tug2-from}%
+							\pnode(0.57,0.63){grab}%
+							\pnode(0.67,0.73){grab-from}%
+						}%
+						\only<2>{%
+							\pspolygon[linewidth=4pt,linecolor=myred](0.60,0.68)(0.61,0.93)(0.86,0.88)(0.83,0.57)%
+						}%
+						\only<3>{%
+							\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
+							\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
+							\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
+						}%
+						\only<4>{%
+							\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}%
+							\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-photo}}%
+							\pnode(0.59,0.6){grab}%
+							\pnode(0.69,0.7){grab-from}%
+							\ncline[linewidth=2.5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
+						}%
+						\only<5>{%
+							\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}%
+							\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-photo}}%
+							\pnode(0.52,0.675){tug1}%
+							\pnode(0.62,0.775){tug1-from}%
+							\pnode(0.55,0.65){tug2}%
+							\pnode(0.65,0.75){tug2-from}%
+							\pnode(0.58,0.63){tug3}%
+							\pnode(0.68,0.73){tug3-from}%
+							\pnode(0.62,0.61){tug4}%
+							\pnode(0.72,0.71){tug4-from}%
+							\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
+							\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
+							\ncline[linewidth=2.5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}%
+							\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}%
+						}%
+					\end{myps}
+					\mycaption[fig-PlateFormeExperimentale1]{Plate-forme expérimentale}
+				\end{myfigure}
 			\end{column}
 		\end{columns}
 	\end{myframe}
@@ -355,10 +432,14 @@
 		\begin{myfigure}
 			\psset{xunit=0.0666667\textwidth,yunit=0.06\textheight}
 			\psset{framearc=.1,shadow=true,blur=true}
-			\begin{myps}(-7.5,-5)(7.5,6)
-				\psframe*[linecolor=mygreen!5,shadow=false](-7.4,-5)(-2.6,6)
-				\psframe*[linecolor=myblue!5,shadow=false](-2.4,-5)(2.4,6)
-				\psframe*[linecolor=myred!5,shadow=false](2.6,-5)(7.4,6)
+			\begin{myps}(-7.5,-7)(7.5,6)
+				\let\oldll\ll
+				\renewcommand{\ll}{\scriptscriptstyle\oldll}
+				\let\oldgg\gg
+				\renewcommand{\gg}{\scriptscriptstyle\oldgg}
+				\psframe*[linecolor=mygreen!5,shadow=false](-7.4,-7)(-2.6,6)
+				\psframe*[linecolor=myblue!5,shadow=false](-2.4,-7)(2.4,6)
+				\psframe*[linecolor=myred!5,shadow=false](2.6,-7)(7.4,6)
 				\uput[-90](-5,6){\large\textcolor{mygreen!25}{Simulation}}
 				\uput[-90](0,6){\large\textcolor{myblue!25}{Visualisation}}
 				\uput[-90](5,6){\large\textcolor{myred!25}{Interaction}}
@@ -381,14 +462,18 @@
 					}%
 				}
 				\uput[-90](5,5){%
-					\myumlnode*<ServeurVRPN1>{\vphantom{pÉ}\footnotesize Nœud \myVRPN}{%
+					\myumlnode*<ServeurVRPN1>{\vphantom{pÉ}\footnotesize Nœud \myVRPN~\mynum{1}}{%
 						\myumlcomponent<VRPN1>[\textcolor{myblue!50}{\scriptsize programme}]{{\footnotesize\texttt{vrpn\_server}}}%
 					}%
 				}
-				\uput[-90](5,0){%
-					\myumlnode<PHANToM1>[\textcolor{myblue!50}{\scriptsize\myOmni}]{\vphantom{pÉ}\footnotesize Interface}%
+				\uput[-90](5,0.75){%
+					\myumlnode<PHANToM1>[\textcolor{myblue!50}{\scriptsize\myOmni}]{\vphantom{pÉ}\footnotesize Interface haptique}%
 				}
-				\rput(5,-4){\Large$\vdots$}
+				\uput[-90](5,-2){%
+					\myumlnode*<ServeurVRPN2>{\vphantom{pÉ}\footnotesize Nœud \myVRPN~\mynum{2}}{%
+						\myumlcomponent<VRPN2>[\textcolor{myblue!50}{\scriptsize programme}]{{\footnotesize\texttt{vrpn\_server}}}%
+					}%
+				}
 				\uput[-90](0,0){%
 					\myumlnode<VideoProjecteur>[\textcolor{myblue!50}{\scriptsize vue partagée}]{\footnotesize Dispositif d'affichage}
 				}
@@ -398,7 +483,10 @@
 				\myumlrealization[angleA=-90,angleB=90]{VRPN1}{PHANToM1}[nccurve]%
 				\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.5]{VMD}{VideoProjecteur}[nccurve]
 				\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.4]{NAMD}{VMD}[nccurve]
-				\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.6]{VRPN1}{VMD}[nccurve]
+				\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=12pt,ArrowInsidePos=0.6]{VRPN1}{VMD}[nccurve]
+				\myumlinterface[angleA=180,angleB=0,ncurvA=0.67,ncurvB=0.33,offsetA=12pt,ArrowInsidePos=0.4]{VRPN2}{VMD}[nccurve]
+				\pnode(5,-6.75){PHANToM2}
+				\nccurve[linestyle=dashed,arrowinset=0,ArrowFill=false,angleA=-90,angleB=90]{-}{VRPN2}{PHANToM2}%
 			\end{myps}
 			\mycaption[fig-Shaddock-DiagrammeDeDeploiementUMLDeLaPlateformeShaddock]{Diagramme de déploiement \myUML de la plateforme \myShaddock}
 		\end{myfigure}
@@ -406,86 +494,6 @@
 		\note[item]{Le nœud \myNAMD nécessite une configuration importante pour la simulation}
 		\note[item]{Le nœud \myVRPN a nécessité une modification qui a été soumise et intégrée par les développeurs dans les nouvelles versions}
 		\note[item]{C'est au niveau de \myVMD que le plus gros développement a été effectué avec l'ajout de nouveaux outils dédiés pour améliorer la manipulation interactive}
-	\end{myframe}
-	\subsection{Organisation matérielle}
-	\begin{myframe}{Organisation matérielle}
-		\only<1>{
-			\begin{itemize}
-				\item Configuration \alert{colocalisée} et \alert{synchrone}
-			\end{itemize}
-		}
-		\only<2>{
-			\begin{itemize}
-				\item Communication \alert{orale} et \alert{gestuelle} autorisée
-			\end{itemize}
-		}
-		\only<3>{
-			\begin{itemize}
-				\item Vue \alert{partagée}
-			\end{itemize}
-		}
-		\only<4>{
-			\begin{itemize}
-				\item Outil pour la \alert{déformation} ou le \alert{déplacement} de molécule
-			\end{itemize}
-		}
-		\only<5>{
-			\begin{itemize}
-				\item Outil pour l'\alert{orientation} de la molécule
-			\end{itemize}
-		}
-		\only<6>{
-			\begin{itemize}
-				\item Nombre d'outils quasiment \alert{illimité}
-			\end{itemize}
-		}
-		\psset{xunit=0.666666666667\paperwidth,yunit=0.4\paperwidth}
-		\begin{myfigure}
-			\begin{myps}(0,0)(1,1)%
-				\only<1-6>{%
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp1-schema}}%
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp1-photo}}%
-					\pnode(0.52,0.66){tug1}%
-					\pnode(0.62,0.76){tug1-from}%
-					\pnode(0.62,0.60){tug2}%
-					\pnode(0.72,0.70){tug2-from}%
-					\pnode(0.57,0.63){grab}%
-					\pnode(0.67,0.73){grab-from}%
-				}%
-				\only<3>{%
-					\pspolygon[linewidth=4pt,linecolor=myred](0.60,0.68)(0.61,0.93)(0.86,0.88)(0.83,0.57)%
-				}%
-				\only<4>{%
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
-					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
-					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
-				}%
-				\only<5>{%
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp2-schema}}%
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp2-photo}}%
-					\pnode(0.59,0.6){grab}%
-					\pnode(0.69,0.7){grab-from}%
-					\ncline[linewidth=2.5pt,linecolor=blue,nodesepB=2.5pt]{c->}{grab-from}{grab}%
-				}%
-				\only<6>{%
-					\rput(0.5,0.5){\myimage[width=0.666666666667\paperwidth,height=0.4\paperwidth]{exp3-schema}}%
-					\rput(0.2,0.8){\myimage[width=0.266666666667\paperwidth,height=0.16\paperwidth]{exp3-photo}}%
-					\pnode(0.52,0.675){tug1}%
-					\pnode(0.62,0.775){tug1-from}%
-					\pnode(0.55,0.65){tug2}%
-					\pnode(0.65,0.75){tug2-from}%
-					\pnode(0.58,0.63){tug3}%
-					\pnode(0.68,0.73){tug3-from}%
-					\pnode(0.62,0.61){tug4}%
-					\pnode(0.72,0.71){tug4-from}%
-					\ncline[linewidth=2.5pt,linecolor=myred,nodesepB=2.5pt]{c->}{tug1-from}{tug1}%
-					\ncline[linewidth=2.5pt,linecolor=myblue,nodesepB=2.5pt]{c->}{tug2-from}{tug2}%
-					\ncline[linewidth=2.5pt,linecolor=magenta,nodesepB=2.5pt]{c->}{tug3-from}{tug3}%
-					\ncline[linewidth=2.5pt,linecolor=mygreen,nodesepB=2.5pt]{c->}{tug4-from}{tug4}%
-				}%
-			\end{myps}
-			\mycaption[fig-PlateFormeExperimentale1]{Plate-forme expérimentale}
-		\end{myfigure}
 	\end{myframe}
 	\subsection{Outils supplémentaires proposés}
 	\begin{myframe}{Outils supplémentaires proposés}
@@ -568,7 +576,7 @@
 			\mycaption[fig-OutilDeSelectionAmeliore]{Outil de sélection amélioré}
 		\end{myfigure}
 	\end{myframe}
-	\section{Étude du travail collaboratif}
+	\section{Caractérisation des approches collaboratives en environnement moléculaire}
 	\begin{myframe}<1-7>[label={fra-sota-PrimitivesComportementales}]{Primitives Comportementales (PC)}
 		\begin{columns}[T]
 			\begin{column}{0.45\textwidth}
@@ -1105,7 +1113,7 @@
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
 	\end{myframe}
 	\subsubsection{Notions importantes sur la dynamique de groupe}
-	\begin{myframe}[label=current]{Notions importantes sur la dynamique de groupe}
+	\begin{myframe}{Notions importantes sur la dynamique de groupe}
 		\begin{columns}[T]
 			\begin{column}{0.475\textwidth}
 				\begin{myblock}{Facilitation sociale \mycite{Triplett-1898}}
@@ -1286,7 +1294,7 @@
 			\end{column}
 		\end{columns}
 	\end{myframe}
-	\section{Aide au travail collaboratif}
+	\section{Communication haptique pour les approches collaboratives}
 	\subsection{Étude~\mynum{4} -- Assistance haptique et stratégie de travail}
 	\begin{myframe}{Sommaire}
 		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/show/hide]
