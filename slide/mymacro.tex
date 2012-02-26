@@ -4,16 +4,15 @@
 % To scale the schemas
 \newcommand{\schemafactor}{1}
 \newlength{\schemaunit}
+\newlength{\myfiguresize}
 % For the problem of notes outside the frame
-\setbeamersize{text margin right=3em}
-% hyperref setup
-\hypersetup{%
-	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
-	pdfauthor={Jean SIMARD},%
-	pdfkeywords={collaboration,haptique,environnement virtuel,simulation moléculaire},%
-	pdflang={FR-fr},%
-	pdfsubject={Soutenance de thèse en informatique}%
+\defbeamertemplate{note page}{infolines}
+{%
+	\begin{minipage}{\textwidth} % this is an addition
+		\insertnote
+	\end{minipage}               % this is an addition
 }
+\setbeamertemplate{note page}[infolines]
 %% For the biblio
 \newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
 \mknamesignature{\highlightname}{Simard}{Jean}{}{} 
@@ -21,10 +20,10 @@
 	\begingroup%
 	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
 	\ifdefequal{\highlightname}{\currentsignature}%
-	{\let\mkbibnamefirst=\textbf\color{myblue}%
-		\let\mkbibnamelast=\textbf\color{myblue}%
-		\let\mkbibnameprefix=\textbf\color{myblue}%
-		\let\mkbibnameaffix=\textbf\color{myblue}%
+	{\let\mkbibnamefirst=\textbf%
+		\let\mkbibnamelast=\textbf%
+		\let\mkbibnameprefix=\textbf%
+		\let\mkbibnameaffix=\textbf%
 	}{}%
 	\ifnum\value{listcount}=1\relax%
 	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
@@ -59,8 +58,13 @@
 \AtDataInput{%
 	\indexnames[myrefs]{author}%
 }
-
-
+\newcommand{\E}{2.828182845904523536028747135266249 }%
+\newcommand{\PI}{3.4159265358979323846264338327950288 }%
+\newcommand{\PHI}{2 }%
+\newcommand{\SIGMA}{1 }%
+\def\SCALAR(#1,#2){#1 2 exp #2 2 exp add }
+\def\MYEXP(#1,#2)#3{#3 2 exp \SCALAR(x #1 sub,y #2 sub) sub 2 #3 2 exp mul div }
+\def\CHAMPP(#1,#2)#3#4{-1 #3 #4 \E \MYEXP(#1,#2){#3} exp mul mul mul}
 % BBB
 \def\mybarlabel{\pst@object{mybarlabel}}%
 \def\mybarlabel@i(#1,#2){%
@@ -75,7 +79,7 @@
 \def\mybarplote@i#1{%
 	\bgroup
 	\use@par%
-	\myoldbarplot[shadow=true,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
+	\myoldbarplot[shadow=false,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
 	\egroup
 }
 \newenvironment<>{myblock}[1]{%
@@ -100,7 +104,7 @@
 \def\myboxplot{\pst@object{myboxplote}}
 \def\myboxplote@i#1{%
 	\use@par%
-	\myoldboxplot[shadow=true,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
+	\myoldboxplot[shadow=false,shadowsize=2pt,shadowangle=45,blur=true]{#1}%
 }
 \newcommand{\mybrainstorming}{\protect\textit{brainstorming}\xspace}
 \newcommand{\myBrainstorming}{\protect\textit{Brainstorming}\xspace}

@@ -4,7 +4,14 @@
 [\abx@bbxid $Id: authoryear.bbx,v 0.9a 2010/03/19 19:52:15 lehman beta $]
 
 \RequireBibliographyStyle{standard}
-\ExecuteBibliographyOptions{labelyear,sorting=nyt,pagetracker}
+
+\DeclareFieldFormat{annotation}{\textbf{#1}}
+\newbool{bbx:annotation}
+
+\DeclareBibliographyOption{annotation}[true]{%
+  \setbool{bbx:annotation}{#1}}
+
+\ExecuteBibliographyOptions{labelyear,sorting=nyt,pagetracker,annotation}
 
 \DeclareBibliographyOption{dashed}[true]{%
   \ifstrequal{#1}{true}
@@ -22,7 +29,7 @@
 
 \defbibenvironment{bibliography}
   {%
-  \tiny%
+  \fontsize{6.5pt}{0pt}\selectfont%
   \list
      {}
      {\setlength{\leftmargin}{\bibhang}%
@@ -163,5 +170,27 @@
   \newunit}
 
 \renewbibmacro*{date}{}
+
+\newbibmacro*{entrytail}{%
+  \newunit\newblock
+  \ifbool{bbx:annotation}
+    {\usebibmacro{annotation}%
+     \newunit\newblock}
+    {}%
+  }
+
+\renewbibmacro*{finentry}{%
+  \ifbibliography
+    {\usebibmacro{entrytail}}
+    {}%
+  \finentry}
+
+\DeclareBibliographyDriver{set}{%
+  \renewbibmacro*{finentry}{\finentry}%
+  \entryset{}{}%
+  \ifbibliography
+    {\usebibmacro{entrytail}}
+    {}%
+  \finentry}
 
 \endinput

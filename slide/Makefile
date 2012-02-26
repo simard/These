@@ -172,4 +172,5 @@ clean:
 # To clean the 'build' directory and suppress all created files
 proper: clean
 	rm -f $(IMG)/*.eps $(IMG)/*.ps
+	git checkout -- images/logo-limsi.eps
 	rm -f $(OUT).dvi $(OUT).ps $(OUT).pdf
