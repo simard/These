@@ -5,13 +5,13 @@
 
 \RequireBibliographyStyle{standard}
 
-\DeclareFieldFormat{annotation}{\textbf{#1}}
+\DeclareFieldFormat{annotation}{\textbf{\textcolor{myred!50}{#1}}}
 \newbool{bbx:annotation}
 
 \DeclareBibliographyOption{annotation}[true]{%
   \setbool{bbx:annotation}{#1}}
 
-\ExecuteBibliographyOptions{labelyear,sorting=nyt,pagetracker,annotation}
+\ExecuteBibliographyOptions{labelyear,labelnumber,sorting=nyt,pagetracker,annotation}
 
 \DeclareBibliographyOption{dashed}[true]{%
   \ifstrequal{#1}{true}
@@ -21,21 +21,27 @@
      \renewbibmacro*{bbx:savehash}{}}}
 
 \DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
 \setlength{\bibitemsep}{0pt}
 
 \DeclareNameAlias{author}{sortname}
 \DeclareNameAlias{editor}{sortname}
 \DeclareNameAlias{translator}{sortname}
 
+\newcounter{bibitemnumber}%
 \defbibenvironment{bibliography}
   {%
-  \fontsize{6.5pt}{0pt}\selectfont%
+  \defcounter{bibitemnumber}{1}%
+  \fontsize{6.7pt}{0pt}\selectfont%
   \list
-     {}
-     {\setlength{\leftmargin}{\bibhang}%
-      \setlength{\itemindent}{-\leftmargin}%
-      \setlength{\itemsep}{\bibitemsep}%
-      \setlength{\parsep}{\bibparsep}}}
+     {\textcolor{black!50}{\bibopenbracket\thebibitemnumber\bibclosebracket}\addtocounter{bibitemnumber}{1}}%
+	 {\setlength{\labelwidth}{\labelnumberwidth}%
+	  \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+	  \addtolength{\leftmargin}{\labelsep}%
+      \renewcommand*{\makelabel}[1]{\hss##1}%
+	  }%
+  }
   {\endlist}
   {\item}
 

@@ -6,11 +6,66 @@
 \newlength{\schemaunit}
 \newlength{\myfiguresize}
 % For the problem of notes outside the frame
-\defbeamertemplate{note page}{infolines}
+\defbeamertemplate*{note page}{infolines}
 {%
-	\begin{minipage}{\textwidth} % this is an addition
-		\insertnote
-	\end{minipage}               % this is an addition
+  {%
+    \scriptsize
+    \insertvrule{.25\paperheight}{white!90!black}
+    \vskip-.25\paperheight
+    \nointerlineskip
+    \vbox{
+      \hfill%
+	  {{%
+			  \begin{pgfpicture}{0cm}{0cm}{0.25\paperwidth}{0.25\paperheight}%
+				  \begin{pgflowlevelscope}{\pgftransformscale{0.25}}%
+					  \color[gray]{0.8}%
+					  \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\paperheight}}%
+					  \pgfusepath{fill}%
+					  \color{black}%
+					  {%
+						  \pgftransformshift{\pgfpoint{\beamer@origlmargin}{\footheight}}%
+						  \pgftext[left,bottom]{%
+							  %\copy\beamer@frameboxcopy%
+						  }%
+					  }%
+				  \end{pgflowlevelscope}%
+			  \end{pgfpicture}%
+		  }}
+
+	  \hskip-\Gm@rmargin\hskip0pt%
+      \vskip-0.25\paperheight%
+      \nointerlineskip
+      \begin{pgfpicture}{0cm}{0cm}{0cm}{0cm}
+        \begin{pgflowlevelscope}{\pgftransformrotate{90}}
+          {\pgftransformshift{\pgfpoint{-2cm}{0.2cm}}%
+          \pgftext[base,left]{\footnotesize\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}}
+        \end{pgflowlevelscope}
+      \end{pgfpicture}}
+    \nointerlineskip
+    \vbox to .25\paperheight{\vskip0.5em
+      \hbox{\insertshorttitle[width=8cm]}%
+      \setbox\beamer@tempbox=\hbox{\insertsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertsubsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip17.4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsubsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertshortframetitle}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip30.8pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\insertshortframetitle[width=7cm]}\fi%
+      }%
+      \vfil}%
+  }%
+  \vskip.25em
+  \nointerlineskip
+  \begin{minipage}{\textwidth}
+  \insertnote
+  \end{minipage}
 }
 \setbeamertemplate{note page}[infolines]
 %% For the biblio
@@ -20,10 +75,10 @@
 	\begingroup%
 	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
 	\ifdefequal{\highlightname}{\currentsignature}%
-	{\let\mkbibnamefirst=\textbf%
-		\let\mkbibnamelast=\textbf%
-		\let\mkbibnameprefix=\textbf%
-		\let\mkbibnameaffix=\textbf%
+	{\let\mkbibnamefirst=\textbf\color{mygreen!75}%
+		\let\mkbibnamelast=\textbf\color{mygreen!75}%
+		\let\mkbibnameprefix=\textbf\color{mygreen!75}%
+		\let\mkbibnameaffix=\textbf\color{mygreen!75}%
 	}{}%
 	\ifnum\value{listcount}=1\relax%
 	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
@@ -35,6 +90,34 @@
 	\fi%
 	\endgroup%
 	\usebibmacro{name:andothers}%
+}
+\DeclareSortingScheme{mybibsort}{
+  \sort{
+	  \field{type}
+  }
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{sortyear}
+    \field{year}
+    \literal{9999}
+  }
+  \sort{
+    \name{sortname}
+    \name{author}
+    \name{editor}
+    \name{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
 }
 \DeclareCiteCommand{\mycite}[\mkbibbrackets]{%
 	\usebibmacro{cite:init}%
@@ -153,17 +236,18 @@
 \newcommand{\myLinux}{Linux\xspace}
 % MMM
 \newcommand{\myMacOS}{Mac~\textsc{os}\xspace}
-\newcommand{\mymolAd}{%
+\newcommand{\mymolAdt}[3]{%
 	\psclip{%
 		\pscustom[linestyle=none]{%
 			\psline[linestyle=none](5,2)(5,3)(-5,3)(-5,2)%
-			\pscurve[linestyle=none](-5,2)(-5,1)(-3,0)(0,0.5)(1,0)(2,1)(2.5,0)(5,1.5)(5,2)%
+			\pscurve[linestyle=none](-5,2)(-5,1)(-3,-0.5)(0,0.5)(1,0)(2,1)(4.5,0)(5,1.5)(5,2)%
 		}%
 	}%
-	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myblue,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,-10)}](-5,-0.5)(5,3)%
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend={#1},GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,-10)}](-5,-0.6)(5,3)%
 	\endpsclip%
-	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,2)(-5,1)(-3,0)(0,0.5)(1,0)(2,1)(2.5,0)(5,1.5)(5,2)%
+	\psecurve[linestyle={#2},linewidth={#3},linecolor=black](-5,2)(-5,1)(-3,-0.5)(0,0.5)(1,0)(2,1)(4.5,0)(5,1.5)(5,2)%
 }
+\newcommand{\mymolAd}{\mymolAdt{myblue}{solid}{0.5pt}}
 \newcommand{\mymolA}{%
 	\psclip{%
 		\pscustom[linestyle=none]{%
@@ -175,17 +259,18 @@
 	\endpsclip%
 	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,2)(-5,1.5)(-3,0)(0,0.5)(1,-0.5)(2,1)(3,0)(5,1.5)(5,2)%
 }
-\newcommand{\mymolBd}{%
+\newcommand{\mymolBdt}[3]{%
 	\psclip{%
 		\pscustom[linestyle=none]{%
 			\psline[linestyle=none](5,-2)(5,-3)(-5,-3)(-5,-2)%
-			\pscurve[linestyle=none](-5,-2)(-5,-1.5)(-3,-0.5)(-1,0)(1,-1)(2.5,0.5)(3,-0.5)(5,-1.5)(5,-2)
+			\pscurve[linestyle=none](-5,-2)(-5,-1.5)(-4,-0.5)(-1,-1)(1,-1)(3,0.5)(4,-0.5)(5,-1.5)(5,-2)%
 		}%
 	}
-	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend=myred,GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,10)}](-5,0.5)(5,-3)
+	\psframe[linestyle=none,fillstyle=gradient,gradmidpoint=0.75,gradbegin=white,gradend={#1},GradientCircle=true,GradientScale=7.5,GradientPos={(0.001,10)}](-5,0.6)(5,-3)
 	\endpsclip
-	\psecurve[linestyle=solid,linewidth=0.5pt,linecolor=black](-5,-2)(-5,-1.5)(-3,-0.5)(-1,0)(1,-1)(2.5,0.5)(3,-0.5)(5,-1.5)(5,-2)
+	\psecurve[linestyle={#2},linewidth={#3},linecolor=black](-5,-2)(-5,-1.5)(-4,-0.5)(-1,-1)(1,-1)(3,0.5)(4,-0.5)(5,-1.5)(5,-2)%
 }
+\newcommand{\mymolBd}{\mymolBdt{myred}{solid}{0.5pt}}
 \newcommand{\mymolB}{%
 	\psclip{%
 		\pscustom[linestyle=none]{%
@@ -262,4 +347,141 @@
 % PSTricks style
 \newpsstyle{legendstyle}{linestyle=none,fillstyle=solid,fillcolor=black!5,framearc=0.25,shadow=true,blur=true,shadowangle=45}
 \newpsstyle{nodestyle}{framearc=0.25,shadow=true,shadowcolor=myred,blur=true,linewidth=1pt,linecolor=black,linestyle=solid,fillstyle=solid,fillcolor=white}
+%%% COMPLEX GRAPHIC %%%%
+\ifdraft{%
+	\def\rescylinder{2 6}%
+	\def\ressphere{4 8}%
+}{%
+	\def\rescylinder{10 10}%
+	\def\ressphere{12 24}%
+}
+\def\myhydrogen[#1]{%
+	/H {
+		2 [\ressphere] newsphere
+		{-90 0 0 rotateOpoint3d} solidtransform
+		{0 10.93 0 translatepoint3d} solidtransform
+		dup (#1) outputcolors
+	} def
+	/L {
+		3.01 0.25 10  [\rescylinder] newcylindre
+		{-90 0 0 rotateOpoint3d} solidtransform
+		dup (White) outputcolors
+	} def
+	/HL { H L solidfuz } def
+}
+\def\mymethane(#1,#2,#3,#4){%
+	/C {3 [\ressphere] newsphere
+		{90 0 0 rotateOpoint3d} solidtransform
+		dup (gris) outputcolors} def
+	/HL1 { HL {#1 0 0 rotateOpoint3d} solidtransform } def
+	/HL2 { HL1 {0 0 #2 rotateOpoint3d} solidtransform } def
+	/HL3 { HL2 {0 #3 0 rotateOpoint3d} solidtransform } def
+	/HL4 { HL2 {0 #4 0 rotateOpoint3d} solidtransform } def
+	/HL12 { HL1 HL2 solidfuz} def
+	/HL123 { HL12 HL3 solidfuz} def
+	/HL1234 { HL123 HL4 solidfuz} def
+	/methane { HL1234 C solidfuz} def
+	1 setfillopacity
+	1 setstrokeopacity
+	methane  drawsolid**
+}
+\newcommand{\myPCVneutral}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(30,-109.5,-175,75)
+	}
+}
+\newcommand{\myPCVsearch}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(30,-109.5,-175,75)
+	}
+	\psset{solidmemory}%
+	\psSolid[object=plan,definition=normalpoint,args={0 9.46565766 5.46500 [100 40.5343423 14.53500]},base=-10 10 -10 10,name=myviewplane,action=none]%
+	\psset{plan=myviewplane}%
+	\multido{\i=0+20}{18}{%
+		\codejps{%
+			/myx1 2.25 \i\space cos mul def%
+			/myy1 2.25 \i\space sin mul def%
+			/myx2 3 \i\space cos mul def%
+			/myy2 3 \i\space sin mul def%
+		}%
+		\psProjection[object=line,args=myx1 myy1 myx2 myy2,linewidth=1pt,linecolor=myred,visibility=false]%
+	}%
+	\composeSolid%
+}
+\newcommand{\myPCVselection}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(30,-109.5,-175,75)
+		\myhydrogen[Red]
+		1 setfillopacity
+		1 setstrokeopacity
+		HL1 drawsolid**
+	}
+}
+\newcommand{\myPCVmanipulation}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(0,-109.5,-175,75)
+		\myhydrogen[Red]
+		/HL1 { HL {30 0 0 rotateOpoint3d} solidtransform } def
+		0.25 setfillopacity
+		0.025 setstrokeopacity
+		0.5 setfillopacity
+		0.1 setstrokeopacity
+		HL1 drawsolid**
+	}
+	\psset{solidmemory}%
+	\psSolid[object=plan,definition=equation,args={[1 0 0 0] 90},base=-10 10 -10 10,name=myprojplane,action=none]%
+	\psset{plan=myprojplane}%
+	\psProjection[plan=myprojplane,object=cercle,args=0 0 15,range=5 30,arrows={->},linecolor=mygreen,linewidth=2pt,visibility=false](0,0)%
+	\codejps{%
+		/oldarrowpointe {xunit 2 mul} def%
+		/oldarrowplume {xunit} def %
+	}%
+	\psProjection[object=vecteur,args=0.01 -0.1,range=0 30,linecolor=mygreen,linewidth=0.1pt,visibility=false](14.99,0.1)%
+	\composeSolid%
+}
+\newcommand{\myPCVevaluation}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(0,-109.5,-175,75)
+	}
+}
+\newcommand{\myPCViteration}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(0,-109.5,-175,75)
+	}
+	\psset{solidmemory}%
+	\psSolid[object=plan,definition=normalpoint,args={10.3030715 -3.64850897 0 [89.6969285 53.648509 20]},base=-5 5 -5 5,name=myh2plane,action=none]%
+	\psSolid[object=plan,definition=normalpoint,args={-10.2638652 -3.64850897 0.897971849 [110.263865 53.648509 19.1020282]},base=-5 5 -5 5,name=myh3plane,action=none]%
+	\psSolid[object=plan,definition=normalpoint,args={2.66663113 -3.64850897 -9.95200285 [97.3333689 53.648509 29.9520028]},base=-5 5 -5 5,name=myh4plane,action=none]%
+	\multido{\i=0+20}{18}{%
+		\codejps{%
+			/myx1 2.25 \i\space cos mul def%
+			/myy1 2.25 \i\space sin mul def%
+			/myx2 3 \i\space cos mul def%
+			/myy2 3 \i\space sin mul def%
+		}%
+		\psProjection[object=line,plan=myh2plane,args=myx1 myy1 myx2 myy2,linewidth=1pt,linecolor=myred,visibility=false]%
+		\psProjection[object=line,plan=myh3plane,args=myx1 myy1 myx2 myy2,linewidth=1pt,linecolor=myred,visibility=false]%
+		\psProjection[object=line,plan=myh4plane,args=myx1 myy1 myx2 myy2,linewidth=1pt,linecolor=myred,visibility=false]%
+	}%
+	\composeSolid%
+}
+\newcommand{\myPCVfinal}{%
+	\codejps{%
+		solidlightOn
+		\myhydrogen[White]
+		\mymethane(0,-109.5,-120,120)
+	}
+}
 \makeatother
