@@ -119,16 +119,27 @@
     {\printtext[bibhyperref]{\printfield{label}}}}
 
 \newbibmacro*{cite:labelyear+extrayear}{%
-  \iffieldundef{labelyear}
-    {}
-    {\printtext[bibhyperref]{%
-       \printfield{labelyear}%
-       \printfield{extrayear}}}}
+	\iffieldundef{labelyear}
+	{}
+	{%
+		\printtext[bibhyperref]{%
+			\printfield{labelyear}%
+			%%%%\printfield{extrayear}%
+			\setunit{\addcomma\addnbspace}%
+			\printfield{series}%
+		}%
+	}%
+}
 
 \newbibmacro*{cite:extrayear}{%
-  \iffieldundef{extrayear}
-    {}
-    {\printtext[bibhyperref]{\printfield{extrayear}}}}
+	\iffieldundef{extrayear}
+	{}
+	{%
+		%%%%\printtext[bibhyperref]{\printfield{extrayear}}%
+		\setunit{\addcomma\addnbspace}%
+		\printfield{series}%
+	}%
+}
 
 \newbibmacro*{textcite:postnote}{%
   \usebibmacro{postnote}%

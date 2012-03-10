@@ -227,7 +227,7 @@
 	}{}%
 }
 % GGG
-\newcommand{\mygroup}[1]{$\mathcal{G}_{#1}$\xspace}
+\newcommand{\mygroup}[1]{$\mathcal{B}_{#1}$\xspace}
 % HHH
 \newcommand{\myhypothesis}[1]{$\mathcal{H}_{#1}$\xspace}
 % III
@@ -319,7 +319,7 @@
 % PPP
 \newcommand{\myPHANToM}{\textsc{phant}o\textsc{m}\xspace}
 % RRR
-\newcommand{\myresidue}[1]{$\mathcal{R}_{#1}$\xspace}
+\newcommand{\myresidue}[1]{$\mathcal{M}_{#1}$\xspace}
 \newcommand{\myRMSD}{\textsc{rmsd}\xspace}
 % SSS
 \newcommand{\myscenario}[1]{\textsc{#1}}
@@ -344,9 +344,6 @@
 \newcommand{\myVRPN}{\textsc{vrpn}\xspace}
 % WWW
 \newcommand{\myWindows}{Windows\xspace}
-% PSTricks style
-\newpsstyle{legendstyle}{linestyle=none,fillstyle=solid,fillcolor=black!5,framearc=0.25,shadow=true,blur=true,shadowangle=45}
-\newpsstyle{nodestyle}{framearc=0.25,shadow=true,shadowcolor=myred,blur=true,linewidth=1pt,linecolor=black,linestyle=solid,fillstyle=solid,fillcolor=white}
 %%% COMPLEX GRAPHIC %%%%
 \ifdraft{%
 	\def\rescylinder{2 6}%
@@ -429,11 +426,12 @@
 		\myhydrogen[White]
 		\mymethane(0,-109.5,-175,75)
 		\myhydrogen[Red]
+		1 setfillopacity
+		1 setstrokeopacity
+		HL1 drawsolid**
 		/HL1 { HL {30 0 0 rotateOpoint3d} solidtransform } def
-		0.25 setfillopacity
-		0.025 setstrokeopacity
 		0.5 setfillopacity
-		0.1 setstrokeopacity
+		0.0 setstrokeopacity
 		HL1 drawsolid**
 	}
 	\psset{solidmemory}%
@@ -484,4 +482,8 @@
 		\mymethane(0,-109.5,-120,120)
 	}
 }
+% PSTricks style
+\newpsstyle{legendstyle}{linestyle=none,fillstyle=solid,fillcolor=black!5,framearc=0.25,shadow=true,blur=true,shadowangle=45}
+\newpsstyle{nodestyle}{framearc=0.25,shadow=true,shadowcolor=myred,blur=true,linewidth=1pt,linecolor=black,linestyle=solid,fillstyle=solid,fillcolor=white}
+\psset{barstyle={first-barstyle,third-barstyle,fifth-barstyle}}
 \makeatother
