@@ -183,6 +183,43 @@
 }{%
 	\end{alertblock}%
 }
+\renewenvironment{alertenv}{%
+	\begin{altenv}%
+		{%
+			\usebeamertemplate{alerted text begin}%
+			\usebeamercolor[fg]{alerted text}%
+			\usebeamerfont{alerted text}%
+			\setbeamercolor{local structure}{fg=myred}%
+			\setbeamerfont{description item}{series=\bfseries}%
+		}{%
+			\usebeamertemplate{alerted text end}%
+		}{%
+			\color{.}%
+		}{}%
+	}{%
+	\end{altenv}%
+}
+\newenvironment{myshadeenv}{%
+	\only{%
+		\color{black!25}%
+		\setbeamercolor{local structure}{fg=black!25}%
+	}%
+}{}
+\newenvironment{mydescredenv}{%
+	\only{%
+		\setbeamercolor{description item}{fg=myred}%
+	}%
+}{}
+\newenvironment{mydescgreenenv}{%
+	\only{%
+		\setbeamercolor{description item}{fg=mygreen}%
+	}%
+}{}
+\newenvironment{mydescblueenv}{%
+	\only{%
+		\setbeamercolor{description item}{fg=myblue}%
+	}%
+}{}
 \let\myoldboxplot\myboxplot
 \def\myboxplot{\pst@object{myboxplote}}
 \def\myboxplote@i#1{%

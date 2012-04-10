@@ -23,46 +23,6 @@
 	maxcitenames=1,%
 	maxbibnames=99]{biblatex}
 
-\makeatletter
-\renewenvironment{alertenv}{%
-	\begin{altenv}%
-		{%
-			\usebeamertemplate{alerted text begin}%
-			\usebeamercolor[fg]{alerted text}%
-			\usebeamerfont{alerted text}%
-			\setbeamercolor{local structure}{fg=myred}%
-			\setbeamerfont{description item}{series=\bfseries}%
-		}{%
-			\usebeamertemplate{alerted text end}%
-		}{%
-			\color{.}%
-		}{}%
-	}{%
-	\end{altenv}%
-}
-\newenvironment{myshadeenv}{%
-	\only{%
-		\color{black!25}%
-		\setbeamercolor{local structure}{fg=black!25}%
-	}%
-}{}
-\newenvironment{mydescredenv}{%
-	\only{%
-		\setbeamercolor{description item}{fg=myred}%
-	}%
-}{}
-\newenvironment{mydescgreenenv}{%
-	\only{%
-		\setbeamercolor{description item}{fg=mygreen}%
-	}%
-}{}
-\newenvironment{mydescblueenv}{%
-	\only{%
-		\setbeamercolor{description item}{fg=myblue}%
-	}%
-}{}
-\makeatother
-
 % hyperref setup
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la manipulation moléculaire interactive},%
@@ -463,7 +423,7 @@
 							}
 							\only<3>{%
 								\myPCVselection%
-								\rput[bl](2.5,1.25){%
+								\rput[bl](2.6,1.3){%
 									\myimage[width=40pt]{red-cursor}%
 								}%
 							}%
@@ -773,7 +733,7 @@
 									\begin{psmatrix}[colsep=0pt,rowsep=2ex]
 										\textbf{Champs de force}\\%
 										{\small$\displaystyle F(d)=\phi\frac{d}{\sigma}\exp\left[\frac{\sigma^2-d^2}{2\sigma^2}\right]$}\\%
-										\begin{mygraph}[labels=none,ticks=none,xAxisLabel={distance},xAxisLabelPos={c,-1ex},llx={-1ex},yAxisLabel={force},yAxisLabelPos={-1ex,c},lly={-1ex}]{->}(4.5,2.5){3cm}{1cm}%
+										\begin{mygraph}[labels=none,ticks=none,xAxisLabel={\footnotesize d (distance)},xAxisLabelPos={c,-1.5ex},llx={-1.5ex},yAxisLabel={\footnotesize F (force)},yAxisLabelPos={-1.5ex,c},lly={-1.5ex}]{->}(4.5,2.5){3cm}{1cm}%
 											\psline[linecolor=black!50,linewidth=0.5pt,linestyle=dashed,arrows=-](1,0)(1,2)(0,2)%
 											\psplot[linecolor=red,linewidth=0.5pt,plotpoints=500,arrows=c-c]{0}{4}{2 \E 1 2 div exp x \E 0 x 2 exp 2 div sub exp mul mul mul}%
 											\psdot[linecolor=black!50](1,2)%
@@ -1009,9 +969,13 @@
 				\only<6>{%
 					\def\mybottomborder{-109.375}%
 				}%
-				\only<2->{%
+				\only<2-3,6>{%
 					\psframe[dimen=outer,fillstyle=none,linewidth=2pt,framearc=0.25,linecolor=myblue](0,\mybottomborder)(1,0)%
+				}%
+				\only<2,5,6>{%
 					\psframe[dimen=outer,fillstyle=none,linewidth=2pt,framearc=0.25,linecolor=mygreen](1,\mybottomborder)(4,0)%
+				}%
+				\only<2,4,6>{%
 					\psframe[dimen=outer,fillstyle=none,linewidth=2pt,framearc=0.25,linecolor=myred](4,\mybottomborder)(12,0)%
 				}%
 				\only<6>{%
@@ -1252,7 +1216,7 @@
 				\mymiddlerule
 				2 & \mynum{1}~manipulation et \mynum{1}~fixation & Tâches~\myscenario{1r} et \myscenario{2r} \\
 				\mymiddlerule
-				3 & \mynum{2}~manipulations \alert{coordonnées} & Tâche~\myscenario{2a} \\
+				3 & \mynum{2}~manipulations\alert{coordonnées} & Tâche~\myscenario{2a} \\
 				\mybottomrule
 			\end{mytabular}
 			\mycaption[tab-ClassificationDesTaches]{Classification des tâches}
@@ -1293,7 +1257,7 @@
 				\myunode[90][shadowcolor=mygreen](0,0)[conflict-problem]{Conflits de coordination}[4cm]
 				\begin{myplusblock}{Résultats \mycite{Simard-2011a}}
 					\begin{itemize}
-						\item Certaines manipulations nécessitent une coordination
+						\item Certaines manipulations nécessitent une coordination étroitement couplée
 					\end{itemize}
 				\end{myplusblock}
 				\begin{myminusblock}{Limites}
@@ -1608,7 +1572,7 @@
 						\only<3>{%
 							\mypsvibration(8.15,8.1)
 							\mypsvibration(-7,6)
-							\mypsvibration(-8,-9)
+							\mypsvibration(-8,-8.5)
 						}
 						% About labels
 						\only<1>{%
@@ -1765,10 +1729,10 @@
 					\item Caractérisation des conflits de communication et de coordination
 				\end{itemize}
 				\vfill
-			\item Amélioration des approches collaboratives : la communication haptique
+			\item Amélioration des approches collaboratives
 				\begin{itemize}
 					\item Configuration de travail adaptée
-					\item Amélioration de la tâche de désignation
+					\item Amélioration de la tâche de désignation : la communication haptique
 				\end{itemize}
 				\vfill
 		\end{itemize}
