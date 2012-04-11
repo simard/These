@@ -232,7 +232,7 @@
 	\end{mychapter+}
 	\begin{mychapter}[cha-sota-EtudeBibliographique]{Étude bibliographique}
 		\begin{mysection}[sec-sota-Introduction]{Introduction}
-			Ce travail de thèse aborde de nombreux concepts, de la biologie moléculaire au système interactifs temps-réel en passant par la psychologie sociale.
+			Ce travail de thèse aborde de nombreux concepts, de la biologie moléculaire au système interactif temps-réel en passant par la psychologie sociale.
 			Il est nécessaire de fixer le contexte dans lequel se place nos travaux : le \myglos{glo-DockingMoleculaire}.
 			Ce dernier offre un contexte de travail extrêmement complexe, idéal pour justifier une approche par le travail collaboratif.
 
@@ -245,7 +245,7 @@
 			Cette section a pour objectif de présenter le \myglos{glo-DockingMoleculaire} puis expose les différentes solutions existantes pour traiter ce problème.
 			\begin{mysubsection}[sse-sota-LeDockingMoleculaire]{Le \textit{docking} moléculaire}
 				En modélisation moléculaire, le \myglos{glo-DockingMoleculaire} consiste à prédire la conformation optimale entre deux molécules afin de créer un complexe de molécules stable \myref*{fig-sota-ComplexeDeMoleculesAssembleAPartirDeDeuxMolecules}.
-				Le \myglos{glo-DockingMoleculaire} permet soit de découvrir de nouvelles molécules (par assemblage de deux ou plusieurs molécules), soit de comprendre la nature d'un complexe de molécules obtenu par cristallographie\footnote{La cristallographie permet de déterminer les molécules présentes dans un complexe de molécules mais ne permet pas de déterminer avec précisions comment elles sont assemblées.}.
+				Le \myglos{glo-DockingMoleculaire} permet soit de découvrir de nouvelles molécules (par assemblage de deux ou plusieurs molécules), soit de comprendre la nature d'un complexe de molécules obtenu par cristallographie\footnote{La cristallographie permet de déterminer les molécules présentes dans un complexe de molécules mais ne permet pas de déterminer avec précision comment elles sont assemblées.}.
 				\mycite[author]{Fischer-1894} illustrent le \myglos{glo-DockingMoleculaire} avec le modèle \og clef-serrure \fg décrit de la façon suivante.
 				\begin{myquote}[ngerman]
 					\it Um ein Bild zu gebrauchen, will ich sagen, da\ss{} Enzym und Glycosid wie Schlo\ss{} und Schlüssel zueinander passen müssen, um eine chemische Wirkung aufeinander ausüben zu können.
@@ -445,7 +445,7 @@
 
 				En tenant compte de la flexibilité des molécules, les besoins en interaction se sont affinés; il n'est plus question de modifier la position d'une molécule, on cherche à présent à modifier la position d'un atome ou d'un groupe d'atomes dans la molécule.
 				Le modèle d'interaction proposé est la traction des atomes par un simple modèle masse-ressort \mycite{Haan-2002,Koutek-2002} ce qui permet une déformation des atomes de manière locale.
-				Puis \mycite[author]{Lee-2004} propose de baser les modèles d'interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}; ce modèle de force a l'avantage de permettre une bonne stabilité du retour haptique \myref*{fig-sota-PotentielDeLennardJones1924}.
+				Puis \mycite[author]{Lee-2004} proposent de baser les modèles d'interactions haptiques sur l'approximation du champ de force décrit dans \mycite{Lennard-Jones-1924a,Lennard-Jones-1924b} \myref*{eq-sota-PotentielDeLennardJones}; ce modèle de force a l'avantage de permettre une bonne stabilité du retour haptique \myref*{fig-sota-PotentielDeLennardJones1924}.
 				\begin{eqnarray}\label{eq-sota-PotentielDeLennardJones}
 					V_{LJ} &=&\displaystyle 4\varepsilon \left[\left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^6\right] \\
 					V_{LJ} &=&\displaystyle \varepsilon \left[\left(\frac{r_m}{r}\right)^{12} - 2 \left(\frac{r_m}{r}\right)^6\right]
@@ -503,7 +503,7 @@
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-PlateformesCollaborativesPourLaBiologieMoleculaire]{Plateformes collaboratives pour la biologie moléculaire}
 				Les applications collaboratives en biologie moléculaire ont commencé à être développées pour principalement répondre à deux contraintes : le travail à distance et la multi-expertise que nécessite le problème de \myglos{glo-DockingMoleculaire}.
-				L'une des premières application a été proposée par \mycite[author]{Casher-1995} sous le nom de \myEyeChem.
+				L'une des premières applications a été proposée par \mycite[author]{Casher-1995} sous le nom de \myEyeChem.
 				Cette application constituée d'un nœud serveur et de nœuds clients sur un réseau interne, permet à plusieurs utilisateurs d'éditer et de manipuler une molécule de manière synchrone.
 				Comme les plateformes qui vont être présentés par la suite, \myEyeChem permet seulement de manipuler des molécules statiques contenant quelques dizaines d'atomes.
 
@@ -524,7 +524,7 @@
 					\mycaption[fig-sota-PlateformePourLaCollaborationEntreUniversiteProposeeParDove2005]{Plateforme pour la collaboration entre universités proposée par \mycite{Dove-2005}}
 				\end{myfigure}
 
-				\mycite[author]{Chastine-2005} sont parmis les premiers à identifier les problématiques de communication entre les sujets au sein des applications collaboratives et interactives \myref*{sss-sota-LaConscienceDeGroupe}.
+				\mycite[author]{Chastine-2005} sont parmi les premiers à identifier les problématiques de communication entre les sujets au sein des applications collaboratives et interactives \myref*{sss-sota-LaConscienceDeGroupe}.
 				À travers l'application \myAMMPVis, ils proposent des outils pour désigner des zones d'intérêt sur des molécules.
 				Afin d'améliorer la communication, les mains de chaque utilisateur sont représentées dans l'environnement virtuel pour que chacun ait conscience des actions des partenaires \myref*{fig-sota-ManipulationCollaborativeDeMoleculeAvecRepresentationDesMainsDesParticipantsChastine2005}.
 				Une version améliorée \myAMMPEXTN de la plateforme a été développée par la suite en intégrant des procédures de contrôle d'accès.
@@ -538,7 +538,7 @@
 				L'ensemble des travaux présentés jusqu'à présent concerne essentiellement des plateformes de collaboration distante.
 				Pourtant, quelques recherches se sont intéressées à la collaboration colocalisée afin de créer un environnement de travail plus social.
 				L'application \myPaulingWorld \mycite{Su-2000,Su-2001} propose une des premières applications de collaboration colocalisée pour la visualisation de molécules et l'interaction à l'aide de menus.
-				La visualisation s'effectue sur un \myWorkbench ce qui permet aux utilisateurs d'avoir des niveaux d'interaction similaires dans l'application (même accès aux ressources, même outils de visualisation, \myetc).
+				La visualisation s'effectue sur un \myWorkbench ce qui permet aux utilisateurs d'avoir des niveaux d'interaction similaires dans l'application (même accès aux ressources, même outil de visualisation, \myetc).
 				Pour améliorer l'immersion, \mycite[author]{Kriz-2003} proposent avec leur application \myDIVERSE d'immerger plusieurs utilisateurs dans \myCAVE pour explorer des molécules.
 
 				Nous venons de présenter plusieurs plateformes logicielles et matérielles permettant de créer un espace de collaboration pour la modélisation moléculaire et le \myglos{glo-DockingMoleculaire}.
@@ -709,7 +709,7 @@
 
 				Cependant, des nuances de ce phénomène commencent à être observées.
 				Par exemple, des différences de performances sont observées en fonction de la nature de la tâche.
-				Déjà, \mycite[author]{Yerkes-1908} avait constaté, dans un contexte non-collaboratif, que les performances d'un individu pouvait dépendre de la complexité de la tâche et du niveau de stimulation.
+				Déjà, \mycite[author]{Yerkes-1908} avaient constaté, dans un contexte non-collaboratif, que les performances d'un individu pouvait dépendre de la complexité de la tâche et du niveau de stimulation.
 				Une trop faible ou une trop forte stimulation diminue les performances de l'individu lors de la réalisation d'une tâche complexe \myref*{fig-sota-LoiDeYerkesDodsonSurLeLienEntreLaStimulationDesIndividusEtLesPerformances}.
 				Une trop faible stimulation désintéresse l'individu de la tâche alors qu'une stimulation trop importante génère un stress diminuant les capacités de l'individu.
 
@@ -755,7 +755,7 @@
 				Cependant, nous allons voir dans la section suivante qu'une autre théorie vient compléter celle de la \myglos{glo-FacilitationSociale} : la \myglos{glo-ParesseSociale}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-sota-LaParesseSociale]{La paresse sociale}
-				\mycite[author]{Ringelmann-1913} est le premier à constater le phénomène de \myglos{glo-ParesseSociale}\footnote{Ce phénomène de \myglos{glo-ParesseSociale} est d'ailleurs parfois nommé \og effet de \mycite[author]{Ringelmann-1913} \fg.} dans un rapport technique qui sera signalé quelques années plus tard par \mycite[author]{Moede-1927} puis repris de manière détaillée dans la littérature scientifique par \mycite[author]{Kravitz-1986}.
+				\mycite[author]{Ringelmann-1913} est le premier à constater le phénomène de \myglos{glo-ParesseSociale}\footnote{Ce phénomène de \myglos{glo-ParesseSociale} est d'ailleurs parfois nommé \og effet de \mycite[author]{Ringelmann-1913} \fg.} dans un rapport technique qui sera signalé quelques années plus tard par \mycite[author]{Moede-1927} puis reprit de manière détaillée dans la littérature scientifique par \mycite[author]{Kravitz-1986}.
 				Il propose une expérience de traction de corde à plusieurs individus et observe la traction totale exercée par le groupe en faisant varier la taille des groupes.
 				La traction totale observée pour un groupe est inférieure à la somme des efforts individuels \myref*{fig-sota-ResultatsObtenusParRingelmannEtPresentesParKravitz}.
 				\mycite[author]{Schermerhorn-2009} définit la \myglos{glo-ParesseSociale} de la manière suivante
@@ -835,7 +835,7 @@
 				Dans une étude dans laquelle sont comparés entre autre une configuration de travail collaboratif distribuée avec une configuration colocalisée, \mycite[author]{Chidambaram-2005} montrent qu'un travail colocalisé permet de faciliter l'auto-évaluation et augmente cette pression sociale.
 				En effet, le travail colocalisé permet d'avoir une meilleur perception des actions de chacun des membres et ainsi d'évaluer de façon plus précise le travail des collaborateurs.
 
-				Cependant, \mycite[author]{Chidambaram-2005} constatent un effet parallèle : certains membres du groupe donne simplement l'impression qu'ils travaillent sans être réellement efficaces.
+				Cependant, \mycite[author]{Chidambaram-2005} constatent un effet parallèle : certains membres du groupe donnent simplement l'impression qu'ils travaillent sans être réellement efficaces.
 				On trouve également les récents travaux de \mycite[author]{Buisine-2011} qui montrent que l'occupation spatiale de l'environnement est importante : un accès limité à l'espace de travail provoque de la \myglos{glo-ParesseSociale}.
 				En effet, si l'accès à une ressource externe ne permet que la présence d'un seul membre du groupe, les autres membres ne pouvant pas l'utiliser peuvent générer le phénomène de \myglos{glo-ParesseSociale}.
 				Il est donc préférable d'avoir un accès équitable à l'espace de travail pour tous les membres du groupe (une table ronde par exemple).
@@ -852,7 +852,7 @@
 				\item[Les participants] qui sont les individus qui vont contribuer directement ou indirectement à la réalisation d'une tâche en collaboration;
 				\item[Les artefacts] qui sont les différents composants ou matériels avec lesquels ou sur lesquels la collaboration peut s'appuyer.
 			\end{description}
-			Dans cette section, nous allons décrire les différents type de communication qui ont lieu entre les différents acteurs d'un système collaboratif.
+			Dans cette section, nous allons décrire les différents types de communication qui ont lieu entre les différents acteurs d'un système collaboratif.
 			Puis, après avoir détaillé les effets inhérents aux modes de communication, nous présenterons différents scénarios possibles de collaboration.
 			\begin{mysubsection}[sse-sota-CommunicationEnEnvironnementVirtuel]{Communication en environnement virtuel}
 				La communication en environnement virtuel est constituée de différentes composantes.
@@ -861,7 +861,7 @@
 				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-CommunicationDirecte]{Communication directe}
 					C'est le moyen de communication le plus naturel.
 					La communication se fait de manière orale ou gestuelle principalement.
-					Elle est conscient la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
+					Elle est consciente la plupart du temps mais peut contenir une part de communication inconsciente d'après \mycite[author]{Gutwin-2000}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CommunicationEnEnvironnementVirtuel-ControleEtRetourSensoriel]{Contrôle et retour sensoriel}
 					C'est l'interaction entre un participant et un artefact.
@@ -971,7 +971,7 @@
 					Cependant, durant la réalisation de la tâche, une base de connaissance commune va se créer.
 					\mycite[author]{Hertzum-2008} lie les processus de recherche d'informations et de \mygrounding.
 					En effet, la recherche d'informations mène les membres du groupe à découvrir l'environnement dans lequel ils évoluent ensemble pour étoffer leur base de connaissance commune.
-					Cependant, en observant le travail d'un hôpital où plusieurs médecins sont à la recherches de symptômes pour diagnostiquer un patient et fournir un traitement approprié, \mycite[author]{Hertzum-2010} s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostic.
+					Cependant, en observant le travail d'un hôpital où plusieurs médecins sont à la recherche de symptômes pour diagnostiquer un patient et fournir un traitement approprié, \mycite[author]{Hertzum-2010} s'est rendu compte que chaque médecin est capable individuellement de découvrir des symptômes mais que le manque d'échanges entre les différents médecins ne permettait pas toujours d'établir le bon diagnostic.
 
 					Afin de constituer correctement une base de connaissance commune, les membres du groupe doivent communiquer.
 					En particulier, ils doivent continuellement être sûr que les éléments dont ils parlent sont bien les mêmes afin de transmettre l'information.
@@ -1016,21 +1016,21 @@
 					\end{myfigure}
 
 					Illustré sur la \myref{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
-					Cette configuration permet de répartir équitablement le travail entre les membres du groupes.
+					Cette configuration permet de répartir équitablement le travail entre les membres du groupe.
 					De plus, les utilisateurs ont accès aux mêmes informations ce qui facilite la constitution du \mygrounding.
 					Cependant, deux inconvénients sont à relever avec cette configuration.
 
 					Tout d'abord, nous avons vu dans la \myref{sse-sota-LaParesseSociale} sur la \myglos{glo-ParesseSociale} qu'une identification des rôles était préférable pour tirer profit d'une configuration collaborative.
-					En proposant des rôles strictement identiques aux utilisateurs, ce type de scénario tend à favoriser la \myglos{glo-ParesseSociale} en ne fournissant pas d'éléments pour une identification distincte de rôles différents.
+					En proposant des rôles strictement identiques aux utilisateurs, ce type de scénario tend à favoriser la \myglos{glo-ParesseSociale} en ne fournissant pas d'élément pour une identification distincte de rôles différents.
 
 					De plus, on notera que tous les participants accèdent aux mêmes artefacts.
 					Si deux collaborateurs accèdent, modifient ou manipulent en même temps un même artefact, cela peut poser des problèmes de cohérence de l'environnement virtuel ou de sécurité de l'information comme l'explique \mycite[author]{Dewan-1998}.
 					\mycite[author]{Dewan-1998} énoncent une liste de conditions à respecter (automatisation, généralisation, médiation totale, privilège minimum, facilité d'utilisation, efficacité) pour limiter les problèmes de concurrences d'accès aux codes sources dans le développement de programmes informatiques.
 					\mycite[author]{Grasset-2002} sont également confrontés à ce problème d'accès aux ressources sur sa plateforme multi-utilisateurs \myMARE et propose un système de contrôle d'accès aux informations.
-					Toutefois, \mycite[author]{Buisine-2011} soulignent qu'un accès aux artefacts équitablement distribué entre les utilisateurs permet de réduire la \myglos{glo-ParesseSociale} en évitant l'isolement d'un des membres du groupe.
+					Toutefois, \mycite[author]{Buisine-2011} soulignent qu'un accès aux artefacts équitablement distribués entre les utilisateurs permet de réduire la \myglos{glo-ParesseSociale} en évitant l'isolement d'un des membres du groupe.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
-					Dans cette configuration illustrée sur la \myref*{fig-sota-CollaborationAPlusieursExperts}, chaque utilisateur est expert d'un domaine de compétence différent de ces collaborateurs.
+					Dans cette configuration illustrée sur la \myref*{fig-sota-CollaborationAPlusieursExperts}, chaque utilisateur est expert d'un domaine de compétence différent de ses collaborateurs.
 					Chaque expert dispose d'artefacts adaptés à ses compétences et les artefacts sont synchronisés par la plateforme.
 
 					\begin{myfigure}
@@ -1175,7 +1175,7 @@
 				\item[Exploration] Cette tâche concerne la recherche et l'identification d'une cible (atome, \myglos{glo-Residu}, structure secondaire, \myetc) en fonction de critères multiples (articulations, bilan énergétique, régions hydrophobique, \myetc).
 				\item[Sélection] Une fois la cible trouvée, la tâche consiste à accéder puis à sélectionner la cible par l'intermédiaire d'un périphérique d'entrée (une souris, une interface haptique, \myetc).
 				\item[Déformation] Cette étape consiste à manipuler la cible précédemment sélectionnée pour déformer la structure moléculaire au niveau atomique, intra-moléculaire ou inter-moléculaire.
-					L'objectif inhérent à cette tâche et d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
+					L'objectif inhérent à cette tâche est d'atteindre l'objectif fixé (par exemple, minimiser l'énergie totale du système).
 				\item[Évaluation] Cette dernière partie concerne l'évaluation du travail précédemment réalisé en observant différents indicateurs (énergie potentielle, énergie électrostatique, complémentarité des surfaces, \myetc).
 					En fonction de la synthèse des résultats de cette dernière phase, un nouveau cycle de déformation pourra recommencer (recherche, sélection, déformation, évaluation, \myetc).
 			\end{description}
@@ -1222,7 +1222,7 @@
 
 			Ensuite, la plateforme de simulation moléculaire en temps-réel est présentée \myref*{sec-Shaddock-PlateformeDeSimulationEtDeVisualisation}.
 			Tout d'abord, un module de visualisation est nécessaire pour obtenir des visualisations détaillées et complètes de molécules; le module est présenté dans la \myref{sse-Shaddock-ModuleDeVisualisationMoleculaire}.
-			Puis un module de simulation moléculaire est ajouté au module visualisation; plusieurs solutions sont possible et le module retenu est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
+			Puis un module de simulation moléculaire est ajouté au module visualisation; plusieurs solutions sont possibles et le module retenu est présenté dans la \myref{sse-Shaddock-ModuleDeSimulationMoleculaire}.
 			Cependant, afin d'obtenir une simulation moléculaire interactive temps-réel, un module spécifique doit être ajouté; il sera présenté dans la \myref{sss-Shaddock-SimulationMoleculaireInteractiveEtTempsReel}.
 
 			Le module de visualisation moléculaire utilisé propose déjà des outils permettant d'interagir avec les molécules.
@@ -1479,7 +1479,7 @@
 				\begin{description}
 					\item[\myCPK] affiche tous les atomes de la molécule sous forme de sphères en les reliant par des cylindres; c'est un affichage très chargé lorsque le nombre d'atomes est important mais la taille des sphères et des cylindres peut être modifiée \myref*{fig-simulation-CPK};
 					\item[\myLicorice] représente tous les liens entre les atomes par des cylindres, sans représenter les atomes; la taille des cylindres peut être modifiée \myref*{fig-simulation-Licorice};
-					\item[\myNewRibbon] produit une courbe spline sur les atomes $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban \myref*{fig-simulation-NewRibbon};
+					\item[\myNewRibbon] produit une courbe sur les atomes $C_{\alpha}$ représentant l'armature principale de la molécule; la courbe est représentée sous forme de ruban \myref*{fig-simulation-NewRibbon};
 					\item[\myHBonds] affiche les potentielles liaisons hydrogène sous forme de traits en pointillés; les seuils physiques ainsi que les paramètres d'affichage de la ligne (couleur, largeur, \myetc) sont modifiables \myref*{fig-simulation-HBonds}.
 				\end{description}
 
@@ -1515,7 +1515,7 @@
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-ModuleDeSimulationMoleculaire]{Module de simulation moléculaire}
 				Les trois principaux modules de simulation moléculaire existants sont \myGromacs \mycite{Berendsen-1995}, \myacro{acr-NAMD} \mycite{Phillips-2005} et \myAMBER \mycite{Case-2005}.
-				\mycite[author]{Hess-2008} montre que \myGromacs est plus performant que \myacro{acr-NAMD}.
+				\mycite[author]{Hess-2008} montrent que \myGromacs est plus performant que \myacro{acr-NAMD}.
 				Un rapport technique de \mycite[author]{Loeffler-2009a} a également permis de montrer que \myGromacs domine en terme de performances de calculs.
 				Une comparaison plus détaillée montre que chaque moteur de simulation offre de bons résultats en fonction des problèmes auquel il est confronté et du matériel utilisé \mycite{Loeffler-2009b}.
 
@@ -1564,7 +1564,7 @@
 				Cependant, \mycite[author]{Sallnas-2000} a montré l'intérêt d'un retour haptique pour l'amélioration des performances dans les configurations de travail collaboratif; c'est donc naturellement que nous nous sommes orientées vers des interfaces haptiques de bureau.
 
 				Parmi les interfaces haptiques disponibles sur le marché, le \myOmni répond à l'ensemble de ces contraintes avec un rapport qualité/prix correct.
-				Le \myDesktop, qui répond également aux contraintes, aurait permis des retours haptiques plus fidèles mais son prix élevé ne convient à notre plateforme collaborative où il faudra en déployer plusieurs.
+				Le \myDesktop, qui répond également aux contraintes, aurait permis des retours haptiques plus fidèles mais son prix élevé ne convient pas à notre plateforme collaborative où il faudra en déployer plusieurs.
 				De plus, sa connectique (port parallèle) quasiment obsolète, est de plus en plus difficile à trouver sur les ordinateurs récents\footnote{Un convertisseur vers une connectique \myFireWire vendu par \mySensAble existe mais nécessite une dépense supplémentaire significative.}.
 			\end{mysubsection}
 			\begin{mysubsection}[sse-Shaddock-OutilsExistants]{Outils existants}
@@ -1595,16 +1595,16 @@
 				Le développement de ces nouveaux outils a nécessité la modification de \myacro{acr-VMD} par extension des outils déjà existants.
 				Les fonctionnalités ajoutées sont présentées dans les sections suivantes.
 				\begin{mysubsubsection}[sss-Shaddock-OutilDeSelectionCollaboratif]{Outil de sélection collaboratif}
-					Afin d'effectuer correctement une sélection, il est préférable de connaître \myapriori quel cible sera sélectionnée en fonction de la position actuelle du curseur.
+					Afin d'effectuer correctement une sélection, il est préférable de connaître \myapriori quelle cible sera sélectionnée en fonction de la position actuelle du curseur.
 					C'est pourquoi, cet outil de sélection amélioré met continuellement en surbrillance la cible la plus proche du curseur.
-					Afin de distinguer une cible sélectionnée d'une cible par encore sélectionnée, les cibles non-sélectionnées sont simplement surligné de manière transparente alors que les cibles sélectionnées sont de couleurs opaques \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
+					Afin de distinguer une cible \og sélectionnée \fg d'une cible \og non-sélectionnée \fg, ces dernières sont simplement surlignées de manière transparente alors que les cibles sélectionnées sont de couleurs opaques \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
 
-					Cependant, dans un contexte de travail collaboratif, il doit être possible pour chacun des collaborateurs de distinguer sa sélection de la sélections des autres.
+					Cependant, dans un contexte de travail collaboratif, il doit être possible pour chacun des collaborateurs de distinguer sa sélection de la sélection des autres.
 					Les curseurs de chacun des participants étant de couleur différente, le surlignage est effectué en utilisant cette couleur.
 
 					Il est également possible de sélectionner des groupes d'atomes (dispositif mis en place sur certaines des expérimentations).
 					Cependant, plutôt que de considérer un centre virtuel de ce groupe d'atomes (barycentre par exemple) qui ne serait pas affiché, les interactions haptiques sont effectuées par rapport à un atome.
-					Pour que les utilisateurs aient une indication précise concernant les interactions haptiques, cet atome est agrandi par rapport aux reste du groupe d'atome \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
+					Pour que les utilisateurs aient une indication précise concernant les interactions haptiques, cet atome est agrandi par rapport au reste du groupe d'atome \myref*{fig-selection-improvement-DifferenceVisuelleEntreLesElementsPointesEtSelectionnes}.
 
 					\begin{myfigure}
 						\begin{mysubfigure}
@@ -1713,14 +1713,14 @@
 		\begin{mysection}[sec-exp1-ExplorationEtSelectionCollaborative]{Exploration et sélection collaborative}
 			\begin{mysubsection}[sse-exp1-TravauxExistants]{Travaux existants}
 				L'exploration et la sélection en environnement virtuel sont des tâches élémentaires relativement peu explorées en environnement virtuel, notamment dans le domaine de la biologie moléculaire.
-				Pourtant, des travaux en biologie moléculaire existent dans les environnement réels mais les contraintes techniques sont très différentes de celles en environnement virtuel; nous ne nous étendrons pas sur ce sujet.
+				Pourtant, des travaux en biologie moléculaire existent dans les environnements réels mais les contraintes techniques sont très différentes de celles en environnement virtuel; nous ne nous étendrons pas sur ce sujet.
 
 				Actuellement, les tâches d'exploration et de recherche collaborative sont principalement destinées aux applications pour les moteurs de recherche.
 				\mycite[author]{Morris-2007} souligne que la coopération dans ce domaine existe déjà sur \myInternet mais que les échanges entre les utilisateurs sont encore trop peu exploités.
 				Sur cette base, \mycite[author]{Pickens-2007} propose un système pour la recherche collaborative où des utilisateurs à la recherche d'informations peuvent échanger de manière synchrone les résultats intermédiaires afin de progresser plus rapidement.
 
 				En environnement virtuel, \mycite[author]{Wernert-1999} propose simplement une exploration collaborative de l'environnement virtuel; un guide permet à l'utilisateur d'explorer plus efficacement un environnement qu'il ne connait pas.
-				À partir de ce travail, \mycite[author]{Hughes-2002} propose une tâche de recherche basée sur le principe du guidage mais en supprimant la collaboration; le guide est un algorithme qui suggére à l'utilisateur les zones d'intérêt.
+				À partir de ce travail, \mycite[author]{Hughes-2002} proposent une tâche de recherche basée sur le principe du guidage mais en supprimant la collaboration; le guide est un algorithme qui suggére à l'utilisateur les zones d'intérêt.
 
 				L'objectif premier de l'exploration dans notre cas est de pouvoir sélectionner une zone d'intérêt après l'avoir identifiée.
 				En biologie moléculaire, les logiciels les plus utilisés tel que \myPyMOL ou \myacro{acr-VMD} proposent des moteurs de sélection à base de chaîne de caractères.
@@ -1739,7 +1739,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Différentes approches non collaboratives ont été étudiées pour la sélection en environnement moléculaire virtuel.
 				Par exemple, \mycite[author]{Pavlovic-1996} propose une plateforme permettant d'interagir avec les molécules en utilisant la voix et les gestes.
-				Cependant, les techniques de segmentations de la parole et des gestes sont encore imprécises.
+				Cependant, les techniques de segmentation de la parole et des gestes sont encore imprécises.
 				On trouve également les travaux de \mycite[author]{Polys-2004} qui proposent une interaction avec une \textit{wand}\footnote{Dispositif d'interaction en réalité virtuelle permettant la manipulation sur \mynum{6}~\myacro*{acr-DDL} et disposant de boutons comme une souris.} ou encore les travaux de \mycite[author]{Obeysekare-1996} permettant l'interaction gestuelle avec un gant sur un \myWorkbench\footnote{Dispositif d'affichage permettant l'affichage en \myThreeD stéréoscopique sur deux écrans.}.
 				Ces dispositifs sont relativement difficiles à déployer pour des applications collaboratives (multiplication de matériel, accès aux ressources matérielles, \myetc).
 				De plus, les tâches de manipulation étudiées sont extrêmement simplifiées et n'ont pas d'application réelle en biologie moléculaire.
@@ -1748,7 +1748,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Par exemple, \mycite[author]{Levine-1997} proposent une plateforme d'interaction avec un environnement moléculaire virtuel afin d'explorer un complexe ligand-protéine pour réaliser un \myglos{glo-DockingMoleculaire}.
 				Cependant, le \myglos{glo-DockingMoleculaire} s'effectue ici sur des corps rigides pour simplifier la complexité de l'exploration.
 				On trouve également les travaux de \mycite[author]{Ferey-2008a} mais là encore, il s'agit de corps rigides.
-				Cependant, \mycite[author]{Delalande-2010} propose une plateforme en utilisant des périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel sur des corps flexibles.
+				Cependant, \mycite[author]{Delalande-2010} proposent une plateforme en utilisant des périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel sur des corps flexibles.
 				Cependant, les travaux ont évolué vers des corps flexibles avec \mycite[author]{Delalande-2010} qui utilisent les périphériques haptiques pour aider à la localisation de ponts ioniques au sein d'une simulation moléculaire en temps-réel.
 				L'interface haptique utilisée permet de ressentir les forces en action dans la simulation et ainsi améliorer le processus d'exploration et de sélection.
 
@@ -1960,7 +1960,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp1-MaterielUtilise]{Matériel utilisé}
 					Cette première expérimentation propose aux sujets d'effectuer une recherche de \myglos*{glo-Residu} au sein d'une molécule de taille importante.
 					Les sujets disposent de deux outils de déformation \mytool{tug}.
-					Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillés dans la \myref{sss-exp1-OutilsDeManipulation}.
+					Cependant, un outil d'orientation de la molécule est mis à disposition pour des raisons détaillées dans la \myref{sss-exp1-OutilsDeManipulation}.
 					Un outil supplémentaire nécessite quelques modifications logistiques.
 
 					L'outil d'orientation de la molécule est assuré par un \myOmni associé à l'outil \mytool{grab} \myref*{sse-Shaddock-OutilsExistants}.
@@ -2114,14 +2114,14 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp1-AmeliorationDesPerformancesEnBinome-AnalyseEtDiscussion]{Analyse et discussion}
 					Les cinq \myglos*{glo-Residu} \myresidue{1}, \myresidue{2}, \myresidue{3}, \myresidue{4} et \myresidue{5} sont au sein de la molécule \myTRPCAGE qui en compte un nombre total relativement limité (\mynum{20}~\myglos*{glo-Residu}).
-					Durant la phase d'exploration, les sujets construisent rapidement une carte mentale de la molécule ce qui leur permet de d'identifier rapidement les \myglos*{glo-Residu} recherchés.
+					Durant la phase d'exploration, les sujets construisent rapidement une carte mentale de la molécule ce qui leur permet d'identifier rapidement les \myglos*{glo-Residu} recherchés.
 					De plus, les faibles contraintes physiques de la molécule (énergie totale du système peu élevée à cause du faible nombre d'atomes) la rende facile à déformer et permet un accès rapide aux structures internes.
 					Cela facilite la recherche des \myglos*{glo-Residu} qui sont dans une position interne à la molécule et qui nécessitent une déformation plus importante afin de pouvoir l'extraire.
 					Tous ces facteurs rendent les tâches de recherche et de sélection peu complexes sur la molécule \myTRPCAGE ce qui explique des temps de réalisation de la tâche très courts, aussi bien pour les \myglos*{glo-Monome} que pour les \myglos*{glo-Binome}.
 
 					Les cinq \myglos*{glo-Residu} \myresidue{6}, \myresidue{7}, \myresidue{8}, \myresidue{9} et \myresidue{10} sont au sein de la molécule \myPrion qui en compte un nombre total relativement important (\mynum{112}~\myglos*{glo-Residu}).
 					La construction complète d'une carte mentale est très complexe à cause du nombre importants d'atomes qui sont continuellement en mouvement (dû à la simulation en temps-réel).
-					Les sujets n'étant jamais confronté plus de deux fois à la même tâche (une fois en \myglos{glo-Monome} et une fois en \myglos{glo-Binome}), le phénomène d'apprentissage ne peut pas être effectué.
+					Les sujets n'étant jamais confrontés plus de deux fois à la même tâche (une fois en \myglos{glo-Monome} et une fois en \myglos{glo-Binome}), le phénomène d'apprentissage ne peut pas être effectué.
 					En effet, les sujets ne se souviennent pas de la position d'un \myglos{glo-Residu} d'une confrontation à l'autre (contrairement à la molécule \myTRPCAGE pour certains cas).
 					Les sujets adoptent une stratégie en plusieurs étapes en fonction de la caractéristique de la tâche et du \myglos{glo-Residu} à trouver.
 					Tout d'abord, une recherche exploratoire permet d'identifier les \myglos*{glo-Residu} \myresidue{7} et \myresidue{8} qui se trouvent en position externe.
@@ -2139,7 +2139,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					De la même façon, le \myglos{glo-Residu} \myresidue{6} se distingue par un temps de sélection significativement plus long que les autres \myglos*{glo-Residu} (excepté \myresidue{9} et \myresidue{10}).
 					Ce \myglos{glo-Residu} possède deux atomes de \myatom{Soufre} de couleur jaune.
-					Cette particularité aisément identifiable malgré le nombre importants d'atomes de la molécules.
+					Cette particularité aisément identifiable malgré le nombre important d'atomes de la molécule.
 					Le temps de recherche est alors extrêmement court.
 					Cependant, ce \myglos{glo-Residu} est positionné au centre de la molécule.
 					L'accès au \myglos{glo-Residu} nécessite de \myemph{déplier} en grande partie la molécule afin de pouvoir le sélectionner et l'extraire.
@@ -2204,7 +2204,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome} présente les affinités \myvard{4} de chaque \myglos{glo-Binome}.
-					Les notes, comprises entre un et cinq, montre que les \myglos*{glo-Binome} choisis ont des affinités relativement variées.
+					Les notes, comprises entre un et cinq, montrent que les \myglos*{glo-Binome} choisis ont des affinités relativement variées.
 					L'affinité entre les sujets du \myglos*{glo-Binome} \mygroup{1} est très basse contrairement aux \myglos*{glo-Binome} \mygroup{8} et \mygroup{12} pour lesquelles l'affinité est très élevée.
 
 					\begin{myfigure}
@@ -2230,8 +2230,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome} présente les temps de communication verbale \myvard{3} de chaque \myglos{glo-Binome}.
-					\mygroup{2}, \mygroup{3} et \mygroup{4} ont des temps de communication verbale inférieurs à \mynum[s]{20}.
-					À l'opposé, \mygroup{1}, \mygroup{5} et \mygroup{11} ont des temps de communication verbale qui approche les \mynum[s]{60}.
+					\mygroup{2}, \mygroup{3} et \mygroup{4} ont des temps inférieurs à \mynum[s]{20}.
+					À l'opposé, \mygroup{1}, \mygroup{5} et \mygroup{11} ont des temps qui approche les \mynum[s]{60}.
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.03cm}
@@ -2243,7 +2243,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
-					La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} présente les pourcentages de temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome} par rapport au temps total de réalisation de la tâche.
+					La \myref{fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome} présente les pourcentages des temps de communication verbale durant la phase de recherche et durant la phase de sélection de chaque \myglos{glo-Binome} par rapport au temps total de réalisation de la tâche.
 					Le pourcentage représente le rapport du temps de communication verbale durant la phase recherche ou de sélection rapporté respectivement au temps total de la phase de recherche ou de sélection.
 					Les \myglos*{glo-Binome} \mygroup{1} à \mygroup{4} ainsi que \mygroup{9} communiquent plus durant la phase de sélection.
 					Les \myglos*{glo-Binome} \mygroup{5} à \mygroup{8} et \mygroup{10} à \mygroup{12} communiquent plus durant la phase de recherche.
@@ -2395,7 +2395,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Pour certaines, les interactions en champ distants semblent convenir mais au détriment des performances : la collaboration est quasiment inexistante.
 					D'autres \myglos*{glo-Binome} interagissent en champ proches et obtiennent des performances moyennes : la collaboration est étroitement couplée mais souffre des nombreux \myglos*{glo-ConflitDeCoordination}.
 
-					Cependant, ce sont les interactions en champ voisins qui produisent les meilleures performances.
+					Cependant, ce sont les interactions en champs voisins qui produisent les meilleures performances.
 					En effet, les \myglos*{glo-ConflitDeCoordination} sont plus limités que pour des interactions en champ proche mais la collaboration est tout de même couplée.
 					Les résultats montrent à la fois de bonnes performances en terme de temps de réalisation mais aussi en terme de répartition des charges de travail tout en limitant les communication verbales.
 					La plupart du temps, les communications verbales sont destinées à la résolution de \myglos*{glo-ConflitDeCoordination} : elles sont très chronophages et peuvent être évitées.
@@ -2450,8 +2450,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Les approches collaboratives ont prouvé leur intérêt, notamment sur les tâches les plus complexes.
 				Cependant, la complexité d'une tâche est relativement difficile à établir.
-				Au-delà des facteur de position, de couleur ou de forme, le nombre d'atomes de la molécule (et donc le nombre de \myglos*{glo-Residu}) semble jouer un rôle important dans cette complexité.
-				Un grand nombre d'atomes surcharge l'environnement virtuel qui difficile à appréhender.
+				Au-delà des facteurs de position, de couleur ou de forme, le nombre d'atomes de la molécule (et donc le nombre de \myglos*{glo-Residu}) semble jouer un rôle important dans cette complexité.
+				Un grand nombre d'atomes surcharge l'environnement virtuel qui est difficile à appréhender.
 				Un deuxième facteur de complexité constaté durant l'expérimentation, est l'amplitude des contraintes physiques de la molécule.
 				Certaines parties de la molécule sont dans un état de stabilité suffisamment dense pour qu'il soit difficile d'en déformer les \myglos*{glo-Residu}.
 
@@ -2494,7 +2494,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 			Dans ce chapitre, nous souhaitons étudier la pertinence d'une configuration collaborative pour appréhender la déformation d'une molécule.
 			De plus, nous aborderons la question de l'apprentissage au sein d'un \myglos{glo-Binome}.
-			En effet, certains éléments de la première expérimentation semble indiquer qu'une configuration collaborative stimule l'apprentissage, que ce soit pour l'utilisation des outils, de la plateforme ou encore pour la tâche à réaliser.
+			En effet, certains éléments de la première expérimentation semblent indiquer qu'une configuration collaborative stimule l'apprentissage, que ce soit pour l'utilisation des outils, de la plateforme ou encore pour la tâche à réaliser.
 		\end{mysection}
 		\begin{mysection}[sec-exp2-DeformationCollaborativeDansUnEnvironnementVirtuel]{Déformation collaborative dans un environnement virtuel}
 			\begin{mysubsection}[sse-exp2-TravauxExistants]{Travaux existants}
@@ -2545,7 +2545,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Trois molécules sont utilisées dans le cadre de cette expérimentation.
 				\myPrion est une molécule très complexe et sera simplement utilisé dans la phase d'entraînement.
-				\myTRPZIPPER et \myTRPCAGE seront chacune utilisée dans deux scénarios distincts.
+				\myTRPZIPPER et \myTRPCAGE seront chacune utilisées dans deux scénarios distincts.
 				Ces molécules sont détaillées dans la \myref{sse-pro-ListeDesMolecules}.
 
 				Afin de pouvoir évaluer la déformation effectuée, un score est affiché en temps-réel en haut de l'écran \myref*{fig-exp2-AffichageDeLaMoleculeADeformerEtDeLaMoleculeCible}.
@@ -2584,13 +2584,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle inter-moléculaire.
 						Un \myglos{glo-Residu} à l'extrémité de la chaîne carbonée\footnote{La molécule forme une chaîne carbonée; il s'agit ici d'une des extrémités de cette chaîne carbonée.} est fixé afin d'\myemph{ancrer} la molécule dans la scène virtuelle et éviter que la molécule sorte du champ de vision.
 						Les onze autres \myglos*{glo-Residu} de cette molécule sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force à contrainte moyenne.
-						La forme général de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
+						La forme générale de la molécule peut être comparée à un \myform{V} : la chaîne de \myglos*{glo-Residu} de la molécule contient une cassure.
 						La difficulté de ce scénario réside dans la nécessité de maintenir les \myglos*{glo-Residu} déjà placés pendant que le reste de la molécule est déformée.
 					\item[Scénario~\myscenario{1b}]
 						Cette tâche concerne la manipulation de la molécule \myTRPCAGE à l'échelle inter-moléculaire.
 						Comme le scénario~\myscenario{1a}, elle contient un \myglos{glo-Residu} fixe à une extrémité.
 						Les dix-neuf autres \myglos*{glo-Residu} sont libres de mouvement ce qui en fait une molécule assez flexible avec un champ de force moyennement contraint.
-						La forme général de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
+						La forme générale de la molécule peut être comparée à un \myform{W} : la chaîne de \myglos*{glo-Residu} de la molécule contient deux cassures.
 						Ce scénario est plus difficile que le scénario~\myscenario{1a} car le nombre d'atomes à placer est plus élevé et qu'il est nécessaire de maintenir en place deux cassures.
 					\item[Scénario~\myscenario{2a}]
 						Cette tâche concerne la manipulation de la molécule \myTRPZIPPER à l'échelle intra-moléculaire.
@@ -2630,7 +2630,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Un résumé de la methode expérimentale se trouve dans la \myref{tab-exp2-SyntheseDeLaProcedureExperimentale} qu'on pourra retrouver de manière détaillée dans la \myref{sec-met-exp2-SecondeExperimentation}.
 				\begin{mysubsubsection}[sss-exp2-MaterielUtilise]{Matériel utilisé}
 					Pour cette seconde expérimentation, une unique modification a été effectuée par rapport à la plateforme de base présentée dans la \myref{sec-pro-MaterielExperimental}.
-					L'outil \mytool{grab} qui était assuré par un \myOmni et permettant d'orienter la molécule a été remplacer par une souris~\myThreeD \mySpaceNavigator.
+					L'outil \mytool{grab} qui était assuré par un \myOmni et permettant d'orienter la molécule a été remplacée par une souris~\myThreeD \mySpaceNavigator.
 					Cette souris ne nécessite pas d'ordinateur supplémentaire et peut être connectée directement à la machine principale sur laquelle \myacro{acr-VMD} est exécuté.
 					Elle est placée sur la table entre les deux sujets et chaque sujet peut l'utiliser comme il le souhaite : nous créons ainsi artificiellement un point de conflit pour l'accès à cet outil.
 					L'objectif est de stimuler les interactions.
@@ -2863,7 +2863,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'analyse montre qu'il n'y a pas d'effet significatif du nombre de sujets \myvari{1} sur la distance passive \myvard{3} (\myanova{exp2-diff-activepassive-group-anova-passive.tex}).
 					Cependant, l'analyse montre qu'il y a un effet significatif du nombre de sujets \myvari{1} sur la distance active \myvard{4} (\myanova{exp2-diff-activepassive-group-anova-active.tex}); la distance active est supérieure de \myratio{exp2-diff-activepassive-group-ratio-active.tex} pour les \myglos*{glo-Binome}.
 
-					On peut également comparer les distances passive et active en fonction du nombre de sujets \myvari{1}.
+					On peut également comparer les distances passives et active en fonction du nombre de sujets \myvari{1}.
 					L'analyse montre qu'il y a un effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Monome} (\myanova{exp2-diff-activepassive-group-anova-monome.tex}); la distance active est inférieure de \myratio{exp2-diff-activepassive-group-ratio-monome.tex}.
 					Par contre, l'analyse ne montre pas d'effet significatif de la nature de la distance (passive ou active) au sein d'un \myglos{glo-Binome} (\myanova{exp2-diff-activepassive-group-anova-binome.tex}).
 
@@ -2916,7 +2916,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La distance active permet d'éviter ce biais de mesure.
 					En effet, cette mesure ne prend en compte que les phases d'activité d'un \myglos{glo-EffecteurTerminal}.
 					On constate alors que les \myglos*{glo-Binome} couvrent un plus grand espace de travail \myref*{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets}.
-					Les \myglos*{glo-Monome} couvrent un espace de travail plus restreint car ils ne peuvent pas focaliser visuellement sur plusieurs zone de travail simultanément.
+					Les \myglos*{glo-Monome} couvrent un espace de travail plus restreint car ils ne peuvent pas focaliser visuellement sur plusieurs zones de travail simultanément.
 					Par conséquent, les deux \myglos*{glo-EffecteurTerminal} se trouvent toujours proche de la zone de manipulation, dans la zone de focus visuel du sujet.
 
 					La \myref{fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets} confirme ce déséquilibre.
@@ -2932,7 +2932,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cette séquentialité a pour effet des pauses régulières pour chaque outil ce qui explique une vitesse moyenne moins élevée.
 
 					Cette section nous a permis de constater que le travail en \myglos{glo-Binome} permet de meilleures performances que le travail en \myglos{glo-Monome}.
-					Une analyse plus détaillé a mis en avant la difficulté du travail en configuration \myglos*{glo-Bimanuel} : la charge de travail à assumer avec deux outils est trop importante.
+					Une analyse plus détaillée a mis en avant la difficulté du travail en configuration \myglos*{glo-Bimanuel} : la charge de travail à assumer avec deux outils est trop importante.
 					Cette difficulté a pour effet de fortement dégrader le taux d'utilisation de l'outil associé à la main dominée.
 					On constate également une légère baisse de l'utilisation de l'outil associé à la main dominante.
 					Pour résumer, il est préférable de distribuer les ressources disponibles (outil de déformation dans notre cas) entre plusieurs sujets.
@@ -3028,7 +3028,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					En effet, les scénarios \myscenario{1a} et \myscenario{2a} concernent la molécule \myTRPZIPPER contenant peu d'atomes et de \myglos*{glo-Residu} à déformer.
 					Par contre, les scénarios \myscenario{1b} et \myscenario{2b}, dont le nombre d'atomes et de \myglos*{glo-Residu} libres est plus important, est constitué de champ de force à fortes contraintes physiques et nécessité la formation de plusieurs cassures.
 
-					En observant les différences de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur la \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets}, on constate que la configuration collaborative n'amélioré ses performances que dans le cas des tâches complexes.
+					En observant les différences de performances entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} sur la \myref{fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets}, on constate que la configuration collaborative n'a amélioré ses performances que dans le cas des tâches complexes.
 					Ces tâches ont la particularité de nécessiter une coordination entre les deux outils de déformation.
 					En effet, en observant la \myref{fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive}, l'analyse de la distance active montre une différence significative entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome} pour les scénarios simples.
 
@@ -3036,7 +3036,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'outil délaissé augmente ainsi la valeur de la distance passive mesurée en étant mis à l'écart.
 					En observant seulement les scénarios simples \myscenario{1a} et \myscenario{2a}, on constate que la distance passive des \myglos*{glo-Monome} est plus importante que celle des \myglos*{glo-Binome}.
 					On en conclue que la complexité de ces scénarios n'oblige pas à effectuer une manipulation \myglos*{glo-Bimanuel} et que la tâche peut être achevée avec un seul outil.
-					Il y a donc peu d'intérêt à effectuer ces tâches peu complexe en configuration collaborative puisqu'aucune amélioration significative des performances n'est constatée.
+					Il y a donc peu d'intérêt à effectuer ces tâches peu complexes en configuration collaborative puisqu'aucune amélioration significative des performances n'est constatée.
 
 					Pour les scénarios complexes, l'analyse ne montre pas de différence significative de la distance passive entre les \myglos*{glo-Monome} et les \myglos*{glo-Binome}.
 					Pour ces scénarios, l'utilisation du deuxième outil est nécessaire et malgré la charge de travail importante que cela représente pour les \myglos*{glo-Monome}, la tâche est réalisée à l'aide des deux outils (configuration \myglos*{glo-Bimanuel}).
@@ -3143,7 +3143,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					L'observation des temps de réalisation de la tâche \myref*{fig-exp2-TempsDeRealisationDeChaqueEssai} nous permet de caractériser un apprentissage réel sur l'ensemble des trois réalisations de la tâche.
 					Le détail de l'apprentissage en fonction du nombre de sujets sur la \myref{fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets} apporte cependant un point important : les \myglos*{glo-Binome} améliorent plus rapidement leurs performances que les \myglos*{glo-Monome}.
 					En effet, on constate une amélioration significative des performances dès le second essai dans le cas des \myglos*{glo-Binome} alors que ce n'est que sur le dernier essai que les \myglos*{glo-Monome} montrent une évolution.
-					L'amélioration plus rapide des performances chez les \myglos*{glo-Binome} suggère un apprentissage plus efficace de la tâche, des outils ou de la molécule\footnote{On observe une amélioration des performances par apprentissage mais rien ne permet de distinguer sur quels notions de l'expérimentation l'apprentissage a lieu.}.
+					L'amélioration plus rapide des performances chez les \myglos*{glo-Binome} suggère un apprentissage plus efficace de la tâche, des outils ou de la molécule\footnote{On observe une amélioration des performances par apprentissage mais rien ne permet de distinguer sur quelles notions de l'expérimentation l'apprentissage a lieu.}.
 
 					En observant l'évolution des variables \myvard{1} (temps de réalisation) et \myvard{2} (nombre de sélections), on constate que les \myglos*{glo-Binome} ont un apprentissage rapide.
 					Le temps de réalisation décroît ainsi que le nombre de sélections ce qui n'est pas le cas des \myglos*{glo-Monome}.
@@ -3161,7 +3161,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cette donnée est à mettre en corrélation avec l'évolution des temps de réalisation : plus les sujets déforment rapidement, plus la tâche est réalisée rapidement..
 
 					Dans cette section, nous avons mis en évidence les améliorations en terme d'apprentissage pour les configurations collaboratives sans distinguer les notions sur lesquelles s'appliquait l'apprentissage (molécule, outils, tâche, \myetc).
-					En effet, les \myglos*{glo-Binome} atteignent des performances optimales dès le second essau tandis que les \myglos*{glo-Monome} ont besoin de plus d'apprentissage pour converger vers de bonnes performances.
+					En effet, les \myglos*{glo-Binome} atteignent des performances optimales dès le second essai tandis que les \myglos*{glo-Monome} ont besoin de plus d'apprentissage pour converger vers de bonnes performances.
 					La capacité des \myglos*{glo-Binome} à communiquer, échanger et conseiller permet de mutualiser l'apprentissage et de l'accélérer.
 					De plus, un \myglos{glo-Binome} peut bénéficier des connaissances spécifiques ou de l'expérience d'un des membres du \myglos{glo-Binome} et ainsi, la mutualisation des aptitudes de chacun crée une dynamique de groupe.
 					La configuration \myglos*{glo-Bimanuel} offre une alternative de manipulation aux \myglos*{glo-Monome} avec une surcharge de travail importante : l'apprentissage est plus long.
@@ -3243,7 +3243,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			Après avoir étudié les différentes \myacro*{acr-PCV} sur des \myglos*{glo-Binome}, nous souhaitons élargir notre étude à des groupes.
 			Le terme \myemph{groupe} est défini par \mycite[author]{Bales-1950} comme un \og ensemble d'au moins trois individus \fg.
 			Ce travail en groupe implique des processus de communication différents que nous souhaitons étudier.
-			L'augmentation du nombres de manipulateur nous permet également de confronter les utilisateurs à des tâches plus complexes que celles proposées dans les études précédentes.
+			L'augmentation du nombre de manipulateur nous permet également de confronter les utilisateurs à des tâches plus complexes que celles proposées dans les études précédentes.
 
 			Selon la littérature en psychologie sociale, le travail en groupe provoque des modifications sur l'organisation et la structure \myref*{sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes} qu'on nomme \og dynamique de groupe \fg.
 			Cependant, les études sur ce sujet manquent en ce qui concerne la collaboration étroitement couplée.
@@ -3257,18 +3257,18 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Nous avons déjà vu, dans la \myref{sec-sota-ConfigurationCollaborativePourLaResolutionDesTachesComplexes}, les dynamiques de groupe qui se mettent en place lors d'un travail en collaboration.
 				Pour mémoire, nous avons abordé les phénomènes de \myglos{glo-FacilitationSociale} \mycite{Ringelmann-1913} et de \myglos{glo-ParesseSociale} \mycite{Roethlisberger-1939}.
 				La \myglos{glo-FacilitationSociale} est la tendance des collaborateurs à améliorer les performances lors d'un travail de groupe (motivation, échange de connaissances, partage de mémoire, \myetc).
-				La \myglos{glo-ParesseSociale} est la tendance des collaborateurs ne pas s'impliquer activement dans le travail de groupe (isolation, peur de l'évaluation, \myetc).
+				La \myglos{glo-ParesseSociale} est la tendance des collaborateurs à ne pas s'impliquer activement dans le travail de groupe (isolation, peur de l'évaluation, \myetc).
 				\mycite[author]{Mugny-1995} propose un état de l'art intéressant concernant la dynamique des groupes.
 
 				Cependant, \mycite[author]{Bales-1950} identifie une différence entre les groupes de taille importante et les groupes d'une vingtaine d'individus ou moins\footnote{Selon les différentes sources, la définition d'un groupe restreint varie d'une douzaine à une vingtaine d'individus.}, qu'il nomme \og groupe restreint \fg.
 				L'étude qu'il mène sur ces groupes restreints montre que quelque soit la taille du groupe, le groupe sera toujours dominé par un voire deux \myglos*{glo-Meneur}.
 
 				\mycite[author]{Osborn-1963} propose de mettre en place une séance de \mybrainstorming afin d'améliorer les performances de ces groupes restreints.
-				L'idée est créer une période de temps où tous les collaborateurs peuvent élaborer une stratégie sur la tâche à réaliser.
+				L'idée est de créer une période de temps où tous les collaborateurs peuvent élaborer une stratégie sur la tâche à réaliser.
 				Selon \mycite[author]{Tuckman-1965}, le \mybrainstorming permet de renforcer la cohésion sociale et d'améliorer les performances du groupe à long terme.
 
-				Cependant, \mycite[author]{Diehl-1987} tempère les avantages du \mybrainstorming en groupe.
-				En effet, il montre que cette réflexion pré-opératoire peut également être effectuée de manière individuelle et que les individus seuls profite plus de cette réflexion.
+				Cependant, \mycite[author]{Diehl-1987} tempèrent les avantages du \mybrainstorming en groupe.
+				En effet, ils montrent que cette réflexion pré-opératoire peut également être effectuée de manière individuelle et que les individus seuls profitent plus de cette réflexion.
 				De plus, \mycite[author]{Poole-2005} explique que le \mybrainstorming n'est pas toujours utilisé à bon escient.
 				Selon l'étude qu'il propose, les groupes ont tendance à se focaliser sur les connaissances communes à tous les membres du groupe et n'aborde pas les connaissances spécifiques de chacun des membres; de cette manière, le partage des connaissances ne se réalise pas correctement.
 
@@ -3533,8 +3533,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants} présente le nombre d'échanges verbaux \myvard{5} de chaque scénario \myvari{2} en fonction du nombre de sujets \myvari{1}.
-					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{1} (\myanova{exp3-talk-molecule-group-anova-prion.tex}); le nombres d'échanges est inférieur de \myratio{exp3-talk-molecule-group-ratio-prion.tex} pour les \myglos*{glo-Quadrinome}.
-					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{2} (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}); le nombres d'échanges est inférieur de \myratio{exp3-talk-molecule-group-ratio-ubiquitin.tex} pour les \myglos*{glo-Quadrinome}.
+					L'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{1} (\myanova{exp3-talk-molecule-group-anova-prion.tex}); le nombre d'échanges est inférieur de \myratio{exp3-talk-molecule-group-ratio-prion.tex} pour les \myglos*{glo-Quadrinome}.
+					De la même façon, l'analyse montre un effet significatif du nombre de sujets \myvari{1} sur le nombre d'échanges verbaux \myvard{5} du scénario~\myscenario{2} (\myanova{exp3-talk-molecule-group-anova-ubiquitin.tex}); le nombre d'échanges est inférieur de \myratio{exp3-talk-molecule-group-ratio-ubiquitin.tex} pour les \myglos*{glo-Quadrinome}.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-exp3-AmeliorationDesPerformances-AnalyseEtDiscussion]{Analyse et discussion}
 					Les deux tâches proposées sont de natures très différentes.
@@ -3716,7 +3716,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} présente la vitesse moyenne des \myglos*{glo-EffecteurTerminal} \myvard{3} en fonction des sujets du groupe \mygroup{1}.
-					On observe que le vitesse du sujet \mysubject{1} est plus élevée que la moyenne (\myanalysis{exp3-g1-speed-subject-analysis.tex} de plus que la moyenne).
+					On observe que la vitesse du sujet \mysubject{1} est plus élevée que la moyenne (\myanalysis{exp3-g1-speed-subject-analysis.tex} de plus que la moyenne).
 
 					\begin{myfigure}
 						\psset{xunit=0.007017544\textwidth,yunit=1cm}
@@ -3766,7 +3766,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					La déformation a pu être proposée par le \myglos{glo-Meneur}.
 					Les manipulations des suiveurs sont plutôt longues et lentes \myref*{fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1} car les déformations nécessitent une manipulation précise.
 					De plus, l'effort déployé est plus important car toute l'attention du \myglos{glo-Suiveur} est portée sur la déformation.
-					Le \myglos{glo-Meneur} de déploie pas autant de force car son objectif est d'explorer l'environnement, pas de déformer.
+					Le \myglos{glo-Meneur} ne déploie pas autant de force car son objectif est d'explorer l'environnement, pas de déformer.
 
 					Pour conclure cette section, le \myglos{glo-Meneur} a un rôle crucial dans la dynamique du groupe.
 					C'est lui qui va définir et répartir les tâches : il élabore la stratégie du groupe.
@@ -3818,8 +3818,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 	\end{mychapter}
 	\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
 		\begin{mysection}[sec-exp4-Introduction]{Introduction}
-			Sur la base des résultat obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la communication et la coordination des actions entre les utilisateurs durant la réalisation d'un \myglos{glo-DockingMoleculaire} collaboratif.
-			Nous avons également identifié un certains nombres de facteurs permettant d'améliorer les performances d'un groupe (identification des rôles, \mybrainstorming, présence d'un \myglos{glo-Meneur}, \myetc).
+			Sur la base des résultats obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la communication et la coordination des actions entre les utilisateurs durant la réalisation d'un \myglos{glo-DockingMoleculaire} collaboratif.
+			Nous avons également identifié un certain nombre de facteurs permettant d'améliorer les performances d'un groupe (identification des rôles, \mybrainstorming, présence d'un \myglos{glo-Meneur}, \myetc).
 			Ce chapitre a pour but de proposer et d'évaluer une configuration de travail ainsi que des outils permettant d'améliorer la communication et la coordination durant une tâche de déformation moléculaire.
 
 			Ce dernier chapitre sera également l'occasion de confronter la plateforme \myShaddock à des experts en biologie moléculaire.
@@ -3835,7 +3835,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Sur le même principe de manipulation synchrone, \mycite[author]{Basdogan-2000} proposent le déplacement d'un anneau par une manipulation en \myglos{glo-Binome} coordonnée; l'anneau doit passer autour d'un fil sans le toucher.
 				Les résultats de ces deux études montrent clairement que l'utilisation de la modalité haptique permet des améliorations significatives pour la coordination entre les partenaires.
 
-				Sur la base de ces résultats, \mycite[author]{Oakley-2001} propose de créer des outils haptiques pour la création de diagrammes \myacro{acr-UML} en environnement \myTwoD.
+				Sur la base de ces résultats, \mycite[author]{Oakley-2001} proposent de créer des outils haptiques pour la création de diagrammes \myacro{acr-UML} en environnement \myTwoD.
 				Il fournit aux utilisateurs différents outils haptiques permettant d'interagir avec le partenaire :
 				\begin{itemize}
 					\item ressentir le curseur du partenaire avec la possibilité de le pousser;
@@ -3851,7 +3851,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Le terme \myemph{communication haptique} a pris tout son sens avec les premières tentatives de \myemph{langages haptiques}.
 				Tout d'abord, \mycite[author]{Chang-2002} proposent d'augmenter l'information d'une communication par \textit{talkies-walkies} avec différents types de vibrations.
-				Puis, \mycite[author]{Enriquez-2006} créé une liste de phonèmes haptiques permettant la communication.
+				Puis, \mycite[author]{Enriquez-2006} créent une liste de phonèmes haptiques permettant la communication.
 				Il constate cependant qu'une telle solution nécessite un fort apprentissage ($\approx \mynum[mn]{45}$) pour une utilisation persistente.
 				\mycite[author]{Chan-2008} utilise également des mots haptiques pour aider et assister la prise de contrôle d'un système lors de la réalisation d'une tâche collaborative.
 
@@ -3877,7 +3877,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					Cet outil, décrit dans la  \myref{par-exp4-OutilDOrientation}, lui permet d'observer la molécule avec différents points de vue afin d'élaborer une stratégie avec l'aide des opérateurs.
 
 					Puis, le coordinateur va désigner des cibles durant la réalisation de la tâche afin d'appliquer la stratégie élaborée.
-					Nous avions souligné ce point lors de la première expérimentation et \mycite[author]{Moll-2009} met en avant la pertinence de la modalité haptique pour effectuer une désignation.
+					Nous avions souligné ce point lors de la première expérimentation et \mycite[author]{Moll-2009} mettent en avant la pertinence de la modalité haptique pour effectuer une désignation.
 					L'outil de désignation, présenté dans la \myref{par-exp4-OutilDeDesignation}, a été développé afin de permettre au coordinateur d'indiquer des cibles aux opérateurs.
 				\end{mysubsubsection}
 				\begin{mysubsubsection}[sss-OutilPourLesOperateurs]{Outils pour les opérateurs}
@@ -3936,7 +3936,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 						La molécule \myNusG est laissée libre de mouvement (pas d'atome fixes) et doit être amarrée à la molécule \myNusE : c'est une tâche de \myglos{glo-DockingMoleculaire} simplifiée.
 						On distingue deux phases dans cette tâche; il faut approcher la molécule \myNusG; puis il faut affiner l'amarrage par une déformation interne de \myNusG.
 						Tous les outils (désignation, déformation, orientation et manipulation) sont activés dans ce scénario; la molécule \myNusG est solidaire de l'outil de manipulation.
-						La molécule \myNusE est ancrée dans l'environnement virtuel à l'aide d'atome fixes (sa chaîne carbonée).
+						La molécule \myNusE est ancrée dans l'environnement virtuel à l'aide d'atomes fixes (sa chaîne carbonée).
 				\end{description}
 
 				Durant l'expérimentation, les sujets disposent de deux informations calculées en temps-réel.
@@ -4041,7 +4041,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\item[Fonction] Permet de déformer un ou plusieurs atomes.
 							\item[Fonctionnement]
 								Le rôle principal de l'opérateur est de déformer les structures moléculaire en manipulant un ou plusieurs atomes de la molécule selon deux niveaux de déformation.
-								Soit il choisi de déformer de manière autonome; dans ce cas, il ne peut manipuler qu'un atome à la fois.
+								Soit il choisit de déformer de manière autonome; dans ce cas, il ne peut manipuler qu'un atome à la fois.
 								Soit il accepte une désignation proposée par le coordinateur; dans ce cas, il peut manipuler un \myglos{glo-Residu}.
 								Dans ce dernier cas, une force de déformation plus importante est fournie à l'opérateur, l'objectif étant de favoriser l'utilisation de cet outil.
 							\item[Rendu haptique]
@@ -4218,7 +4218,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					D'ailleurs, la \myref{fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique} montre que le temps mis pour atteindre ce score n'est également pas amélioré.
 
 					Cependant, une analyse en fonction des scénarios montre que les outils d'assistance haptique permettent une amélioration sur le complexe de molécules \myNusENusG (scénario~\myscenario{2}) mais pas sur la molécule \myUbiquitin (scénario~\myscenario{1}).
-					Le complexe de molécules \myNusENusG est la tâche la plus complexe à réaliser notamment à cause du nombre importants de \myglos*{glo-Residu} à déformer.
+					Le complexe de molécules \myNusENusG est la tâche la plus complexe à réaliser notamment à cause du nombre important de \myglos*{glo-Residu} à déformer.
 					D'ailleurs, les annotations vidéos ont permis de constater à plusieurs reprises que les groupes abandonnaient avant la fin des \mynum[mn]{8} face à la complexité de cette tâche : \og On ne fera pas mieux \fg, \og On n'arrivera jamais à améliorer le score \fg, \og Cette molécule est trop difficile \fg, \myetc
 					Confrontés à ces difficultés, les sujets ont été plus performants lorsqu'ils étaient assistés par les outils d'assistance haptique.
 
@@ -4283,7 +4283,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myfigure}
 
 					La \myref{fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique} présente la vitesse moyenne du coordinateur \myvard{8} en fonction de la présence de l'assistance haptique \myvari{1}.
-					L'analyse montre un effet significatif de l'assistance haptique \myvari{1} sur cette vitesse \myvard{8} (\myanova{exp4-speed-haptic-anova.tex}); la vitesse moyenne est supérieur de \myratio{exp4-speed-haptic-ratio.tex} avec l'assistance haptique.
+					L'analyse montre un effet significatif de l'assistance haptique \myvari{1} sur cette vitesse \myvard{8} (\myanova{exp4-speed-haptic-anova.tex}); la vitesse moyenne est supérieure de \myratio{exp4-speed-haptic-ratio.tex} avec l'assistance haptique.
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
@@ -4412,7 +4412,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 				Il ressort de cette expérimentation que les outils d'assistance à la communication permettent d'améliorer significativement la communication entre les membres du groupe avec pour conséquence une amélioration des performances, notamment dans les tâches les plus complexes.
 				L'utilisation de l'haptique à bon escient permet de diminuer les temps de réponse lors des communications tout en adressant directement les informations à transmettre aux membres concernés.
-				De plus, la répartition de la communication sur différentes canaux sensoriels permet de soulager de la charge cognitive de travail pour chaque utilisateur.
+				De plus, la répartition de la communication sur différents canaux sensoriels permet de soulager de la charge cognitive de travail pour chaque utilisateur.
 
 				Avec le questionnaire portant sur la conscience de groupe, on constate que la conscience repose principalement sur les outils fournis par la plateforme, à savoir les retours visuels et les retours haptiques, lorsqu'ils sont disponibles.
 				En ce sens, la communication haptique est pertinente puisqu'elle permet d'améliorer les performances en augmentant la conscience périphérique.
@@ -4431,7 +4431,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\begin{mysubsection}[sse-exp4-SyntheseEtPerspectives]{Synthèse et perspectives}
 				Cette dernière expérimentation nous a permis de mettre en avant la pertinence de la communication haptique dans le cadre d'une tâche de collaboration étroitement couplée.
 				L'outil haptique proposé ne concerne que le processus de désignation mais d'autres aspects de la communication peuvent être explorés.
-				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui propose plusieurs métaphores sur le sujet qui devrait permettre d'améliorer la conscience de groupe comme l'ajout de la perception haptique entre les utilisateurs au sein de l'environnement virtuel ou encore la possibilité d'emmener le curseur d'un partenaire pour le guider vers une cible.
+				On peut se reporter aux travaux de \mycite[author]{Oakley-2001} qui proposent plusieurs métaphores sur le sujet qui devrait permettre d'améliorer la conscience de groupe comme l'ajout de la perception haptique entre les utilisateurs au sein de l'environnement virtuel ou encore la possibilité d'emmener le curseur d'un partenaire pour le guider vers une cible.
 
 				En ce qui concerne les améliorations de la plateforme \myShaddock, de nombreuses propositions ont été suggérées par les bio-informaticiens.
 				Quelques-unes seront intégrées dans un futur proche, d'autres nécessitent une réflexion plus approfondie sur la pertinence et sur la faisabilité.
@@ -4460,7 +4460,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		Ce point avait besoin d'être validé dans le contexte particulier de la collaboration étroitement couplée car les mécanismes de communication et les interactions entre les utilisateurs sont différents.
 
 		L'ensemble de ces conclusions nous a mené à l'établissement d'une nouvelle configuration de travail (\myglos{glo-Meneur} et \myglos*{glo-Suiveur}) et à fournir des outils haptiques adaptés à chacun des rôles pour améliorer la coordination et la communication.
-		Cette novuelle configuration de travail a montré son efficacité dans la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique} dans laquelle des évolutions significatives en terme de communication ont été observées.
+		Cette nouvelle configuration de travail a montré son efficacité dans la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique} dans laquelle des évolutions significatives en terme de communication ont été observées.
 		D'ailleurs, cette expérimentation nous a permis de confirmer les hypothèses non-évaluées de \mycite[author]{Moll-2009} concernant l'utilité de la modalité haptique pour assister le processus de désignation.
 		Plus généralement, cette expérimentation montre la pertinence du canal haptique dans le processus de coordination et de communication (avertissement, validation, indication, \myetc) pour les collaborations étroitement couplées en environnements complexes.
 
@@ -4474,7 +4474,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		La collaboration multi-experts amènera probablement de nouvelles contraintes de collaboration qu'il faudrait identifier.
 		Notre dernière expérimentation n'a fait qu'effleurer le sujet en proposant des niveaux de collaboration différents (coordinateur ou opérateur) mais l'intervention de différents experts pourrait nécessiter des modifications plus profondes de l'environnement de travail (environnements de visualisation privés, outils adaptés à la spécialité des experts, \myetc).
 
-		La collaboration distante n'a également pas été abordé dans ce travail de thèse.
+		La collaboration distante n'a également pas été abordée dans ce travail de thèse.
 		Ce choix a été pris en début de thèse afin de limiter les contraintes de communication (audio, visuel, gestuel, haptiques, \myetc) ainsi que différentes contraintes techniques (latence des réseaux, stabilité de l'interaction, cohérence de la scène, \myetc).
 		Ces contraintes doivent faire l'objet d'études approfondies afin d'en faire une identification précise et de trouver des solutions appropriées.
 		La communauté a visiblement un réel besoin de ce type de plateforme au regard de l'étude bibliographique \myref{cha-sota-EtudeBibliographique} où la plupart des plateformes présentées permettent des collaborations distantes.
@@ -4484,7 +4484,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		Cependant, nous avons eu des difficultés pour mesurer, quantifier ou même qualifier ces \myglos*{glo-ConflitDeCoordination} et de la même façon, les conflits de communication.
 		Il est nécessaire de définir des mesures objectives permettant de répondre à cette problématique.
 
-		De nombreuses champs restent à explorer en ce qui concerne les configurations collaboratives étroitement couplées.
+		De nombreux champs restent à explorer en ce qui concerne les configurations collaboratives étroitement couplées.
 		Cependant, ce travail de thèse permet de fournir les premières pistes pour la communication haptique en environnement complexe.
 	\end{mychapter+}
 	\mybiblio%
@@ -4510,7 +4510,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			L'affichage de la scène virtuelle est assuré par un vidéoprojecteur connecté à l'ordinateur~\mycomputer{A}.
 			Le vidéo projecteur est placé derrière les sujets et projette la scène virtuelle sur un grand écran de \mynum[m]{2.2} par \mynum[m]{2}.
 			L'écran est placé face aux sujets et tous les sujets percoivent la même scène virtuelle.
-			Afin que la communication entre les sujets soit optimales, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels, \myetc).
+			Afin que la communication entre les sujets soit optimale, aucune contrainte de communication ne leur est donnée et ils sont libres d'utiliser tous les moyens de communication possibles (verbaux, gestuels, virtuels, \myetc).
 
 			Les ordinateurs~\mycomputer{A} et~\mycomputer{B} sont également utilisés en tant que serveur \myacro{acr-VRPN}.
 			Un \myOmni est connecté sur chacune des deux machines.
@@ -4522,7 +4522,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 		\begin{mysection}[sec-pro-PresentationsDesMolecules]{Présentation des molécules}
 			Durant les différentes expérimentations, plusieurs molécules ou complexe de molécules ont été utilisées.
-			À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentation.
+			À partir de ces molécules, différents scénarios ont été conçus et les difficultés sont décrites au-fur-et-à-mesure de la présentation des différentes expérimentations.
 			Tout d'abord, nous présenterons la liste des molécules utilisées.
 			Puis nous expliquerons le rendu visuel utilisé dans tous les expérimentations.
 			\begin{mysubsection}[sse-pro-ListeDesMolecules]{Liste des molécules}
@@ -4595,7 +4595,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			La plateforme de base propose deux interfaces haptiques.
 			Ces deux interfaces haptiques sont utilisées comme interfaces de déformation de la molécule : des outils \mytool{tug}.
 			Pour comprendre ce que sont des outils de déformation, on peut se reporter à la \myref{sse-Shaddock-OutilsExistants}.
-			Au cours des trois premières expérimentations, seules quelques modifications du rendu visuel associés à ces outils sont effectués.
+			Au cours des trois premières expérimentations, seules quelques modifications du rendu visuel associés à ces outils sont effectuées.
 			Cependant, la quatrième expérimentation apporte des modifications plus lourdes de cet outil que ce soit au niveau visuel ou au niveau haptique.
 			On pourra se reporter aux chapitres respectifs pour plus de détails.
 
@@ -4742,7 +4742,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 			\begin{mysubsection}[sse-met-exp1-Procedure]{Procédure}
 				L'expérimentation débute par une phase d'apprentissage avec la molécule \myTRPZIPPER.
-				Un \myglos{glo-Residu} est proposé et doit être identifier et extrait.
+				Un \myglos{glo-Residu} est proposé et doit être identifié et extrait.
 				L'apprentissage est destiné à familiariser les sujets avec la plateforme, les outils de manipulation et la tâche à réaliser.
 				Cette phase dure maximum \mynum[mn]{5}.
 				L'expérimentateur est disponible pour répondre aux questions des sujets.
@@ -4826,7 +4826,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-NombreDeSelections]{\myvard{2} Nombre de sélections}
 						C'est le nombre de sélections réalisées durant chaque tâche.
-						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
+						Une sélection est comptabilisée lorsqu'un atome ou un \myglos{glo-Residu} est sélectionné par un des deux \myglos*{glo-EffecteurTerminal}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp2-DistancePassiveEntreLesEspacesDeTravail]{\myvard{3} Distance passive entre les espaces de travail}
 						Durant chaque tâche, la distance moyenne entre les deux \myglos*{glo-EffecteurTerminal} est mesurée.
@@ -4852,7 +4852,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				Cette phase dure entre \mynum[mn]{5} et \mynum[mn]{10}.
 				Chaque sujet a la possibilité de tester les outils et peut questionner l'expérimentateur.
 
-				Lorsque la phase d'entraînement est terminée, les sujets sont confrontées aux scénarios \myscenario{1a} et \myscenario{1b}.
+				Lorsque la phase d'entraînement est terminée, les sujets sont confrontés aux scénarios \myscenario{1a} et \myscenario{1b}.
 				Les scénarios sont alternés entre les groupes de sujets afin d'éviter les biais d'apprentissage.
 				L'application s'arrête automatiquement lorsque le seuil \myacro{acr-RMSD} désiré est atteint.
 
@@ -4922,7 +4922,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-FrequenceDeSelections]{\myvard{2} Fréquence des sélections}
 						C'est la fréquence des sélections réalisées durant chaque tâche.
-						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos{glo-EffecteurTerminal}, pour chacun des sujets.
+						Une sélection est comptabilisée lorsqu'un atome est sélectionné par un des \myglos*{glo-EffecteurTerminal}, pour chacun des sujets.
 						La fréquence des sélections est le rapport du nombre de sélections par le temps de réalisation.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp3-VitesseMoyenne]{\myvard{3} Vitesse moyenne}
@@ -5021,7 +5021,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-NombreDeSelections]{\myvard{3} Nombre de sélections}
 						\myvard{3} représente le nombre de sélections réalisées par les sujets.
-						Une sélection est comptabilisée lorsque un atome est sélectionné par un des deux \myglos{glo-EffecteurTerminal}.
+						Une sélection est comptabilisée lorsque un atome est sélectionné par un des deux \myglos*{glo-EffecteurTerminal}.
 					\end{myparagraph}
 					\begin{myparagraph}[par-met-exp4-TempsMoyenDUneSelection]{\myvard{4} Temps moyen d'une sélection}
 						C'est le rapport entre le temps total et le nombre total de sélections réalisées durant la tâche.
@@ -5107,7 +5107,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{myparagraph}[par-met-exp4-Phase9-LeQuestionnaire]{Phase~\mynum{9} : questionnaire d'utilisabilité}
 					Pour terminer l'expérimentation, les sujets sont invités à remplir un questionnaire d'utilisabilité \myref*{sec-q-QuatriemeExperimentation}.
 					Durant cette phase, il est demandé aux sujets de ne pas communiquer entre eux.
-					Des informations permettant de caractériser le sujet (âge, sexe, main dominante, \myetc) sont également demandée à la fin du questionnaire.
+					Des informations permettant de caractériser le sujet (âge, sexe, main dominante, \myetc) sont également demandées à la fin du questionnaire.
 					L'enregistrement vidéo est arrêté à la fin de cette phase.
 				\end{myparagraph}
 			\end{mysubsection}
@@ -5134,8 +5134,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\item Quelle solution choisiriez-vous entre les trois configurations ?
 				\end{enumerate}
 			\end{mysubsection}
-			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les binôme}
-				Chaque sujet dans un \myglos{glo-Binome} est interrogé séparement pour éviter que les réponses de l'un influence les réponses de l'autre.
+			\begin{mysubsection}[sse-q-SecondeExperimentation-QuestionnairePourLesBinomes]{Questionnaire pour les binômes}
+				Chaque sujet dans un \myglos{glo-Binome} est interrogé séparement pour éviter que les réponses de l'un n'influence pas les réponses de l'autre.
 				Pour les \myglos*{glo-Binome}, le questionnaire est le suivant :
 				\begin{enumerate}
 					\item Vous êtes-vous senti efficace ?
