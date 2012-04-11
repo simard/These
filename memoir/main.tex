@@ -13,6 +13,43 @@
 \input{mycolor}
 \input{myglossary}
 
+\newcommand{\mylastname}{Simard}
+\newcommand{\myadrienname}{Girard}
+\newcommand{\mypierrename}{Albert}
+\DeclareBibliographyCategory{myrefs}
+\DeclareIndexNameFormat{myrefs}{% Test could be refined
+	\ifboolexpr{%
+		test {\ifdefstring{\mylastname}{#1}} or test {\ifdefstring{\myadrienname}{#1}} or test {\ifdefstring{\mypierrename}{#1}}
+	}{%
+		\addtocategory{myrefs}{\thefield{entrykey}}%
+	}{}%
+}
+\AtDataInput{%
+	\indexnames[myrefs]{author}%
+}
+\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
+\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
+\DeclareNameFormat{sortname}{% 
+	\begingroup%
+	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
+	\ifdefequal{\highlightname}{\currentsignature}%
+	{\let\mkbibnamefirst=\textbf%
+		\let\mkbibnamelast=\textbf%
+		\let\mkbibnameprefix=\textbf%
+		\let\mkbibnameaffix=\textbf%
+	}{}%
+	\ifnum\value{listcount}=1\relax%
+	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
+	\ifblank{#3#5}%
+	{}%
+	{\usebibmacro{name:revsdelim}}%
+	\else%
+	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+	\fi%
+	\endgroup%
+	\usebibmacro{name:andothers}%
+}
+
 \hypersetup{%
 	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
 	pdfauthor={Jean SIMARD},%
@@ -98,6 +135,26 @@
 			\mykeyword haptic interaction
 		\end{mykeywords}
 	\end{myabstract}
+	\begin{mychapter+}{Publications}
+		\nocite{Simard-2009}
+		\nocite{Simard-2010a}
+		\nocite{Simard-2010b}
+		\nocite{Simard-2010c}
+		\nocite{Simard-2011a}
+		\nocite{Simard-2011b}
+		\nocite{Simard-2012a}
+		\nocite{Simard-2012b}
+		\nocite{Simard-2012c}
+		\nocite{Girard-2012a}
+		\nocite{Girard-2012b}
+		\nocite{Albert-2010}
+		\vspace{-1.2ex plus -0.8ex minus -0.2ex}
+		\defbibheading{bibliography}{\large\bfseries\sffamily Journaux internationaux avec comité de relecture}
+		\printbibliography[type=article,category=myrefs]
+		\vspace{2.3ex plus .2ex}
+		\defbibheading{bibliography}{\large\bfseries\sffamily Conférences internationales avec comité de relecture}
+		\printbibliography[type=inproceedings,category=myrefs]
+	\end{mychapter+}
 	\begin{mychapter+}{Remerciements}
 		Facile, me direz vous, de se souvenir et de remercier un ensemble de collègues et d'amis avec lesquels j'ai travaillé, j'ai échangé voire même débattu ?
 		Sans nul doute !
