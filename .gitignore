@@ -1,5 +1,6 @@
 *.swp
 *.spl
+.build
 build
 *.eps
 *.ps

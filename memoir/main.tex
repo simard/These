@@ -1,65 +1,46 @@
-\documentclass[myfrancais,ngerman,english,french]{mythesis}
+\documentclass[ngerman,english,french,12pt,minitoc,smarttab]{mythesis}
+\usepackage{my}
 \usepackage{mydate}
-\usepackage{mytodo}
-\usepackage{mycolor}
+\usepackage[smartref]{myref}
 \usepackage{myps}
 \usepackage{myuml}
-\usepackage{mymacro}
+\usepackage{enumitem}
 \usepackage{mypdf}
 \usepackage{mysource}
+\usepackage[sorting=nyt,hyperref=auto,backend=biber,style=authoryear,citestyle=authoryear-comp,bibstyle=authoryear,abbreviate=false,date=long,urldate=long,block=space,maxcitenames=2,maxbibnames=99]{biblatex}
+\usepackage[smarttab]{myfloat}
+\usepackage{mybib}
+\usepackage[colour,noprint]{myhyper}
+\usepackage[acronym]{myglossary}
 \usepackage{mychinese}
 
 \input{mymacro}
-\input{mycolor}
 \input{myglossary}
+\input{mycolor}
 
-\newcommand{\mylastname}{Simard}
-\newcommand{\myadrienname}{Girard}
-\newcommand{\mypierrename}{Albert}
-\DeclareBibliographyCategory{myrefs}
-\DeclareIndexNameFormat{myrefs}{% Test could be refined
-	\ifboolexpr{%
-		test {\ifdefstring{\mylastname}{#1}} or test {\ifdefstring{\myadrienname}{#1}} or test {\ifdefstring{\mypierrename}{#1}}
-	}{%
-		\addtocategory{myrefs}{\thefield{entrykey}}%
-	}{}%
-}
-\AtDataInput{%
-	\indexnames[myrefs]{author}%
-}
-\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
-\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
-\DeclareNameFormat{sortname}{% 
-	\begingroup%
-	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
-	\ifdefequal{\highlightname}{\currentsignature}%
-	{\let\mkbibnamefirst=\textbf%
-		\let\mkbibnamelast=\textbf%
-		\let\mkbibnameprefix=\textbf%
-		\let\mkbibnameaffix=\textbf%
-	}{}%
-	\ifnum\value{listcount}=1\relax%
-	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
-	\ifblank{#3#5}%
-	{}%
-	{\usebibmacro{name:revsdelim}}%
-	\else%
-	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
-	\fi%
-	\endgroup%
-	\usebibmacro{name:andothers}%
-}
+\newif\ifmyreview \myreviewtrue
+\newif\ifpreamble \preambletrue
+\newif\ifintro \introtrue
+\newif\ifchapterone \chapteronetrue
+\newif\ifchaptertwo \chaptertwotrue
+\newif\ifchapterthree \chapterthreetrue
+\newif\ifchapterfour \chapterfourtrue
+\newif\ifchapterfive \chapterfivetrue
+\newif\ifchaptersix \chaptersixtrue
+\newif\ifconclu \conclutrue
+\newif\ifappendix \appendixtrue
 
 \hypersetup{%
-	pdftitle={Collaboration haptique étroitement couplée pour la manipulation moléculaire interactive},%
+	pdftitle={Collaboration haptique étroitement couplée pour la déformation moléculaire interactive},%
 	pdfauthor={Jean SIMARD},%
 	pdfkeywords={collaboration,haptique,environnement virtuel,simulation moléculaire},%
 	pdflang={FR-fr},%
 	pdfsubject={Mémoire de thèse en informatique}%
 }
+
 \addglobalbib[datatype=bibtex]{biblio.bib}
 
-\title{Collaboration haptique étroitement couplée pour la manipulation moléculaire interactive}
+\title{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
 \author{Jean~\myname{Simard}}
 \university{École Doctorale d'Informatique de \myname{Paris}-Sud (\myEDIPS)}
 \laboratory{Laboratoire d'Informatique, de Mécanique et de Sciences de l'Ingénieur (\myCNRSLIMSI)}
@@ -79,6 +60,7 @@
 \begin{document}
 	\frontmatter
 	\maketitle
+	\ifpreamble
 	\begin{myabstract}[french]
 		Le \myglos{glo-DockingMoleculaire} consiste à assembler deux molécules pour former une structure stable.
 		Les approches existantes de ce problème complexe nécessitent des temps de traitement importants pour des résultats peu robustes.
@@ -189,6 +171,8 @@
 	\mytoc
 	\mylof
 	\mylot
+	\fi
+	\ifintro
 	\mainmatter
 	\begin{mychapter+}[cha-IntroductionGenerale]{Introduction générale}
 		En biologie moléculaire, il est un problème vieux de plus d'un siècle qui n'a toujours pas trouvé de solution optimale.
@@ -230,6 +214,8 @@
 		Pour finir, nous présenterons la synthèse des travaux effectués dans le cadre de cette thèse.
 		Puis nous proposerons des perspectives à court et moyen terme.
 	\end{mychapter+}
+	\fi
+	\ifchapterone
 	\begin{mychapter}[cha-sota-EtudeBibliographique]{Étude bibliographique}
 		\begin{mysection}[sec-sota-Introduction]{Introduction}
 			Ce travail de thèse aborde de nombreux concepts, de la biologie moléculaire au système interactif temps-réel en passant par la psychologie sociale.
@@ -258,7 +244,7 @@
 				\begin{myfigure}
 					\psset{xunit=0.06666666\textwidth,yunit=0.05\textwidth}
 					\def\mycircleletter(#1,#2)#3{%
-						\rput(#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
+						\rput(#1,#2){\pscirclebox*[fillcolor=myblue70]{\white #3}}%
 					}
 					\begin{myps}(-7.5,-9.5)(7.5,7.5)
 						\rput(-5,4){\myimage[width=0.25\textwidth]{sota-docking-molecule-A}}
@@ -267,7 +253,7 @@
 						\rput(5,4){\myimage[width=0.207437276\textwidth]{sota-docking-molecule-B}}
 						\mycircleletter(5,0){B}
 						\rput(0,-5){\myimage[width=0.386200717\textwidth]{sota-docking-complex-AB}}
-						\psline[linewidth=10pt,linecolor=myblue!70]{->}(0,1)(0,-2)
+						\psline[linewidth=10pt,linecolor=myblue70]{->}(0,1)(0,-2)
 						\mycircleletter(-1,-9){A}
 						\rput(0,-9){\Large\bfseries +}
 						\mycircleletter(1,-9){B}
@@ -678,13 +664,12 @@
 
 				\begin{myfigure}
 					\psset{xunit=0.298507463\textwidth,yunit=0.05cm}
-					\begin{myps}(-0.35,-25)(3,65)
-						\myaxes(0,3){condition}(0,60)[10]{vitesse~(km/h)}
+					\begin{myboxgraph}(3,0.8\textwidth)[10]{condition}(60,4cm){vitesse~(km/h)}
 						\mybarplot{sota-triplett.csv}
 						\uput{1pt}[-90](0.5,38.650022682){\bfseries\textcolor{white}{\mynum[km/h]{39}}}
 						\uput{1pt}[-90](1.5,50.161371429){\bfseries\textcolor{white}{\mynum[km/h]{50}}}
 						\uput{1pt}[-90](2.5,52.502386951){\bfseries\textcolor{white}{\mynum[km/h]{52}}}
-					\end{myps}
+					\end{myboxgraph}
 					\mycaption[fig-sota-ResultatsObtenusParTriplettAvecDesCyclistes]{Résultats obtenus par \mycite[author]{Triplett-1898} avec des cyclistes}
 				\end{myfigure}
 
@@ -769,8 +754,7 @@
 
 				\begin{myfigure}
 					\psset{xunit=0.108108108\textwidth,yunit=0.25\textwidth}
-					\begin{myps}(-1,-0.3)(8.25,1.1)
-						\myaxes(0,8){taille du groupe}(0,1.0)[0.2]{performance}
+					\begin{myboxgraph}(8,0.8\textwidth)[0.2]{taille du groupe}(1.0,4cm){performance}
 						\mybarplot{sota-ringelmann.csv}
 						\uput{1pt}[-90](0.5,1.00){\bfseries\textcolor{white}{\mynum[\%]{100}}}
 						\uput{1pt}[-90](1.5,0.93){\bfseries\textcolor{white}{\mynum[\%]{93}}}
@@ -780,7 +764,7 @@
 						\uput{1pt}[-90](5.5,0.63){\bfseries\textcolor{white}{\mynum[\%]{63}}}
 						\uput{1pt}[-90](6.5,0.56){\bfseries\textcolor{white}{\mynum[\%]{56}}}
 						\uput{1pt}[-90](7.5,0.49){\bfseries\textcolor{white}{\mynum[\%]{49}}}
-					\end{myps}
+					\end{myboxgraph}
 					\mycaption[fig-sota-ResultatsObtenusParRingelmannEtPresentesParKravitz]{Résultats obtenus par \mycite[author]{Ringelmann-1913} et présentés par \mycite[author]{Kravitz-1986}}
 				\end{myfigure}
 
@@ -993,29 +977,29 @@
 							\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
 							\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
 							\rput(0,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
-							\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+							\ncdiag[angleA=-45,outAngleA=-45,angleB=-135,outAngleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
 							\ncput*[nrot=:U,npos=0.5]{\myFeedthrough}
 							\ncput*[nrot=:U,npos=2.5]{\myFeedthrough}
 							\psclip{%
 								\rput(0,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
 							}
-							\ncdiag[angleA=-45,angleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\ncdiag[angleA=-45,outAngleA=-45,angleB=-135,outAngleB=-135,armA=4.25,armB=4.25,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
 							\endpsclip
 							\rput(0,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
-							\ncangle[angleA=-90,angleB=180,linearc=.25]{<->}{alice}{artefact}
+							\ncangle[angleA=-90,outAngleA=-90,angleB=180,outAngleB=180,linearc=.25]{<->}{alice}{artefact}
 							\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-							\ncangle[angleA=-90,angleB=0,linearc=.25]{<->}{bob}{artefact}
+							\ncangle[angleA=-90,outAngleA=-90,angleB=0,outAngleB=0,linearc=.25]{<->}{bob}{artefact}
 							\ncput*[npos=0.67]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncline[angleA=0,outAngleA=0,angleB=180,outAngleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncangle[angleA=90,outAngleA=90,angleB=90,outAngleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
 							\ncput*[npos=1.5]{\myGrounding}
 						\end{myps}
 						\mycaption[fig-sota-CollaborationAPlusieursUtilisateurs]{Collaboration à plusieurs utilisateurs}
 						\let\arraystretch\oldarraystretch
 					\end{myfigure}
 
-					Illustré sur la \myref{fig-sota-CollaborationAPlusieursUtilisateurs}, c'est l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
+					La \myref{fig-sota-CollaborationAPlusieursUtilisateurs} illustre l'aspect le plus naturel de la distribution cognitive des charges que nous avons déjà découvert dans la \myref{sse-sota-LaDistributionCognitiveDesChargesDeTravail} : on souhaite diviser la tâche à réaliser entre plusieurs utilisateurs car elle trop complexe ou trop fastidieuse.
 					Cette configuration permet de répartir équitablement le travail entre les membres du groupe.
 					De plus, les utilisateurs ont accès aux mêmes informations ce qui facilite la constitution du \mygrounding.
 					Cependant, deux inconvénients sont à relever avec cette configuration.
@@ -1042,31 +1026,31 @@
 							\mynode(4,4)[bob]{\begin{tabular}{c}\Large Expert~\mynum{2}\\Spécialité~\textsc{b}\end{tabular}}
 							\rput(-4,0){\circlenode[style=nodestyle]{artefact1}{\Large Artefact~\mynum{1}}}
 							\rput(4,0){\circlenode[style=nodestyle]{artefact2}{\Large Artefact~\mynum{2}}}
-							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
+							\ncdiag[offset=0.5,angleA=-90,outAngleA=-90,angleB=-90,outAngleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25]{<->}{alice}{bob}
 							\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
 							\rput(4,0){\circlenode[style=nodestyle,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
 							\ncput*[nrot=:U,npos=1.5]{\myFeedthrough}
 							\psclip{%
 								\rput(-4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{1}}}
 							}
-							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\ncdiag[offset=0.5,angleA=-90,outAngleA=-90,angleB=-90,outAngleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
 							\endpsclip
 							\psclip{%
 								\rput(4,0){\circlenode[linestyle=none,shadow=false]{artefact}{\Large Artefact~\mynum{2}}}
 							}
-							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
+							\ncdiag[offset=0.5,angleA=-90,outAngleA=-90,angleB=-90,outAngleB=-90,armA=3,armB=3,linestyle=dashed,linearc=.25,linecolor=black!25]{<->}{alice}{bob}
 							\endpsclip
 							\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact1}{\Large Artefact~\mynum{1}}}
 							\rput(4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact2}{\Large Artefact~\mynum{2}}}
-							\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact1}
+							\ncline[offset=-0.5,angleA=-90,outAngleA=-90,angleB=90,outAngleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact1}
 							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-							\ncline[offset=0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{bob}{artefact2}
+							\ncline[offset=0.5,angleA=-90,outAngleA=-90,angleB=90,outAngleB=90,linearc=.25,nodesepB=-3pt]{<->}{bob}{artefact2}
 							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncline[angleA=0,outAngleA=0,angleB=180,outAngleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncangle[angleA=90,outAngleA=90,angleB=90,outAngleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
 							\ncput*[npos=1.5]{\myGrounding}
-							\ncline[angleA=0,angleB=180]{<->}{artefact1}{artefact2}
+							\ncline[angleA=0,outAngleA=0,angleB=180,outAngleB=180]{<->}{artefact1}{artefact2}
 							\ncput*[npos=0.5]{Synchronization}
 						\end{myps}
 						\mycaption[fig-sota-CollaborationAPlusieursExperts]{Collaboration à plusieurs experts}
@@ -1099,21 +1083,21 @@
 							\mynode(-4,4)[alice]{\Large Sujet~\mynum{1}}
 							\mynode(4,4)[bob]{\Large Sujet~\mynum{2}}
 							\rput(-4,0){\circlenode[style=nodestyle]{artefact}{\Large Artefact}}
-							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25]{->}{alice}{bob}
+							\ncdiag[offset=0.5,angleA=-90,outAngleA=-90,angleB=-90,outAngleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25]{->}{alice}{bob}
 							\ncput*[nrot=:U,npos=1.5]{\emph{Feedthrough}}
 							\psclip{%
 								\rput(-4,0){\circlenode[style=nodestyle,shadow=false]{artefact}{\Large Artefact}}
 							}
-							\ncdiag[offset=0.5,angleA=-90,angleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25,linecolor=black!25]{->}{alice}{bob}
+							\ncdiag[offset=0.5,angleA=-90,outAngleA=-90,angleB=-90,outAngleB=-90,armA=3.5,armB=0,linestyle=dashed,linearc=.25,linecolor=black!25]{->}{alice}{bob}
 							\endpsclip
 							\rput(-4,0){\circlenode[style=nodestyle,fillstyle=none,shadow=false]{artefact}{\Large Artefact}}
-							\ncline[offset=-0.5,angleA=-90,angleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact}
+							\ncline[offset=-0.5,angleA=-90,outAngleA=-90,angleB=90,outAngleB=90,linearc=.25,nodesepB=-3pt]{<->}{alice}{artefact}
 							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Contrôle\\et retour\\sensoriel\end{tabular}}
-							\ncangle[angleA=-90,angleB=0,linearc=.25]{<-}{bob}{artefact}
+							\ncangle[angleA=-90,outAngleA=-90,angleB=0,outAngleB=0,linearc=.25]{<-}{bob}{artefact}
 							\ncput*[npos=0.5]{\begin{tabular}{@{}c@{}}Retour\\sensoriel\end{tabular}}
-							\ncline[angleA=0,angleB=180]{<->}{alice}{bob}
+							\ncline[angleA=0,outAngleA=0,angleB=180,outAngleB=180]{<->}{alice}{bob}
 							\ncput*{\begin{tabular}{@{}c@{}}Communication\\directe\end{tabular}}
-							\ncangle[angleA=90,angleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
+							\ncangle[angleA=90,outAngleA=90,angleB=90,outAngleB=90,arm=1,linearc=.25,linestyle=dashed]{<->}{alice}{bob}
 							\ncput*[npos=1.5]{\myGrounding}
 						\end{myps}
 						\mycaption[fig-sota-CollaborationAvecAccesExclusifAuxArtefacts]{Collaboration par manipulateur et observateur}
@@ -1183,7 +1167,7 @@
 			\begin{myfigure}
 				\psset{xunit=0.2\textwidth}
 				\def\mycirclenum(#1,#2)#3{%
-					\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue!70]{\white #3}}%
+					\uput{5em}[0](#1,#2){\pscirclebox*[fillcolor=myblue70]{\white #3}}%
 				}
 				\begin{myps}(-2.5,-1)(2.5,5)
 					\mynode(0,4)[Exploration]{Exploration}
@@ -1199,7 +1183,7 @@
 					\ncline{->}{Selection}{Manipulation}
 					\ncline{->}{Manipulation}{Evaluation}
 					\ncline{->}{Evaluation}{Objective}
-					\ncloop[loopsize=4em,angleA=-90,angleB=90,linearc=0.05]{->}{Evaluation}{Exploration}
+					\ncloop[loopsize=4em,angleA=-90,outAngleA=-90,angleB=90,outAngleB=90,linearc=0.05]{->}{Evaluation}{Exploration}
 				\end{myps}
 				\mycaption[fig-sota-ProcessusDeDeformationMoleculaireEnQuatreEtapes]{Processus de déformation moléculaire en quatre étapes}
 			\end{myfigure}
@@ -1212,6 +1196,8 @@
 			Ils seront évalués dans la dernière expérimentation \myref*{cha-TravailCollaboratifAssisteParHaptique}.
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifchaptertwo
 	\begin{mychapter}[cha-Shaddock-ManipulationCollaborativeDeMolecules]{\myShaddock\ -- Plateforme de manipulation collaborative de molécules}
 		\begin{mysection}[sec-Shaddock-Introduction]{Introduction}
 			Le \myref{cha-sota-EtudeBibliographique} nous a permis d'identifier des problématiques de recherche : nombre important d'atomes, multiple connaissances nécessaires, flexibilité des molécules, \myetc
@@ -1284,20 +1270,20 @@
 							}
 							\psset{shadow=false}
 
-							\myumlrealization[angleA=-90,angleB=90]{NAMD}{FichierSimulation}[nccurve]%
-							\myumlrealization[angleA=-90,angleB=90]{VRPN1}{PHANToM1}[nccurve]%
-							\myumlrealization[angleA=-90,angleB=90]{VRPNn}{PHANToMn}[nccurve]%
-							\myumlinterface[angleA=-90,angleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
+							\myumlrealization[angleA=-90,outAngleA=-90,angleB=90,outAngleB=90]{NAMD}{FichierSimulation}[nccurve]%
+							\myumlrealization[angleA=-90,outAngleA=-90,angleB=90,outAngleB=90]{VRPN1}{PHANToM1}[nccurve]%
+							\myumlrealization[angleA=-90,outAngleA=-90,angleB=90,outAngleB=90]{VRPNn}{PHANToMn}[nccurve]%
+							\myumlinterface[angleA=-90,outAngleA=-90,angleB=90,outAngleB=90,ArrowInsidePos=0.666667]{VMD}{VideoProjecteur}[nccurve]
 							\nbput[npos=0.666667]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'affichage\end{psmatrix}}
 							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.333333]{\textcolor{black!30}{\scriptsize \myVGA}}
-							\myumlinterface[angleA=0,angleB=180,offsetB=-8pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
+							\myumlinterface[angleA=0,outAngleA=0,angleB=180,outAngleB=180,offsetB=-12pt,ArrowInsidePos=0.3]{NAMD}{VMD}[nccurve]
 							\naput[npos=0.25]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ de simulation\end{psmatrix}}
 							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:U,npos=0.635]{\textcolor{black!30}{\scriptsize \myTCPIP}}
 							\psframe*[linecolor=white](-2.6,-2)(-2.4,-0.06) % To hide the background of the label
-							\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
+							\myumlinterface[angleA=180,outAngleA=180,angleB=0,outAngleB=0,ncurvA=1.5,offsetA=12pt,ArrowInsidePos=0.5]{VRPN1}{VMD}[nccurve]
 							\nbput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
 							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
-							\myumlinterface[angleA=180,angleB=0,ncurvA=1.5,offsetA=8pt,ArrowInsidePos=0.5]{VRPNn}{VMD}[nccurve]
+							\myumlinterface[angleA=180,outAngleA=180,angleB=0,outAngleB=0,ncurvA=1.5,offsetA=12pt,ArrowInsidePos=0.5]{VRPNn}{VMD}[nccurve]
 							\naput[npos=0.4]{\tiny\begin{psmatrix}[rowsep=0]Transmission\\ des données\\ d'interaction\end{psmatrix}}
 							\ncput*[fillcolor=myblue!2,framesep=1pt,nrot=:D,npos=0.6]{\textcolor{black!30}{\scriptsize \myTCPIP}}
 						}
@@ -1322,13 +1308,13 @@
 						}
 
 						\psset{fillstyle=none,shadow=false}
-						\myumlrealization[angleA=90,angleB=-90]{Renderer}{IMD}[nccurve]%
-						\myumlrelation[angleA=180,angleB=0,offsetA=8pt]{VRPNclient}[-135]<*>{IMD}[-45]<*>[nccurve]%
-						\myumlinterface[angleA=180,angleB=180,outAngleB=0,offsetA=8pt,ArrowInside={}]{IMD}{VMD}[nccurve]
+						\myumlrealization[angleA=90,outAngleA=90,angleB=-90,outAngleB=-90]{Renderer}{IMD}[nccurve]%
+						\myumlrelation[angleA=180,outAngleA=180,angleB=0,outAngleB=0,offsetA=12pt]{VRPNclient}[-135]<*>{IMD}[-45]<*>[nccurve]%
+						\myumlinterface[angleA=180,outAngleA=180,angleB=180,outAngleB=0,offsetA=12pt,ArrowInside={}]{IMD}{VMD}[nccurve]
 						\ncput[npos=1]{\uput[180](0,0){\tiny\begin{psmatrix}[rowsep=0]Chargement\\ des données\\ de simulation\end{psmatrix}}}
-						\myumlinterface[angleA=0,angleB=0,outAngleB=180,ArrowInside={}]{VRPNclient}{VMD}[nccurve]
+						\myumlinterface[angleA=0,outAngleA=0,angleB=0,outAngleB=180,ArrowInside={}]{VRPNclient}{VMD}[nccurve]
 						\ncput[npos=1]{\uput[0](0,0){\tiny\begin{psmatrix}[rowsep=0]Communication\\ avec les outils\\ de manipulation\end{psmatrix}}}
-						\myumlinterface[angleA=-90,angleB=-90,outAngleB=90,offsetA=8pt,ArrowInside={}]{Renderer}{VMD}[nccurve]
+						\myumlinterface[angleA=-90,outAngleA=-90,angleB=-90,outAngleB=90,offsetA=8pt,ArrowInside={}]{Renderer}{VMD}[nccurve]
 						\ncput[npos=1]{\uput[-90](0,0){\tiny\begin{psmatrix}[rowsep=0]Affichage\\ de la scène\end{psmatrix}}}
 					\end{myps}
 					\mycaption[fig-Shaddock-DiagrammeDeComposantUMLDuNoeudVMD]{Diagramme de composant \myacronl-{acr-UML} du nœud \myacronl-{acr-VMD}}
@@ -1700,6 +1686,8 @@
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifchapterthree
 	\begin{mychapter}[cha-RechercheCollaborativeDeResiduSurUneMolecule]{Recherche collaborative de résidu sur une molécule}
 		\begin{mysection}[sec-exp1-Introduction]{Introduction}
 			L'état de l'art du premier chapitre nous a permis d'identifier les principales tâches élémentaires concernant l'interaction en environnement virtuel : les \myacro*{acr-PCV}.
@@ -2071,10 +2059,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp1-AmeliorationDesPerformancesEnBinome-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
-						\begin{myps}(-1.25,-115)(10,425)
-							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](10,0.8\textwidth)[100]{\myglosnl*{glo-Residu}}(400,4cm){temps~(s)}
 							\myboxplot{exp1-time-residue.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-TempsDeRealisationParResidu]{Temps de réalisation par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
@@ -2084,11 +2071,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
-						\begin{myps}(-1.25,-115)(10,460)
-							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{temps~(s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](10,0.8\textwidth)[100]{\myglosnl*{glo-Residu}}(400,4cm){temps~(s)}
 							\myboxplot{exp1-time-residue-group.csv}
-							\mylegend{\myleg{\myGlosnl{glo-Monome}}{myblue}\myand\myleg{\myGlosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-TempsDeRealisationComparesMonomeOuBinomeParResidu]{Temps de réalisation comparés (\myglosnl{glo-Monome} ou \myglosnl{glo-Binome}) par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
@@ -2098,11 +2087,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.0889\textwidth,yunit=0.01cm}
-						\begin{myps}(-1.25,-115)(10,460)
-							\myaxes(0,10){\myglosnl*{glo-Residu}}(0,400)[100]{temps~(s)}
+						\mylegend{%
+							\myleg{recherche}{myblue}%
+							\myleg{sélection}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](10,0.8\textwidth)[100]{\myglosnl*{glo-Residu}}(400,4cm){temps~(s)}
 							\myboxplot{exp1-timeaudio-residue-searchselection.csv}
-							\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-TempsDeRechercheEtDeSelectionComparesParResidu]{Temps de recherche et de sélection comparés par \myglosnl{glo-Residu}}
 					\end{myfigure}
 
@@ -2173,8 +2164,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.15cm}
-						\begin{myps}(-1.5,-7)(12,22)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,20)[4]{distance~(mm)}
+						\begin{myboxgraph}(12,0.8\textwidth)[4]{\myglosnl*{glo-Binome}}(20,4cm){distance~(mm)}
 							% Once header are readed, they are defined for other barplot
 							% That's why barplots without headers are in first position
 							\mybarplot[header=false,barstyle=third-barstyle]{exp1-diff-groups3.csv}
@@ -2187,7 +2177,7 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 							\uput[180](12,5){\pscharpath{\LARGE\bf\sffamily Champ proche}}
 							\uput[180](12,11){\pscharpath{\LARGE\bf\sffamily Champ voisin}}
 							\uput[180](12,17){\pscharpath{\LARGE\bf\sffamily Champ distant}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-DistanceMoyenneEntreLesSujetsPourChaqueBinomeSurLesResidusSixNeufEtDix]{Distance moyenne entre les sujets pour chaque \myglosnl{glo-Binome} sur les \myglosnl*{glo-Residu} \myresidue{6}, \myresidue{9} et \myresidue{10}}
 					\end{myfigure}
 
@@ -2196,10 +2186,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.5cm}
-						\begin{myps}(-1.5,-2)(12,5.5)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,5)[1]{affinité~(\mynum{1}--\mynum{5})}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](12,0.8\textwidth)[1]{\myglosnl*{glo-Binome}}(5,4cm){affinité~(\mynum{1}--\mynum{5})}
 							\mybarplot{exp1-affinity-groups.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-AffiniteEntreLesSujetsPourChaqueBinome]{Affinité entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
@@ -2209,10 +2198,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.01cm}
-						\begin{myps}(-1.5,-110)(12,325)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,300)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](12,0.8\textwidth)[50]{\myglosnl*{glo-Binome}}(300,4cm){temps~(s)}
 							\mybarplot{exp1-time-groups.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-TempsDeRealisationEntreLesSujetsPourChaqueBinome]{Temps de réalisation entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
@@ -2222,10 +2210,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.05cm}
-						\begin{myps}(-1.5,-22)(12,75)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,70)[10]{temps~(s)}
+						\begin{myboxgraph}(12,0.8\textwidth)[10]{\myglosnl*{glo-Binome}}(70,4cm){temps~(s)}
 							\mybarplot{exp1-timeaudio-groups.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-TempsDeCommunicationVerbaleEntreLesSujetsPourChaqueBinome]{Temps de communication verbale entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
@@ -2235,11 +2222,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=0.03cm}
-						\begin{myps}(-1.5,-35)(12,120)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,100)[25]{temps~(\%)}
+						\mylegend{%
+							\myleg{recherche}{myblue}%
+							\myleg{sélection}{myblue70}%
+						}
+						\begin{myboxgraph}(12,0.8\textwidth)[25]{\myglosnl*{glo-Binome}}(100,4cm){temps~(\%)}
 							\mybarplot{exp1-timeaudio-groups-searchselection.csv}
-							\mylegend{\myleg{Recherche}{myblue}\myand\myleg{Sélection}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-PourcentageDeTempsDeCommunicationVerbalePendantLaRechercheEtLaSelectionEntreLesSujetsPourChaqueBinome]{Pourcentage de temps de communication verbale pendant la recherche et la sélection entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
@@ -2251,11 +2240,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.074\textwidth,yunit=1cm}
-						\begin{myps}(-1.5,-1)(12,3.6)
-							\myaxes(0,12){\myglosnl*{glo-Binome}}(0,3)[1]{force~(N)}
+						\mylegend{%
+							\myleg{force moyenne}{myblue}%
+							\myleg{différence de force}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](12,0.8\textwidth)[1]{\myglosnl*{glo-Binome}}(3,4cm){force~(N)}
 							\mybarplot{exp1-force-groups-meandiff.csv}
-							\mylegend{\myleg{Force moyenne}{myblue}\myand\myleg{Différence de force}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp1-ForceMoyenneEtDifferenceDeForceEntreLesSujetsPourChaqueBinome]{Force moyenne et différence de force entre les sujets pour chaque \myglosnl{glo-Binome}}
 					\end{myfigure}
 
@@ -2338,10 +2329,10 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 								}
 								\rput(0,0.9){\pnode{close-macro1}}
 								\rput(-0.1,0.5){\pnode{close-macro2}}
-								\nccurve[angleA=135,angleB=-90]{->}{connected-residues-label}{connected-residues1}
-								\nccurve[angleA=45,angleB=-90]{->}{connected-residues-label}{connected-residues2}
-								\nccurve[angleA=90,angleB=180]{->}{close-macro-label}{close-macro1}
-								\nccurve[angleA=-90,angleB=180]{->}{close-macro-label}{close-macro2}
+								\nccurve[angleA=135,outAngleA=135,angleB=-90,outAngleB=-90]{->}{connected-residues-label}{connected-residues1}
+								\nccurve[angleA=45,outAngleA=45,angleB=-90,outAngleB=-90]{->}{connected-residues-label}{connected-residues2}
+								\nccurve[angleA=90,outAngleA=90,angleB=180,outAngleB=180]{->}{close-macro-label}{close-macro1}
+								\nccurve[angleA=-90,outAngleA=-90,angleB=180,outAngleB=180]{->}{close-macro-label}{close-macro2}
 							\end{myps}
 							\mycaption[fig-exp1-CouplagePhysiqueEtStructurelEntreLesResidus]{Couplage physique et structure entre les \myglosnl*{glo-Residu}}
 						\end{myfigure}
@@ -2481,6 +2472,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifchapterfour
 	\begin{mychapter}[cha-DeformationCollaborativeDeMolecule]{Déformation collaborative de molécule}
 		\begin{mysection}[sec-exp2-Introduction]{Introduction}
 			La précédente expérimentation nous a permis d'étudier les premières \myacro*{acr-PCV} que sont l'exploration et la sélection.
@@ -2839,10 +2832,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDesPerformancesEnBinome-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=0.02cm}
-						\begin{myps}(-0.45,-55)(2,210)
-							\myaxes(0,2){nombre de sujets}(0,200)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[50]{nombre de sujets}(200,4cm){temps~(s)}
 							\myboxplot{exp2-time-group.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-TempsDeRealisationEnFonctionDuNombreDeSujets]{Temps de réalisation en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2851,11 +2843,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=1.25cm}
-						\begin{myps}(-0.45,-0.85)(2,3.5)
-							\myaxes(0,2){distance}(0,3)[1]{distance~(mm)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](2,0.8\textwidth)[1]{distance}(3,4cm){distance~(mm)}
 							\myboxplot{exp2-diff-activepassive-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2869,11 +2863,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=0.075cm}
-						\begin{myps}(-0.45,-15)(2,58)
-							\myaxes(0,2){nombre de sujets}(0,50)[10]{nombre de sélections~(nb)}
+						\mylegend{%
+							\myleg{main dominante}{myblue}%
+							\myleg{main dominée}{myblue70}%
+						}
+						\begin{myboxgraph}(2,0.8\textwidth)[10]{nombre de sujets}(65,4cm){nombre de sélections~(nb)}
 							\myboxplot{exp2-numsel-group-dominant.csv}
-							\mylegend{\myleg{main dominante}{myblue}\myand\myleg{main dominée}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-NombreDeSelectionsParMainDominanteDomineeEnFonctionDuNombreDeSujets]{Nombre de sélections par main dominante/dominée en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2887,11 +2883,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.272108844\textwidth,yunit=2.5cm}
-						\begin{myps}(-0.45,-0.45)(2,1.75)
-							\myaxes(0,2){nombre de sujets}(0,1.5)[0.5]{vitesse~(mm/s)}
+						\mylegend{%
+							\myleg{main dominante}{myblue}%
+							\myleg{main dominée}{myblue70}%
+						}
+						\begin{myboxgraph}(2,0.8\textwidth)[0.5]{nombre de sujets}(1.5,4cm){vitesse~(mm/s)}
 							\myboxplot{exp2-speed-group-dominant.csv}
-							\mylegend{\myleg{main dominante}{myblue}\myand\myleg{main dominée}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-VitesseMoyenneDeLaMainDominanteEtDomineeEnFonctionDuNombreDeSujets]{Vitesse moyenne de la main dominante et dominée en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2944,10 +2942,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-EvolutionDesPerformancesEnFonctionDeLaComplexiteDeLaTache-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=0.015cm}
-						\begin{myps}(-0.5,-75)(4,290)
-							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](4,0.8\textwidth)[50]{scénario}(250,4cm){temps~(s)}
 							\myboxplot{exp2-time-task.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
 					\end{myfigure}
 
@@ -2957,11 +2954,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=0.0125cm}
-						\begin{myps}(-0.5,-90)(4,300)
-							\myaxes(0,4){scénario}(0,250)[50]{temps~(s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](4,0.8\textwidth)[50]{scénario}(350,4cm){temps~(s)}
 							\myboxplot{exp2-time-task-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-TempsDeRealisationDesScenariosEnFonctionDuNombreDeSujets]{Temps de réalisation des scénarios en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2971,11 +2970,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=0.04cm}
-						\begin{myps}(-0.5,-30)(4,115)
-							\myaxes(0,4){scénario}(0,100)[25]{nombre de sélection~(nb)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}(4,0.8\textwidth)[25]{scénario}(125,4cm){nombre de sélection~(nb)}
 							\myboxplot{exp2-numsel-task-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-NombreDeSelectionsPourChaqueScenarioEnFonctionDuNombreDeSujets]{Nombre de sélections pour chaque scénario en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -2986,19 +2987,23 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
 						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.9)(4,3)
-								\myaxes(0,4){scénario}(0,2.5)[0.5]{distance~(mm)}
+							\mylegend{%
+								\myleg{\myglosnl{glo-Monome}}{myblue}%
+								\myleg{\myglosnl{glo-Binome}}{myblue70}%
+							}
+							\begin{myboxgraph}(4,0.8\textwidth)[0.5]{scénario}(3,4cm){distance~(mm)}
 								\myboxplot{exp2-passive-task-group.csv}
-								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-							\end{myps}
+							\end{myboxgraph}
 							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistancePassive]{Distance passive}
 						\end{mysubfigure}
 						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-0.5,-0.9)(4,3)
-								\myaxes(0,4){scénario}(0,2.5)[0.5]{distance~(mm)}
+							\mylegend{%
+								\myleg{\myglosnl{glo-Monome}}{myblue}%
+								\myleg{\myglosnl{glo-Binome}}{myblue70}%
+							}
+							\begin{myboxgraph}(4,0.8\textwidth)[0.5]{scénario}(3,4cm){distance~(mm)}
 								\myboxplot{exp2-active-task-group.csv}
-								\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-							\end{myps}
+							\end{myboxgraph}
 							\mysubcaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets-DistanceActive]{Distance active}
 						\end{mysubfigure}
 						\mycaption[fig-exp2-DistancePassiveEtActiveEntreLesEffecteursTerminauxSurChaqueScenarioEnFonctionDuNombreDeSujets]{Distance passive et active entre les \myglosnl*{glo-EffecteurTerminal} sur chaque scénario en fonction du nombre de sujets}
@@ -3011,11 +3016,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=1.25cm}
-						\begin{myps}(-0.5,-0.9)(4,3)
-							\myaxes(0,4){scénario}(0,2.5)[0.5]{vitesse~(mm/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}(4,0.8\textwidth)[0.5]{scénario}(2.5,4cm){vitesse~(mm/s)}
 							\myboxplot{exp2-speed-task-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-VitesseMoyenneSurChaqueScenarioEnFonctionDuNombreDeSujets]{Vitesse moyenne sur chaque scénario en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -3060,10 +3067,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp2-AmeliorationDeLApprentissagePourLesBinomes-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.0125cm}
-						\begin{myps}(-0.45,-90)(3,250)
-							\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](3,0.8\textwidth)[50]{essai}(200,4cm){temps~(s)}
 							\myboxplot{exp2-time-try.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssai]{Temps de réalisation de chaque essai}
 					\end{myfigure}
 
@@ -3073,11 +3079,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.0125cm}
-						\begin{myps}(-0.45,-90)(3,250)
-							\myaxes(0,3){essai}(0,200)[50]{temps~(s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](3,0.8\textwidth)[50]{essai}(250,4cm){temps~(s)}
 							\myboxplot{exp2-time-try-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-TempsDeRealisationDeChaqueEssaiEnFonctionDuNombreDeSujets]{Temps de réalisation de chaque essai en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -3089,11 +3097,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=0.04cm}
-						\begin{myps}(-0.5,-30)(3,115)
-							\myaxes(0,3){essai}(0,100)[25]{nombre de sélections~(nb)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}(3,0.8\textwidth)[25]{essai}(100,4cm){nombre de sélections~(nb)}
 							\myboxplot{exp2-numsel-try-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-NombreDeSelectionsDeChaqueEssaiEnFonctionDuNombreDeSujets]{Nombre de sélections de chaque essai en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -3107,11 +3117,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
-						\begin{myps}(-0.5,-0.9)(3,3)
-							\myaxes(0,3){essai}(0,2.5)[0.5]{distance~(mm)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}(3,0.8\textwidth)[0.5]{essai}(3,4cm){distance~(mm)}
 							\myboxplot{exp2-active-try-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-DistanceActiveEntreLesEffecteursTerminauxPourChaqueEssaiEnFonctionDuNombreDeSujets]{Distance active entre les \myglosnl*{glo-EffecteurTerminal} pour chaque essai en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -3125,11 +3137,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.285714286\textwidth,yunit=1.25cm}
-						\begin{myps}(-0.5,-0.9)(3,3)
-							\myaxes(0,3){essai}(0,2.5)[0.5]{vitesse~(mm/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Monome}}{myblue}%
+							\myleg{\myglosnl{glo-Binome}}{myblue70}%
+						}
+						\begin{myboxgraph}(3,0.8\textwidth)[0.5]{essai}(2.5,4cm){vitesse~(mm/s)}
 							\myboxplot{exp2-speed-try-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Monome}}{myblue}\myand\myleg{\myglosnl{glo-Binome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp2-VitesseMoyennePourChaqueEssaiEnFonctionDuNombreDeSujets]{Vitesse moyenne pour chaque essai en fonction du nombre de sujets}
 					\end{myfigure}
 
@@ -3238,6 +3252,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifchapterfive
 	\begin{mychapter}[cha-LaDynamiqueDeGroupe]{La dynamique de groupe}
 		\begin{mysection}[sec-exp3-Introduction]{Introduction}
 			Après avoir étudié les différentes \myacro*{acr-PCV} sur des \myglos*{glo-Binome}, nous souhaitons élargir notre étude à des groupes.
@@ -3470,10 +3486,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp3-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
-						\begin{myps}(-0.425,-220)(2,640)
-							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{scénario}(600,4cm){temps~(s)}
 							\myboxplot{exp3-time-molecule.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-TempsDeRealisationDesScenarios]{Temps de réalisation des scénarios}
 					\end{myfigure}
 
@@ -3482,11 +3497,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
-						\begin{myps}(-0.25,-220)(2,720)
-							\myaxes(0,2){scénario}(0,600)[100]{temps~(s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{scénario}(775,4cm){temps~(s)}
 							\myboxplot{exp3-time-molecule-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDuNombreDeParticipants]{Temps de réalisation des scénarios en fonction du nombre de participants}
 					\end{myfigure}
 
@@ -3496,11 +3513,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=10cm}
-						\begin{myps}(-0.275,-0.11)(2,0.36)
-							\myaxes(0,2){scénario}(0,0.31)[0.05]{sélections~(nb/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3.25em},yAxisLabelPos={-3.25em,c}](2,0.8\textwidth)[0.05]{scénario}(0.40,4cm){sélections~(nb/s)}
 							\myboxplot{exp3-freqsel-molecule-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDuNombreDeParticipants]{Fréquence des sélections pour les scénarios en fonction du nombre de participants}
 					\end{myfigure}
 
@@ -3510,11 +3529,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=3cm}
-						\begin{myps}(-0.275,-0.35)(2,1.45)
-							\myaxes(0,2){scénario}(0,1.25)[0.25]{vitesse~(mm/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[0.25]{scénario}(1.25,4cm){vitesse~(mm/s)}
 							\myboxplot{exp3-speed-molecule-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDuNombreDeParticipants]{Vitesse moyenne sur les scénarios en fonction du nombre de participants}
 					\end{myfigure}
 
@@ -3524,11 +3545,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.449438202\textwidth,yunit=0.1cm}
-						\begin{myps}(-0.225,-11)(2,36)
-							\myaxes(0,2){scénario}(0,30)[5]{échanges verbaux~(nb)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}(2,0.8\textwidth)[5]{scénario}(35,4cm){échanges verbaux~(nb)}
 							\myboxplot{exp3-talk-molecule-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-NombreDEchangeVerbauxSurLesScenariosEnFonctionDuNombreDeParticipants]{Nombre d'échanges verbaux sur les scénarios en fonction du nombre de participants}
 					\end{myfigure}
 
@@ -3575,10 +3598,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp3-UtiliteDuBrainstormingPourLaCollaboration-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.005cm}
-						\begin{myps}(-0.425,-220)(2,640)
-							\myaxes(0,2){\mybrainstorming}(0,600)[100]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{\mybrainstorming}(600,4cm){temps~(s)}
 							\myboxplot{exp3-time-brainstorm.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-TempsDeRealisationAvecOuSansBrainstorming]{Temps de réalisation avec ou sans \mybrainstorming}
 					\end{myfigure}
 
@@ -3587,11 +3609,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.444444444\textwidth,yunit=0.005cm}
-						\begin{myps}(-0.25,-220)(2,720)
-							\myaxes(0,2){\mybrainstorming}(0,600)[100]{temps~(s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{\mybrainstorming}(775,4cm){temps~(s)}
 							\myboxplot{exp3-time-brainstorm-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-TempsDeRealisationDesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Temps de réalisation des scénarios en fonction des groupes avec ou sans \mybrainstorming}
 					\end{myfigure}
 
@@ -3601,11 +3625,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=10cm}
-						\begin{myps}(-0.275,-0.11)(2,0.36)
-							\myaxes(0,2){\mybrainstorming}(0,0.31)[0.05]{sélections~(nb/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3.25em},yAxisLabelPos={-3.25em,c}](2,0.8\textwidth)[0.05]{\mybrainstorming}(0.35,4cm){sélections~(nb/s)}
 							\myboxplot{exp3-freqsel-brainstorm-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-FréquenceDesSelectionsPourLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Fréquence des sélections pour les scénarios en fonction des groupes avec ou sans \mybrainstorming}
 					\end{myfigure}
 
@@ -3615,11 +3641,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=3cm}
-						\begin{myps}(-0.275,-0.35)(2,1.45)
-							\myaxes(0,2){\mybrainstorming}(0,1.25)[0.25]{vitesse~(mm/s)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[0.25]{\mybrainstorming}(1.25,4cm){vitesse~(mm/s)}
 							\myboxplot{exp3-speed-brainstorm-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-VitesseMoyenneSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Vitesse moyenne sur les scénarios en fonction des groupes avec ou sans \mybrainstorming}
 					\end{myfigure}
 
@@ -3629,11 +3657,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.43956044\textwidth,yunit=0.075cm}
-						\begin{myps}(-0.275,-14)(2,58)
-							\myaxes(0,2){\mybrainstorming}(0,50)[10]{communication~(nb)}
+						\mylegend{%
+							\myleg{\myglosnl{glo-Binome}}{myblue}%
+							\myleg{\myglosnl{glo-Quadrinome}}{myblue70}%
+						}
+						\begin{myboxgraph}(2,0.8\textwidth)[10]{\mybrainstorming}(55,4cm){communication~(nb)}
 							\myboxplot{exp3-communication-brainstorm-group.csv}
-							\mylegend{\myleg{\myglosnl{glo-Binome}}{myblue}\myand\myleg{\myglosnl{glo-Quadrinome}}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-NombreDOrdresVerbauxSurLesScenariosEnFonctionDesGroupesAvecOuSansBrainstorming]{Nombre d'ordres verbaux sur les scénarios en fonction des groupes avec ou sans \mybrainstorming}
 					\end{myfigure}
 
@@ -3696,10 +3726,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp3-DefinitionDUnMeneur-DonneesEtStatistiques]{Données et statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.227272727\textwidth,yunit=0.25cm}
-						\begin{myps}(-0.4,-4.5)(4,13)
-							\myaxes(0,4){sujets de \mygroup{1}}(0,12)[4]{ordres~(nb)}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](4,0.8\textwidth)[4]{sujets de \mygroup{1}}(10,4cm){ordres~(nb)}
 							\mybarplot{exp3-g1-talk-subject.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-NombreDOrdresDonnesParChacunDesSujetsDeG1]{Nombre d'ordres donnés par chacun des sujets de \mygroup{1}}
 					\end{myfigure}
 
@@ -3708,10 +3737,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.222222222\textwidth,yunit=3cm}
-						\begin{myps}(-0.5,-0.4)(4,1.1)
-							\myaxes(0,4){sujets de \mygroup{1}}(0,1.00)[0.25]{vitesse~(mm/s)}
+						\begin{myboxgraph}[llx={-3.25em},yAxisLabelPos={-3.25em,c}](4,0.8\textwidth)[0.25]{sujets de \mygroup{1}}(1.00,4cm){vitesse~(mm/s)}
 							\mybarplot{exp3-g1-speed-subject.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp3-VitesseMoyenneDesEffecteursTerminauxPourChacunDesSujetsDeG1]{Vitesse moyenne des \myglosnl*{glo-EffecteurTerminal} pour chacun des sujets de \mygroup{1}}
 					\end{myfigure}
 
@@ -3719,23 +3747,21 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 					On observe que la vitesse du sujet \mysubject{1} est plus élevée que la moyenne (\myanalysis{exp3-g1-speed-subject-analysis.tex} de plus que la moyenne).
 
 					\begin{myfigure}
-						\psset{xunit=0.007017544\textwidth,yunit=1cm}
-						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-12.5,-1.15)(130,5.25)
-								\myaxes[labels=all,ticks=all,Dx=25](0,125){temps~{(s)}}(0,5)[1]{force~(N)}
-								\psscalebox{2.75 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S1.csv}}
-							\end{myps}
+						\psset{xAxisLabel={temps~(s)},xAxisLabelPos={c,-5ex},llx={-2em},yAxisLabel={force~(N)},yAxisLabelPos={-2em,c},lly={-6ex}}
+						\begin{mysubfigure}[0.95\textwidth]
+							\begin{psgraph}[labels=all,ticks=all,Dx=25,Dy=1,yticksize={-3pt 125},ticklinestyle=dashed](125,5){0.8\textwidth}{4cm}
+								\psscalebox{2.5 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S1.csv}}
+							\end{psgraph}
 							\mysubcaption[fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS1]{Profil de force de \mysubject{1}}
 						\end{mysubfigure}
-						\begin{mysubfigure}[\textwidth]
-							\begin{myps}(-12.5,-1.15)(130,5.25)
-								\myaxes[labels=all,ticks=all,Dx=25](0,125){temps~{(s)}}(0,5)[1]{force~(N)}
-								\psscalebox{2.75 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S2.csv}}
+						\begin{mysubfigure}[0.95\textwidth]
+							\begin{psgraph}[labels=all,ticks=all,Dx=25,Dy=1,yticksize={-3pt 125},ticklinestyle=dashed](125,5){0.8\textwidth}{4cm}
+								\psscalebox{2.5 1}{\psfileplot[linecolor=myred,linewidth=0.1pt]{files/exp3-g1-force-prion-S2.csv}}
 								\pnode(49.341,2){begin}
 								\pnode(86.291,2){end}
 								\ncline[linecolor=myblue,linewidth=1pt]{<->}{begin}{end}
 								\ncput*{\textcolor{myblue}{\small selection}}
-							\end{myps}
+							\end{psgraph}
 							\mysubcaption[fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion-ProfilDeForceDeS2]{Profil de force de \mysubject{2}}
 						\end{mysubfigure}
 						\mycaption[fig-exp3-ProfilDeForceDuGroupeG1SurLaMoleculePrion]{Profil de force du groupe \mygroup{1} sur la molécule \myPrion}
@@ -3816,6 +3842,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifchaptersix
 	\begin{mychapter}[cha-TravailCollaboratifAssisteParHaptique]{Travail collaboratif assisté par haptique}
 		\begin{mysection}[sec-exp4-Introduction]{Introduction}
 			Sur la base des résultats obtenus dans les trois études précédentes, nous avons développé des outils haptiques afin d'améliorer la communication et la coordination des actions entre les utilisateurs durant la réalisation d'un \myglos{glo-DockingMoleculaire} collaboratif.
@@ -4140,10 +4168,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDesPerformances-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.75cm}
-						\begin{myps}(-0.425,-1.5)(2,6.25)
-							\myaxes(0,2){haptique}(0,6)[1]{score \myacronl{acr-RMSD}}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](2,0.8\textwidth)[1]{haptique}(6,4cm){score \myacronl{acr-RMSD}}
 							\myboxplot{exp4-rmsd-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-ScoreRMSDMinimumAtteintAvecEtSansHaptique]{Score \myacronl{acr-RMSD} minimum atteint avec et sans haptique}
 					\end{myfigure}
 
@@ -4152,10 +4179,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.0075cm}
-						\begin{myps}(-0.425,-150)(2,525)
-							\myaxes(0,2){haptique}(0,500)[100]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{haptique}(500,4cm){temps~(s)}
 							\myboxplot{exp4-rmsd-time-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptique]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique}
 					\end{myfigure}
 
@@ -4164,11 +4190,13 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.0075cm}
-						\begin{myps}(-0.425,-150)(2,575)
-							\myaxes(0,2){scénario}(0,500)[100]{temps~(s)}
+						\mylegend{%
+							\myleg{sans assistance}{myblue}%
+							\myleg{avec assistance}{myblue70}%
+						}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[100]{scénario}(550,4cm){temps~(s)}
 							\myboxplot{exp4-rmsd-time-molecule-haptic.csv}
-							\mylegend{\myleg{Sans assistance}{myblue}\myand\myleg{Avec assistance}{myblue!70}}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsPourAtteindreLeScoreRMSDMinimumAvecEtSansHaptiquePourChaqueScenario]{Temps pour atteindre le score \myacronl{acr-RMSD} minimum avec et sans haptique pour chaque scénario}
 					\end{myfigure}
 
@@ -4178,10 +4206,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.256410256\textwidth,yunit=30cm}
-						\begin{myps}(-0.6,-0.04)(2,0.155)
-							\myaxes(0,2){haptique}(0,0.150)[0.025]{fréquence~(nb/s)}
+						\begin{myboxgraph}[llx={-3.5em},yAxisLabelPos={-3.5em,c}](2,0.8\textwidth)[0.025]{haptique}(0.150,4cm){fréquence~(nb/s)}
 							\myboxplot{exp4-freq-button1-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-NombreDeSelectionsParSecondeEffectueesParUnOperateurPourLaDeformationAvecEtSansHaptique]{Nombre de sélections par seconde effectuées par un opérateur pour la déformation avec et sans haptique}
 					\end{myfigure}
 
@@ -4190,10 +4217,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.175cm}
-						\begin{myps}(-0.425,-7)(2,26)
-							\myaxes(0,2){haptique}(0,25)[5]{temps~(s)}
+						\begin{myboxgraph}(2,0.8\textwidth)[5]{haptique}(25,4cm){temps~(s)}
 							\myboxplot{exp4-meantime-button1-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsMoyenDUneSelectionParSecondeEffectueeParUnOperateurPourLaDeformationAvecEtSansHaptique]{Temps moyen d'une sélection effectuée par un opérateur pour la déformation avec et sans haptique}
 					\end{myfigure}
 
@@ -4202,10 +4228,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.1cm}
-						\begin{myps}(-0.425,-12.5)(2,42.5)
-							\myaxes(0,2){haptique}(0,40)[10]{temps~(s)}
+						\begin{myboxgraph}(2,0.8\textwidth)[10]{haptique}(40,4cm){temps~(s)}
 							\myboxplot{exp4-attract-time-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsMoyenPourAtteindreUneCibleDesigneeLorsDUneDesignationAvecEtSansHaptique]{Temps moyen pour atteindre une cible désignée lors d'une désignation avec et sans haptique}
 					\end{myfigure}
 
@@ -4251,10 +4276,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 				\begin{mysubsubsection}[sss-exp4-AmeliorationDeLaCommunication-DonneesEtTestsStatistiques]{Données et tests statistiques}
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.5cm}
-						\begin{myps}(-0.425,-2.25)(2,10.25)
-							\myaxes(0,2){haptique}(0,10)[2]{temps~(s)}
+						\begin{myboxgraph}[llx={-2em},yAxisLabelPos={-2em,c}](2,0.8\textwidth)[2]{haptique}(10,4cm){temps~(s)}
 							\myboxplot{exp4-shake-time-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsMoyenDAcceptationDUneDesignationAvecEtSansHaptique]{Temps moyen d'acceptation d'une désignation avec et sans haptique}
 					\end{myfigure}
 
@@ -4263,10 +4287,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.3cm}
-						\begin{myps}(-0.425,-4)(2,16)
-							\myaxes(0,2){haptique}(0,15)[5]{sélections~(nb)}
+						\begin{myboxgraph}(2,0.8\textwidth)[5]{haptique}(15,4cm){sélections~(nb)}
 							\myboxplot{exp4-accept-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-NombreDeDesignationsAccepteesAuCoursDuProcessusDeDesignationAvecEtSansHaptique]{Nombre de désignations acceptées au cours du processus de désignation avec et sans haptique}
 					\end{myfigure}
 
@@ -4275,10 +4298,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=4cm}
-						\begin{myps}(-0.425,-0.3)(2,1.05)
-							\myaxes(0,2){haptique}(0,1.0)[0.2]{vitesse~(mm/s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[0.2]{haptique}(1.0,4cm){vitesse~(mm/s)}
 							\myboxplot{exp4-speed-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-VitesseMoyenneDuCoordinateurAvecEtSansHaptique]{Vitesse moyenne du coordinateur avec et sans haptique}
 					\end{myfigure}
 
@@ -4287,10 +4309,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
-						\begin{myps}(-0.425,-75)(2,260)
-							\myaxes(0,2){haptique}(0,250)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[50]{haptique}(250,4cm){temps~(s)}
 							\myboxplot{exp4-annotation-time-haptic.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsDeParoleDesSujetsAvecEtSansHaptique]{Temps de parole des sujets avec et sans haptique}
 					\end{myfigure}
 
@@ -4299,10 +4320,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 
 					\begin{myfigure}
 						\psset{xunit=0.274914089\textwidth,yunit=0.016cm}
-						\begin{myps}(-0.425,-75)(2,310)
-							\myaxes(0,2){haptique}(0,300)[50]{temps~(s)}
+						\begin{myboxgraph}[llx={-3em},yAxisLabelPos={-3em,c}](2,0.8\textwidth)[50]{haptique}(300,4cm){temps~(s)}
 							\myboxplot{exp4-annotation-time-haptic-first.csv}
-						\end{myps}
+						\end{myboxgraph}
 						\mycaption[fig-exp4-TempsDeParoleDesSujetsEnFonctionDeLOrdreDePassageDeLAssistanceHaptique]{Temps de parole des sujets en fonction de l'ordre de passage de l'assistance haptique}
 					\end{myfigure}
 
@@ -4439,6 +4459,8 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
+	\ifconclu
 	\begin{mychapter+}[cha-ConclusionEtPerspectives]{Conclusion et perspectives}
 		Durant ce travail de thèse, nous avons étudié différentes configurations collaboratives dans le contexte particulier de la collaboration étroitement couplée pour la résolution de tâches complexes, en l'occurence, le \myglos{glo-DockingMoleculaire}.
 		Dans cette conclusion, nous allons confronter les travaux existants (évoqués dans ce mémoire) avec notre contribution afin de mettre en avant les apports de notre travail.
@@ -4487,7 +4509,9 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		De nombreux champs restent à explorer en ce qui concerne les configurations collaboratives étroitement couplées.
 		Cependant, ce travail de thèse permet de fournir les premières pistes pour la communication haptique en environnement complexe.
 	\end{mychapter+}
-	\mybiblio%
+	\fi
+	\ifappendix
+	\mybiblio
 	\myglossary
 	\myappendix
 	\begin{mychapter}[cha-pro-DispositifExperimental]{Dispositif expérimental}
@@ -5226,4 +5250,5 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 			\end{mysubsection}
 		\end{mysection}
 	\end{mychapter}
+	\fi
 \end{document}

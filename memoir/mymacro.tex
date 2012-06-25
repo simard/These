@@ -1,19 +1,41 @@
 \makeatletter
-% Modify the bibliography style
-\newcounter{mymaxcitenames}
-\AtBeginDocument{%
-	\setcounter{mymaxcitenames}{\value{maxnames}}%
+\newcommand{\mylastname}{Simard}
+\newcommand{\myadrienname}{Girard}
+\newcommand{\mypierrename}{Albert}
+\DeclareBibliographyCategory{myrefs}
+\DeclareIndexNameFormat{myrefs}{% Test could be refined
+	\ifboolexpr{%
+		test {\ifdefstring{\mylastname}{#1}} or test {\ifdefstring{\myadrienname}{#1}} or test {\ifdefstring{\mypierrename}{#1}}
+	}{%
+		\addtocategory{myrefs}{\thefield{entrykey}}%
+	}{}%
 }
-\renewbibmacro{begentry}{%
-	\printtext[brackets]{%
-		\defcounter{maxnames}{\value{mymaxcitenames}}%
-		\printnames{labelname}~\usebibmacro{cite:labelyear+extrayear}%
-	}%
-	\newline%
+\AtDataInput{%
+	\indexnames[myrefs]{author}%
 }
-% AAA
+\newcommand*{\mknamesignature}[5]{\def#1{#2|#3|#4|#5}} 
+\mknamesignature{\highlightname}{Simard}{Jean}{}{} 
+\DeclareNameFormat{sortname}{% 
+	\begingroup%
+	\mknamesignature{\currentsignature}{#1}{#3}{#5}{#7}%
+	\ifdefequal{\highlightname}{\currentsignature}%
+	{\let\mkbibnamefirst=\textbf%
+		\let\mkbibnamelast=\textbf%
+		\let\mkbibnameprefix=\textbf%
+		\let\mkbibnameaffix=\textbf%
+	}{}%
+	\ifnum\value{listcount}=1\relax%
+	\usebibmacro{name:last-first}{#1}{#3}{#5}{#7}%
+	\ifblank{#3#5}%
+	{}%
+	{\usebibmacro{name:revsdelim}}%
+	\else%
+	\usebibmacro{name:first-last}{#1}{#3}{#5}{#7}%
+	\fi%
+	\endgroup%
+	\usebibmacro{name:andothers}%
+}
 \newcommand{\myACER}{\textsc{acer}\xspace}
-\newcommand{\myAlanine}{Alanine\xspace}
 \newcommand{\myAMBER}{\textsc{amber}\xspace}
 \newcommand{\myAMMPVis}{\textsc{ammp}-Vis\xspace}
 \newcommand{\myAMMPEXTN}{\textsc{ammp-extn}\xspace}
@@ -30,11 +52,9 @@
 }
 \newcommand{\myAudacity}{Audacity\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\myAutoDock}{AutoDock\xspace}
-\newcommand{\myawareness}{\textit{awareness}\xspace}
-% BBB
-\newcommand{\mybrainstorming}{\textit{brainstorming}\xspace}
+\newcommand{\myawareness}{\myenglish{awareness}\xspace}
+\newcommand{\mybrainstorming}{\myenglish{brainstorming}\xspace}
 \newcommand{\myBoxSearch}{BoxSearch\xspace}
-% CCC
 \newcommand{\myCAO}{\textsc{cao}\xspace}
 \newcommand{\mycarbon}{\myatom[mycarboncolor]{C}}
 \newcommand{\myCasioXJ}{Casio \textsc{xj}\xspace}
@@ -48,67 +68,52 @@
 \newcommand{\myconditions}[2]{Conditions \mycondition{#1}--\mycondition{#2}}%
 \newcommand{\myCPK}{\textsc{cpk}\xspace}
 \newcommand{\myCUDA}{\textsc{cuda}\xspace}
-% DDD
 \newcommand{\myDesktop}{\myPHANToM Desktop\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\myDIVERSE}{\textsc{diverse}\xspace}
 \newcommand{\myDOCK}{\textsc{dock}\xspace}
-% EEE
 \newcommand{\myEDIPS}{\textsc{edips}\xspace}
 \newcommand{\myeMinerals}{\textit{e}Minerals\xspace}
 \def\myexptwolabel(#1,#2)[#3]#4#5{\rput(#1,#2){\rnode{#3}{\textcolor{#4}{\sffamily #5}}}}
 \newcommand{\myEyeChem}{EyeChem\xspace}
-% FFF
-\newcommand{\myfeedthrough}{\textit{feedthrough}\xspace}
-\newcommand{\myFeedthrough}{\textit{Feedthrough}\xspace}
+\newcommand{\myfeedthrough}{\myenglish{feedthrough}\xspace}
+\newcommand{\myFeedthrough}{\myenglish{Feedthrough}\xspace}
 \newcommand{\myfeuillet}{feuillet-$\beta$\xspace}
 \WithSuffix\newcommand\myfeuillet*{feuillets-$\beta$\xspace}
 \newcommand{\myFireWire}{FireWire\xspace}
 \newcommand{\myFlexX}{FlexX\xspace}
-\newcommand{\myFoldIt}{\begin{otherlanguage}{english}Fold It!\end{otherlanguage}}
 \newcommand{\myform}[1]{\textbf{\sffamily\MakeUppercase{#1}}}
-% GGG
-\newcommand{\myGhost}{Ghost\xspace}
-\newcommand{\myGit}{\textsc{git}\xspace}
 \newcommand{\myGlide}{Glide\xspace}
 \newcommand{\myGOLD}{\textsc{gold}\xspace}
 \newcommand{\myGPU}{\textsc{gpu}\xspace}
 \newcommand{\myGromacs}{Gromacs\xspace}
 \newcommand{\myGROPE}{\textsc{grope}\xspace}
 \newcommand{\myGROPEHaptic}{\textsc{grope}Haptic\xspace}
-\newcommand{\mygrounding}{\textit{grounding}\xspace}
-\newcommand{\myGrounding}{\textit{Grounding}\xspace}
+\newcommand{\mygrounding}{\myenglish{grounding}\xspace}
+\newcommand{\myGrounding}{\myenglish{Grounding}\xspace}
 \newcommand{\mygroup}[1]{$\mathcal{G}_{#1}$\xspace}
-% HHH
-\newcommand{\myHaption}{Haption\xspace}
-\newcommand{\myHawthorne}{\textit{Hawthorne Works}\xspace}
+\newcommand{\myHawthorne}{\myenglish{Hawthorne Works}\xspace}
 \newcommand{\myHBonds}{\textit{HBonds}\xspace}
 \newcommand{\myhelice}{hélice-$\alpha$\xspace}
 \WithSuffix\newcommand\myhelice*{hélices-$\alpha$\xspace}
 \newcommand{\myHeuDiaSyC}{Heudiasyc\xspace}
 \newcommand{\myHIMM}{\textsc{himm}\xspace}
 \newcommand{\myhypothesis}[1]{$\mathcal{H}_{#1}$\xspace}
-% III
 \newcommand{\myICMDocking}{\textsc{icm}Docking\xspace}
 \newcommand{\myIFSTTAR}{\textsc{ifsttar}\xspace}
 \newcommand{\myiMovie}{iMovie\xspace}
 \newcommand{\myIntelCore}{Intel\myregistered Core\mytrademark~2 \textsc{q9450} (\mynum[GHz]{2.66})\xspace}
-\newcommand{\myInternet}{Internet\xspace}
-% JJJ
+\newcommand{\myInternet}{internet\xspace}
 \newcommand{\myJmol}{\textsc{Jmol}\xspace}
-% LLL
 \newcommand{\myLBT}{\textsc{lbt}\xspace}
 \newcommand{\myLCD}{\textsc{lcd}\xspace}
 \newcommand{\myLicorice}{\textit{Licorice}\xspace}
 \newcommand{\myLinux}{Linux\xspace}
 \newcommand{\myLISA}{\textsc{lisa}\xspace}
-% MMM
 \newcommand{\myMacOS}{Mac~\textsc{os}\xspace}
 \newcommand{\myMARE}{\textsc{mare}\xspace}
 \newcommand{\myMCRLab}{\textsc{mcr}Lab\xspace}
 \newcommand{\myMDDriver}{\textsc{md}Driver\xspace}
-\newcommand{\myMercurial}{Mercurial\xspace}
 \newcommand{\myMICE}{\textsc{mice}\xspace}
-% NNN
 \newcommand{\myNewRibbon}{\textit{NewRibbon}\xspace}
 \def\mynode{%
 	\@ifnextchar[{\mynode@i}{\mynode@i[style=nodestyle]}%
@@ -120,19 +125,14 @@
 \newcommand{\myNusE}{\textsc{NusE}\xspace}
 \newcommand{\myNusENusG}{\textsc{NusE:NusG}\xspace}
 \newcommand{\myNusG}{\textsc{NusG}\xspace}
-% OOO
 \newcommand{\myOmni}{\myPHANToM Omni\myregistered}% No '\xspace' because of already one in '\myregistered'
-\newcommand{\myOpenHaptics}{OpenHaptics\mytrademark}% No '\xspace' because of already one in '\mytrademark'
 \newcommand{\myoxygen}{\myatom[myoxygencolor]{O}}
-% PPP
 \newcommand{\myPaulingWorld}{PaulingWorld\xspace}
-\newcommand{\myPC}{\textsc{pc}\xspace}
 \newcommand{\myPCRI}{\textsc{pcri}\xspace}
 \newcommand{\myPDB}{\textsc{pdb}\xspace}
 \newcommand{\myPDBbase}{\textit{Protein~DataBase}\xspace}
 \newcommand{\myPDBlink}[2]{\href{#1}{\textsc{\MakeLowercase{#2}}}}
 \newcommand{\myPHANToM}{\textsc{phant}o\textsc{m}\xspace}
-\newcommand{\myPremium}{\myPHANToM Premium\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\myPrion}{Prion\xspace}
 \newcommand{\myPSF}{\textsc{psf}\xspace}
 \def\mypsvibration(#1,#2){%
@@ -146,46 +146,37 @@
 \newcommand{\myPtwoP}{\textsc{p2p}\xspace}
 \newcommand{\mypvalue}{$p$-value\xspace}
 \newcommand{\myPyMOL}{\textsc{p}y\textsc{mol}\xspace}
-% RRR
 \newcommand{\myRAM}[2][Go]{\mynum[#1]{#2} de \textsc{ram}}
 \newcommand{\myRasmol}{RasMol\xspace}
 \newcommand{\myratio}[1]{\input{files/#1}}
 \newcommand{\myresidue}[1]{$\mathcal{R}_{#1}$\xspace}
-% SSS
 \newcommand{\myscenario}[1]{\textsc{#1}}
 \newcommand{\mySensAble}{SensAble\xspace}
 \newcommand{\myShaddock}{Shaddock\xspace}
-\newcommand{\mySIDA}{\textsc{sida}\xspace}
 \newcommand{\mySony}{\textsc{sony}\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\mySpaceNavigator}{SpaceNavigator\myregistered}% No '\xspace' because of already one in '\myregistered'
 \newcommand{\mySTALK}{\textsc{stalk}\xspace}
 \newcommand{\mysubject}[1]{$\mathcal{S}_#1$}
 \newcommand{\mysulfur}{\myatom[mysulfurcolor]{S}}
 \newcommand{\mysummary}[1]{\input{files/#1}}
-\newcommand{\mySVN}{\textsc{svn}\xspace}
-% TTT
 \newcommand{\myTCPIP}{\textsc{tcp/ip}\xspace}
 \newcommand{\myThreeD}{\textsc{3d}\xspace}
-\newcommand{\mytool}[1]{\myemph{#1}}
+\newcommand{\mytool}[1]{\myenglish{#1}}
 \newcommand{\myTRPCAGE}{\textsc{trp-cage}\xspace}
 \newcommand{\myTRPZIPPER}{\textsc{trp-zipper}\xspace}
 \newcommand{\myTwoD}{\textsc{2d}\xspace}
-% UUU
 \newcommand{\myUbiquitin}{Ubiquitin\xspace}
 \newcommand{\myUbuntu}{Ubuntu~v$10.04$\xspace}
-\newcommand{\myUDP}{\textsc{udp}\xspace}
 \newcommand{\myUSB}{\textsc{usb}\xspace}
 \newcommand{\myuser}[1]{$\mathcal{#1}$}
-% VVV
 \newcommand{\myvar}[2]{$\mathcal{V}_{\mathrm{#1}#2}$\xspace}
 \newcommand{\myvard}[1]{\myvar{d}{#1}}
 \newcommand{\myvari}[1]{\myvar{i}{#1}}
 \newcommand{\myVGA}{\textsc{vga}\xspace}
 \newcommand{\myVIEW}{\textsc{view}\xspace}
 \newcommand{\myVirtuose}{Virtuose\mytrademark~\textsc{6d}\mynum{35}--\mynum{45}\xspace}
-% WWW
 \newcommand{\myWindows}{Windows\xspace}
-\newcommand{\myWorkbench}{\textit{Workbench}\xspace}
+\newcommand{\myWorkbench}{\myenglish{Workbench}\xspace}
 
 % Needed lengths
 \newlength{\mywidth}
