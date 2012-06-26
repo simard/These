@@ -1,0 +1,146 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -*- Mode: Latex -*- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Doc-LIMSI.sty --- 
+%% 
+%% Auteur          : Jalel Chergui (LIMSI-CNRS) <Jalel.Chergui@limsi.fr>
+%% Créé le         : Fri Jul  4 13:12:44 2008
+%% Dern. mod. par  : Jalel Chergui (LIMSI-CNRS) <Jalel.Chergui@limsi.fr>
+%% Dern. mod. le   : Fri Jul  4 16:03:43 2008
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\fileversion{1.0}
+\def\filedate{July 03, 2008}
+\typeout{`Doc-LIMSI' package: notes for LIMSI/CNRS^^J%
+         (Version \fileversion\space of <\filedate>)}
+
+\usepackage{count1to}
+%\usepackage[hang]{caption2}     % Pour les légendes
+%\usepackage{graphicx}           % Pour l'insertion de fichiers PostScript
+%\usepackage[utf8]{inputenc}   % Pour le codage ISO-Latin-1
+\usepackage{pifont}             % Pour les puces des listes
+\usepackage{geometry}
+%\usepackage[english,frenchb]{babel} % Francisation avec Babel
+
+\let\oldhoffset\hoffset
+\let\oldvoffset\voffset
+\let\oldoddsidemargin\oddsidemargin
+\let\oldtopmargin\topmargin
+\let\oldtextwidth\textwidth
+\let\oldtextheight\textheight
+\let\oldparindent\parindent
+\savegeometry{default}
+\newgeometry{%
+	twoside=true,%
+	ignoreheadfoot=true,
+	vmargin=18mm,
+	bindingoffset=7.5mm,
+	textwidth=17cm,%
+	textheight=24cm%
+}
+\savegeometry{LIMSI}
+
+% 1: Numero, 2: date
+\newcommand{\Reference}[2]{%
+\vspace*{9cm}
+\hfill
+\begin{minipage}{105mm}
+\textbf{NOTES~et~DOCUMENTS~ LIMSI~ 
+$\mbox{\textbf{N}}^\textrm{o}$~: #1 \\
+\medskip
+#2}
+\end{minipage}
+}
+
+% 1: titre, 2: auteurs
+\newcommand{\TitreEtAuteurs}[2]{%
+% La macro permettant de définir l'encadré du titre
+\vspace*{50mm}
+\begin{center}
+  {\Large \textbf{#1}}
+
+  \vspace*{17mm}
+  {\Large  #2}
+\end{center}
+\newpage
+}
+
+% 1: numero, 2: date, 3: titre, 4: auteurs
+\newcommand{\RappelReference}[4]{%
+\textbf{Notes et Documents LIMSI $\mbox{\textbf{N}}^\textrm{o}$~: #1}
+\hspace*{3.truecm} 
+
+\textbf{#2}
+\medskip
+
+\textbf{Auteurs (Authors) :}  #4
+\medskip
+
+\textbf{Titre :}
+\begin{minipage}[t]{95mm}
+  #3
+\end{minipage}
+\medskip
+}
+
+% La macro permettant de définir l'encadré éventuel du résumé
+\newcommand{\Title}[1]{%
+\textbf{Title:} 
+\begin{minipage}[t]{95mm} 
+  #1
+\end{minipage}
+\medskip
+}
+
+\newcommand{\Resume}[1]{%
+	\textbf{Nombre de pages (Number of pages) :} \global\advance \count1 by 1\relax\the\count1
+
+\vspace*{100mm}
+{\footnotesize
+\textbf{R\'esum\'e :} \textsl{#1}
+}}
+
+\newcommand{\MotsClefs}[1]{%
+{\footnotesize
+  \textbf{Mots-cl\'es :}  #1
+  \medskip
+}}
+
+\newcommand{\Abstract}[1]{%
+{\footnotesize
+\textbf{Abstract :} \textsl{#1}
+}}
+
+\newcommand{\KeyWords}[1]{%
+{\footnotesize
+\textbf{Keywords:} #1
+}
+
+\newpage
+}
+
+% Pour l'insertion de fichiers PostScript
+\newcommand{\InsertionGraphic}[3]{%
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=#3]{#1}}
+  \caption{#2}
+\end{figure}}
+
+\newcommand{\InsertionGraphicRotate}[4]{%
+\begin{figure}[htbp]
+  \centerline{\includegraphics[width=#4,angle=#3]{#1}}
+  \caption{#2}
+\end{figure}}
+
+% Définition des symboles pour les listes de type "dinglist"
+% "dinglist" environment
+% Redefinition of it to be able to use colored symbols
+\renewenvironment{dinglist}[2][black]
+{\begin{list}{\ding{#2}}{}}{\end{list}}
+% Symbol definitions for these lists
+\newcommand{\DingListSymbolA}{43}
+\newcommand{\DingListSymbolB}{243}
+\newcommand{\DingListSymbolC}{224}
+\newcommand{\DingListSymbolD}{219}
+
+\endinput
+
+

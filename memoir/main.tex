@@ -13,6 +13,7 @@
 \usepackage[colour,noprint]{myhyper}
 \usepackage[acronym]{myglossary}
 \usepackage{mychinese}
+\usepackage{Doc-LIMSI}
 
 \input{mymacro}
 \input{myglossary}
@@ -58,6 +59,15 @@
 }
 
 \begin{document}
+	\loadgeometry{LIMSI}
+	\pagestyle{empty}
+	\Reference{2012 - 19}{Mars 2012}
+
+	\TitreEtAuteurs{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
+	{J. \textsc{Simard}}
+	\loadgeometry{default}
+	\cleardoublepage
+	\pagestyle{fancy}
 	\frontmatter
 	\maketitle
 	\ifpreamble
@@ -5251,4 +5261,40 @@ vmd> set mysel [atomselect "top" "name C or name O or name N or name CA"]
 		\end{mysection}
 	\end{mychapter}
 	\fi
+	\pagestyle{empty}
+	\cleardoublepage
+	\setlength{\parindent}{0mm}
+	\setlength{\parskip}{0ex}
+	\newpage
+	\loadgeometry{LIMSI}
+	\RappelReference{2012 - 19}
+	{Mars 2012}
+	{Collaboration haptique étroitement couplée pour la déformation moléculaire interactive}
+	{J. \textsc{Simard}}
+
+	\Title{Closely coupled haptic collaboration for interactive molecular deformation}
+
+	\Resume{%
+		Le \emph{docking} moléculaire est une tâche complexe, difficile à appréhender pour une personne seule.
+		C'est pourquoi, nous nous proposons d'étudier la distribution cognitive des charges de travail à travers la collaboration.
+		Une plate-forme distribuée de déformation moléculaire interactive a été mise en place afin d'étudier les avantages mais aussi les limites et les contraintes du travail collaboratif étroitement couplé.
+		Trois expérimentations ont permis de valider l'intérêt d'une approche collaborative pour des tâches complexes à fort couplage.
+		Cependant, elle a mis en évidence des conflits de coordination et de communication.
+		Suite à cette première étude, des outils d'assistance et de communication haptiques ont été proposés afin d'améliorer la communication et les interactions entre les différents collaborateurs.
+		Une dernière expérimentation avec des bio-informaticiens a permis de montrer l'utilité de la communication haptique pour le travail collaboratif sur des tâches complexes à fort couplage.
+	}
+
+	\MotsClefs{\emph{docking} moléculaire, communication haptique, collaboration étroite, interaction haptique}
+
+	\Abstract{%
+		Molecular docking is a complex problem for one person.
+		We propose to study the cognitive distribution of the workload in a collaborative configuration.
+		A distributed platform for the molecular deformation has been developed to study the closely coupled collaboration.
+		Three experimental studies confirm the pertinence of the collaborative configuration for closely coupled collaboration.
+		However, we observe coordination and communication conflicts.
+		Based on these results, we developed tools to assist the collaboration through haptic communication.
+		A last experimentation with bio-informaticians showed the gain of efficiency with the help of these haptic communication tools.
+	}
+
+	\KeyWords{molecular docking, haptic communication, closely coupled collaboration, haptic interaction}
 \end{document}
